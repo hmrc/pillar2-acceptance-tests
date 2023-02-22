@@ -1,14 +1,16 @@
 #!/bin/bash -e
-DEFAULT_BROWSER="chrome"
-BROWSER_TYPE=$1
-ENV=$2
-
-if [ -z "$BROWSER_TYPE" ]; then
-    echo "BROWSER_TYPE value not set, defaulting to $DEFAULT_BROWSER..."
-    echo ""
+browser="chrome"
+if [ $# -gt 0  ];
+then
+  browser="$1"
 fi
 
-# Scalafmt checks have been separated from the test command to avoid OutOfMemoryError in Jenkins
+environment="local"
+tags="not @ignore"
+if [ $# -gt 1 -a "$2" != "$environment" ];
+then
+  environment="$2"
+  tags="@smoke"
+fi
 
-
-sbt -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Denvironment="${ENV:=local}" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner"
+sbt -Denvironment="$environment" -Dbrowser="$browser" -Dcucumber.options="--tags '$tags'" clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner'

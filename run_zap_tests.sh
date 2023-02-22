@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
-DEFAULT_BROWSER=remote-chrome
-BROWSER_TYPE=$1
-ENV=$2
+set -e
 
-if [ -z "$BROWSER_TYPE" ]; then
-    echo "BROWSER_TYPE value not set, defaulting to $DEFAULT_BROWSER..."
-    echo ""
+environment="local"
+tags="not @smoke and not @externalTest_canned_data"
+if [ $# -gt 0 -a "$1" != "$environment" ];
+then
+  environment="$1"
+  tags="not @ignore and not @externalTest_canned_data"
 fi
 
-# NOTE: It is not required to proxy every journey test via ZAP. The intention of proxying a test through ZAP is to expose all the
-# relevant pages of an application to ZAP. So tagging a subset of the journey tests or creating a
-# single ZAP focused journey test is sufficient.
-
-sbt -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Denvironment="${ENV:=local}" -Dzap.proxy=true "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner"
+echo "*** running on $environment for tags '$tags' ***"
+sbt -Dhttp.proxyHost=localhost -Dhttp.proxyPort=11000 -Denvironment="$environment" -Dcucumber.options="--tags '$tags'" clean "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner"
