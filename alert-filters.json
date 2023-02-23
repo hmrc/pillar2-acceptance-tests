@@ -1,0 +1,9 @@
+{
+  "add": [
+    {
+      "reason": "This is outside our scope.",
+      "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
+      "ruleId": 10202
+    }
+  ]
+}
