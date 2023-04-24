@@ -40,11 +40,18 @@ class StepDef extends BaseStepDef {
     }
   }
 
-  Given("""^The Heading should be (.*)$""") { header: String =>
+  Then("""^The Heading should be (.*)$""") { header: String =>
     Check.checkH1(header)
   }
   Then("""^The Body content should be (.*)$""") { text: String =>
     Check.checkBodyText(text)
+  }
+
+  Given("""^I fill (.*) and continue$""") { page: String =>
+    page match {
+      case "What is the main address of your business page" => Forms.addressNonUK()
+    }
+    Input.clickSubmit()
   }
 
   When(
@@ -53,6 +60,14 @@ class StepDef extends BaseStepDef {
     Input.clickSubmit
   }
 
+  Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
+    Input.sendKeysById(text, id)
+  }
+
+  And("""^I select (.*) and continue$""") { (id: String) =>
+    Input.clickById(id)
+    Input.clickSubmit
+  }
   And("""^click (.*)$""") { (id: String) =>
     Input.clickByLinkText(id)
   }
