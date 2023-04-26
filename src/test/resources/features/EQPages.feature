@@ -32,5 +32,6 @@ Feature: Business activity within UK EQs
     And I have the facility to answer the Business activity within UK EQ
     And The Heading should be Check if your group is liable
     And The Body content should be Does any business in your group have business activity in the UK?
-    When I select browser back
+    When I select back link
     Then I should navigate to previous eligibility question page
+
