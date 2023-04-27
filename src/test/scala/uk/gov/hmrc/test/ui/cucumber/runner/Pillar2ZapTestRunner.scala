@@ -16,11 +16,16 @@
 
 package uk.gov.hmrc.test.ui.cucumber.runner
 
+import com.typesafe.config.{Config, ConfigFactory}
 import io.cucumber.junit.Cucumber
 import io.cucumber.junit.CucumberOptions
 import org.junit.runner.RunWith
+import org.scalatest.wordspec._
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.zap.ZapTest
+import uk.gov.hmrc.zap.config.ZapConfiguration
 
-@RunWith(classOf[Cucumber])
+/*@RunWith(classOf[Cucumber])
 @CucumberOptions(
   features = Array("src/test/resources/features"),
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
@@ -28,4 +33,16 @@ import org.junit.runner.RunWith
     Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/ZapRunner.xml"),
   tags = "@ZAP"
 )
-class ZapRunner {}
+class ZapRunner {}*/
+class Pillar2ZapTestRunner extends AnyWordSpec with ZapTest {
+  val customConfig: Config =
+    TestConfiguration.config.getConfig("pillar2Frontend")
+
+  override val zapConfiguration: ZapConfiguration = new ZapConfiguration(customConfig)
+
+  "Kicked off the zap scan" should {
+    "completed all checks successfully" in {
+      triggerZapScan()
+    }
+  }
+}

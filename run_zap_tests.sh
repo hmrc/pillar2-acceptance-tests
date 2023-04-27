@@ -2,13 +2,17 @@
 
 set -e
 
-environment="local"
-tags="not @smoke and not @externalTest_canned_data"
-if [ $# -gt 0 -a "$1" != "$environment" ];
+browser="chrome"
+if [ $# -gt 0  ];
 then
-  environment="$1"
-  tags="not @ignore and not @externalTest_canned_data"
+  browser="$1"
 fi
 
-echo "*** running on $environment for tags '$tags' ***"
-sbt -Dhttp.proxyHost=localhost -Dhttp.proxyPort=11000 -Denvironment="$environment" -Dcucumber.options="--tags '$tags'" clean "testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner"
+environment="local"
+tags="@ZAP"
+
+echo "*** running on $environment using $browser for tags '$tags' ***"
+
+sbt -Dzap.proxy=true -Denvironment="$environment" -Dbrowser="$browser" -Dcucumber.options="--tags '$tags'" clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner'
+
+sbt 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.Pillar2ZapTestRunner'
