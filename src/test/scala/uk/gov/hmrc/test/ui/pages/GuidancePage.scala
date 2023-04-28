@@ -23,8 +23,8 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object GuidancePage extends PageObject {
 
 //  val url = TestConfiguration.url(" /eligibility/kb-in-the-uk-ineligible")
-  val url = TestConfiguration.url(" /under-construction")
+  val url: String      = TestConfiguration.url("guidancePage")
 
-  val heading = "Check if your group is liable"
+  val caption = "Check if your group is liable"
 
 }

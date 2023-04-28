@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
-import org.openqa.selenium.WebDriver
+import org.openqa.selenium.{By, WebDriver}
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.cucumber.Find._
 
@@ -58,5 +58,8 @@ object Input extends BasePage {
     driver.close()
     driver.switchTo().window(newWindow)
   }
+
+  def getTextOf(by: By) =
+    driver.findElement(by).getText
 
 }

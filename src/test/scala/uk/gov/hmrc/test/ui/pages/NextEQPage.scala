@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber
-import com.typesafe.config.{Config, ConfigFactory}
+package uk.gov.hmrc.test.ui.pages
 
-trait PageObject {
-  val config: Config        = ConfigFactory.load()
-  val env: String           = config.getString("environment")
-  val defaultConfig: Config = config.getConfig("local")
-  val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
-  val back = "backLink"
-  val submit = "submit"
-  val url: String
-  def caption: String
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.PageObject
+
+object NextEQPage extends PageObject {
+  val url: String      = TestConfiguration.url("nextEQPage")
+
+  val caption = "form[action*='eligibility'] .govuk-caption-l"
+  val eqForm = "form[action*='eligibility']"
+  val eq = "form[action*='eligibility'] .govuk-fieldset"
+  val continue = "form[action*='eligibility'] button"
+
+  def clickContinue() = findByCss(continue).click()
+
 
 }

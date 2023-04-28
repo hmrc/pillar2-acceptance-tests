@@ -18,13 +18,18 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object BusinessActivityEQPages extends PageObject {
+object BusinessActivityEQPage extends PageObject {
+  val url: String      = TestConfiguration.url("businessEQ")
 
-//  val url = TestConfiguration.url(" /eligibility/kb-in-the-uk-ineligible")
-  val url = TestConfiguration.url(" /under-construction")
+  val caption = "form[action*='eligibility'] .govuk-caption-l"
+  val eqForm = "form[action*='eligibility']"
+  val eq = "form[action*='eligibility'] .govuk-fieldset"
+  val continue = "form[action*='eligibility'] button"
 
-  val heading = "Check if your group is liable"
+  def clickContinue() = findByCss(continue).click()
+
 
 }

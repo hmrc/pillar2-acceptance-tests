@@ -68,6 +68,7 @@ class StepDef extends BaseStepDef {
     Input.clickById(id)
     Input.clickSubmit
   }
+
   And("""^click (.*)$""") { (id: String) =>
     Input.clickByLinkText(id)
   }

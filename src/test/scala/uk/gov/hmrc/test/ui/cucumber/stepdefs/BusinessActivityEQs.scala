@@ -17,36 +17,52 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationToPage
+import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationToPageUrl}
+import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage
+import uk.gov.hmrc.test.ui.pages.BusinessActivityEQPage
+import uk.gov.hmrc.test.ui.conf
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 class BusinessActivityEQs extends BaseStepDef {
 
-  And("""^I select (.*) option and continue$""") { (option: String) =>
+  And("""^I choose (.*) and continue$""") { (option: String) =>
     option match {
       case "Yes" => Input.clickById ("value_0")
       case "No" => Input.clickById ("value_1")
-
     }
-    Input.clickSubmit
+    BusinessActivityEQPage.clickContinue()
   }
 
   Given("""^I am on (.*) Page$""") { page: String =>
     page match {
-      case "Business activity within UK EQ" =>
-        Nav.navigateTo("http://localhost:10050/pillar-two/eligibility/activities-within-the-uk")
+      case "Business activity EQ" =>
+        Nav.navigateTo(TestConfiguration.url("businessEQ"))
     }
   }
 
-  Given("""^I have the facility to answer the Business activity within UK EQ$""") { () =>
-    Wait.waitForElement("header-id")
-    isVisible(By.id("EQFormId")) shouldBe true
+  Given("""^I have the facility to answer the Business activity EQ$""") { () =>
+    Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
+    isVisible(By.cssSelector(BusinessActivityEQPage.eqForm)) shouldBe true
   }
+
+  Then("""^The caption should be (.*)$""") { caption: String =>
+    Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.caption)
+    assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).contains(caption))
+
+  }
+
   Then("""^I should navigate to (.*)""") { (page: String) =>
-    val pageObj = pageMatch(page)
     Wait.waitForElementToClicktagName("h1")
     assertNavigationToPage(pageMatch(page))
+  }
+
+  And("""^I continue without selecting an option$""") { () =>
+    Input.clickSubmit
+  }
+
+  And("""^I should see error message (.*) on $""") { (errorMessage: String) =>
+    Input.clickSubmit
   }
 
 }
