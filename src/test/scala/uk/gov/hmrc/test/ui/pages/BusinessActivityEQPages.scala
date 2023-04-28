@@ -14,23 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber
+package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages
+import org.openqa.selenium.support.ui.Select
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object Nav extends BasePage {
-  val url = ""
+object BusinessActivityEQPages extends PageObject {
 
-  def navigateTo(url: String): Unit =
-    driver.navigate.to(url)
+//  val url = TestConfiguration.url(" /eligibility/kb-in-the-uk-ineligible")
+  val url = TestConfiguration.url(" /under-construction")
 
-  def browserBack() {
-    driver.navigate().back()
-  }
-  def isVisible(by: By): Boolean =
-    driver.findElements(by).size() != 0
-
+  val heading = "Check if your group is liable"
 
 }
