@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.cucumber
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages
 
 object Nav extends BasePage {
   val url = ""
@@ -31,6 +30,5 @@ object Nav extends BasePage {
   }
   def isVisible(by: By): Boolean =
     driver.findElements(by).size() != 0
-
 
 }

@@ -28,9 +28,9 @@ trait CommonFunctions
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "business EQ page" => BusinessActivityEQPage
-      case "next EQ page" => NextEQPage
-      case "guidance page" => GuidancePage
+      case "business EQ page"   => BusinessActivityEQPage
+      case "next EQ page"       => NextEQPage
+      case "guidance page"      => GuidancePage
     }
   }
 }
