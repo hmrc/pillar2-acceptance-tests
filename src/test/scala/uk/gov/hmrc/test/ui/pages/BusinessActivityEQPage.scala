@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
@@ -28,6 +27,10 @@ object BusinessActivityEQPage extends PageObject {
   val eqForm = "form[action*='eligibility']"
   val eq = "form[action*='eligibility'] .govuk-fieldset"
   val continue = "form[action*='eligibility'] button"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLink = "[href='#value_0']"
+  val backLink = ".govuk-back-link"
+  val errorMessage = ".govuk-error-message"
 
   def clickContinue() = findByCss(continue).click()
 

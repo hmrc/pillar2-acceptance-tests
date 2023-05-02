@@ -18,13 +18,13 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationToPageUrl}
-import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
 import uk.gov.hmrc.test.ui.pages.BusinessActivityEQPage
 import uk.gov.hmrc.test.ui.conf
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-class BusinessActivityEQs extends BaseStepDef {
+class BusinessActivityEQs extends CommonFunctions {
 
   And("""^I choose (.*) and continue$""") { (option: String) =>
     option match {
@@ -34,22 +34,13 @@ class BusinessActivityEQs extends BaseStepDef {
     BusinessActivityEQPage.clickContinue()
   }
 
-  Given("""^I am on (.*) Page$""") { page: String =>
-    page match {
-      case "Business activity EQ" =>
-        Nav.navigateTo(TestConfiguration.url("businessEQ"))
-    }
-  }
-
-  Given("""^I have the facility to answer the Business activity EQ$""") { () =>
-    Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
-    isVisible(By.cssSelector(BusinessActivityEQPage.eqForm)) shouldBe true
+  And("""^I select back link$""") { () =>
+    clickByCss(BusinessActivityEQPage.backLink)
   }
 
   Then("""^The caption should be (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.caption)
     assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).contains(caption))
-
   }
 
   Then("""^I should navigate to (.*)""") { (page: String) =>
@@ -58,11 +49,20 @@ class BusinessActivityEQs extends BaseStepDef {
   }
 
   And("""^I continue without selecting an option$""") { () =>
-    Input.clickSubmit
+    BusinessActivityEQPage.clickContinue()
   }
 
-  And("""^I should see error message (.*) on $""") { (errorMessage: String) =>
-    Input.clickSubmit
-  }
+ And("""^I should see error message (.*) on the (.*) Page$""") { (error: String, page: String) =>
+   page match {
+     case "Business activity EQ" =>
+       Wait.waitForTagNameToBeRefreshed("h1")
+       Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorSummary)
 
+       Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorLink)
+       getTextOf(By cssSelector (BusinessActivityEQPage.errorLink)) should be(error)
+
+       Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorMessage)
+       getTextOf(By cssSelector (BusinessActivityEQPage.errorMessage)) should include(error)
+   }
+  }
 }

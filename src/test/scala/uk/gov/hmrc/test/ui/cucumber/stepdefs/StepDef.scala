@@ -16,8 +16,11 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
+import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GuidancePage, NextEQPage}
 
 class StepDef extends BaseStepDef {
 
@@ -71,6 +74,15 @@ class StepDef extends BaseStepDef {
 
   And("""^click (.*)$""") { (id: String) =>
     Input.clickByLinkText(id)
+  }
+
+  Given("""^I am on (.*) Page$""") { page: String =>
+    page match {
+      case "Business activity EQ" =>
+        Nav.navigateTo(TestConfiguration.url("businessEQ"))
+        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
+        isVisible(By.cssSelector(BusinessActivityEQPage.eq)) shouldBe true
+    }
   }
 
 /*  Given("""^I fill (.*) and continue$""") { page: String =>

@@ -16,21 +16,21 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.scala.{EN, ScalaDsl, Scenario}
-import org.openqa.selenium.{OutputType, TakesScreenshot}
+import io.cucumber.scala.{EN, ScalaDsl}
+import org.scalatest.concurrent.Eventually
+import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, GuidancePage, NextEQPage}
 
-class Hooks extends ScalaDsl with EN with BrowserDriver {
+trait CommonFunctions
+  extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
-  Before { scenario: Scenario =>
-    driver.manage().deleteAllCookies()
-  }
-
-  After { scenario: Scenario =>
-    if (scenario.isFailed) {
-      val screenshotName = scenario.getName.replaceAll(" ", "_")
-      val screenshot     = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
-      scenario.attach(screenshot, "image/png", screenshotName)
+  def pageMatch(page: String): PageObject = {
+    page match {
+      case "business EQ page" => BusinessActivityEQPage
+      case "next EQ page" => NextEQPage
+      case "guidance page" => GuidancePage
     }
   }
 }

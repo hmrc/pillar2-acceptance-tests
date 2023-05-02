@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
-import java.util.concurrent.TimeUnit
-
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, WebDriverWait}
 import org.openqa.selenium.{By, WebDriver, WebElement}
 import uk.gov.hmrc.test.ui.pages.BasePage
@@ -52,5 +50,10 @@ object Wait extends BasePage {
   def waitForElementToPresentByCssSelector(cssSelector: String): WebElement = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10))
     driverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)))
+  }
+
+  def waitForTagNameToBeRefreshed(tagName: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
+    driverWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.tagName(tagName))))
   }
 }
