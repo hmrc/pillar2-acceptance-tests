@@ -1,4 +1,4 @@
-@tests
+@tests @zap
 Feature: Trading Business confirmation Page
   Scenario: 1 - Display trading Business confirmation Page
     Given Organisation User logs in to register for Pillar2
