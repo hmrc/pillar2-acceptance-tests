@@ -1,4 +1,4 @@
-@tests
+@tests @zap
 Feature: Business activity within UK EQs
   As a MNE user
   I want to answer the Business activity within UK EQ
