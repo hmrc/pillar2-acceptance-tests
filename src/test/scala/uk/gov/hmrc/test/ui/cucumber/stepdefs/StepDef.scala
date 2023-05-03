@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GuidancePage, NextEQPage}
@@ -81,6 +82,20 @@ class StepDef extends BaseStepDef {
         navigateTo(BusinessActivityEQPage.url)
         Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
         isVisible(By.cssSelector(BusinessActivityEQPage.eq)) shouldBe true
+    }
+  }
+
+  And("""^I should see error message (.*) on the (.*) Page$""") { (error: String, page: String) =>
+    page match {
+      case "Business activity EQ" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorLink)
+        getTextOf(By cssSelector (BusinessActivityEQPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorMessage)
+        getTextOf(By cssSelector (BusinessActivityEQPage.errorMessage)) should include(error)
     }
   }
 

@@ -49,18 +49,4 @@ class BusinessActivityEQs extends CommonFunctions {
   And("""^I continue without selecting an option$""") { () =>
     BusinessActivityEQPage.clickContinue()
   }
-
- And("""^I should see error message (.*) on the (.*) Page$""") { (error: String, page: String) =>
-   page match {
-     case "Business activity EQ" =>
-       Wait.waitForTagNameToBeRefreshed("h1")
-       Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorSummary)
-
-       Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorLink)
-       getTextOf(By cssSelector (BusinessActivityEQPage.errorLink)) should be(error)
-
-       Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorMessage)
-       getTextOf(By cssSelector (BusinessActivityEQPage.errorMessage)) should include(error)
-   }
-  }
 }
