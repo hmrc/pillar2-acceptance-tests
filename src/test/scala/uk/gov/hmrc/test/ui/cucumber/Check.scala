@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import org.scalatest.Assertion
+import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Check extends BasePage {
@@ -35,4 +36,13 @@ object Check extends BasePage {
 
   def checkSubHeading(p: String) =
     Find.findByCss("#main-content > div > div > p:nth-child(2)").getText should include(p)
+
+  def assertNavigationToPage(page: PageObject) =
+    Wait.waitForUrlToBeVisible(page.url)
+
+  def assertNavigationToPageUrl(page: PageObject) = {
+    Wait.waitForUrlToBeVisible(page.url)
+    currentUrl shouldBe page.url
+  }
+
 }

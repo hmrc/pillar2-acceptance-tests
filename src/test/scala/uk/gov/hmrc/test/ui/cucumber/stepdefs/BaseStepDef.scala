@@ -24,7 +24,8 @@ import uk.gov.hmrc.webdriver.SingletonDriver
 
 import scala.util.Try
 
-trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
+trait BaseStepDef
+  extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
   sys.addShutdownHook {
     Try(SingletonDriver.closeInstance)

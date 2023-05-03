@@ -15,20 +15,18 @@
  */
 
 package uk.gov.hmrc.test.ui.cucumber
+import com.typesafe.config.{Config, ConfigFactory}
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.BasePage
-
-object Nav extends BasePage {
-  val url = ""
-
-  def navigateTo(url: String): Unit =
-    driver.navigate.to(url)
-
-  def browserBack() {
-    driver.navigate().back()
-  }
-  def isVisible(by: By): Boolean =
-    driver.findElements(by).size() != 0
+trait PageObject {
+  val config: Config        = ConfigFactory.load()
+  val env: String           = config.getString("environment")
+  val defaultConfig: Config = config.getConfig("local")
+  val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
+  val rootUrl               =  TestConfiguration.url("pillar2-frontend")
+  val back                  = "backLink"
+  val submit                = "submit"
+  val url                   : String
+  def caption               : String
 
 }

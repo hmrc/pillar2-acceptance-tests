@@ -16,8 +16,11 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
+import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GuidancePage, NextEQPage}
 
 class StepDef extends BaseStepDef {
 
@@ -68,8 +71,32 @@ class StepDef extends BaseStepDef {
     Input.clickById(id)
     Input.clickSubmit
   }
+
   And("""^click (.*)$""") { (id: String) =>
     Input.clickByLinkText(id)
+  }
+
+  Given("""^I am on (.*) Page$""") { page: String =>
+    page match {
+      case "Business activity EQ" =>
+        navigateTo(BusinessActivityEQPage.url)
+        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
+        isVisible(By.cssSelector(BusinessActivityEQPage.eq)) shouldBe true
+    }
+  }
+
+  And("""^I should see error message (.*) on the (.*) Page$""") { (error: String, page: String) =>
+    page match {
+      case "Business activity EQ" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorLink)
+        getTextOf(By cssSelector (BusinessActivityEQPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorMessage)
+        getTextOf(By cssSelector (BusinessActivityEQPage.errorMessage)) should include(error)
+    }
   }
 
 /*  Given("""^I fill (.*) and continue$""") { page: String =>

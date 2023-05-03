@@ -16,11 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
-import java.util.concurrent.TimeUnit
-import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
+import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, WebDriverWait}
 import org.openqa.selenium.{By, WebDriver, WebElement}
 import uk.gov.hmrc.test.ui.pages.BasePage
-
 import java.time.Duration
 
 object Wait extends BasePage {
@@ -39,4 +37,23 @@ object Wait extends BasePage {
 
   def secondsWait(secs: Int): Unit = Thread.sleep(secs.*(1000))
 
+  def waitForElementToClicktagName(tagName: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(3))
+    driverWait.until(ExpectedConditions.elementToBeClickable(By.tagName(tagName)))
+  }
+
+  def waitForUrlToBeVisible(url: String): Boolean = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(8))
+    driverWait.until(ExpectedConditions.urlToBe(url))
+  }
+
+  def waitForElementToPresentByCssSelector(cssSelector: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10))
+    driverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)))
+  }
+
+  def waitForTagNameToBeRefreshed(tagName: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
+    driverWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.tagName(tagName))))
+  }
 }
