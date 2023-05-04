@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GuidancePage, NextEQPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, GuidancePage, NextEQPage}
 
 class StepDef extends BaseStepDef {
 
@@ -82,6 +82,10 @@ class StepDef extends BaseStepDef {
         navigateTo(BusinessActivityEQPage.url)
         Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
         isVisible(By.cssSelector(BusinessActivityEQPage.eq)) shouldBe true
+      case "Global gross revenue" =>
+        navigateTo(GlobalGrossRevenueEQPage.url)
+        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.eqForm)
+        isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
     }
   }
 
@@ -96,6 +100,15 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorMessage)
         getTextOf(By cssSelector (BusinessActivityEQPage.errorMessage)) should include(error)
+      case "Global gross revenue" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorLink)
+        getTextOf(By cssSelector (GlobalGrossRevenueEQPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorMessage)
+        getTextOf(By cssSelector (GlobalGrossRevenueEQPage.errorMessage)) should include(error)
     }
   }
 
