@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, GuidancePage, NextEQPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, MultipleTerritoriesEQPage, NextEQPage}
 
 class StepDef extends BaseStepDef {
 
@@ -86,6 +86,10 @@ class StepDef extends BaseStepDef {
         navigateTo(GlobalGrossRevenueEQPage.url)
         Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.eqForm)
         isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
+      case "Multiple Territories EQ" =>
+        navigateTo(MultipleTerritoriesEQPage.url)
+        Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.eqForm)
+        isVisible(By.cssSelector(MultipleTerritoriesEQPage.eq)) shouldBe true
     }
   }
 
@@ -100,6 +104,7 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorMessage)
         getTextOf(By cssSelector (BusinessActivityEQPage.errorMessage)) should include(error)
+
       case "Global gross revenue" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorSummary)
@@ -109,6 +114,17 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorMessage)
         getTextOf(By cssSelector (GlobalGrossRevenueEQPage.errorMessage)) should include(error)
+
+      case "Multiple Territories EQ" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorLink)
+        getTextOf(By cssSelector (MultipleTerritoriesEQPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorMessage)
+        getTextOf(By cssSelector (MultipleTerritoriesEQPage.errorMessage)) should include(error)
+
     }
   }
 
