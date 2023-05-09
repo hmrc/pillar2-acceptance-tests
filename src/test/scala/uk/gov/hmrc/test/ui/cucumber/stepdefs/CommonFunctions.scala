@@ -21,16 +21,18 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, GuidancePage, NextEQPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, ConfirmationPage, GlobalGrossRevenueEQPage, GuidancePage, NextEQPage}
 
 trait CommonFunctions
   extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "business EQ page"   => BusinessActivityEQPage
-      case "next EQ page"       => NextEQPage
-      case "guidance page"      => GuidancePage
+      case "business EQ page"       => BusinessActivityEQPage
+      case "next EQ page"           => NextEQPage
+      case "guidance page"          => GuidancePage
+      case "Global gross revenue"   => GlobalGrossRevenueEQPage
+      case "confirmation page"      => ConfirmationPage
     }
   }
 }

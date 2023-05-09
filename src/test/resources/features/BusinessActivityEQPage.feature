@@ -8,7 +8,7 @@ Feature: Business activity within UK EQs
     And The caption should be Check if your group is liable
     And The Heading should be Does any business in your group have business activity in the UK?
     When I choose Yes and continue
-    Then I should navigate to next EQ page
+    Then I should navigate to Global gross revenue
 
   Scenario: 2 - User navigates to guidance page
     Given I am on Business activity EQ Page
@@ -29,6 +29,6 @@ Feature: Business activity within UK EQs
     And The caption should be Check if your group is liable
     And The Heading should be Does any business in your group have business activity in the UK?
     When I choose Yes and continue
-    Then I should navigate to next EQ page
+    Then I should navigate to Global gross revenue
     When I select back link
     Then I should navigate to business EQ page
