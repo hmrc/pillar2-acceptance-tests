@@ -14,18 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber
-import com.typesafe.config.{Config, ConfigFactory}
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
+package uk.gov.hmrc.test.ui.pages
 
-trait PageObject {
-  val config: Config        = ConfigFactory.load()
-  val env: String           = config.getString("environment")
-  val defaultConfig: Config = config.getConfig("local")
-  val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
-  val rootUrl: String       =  TestConfiguration.url("pillar2-frontend")
-  val back                  = "backLink"
-  val submit                = "submit"
-  val url                   : String
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
+
+object GUKGuidancePage extends PageObject {
+  val url: String        = "https://www.gov.uk/government/publications/introduction-of-the-new-multinational-top-up-tax/multinational-top-up-tax-uk-adoption-of-organisation-for-economic-co-operation-and-development-pillar-2"
+  val header: String     = "h1.govuk-heading-xl"
 }

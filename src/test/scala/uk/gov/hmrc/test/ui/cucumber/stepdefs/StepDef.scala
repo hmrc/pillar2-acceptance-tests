@@ -124,8 +124,11 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorMessage)
         getTextOf(By cssSelector (MultipleTerritoriesEQPage.errorMessage)) should include(error)
-
     }
+  }
+
+  And("""^I click (.*) link$""") { (linkText: String) =>
+    Input.clickByLinkText(linkText)
   }
 
 /*  Given("""^I fill (.*) and continue$""") { page: String =>
