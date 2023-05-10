@@ -21,22 +21,23 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, MTGuidancePage, NextEQPage}
+import uk.gov.hmrc.test.ui.pages.{BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, MTGuidancePage, MultipleTerritoriesEQPage, NextEQPage}
 
 trait CommonFunctions
   extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "business EQ page"       => BusinessActivityEQPage
-      case "next EQ page"           => NextEQPage
-      case "guidance page"          => GuidancePage
-      case "Global gross revenue"   => GlobalGrossRevenueEQPage
-      case "confirmation page"      => ConfirmationPage
-      case "BA guidance page"       => BAGuidancePage
-      case "MT guidance page"       => MTGuidancePage
-      case "GGR guidance page"      => GGRGuidancePage
-      case "gov uk guidance page"   => GUKGuidancePage
+      case "multiple territories EQ page"     => MultipleTerritoriesEQPage
+      case "business EQ page"                 => BusinessActivityEQPage
+      case "next EQ page"                     => NextEQPage
+      case "guidance page"                    => GuidancePage
+      case "Global gross revenue"             => GlobalGrossRevenueEQPage
+      case "confirmation page"                => ConfirmationPage
+      case "BA guidance page"                 => BAGuidancePage
+      case "MT guidance page"                 => MTGuidancePage
+      case "GGR guidance page"                => GGRGuidancePage
+      case "gov uk guidance page"             => GUKGuidancePage
     }
   }
 }
