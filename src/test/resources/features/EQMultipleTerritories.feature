@@ -26,6 +26,10 @@ I must have the facility to answer the Multiple territories EQ on Pillar 2 servi
     And The Heading should be Based on your answers, you’re not covered by Pillar 2 top-up tax
     And The Body content should be Pillar 2 top-up tax applies to businesses with activities in more than one country. It’s likely that you’re not covered by this law.
     And The Body content should be Your business should continue to pay tax as usual in the country where you operate.
+    When I select back link
+    Then I should navigate to multiple territories EQ page
+    When I choose No and continue
+    Then I should navigate to MT guidance page
     When I click More about Pillar 2 top-up tax link
     Then I should navigate to gov uk guidance page
 

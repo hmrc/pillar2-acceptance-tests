@@ -26,5 +26,9 @@ Feature: Global gross revenue EQ
     And The Heading should be Based on your answers, you do not need to pay Pillar 2 top-up tax
     And The Body content should be Pillar 2 top-up tax may apply to businesses with revenue of over 750 million euros in 2 of the last 4 accounting periods.
     And The Body content should be You will not be covered by this law if your revenue is lower.
+    When I select back link
+    Then I should navigate to Global gross revenue
+    When I choose No and continue
+    Then I should navigate to GGR guidance page
     When I click More about Pillar 2 top-up tax link
     Then I should navigate to gov uk guidance page
