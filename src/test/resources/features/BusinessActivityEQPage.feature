@@ -15,7 +15,12 @@ Feature: Business activity within UK EQs
     And The caption should be Check if your group is liable
     And The Body content should be Does any business in your group have business activity in the UK?
     When I choose No and continue
-    Then I should navigate to guidance page
+    Then I should navigate to BA guidance page
+    And The Heading should be Based on your answers, you do not need to pay Pillar 2 top-up tax in the UK
+    And The Body content should be Pillar 2 top-up tax may be collected in the UK when you have business activity here.
+    And The Body content should be If your group only operates in other countries, you should check where any liability might apply.
+    When I click More about Pillar 2 top-up tax link
+    Then I should navigate to gov uk guidance page
 
   Scenario: 3 - Display an error message, when user continue without selecting an option
     Given I am on Business activity EQ Page

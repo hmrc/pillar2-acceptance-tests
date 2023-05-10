@@ -48,7 +48,7 @@ object Wait extends BasePage {
   }
 
   def waitForElementToPresentByCssSelector(cssSelector: String): WebElement = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10))
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
     driverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)))
   }
 
