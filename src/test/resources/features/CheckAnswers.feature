@@ -1,4 +1,4 @@
-@tests @zap
+@tests @zap_accessibility
 Feature: Check Answers Page
   Scenario: 1 - Display check your answer page
     Given Organisation User logs in to register for Pillar2
