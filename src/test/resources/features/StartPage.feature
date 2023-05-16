@@ -1,4 +1,4 @@
-@tests @zap
+@tests @zap_accessibility
 Feature: Already registered user go to "Your organisation is already registered" page
 
   Scenario: 1 - Start page

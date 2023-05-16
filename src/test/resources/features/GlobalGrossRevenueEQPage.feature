@@ -1,4 +1,4 @@
-@tests @zap
+@tests @zap_accessibility
 Feature: Global gross revenue EQ
   As a MNE user
   I want to answer the Global gross revenue EQ
