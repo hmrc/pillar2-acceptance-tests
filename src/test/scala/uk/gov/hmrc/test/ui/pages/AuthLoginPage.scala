@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav}
+import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, PageObject}
 
-object AuthLoginPage extends BasePage {
+object AuthLoginPage extends BasePage with PageObject {
   val url: String              = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
   val frontEndUrl: String      = TestConfiguration.url("pillar2-frontend")
   val redirectUrlField: String = "redirectionUrl"

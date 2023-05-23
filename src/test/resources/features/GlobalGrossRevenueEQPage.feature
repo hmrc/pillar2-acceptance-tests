@@ -16,6 +16,10 @@ Feature: Global gross revenue EQ
     And The Heading should be Has your group had revenue of more than 750 million euros in 2 of the last 4 accounting periods?
     When I choose Yes and continue
     Then I should navigate to confirmation page
+    And The Heading should be You need to register this group for Global Minimum Tax
+    And The Body content should be You will now need to sign in to HMRC online services to register.
+    When I continue
+    Then I should be on auth-login page
 
   Scenario: 3 - User navigates to guidance page
     Given I am on Global gross revenue Page

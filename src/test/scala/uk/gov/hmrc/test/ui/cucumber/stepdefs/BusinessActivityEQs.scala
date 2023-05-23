@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationToPageUrl}
+import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationToPageUrl, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
@@ -46,7 +46,12 @@ class BusinessActivityEQs extends CommonFunctions {
     assertNavigationToPage(pageMatch(page))
   }
 
-  And("""^I continue without selecting an option$""") { () =>
+  Then("""^I should be on (.*)""") { (page: String) =>
+    Wait.waitForElementToClicktagName("h1")
+    assertNavigationUrl(pageMatch(page))
+  }
+
+  And("""^I continue|I continue without selecting an option$""") { () =>
     BusinessActivityEQPage.clickContinue()
   }
 }
