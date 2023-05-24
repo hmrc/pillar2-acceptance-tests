@@ -40,6 +40,9 @@ object Check extends BasePage {
   def assertNavigationToPage(page: PageObject) =
     Wait.waitForUrlToBeVisible(page.url)
 
+  def assertNavigationUrl(page: PageObject) =
+    Wait.waitForUrl(page.url)
+
   def assertNavigationToPageUrl(page: PageObject) = {
     Wait.waitForUrlToBeVisible(page.url)
     currentUrl shouldBe page.url
