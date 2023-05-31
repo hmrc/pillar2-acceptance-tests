@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 
 object BAGuidancePage extends PageObject {
-  val url: String        = s"$rootUrl"+"eligibility/kb-in-the-uk-ineligible"
+  val url: String        = s"$rootUrl"+"eligibility/service-not-suitable/not-active-in-uk"
   val header: String     = "h1.govuk-heading-l"
   val backLink           = ".govuk-back-link"
 
