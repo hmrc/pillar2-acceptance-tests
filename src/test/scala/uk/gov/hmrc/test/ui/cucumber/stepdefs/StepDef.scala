@@ -32,6 +32,12 @@ class StepDef extends BaseStepDef {
     }
   }
 
+  Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginForSubscribe(name)
+    }
+  }
+
   Then("""^I navigate to (.*) page$""") { page: String =>
     page match {
       case "start"      =>
