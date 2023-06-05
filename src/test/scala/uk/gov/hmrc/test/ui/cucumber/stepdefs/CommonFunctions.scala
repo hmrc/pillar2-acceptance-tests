@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, MTGuidancePage, MultipleTerritoriesEQPage, NextEQPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, MTGuidancePage, MultipleTerritoriesEQPage, NextEQPage, TaskListPage}
 
 trait CommonFunctions
   extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
@@ -39,6 +39,8 @@ trait CommonFunctions
       case "GGR guidance page"                => GGRGuidancePage
       case "gov uk guidance page"             => GUKGuidancePage
       case "auth-login page"                  => AuthLoginPage
+      case "Task list page"                   => TaskListPage
+      case "employee status page"             => EmployeeStatusPage
     }
   }
 }
