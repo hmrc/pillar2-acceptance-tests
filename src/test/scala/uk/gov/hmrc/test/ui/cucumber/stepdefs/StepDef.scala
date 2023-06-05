@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, MultipleTerritoriesEQPage, NextEQPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, NextEQPage}
 
 class StepDef extends BaseStepDef {
 
@@ -90,6 +90,11 @@ class StepDef extends BaseStepDef {
         navigateTo(MultipleTerritoriesEQPage.url)
         Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.eqForm)
         isVisible(By.cssSelector(MultipleTerritoriesEQPage.eq)) shouldBe true
+      case "Initial Guidance" =>
+        navigateTo(InitialGuidancePage.url)
+        Wait.waitForTagNameToBeRefreshed("h1")
+        isVisible(By.cssSelector(InitialGuidancePage.eq)) shouldBe true
+
     }
   }
 
