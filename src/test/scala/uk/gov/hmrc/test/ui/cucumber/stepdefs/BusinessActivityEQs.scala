@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigat
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.BusinessActivityEQPage
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InitialGuidancePage}
 class BusinessActivityEQs extends CommonFunctions {
 
   And("""^I choose (.*) and continue$""") { (option: String) =>
