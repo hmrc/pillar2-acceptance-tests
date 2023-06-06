@@ -32,6 +32,12 @@ class StepDef extends BaseStepDef {
     }
   }
 
+  Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginForSubscribe(name)
+    }
+  }
+
   Then("""^I navigate to (.*) page$""") { page: String =>
     page match {
       case "start"      =>
@@ -62,7 +68,10 @@ class StepDef extends BaseStepDef {
   ) { (negate: String) =>
     Input.clickSubmit
   }
-
+  When("""^(I click on Continue button)""")
+   { (negate: String) =>
+     InitialGuidancePage.clickContinue()
+  }
   Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
     Input.sendKeysById(text, id)
   }
@@ -90,10 +99,7 @@ class StepDef extends BaseStepDef {
         navigateTo(MultipleTerritoriesEQPage.url)
         Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.eqForm)
         isVisible(By.cssSelector(MultipleTerritoriesEQPage.eq)) shouldBe true
-      case "Initial Guidance" =>
-        navigateTo(InitialGuidancePage.url)
-        Wait.waitForTagNameToBeRefreshed("h1")
-        isVisible(By.cssSelector(InitialGuidancePage.eq)) shouldBe true
+
 
     }
   }
@@ -130,6 +136,11 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorMessage)
         getTextOf(By cssSelector (MultipleTerritoriesEQPage.errorMessage)) should include(error)
     }
+  }
+
+  Then("""^The caption must be (.*)$""") { caption: String =>
+    Wait.waitForElementToPresentByCssSelector(InitialGuidancePage.caption)
+    assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).contains(caption))
   }
 
   And("""^I click (.*) link$""") { (linkText: String) =>

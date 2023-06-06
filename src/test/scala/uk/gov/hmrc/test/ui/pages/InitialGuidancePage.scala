@@ -23,10 +23,9 @@ object InitialGuidancePage extends PageObject {
   val url: String     = s"$rootUrl"+"business-matching/match-hmrc-records"
 
   val caption         = ".govuk-caption-l"
-  val eq = ".govuk-grid-row"
-  val header: String     = "h1.govuk-heading-l"
-  val continue        = "form[action*='submit'] button"
-  val backLink           = ".govuk-back-link"
+  val header: String  = "h1.govuk-heading-l"
+  val continue        = ".govuk-button"
+  val backLink        = ".govuk-back-link"
 
   def clickContinue() = findByCss(continue).click()
 

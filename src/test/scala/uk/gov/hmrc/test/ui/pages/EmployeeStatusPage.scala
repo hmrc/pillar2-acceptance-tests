@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.pages.GGRGuidancePage.rootUrl
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@tests"
-)
-class Runner {}
 
+object EmployeeStatusPage extends PageObject {
+ // TO DO Update this after the implementation
+//  val url: String        = s"$rootUrl"+"/business-matching/ultimate-parent/match-hmrc-records"
+  val url: String     = s"$rootUrl"+"under-construction"
+}
