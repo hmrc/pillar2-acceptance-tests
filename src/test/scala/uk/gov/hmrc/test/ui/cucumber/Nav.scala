@@ -22,12 +22,17 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object Nav extends BasePage {
   val url = ""
 
+  def getCurrentUrl() {
+    driver.getCurrentUrl
+  }
+
   def navigateTo(url: String): Unit =
     driver.navigate.to(url)
 
   def browserBack() {
     driver.navigate().back()
   }
+
   def isVisible(by: By): Boolean =
     driver.findElements(by).size() != 0
 

@@ -151,6 +151,16 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
+
+      case "Input UPE Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorLink)
+        getTextOf(By cssSelector (UPEPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
+        getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
     }
   }
 

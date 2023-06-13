@@ -27,7 +27,7 @@ object UPEPage extends PageObject {
   val eq               = ".govuk-form-group .govuk-fieldset"
   val continue         = "#submit"
   val errorSummary     = ".govuk-error-summary__list"
-  val errorLink        = "[href='#value_0']"
+  val errorLink        = "[href*='#value']"
   val backLink         = ".govuk-back-link"
   val errorMessage     = ".govuk-error-message"
 
