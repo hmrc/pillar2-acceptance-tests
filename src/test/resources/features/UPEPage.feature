@@ -36,6 +36,7 @@ Feature: Ultimate parent entity based in UK EQs
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I choose No and continue
     Then I should navigate to input-upe-name page
+    And The caption must be Business details
     And The Heading should be What is the name of the ultimate parent entity?
     When I select back link
     Then I should be on UPE page
