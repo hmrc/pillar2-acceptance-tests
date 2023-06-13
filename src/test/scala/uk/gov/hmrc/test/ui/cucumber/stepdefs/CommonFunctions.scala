@@ -21,7 +21,10 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InputCRNPage, InputUPEAddressPage, InputUPENamePage, MTGuidancePage, MultipleTerritoriesEQPage, NextEQPage, TaskListPage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{InputCRNPage, InputUPEAddressPage, InputUPENamePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, EmployeeStatusPage}
+import uk.gov.hmrc.test.ui.pages.{GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, MTGuidancePage}
+import uk.gov.hmrc.test.ui.pages.{MultipleTerritoriesEQPage, NextEQPage, TaskListPage,InitialGuidancePage}
 
 trait CommonFunctions
   extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
@@ -40,6 +43,7 @@ trait CommonFunctions
       case "gov uk guidance page"             => GUKGuidancePage
       case "auth-login page"                  => AuthLoginPage
       case "Task list page"                   => TaskListPage
+      case "Initial guidance Page"            => InitialGuidancePage
       case "employee status page"             => EmployeeStatusPage
       case "UPE page"                         => UPEPage
       case "input-upe-name page"              => InputUPENamePage

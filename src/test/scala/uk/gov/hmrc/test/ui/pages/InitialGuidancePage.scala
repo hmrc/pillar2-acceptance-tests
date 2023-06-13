@@ -19,18 +19,15 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object InputUPENamePage extends PageObject {
-  val url: String      = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-name"
+object InitialGuidancePage extends PageObject {
+  val url: String     = s"$rootUrl"+"business-matching/match-hmrc-records"
 
-  val caption          = ".govuk-caption-l"
-  val form             = ".govuk-form-group"
-  val nameField        = "value"
-  val continue         = ".govuk-button"
-  val errorSummary     = ".govuk-error-summary__list"
-  val errorLink        = "[href='#value_0']"
-  val backLink         = ".govuk-back-link"
-  val errorMessage     = ".govuk-error-message"
+  val caption         = ".govuk-caption-l"
+  val header: String  = "h1.govuk-heading-l"
+  val continue        = ".govuk-button"
+  val backLink        = ".govuk-back-link"
 
-  def clickContinue()  = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
+
 
 }

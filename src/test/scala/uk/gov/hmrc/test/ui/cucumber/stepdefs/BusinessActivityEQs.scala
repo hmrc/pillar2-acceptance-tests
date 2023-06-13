@@ -19,17 +19,21 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationToPageUrl, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
+import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, url}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.BusinessActivityEQPage
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InitialGuidancePage}
 class BusinessActivityEQs extends CommonFunctions {
 
   And("""^I choose (.*) and continue$""") { (option: String) =>
     option match {
-      case "Yes" => Input.clickById ("value_0")
-      case "No" => Input.clickById ("value_1")
+      case "Yes" => Input.clickById("value_0")
+      case "No" => Input.clickById("value_1")
     }
+   if (url.contains("business-matching/ultimate-parent/registered-in-uk")) {
+          InitialGuidancePage.clickContinue()
+  }  else {
     BusinessActivityEQPage.clickContinue()
+  }
   }
 
   And("""^I select back link$""") { () =>

@@ -1,4 +1,4 @@
-@tests
+
 Feature: Other Functionalities
   Scenario:1 User clicks sign out
     Given Organisation User logs in to register for Pillar2

@@ -22,10 +22,11 @@ import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, PageObject}
 import uk.gov.hmrc.test.ui.pages.BAGuidancePage.rootUrl
 
 object AuthLoginPage extends BasePage with PageObject {
-  val url: String              = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val frontEndUrl: String      = TestConfiguration.url("pillar2-frontend")
+  val url: String                         = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  val frontEndUrl: String                 = TestConfiguration.url("pillar2-frontend")
   val frontEndSubscribeUrl: String        = s"$rootUrl"+"task-list/register-for-global-minimum-tax"
-  val redirectUrlField: String = "redirectionUrl"
+  val frontEndUPEUrl: String              = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
+  val redirectUrlField: String            = "redirectionUrl"
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
@@ -34,9 +35,16 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton
   }
 
-  def loginForSubscribe(name: String): Unit = {
+  def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndSubscribeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToUPE(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton
   }

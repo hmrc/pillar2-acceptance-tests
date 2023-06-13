@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, MultipleTerritoriesEQPage, NextEQPage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEPage}
 
 class StepDef extends BaseStepDef {
 
@@ -34,7 +34,13 @@ class StepDef extends BaseStepDef {
 
   Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
     name match {
-      case "Organisation User" => AuthLoginPage.loginForSubscribe(name)
+      case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
+    }
+  }
+
+  Given("""^(.*) logs in as upe for Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToUPE(name)
     }
   }
 
@@ -68,7 +74,10 @@ class StepDef extends BaseStepDef {
   ) { (negate: String) =>
     Input.clickSubmit
   }
-
+  When("""^(I click on Continue button)""")
+   { (negate: String) =>
+     InitialGuidancePage.clickContinue()
+  }
   Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
     Input.sendKeysById(text, id)
   }
@@ -96,6 +105,8 @@ class StepDef extends BaseStepDef {
         navigateTo(MultipleTerritoriesEQPage.url)
         Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.eqForm)
         isVisible(By.cssSelector(MultipleTerritoriesEQPage.eq)) shouldBe true
+
+
     }
   }
 
@@ -141,6 +152,11 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
     }
+  }
+
+  Then("""^The caption must be (.*)$""") { caption: String =>
+    Wait.waitForElementToPresentByCssSelector(InitialGuidancePage.caption)
+    assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).contains(caption))
   }
 
   And("""^I click (.*) link$""") { (linkText: String) =>
