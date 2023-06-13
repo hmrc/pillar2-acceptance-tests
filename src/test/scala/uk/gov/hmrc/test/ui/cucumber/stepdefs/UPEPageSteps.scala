@@ -14,26 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputUPENamePage}
 
-object Nav extends BasePage {
-  val url = ""
-
-  def getCurrentUrl() {
-    driver.getCurrentUrl
+class UPEPageSteps extends CommonFunctions {
+  And("""^I enter UPE name as (.*) and continue$""") { UPEName: String =>
+    Input.sendKeysById(UPEName,InputUPENamePage.nameField)
+    clickByCss(InputUPENamePage.continue)
   }
-
-  def navigateTo(url: String): Unit =
-    driver.navigate.to(url)
-
-  def browserBack() {
-    driver.navigate().back()
-  }
-
-  def isVisible(by: By): Boolean =
-    driver.findElements(by).size() != 0
-
 }

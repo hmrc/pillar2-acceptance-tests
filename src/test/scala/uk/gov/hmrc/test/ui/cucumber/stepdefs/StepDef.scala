@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, NextEQPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEPage}
 
 class StepDef extends BaseStepDef {
 
@@ -34,7 +34,13 @@ class StepDef extends BaseStepDef {
 
   Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
     name match {
-      case "Organisation User" => AuthLoginPage.loginForSubscribe(name)
+      case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
+    }
+  }
+
+  Given("""^(.*) logs in as upe for Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToUPE(name)
     }
   }
 
@@ -135,6 +141,26 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorMessage)
         getTextOf(By cssSelector (MultipleTerritoriesEQPage.errorMessage)) should include(error)
+
+      case "UPE EQ" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorLink)
+        getTextOf(By cssSelector (UPEPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
+        getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
+
+      case "Input UPE Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorLink)
+        getTextOf(By cssSelector (UPEPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
+        getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
     }
   }
 
