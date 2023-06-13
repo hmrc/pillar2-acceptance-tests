@@ -20,7 +20,6 @@ import org.openqa.selenium.By
 import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationToPageUrl, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.Nav.{getCurrentUrl, isVisible, url}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
 import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InitialGuidancePage}
 
@@ -31,11 +30,7 @@ class BusinessActivityEQs extends CommonFunctions {
       case "Yes" => Input.clickById("value_0")
       case "No" => Input.clickById("value_1")
     }
-    if (currentUrl.contains("ultimate-parent/registered-in-uk")) {
-      InitialGuidancePage.clickContinue()
-    } else {
       BusinessActivityEQPage.clickContinue()
-    }
   }
 
   And("""^I select back link$""") { () =>

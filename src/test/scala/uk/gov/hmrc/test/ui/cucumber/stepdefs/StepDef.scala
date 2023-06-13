@@ -173,47 +173,55 @@ class StepDef extends BaseStepDef {
     Input.clickByLinkText(linkText)
   }
 
-/*  Given("""^I fill (.*) and continue$""") { page: String =>
-    page match {
-      case "What is the main address of your business page" => Forms.addressNonUK()
+  And("""^I select option (.*) and continue to next$""") { (option: String) =>
+    option match {
+      case "Yes" => Input.clickById("value_0")
+      case "No" => Input.clickById("value_1")
     }
-    Input.clickSubmit()
+    InitialGuidancePage.clickContinue()
   }
 
-  And(
-    """^(click Continue button|click Confirm and send|click Try Again)$"""
-  ) { (negate: String) =>
-    Input.clickSubmit
-  }
+  /*  Given("""^I fill (.*) and continue$""") { page: String =>
+      page match {
+        case "What is the main address of your business page" => Forms.addressNonUK()
+      }
+      Input.clickSubmit()
+    }
 
-  Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
-    Input.sendKeysById(text, id)
-  }
+    And(
+      """^(click Continue button|click Confirm and send|click Try Again)$"""
+    ) { (negate: String) =>
+      Input.clickSubmit
+    }
 
-  And("""^I select (.*) and continue$""") { (id: String) =>
-    Input.clickById(id)
-    Input.clickSubmit
-  }
+    Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
+      Input.sendKeysById(text, id)
+    }
 
-  And("""^I click (.*)$""") { (id: String) =>
-    Input.clickByLinkText(id)
-  }
+    And("""^I select (.*) and continue$""") { (id: String) =>
+      Input.clickById(id)
+      Input.clickSubmit
+    }
 
-  And("""^click (.*) element$""") { (id: String) =>
-    Input.clickById(id)
-  }
+    And("""^I click (.*)$""") { (id: String) =>
+      Input.clickByLinkText(id)
+    }
 
-  Then("""^The Page should include (.*)$""") { text: String =>
-    Check.checkBodyText(text)
-  }
+    And("""^click (.*) element$""") { (id: String) =>
+      Input.clickById(id)
+    }
 
-  Then("""wait for (.*) seconds$""") { (secs: Int) =>
-    Wait.secondsWait(secs)
-  }
+    Then("""^The Page should include (.*)$""") { text: String =>
+      Check.checkBodyText(text)
+    }
 
-  Given("""^the user should be on the new window with heading (.*)""") { (title: String) =>
-    Input.switchToNewWindow
-    Check.checkH1(title)
-  }*/
+    Then("""wait for (.*) seconds$""") { (secs: Int) =>
+      Wait.secondsWait(secs)
+    }
+
+    Given("""^the user should be on the new window with heading (.*)""") { (title: String) =>
+      Input.switchToNewWindow
+      Check.checkH1(title)
+    }*/
 
 }

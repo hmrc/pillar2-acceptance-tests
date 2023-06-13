@@ -17,14 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import org.openqa.selenium.By
+import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Nav extends BasePage {
   val url = ""
-
-  def getCurrentUrl() {
-    driver.getCurrentUrl
-  }
 
   def navigateTo(url: String): Unit =
     driver.navigate.to(url)

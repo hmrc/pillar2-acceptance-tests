@@ -16,7 +16,7 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should be on UPE page
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
-    When I choose No and continue
+    When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I click on Continue button
     Then I should see error message You need to enter the name of the ultimate parent entity on the Input UPE Name Page
@@ -26,7 +26,7 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should be on UPE page
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
-    When I choose Yes and continue
+    When I select option Yes and continue to next
     Then I should navigate to input-crn page
 
   Scenario: 4 - User navigates to enter UPE name page
@@ -34,13 +34,13 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should be on UPE page
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
-    When I choose No and continue
+    When I select option No and continue to next
     Then I should navigate to input-upe-name page
     And The caption must be Business details
     And The Heading should be What is the name of the ultimate parent entity?
     When I select back link
     Then I should be on UPE page
-    When I choose No and continue
+    When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test UPE and continue
     Then I should navigate to input-upe-address page
@@ -50,7 +50,7 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should be on UPE page
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
-    When I choose Yes and continue
+    When I select option Yes and continue to next
     Then I should navigate to input-crn page
     When I select back link
     Then I should be on UPE page
