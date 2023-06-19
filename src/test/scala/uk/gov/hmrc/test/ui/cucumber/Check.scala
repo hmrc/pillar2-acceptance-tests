@@ -48,4 +48,12 @@ object Check extends BasePage {
     currentUrl shouldBe page.url
   }
 
+  def checkAnswerSelection(option: String) = {
+    option match {
+      case "Yes" => Find.findByCss("#value_0").isSelected
+      case "No"  => Find.findByCss("#value_1").isSelected
+    }
+
+}
+
 }

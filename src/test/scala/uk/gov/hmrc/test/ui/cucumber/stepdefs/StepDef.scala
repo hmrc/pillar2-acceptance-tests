@@ -44,6 +44,12 @@ class StepDef extends BaseStepDef {
     }
   }
 
+  Given("""^(.*) logs in as upe with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name,credId)
+    }
+  }
+
   Then("""^I navigate to (.*) page$""") { page: String =>
     page match {
       case "start"      =>
@@ -83,6 +89,11 @@ class StepDef extends BaseStepDef {
   }
 
   And("""^I select (.*) and continue$""") { (id: String) =>
+    Input.clickById(id)
+    Input.clickSubmit
+  }
+
+  And("""^I select SignOut link$""") { (id: String) =>
     Input.clickById(id)
     Input.clickSubmit
   }
