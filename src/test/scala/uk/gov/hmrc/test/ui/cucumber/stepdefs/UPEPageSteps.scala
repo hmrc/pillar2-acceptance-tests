@@ -16,15 +16,30 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputUPENamePage}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Input}
+import uk.gov.hmrc.test.ui.pages.{InputUPENamePage, UPEPage}
 
 class UPEPageSteps extends CommonFunctions {
   And("""^I enter UPE name as (.*) and continue$""") { UPEName: String =>
-    Input.sendKeysById(UPEName,InputUPENamePage.nameField)
+    Input.sendKeysByCss(UPEName,InputUPENamePage.nameField)
     clickByCss(InputUPENamePage.continue)
   }
+
+  And("""^I am on feedback survey page$""") { () =>
+    Check.checkH1("Give feedback")
+  }
+
+  And("""^I should see the answer (.*) remain selected$""") { (answer: String) =>
+    Check.checkAnswerSelection(answer)
+  }
+
+  And("""^I should see the UPE name (.*) is pre-populated$""") { (UPEName: String) =>
+    assert(getAttribueOf(InputUPENamePage.nameField,"value").equals(UPEName))
+  }
+
+  When("""I continue to next page""") { () =>
+    UPEPage.clickContinue();
+  }
+
 }

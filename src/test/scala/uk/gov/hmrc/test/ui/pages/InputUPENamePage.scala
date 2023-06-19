@@ -24,7 +24,7 @@ object InputUPENamePage extends PageObject {
 
   val caption          = ".govuk-caption-l"
   val form             = ".govuk-form-group"
-  val nameField        = "value"
+  val nameField        = "#value"
   val continue         = ".govuk-button"
   val errorSummary     = ".govuk-error-summary__list"
   val errorLink        = "[href='#value_0']"
