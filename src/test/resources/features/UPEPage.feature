@@ -42,7 +42,7 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should be on UPE page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
-    When I enter UPE name as Test UPE and continue
+    When I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
 
   Scenario: 5 - User navigates to previous eligibility question

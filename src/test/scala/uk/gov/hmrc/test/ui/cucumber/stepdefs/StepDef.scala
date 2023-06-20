@@ -20,15 +20,15 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEAddressPage, UPEPage}
 
 class StepDef extends BaseStepDef {
 
   Given("""^(.*) logs in to register for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginWithUser(name)
-      case "Individual User"   => AuthLoginPage.loginAsInd(name)
-      case "Assistant User"    => AuthLoginPage.loginAssistant(name)
+      case "Individual User" => AuthLoginPage.loginAsInd(name)
+      case "Assistant User" => AuthLoginPage.loginAssistant(name)
     }
   }
 
@@ -46,13 +46,13 @@ class StepDef extends BaseStepDef {
 
   Given("""^(.*) logs in as upe with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
-      case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name,credId)
+      case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name, credId)
     }
   }
 
   Then("""^I navigate to (.*) page$""") { page: String =>
     page match {
-      case "start"      =>
+      case "start" =>
         Nav.navigateTo("http://localhost:10050/pillar-two")
       case "individual" =>
         Nav.navigateTo(
@@ -80,9 +80,8 @@ class StepDef extends BaseStepDef {
   ) { (negate: String) =>
     Input.clickSubmit
   }
-  When("""^(I click on Continue button)""")
-   { (negate: String) =>
-     InitialGuidancePage.clickContinue()
+  When("""^(I click on Continue button)""") { (negate: String) =>
+    InitialGuidancePage.clickContinue()
   }
   Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
     Input.sendKeysById(text, id)
@@ -116,8 +115,6 @@ class StepDef extends BaseStepDef {
         navigateTo(MultipleTerritoriesEQPage.url)
         Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.eqForm)
         isVisible(By.cssSelector(MultipleTerritoriesEQPage.eq)) shouldBe true
-
-
     }
   }
 
@@ -172,6 +169,39 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
+    }
+  }
+  And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
+    page match {
+      case "Address Line" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.addressErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentById(UPEAddressPage.addressErrorMessage)
+        getTextOf(By id (UPEAddressPage.addressErrorMessage)) should include(error)
+
+      case "City" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.cityErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentById(UPEAddressPage.cityErrorMessage)
+        getTextOf(By id (UPEAddressPage.cityErrorMessage)) should include(error)
+
+      case "Country" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.countryErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentById(UPEAddressPage.countryErrorMessage)
+        getTextOf(By id (UPEAddressPage.countryErrorMessage)) should include(error)
     }
   }
 

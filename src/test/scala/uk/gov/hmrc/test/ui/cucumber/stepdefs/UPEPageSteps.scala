@@ -16,14 +16,55 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input}
 import uk.gov.hmrc.test.ui.pages.{InputUPENamePage, UPEPage}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
+import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputUPENamePage, UPEAddressPage}
 
 class UPEPageSteps extends CommonFunctions {
-  And("""^I enter UPE name as (.*) and continue$""") { UPEName: String =>
-    Input.sendKeysByCss(UPEName,InputUPENamePage.nameField)
-    clickByCss(InputUPENamePage.continue)
+
+  And("""^I enter (.*) as (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "UPE name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(name, InputUPENamePage.nameField)
+        clickByCss(InputUPENamePage.continue)
+
+      case "Address Line 1" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentById(UPEAddressPage.addressLine1)
+        Input.sendKeysById(name, UPEAddressPage.addressLine1)
+
+      case "Address Line 2" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentById(UPEAddressPage.addressLine2)
+        Input.sendKeysById(name, UPEAddressPage.addressLine2)
+
+      case "City" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentById(UPEAddressPage.townOrCity)
+        Input.sendKeysById(name, UPEAddressPage.townOrCity)
+
+      case "Region" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentById(UPEAddressPage.region)
+        Input.sendKeysById(name, UPEAddressPage.region)
+
+      case "Postal Code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentById(UPEAddressPage.postalCode)
+        Input.sendKeysById(name, UPEAddressPage.postalCode)
+
+      case "Country" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentById(UPEAddressPage.country)
+        Input.sendKeysById(name, UPEAddressPage.country)
+
+    }
+
   }
 
   And("""^I am on feedback survey page$""") { () =>
@@ -34,12 +75,29 @@ class UPEPageSteps extends CommonFunctions {
     Check.checkAnswerSelection(answer)
   }
 
-  And("""^I should see the UPE name (.*) is pre-populated$""") { (UPEName: String) =>
-    assert(getAttribueOf(InputUPENamePage.nameField,"value").equals(UPEName))
+  And("""^I should see the (.*) field is pre-populated with (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "UPE name" =>
+        assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
+      case "Address Line 1" =>
+        assert(getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name))
+      case "Address Line 2" =>
+        assert(getAttributeOf(UPEAddressPage.addressLine2, "value").equals(name))
+      case "City" =>
+        assert(getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name))
+      case "Region" =>
+        assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
+      case "Postal Code" =>
+        assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
+      case "Country" =>
+        assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
+
+    }
   }
 
   When("""I continue to next page""") { () =>
     UPEPage.clickContinue();
   }
+
 
 }
