@@ -18,11 +18,10 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input}
-import uk.gov.hmrc.test.ui.pages.{InputUPENamePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputUPENamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEPage}
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputUPENamePage, UPEAddressPage}
 
 class UPEPageSteps extends CommonFunctions {
 
@@ -63,6 +62,16 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentById(UPEAddressPage.country)
         Input.sendKeysById(name, UPEAddressPage.country)
 
+      case "UPE Person/Team name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentById(UPEContactNamePage.contactName)
+        Input.sendKeysById(name, UPEContactNamePage.contactName)
+
+      case "UPE Email address" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentById(UPEContactEmailPage.emailField)
+        Input.sendKeysById(name, UPEContactEmailPage.emailField)
+
     }
 
   }
@@ -91,6 +100,10 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
       case "Country" =>
         assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
+      case "UPE Person/Team name" =>
+        assert(getAttributeOf(UPEContactNamePage.contactName, "value").equals(name))
+      case "UPE Email address" =>
+        assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
 
     }
   }

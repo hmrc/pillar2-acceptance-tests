@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEAddressPage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEPage}
 
 class StepDef extends BaseStepDef {
 
@@ -169,6 +169,26 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
+
+      case "UPE Contact person/team name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEContactNamePage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEContactNamePage.errorLink)
+        getTextOf(By cssSelector (UPEContactNamePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEContactNamePage.errorMessage)
+        getTextOf(By cssSelector (UPEContactNamePage.errorMessage)) should include(error)
+
+      case "UPE contact email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEContactEmailPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEContactEmailPage.errorLink)
+        getTextOf(By cssSelector (UPEContactEmailPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEContactEmailPage.errorMessage)
+        getTextOf(By cssSelector (UPEContactEmailPage.errorMessage)) should include(error)
     }
   }
   And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
