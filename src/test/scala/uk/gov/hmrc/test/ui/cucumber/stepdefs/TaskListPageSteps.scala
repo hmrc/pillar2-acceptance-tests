@@ -16,10 +16,12 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import com.sun.tools.javac.comp.Check
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
-import uk.gov.hmrc.test.ui.cucumber.{Wait}
-import uk.gov.hmrc.test.ui.pages.{TaskListPage}
+import uk.gov.hmrc.test.ui.cucumber.Wait
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, TaskListPage}
 
 class TaskListPageSteps extends CommonFunctions {
 
@@ -30,7 +32,7 @@ class TaskListPageSteps extends CommonFunctions {
   }
 
   And("""^I should see section (\d+) as (.*)""") { (sectionNumber: Int, sectionName: String) =>
-    assert(driver.findElements(By.cssSelector(TaskListPage.taskSection)).get(sectionNumber-1).getText.contains(sectionName))
+    assert(driver.findElements(By.cssSelector(TaskListPage.taskSection)).get(sectionNumber - 1).getText.contains(sectionName))
   }
 
   And("""^I should see the task name (.*) on Business details section""") { (taskName: String) =>
@@ -44,5 +46,15 @@ class TaskListPageSteps extends CommonFunctions {
     Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
     isVisible(By.cssSelector(TaskListPage.empStatusLink)) shouldBe true
   }
+  And("""^The Task (.*) status should be (.*)$""") { (taskName: String, status: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    assert(driver.findElement(By.cssSelector(TaskListPage.taskItems)).getText.contains(taskName))
+    assert(driver.findElement(By.cssSelector(TaskListPage.status)).getText.contains(status))
+  }
 
+  And("""^I navigate back to TaskList Page from Name Page""") {
+    clickByCss(BusinessActivityEQPage.backLink)
+    clickByCss(BusinessActivityEQPage.backLink)
+    clickByCss(BusinessActivityEQPage.backLink)
+  }
 }
