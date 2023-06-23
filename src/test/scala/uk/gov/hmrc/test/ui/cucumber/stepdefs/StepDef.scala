@@ -64,6 +64,7 @@ class StepDef extends BaseStepDef {
   Then("""^The Heading should be (.*)$""") { header: String =>
     Check.checkH1(header)
   }
+
   Then("""^The Body content should be (.*)$""") { text: String =>
     Check.checkBodyText(text)
   }

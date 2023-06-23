@@ -20,10 +20,11 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 
 object TaskListPage extends PageObject {
-  val url: String        = s"$rootUrl"+"task-list/register-for-global-minimum-tax"
-  val header: String     = "h1.govuk-heading-xl"
-  val taskList           = ".app-task-list"
-  val taskSection        = ".app-task-list__section"
-  val taskItems          = ".app-task-list__items"
-  val empStatusLink      = "[aria-describedby='eligibility-status']"
+  val url: String      = s"$rootUrl" + "task-list/register-for-global-minimum-tax"
+  val header: String   = "h1.govuk-heading-xl"
+  val taskList         = ".app-task-list"
+  val taskSection      = ".app-task-list__section"
+  val taskItems        = ".app-task-list__items"
+  val empStatusLink    = "[aria-describedby='eligibility-status']"
+  val status           = "strong.govuk-tag.govuk-tag--grey.app-task-list__tag"
 }
