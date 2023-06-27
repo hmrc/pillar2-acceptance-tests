@@ -19,8 +19,7 @@ Feature: Enter UPE registered address
     And I enter Postal Code as Test Postal code
     And I enter Country as Test Country
     And I click on Continue button
-    Then I should navigate to UPE Contact Name Email page
-    And The Heading should be Under Construction
+    Then I should navigate to UPE Contact person/team Name page
 
   Scenario: 2 - User navigates to previous UPE name page
     Given Organisation User logs in as upe for Pillar2
