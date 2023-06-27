@@ -28,6 +28,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndUPEUrl: String              = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
   val redirectUrlField: String            = "redirectionUrl"
   val credIdField: String                 = "authorityId"
+  val frontEndNameUrl: String        = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name "
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
@@ -46,6 +47,13 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginToUPE(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToUPEName(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndNameUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton
   }

@@ -24,7 +24,7 @@ Feature: Enter UPE registered Contact details
     And The Heading should be What is the email address for Test Person/Team?
     When I enter UPE Email address as testteam@email.com
     And I click on Continue button
-    Then I should navigate to UPE Contact page
+    Then I should navigate to UPE Telephone page
 
   Scenario: 2 - User navigates to previous UPE contact person name and email pages
     Given Organisation User logs in as upe for Pillar2
@@ -86,7 +86,7 @@ Feature: Enter UPE registered Contact details
     Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as testteam@email.com
     And I click on Continue button
-    Then I should navigate to UPE Contact page
+    Then I should navigate to UPE Telephone page
     When I select back link
     And I click Sign out link
     Then I am on feedback survey page
