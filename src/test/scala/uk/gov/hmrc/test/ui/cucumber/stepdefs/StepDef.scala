@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEPage, InputTelephonePage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -47,6 +47,11 @@ class StepDef extends BaseStepDef {
   Given("""^(.*) logs in as upe with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name, credId)
+    }
+  }
+  Given("""^(.*) logs in as upe and navigates to name Page$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToUPEName(name)
     }
   }
 
@@ -82,6 +87,13 @@ class StepDef extends BaseStepDef {
     Input.clickSubmit
   }
   When("""^(I click on Continue button)""") { (negate: String) =>
+    InitialGuidancePage.clickContinue()
+  }
+  And("""^(I navigate from Name page to Telephone page)""") { (negate: String) =>
+    InitialGuidancePage.clickContinue()
+    InitialGuidancePage.clickContinue()
+    InitialGuidancePage.clickContinue()
+    InitialGuidancePage.clickContinue()
     InitialGuidancePage.clickContinue()
   }
   Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
@@ -170,6 +182,26 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
+
+      case "UPE Telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPETelephonePage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPETelephonePage.errorLink)
+        getTextOf(By cssSelector (UPETelephonePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPETelephonePage.errorMessage)
+        getTextOf(By cssSelector (UPETelephonePage.errorMessage)) should include(error)
+
+      case "Input Telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.errorLink)
+        getTextOf(By cssSelector (InputTelephonePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.errorMessage)
+        getTextOf(By cssSelector (InputTelephonePage.errorMessage)) should include(error)
 
       case "UPE Contact person/team name" =>
         Wait.waitForTagNameToBeRefreshed("h1")

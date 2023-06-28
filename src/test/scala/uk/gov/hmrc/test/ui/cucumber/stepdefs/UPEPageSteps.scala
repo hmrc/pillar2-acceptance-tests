@@ -18,10 +18,11 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputUPENamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputTelephonePage, InputUPENamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEPage, UPETelephonePage}
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
+
 
 class UPEPageSteps extends CommonFunctions {
 
@@ -72,6 +73,11 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentById(UPEContactEmailPage.emailField)
         Input.sendKeysById(name, UPEContactEmailPage.emailField)
 
+      case "Telephone Number" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.telephoneNumber)
+        Input.sendKeysByCss(name, InputTelephonePage.telephoneNumber)
+
     }
 
   }
@@ -104,6 +110,8 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttributeOf(UPEContactNamePage.contactName, "value").equals(name))
       case "UPE Email address" =>
         assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
+      case "Telephone number" =>
+        assert(getAttribueOf(InputTelephonePage.telephoneNumber, "value").equals(name))
 
     }
   }
