@@ -3,14 +3,7 @@ Feature: Global gross revenue EQ
   As a MNE user
   I want to answer the Global gross revenue EQ
 
-  Scenario: 1 - Display an error message, when user continue without selecting an option
-    Given I am on Global gross revenue Page
-    And The caption should be Check if your group is liable
-    And The Body content should be Has your group had revenue of more than 750 million euros in 2 of the last 4 accounting periods?
-    When I continue without selecting an option
-    Then I should see error message Select yes if your group had more than 750 million euros in 2 of the last 4 accounting periods on the Global gross revenue Page
-
-  Scenario: 2 - User navigates to next eligibility question page
+  Scenario: 1 - User navigates to next eligibility question page
     Given I am on Global gross revenue Page
     And The caption should be Check if your group is liable
     And The Heading should be Has your group had revenue of more than 750 million euros in 2 of the last 4 accounting periods?
@@ -21,7 +14,7 @@ Feature: Global gross revenue EQ
     When I continue
     Then I should be on auth-login page
 
-  Scenario: 3 - User navigates to guidance page
+  Scenario: 2 - User navigates to guidance page
     Given I am on Global gross revenue Page
     And The caption should be Check if your group is liable
     And The Body content should be Has your group had revenue of more than 750 million euros in 2 of the last 4 accounting periods?
@@ -36,3 +29,11 @@ Feature: Global gross revenue EQ
     Then I should navigate to GGR guidance page
     When I click More about Pillar 2 top-up tax link
     Then I should navigate to gov uk guidance page
+
+  Scenario: 3 - Display an error message, when user continue without selecting an option
+    Given I clear the cache
+    Given I am on Global gross revenue Page
+    And The caption should be Check if your group is liable
+    And The Body content should be Has your group had revenue of more than 750 million euros in 2 of the last 4 accounting periods?
+    When I continue without selecting an option
+    Then I should see error message Select yes if your group had more than 750 million euros in 2 of the last 4 accounting periods on the Global gross revenue Page
