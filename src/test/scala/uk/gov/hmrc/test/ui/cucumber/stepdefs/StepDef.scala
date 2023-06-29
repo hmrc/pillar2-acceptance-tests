@@ -60,6 +60,9 @@ class StepDef extends BaseStepDef {
         )
     }
   }
+  Then("""^I clear the cache$""") {
+    Nav.navigateTo("http://localhost:10050/pillar-two/test-only/eligibility/clear-session")
+  }
 
   Then("""^The Heading should be (.*)$""") { header: String =>
     Check.checkH1(header)
