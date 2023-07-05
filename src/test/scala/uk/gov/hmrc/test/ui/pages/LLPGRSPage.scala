@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@tests and not @ignore"
-)
-class Runner {}
+object LLPGRSPage extends PageObject {
+  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode&entityType=LimitedLiabilityPartnership"
 
+  val header           = ".govuk-caption-l"
+  val saveAndContinue  = ".govuk-button"
+  val backLink         = ".govuk-back-link"
+  val errorMessage     = ".govuk-error-message"
+
+  def clickContinue()  = findByCss(saveAndContinue).click()
+
+}

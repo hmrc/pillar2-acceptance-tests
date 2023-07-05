@@ -17,11 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Check, Input}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputTelephonePage, InputUPENamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputTelephonePage, InputUPENamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
-import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
+import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl, include}
 
 
 class UPEPageSteps extends CommonFunctions {
@@ -82,8 +81,8 @@ class UPEPageSteps extends CommonFunctions {
 
   }
 
-  And("""^I am on feedback survey page$""") { () =>
-    Check.checkH1("Give feedback")
+  And("""^I am on Auth login page$""") { () =>
+    Check.checkH1("Authority Wizard")
   }
 
   And("""^I should see the answer (.*) remain selected$""") { (answer: String) =>
@@ -120,5 +119,42 @@ class UPEPageSteps extends CommonFunctions {
     UPEPage.clickContinue();
   }
 
+  And("""^I select option (.*) and continue to GRS page""") { (option: String) =>
+    option match {
+      case "UK limited company"            => Input.clickById("value_0")
+      case "Limited liability partnership" => Input.clickById("value_1")
+    }
+    UPEOrgTypePage.clickContinue()
+  }
+
+  And("""^I registered successfully with (.*)""") { (option: String) =>
+    option match {
+      case "BV disabled"            => Wait.waitForElement("registrationSuccessBvDisabled")
+                                       Input.clickById("registrationSuccessBvDisabled")
+      case "BV enabled"             => Wait.waitForElement("registrationSuccessBvEnabled")
+                                       Input.clickById("registrationSuccessBvEnabled")
+    }
+  }
+
+  And("""^registration is unsuccessful with (.*) error""") { (error: String) =>
+    error match {
+      case "party type mismatch"    => Wait.waitForElement("registrationFailedPartyTypeMismatch")
+                                       Input.clickById("registrationFailedPartyTypeMismatch")
+      case "generic error"          => Wait.waitForElement("registrationFailedGeneric")
+                                       Input.clickById("registrationFailedGeneric")
+      case "identifiers not match"  => Wait.waitForElement("registrationFailedGeneric")
+                                       Input.clickById("registrationNotCalledIdentifierMismatch")
+      case "BV failed"              => Wait.waitForElement("registrationFailedGeneric")
+                                       Input.clickById("registrationNotCalledBvFailed")
+    }
+  }
+
+  Then("""^The json response Body should contain the status (.*)$""") { text: String =>
+    Check.checkBodyText(text)
+  }
+
+  And("""^I click on Save&Continue button""") {
+    UPEOrgTypePage.clickContinue()
+  }
 
 }

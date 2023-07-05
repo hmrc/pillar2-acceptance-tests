@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, InputTelephonePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputUPENamePage, MTGuidancePage, MultipleTerritoriesEQPage, NextEQPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputTelephonePage, InputUPENamePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 trait CommonFunctions
@@ -53,6 +53,9 @@ trait CommonFunctions
       case "UPE Contact person/team Name page" => UPEContactNamePage
       case "UPE Contact Email page"            => UPEContactEmailPage
       case "UPE Contact page"                  => UPEContactPage
+      case "UPE Org type page"                 => UPEOrgTypePage
+      case "UKCompany GRS page"                => UKCompanyGRSPage
+      case "LLP GRS page"                      => LLPGRSPage
     }
   }
 }
