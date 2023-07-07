@@ -92,7 +92,6 @@ Feature: Ultimate parent entity GRS journies
     And I click on Save&Continue button
     Then I should navigate to under construction page
 
-  @ignore
   Scenario: 8 - User registered as LimitedLiabilityPartnership successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE page
@@ -111,7 +110,6 @@ Feature: Ultimate parent entity GRS journies
     Then I should navigate to Task list page
     And The Task Enter ultimate parent's details status should be COMPLETED
 
-  @ignore
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE page
