@@ -27,7 +27,7 @@ Feature: Ultimate parent entity based in UK EQs
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
-    Then I should navigate to input-crn page
+    Then I should be on UPE Org type page
 
   Scenario: 4 - User navigates to enter UPE name page
     Given Organisation User logs in as upe for Pillar2
@@ -51,6 +51,6 @@ Feature: Ultimate parent entity based in UK EQs
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
-    Then I should navigate to input-crn page
+    Then I should be on UPE Org type page
     When I select back link
     Then I should be on UPE page
