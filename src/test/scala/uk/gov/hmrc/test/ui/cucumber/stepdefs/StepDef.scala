@@ -54,6 +54,11 @@ class StepDef extends BaseStepDef {
       case "Organisation User" => AuthLoginPage.loginToUPEName(name)
     }
   }
+  Given("""^(.*) navigates to check your answer page with credId (.*)$""") { (name: String, credId: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToCA(name, credId)
+    }
+  }
 
   Then("""^I navigate to (.*) page$""") { page: String =>
     page match {
@@ -277,6 +282,8 @@ class StepDef extends BaseStepDef {
     }
     InitialGuidancePage.clickContinue()
   }
+
+
 
   /*  Given("""^I fill (.*) and continue$""") { page: String =>
       page match {

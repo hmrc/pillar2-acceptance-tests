@@ -21,7 +21,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, TaskListPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, CheckYourAnswersPage, InitialGuidancePage, TaskListPage}
 
 class TaskListPageSteps extends CommonFunctions {
 
@@ -53,8 +53,11 @@ class TaskListPageSteps extends CommonFunctions {
   }
 
   And("""^I navigate back to TaskList Page from Name Page""") {
-    clickByCss(BusinessActivityEQPage.backLink)
-    clickByCss(BusinessActivityEQPage.backLink)
-    clickByCss(BusinessActivityEQPage.backLink)
+    for (i <- 1 to 3)
+      {
+        clickByCss(BusinessActivityEQPage.backLink)
+      }
   }
+
+
 }

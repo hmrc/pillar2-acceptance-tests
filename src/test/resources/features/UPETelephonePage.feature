@@ -22,7 +22,7 @@ Feature: Ultimate parent entity based in UK EQs
     And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
     When I enter Telephone Number as 123456
     When I click on Continue button
-    Then I should navigate to under construction page
+    Then I should be on Check your answers page
 
   Scenario: 2 - User Navigates to Display page
     Given Organisation User logs in as upe and navigates to name Page
@@ -36,7 +36,7 @@ Feature: Ultimate parent entity based in UK EQs
     And The caption must be Business details
     And The Heading should be Can we contact Test Telephone by telephone?
     When I select option No and continue to next
-    Then I should navigate to under construction page
+    Then I should be on Check your answers page
 
   Scenario: 3 - Display an error message, when user continue without selecting an option
     Given Organisation User logs in as upe and navigates to name Page

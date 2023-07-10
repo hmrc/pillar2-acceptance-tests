@@ -26,5 +26,7 @@ object TaskListPage extends PageObject {
   val taskSection      = ".app-task-list__section"
   val taskItems        = ".app-task-list__items"
   val empStatusLink    = "[aria-describedby='eligibility-status']"
-  val status           = "strong.govuk-tag.govuk-tag--grey.app-task-list__tag"
+  val status          = ".hmrc-status-tag"
+  //val status           = "strong.govuk-tag.govuk-tag--grey.app-task-list__tag"
+
 }

@@ -112,7 +112,6 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
       case "Telephone number" =>
         assert(getAttribueOf(InputTelephonePage.telephoneNumber, "value").equals(name))
-
     }
   }
 
