@@ -26,6 +26,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndUrl: String                 = TestConfiguration.url("pillar2-frontend")
   val frontEndSubscribeUrl: String        = s"$rootUrl"+"task-list/register-for-global-minimum-tax"
   val frontEndUPEUrl: String              = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
+  val frontEndUPEOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/org-type"
   val redirectUrlField: String            = "redirectionUrl"
   val credIdField: String                 = "authorityId"
   val frontEndNameUrl: String        = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name "
@@ -48,6 +49,13 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginToUPE(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToUPEAs(): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndUPEOrgTypeUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton
   }

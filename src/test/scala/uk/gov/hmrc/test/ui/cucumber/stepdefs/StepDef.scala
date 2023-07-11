@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, MultipleTerritoriesEQPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEPage, InputTelephonePage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -41,6 +41,12 @@ class StepDef extends BaseStepDef {
   Given("""^(.*) logs in as upe for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPE(name)
+    }
+  }
+
+  Given("""^(.*) logs in to upe with organisation type for Pillar2$""") { (name: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToUPEAs()
     }
   }
 
@@ -180,6 +186,16 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
+
+      case "UPE Org type" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.errorLink)
+        getTextOf(By cssSelector (UPEOrgTypePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.errorMessage)
+        getTextOf(By cssSelector (UPEOrgTypePage.errorMessage)) should include(error)
 
       case "Input UPE Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
