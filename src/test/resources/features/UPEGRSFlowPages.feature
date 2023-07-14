@@ -5,7 +5,11 @@ Feature: Ultimate parent entity GRS journies
   So that I can navigate to the correct GRS journey.
 
   Scenario: 1 - Display an error message, when user continue without selecting an option
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
@@ -13,7 +17,11 @@ Feature: Ultimate parent entity GRS journies
     Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
 
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
@@ -24,10 +32,14 @@ Feature: Ultimate parent entity GRS journies
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be COMPLETED
+    And The Task Enter ultimate parent's details status should be Completed
 
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
@@ -37,10 +49,14 @@ Feature: Ultimate parent entity GRS journies
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be COMPLETED
+    And The Task Enter ultimate parent's details status should be Completed
 
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
@@ -66,10 +82,14 @@ Feature: Ultimate parent entity GRS journies
     When registration is unsuccessful with generic error error
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be IN PROGRESS
+    And The Task Enter ultimate parent's details status should be In Progress
 
   Scenario: 6 - User registration as UkLimitedCompany failed with identifiers not match error
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
@@ -81,7 +101,11 @@ Feature: Ultimate parent entity GRS journies
     Then I should navigate to under construction page
 
   Scenario: 7 - User registration as UkLimitedCompany failed with BV failed error
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
@@ -108,7 +132,7 @@ Feature: Ultimate parent entity GRS journies
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be COMPLETED
+    And The Task Enter ultimate parent's details status should be Completed
 
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
@@ -125,10 +149,14 @@ Feature: Ultimate parent entity GRS journies
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be COMPLETED
+    And The Task Enter ultimate parent's details status should be Completed
 
   Scenario: 10 - User registration as UkLimitedCompany failed with party type mismatch error
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
@@ -154,10 +182,14 @@ Feature: Ultimate parent entity GRS journies
     When registration is unsuccessful with generic error error
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be IN PROGRESS
+    And The Task Enter ultimate parent's details status should be In Progress
 
   Scenario: 12 - User registration as UkLimitedCompany failed with identifiers not match error
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
@@ -169,7 +201,11 @@ Feature: Ultimate parent entity GRS journies
     Then I should navigate to under construction page
 
   Scenario: 13 - User registration as UkLimitedCompany failed with BV failed error
-    Given Organisation User logs in to upe with organisation type for Pillar2
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    And The caption must be Business details
+    And The Heading should be Is the ultimate parent entity registered in the UK?
+    When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Business details
     And The Heading should be What type of company is the ultimate parent entity?
