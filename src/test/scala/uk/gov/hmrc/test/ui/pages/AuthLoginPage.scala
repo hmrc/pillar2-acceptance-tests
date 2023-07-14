@@ -29,7 +29,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndUPEOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/org-type"
   val redirectUrlField: String            = "redirectionUrl"
   val credIdField: String                 = "authorityId"
-  val frontEndNameUrl: String        = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name "
+  val frontEndNameUrl: String        = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name"
   val frontEndCAUrl: String       =s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
 
   def loginWithUser(name: String): Unit = {

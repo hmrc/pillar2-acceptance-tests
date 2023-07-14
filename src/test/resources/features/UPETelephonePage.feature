@@ -4,7 +4,15 @@ Feature: Ultimate parent entity based in UK EQs
   I want to answer the Ultimate parent entity based in UK EQ
 
   Scenario: 1 - User Navigates to Display page
-    Given Organisation User logs in as upe and navigates to name Page
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    When I select option No and continue to next
+    And I enter UPE name as Test UPE
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Test Address Line 1
+    And I enter City as Test City
+    And I enter Country as Test Country
+    And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone
     And I click on Continue button
@@ -25,7 +33,15 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should be on Check your answers page
 
   Scenario: 2 - User Navigates to Display page
-    Given Organisation User logs in as upe and navigates to name Page
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    When I select option No and continue to next
+    And I enter UPE name as Test UPE
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Test Address Line 1
+    And I enter City as Test City
+    And I enter Country as Test Country
+    And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone
     And I click on Continue button
@@ -39,7 +55,15 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should be on Check your answers page
 
   Scenario: 3 - Display an error message, when user continue without selecting an option
-    Given Organisation User logs in as upe and navigates to name Page
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    When I select option No and continue to next
+    And I enter UPE name as Test UPE
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Test Address Line 1
+    And I enter City as Test City
+    And I enter Country as Test Country
+    And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone Error
     And I click on Continue button
@@ -52,7 +76,15 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should see error message Select yes if we can contact Test Telephone Error by telephone on the UPE Telephone Page
 
   Scenario: 4 - Display an error message, when user continue without selecting an option
-    Given Organisation User logs in as upe and navigates to name Page
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    When I select option No and continue to next
+    And I enter UPE name as Test UPE
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Test Address Line 1
+    And I enter City as Test City
+    And I enter Country as Test Country
+    And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone Error
     And I click on Continue button
@@ -68,7 +100,15 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should see error message You need to enter the telephone for Test Telephone Error on the Input Telephone Page
 
   Scenario: 5 - User navigates back to email page from input Telephone page
-    Given Organisation User logs in as upe and navigates to name Page
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE page
+    When I select option No and continue to next
+    And I enter UPE name as Test UPE
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Test Address Line 1
+    And I enter City as Test City
+    And I enter Country as Test Country
+    And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone Back
     And I click on Continue button
@@ -121,7 +161,3 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should navigate to input-upe-name page
     And I navigate from Name page to Telephone page
     Then I should see the Telephone number field is pre-populated with 1234569
-
-
-
-

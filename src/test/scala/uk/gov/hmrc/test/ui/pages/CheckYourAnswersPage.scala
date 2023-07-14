@@ -30,6 +30,6 @@ object CheckYourAnswersPage extends PageObject {
   val changeAddress           = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-address']"
   val changeContactname       = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-business-name']"
   val changeEmailaddress      = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-email']"
-  val changeTelephonecontact  = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-telephone']"
+  val changeTelephonecontact  = "a[href*='/change-telephone']"
   val changeTelephonenumber  = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-telephone']"
 }
