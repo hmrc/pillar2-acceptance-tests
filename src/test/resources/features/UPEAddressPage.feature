@@ -5,7 +5,7 @@ Feature: Enter UPE registered address
 
   Scenario: 1 - User Validates all fields and navigates to UPE contact & email page
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test Address
@@ -23,7 +23,7 @@ Feature: Enter UPE registered address
 
   Scenario: 2 - User navigates to previous UPE name page
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test Address Back Link
@@ -35,7 +35,7 @@ Feature: Enter UPE registered address
 
   Scenario: 3 - Display an error message, when user continues without entering Address Line
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test Address
@@ -47,7 +47,7 @@ Feature: Enter UPE registered address
 
   Scenario: 4 - Display an error message, when user continues without entering City
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test Address
@@ -59,7 +59,7 @@ Feature: Enter UPE registered address
 
   Scenario: 5 - Display an error message, when user continues without entering Country
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test Address
@@ -71,7 +71,7 @@ Feature: Enter UPE registered address
 
   Scenario: 6 - Prepopulate the answers on UPE Address page after sign out
     Given Organisation User logs in as upe with credId TestAddress1 for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test UPE Address Save
@@ -87,7 +87,7 @@ Feature: Enter UPE registered address
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId TestAddress1 for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     And I should see the answer No remain selected
     When I continue to next page
     Then I should navigate to input-upe-name page

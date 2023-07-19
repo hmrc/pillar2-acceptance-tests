@@ -5,7 +5,7 @@ Feature: Task list page
   @tests
   Scenario: 1 - User navigates to check your answer page answering all the questions of UPE
     Given Organisation User logs in as upe with credId UPECYA for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test CYA
@@ -57,7 +57,7 @@ Feature: Task list page
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId UPECYA for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     And I should see the answer No remain selected
     When I continue to next page
     Then I should navigate to input-upe-name page

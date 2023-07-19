@@ -20,7 +20,7 @@ Feature: Task list page
 
   Scenario: 2 - Prepopulate the answers on UPE pages after signout
     Given Organisation User logs in as upe with credId TestCredID1 for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test UPE
@@ -29,7 +29,7 @@ Feature: Task list page
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId TestCredID1 for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     And I should see the answer No remain selected
     When I continue to next page
     Then I should navigate to input-upe-name page
@@ -43,7 +43,7 @@ Feature: Task list page
     When I click Enter ultimate parent's details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
-    Then I should navigate to UPE page
+    Then I should navigate to UPE business page
     When I select option No and continue to next
     And I navigate back to TaskList Page from Name Page
     Then The Task Enter ultimate parent's details status should be In Progress

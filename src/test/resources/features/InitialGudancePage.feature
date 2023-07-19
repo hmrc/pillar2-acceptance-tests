@@ -13,7 +13,7 @@ As an eligible authenticated user
     And The Heading should be We need to match the details of this ultimate parent entity to HMRC records
     And The Body content should be We will ask you for several pieces of identifying information about the ultimate parent of this group so that we can best match the ultimate parent to our records.
     When I click on Continue button
-    Then I should navigate to UPE page
+    Then I should navigate to UPE business page
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
 

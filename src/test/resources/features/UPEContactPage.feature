@@ -5,7 +5,7 @@ Feature: Enter UPE registered Contact details
 
   Scenario: 1 - User Validates UPE contact person name & email fields
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test contact person/team name & Email
@@ -28,7 +28,7 @@ Feature: Enter UPE registered Contact details
 
   Scenario: 2 - User navigates to previous UPE contact person name and email pages
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test contact person/team Name&Email Back Link
@@ -48,7 +48,7 @@ Feature: Enter UPE registered Contact details
 
   Scenario: 3 - Display an error message, when user continues without entering UPE contact person/team name and email
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test contact person/team name & Email
@@ -68,7 +68,7 @@ Feature: Enter UPE registered Contact details
 
   Scenario: 4 - Prepopulate the answers on UPE contact person/team name and email after sign out
     Given Organisation User logs in as upe with credId TestUPEContactDetails for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test UPE Contact Details Save
@@ -91,7 +91,7 @@ Feature: Enter UPE registered Contact details
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId TestUPEContactDetails for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     And I should see the answer No remain selected
     When I continue to next page
     Then I should navigate to input-upe-name page

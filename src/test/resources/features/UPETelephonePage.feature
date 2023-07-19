@@ -5,7 +5,7 @@ Feature: Ultimate parent entity based in UK EQs
 
   Scenario: 1 - User Navigates to Display page
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     And I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
@@ -34,7 +34,7 @@ Feature: Ultimate parent entity based in UK EQs
 
   Scenario: 2 - User Navigates to Display page
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     And I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
@@ -56,7 +56,7 @@ Feature: Ultimate parent entity based in UK EQs
 
   Scenario: 3 - Display an error message, when user continue without selecting an option
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     And I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
@@ -77,7 +77,7 @@ Feature: Ultimate parent entity based in UK EQs
 
   Scenario: 4 - Display an error message, when user continue without selecting an option
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     And I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
@@ -101,7 +101,7 @@ Feature: Ultimate parent entity based in UK EQs
 
   Scenario: 5 - User navigates back to email page from input Telephone page
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     And I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
@@ -131,7 +131,7 @@ Feature: Ultimate parent entity based in UK EQs
 
   Scenario: 6 - Prepopulate the answers on Telephone Selection and Telephone input after sign out
     Given Organisation User logs in as upe with credId TestUPETelephone for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test UPE Telephone Save
@@ -155,7 +155,7 @@ Feature: Ultimate parent entity based in UK EQs
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId TestUPETelephone for Pillar2
-    Then I should be on UPE page
+    Then I should be on UPE business page
     And I should see the answer No remain selected
     When I continue to next page
     Then I should navigate to input-upe-name page
