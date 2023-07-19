@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMEQPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -130,6 +130,10 @@ class StepDef extends BaseStepDef {
 
   Given("""^I am on (.*) Page$""") { page: String =>
     page match {
+      case "UPE EQ" =>
+        navigateTo(UPEEQPage.url)
+        Wait.waitForElementToPresentByCssSelector(UPEEQPage.eqForm)
+        isVisible(By.cssSelector(UPEEQPage.eq)) shouldBe true
       case "Business activity EQ" =>
         navigateTo(BusinessActivityEQPage.url)
         Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
@@ -177,7 +181,7 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorMessage)
         getTextOf(By cssSelector (MultipleTerritoriesEQPage.errorMessage)) should include(error)
 
-      case "UPE EQ" =>
+      case "UPE business EQ" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorSummary)
 
@@ -186,6 +190,26 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
+
+      case "UPE EQ" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEEQPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEEQPage.errorLink)
+        getTextOf(By cssSelector (UPEEQPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEEQPage.errorMessage)
+        getTextOf(By cssSelector (UPEEQPage.errorMessage)) should include(error)
+
+      case "NFM EQ" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMEQPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMEQPage.errorLink)
+        getTextOf(By cssSelector (NFMEQPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMEQPage.errorMessage)
+        getTextOf(By cssSelector (NFMEQPage.errorMessage)) should include(error)
 
       case "UPE Org type" =>
         Wait.waitForTagNameToBeRefreshed("h1")

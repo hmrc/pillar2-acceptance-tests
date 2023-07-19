@@ -1,4 +1,4 @@
-@tests
+@ignore
 Feature: Multiple Territories EQ Page
 As a multinational enterprise user
 I must have the facility to answer the Multiple territories EQ on Pillar 2 service

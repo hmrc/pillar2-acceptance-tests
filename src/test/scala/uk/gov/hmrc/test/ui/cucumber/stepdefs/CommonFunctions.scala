@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputTelephonePage,LLPGRSPage, InputUPENamePage, MTGuidancePage, MultipleTerritoriesEQPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEContactPage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputTelephonePage, InputUPENamePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMEQPage, NFMGuidancePage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 trait CommonFunctions
@@ -30,12 +30,14 @@ trait CommonFunctions
   def pageMatch(page: String): PageObject = {
     page match {
       case "multiple territories EQ page"     => MultipleTerritoriesEQPage
+      case "NFM EQ page"                      => NFMEQPage
       case "business EQ page"                 => BusinessActivityEQPage
       case "next EQ page"                     => NextEQPage
       case "guidance page"                    => GuidancePage
       case "Global gross revenue"             => GlobalGrossRevenueEQPage
       case "confirmation page"                => ConfirmationPage
       case "BA guidance page"                 => BAGuidancePage
+      case "NFM guidance page"                => NFMGuidancePage
       case "MT guidance page"                 => MTGuidancePage
       case "GGR guidance page"                => GGRGuidancePage
       case "gov uk guidance page"             => GUKGuidancePage
@@ -43,7 +45,8 @@ trait CommonFunctions
       case "Task list page"                   => TaskListPage
       case "Initial guidance Page"            => InitialGuidancePage
       case "employee status page"             => EmployeeStatusPage
-      case "UPE page"                         => UPEPage
+      case "UPE business page"                => UPEPage
+      case "UPE EQ page"                      => UPEEQPage
       case "input-upe-name page"              => InputUPENamePage
       case "input-crn page"                   => InputCRNPage
       case "input-upe-address page"           => UPEAddressPage
