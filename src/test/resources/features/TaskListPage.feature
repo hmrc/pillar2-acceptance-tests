@@ -48,4 +48,13 @@ Feature: Task list page
     And I navigate back to TaskList Page from Name Page
     Then The Task Enter ultimate parent's details status should be In Progress
 
+  Scenario: 4 - Verify the signout functionality
+    Given Organisation User logs in to subscribe for Pillar2
+    Then I should be on Task list page
+    And The Heading should be Register for Global Minimum Tax
+    When I click Sign out link
+    Then I am on feedback survey page
+    When I click the browser back button
+    Then I should be on auth-login page
+
 
