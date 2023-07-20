@@ -128,6 +128,10 @@ class StepDef extends BaseStepDef {
     Input.clickByLinkText(id)
   }
 
+  And("""^I click browser back$""") { (id: String) =>
+    Input.clickByLinkText(id)
+  }
+
   Given("""^I am on (.*) Page$""") { page: String =>
     page match {
       case "UPE EQ" =>
@@ -323,6 +327,9 @@ class StepDef extends BaseStepDef {
     InitialGuidancePage.clickContinue()
   }
 
+  And("""^I click the browser back button$""") { () =>
+    Nav.browserBack()
+  }
 
 
   /*  Given("""^I fill (.*) and continue$""") { page: String =>
