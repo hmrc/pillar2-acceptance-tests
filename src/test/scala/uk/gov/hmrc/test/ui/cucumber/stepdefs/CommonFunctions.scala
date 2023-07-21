@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputTelephonePage, InputUPENamePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMEQPage, NFMGuidancePage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputTelephonePage, InputUPENamePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMRegistrationPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 trait CommonFunctions
@@ -31,6 +31,8 @@ trait CommonFunctions
     page match {
       case "multiple territories EQ page"     => MultipleTerritoriesEQPage
       case "NFM EQ page"                      => NFMEQPage
+      case "NFM details page"                 => NFMDetailsPage
+      case "NFM registration page"            => NFMRegistrationPage
       case "business EQ page"                 => BusinessActivityEQPage
       case "next EQ page"                     => NextEQPage
       case "guidance page"                    => GuidancePage

@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMEQPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMRegistrationPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -55,11 +55,18 @@ class StepDef extends BaseStepDef {
       case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name, credId)
     }
   }
+  Given("""^(.*) logs in with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginAsUserWithCredId(name, credId)
+    }
+  }
+
   Given("""^(.*) logs in as upe and navigates to name Page$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPEName(name)
     }
   }
+
   Given("""^(.*) navigates to check your answer page with credId (.*)$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToCA(name, credId)
@@ -274,6 +281,26 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEContactEmailPage.errorMessage)
         getTextOf(By cssSelector (UPEContactEmailPage.errorMessage)) should include(error)
+
+      case "NFM details page" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorLink)
+        getTextOf(By cssSelector (NFMDetailsPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorMessage)
+        getTextOf(By cssSelector (NFMDetailsPage.errorMessage)) should include(error)
+
+      case "NFM registration page" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorLink)
+        getTextOf(By cssSelector (NFMRegistrationPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorMessage)
+        getTextOf(By cssSelector (NFMRegistrationPage.errorMessage)) should include(error)
     }
   }
   And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>

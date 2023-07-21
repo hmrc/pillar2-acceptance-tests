@@ -47,9 +47,19 @@ class TaskListPageSteps extends CommonFunctions {
     isVisible(By.cssSelector(TaskListPage.empStatusLink)) shouldBe true
   }
   And("""^The Task (.*) status should be (.*)$""") { (taskName: String, status: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElement(By.cssSelector(TaskListPage.taskItems)).getText.contains(taskName))
-    assert(driver.findElement(By.cssSelector(TaskListPage.status)).getText.contains(status))
+    taskName match {
+      case "Enter ultimate parent's details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
+        println(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText)
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
+
+      case "Enter filing member's details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+    }
+
   }
 
   And("""^I navigate back to TaskList Page from Name Page""") {
