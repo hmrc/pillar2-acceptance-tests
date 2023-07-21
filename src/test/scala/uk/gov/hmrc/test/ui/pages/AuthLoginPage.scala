@@ -39,6 +39,14 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton
   }
 
+  def loginAsUserWithCredId(name: String,credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
   def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndSubscribeUrl, redirectUrlField)

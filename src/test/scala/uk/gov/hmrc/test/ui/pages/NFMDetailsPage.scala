@@ -16,18 +16,21 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
+object NFMDetailsPage extends PageObject {
+  val url: String      = s"$rootUrl"+"business-matching/filing-member/registered-in-uk"
 
-object TaskListPage extends PageObject {
-  val url: String      = s"$rootUrl" + "task-list/register-for-global-minimum-tax"
-  val header: String   = "h1.govuk-heading-xl"
-  val taskList         = ".app-task-list"
-  val taskSection      = ".app-task-list__section"
-  val taskItems        = ".app-task-list__items"
-  val taskItem         = ".app-task-list__item"
-  val empStatusLink    = "[aria-describedby='eligibility-status']"
-  val status          = ".hmrc-status-tag"
-  //val status           = "strong.govuk-tag.govuk-tag--grey.app-task-list__tag"
+  val caption          = ".govuk-caption-l"
+  val eqForm           = "form[action*='registered-in-uk']"
+  val eq               = "form[action*='registered-in-uk'] .govuk-fieldset"
+  val continue         = "form[action*='registered-in-uk'] button"
+  val errorSummary     = ".govuk-error-summary__list"
+  val errorLink        = "[href='#value_0']"
+  val backLink         = ".govuk-back-link"
+  val errorMessage     = ".govuk-error-message"
+
+  def clickContinue()  = findByCss(continue).click()
 
 }
