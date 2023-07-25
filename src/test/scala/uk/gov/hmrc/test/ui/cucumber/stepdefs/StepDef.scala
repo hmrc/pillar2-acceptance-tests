@@ -60,10 +60,19 @@ class StepDef extends BaseStepDef {
       case "Organisation User" => AuthLoginPage.loginAsUserWithCredId(name, credId)
     }
   }
-
-  Given("""^(.*) logs in as upe and navigates to name Page$""") { name: String =>
+  Given("""^(.*) logs in to upe org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
-      case "Organisation User" => AuthLoginPage.loginToUPEName(name)
+      case "Organisation User" => AuthLoginPage.loginToOrgWithCredID(name, credId)
+    }
+  }
+  Given("""^(.*) logs in to upe registered in UK page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToRegWithCredID(name, credId)
+    }
+  }
+  Given("""^(.*) logs in to upe name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
     }
   }
 
