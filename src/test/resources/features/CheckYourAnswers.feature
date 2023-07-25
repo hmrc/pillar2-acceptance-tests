@@ -128,7 +128,6 @@ Feature: Task list page
     And I should be on Check your answers page
     And I should see row 6 value 12345679
 
-  @ignore
   Scenario: 8 - Change telephone contact option from check your answers
     Given Organisation User navigates to check your answer page with credId UPECYA
     Then I should be on Check your answers page

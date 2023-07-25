@@ -55,4 +55,11 @@ object Check extends BasePage {
     }
   }
 
+  def checkOptionSelected(option: String) = {
+    option match {
+      case "UK limited company" => Find.findByCss("#value_0").isSelected
+      case "Limited liability partnership" => Find.findByCss("#value_1").isSelected
+    }
+  }
+
 }

@@ -29,8 +29,9 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndUPEOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/org-type"
   val redirectUrlField: String            = "redirectionUrl"
   val credIdField: String                 = "authorityId"
-  val frontEndNameUrl: String        = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name"
-  val frontEndCAUrl: String       =s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
+  val frontEndNameUrl: String             = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name"
+  val frontEndCAUrl: String               =s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
+  val frontEndUPERegTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
@@ -47,6 +48,21 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton
   }
 
+  def loginToOrgWithCredID(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndUPEOrgTypeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToRegWithCredID(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndUPERegTypeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
   def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndSubscribeUrl, redirectUrlField)
@@ -68,8 +84,9 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton
   }
 
-  def loginToUPEName(name: String): Unit = {
+  def loginToUPEName(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndNameUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton
