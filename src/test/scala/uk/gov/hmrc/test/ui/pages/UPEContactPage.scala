@@ -16,12 +16,23 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 
-object BAGuidancePage extends PageObject {
-  val url: String        = s"$rootUrl"+"eligibility/service-not-suitable/not-active-in-uk"
-  val header: String     = "h1.govuk-heading-l"
-  val backLink           = ".govuk-back-link"
+object UPEContactPage extends PageObject {
+//  val url: String        = s"$rootUrl"+"business-matching/ultimate-parent/no-id/telephone"
+  val url: String        = s"$rootUrl"+"under-construction"
 
+  val caption            = ".govuk-caption-l"
+  val continue           = ".govuk-button"
+
+  val eqForm             = ".govuk-form-group"
+  val eq                 = ".govuk-form-group .govuk-fieldset"
+  val errorSummary       = ".govuk-error-summary__list"
+  val errorLink          = "[href*='#telephone']"
+  val backLink           = ".govuk-back-link"
+  val errorMessage       = ".govuk-error-message"
+
+  def clickContinue()    = findByCss(continue).click()
 }

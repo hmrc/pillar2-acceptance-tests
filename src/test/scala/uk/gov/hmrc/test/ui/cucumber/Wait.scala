@@ -57,6 +57,12 @@ object Wait extends BasePage {
     driverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)))
   }
 
+  def waitForElementToPresentById(id: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
+    driverWait.until(ExpectedConditions.presenceOfElementLocated(By.id(id)))
+  }
+
+
   def waitForTagNameToBeRefreshed(tagName: String): WebElement = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
     driverWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.tagName(tagName))))

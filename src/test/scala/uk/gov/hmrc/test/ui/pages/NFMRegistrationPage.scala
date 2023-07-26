@@ -16,12 +16,21 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
+object NFMRegistrationPage extends PageObject {
+  val url: String      = s"$rootUrl"+"business-matching/filing-member/nominate"
 
-object BAGuidancePage extends PageObject {
-  val url: String        = s"$rootUrl"+"eligibility/service-not-suitable/not-active-in-uk"
-  val header: String     = "h1.govuk-heading-l"
-  val backLink           = ".govuk-back-link"
+  val caption          = ".govuk-caption-l"
+  val eqForm           = "form[action*='nominate']"
+  val eq               = "form[action*='nominate'] .govuk-fieldset"
+  val continue         = "form[action*='nominate'] button"
+  val errorSummary     = ".govuk-error-summary__list"
+  val errorLink        = "[href='#value_0']"
+  val backLink         = ".govuk-back-link"
+  val errorMessage     = ".govuk-error-message"
+
+  def clickContinue()  = findByCss(continue).click()
 
 }

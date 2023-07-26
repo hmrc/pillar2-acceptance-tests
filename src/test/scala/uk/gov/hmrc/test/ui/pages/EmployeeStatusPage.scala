@@ -14,26 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber
+package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.pages.GGRGuidancePage.rootUrl
 
-object Nav extends BasePage {
-  val url = ""
 
-  def navigateTo(url: String): Unit =
-    driver.navigate.to(url)
-
-  def browserBack() {
-    driver.navigate().back()
-  }
-
-  def clearCollections(): Unit = {
-    navigateTo("http://localhost:10050/pillar-two/test-only/clear-all")
-  }
-
-  def isVisible(by: By): Boolean =
-    driver.findElements(by).size() != 0
-
+object EmployeeStatusPage extends PageObject {
+ // TO DO Update this after the implementation
+//  val url: String        = s"$rootUrl"+"/business-matching/ultimate-parent/match-hmrc-records"
+  val url: String     = s"$rootUrl"+"under-construction"
 }

@@ -14,26 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber
+package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object Nav extends BasePage {
-  val url = ""
+object UKCompanyGRSPage extends PageObject {
+  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode&entityType=ukLimitedCompany"
 
-  def navigateTo(url: String): Unit =
-    driver.navigate.to(url)
+  val header           = ".govuk-caption-l"
+  val saveAndContinue  = ".govuk-button"
+  val backLink         = ".govuk-back-link"
+  val errorMessage     = ".govuk-error-message"
 
-  def browserBack() {
-    driver.navigate().back()
-  }
-
-  def clearCollections(): Unit = {
-    navigateTo("http://localhost:10050/pillar-two/test-only/clear-all")
-  }
-
-  def isVisible(by: By): Boolean =
-    driver.findElements(by).size() != 0
+  def clickContinue()  = findByCss(saveAndContinue).click()
 
 }

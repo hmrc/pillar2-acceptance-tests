@@ -17,19 +17,20 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
+import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationToPageUrl, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.BusinessActivityEQPage
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InitialGuidancePage, NFMRegistrationPage}
+
 class BusinessActivityEQs extends CommonFunctions {
 
   And("""^I choose (.*) and continue$""") { (option: String) =>
     option match {
-      case "Yes" => Input.clickById ("value_0")
-      case "No" => Input.clickById ("value_1")
+      case "Yes" => Input.clickById("value_0")
+      case "No" => Input.clickById("value_1")
     }
-    BusinessActivityEQPage.clickContinue()
+      BusinessActivityEQPage.clickContinue()
   }
 
   And("""^I select back link$""") { () =>
@@ -39,6 +40,11 @@ class BusinessActivityEQs extends CommonFunctions {
   Then("""^The caption should be (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.caption)
     assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).contains(caption))
+  }
+
+  Then("""^The caption is (.*)$""") { caption: String =>
+    Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.caption)
+    assert(getTextOf(By.cssSelector(NFMRegistrationPage.caption)).contains(caption))
   }
 
   Then("""^I should navigate to (.*)""") { (page: String) =>

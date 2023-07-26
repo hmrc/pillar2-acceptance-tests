@@ -19,15 +19,91 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, PageObject}
+import uk.gov.hmrc.test.ui.pages.BAGuidancePage.rootUrl
 
 object AuthLoginPage extends BasePage with PageObject {
-  val url: String              = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val frontEndUrl: String      = TestConfiguration.url("pillar2-frontend")
-  val redirectUrlField: String = "redirectionUrl"
+  val url: String                         = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  val frontEndUrl: String                 = TestConfiguration.url("pillar2-frontend")
+  val frontEndSubscribeUrl: String        = s"$rootUrl"+"task-list/register-for-global-minimum-tax"
+  val frontEndUPEUrl: String              = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
+  val frontEndUPEOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/org-type"
+  val redirectUrlField: String            = "redirectionUrl"
+  val credIdField: String                 = "authorityId"
+  val frontEndNameUrl: String             = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name"
+  val frontEndCAUrl: String               =s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
+  val frontEndUPERegTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginAsUserWithCredId(name: String,credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToOrgWithCredID(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndUPEOrgTypeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToRegWithCredID(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndUPERegTypeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+  def loginToSubscribe(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndSubscribeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToUPE(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToUPEAs(): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndUPEOrgTypeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToUPEName(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndNameUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToCA(name: String,credId: String): Unit={
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndCAUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToUPEWithCredID(name: String,credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton
   }
