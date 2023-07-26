@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import org.openqa.selenium.By
-import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Nav extends BasePage {
@@ -28,6 +27,10 @@ object Nav extends BasePage {
 
   def browserBack() {
     driver.navigate().back()
+  }
+
+  def clearCollections(): Unit = {
+    navigateTo("http://localhost:10050/pillar-two/test-only/clear-all")
   }
 
   def isVisible(by: By): Boolean =

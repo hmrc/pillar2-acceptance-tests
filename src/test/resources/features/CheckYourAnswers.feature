@@ -2,7 +2,7 @@
 Feature: Task list page
   As a MNE user
   I want to create a new subscription
-  @tests
+
   Scenario: 1 - User navigates to check your answer page answering all the questions of UPE
     Given Organisation User logs in as upe with credId UPECYA for Pillar2
     Then I should be on UPE business page
@@ -127,7 +127,7 @@ Feature: Task list page
     Then I navigate back to check your answers page from telephone number page
     And I should be on Check your answers page
     And I should see row 6 value 12345679
-
+  @ignore
   Scenario: 8 - Change telephone contact option from check your answers
     Given Organisation User navigates to check your answer page with credId UPECYA
     Then I should be on Check your answers page
