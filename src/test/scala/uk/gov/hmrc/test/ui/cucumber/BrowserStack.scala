@@ -22,21 +22,19 @@ import com.typesafe.config.ConfigFactory
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.remote.{DesiredCapabilities, RemoteWebDriver}
 
-import scala.collection.JavaConversions._
+import scala.jdk.CollectionConverters._
 
 object BrowserStack {
 
   private val projectName = "Pillar2"
   private val buildName = "Local Build"
 
-  private val defaultCapabilities: DesiredCapabilities = {
-    new DesiredCapabilities(
-      Map(
-        "browserstack.debug" -> "true",
-        "browserstack.local" -> "true",
-        "project"            -> projectName,
-        "build"              -> buildName))
-  }
+  private val defaultCapabilities: DesiredCapabilities = new DesiredCapabilities(
+    Map(
+      "browserstack.debug" -> "true",
+      "browserstack.local" -> "true",
+      "project" -> projectName,
+      "build" -> buildName).asJava)
 
   private val loadedCapabilities: DesiredCapabilities = {
     sys.props.get("testDevice") match {
