@@ -32,7 +32,7 @@ Feature: Ultimate parent entity GRS journies
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
 
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
@@ -49,7 +49,7 @@ Feature: Ultimate parent entity GRS journies
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
 
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
@@ -82,7 +82,7 @@ Feature: Ultimate parent entity GRS journies
     When registration is unsuccessful with generic error error
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be In Progress
+    And The Task Add ultimate parent's details status should be In progress
 
   Scenario: 6 - User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
@@ -132,7 +132,7 @@ Feature: Ultimate parent entity GRS journies
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
 
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
@@ -149,7 +149,7 @@ Feature: Ultimate parent entity GRS journies
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
 
   Scenario: 10 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
@@ -182,7 +182,7 @@ Feature: Ultimate parent entity GRS journies
     When registration is unsuccessful with generic error error
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be In Progress
+    And The Task Add ultimate parent's details status should be In progress
 
   Scenario: 12 - User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2

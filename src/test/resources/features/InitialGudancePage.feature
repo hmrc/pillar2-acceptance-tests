@@ -6,8 +6,8 @@ As an eligible authenticated user
   Scenario: 1 - User navigates to next page from initial guidance page
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    And The Heading should be Register for Global Minimum Tax
-    When I click Enter ultimate parent's details link
+    And The Heading should be Register for Pillar 2 top-up tax
+    When I click Add ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And The caption must be Business details
     And The Heading should be We need to match the details of this ultimate parent entity to HMRC records
@@ -21,14 +21,14 @@ As an eligible authenticated user
   Scenario: 2 - User navigates back to Task List from initial guidance page
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    And The Heading should be Register for Global Minimum Tax
-    When I click Enter ultimate parent's details link
+    And The Heading should be Register for Pillar 2 top-up tax
+    When I click Add ultimate parent's details link
     Then I should navigate to Initial guidance Page
     Then The caption must be Business details
     And The Heading should be We need to match the details of this ultimate parent entity to HMRC records
     When I select back link
     Then I should navigate to Task list page
-    And The Heading should be Register for Global Minimum Tax
+    And The Heading should be Register for Pillar 2 top-up tax
 
 
 

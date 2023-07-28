@@ -26,7 +26,7 @@ Feature: As a MNE user
     And I click on Continue button
     Then I should be on Check your answers page
     When I click on Continue button
-    And The Task Enter ultimate parent's details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in to upe org page with CredID Bookmark1 for Pillar2
@@ -42,7 +42,7 @@ Feature: As a MNE user
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in to upe name page with CredID Bookmark2 for Pillar2
@@ -58,7 +58,7 @@ Feature: As a MNE user
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in to upe registered in UK page with CredID Bookmark3 for Pillar2
