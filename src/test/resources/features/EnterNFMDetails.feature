@@ -14,9 +14,9 @@ Feature: Register NFM and enter NFM details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be Completed
-    And The Task Enter filing member's details status should be Not Started
-    When I click Enter filing member's details link
+    And The Task Edit ultimate parent's details status should be Completed
+    And The Task Add filing member's details status should be Not started
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     And The caption is Business details
     And The Heading should be Do you want to register a nominated filing member for this group?
@@ -26,7 +26,7 @@ Feature: Register NFM and enter NFM details
     Then I should see error message Select yes if there is a nominated filing member for this group on the NFM registration page Page
     When I select option No and continue to next
     Then I should navigate to Task list page
-    And The Task Enter filing member's details status should be Completed
+    And The Task Edit filing member's details status should be Completed
 
   Scenario: 2 - Enter NFM details - Yes path
     Given Organisation User logs in as upe for Pillar2
@@ -39,9 +39,9 @@ Feature: Register NFM and enter NFM details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Enter ultimate parent's details status should be Completed
-    And The Task Enter filing member's details status should be Not Started
-    When I click Enter filing member's details link
+    And The Task Edit ultimate parent's details status should be Completed
+    And The Task Add filing member's details status should be Not started
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select option Yes and continue to next
     Then I should navigate to NFM details page

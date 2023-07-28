@@ -48,7 +48,7 @@ Feature: Task list page
     Then I should be on Check your answers page
     When I click on Continue button
     Then I should be on Task list page
-    And The Task Enter ultimate parent's details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
 
   Scenario: 2 - Prepopulate all the answers in NO ID journey
     Given Organisation User navigates to check your answer page with credId UPECYA
@@ -127,7 +127,7 @@ Feature: Task list page
     Then I navigate back to check your answers page from telephone number page
     And I should be on Check your answers page
     And I should see row 6 value 12345679
-  @ignore
+
   Scenario: 8 - Change telephone contact option from check your answers
     Given Organisation User navigates to check your answer page with credId UPECYA
     Then I should be on Check your answers page

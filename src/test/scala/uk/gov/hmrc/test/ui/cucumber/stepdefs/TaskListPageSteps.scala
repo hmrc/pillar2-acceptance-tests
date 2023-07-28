@@ -48,16 +48,38 @@ class TaskListPageSteps extends CommonFunctions {
   }
   And("""^The Task (.*) status should be (.*)$""") { (taskName: String, status: String) =>
     taskName match {
-      case "Enter ultimate parent's details" =>
+      case "Add ultimate parent's details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         println(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText)
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
 
-      case "Enter filing member's details" =>
+      case "Edit ultimate parent's details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
+        println(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText)
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
+
+      case "Filing member's details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+
+      case "Add filing member's details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+
+      case "Edit filing member's details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+
+      case "Further business details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+
     }
 
   }
