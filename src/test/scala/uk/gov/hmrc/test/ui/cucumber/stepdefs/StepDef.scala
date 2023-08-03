@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMRegistrationPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMRegistrationPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -321,8 +321,8 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorLink)
         getTextOf(By cssSelector (UPEAddressPage.addressErrorLink)) should be(error)
 
-        Wait.waitForElementToPresentById(UPEAddressPage.addressErrorMessage)
-        getTextOf(By id (UPEAddressPage.addressErrorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorMessage)
+        getTextOf(By cssSelector  (UPEAddressPage.addressErrorMessage)) should include(error)
 
       case "City" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -331,8 +331,8 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorLink)
         getTextOf(By cssSelector (UPEAddressPage.cityErrorLink)) should be(error)
 
-        Wait.waitForElementToPresentById(UPEAddressPage.cityErrorMessage)
-        getTextOf(By id (UPEAddressPage.cityErrorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorMessage)
+        getTextOf(By cssSelector  (UPEAddressPage.cityErrorMessage)) should include(error)
 
       case "Country" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -341,8 +341,8 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorLink)
         getTextOf(By cssSelector (UPEAddressPage.countryErrorLink)) should be(error)
 
-        Wait.waitForElementToPresentById(UPEAddressPage.countryErrorMessage)
-        getTextOf(By id (UPEAddressPage.countryErrorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorMessage)
+        getTextOf(By cssSelector  (UPEAddressPage.countryErrorMessage)) should include(error)
     }
   }
 
