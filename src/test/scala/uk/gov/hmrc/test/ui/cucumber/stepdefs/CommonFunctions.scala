@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.{Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputTelephonePage, InputUPENamePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMRegistrationPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputTelephonePage, InputUPENamePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMOrgTypePage, NFMRegistrationPage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 trait CommonFunctions
@@ -59,8 +59,11 @@ trait CommonFunctions
       case "UPE Contact Email page"            => UPEContactEmailPage
       case "UPE Contact page"                  => UPEContactPage
       case "UPE Org type page"                 => UPEOrgTypePage
+      case "NFM Org type page"                 => NFMOrgTypePage
       case "UKCompany GRS page"                => UKCompanyGRSPage
+      case "NFM UKCompany GRS page"            => NFMUKCompanyGRSPage
       case "LLP GRS page"                      => LLPGRSPage
+      case "NFM LLP GRS page"                  => NFMLLPGRSPage
       case "Check your answers page"           => CheckYourAnswersPage
     }
   }

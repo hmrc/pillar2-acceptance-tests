@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMRegistrationPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -240,6 +240,16 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.errorMessage)
         getTextOf(By cssSelector (UPEOrgTypePage.errorMessage)) should include(error)
+
+      case "NFM Org type" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMOrgTypePage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMOrgTypePage.errorLink)
+        getTextOf(By cssSelector (NFMOrgTypePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMOrgTypePage.errorMessage)
+        getTextOf(By cssSelector (NFMOrgTypePage.errorMessage)) should include(error)
 
       case "Input UPE Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
