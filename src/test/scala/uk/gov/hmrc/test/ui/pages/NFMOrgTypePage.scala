@@ -19,15 +19,18 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object UKCompanyGRSPage extends PageObject {
-//  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode&entityType=ukLimitedCompany"
-  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=ukLimitedCompany"
+object NFMOrgTypePage extends PageObject {
+  val url: String      = s"$rootUrl"+"business-matching/filing-member/uk-based/org-type"
 
-  val header           = ".govuk-caption-l"
-  val saveAndContinue  = ".govuk-button"
+  val caption          = ".govuk-caption-l"
+  val eqForm           = ".govuk-form-group"
+  val eq               = ".govuk-form-group .govuk-fieldset"
+  val continue         = "button.govuk-button"
+  val errorSummary     = ".govuk-error-summary__list"
+  val errorLink        = "[href*='#value']"
   val backLink         = ".govuk-back-link"
   val errorMessage     = ".govuk-error-message"
 
-  def clickContinue()  = findByCss(saveAndContinue).click()
+  def clickContinue()  = findByCss(continue).click()
 
 }
