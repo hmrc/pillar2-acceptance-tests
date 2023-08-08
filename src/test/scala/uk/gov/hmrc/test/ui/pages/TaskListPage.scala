@@ -28,5 +28,6 @@ object TaskListPage extends PageObject {
   val taskItem         = ".app-task-list__item"
   val empStatusLink    = "[aria-describedby='eligibility-status']"
   val status          = ".hmrc-status-tag"
+  val pageHeader      = "a[href='/report-pillar2-top-up-taxes']"
 
 }
