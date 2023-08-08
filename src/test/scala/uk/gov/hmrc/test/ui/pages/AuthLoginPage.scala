@@ -32,7 +32,8 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndNameUrl: String             = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name"
   val frontEndCAUrl: String               =s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
   val frontEndUPERegTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
-
+  val frontEndNFMNameUrl: String          = s"$rootUrl"+"business-matching/filing-member/no-id/input-name"
+  val frontEndNFMAddressUrl: String       = s"$rootUrl"+"business-matching/filing-member/no-id/input-address "
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
@@ -119,6 +120,20 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
     selectAffinityGroupOrg()
     selectCredRoleAssistant
+    clickSubmitButton
+  }
+
+  def loginToNFMName(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndNFMNameUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToNFMAddress(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndNFMAddressUrl, redirectUrlField)
+    selectAffinityGroupOrg()
     clickSubmitButton
   }
 
