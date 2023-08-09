@@ -6,6 +6,7 @@ Feature: Task list page
   Scenario: 1 - Task list page Sections and status validation
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
+    And The page header should be Report Pillar 2 top-up taxes
     And The Heading should be Register for Pillar 2 top-up tax
     And I should see task list sections
     And I should see section 1 as Business details

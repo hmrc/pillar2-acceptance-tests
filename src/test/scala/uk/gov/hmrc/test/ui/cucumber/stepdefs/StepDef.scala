@@ -22,6 +22,7 @@ import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage,NFMRegistrationPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -94,11 +95,15 @@ class StepDef extends BaseStepDef {
     }
   }
   Then("""^I clear the cache$""") {
-    Nav.navigateTo("http://localhost:10050/pillar-two/test-only/eligibility/clear-session")
+    Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/eligibility/clear-session")
   }
 
   Then("""^The Heading should be (.*)$""") { header: String =>
     Check.checkH1(header)
+  }
+  Then("""^The page header should be (.*)$""") { header: String =>
+    Wait.waitForElementToPresentByCssSelector(TaskListPage.pageHeader)
+    assert(getTextOf(By.cssSelector(TaskListPage.pageHeader)).contains(header))
   }
 
   Then("""^The Body content should be (.*)$""") { text: String =>
@@ -121,11 +126,9 @@ class StepDef extends BaseStepDef {
     InitialGuidancePage.clickContinue()
   }
   And("""^(I navigate from Name page to Telephone page)""") { (negate: String) =>
-    InitialGuidancePage.clickContinue()
-    InitialGuidancePage.clickContinue()
-    InitialGuidancePage.clickContinue()
-    InitialGuidancePage.clickContinue()
-    InitialGuidancePage.clickContinue()
+    for (i <- 1 to 5) {
+      InitialGuidancePage.clickContinue()
+    }
   }
   Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
     Input.sendKeysById(text, id)
