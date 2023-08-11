@@ -21,7 +21,7 @@ import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, NFMAddressPage, NFMNamePage, UPEAddressPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NFMNamePage, UPEAddressPage}
 
 
 class NFMPageSteps extends CommonFunctions {
@@ -111,6 +111,27 @@ class NFMPageSteps extends CommonFunctions {
 
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.countryErrorMessage)
         getTextOf(By cssSelector  (NFMAddressPage.countryErrorMessage)) should include(error)
+
+      case "Input NFM Contact Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.errorLink)
+        getTextOf(By cssSelector (NFMContactNamePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.errorMessage)
+        getTextOf(By cssSelector (NFMContactNamePage.errorMessage)) should include(error)
+      case "Input NFM Contact Email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorLink)
+        getTextOf(By cssSelector (NFMContactEmailPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorMessage)
+        getTextOf(By cssSelector (NFMContactEmailPage.errorMessage)) should include(error)
+
+
     }
   }
 
@@ -123,6 +144,18 @@ class NFMPageSteps extends CommonFunctions {
   Given("""^(.*) logs in NFM address page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMAddress(name)
+    }
+  }
+
+  Given("""^(.*) logs in NFM Contact Name page for Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToNFMContactName(name)
+    }
+  }
+
+  Given("""^(.*) logs in NFM Contact Email page for Pillar2$""") { name: String =>
+    name match {
+     case "Organisation User" => AuthLoginPage.loginToNFMContactEmail(name)
     }
   }
 
