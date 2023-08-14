@@ -68,6 +68,8 @@ Feature: Enter NFM registered contact name and contact email address
     And I should see the NFM Contact Email field is pre-populated with test@email.com
 
   Scenario: 2 - NFM Contact Name and Contact Email pages Error validations
+    Given I clear the cache
+    Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
@@ -84,6 +86,7 @@ Feature: Enter NFM registered contact name and contact email address
     When I select option No and continue to next
     Then I should navigate to NFM Name page
     When I enter NFM name as NFM Test
+    When I click on Continue button
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
     And I enter Postal Code as EH5 5WY
@@ -93,6 +96,7 @@ Feature: Enter NFM registered contact name and contact email address
     When I click on Continue button
     Then I should see NFM error message You need to enter the name of the person or team we should contact from the nominated filing member on the Input NFM Contact Name Element
     When I enter NFM Contact name as NFM Name character length Error validation and Maximum NFM character length should be entered 105 characters.
+    When I click on Continue button
     Then I should see NFM error message The name of the contact person or team should be 105 characters or less on the Input NFM Contact Name Element
     When I enter NFM Contact name as NFM Test Contact
     When I click on Continue button
@@ -106,7 +110,7 @@ Feature: Enter NFM registered contact name and contact email address
     When I click on Continue button
     Then I should see NFM error message The email address should be 132 characters or less on the Input NFM Contact Email Element
 
-  Scenario: 4 - Validate Bookmark for NFM Contact Name and NFM Contact Email Pages
+  Scenario: 3 - Validate Bookmark for NFM Contact Name and NFM Contact Email Pages
     Given Organisation User logs in NFM Contact Name page for Pillar2
     Then The Heading should be Page not available
     Given Organisation User logs in NFM Contact Email page for Pillar2

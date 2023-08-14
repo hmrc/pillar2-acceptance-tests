@@ -34,7 +34,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndUPERegTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
   val frontEndNFMNameUrl: String          = s"$rootUrl"+"business-matching/filing-member/no-id/input-name"
   val frontEndNFMAddressUrl: String       = s"$rootUrl"+"business-matching/filing-member/no-id/input-address "
-  val frontEndNFMContactNameUrl: String   = s"$rootUrl"+"business-matching/filing-member/no-id//input-business-name"
+  val frontEndNFMContactNameUrl: String   = s"$rootUrl"+"business-matching/filing-member/no-id/input-business-name"
   val frontEndNFMContactEmailUrl: String  = s"$rootUrl"+"business-matching/filing-member/no-id/input-email"
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)

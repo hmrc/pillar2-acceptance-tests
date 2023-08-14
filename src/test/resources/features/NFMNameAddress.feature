@@ -42,7 +42,7 @@ Feature: Enter NFM registered Name and address
     And I enter Postal Code as EH5 5WY
     And I select country as United Kingdom
     When I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to NFM Contact Name page
     When I select back link
     Then I should navigate to NFM Address page
     When I select back link
@@ -64,6 +64,10 @@ Feature: Enter NFM registered Name and address
     And I should see the Region field is pre-populated with Test Region
     And I should see the Postal Code field is pre-populated with EH5 5WY
     And I should see the Country field is selected with GB
+    Given Organisation User logs in NFM Contact Name page for Pillar2
+    Then The Heading should be Page not available
+    Given Organisation User logs in NFM Contact Email page for Pillar2
+    Then The Heading should be Page not available
 
   Scenario: 2 - NFM Name page Error validations
     Given Organisation User logs in as upe with credId NFMNameError for Pillar2
