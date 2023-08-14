@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{InputTelephonePage, InputUPENamePage, NFMAddressPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{InputTelephonePage, InputUPENamePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
 
 
 class UPEPageSteps extends CommonFunctions {
@@ -80,6 +80,16 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(InputTelephonePage.telephoneNumber)
         Input.sendKeysByCss(name, InputTelephonePage.telephoneNumber)
 
+      case "NFM Contact name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.contactName)
+        Input.sendKeysByCss(name, NFMContactNamePage.contactName)
+
+      case "NFM Contact Email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
+        Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
+
     }
 
   }
@@ -97,33 +107,37 @@ class UPEPageSteps extends CommonFunctions {
   }
 
 
-    And("""^I should see the (.*) field is pre-populated with (.*)$""") { (field: String, name: String) =>
-      field match {
-        case "UPE name" =>
-          assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
-        case "NFM name" =>
-          assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
-        case "Address Line 1" =>
-          assert(getAttribueOf(UPEAddressPage.addressLine1, "value").equals(name))
-        case "Address Line 2" =>
-          assert(getAttribueOf(UPEAddressPage.addressLine2, "value").equals(name))
-        case "City" =>
-          assert(getAttribueOf(UPEAddressPage.townOrCity, "value").equals(name))
-        case "Region" =>
-          assert(getAttribueOf(UPEAddressPage.region, "value").equals(name))
-        case "Postal Code" =>
-          assert(getAttribueOf(UPEAddressPage.postalCode, "value").equals(name))
-        case "Country" =>
-          assert(getAttribueOf(UPEAddressPage.country, "value").equals(name))
-        case "UPE Person/Team name" =>
-          assert(getAttributeOf(UPEContactNamePage.contactName, "value").equals(name))
-        case "UPE Email address" =>
-          assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
-        case "Telephone number" =>
-          assert(getAttribueOf(InputTelephonePage.telephoneNumber, "value").equals(name))
+  And("""^I should see the (.*) field is pre-populated with (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "UPE name" =>
+        assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
+      case "NFM name" =>
+        assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
+      case "Address Line 1" =>
+        assert(getAttribueOf(UPEAddressPage.addressLine1, "value").equals(name))
+      case "Address Line 2" =>
+        assert(getAttribueOf(UPEAddressPage.addressLine2, "value").equals(name))
+      case "City" =>
+        assert(getAttribueOf(UPEAddressPage.townOrCity, "value").equals(name))
+      case "Region" =>
+        assert(getAttribueOf(UPEAddressPage.region, "value").equals(name))
+      case "Postal Code" =>
+        assert(getAttribueOf(UPEAddressPage.postalCode, "value").equals(name))
+      case "Country" =>
+        assert(getAttribueOf(UPEAddressPage.country, "value").equals(name))
+      case "UPE Person/Team name" =>
+        assert(getAttributeOf(UPEContactNamePage.contactName, "value").equals(name))
+      case "UPE Email address" =>
+        assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
+      case "Telephone number" =>
+        assert(getAttribueOf(InputTelephonePage.telephoneNumber, "value").equals(name))
+      case "NFM Contact name" =>
+        assert(getAttribueOf(NFMContactNamePage.contactName, "value").equals(name))
+      case "NFM Contact Email" =>
+        assert(getAttribueOf(NFMContactEmailPage.contactEmail, "value").equals(name))
 
-      }
     }
+  }
   And("""^I should see the (.*) field is selected with (.*)$""") { (field: String, name: String) =>
     field match {
       case "Country" =>
