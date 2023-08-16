@@ -338,6 +338,16 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorMessage)
         getTextOf(By cssSelector  (UPEAddressPage.addressErrorMessage)) should include(error)
 
+      case "Address Line 2" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorMessage)
+        getTextOf(By cssSelector  (UPEAddressPage.addressLine2ErrorMessage)) should include(error)
+
       case "City" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
@@ -347,6 +357,26 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorMessage)
         getTextOf(By cssSelector  (UPEAddressPage.cityErrorMessage)) should include(error)
+
+      case "Region" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionLink)
+        getTextOf(By cssSelector (UPEAddressPage.regionLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionErrorMessage)
+        getTextOf(By cssSelector  (UPEAddressPage.regionErrorMessage)) should include(error)
+
+      case "Postal code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorMessage)
+        getTextOf(By cssSelector  (UPEAddressPage.postalCodeErrorMessage)) should include(error)
 
       case "Country" =>
         Wait.waitForTagNameToBeRefreshed("h1")

@@ -12,7 +12,8 @@ Feature: Task list page
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
-    And I enter Country as Country CYA
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Contact CYA
@@ -37,7 +38,7 @@ Feature: Task list page
     And I should see row 1 value Test CYA
     And I should see row 2 value Address Line 1 CYA
     And I should see row 2 value City CYA
-    And I should see row 2 value Country CYA
+    And I should see row 2 value GB
     And I should see row 3 value Contact CYA
     And I should see row 4 value testcya@email.com
     And I should see row 5 value Yes
@@ -65,7 +66,8 @@ Feature: Task list page
     And I click on Continue button
     And I should see the Address Line 1 field is pre-populated with Address Line 1 CYA
     And I should see the City field is pre-populated with City CYA
-    And I should see the Country field is pre-populated with Country CYA
+    And I should see the Postal Code field is pre-populated with EH5 5WY
+    And I should see the Country field is pre-populated with GB
     And I click on Continue button
     And I should see the UPE Person/Team name field is pre-populated with Contact CYA
     And I click on Continue button
@@ -96,7 +98,7 @@ Feature: Task list page
     And I should be on Check your answers page
     And I should see row 2 value Change Address
     And I should see row 2 value City CYA
-    And I should see row 2 value Country CYA
+    And I should see row 2 value GB
 
   Scenario: 5 - Change contact name from check your answers
     Given Organisation User navigates to check your answer page with credId UPECYA

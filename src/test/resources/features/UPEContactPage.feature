@@ -12,7 +12,8 @@ Feature: Enter UPE registered Contact details
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And The caption must be Business details
@@ -35,7 +36,8 @@ Feature: Enter UPE registered Contact details
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Team
@@ -55,7 +57,8 @@ Feature: Enter UPE registered Contact details
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And I click on Continue button
@@ -77,8 +80,8 @@ Feature: Enter UPE registered Contact details
     And I enter Address Line 2 as Test Address Line 2 Save
     And I enter City as Test City Save
     And I enter Region as Test Region Save
-    And I enter Postal Code as Test Postal Code Save
-    And I enter Country as Test Country Save
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Person/Team
@@ -100,8 +103,8 @@ Feature: Enter UPE registered Contact details
     And I should see the Address Line 2 field is pre-populated with Test Address Line 2 Save
     And I should see the City field is pre-populated with Test City Save
     And I should see the Region field is pre-populated with Test Region Save
-    And I should see the Postal Code field is pre-populated with Test Postal Code Save
-    And I should see the Country field is pre-populated with Test Country Save
+    And I should see the Postal Code field is pre-populated with EH5 5WY
+    And I should see the Country field is pre-populated with GB
     And I click on Continue button
     And I should see the UPE Person/Team name field is pre-populated with Test Person/Team
     And I click on Continue button
