@@ -72,7 +72,8 @@ Feature: Task list page
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Address Line 1
     And I enter City as City
-    And I enter Country as Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Contact
