@@ -37,7 +37,7 @@ Feature: Enter NFM registered contact name and contact email address
     And The Body content should be We will use this to confirm your records
     When I enter NFM Contact Email as test@email.com
     When I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to NFM Telephone page
     When I select back link
     Then I should navigate to NFM Contact Email page
     When I select back link

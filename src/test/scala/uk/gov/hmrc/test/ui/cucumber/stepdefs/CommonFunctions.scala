@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputTelephonePage, InputUPENamePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 
@@ -54,7 +54,7 @@ trait CommonFunctions
       case "input-crn page"                   => InputCRNPage
       case "input-upe-address page"           => UPEAddressPage
       case "UPE Telephone page"               => UPETelephonePage
-      case "input telephone page"             => InputTelephonePage
+      case "input telephone page"             => InputUPETelephonePage
       case "under construction page"          => UnderConstructionPage
       case "UPE Contact person/team Name page" => UPEContactNamePage
       case "UPE Contact Email page"            => UPEContactEmailPage
@@ -70,6 +70,9 @@ trait CommonFunctions
       case "NFM Address page"                  => NFMAddressPage
       case "NFM Contact Name page"             => NFMContactNamePage
       case "NFM Contact Email page"            => NFMContactEmailPage
+      case "NFM Telephone page"                => NFMTelephonePage
+      case "input nfm telephone page"          => InputNFMTelephonePage
+      case "NFM Check your answers page"       => NFMCheckYourAnswersPage
     }
   }
 }

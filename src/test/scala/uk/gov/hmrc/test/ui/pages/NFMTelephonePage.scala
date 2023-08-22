@@ -19,12 +19,11 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object InputTelephonePage extends PageObject {
-  val url: String = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-telephone"
+object NFMTelephonePage extends PageObject {
+  val url: String = s"$rootUrl" + "business-matching/filing-member/no-id/telephone"
   val continue = "#submit"
-  val telephoneNumber = "#telephoneNumber"
   val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href*='#telephoneNumber']"
+  val errorLink = "[href*='#value']"
   val backLink = ".govuk-back-link"
   val errorMessage = ".govuk-error-message"
 

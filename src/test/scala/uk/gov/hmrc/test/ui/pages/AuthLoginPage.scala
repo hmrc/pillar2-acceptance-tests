@@ -36,6 +36,8 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndNFMAddressUrl: String       = s"$rootUrl"+"business-matching/filing-member/no-id/input-address "
   val frontEndNFMContactNameUrl: String   = s"$rootUrl"+"business-matching/filing-member/no-id/input-business-name"
   val frontEndNFMContactEmailUrl: String  = s"$rootUrl"+"business-matching/filing-member/no-id/input-email"
+  val frontEndNFMTelephoneUrl: String     = s"$rootUrl"+"business-matching/filing-member/no-id/telephone"
+  val frontEndNFMTelephoneInputUrl: String= s"$rootUrl"+"business-matching/filing-member/no-id/input-telephone"
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
@@ -152,7 +154,19 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton
   }
+  def loginToNFMTelephone(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndNFMTelephoneUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
 
+  def loginToNFMTelephoneInput(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndNFMTelephoneInputUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
   private def selectAffinityGroupOrg() =
     new Select(findAffinityGroup()).selectByVisibleText("Organisation")
 
