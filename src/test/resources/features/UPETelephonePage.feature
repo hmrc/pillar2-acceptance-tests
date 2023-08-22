@@ -78,6 +78,7 @@ Feature: Ultimate parent entity based in UK EQs
     When I click on Continue button
     Then I should see error message Select yes if we can contact Test Telephone Error by telephone on the UPE Telephone Page
 
+
   Scenario: 4 - Display an error message, when user continue without selecting an option
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page

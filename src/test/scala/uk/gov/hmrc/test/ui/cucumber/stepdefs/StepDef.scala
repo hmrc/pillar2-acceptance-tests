@@ -20,9 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage,NFMRegistrationPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
-
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputTelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -277,13 +275,13 @@ class StepDef extends BaseStepDef {
 
       case "Input Telephone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.errorSummary)
+        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.errorLink)
-        getTextOf(By cssSelector (InputTelephonePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.errorLink)
+        getTextOf(By cssSelector (InputUPETelephonePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.errorMessage)
-        getTextOf(By cssSelector (InputTelephonePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.errorMessage)
+        getTextOf(By cssSelector (InputUPETelephonePage.errorMessage)) should include(error)
 
       case "UPE Contact person/team name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -324,6 +322,26 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorMessage)
         getTextOf(By cssSelector (NFMRegistrationPage.errorMessage)) should include(error)
+
+      case "NFM Telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMTelephonePage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMTelephonePage.errorLink)
+        getTextOf(By cssSelector (NFMTelephonePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMTelephonePage.errorMessage)
+        getTextOf(By cssSelector (NFMTelephonePage.errorMessage)) should include(error)
+
+      case "Input Nfm Telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.errorLink)
+        getTextOf(By cssSelector (InputNFMTelephonePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.errorMessage)
+        getTextOf(By cssSelector (InputNFMTelephonePage.errorMessage)) should include(error)
     }
   }
   And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>

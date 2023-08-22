@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{InputTelephonePage, InputUPENamePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
 
 
 class UPEPageSteps extends CommonFunctions {
@@ -77,8 +77,8 @@ class UPEPageSteps extends CommonFunctions {
 
       case "Telephone Number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.telephoneNumber)
-        Input.sendKeysByCss(name, InputTelephonePage.telephoneNumber)
+        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.telephoneNumber)
+        Input.sendKeysByCss(name, InputUPETelephonePage.telephoneNumber)
 
       case "NFM Contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -89,6 +89,11 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
         Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
+
+      case "NFM Telephone Number" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.telephoneNumber)
+        Input.sendKeysByCss(name, InputNFMTelephonePage.telephoneNumber)
 
     }
 
@@ -130,11 +135,13 @@ class UPEPageSteps extends CommonFunctions {
       case "UPE Email address" =>
         assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
       case "Telephone number" =>
-        assert(getAttribueOf(InputTelephonePage.telephoneNumber, "value").equals(name))
+        assert(getAttribueOf(InputUPETelephonePage.telephoneNumber, "value").equals(name))
       case "NFM Contact name" =>
         assert(getAttribueOf(NFMContactNamePage.contactName, "value").equals(name))
       case "NFM Contact Email" =>
         assert(getAttribueOf(NFMContactEmailPage.contactEmail, "value").equals(name))
+      case "NFM Telephone number" =>
+        assert(getAttribueOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
 
     }
   }

@@ -159,4 +159,16 @@ class NFMPageSteps extends CommonFunctions {
     }
   }
 
+  Given("""^(.*) logs in NFM Telephone page for Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToNFMTelephone(name)
+    }
+  }
+
+  Given("""^(.*) logs in NFM Telephone input page for Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToNFMTelephoneInput(name)
+    }
+  }
+
 }
