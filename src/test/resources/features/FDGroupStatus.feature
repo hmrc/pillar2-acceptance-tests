@@ -1,7 +1,7 @@
 @tests @zap_accessibility
-Feature: Enter NFM contact Telephone number
-  As an NFM user
-  I want to enter the Telephone number
+Feature: Enter Further Details Group status as MNE or Domestic
+  As a Subscription user
+  I want to enter the group status details
 
   Scenario: 1 - Create a new subscription for validating MNE Selection on Further details status page
     Given Organisation User logs in as upe with credId MNESelection for Pillar2
@@ -10,7 +10,6 @@ Feature: Enter NFM contact Telephone number
     Then I should be on UPE Org type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
@@ -54,7 +53,6 @@ Feature: Enter NFM contact Telephone number
     Then I should be on UPE Org type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
