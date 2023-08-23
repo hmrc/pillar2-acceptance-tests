@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, CheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, FDGroupStatusPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 
@@ -30,49 +30,50 @@ trait CommonFunctions
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "multiple territories EQ page"     => MultipleTerritoriesEQPage
-      case "NFM EQ page"                      => NFMEQPage
-      case "NFM details page"                 => NFMDetailsPage
-      case "NFM registration page"            => NFMRegistrationPage
-      case "business EQ page"                 => BusinessActivityEQPage
-      case "next EQ page"                     => NextEQPage
-      case "guidance page"                    => GuidancePage
-      case "Global gross revenue"             => GlobalGrossRevenueEQPage
-      case "confirmation page"                => ConfirmationPage
-      case "BA guidance page"                 => BAGuidancePage
-      case "NFM guidance page"                => NFMGuidancePage
-      case "MT guidance page"                 => MTGuidancePage
-      case "GGR guidance page"                => GGRGuidancePage
-      case "gov uk guidance page"             => GUKGuidancePage
-      case "auth-login page"                  => AuthLoginPage
-      case "Task list page"                   => TaskListPage
-      case "Initial guidance Page"            => InitialGuidancePage
-      case "employee status page"             => EmployeeStatusPage
-      case "UPE business page"                => UPEPage
-      case "UPE EQ page"                      => UPEEQPage
-      case "input-upe-name page"              => InputUPENamePage
-      case "input-crn page"                   => InputCRNPage
-      case "input-upe-address page"           => UPEAddressPage
-      case "UPE Telephone page"               => UPETelephonePage
-      case "input telephone page"             => InputUPETelephonePage
-      case "under construction page"          => UnderConstructionPage
+      case "multiple territories EQ page" => MultipleTerritoriesEQPage
+      case "NFM EQ page" => NFMEQPage
+      case "NFM details page" => NFMDetailsPage
+      case "NFM registration page" => NFMRegistrationPage
+      case "business EQ page" => BusinessActivityEQPage
+      case "next EQ page" => NextEQPage
+      case "guidance page" => GuidancePage
+      case "Global gross revenue" => GlobalGrossRevenueEQPage
+      case "confirmation page" => ConfirmationPage
+      case "BA guidance page" => BAGuidancePage
+      case "NFM guidance page" => NFMGuidancePage
+      case "MT guidance page" => MTGuidancePage
+      case "GGR guidance page" => GGRGuidancePage
+      case "gov uk guidance page" => GUKGuidancePage
+      case "auth-login page" => AuthLoginPage
+      case "Task list page" => TaskListPage
+      case "Initial guidance Page" => InitialGuidancePage
+      case "employee status page" => EmployeeStatusPage
+      case "UPE business page" => UPEPage
+      case "UPE EQ page" => UPEEQPage
+      case "input-upe-name page" => InputUPENamePage
+      case "input-crn page" => InputCRNPage
+      case "input-upe-address page" => UPEAddressPage
+      case "UPE Telephone page" => UPETelephonePage
+      case "input telephone page" => InputUPETelephonePage
+      case "under construction page" => UnderConstructionPage
       case "UPE Contact person/team Name page" => UPEContactNamePage
-      case "UPE Contact Email page"            => UPEContactEmailPage
-      case "UPE Contact page"                  => UPEContactPage
-      case "UPE Org type page"                 => UPEOrgTypePage
-      case "NFM Org type page"                 => NFMOrgTypePage
-      case "UKCompany GRS page"                => UKCompanyGRSPage
-      case "NFM UKCompany GRS page"            => NFMUKCompanyGRSPage
-      case "LLP GRS page"                      => LLPGRSPage
-      case "NFM LLP GRS page"                  => NFMLLPGRSPage
-      case "Check your answers page"           => CheckYourAnswersPage
-      case "NFM Name page"                     => NFMNamePage
-      case "NFM Address page"                  => NFMAddressPage
-      case "NFM Contact Name page"             => NFMContactNamePage
-      case "NFM Contact Email page"            => NFMContactEmailPage
-      case "NFM Telephone page"                => NFMTelephonePage
-      case "input nfm telephone page"          => InputNFMTelephonePage
-      case "NFM Check your answers page"       => NFMCheckYourAnswersPage
+      case "UPE Contact Email page" => UPEContactEmailPage
+      case "UPE Contact page" => UPEContactPage
+      case "UPE Org type page" => UPEOrgTypePage
+      case "NFM Org type page" => NFMOrgTypePage
+      case "UKCompany GRS page" => UKCompanyGRSPage
+      case "NFM UKCompany GRS page" => NFMUKCompanyGRSPage
+      case "LLP GRS page" => LLPGRSPage
+      case "NFM LLP GRS page" => NFMLLPGRSPage
+      case "Check your answers page" => CheckYourAnswersPage
+      case "NFM Name page" => NFMNamePage
+      case "NFM Address page" => NFMAddressPage
+      case "NFM Contact Name page" => NFMContactNamePage
+      case "NFM Contact Email page" => NFMContactEmailPage
+      case "NFM Telephone page" => NFMTelephonePage
+      case "input nfm telephone page" => InputNFMTelephonePage
+      case "NFM Check your answers page" => NFMCheckYourAnswersPage
+      case "MNE or domestic page" => FDGroupStatusPage
     }
   }
 }
