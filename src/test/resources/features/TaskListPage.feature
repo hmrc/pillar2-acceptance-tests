@@ -14,10 +14,10 @@ Feature: Task list page
     And I should see section 3 as Review and submit
     And I should see the task name Add ultimate parent's details on Business details section
     And I should see the task name Filing member's details on Business details section
-    And I should see the task name Further business details on Business details section
+    And I should see the task name Further group details on Business details section
     And The Task Add ultimate parent's details status should be Not started
     And The Task Filing member's details status should be Cannot start yet
-    And The Task Further business details status should be Cannot start yet
+    And The Task Further group details status should be Cannot start yet
 
   Scenario: 2 - Prepopulate the answers on UPE pages after signout
     Given Organisation User logs in as upe with credId TestCredID1 for Pillar2

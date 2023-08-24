@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -342,6 +342,16 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.errorMessage)
         getTextOf(By cssSelector (InputNFMTelephonePage.errorMessage)) should include(error)
+
+      case "Further Details Group Status" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(FDGroupStatusPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(FDGroupStatusPage.errorLink)
+        getTextOf(By cssSelector (FDGroupStatusPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(FDGroupStatusPage.errorMessage)
+        getTextOf(By cssSelector (FDGroupStatusPage.errorMessage)) should include(error)
     }
   }
   And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
