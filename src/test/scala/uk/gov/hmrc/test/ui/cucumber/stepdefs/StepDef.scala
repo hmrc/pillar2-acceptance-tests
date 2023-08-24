@@ -76,9 +76,11 @@ class StepDef extends BaseStepDef {
     }
   }
 
-  Given("""^(.*) navigates to check your answer page with credId (.*)$""") { (name: String, credId: String) =>
+  Given("""^Organisation User navigates to (.*) check your answer page with credId (.*)$""") { (name: String, credId: String) =>
     name match {
-      case "Organisation User" => AuthLoginPage.loginToCA(name, credId)
+      case "UPE" => AuthLoginPage.loginToCA(name, credId)
+      case "NFM" => AuthLoginPage.loginToNFMCA(name, credId)
+
     }
   }
 
