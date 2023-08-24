@@ -21,7 +21,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, CheckYourAnswersPage, InitialGuidancePage, TaskListPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, UPECheckYourAnswersPage, InitialGuidancePage, TaskListPage}
 
 class TaskListPageSteps extends CommonFunctions {
 

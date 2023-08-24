@@ -1,7 +1,7 @@
 @tests @zap_accessibility
-Feature: Task list page
+Feature: UPE Check your Answers page
   As a MNE user
-  I want to create a new subscription
+  I would like to change data from change your answers page
 
   Scenario: 1 - User navigates to check your answer page answering all the questions of UPE
     Given Organisation User logs in as upe with credId UPECYA for Pillar2
@@ -38,7 +38,7 @@ Feature: Task list page
     And I should see row 1 value Test CYA
     And I should see row 2 value Address Line 1 CYA
     And I should see row 2 value City CYA
-    And I should see row 2 value GB
+    And I should see row 2 value United Kingdom
     And I should see row 3 value Contact CYA
     And I should see row 4 value testcya@email.com
     And I should see row 5 value Yes
@@ -50,11 +50,6 @@ Feature: Task list page
     When I click on Continue button
     Then I should be on Task list page
     And The Task Edit ultimate parent's details status should be Completed
-
-  Scenario: 2 - Prepopulate all the answers in NO ID journey
-    Given Organisation User navigates to check your answer page with credId UPECYA
-    Then I should be on Check your answers page
-    And The Heading should be Check your answers
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId UPECYA for Pillar2
@@ -77,67 +72,43 @@ Feature: Task list page
     And I click on Continue button
     Then I should see the Telephone number field is pre-populated with 1234569
 
-  Scenario: 3 - Change UPE name from check your answers
-    Given Organisation User navigates to check your answer page with credId UPECYA
+  Scenario: 2 - Change UPE fields from check your answers page
+    Given Organisation User navigates to UPE check your answer page with credId UPECYA
     Then I should be on Check your answers page
     And The caption must be Business details
     And The Heading should be Check your answers
-    When I click on change hyperlink next to the Name
+    When I click on change hyperlink next to the UPE Name
     And I enter UPE name as Name Change
     Then I navigate back to check your answers page from name page
     Then I should be on Check your answers page
     And I should see row 1 value Name Change
-
-  Scenario: 4 - Change Address from check your answers
-    Given Organisation User navigates to check your answer page with credId UPECYA
-    Then I should be on Check your answers page
-    And The Heading should be Check your answers
-    When I click on change hyperlink next to the Address
+    When I click on change hyperlink next to the UPE Address
     And I enter Address Line 1 as Change Address
     Then I navigate back to check your answers page from address page
     And I should be on Check your answers page
     And I should see row 2 value Change Address
     And I should see row 2 value City CYA
-    And I should see row 2 value GB
-
-  Scenario: 5 - Change contact name from check your answers
-    Given Organisation User navigates to check your answer page with credId UPECYA
-    Then I should be on Check your answers page
-    And The Heading should be Check your answers
-    When I click on change hyperlink next to the Contact Name
+    And I should see row 2 value United Kingdom
+    When I click on change hyperlink next to the UPE Contact Name
     And I enter UPE Person/Team name as Change Contact Person
     Then I navigate back to check your answers page from contact name page
     And I should be on Check your answers page
     And I should see row 3 value Change Contact Person
-
-  Scenario: 6 - Change email contact from check your answers
-    Given Organisation User navigates to check your answer page with credId UPECYA
-    Then I should be on Check your answers page
-    And The Heading should be Check your answers
-    When I click on change hyperlink next to the Email Address
+    When I click on change hyperlink next to the UPE Email Address
     And I enter UPE Email address as changetest@email.com
     Then I navigate back to check your answers page from email address page
     And I should be on Check your answers page
     And I should see row 4 value changetest@email.com
-
-  Scenario: 7 - Change telephone number from check your answers
-    Given Organisation User navigates to check your answer page with credId UPECYA
-    Then I should be on Check your answers page
-    And The Heading should be Check your answers
-    When I click on change hyperlink next to the Telephone Number
+    When I click on change hyperlink next to the UPE Telephone Number
     And I enter Telephone Number as 12345679
     Then I navigate back to check your answers page from telephone number page
     And I should be on Check your answers page
     And I should see row 6 value 12345679
-  @ignore
-  Scenario: 8 - Change telephone contact option from check your answers
-    Given Organisation User navigates to check your answer page with credId UPECYA
-    Then I should be on Check your answers page
-    And The Heading should be Check your answers
-    When I click on change hyperlink next to the Telephone Contact
+    When I click on change hyperlink next to the UPE Telephone Contact
     And I select option No and continue to next
     Then I should be on Check your answers page
     And I should see row 5 value No
+
 
 
 

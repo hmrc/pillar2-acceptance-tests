@@ -19,17 +19,17 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 
-object CheckYourAnswersPage extends PageObject {
+object UPECheckYourAnswersPage extends PageObject {
   val url: String             = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
   val header: String          = "h1.govuk-heading-l"
   val keyList                 = ".govuk-summary-list__key"
   val valueList               = ".govuk-summary-list__value"
   val actionsList             = ".govuk-summary-list__actions"
   val rowNumber               = "govuk-summary-list__row"
-  val changeName              = "a[href='/report-pillar2-top-up-taxes/business-matching/ultimate-parent/no-id/change-input-name']"
-  val changeAddress           = "a[href='/report-pillar2-top-up-taxes/business-matching/ultimate-parent/no-id/change-input-address']"
-  val changeContactname       = "a[href='/report-pillar2-top-up-taxes/business-matching/ultimate-parent/no-id/change-input-business-name']"
-  val changeEmailaddress      = "a[href='/report-pillar2-top-up-taxes/business-matching/ultimate-parent/no-id/change-input-email']"
+  val changeName              = "a[href*='/change-input-name']"
+  val changeAddress           = "a[href*='/change-input-address']"
+  val changeContactname       = "a[href*='/change-input-business-name']"
+  val changeEmailaddress      = "a[href*='/change-input-email']"
   val changeTelephonecontact  = "a[href*='/change-telephone']"
-  val changeTelephonenumber  = "a[href='/report-pillar2-top-up-taxes/business-matching/ultimate-parent/no-id/change-input-telephone']"
+  val changeTelephonenumber  = "a[href*='/change-input-telephone']"
 }
