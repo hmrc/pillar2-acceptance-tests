@@ -29,7 +29,7 @@ trait BaseStepDef
   extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
   sys.addShutdownHook {
-    Try(Nav.clearCollections())
+   // Try(Nav.clearCollections())
     Try(SingletonDriver.closeInstance)
   }
 }

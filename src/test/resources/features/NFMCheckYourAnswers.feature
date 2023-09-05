@@ -1,4 +1,4 @@
-@tests1 @zap_accessibility
+@tests @zap_accessibility
 Feature: Task list page
   As a MNE user
   I want to create a new subscription

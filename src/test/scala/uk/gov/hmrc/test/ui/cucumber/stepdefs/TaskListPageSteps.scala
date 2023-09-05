@@ -41,6 +41,12 @@ class TaskListPageSteps extends CommonFunctions {
     assert(driver.findElement(By.cssSelector(TaskListPage.taskItems)).getText.contains(taskName))
   }
 
+  And("""^I should see the task section (\d+) with task name as (.*) on Contact details section$""") { (sectionNumber: Int, taskName: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
+    assert(driver.findElements(By.cssSelector(TaskListPage.taskSection)).get(sectionNumber - 1).getText.contains(taskName))
+  }
+
   And("""^I should see employee status link (.*)""") { (empStatusLink: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
@@ -85,6 +91,15 @@ class TaskListPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
 
+      case "Contact details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
+
+      case "Add Contact details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
 
     }
 
