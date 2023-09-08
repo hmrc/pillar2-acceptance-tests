@@ -16,7 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.cucumber.Input.{getAttribueOf, getAttributeOf}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Input.{getAttribueOf, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.pages.{GroupAccountingPeriodPage, InputUPENamePage}
 

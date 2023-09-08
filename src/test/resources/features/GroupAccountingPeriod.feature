@@ -99,5 +99,6 @@ Feature: Enter group Accounting period
     When Accounting Period End Day is entered as 12
     And Accounting Period End Month is entered as 20
     And Accounting Period End Year is entered as 2024
+    And I click on Continue button
     Then I should see error message Enter a date in the correct format on the Group Accounting Period Start Date Page
     And I should see error message Enter a date in the correct format on the Group Accounting Period End Date Page

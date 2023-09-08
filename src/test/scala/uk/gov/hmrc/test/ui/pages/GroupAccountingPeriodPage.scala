@@ -26,8 +26,8 @@ object GroupAccountingPeriodPage extends PageObject {
   val form               = ".govuk-form-group"
   val continue           = ".govuk-button"
   val errorSummary       = ".govuk-error-summary__list"
-  val errorLinkStartDate = "[href='#startDate.day']"
-  val errorLinkEndDate   = "[href='#endDate.day']"
+  val errorLinkStartDate = "[href='#startDate']"
+  val errorLinkEndDate   = "[href='#endDate']"
   val backLink           = ".govuk-back-link"
   val errorMessageStartDate= "#startDate-error"
   val errorMessageEndDate= "#endDate-error"
@@ -37,6 +37,7 @@ object GroupAccountingPeriodPage extends PageObject {
   val endDay             = "endDate.day"
   val endMonth           = "endDate.month"
   val endYear            = "endDate.year"
+  val dateMessage        =".govuk-fieldset__heading"
 
   def clickContinue()  = findByCss(continue).click()
 
