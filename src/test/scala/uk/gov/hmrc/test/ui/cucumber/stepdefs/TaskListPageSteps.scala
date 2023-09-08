@@ -85,6 +85,10 @@ class TaskListPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
 
+      case "Edit further group details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
 
     }
 
