@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{ InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
 
 
 class UPEPageSteps extends CommonFunctions {
@@ -169,7 +169,6 @@ class UPEPageSteps extends CommonFunctions {
       case "In the UK and other countries" => Input.clickById("value_0")
       case "Only in the UK" => Input.clickById("value_1")
     }
-    UPEOrgTypePage.clickContinue()
   }
 
     And("""^I registered successfully with (.*)""") { (option: String) =>

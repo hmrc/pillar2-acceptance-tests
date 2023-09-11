@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, UPECheckYourAnswersPage, ConfirmationPage, EmployeeStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, FDGroupStatusPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, EmployeeStatusPage, FDGroupStatusPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 
@@ -74,6 +74,7 @@ trait CommonFunctions
       case "input nfm telephone page"         => InputNFMTelephonePage
       case "NFM Check your answers page"      => NFMCheckYourAnswersPage
       case "MNE or domestic page"             => FDGroupStatusPage
+      case "Group accounting period page"     => GroupAccountingPeriodPage
     }
   }
 }

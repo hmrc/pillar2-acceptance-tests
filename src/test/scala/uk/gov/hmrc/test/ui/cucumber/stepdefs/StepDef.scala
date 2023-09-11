@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 class StepDef extends BaseStepDef {
 
@@ -354,6 +354,26 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(FDGroupStatusPage.errorMessage)
         getTextOf(By cssSelector (FDGroupStatusPage.errorMessage)) should include(error)
+
+      case "Group Accounting Period Start Date" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorLinkStartDate)
+        getTextOf(By cssSelector (GroupAccountingPeriodPage.errorLinkStartDate)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorMessageStartDate)
+        getTextOf(By cssSelector (GroupAccountingPeriodPage.errorMessageStartDate)) should include(error)
+
+      case "Group Accounting Period End Date" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorLinkEndDate)
+        getTextOf(By cssSelector (GroupAccountingPeriodPage.errorLinkEndDate)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorMessageEndDate)
+        getTextOf(By cssSelector (GroupAccountingPeriodPage.errorMessageEndDate)) should include(error)
     }
   }
   And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
