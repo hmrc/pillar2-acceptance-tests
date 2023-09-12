@@ -32,7 +32,7 @@ Feature: Enter group Accounting period
     And Accounting Period End Month is entered as 01
     And Accounting Period End Year is entered as 2025
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to FD check your answers page
     When I select back link
     Then I should navigate to Group accounting period page
     And I should see date field Start Day is pre-populated with 15
