@@ -80,6 +80,7 @@ class StepDef extends BaseStepDef {
     name match {
       case "UPE" => AuthLoginPage.loginToCA(name, credId)
       case "NFM" => AuthLoginPage.loginToNFMCA(name, credId)
+      case "FD"  => AuthLoginPage.loginToFDCA(name, credId)
 
     }
   }
