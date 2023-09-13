@@ -1,7 +1,7 @@
 @tests @zap_accessibility
-Feature: Task list page
+Feature: Nominated Filing member check your answers page
   As a MNE user
-  I want to create a new subscription
+  I would like to change data from change your answers page
 
   Scenario: 1 - User navigates to check your answer page answering all the questions of UPE and NFM
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2

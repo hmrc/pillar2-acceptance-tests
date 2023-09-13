@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{UPECheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage}
+import uk.gov.hmrc.test.ui.pages.{FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, UPECheckYourAnswersPage}
 
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
@@ -59,6 +59,10 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(NFMCheckYourAnswersPage.changeTelephonecontact)
       case "NFM Telephone Number" =>
         clickByCss(NFMCheckYourAnswersPage.changeTelephonenumber)
+      case "FD Group Status" =>
+        clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
+      case "Accounting Period" =>
+        clickByCss(FurtherDetailsCheckYourAnswersPage.changeAccountingPeriod)
     }
   }
   Then("""^I navigate back to check your answers page from (.*) page""") { (page: String) =>

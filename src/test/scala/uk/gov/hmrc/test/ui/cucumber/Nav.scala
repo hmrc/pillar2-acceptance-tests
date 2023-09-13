@@ -29,9 +29,9 @@ object Nav extends BasePage {
     driver.navigate().back()
   }
 
-  /* def clearCollections(): Unit = {
+   def clearCollections(): Unit = {
     navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/clear-all")
-  } */
+  }
 
   def isVisible(by: By): Boolean =
     driver.findElements(by).size() != 0

@@ -21,7 +21,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, UPECheckYourAnswersPage, InitialGuidancePage, TaskListPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, TaskListPage}
 
 class TaskListPageSteps extends CommonFunctions {
 
@@ -87,6 +87,11 @@ class TaskListPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
 
       case "Add further group details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+
+      case "Edit further group details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
