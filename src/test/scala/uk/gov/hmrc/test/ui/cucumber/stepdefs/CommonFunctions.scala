@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, EmployeeStatusPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BusinessActivityEQPage, ConfirmationPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsTelephonePage, EmployeeStatusPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 
@@ -79,7 +79,9 @@ trait CommonFunctions
       case "Contact details guidance page"    => ContactDetailsGuidancePage
       case "Contact details display page"     => ContactDetailsDisplayPage
       case "Contact details input name page"  => ContactDetailsInputNamePage
-      case "Contact details input email page" =>ContactDetailsInputEmailPage
+      case "Contact details input email page" => ContactDetailsInputEmailPage
+      case "Contact details telephone page"   => ContactDetailsTelephonePage
+      case "Contact details input telephone page" => ContactDetailsInputTelephonePage
     }
   }
 }
