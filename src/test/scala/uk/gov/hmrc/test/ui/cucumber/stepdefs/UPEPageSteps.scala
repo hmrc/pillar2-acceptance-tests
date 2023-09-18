@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
 
 
 class UPEPageSteps extends CommonFunctions {
@@ -95,6 +95,25 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.telephoneNumber)
         Input.sendKeysByCss(name, InputNFMTelephonePage.telephoneNumber)
 
+      case "Contact Details Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
+        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
+
+      case "Contact Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
+        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
+
+      case "Contact Email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputEmailPage.contactEmail)
+        Input.sendKeysByCss(name, ContactDetailsInputEmailPage.contactEmail)
+
+      case "Contact Telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputTelephonePage.contactTelephone)
+        Input.sendKeysByCss(name, ContactDetailsInputTelephonePage.contactTelephone)
     }
 
   }
@@ -142,9 +161,15 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttribueOf(NFMContactEmailPage.contactEmail, "value").equals(name))
       case "NFM Telephone number" =>
         assert(getAttribueOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
-
+      case "Contact Name" =>
+        assert(getAttribueOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
+      case "Contact Email" =>
+        assert(getAttribueOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
+      case "Contact Telephone" =>
+        assert(getAttribueOf(ContactDetailsInputTelephonePage.contactTelephone, "value").equals(name))
     }
   }
+
   And("""^I should see the (.*) field is selected with (.*)$""") { (field: String, name: String) =>
     field match {
       case "Country" =>

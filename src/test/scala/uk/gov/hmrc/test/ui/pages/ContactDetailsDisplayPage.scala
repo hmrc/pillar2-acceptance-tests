@@ -14,26 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber
+package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object Nav extends BasePage {
-  val url = ""
+object ContactDetailsDisplayPage extends PageObject {
+  val url: String = s"$rootUrl" + "contact-details/use-contact"
+  val continue = "#submit"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLink = "[href*='#value']"
+  val backLink = ".govuk-back-link"
+  val errorMessage = ".govuk-error-message"
+  val contactDetails = ".govuk-list"
 
-  def navigateTo(url: String): Unit =
-    driver.navigate.to(url)
 
-  def browserBack() {
-    driver.navigate().back()
-  }
-
-   def clearCollections(): Unit = {
-    navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/clear-all")
-  }
-
-  def isVisible(by: By): Boolean =
-    driver.findElements(by).size() != 0
+  def clickContinue() = findByCss(continue).click()
 
 }

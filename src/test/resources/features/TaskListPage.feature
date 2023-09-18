@@ -18,6 +18,8 @@ Feature: Task list page
     And The Task Add ultimate parent's details status should be Not started
     And The Task Filing member's details status should be Cannot start yet
     And The Task Further group details status should be Cannot start yet
+    And I should see the task section 2 with task name as Contact details on Contact details section
+    And The Task Contact details status should be Cannot start yet
 
   Scenario: 2 - Prepopulate the answers on UPE pages after signout
     Given Organisation User logs in as upe with credId TestCredID1 for Pillar2

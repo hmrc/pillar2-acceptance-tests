@@ -21,7 +21,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, UPECheckYourAnswersPage, InitialGuidancePage, TaskListPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, TaskListPage}
 
 class TaskListPageSteps extends CommonFunctions {
 
@@ -39,6 +39,12 @@ class TaskListPageSteps extends CommonFunctions {
     Wait.waitForTagNameToBeRefreshed("h1")
     Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
     assert(driver.findElement(By.cssSelector(TaskListPage.taskItems)).getText.contains(taskName))
+  }
+
+  And("""^I should see the task section (\d+) with task name as (.*) on Contact details section$""") { (sectionNumber: Int, taskName: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
+    assert(driver.findElements(By.cssSelector(TaskListPage.taskSection)).get(sectionNumber - 1).getText.contains(taskName))
   }
 
   And("""^I should see employee status link (.*)""") { (empStatusLink: String) =>
@@ -89,6 +95,16 @@ class TaskListPageSteps extends CommonFunctions {
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+
+      case "Contact details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
+
+      case "Add Contact details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
 
     }
 

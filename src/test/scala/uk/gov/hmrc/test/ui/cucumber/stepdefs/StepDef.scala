@@ -20,7 +20,8 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+
 
 class StepDef extends BaseStepDef {
 
@@ -375,6 +376,17 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorMessageEndDate)
         getTextOf(By cssSelector (GroupAccountingPeriodPage.errorMessageEndDate)) should include(error)
+
+      case "Contact details display" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorLink)
+        getTextOf(By cssSelector (ContactDetailsDisplayPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorMessage)
+        getTextOf(By cssSelector (ContactDetailsDisplayPage.errorMessage)) should include(error)
+
     }
   }
   And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
@@ -460,6 +472,11 @@ class StepDef extends BaseStepDef {
 
   And("""^I click the browser back button$""") { () =>
     Nav.browserBack()
+  }
+
+  And("""^I should see the contact details (.*) on use contact page""") { (details: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    assert(driver.findElement(By.cssSelector(ContactDetailsDisplayPage.contactDetails)).getText.contains(details))
   }
 
 
