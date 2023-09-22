@@ -24,7 +24,7 @@ Feature: Register NFM and enter NFM details
     And The Body content should be You must have permission from the UPE to nominate a company as a filing member and be able to access the information required to file Pillar 2 top-up tax on the groups behalf.
     When I continue to next page
     Then I should see error message Select yes if there is a nominated filing member for this group on the NFM registration page Page
-    When I select option No and continue to next
+    When I select No option and continue to next
     Then I should navigate to Task list page
     And The Task Edit filing member's details status should be Completed
 
@@ -43,7 +43,7 @@ Feature: Register NFM and enter NFM details
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     And The caption is Business details
     And The Heading should be Is the nominated filing member registered in the UK?

@@ -26,7 +26,7 @@ Feature: Enter NFM registered Name and address
     And I click on Continue button
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option No and continue to next
     Then I should navigate to NFM Name page
@@ -93,7 +93,7 @@ Feature: Enter NFM registered Name and address
     And I click on Continue button
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option No and continue to next
     Then I should navigate to NFM Name page
@@ -126,7 +126,7 @@ Feature: Enter NFM registered Name and address
     And I click on Continue button
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option No and continue to next
     Then I should navigate to NFM Name page

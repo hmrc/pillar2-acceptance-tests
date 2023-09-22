@@ -15,7 +15,7 @@ Feature: Further Details Check your Answers Page
     Then I should navigate to Task list page
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option No and continue to next
+    When I select No option and continue to next
     Then I should navigate to Task list page
     And The Task Add further group details status should be Not started
     When I click Add further group details link

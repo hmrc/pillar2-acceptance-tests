@@ -15,7 +15,7 @@ Feature: Enter Further Details Group status as MNE or Domestic
     Then I should navigate to Task list page
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -58,7 +58,7 @@ Feature: Enter Further Details Group status as MNE or Domestic
     Then I should navigate to Task list page
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -103,7 +103,7 @@ Feature: Enter Further Details Group status as MNE or Domestic
     And The Task Edit ultimate parent's details status should be Completed
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page

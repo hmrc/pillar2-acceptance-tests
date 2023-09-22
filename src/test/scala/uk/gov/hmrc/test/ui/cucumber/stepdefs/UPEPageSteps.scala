@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
 
 
 class UPEPageSteps extends CommonFunctions {
@@ -114,6 +114,23 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(ContactDetailsInputTelephonePage.contactTelephone)
         Input.sendKeysByCss(name, ContactDetailsInputTelephonePage.contactTelephone)
+
+      case "Second Contact Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(SecondContactNamePage.contactName)
+        Input.sendKeysByCss(name, SecondContactNamePage.contactName)
+
+      case "Second Contact Email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(SecondContactEmailPage.contactEmail)
+        Input.sendKeysByCss(name, SecondContactEmailPage.contactEmail)
+
+      case "Second Contact Input" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactTelephone)
+        Input.sendKeysByCss(name, SecondContactInputPage.contactTelephone)
+
+
     }
 
   }
@@ -167,6 +184,12 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttribueOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
       case "Contact Telephone" =>
         assert(getAttribueOf(ContactDetailsInputTelephonePage.contactTelephone, "value").equals(name))
+      case "Second Contact Name" =>
+        assert(getAttribueOf(SecondContactNamePage.contactName, "value").equals(name))
+      case "Second Contact Email" =>
+        assert(getAttribueOf(SecondContactEmailPage.contactEmail, "value").equals(name))
+      case "Second Contact Input" =>
+        assert(getAttribueOf(SecondContactInputPage.contactTelephone, "value").equals(name))
     }
   }
 

@@ -19,7 +19,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -41,7 +41,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -69,7 +69,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -97,7 +97,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -123,7 +123,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -150,7 +150,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -176,7 +176,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -202,7 +202,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -230,7 +230,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -258,7 +258,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -284,7 +284,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -311,7 +311,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -337,7 +337,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
@@ -363,7 +363,7 @@ Feature: NFM GRS journies
     And The Task Add filing member's details status should be Not started
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM Org type page
