@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -387,6 +387,16 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorMessage)
         getTextOf(By cssSelector (ContactDetailsDisplayPage.errorMessage)) should include(error)
 
+      case "Second Contact details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(SecondContactDetailsDisplayPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(SecondContactDetailsDisplayPage.errorLink)
+        getTextOf(By cssSelector (SecondContactDetailsDisplayPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(SecondContactDetailsDisplayPage.errorMessage)
+        getTextOf(By cssSelector (SecondContactDetailsDisplayPage.errorMessage)) should include(error)
+
     }
   }
   And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
@@ -466,6 +476,14 @@ class StepDef extends BaseStepDef {
     option match {
       case "Yes" => Input.clickById("value_0")
       case "No" => Input.clickById("value_1")
+    }
+    InitialGuidancePage.clickContinue()
+  }
+
+  And("""^I select (.*) option and continue to next$""") { (option: String) =>
+    option match {
+      case "Yes" => Input.clickById("nominateFilingMember_0")
+      case "No" => Input.clickById("nominateFilingMember_1")
     }
     InitialGuidancePage.clickContinue()
   }

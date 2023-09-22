@@ -15,7 +15,7 @@ Feature: Enter group Accounting period
     Then I should navigate to Task list page
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option No and continue to next
+    When I select No option and continue to next
     Then I should navigate to Task list page
     And The Task Add further group details status should be Not started
     When I click Add further group details link
@@ -70,7 +70,7 @@ Feature: Enter group Accounting period
     And The Task Edit ultimate parent's details status should be Completed
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option No and continue to next
+    When I select No option and continue to next
     Then I should navigate to Task list page
     When I click Add further group details link
     Then I should navigate to MNE or domestic page

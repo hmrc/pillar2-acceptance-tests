@@ -13,9 +13,9 @@ Feature: Contact details guidance and logic to play back contact details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click  Add filing member's details  link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option No and continue to next
     Then I should navigate to NFM Name page
@@ -162,7 +162,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Task list page
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option No and continue to next
+    When I select No option and continue to next
     Then I should navigate to Task list page
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
@@ -199,7 +199,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Contact details input telephone page
     When I enter Contact Telephone as 1234554
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to Second Contact details page
 
   Scenario: 3 - Create a new subscription with no data in UPE/NFM for validating play back contact details
     Given Organisation User logs in as upe for Pillar2
@@ -213,7 +213,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Task list page
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option No and continue to next
+    When I select No option and continue to next
     Then I should navigate to Task list page
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
@@ -259,7 +259,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Task list page
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option No and continue to next
     Then I should navigate to NFM Name page

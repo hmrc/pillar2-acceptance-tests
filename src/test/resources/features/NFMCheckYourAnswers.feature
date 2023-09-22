@@ -15,7 +15,7 @@ Feature: Nominated Filing member check your answers page
     Then I should navigate to Task list page
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
-    When I select option Yes and continue to next
+    When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option No and continue to next
     Then I should navigate to NFM Name page
@@ -84,7 +84,6 @@ Feature: Nominated Filing member check your answers page
     And I should see the answer Yes remain selected
     And I click on Continue button
     Then I should see the NFM Telephone number field is pre-populated with 1234569
-
 
   Scenario: 2 - Change all the details from check your answers page
     Given Organisation User navigates to NFM check your answer page with credId NFMCYA
