@@ -13,7 +13,7 @@ Feature: Enter NFM contact Telephone number
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task  status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next

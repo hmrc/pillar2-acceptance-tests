@@ -13,7 +13,7 @@ Feature: Contact details guidance and logic to play back contact details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click  Add filing member's details  link
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -84,7 +84,7 @@ Feature: Contact details guidance and logic to play back contact details
     And The caption must be Contact details
     And The Heading should be Can we contact Contact Name Test by telephone?
     When I select option No and continue to next
-    Then I should navigate to under construction page
+    Then I should navigate to Second Contact details page
     When I select back link
     Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
@@ -94,7 +94,7 @@ Feature: Contact details guidance and logic to play back contact details
     And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192
     When I enter Contact Telephone as 1234554
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to Second Contact details page
     When I select back link
     Then I should navigate to Contact details input telephone page
     And I should see the Contact Telephone field is pre-populated with 1234554
