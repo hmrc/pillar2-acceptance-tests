@@ -19,6 +19,7 @@ As an eligible authenticated user
 
 
   Scenario: 2 - User navigates back to Task List from initial guidance page
+    Given I clear the cache
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register for Pillar 2 top-up tax
