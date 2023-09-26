@@ -3,8 +3,6 @@ Feature: Nominated Filing member check your answers page
   As a MNE user
   I would like to change data from change your answers page
 
-#  Need to fix the issue
-  @ignore
   Scenario: 1 - User navigates to check your answer page answering all the questions of UPE and NFM
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     Then I should be on UPE business page
@@ -87,8 +85,6 @@ Feature: Nominated Filing member check your answers page
     And I click on Continue button
     Then I should see the NFM Telephone number field is pre-populated with 1234569
 
-#  need to re-enable this test once we fix the above test
-  @ignore
   Scenario: 2 - Change all the details from check your answers page
     Given Organisation User navigates to NFM check your answer page with credId NFMCYA
     Then I should be on NFM Check your answers page

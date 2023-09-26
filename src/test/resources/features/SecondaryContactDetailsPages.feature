@@ -147,8 +147,56 @@ Feature: Secondary Contact details for the filing member
     And I should see the Second Contact Input field is pre-populated with 1234554
 
   Scenario: 3 - Provide secondary contact details for NFM user and use existing primary contact details
-    Given Organisation User logs in with credId TestPlaybackNFM for Pillar2
-    Then The Task Add Contact details status should be In progress
+    Given Organisation User logs in as upe with credId TestNFM1 for Pillar2
+    Then I should be on UPE business page
+    When I select option Yes and continue to next
+    Then I should be on UPE Org type page
+    When I select option UK limited company and continue to GRS page
+    Then I should navigate to UKCompany GRS page
+    When I registered successfully with BV enabled
+    And I click on Save&Continue button
+    Then I should navigate to Task list page
+    When I click Add filing member's details link
+    Then I should navigate to NFM registration page
+    When I select Yes option and continue to next
+    Then I should navigate to NFM details page
+    When I select option No and continue to next
+    Then I should navigate to NFM Name page
+    When I enter NFM name as Test
+    And I enter Address Line 1 as Address Line 1
+    And I enter City as City
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
+    When I click on Continue button
+    Then I should navigate to NFM Contact Name page
+    When I enter NFM Contact name as Contact NFM Test
+    And I click on Continue button
+    Then I should navigate to NFM Contact Email page
+    When I enter NFM Contact Email as testNFM@email.com
+    And I click on Continue button
+    Then I should navigate to NFM Telephone page
+    When I select option Yes and continue to next
+    Then I should navigate to input nfm telephone page
+    When I enter NFM Telephone Number as 12345678
+    And I click on Continue button
+    Then I should navigate to NFM Check your answers page
+    And I click on Continue button
+    Then I should navigate to Task list page
+    When I click Add further group details link
+    Then I should navigate to MNE or domestic page
+    When I select option In the UK and other countries in further details group status page
+    And I click on Continue button
+    Then I should navigate to Group accounting period page
+    When Accounting Period Start Day is entered as 15
+    And Accounting Period Start Month is entered as 1
+    And Accounting Period Start Year is entered as 2024
+    When Accounting Period End Day is entered as 15
+    And Accounting Period End Month is entered as 1
+    And Accounting Period End Year is entered as 2025
+    And I click on Continue button
+    Then I should navigate to FD check your answers page
+    And I click on Continue button
+    Then I should navigate to Task list page
     When I click Add Contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
