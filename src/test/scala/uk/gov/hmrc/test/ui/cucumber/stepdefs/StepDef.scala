@@ -66,6 +66,13 @@ class StepDef extends BaseStepDef {
       case "Organisation User" => AuthLoginPage.loginToOrgWithCredID(name, credId)
     }
   }
+
+    Given("""^(.*) logs in to nfm org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
+      name match {
+        case "Organisation User" => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
+      }
+
+  }
   Given("""^(.*) logs in to upe registered in UK page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToRegWithCredID(name, credId)
@@ -76,6 +83,11 @@ class StepDef extends BaseStepDef {
       case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
     }
   }
+    Given("""^(.*) logs in to nfm name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
+      name match {
+        case "Organisation User" => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
+      }
+    }
 
   Given("""^Organisation User navigates to (.*) check your answer page with credId (.*)$""") { (name: String, credId: String) =>
     name match {

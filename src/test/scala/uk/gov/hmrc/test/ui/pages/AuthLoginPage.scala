@@ -29,10 +29,11 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndUPEOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/org-type"
   val redirectUrlField: String            = "redirectionUrl"
   val credIdField: String                 = "authorityId"
-  val frontEndNameUrl: String             = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-business-name"
+  val frontEndNameUrl: String             = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-name"
   val frontEndCAUrl: String               =s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
   val frontEndUPERegTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
   val frontEndNFMNameUrl: String          = s"$rootUrl"+"business-matching/filing-member/no-id/input-name"
+  val frontEndNFMOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/org-type"
   val frontEndNFMAddressUrl: String       = s"$rootUrl"+"business-matching/filing-member/no-id/input-address "
   val frontEndNFMContactNameUrl: String   = s"$rootUrl"+"business-matching/filing-member/no-id/input-business-name"
   val frontEndNFMContactEmailUrl: String  = s"$rootUrl"+"business-matching/filing-member/no-id/input-email"
@@ -64,7 +65,13 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton
   }
-
+  def loginToNfmOrgWithCredID(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndNFMOrgTypeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
   def loginToRegWithCredID(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysById(credId, credIdField)
@@ -97,6 +104,14 @@ object AuthLoginPage extends BasePage with PageObject {
     Nav.navigateTo(url)
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndNameUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToNFMNameWithCredID(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndNFMNameUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton
   }
