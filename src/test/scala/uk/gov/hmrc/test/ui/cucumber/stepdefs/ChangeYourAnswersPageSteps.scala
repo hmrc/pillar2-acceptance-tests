@@ -86,8 +86,6 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
       case "telephone number" =>
         InitialGuidancePage.clickContinue()
     }
-
   }
-
-
 }
+
