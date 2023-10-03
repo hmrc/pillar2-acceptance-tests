@@ -1,5 +1,5 @@
 @tests @zap_accessibility
-Feature: As a MNE user
+Feature: Bookmark Feature
   I should not be able to navigate to next page without answering the previous question
 
   Scenario: 1 - User completes the no ID flow journey and try navigating to GRS flow
@@ -54,7 +54,10 @@ Feature: As a MNE user
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in to upe org page with CredID Bookmark1 for Pillar2
-    Then The Heading should be Page not available
+    Then I should navigate to Bookmark page
+    And The Heading should be Sorry, there is a problem with the service
+    When I click on Start again button
+    Then I should navigate to Task list page
     When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
     Then The Heading should be Page not available
 
@@ -79,7 +82,9 @@ Feature: As a MNE user
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in to upe name page with CredID Bookmark2 for Pillar2
-    Then The Heading should be Page not available
+    Then I should navigate to Bookmark page
+    When I click on Start again button
+    Then I should navigate to Task list page
     When Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
     Then The Heading should be Page not available
 
