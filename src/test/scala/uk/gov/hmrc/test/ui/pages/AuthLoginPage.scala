@@ -33,7 +33,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndCAUrl: String               =s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
   val frontEndUPERegTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
   val frontEndNFMNameUrl: String          = s"$rootUrl"+"business-matching/filing-member/no-id/input-name"
-  val frontEndNFMOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/org-type"
+  val frontEndNFMOrgTypeUrl: String       = s"$rootUrl"+"business-matching/filing-member/uk-based/org-type"
   val frontEndNFMAddressUrl: String       = s"$rootUrl"+"business-matching/filing-member/no-id/input-address "
   val frontEndNFMContactNameUrl: String   = s"$rootUrl"+"business-matching/filing-member/no-id/input-business-name"
   val frontEndNFMContactEmailUrl: String  = s"$rootUrl"+"business-matching/filing-member/no-id/input-email"

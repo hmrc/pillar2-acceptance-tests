@@ -223,6 +223,93 @@ Feature: Task list page
     Then I should be on Task list page
     And The Task Add ultimate parent's details status should be In progress
 
+  Scenario: 8 - Task list page status update validation after Task1 completion and navigating to different pages
+    Given Organisation User logs in to subscribe for Pillar2
+    Then I should be on Task list page
+    And The Heading should be Register for Pillar 2 top-up tax
+    When I click Add ultimate parent's details link
+    Then I should navigate to Initial guidance Page
+    And I click on Continue button
+    Then I should be on UPE business page
+    When I select option No and continue to next
+    Then I should navigate to input-upe-name page
+    When I enter UPE name as Test Task List
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Address Line 1
+    And I enter City as City
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
+    And I click on Continue button
+    Then I should navigate to UPE Contact person/team Name page
+    When I enter UPE Person/Team name as Contact
+    And I click on Continue button
+    Then I should navigate to UPE Contact Email page
+    When I enter UPE Email address as test@email.com
+    And I click on Continue button
+    Then I should navigate to UPE Telephone page
+    When I select option Yes and continue to next
+    Then I should navigate to input telephone page
+    And I enter Telephone Number as 1234569
+    When I click on Continue button
+    Then I should be on Check your answers page
+    When I click on Continue button
+    Then I should be on Task list page
+    And I should see the task name Edit ultimate parent's details on Business details section
+    And The Task Edit ultimate parent's details status should be Completed
+    When I click Edit ultimate parent's details link
+    Then I should navigate to Initial guidance Page
+    And I click on Continue button
+    Then I should be on UPE business page
+    And I click on Continue button
+    Then I should navigate to input-upe-name page
+    And I click on Continue button
+    Then I should navigate to input-upe-address page
+    And I click on Continue button
+    Then I should navigate to UPE Contact person/team Name page
+    And I click on Continue button
+    Then I should navigate to UPE Contact Email page
+    And I click on Continue button
+    Then I should navigate to UPE Telephone page
+    And I click on Continue button
+    Then I should navigate to input telephone page
+    When I navigate back to TaskList Page from Telephone Page
+    Then I should be on Task list page
+    And The Task Edit ultimate parent's details status should be Completed
 
+  Scenario: 9 - User completes GRS journey and Navigate to different pages of GRS journey and validates status
+    Given Organisation User logs in to subscribe for Pillar2
+    Then I should be on Task list page
+    And The Heading should be Register for Pillar 2 top-up tax
+    When I click Add ultimate parent's details link
+    Then I should navigate to Initial guidance Page
+    And I click on Continue button
+    Then I should be on UPE business page
+    When I select option Yes and continue to next
+    Then I should be on UPE Org type page
+    When I select option UK limited company and continue to GRS page
+    Then I should navigate to UKCompany GRS page
+    And I click on Save&Continue button
+    When I click Add filing member's details link
+    Then I should navigate to NFM registration page
+    When I select Yes option and continue to next
+    Then I should navigate to NFM details page
+    When I select option Yes and continue to next
+    Then I should be on NFM Org type page
+    When I select option UK limited company and continue to GRS page
+    Then I should navigate to NFM UKCompany GRS page
+    And I click on Save&Continue button
+    Then I should be on Task list page
+    And The Task Edit ultimate parent's details status should be Completed
+    When I click Edit ultimate parent's details link
+    Then I should navigate to Initial guidance Page
+    And I click on Continue button
+    Then I should be on UPE business page
+    And I click on Continue button
+    Then I should be on UPE Org type page
+    And I click on Continue button
+    Then I should navigate to UKCompany GRS page
+    When I navigate back to TaskList Page from GRS Page
+    Then I should be on Task list page
+    And The Task Edit ultimate parent's details status should be Completed
 
 

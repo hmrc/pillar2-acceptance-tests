@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BookMarkPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -138,6 +138,9 @@ class StepDef extends BaseStepDef {
   }
   When("""^(I click on Continue button)""") { (negate: String) =>
     InitialGuidancePage.clickContinue()
+  }
+  When("""^(I click on Start again button)""") { (negate: String) =>
+    BookMarkPage.clickStartAgain()
   }
   And("""^(I navigate from Name page to Telephone page)""") { (negate: String) =>
     for (i <- 1 to 5) {
