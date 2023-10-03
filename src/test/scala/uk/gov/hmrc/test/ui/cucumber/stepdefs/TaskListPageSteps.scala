@@ -107,7 +107,6 @@ class TaskListPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
 
     }
-
   }
   Then("""^I navigate back to TaskList Page from (.*) Page""") { (page: String) =>
     page match {
@@ -127,5 +126,4 @@ class TaskListPageSteps extends CommonFunctions {
         }
     }
   }
-
 }
