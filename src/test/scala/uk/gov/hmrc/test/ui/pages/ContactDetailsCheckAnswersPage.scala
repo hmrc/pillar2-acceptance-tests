@@ -30,5 +30,16 @@ object ContactDetailsCheckAnswersPage extends PageObject {
   val rowNumber               = "govuk-summary-list__row"
   val continue                = "#continue"
 
-  def saveAndContinue() = findByCss(continue).click()
+  val changeName              = "a[href*='/change-input-name']"
+  val changeEmail             = "a[href*='/change-input-email']"
+  val changeContact           = "a[href*='/change-telephone']"
+  val changeContactNumber     = "a[href*='/change-input-telephone']"
+
+  val secondContact           = "a[href*='/change-second-contact']"
+  val changeSecondName        = "a[href*='/change-second-input-name']"
+  val changeSecondEmail       = "a[href*='/change-input-email']"
+  val secondTelephone         = "a[href*='/change-telephone']"
+  val changeSecondTelephone   = "a[href*='/change-input-telephone']"
+
+  def saveAndContinue()       = findByCss(continue).click()
 }
