@@ -68,8 +68,21 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
 
   And("""^I click on change link for (.*)""") { (link: String) =>
     link match {
+      case "Contact Name" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeName)
+      case "Email address" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeEmail)
+      case "Telephone number" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeContactNumber)
+
       case "Do you have a second contact?" =>
         clickByCss(ContactDetailsCheckAnswersPage.secondContact)
+      case "Second Contact Name" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondName)
+      case "Second Contact Email" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
+      case "Telephone number" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
 
     }
   }

@@ -447,6 +447,24 @@ Feature: Secondary Contact details for the filing member
     And I should see row 3 value Yes
     And I should see row 4 value 1234554
     And I should see row 5 value No
+    When I click on change link for Contact Name
+    When I enter Contact Name as Contact Name Test
+    And I click on Continue button
+    And I select back link
+    And I select back link
+    Then I should navigate to Contact details Check answers page
+    When I click on change link for Email address
+    When I enter Contact Email as Contact Email Test
+    And I click on Continue button
+    And I select back link
+    And I select back link
+    Then I should navigate to Contact details Check answers page
+    When I click on change link for Telephone number
+    When I enter Contact Telephone as 1234555
+    And I click on Continue button
+    And I select back link
+    And I select back link
+    Then I should navigate to Contact details Check answers page
     When I click on change link for Do you have a second contact?
     When I select option Yes and continue to next
     When I enter Second Contact Name as Second Contact Name Test
