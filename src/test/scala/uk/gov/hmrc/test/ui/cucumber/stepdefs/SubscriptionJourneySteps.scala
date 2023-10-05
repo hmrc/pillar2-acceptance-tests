@@ -78,7 +78,7 @@ class SubscriptionJourneySteps extends CommonFunctions {
     }
   }
 
-  And("""^I should see contact address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
+  And("""^I should see contact address error message (.*) on the (.*)""") { (error: String, page: String) =>
     page match {
       case "Address Line 1" =>
         Wait.waitForTagNameToBeRefreshed("h1")

@@ -175,9 +175,9 @@ Feature: Enter contact address
     When I select option No and continue to next
     Then I should navigate to Contact address input page
     When I click on Continue button
-    Then I should see contact address error message Enter the first line of the address on the Address Line 1 Element
-    And I should see contact address error message Enter the town or city on the City Element
-    And I should see contact address error message Select a country on the Country Element
+    Then I should see contact address error message Enter the first line of the address on the Address Line 1
+    And I should see contact address error message Enter the town or city on the City
+    And I should see contact address error message Select a country on the Country
     When I enter Address Line 1 as Address Line 1 Character Length Test1
     And I enter Address Line 2 as Address Line 2 Character Length Test1
     And I enter City as City Field Character Length Test Error
@@ -185,14 +185,14 @@ Feature: Enter contact address
     And I enter Postal Code as 12345678901
     And I select country as India
     When I click on Continue button
-    Then I should see contact address error message The first line of the address must be 35 characters or less on the Address Line 1 Element
-    And I should see contact address error message The second line of the address must be 35 characters or less on the Address Line 2 Element
-    And I should see contact address error message The town or city must be 35 characters or less on the City Element
-    And I should see contact address error message The region must be 35 characters or less on the Region Element
-    And I should see contact address error message The postal code must be 10 characters or less on the Postal Code Element
+    Then I should see contact address error message The first line of the address must be 35 characters or less on the Address Line 1
+    And I should see contact address error message The second line of the address must be 35 characters or less on the Address Line 2
+    And I should see contact address error message The town or city must be 35 characters or less on the City
+    And I should see contact address error message The region must be 35 characters or less on the Region
+    And I should see contact address error message The postal code must be 10 characters or less on the Postal Code
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
     And I select country as United Kingdom
     When I click on Continue button
-    Then I should see contact address error message Enter a valid UK postal code or change the country you selected on the Postal Code Element
+    Then I should see contact address error message Enter a valid UK postal code or change the country you selected on the Postal Code
 
