@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{getAttribueOf, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{GroupAccountingPeriodPage, InputUPENamePage}
+import uk.gov.hmrc.test.ui.pages.{ContactAddressInputPage, GroupAccountingPeriodPage, InputUPENamePage}
 
 class SubscriptionJourneySteps extends CommonFunctions {
 
@@ -77,6 +77,71 @@ class SubscriptionJourneySteps extends CommonFunctions {
         assert(getAttributeOf(GroupAccountingPeriodPage.endYear, "value").equals(name))
     }
   }
+
+  And("""^I should see contact address error message (.*) on the (.*)""") { (error: String, page: String) =>
+    page match {
+      case "Address Line 1" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.addressLine1ErrorLink)
+        getTextOf(By cssSelector (ContactAddressInputPage.addressLine1ErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.addressLine1ErrorMessage)
+        getTextOf(By cssSelector (ContactAddressInputPage.addressLine1ErrorMessage)) should include(error)
+
+      case "Address Line 2" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.addressLine2ErrorLink)
+        getTextOf(By cssSelector (ContactAddressInputPage.addressLine2ErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.addressLine2ErrorMessage)
+        getTextOf(By cssSelector (ContactAddressInputPage.addressLine2ErrorMessage)) should include(error)
+
+      case "City" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.cityErrorLink)
+        getTextOf(By cssSelector (ContactAddressInputPage.cityErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.cityErrorMessage)
+        getTextOf(By cssSelector (ContactAddressInputPage.cityErrorMessage)) should include(error)
+
+      case "Region" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.regionErrorLink)
+        getTextOf(By cssSelector (ContactAddressInputPage.regionErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.regionErrorMessage)
+        getTextOf(By cssSelector (ContactAddressInputPage.regionErrorMessage)) should include(error)
+
+      case "Postal Code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.postcodeErrorLink)
+        getTextOf(By cssSelector (ContactAddressInputPage.postcodeErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.postcodeErrorMessage)
+        getTextOf(By cssSelector (ContactAddressInputPage.postcodeErrorMessage)) should include(error)
+
+      case "Country" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.countryErrorLink)
+        getTextOf(By cssSelector (ContactAddressInputPage.countryErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.countryErrorMessage)
+        getTextOf(By cssSelector (ContactAddressInputPage.countryErrorMessage)) should include(error)
+    }
+  }
+
 }
 
 

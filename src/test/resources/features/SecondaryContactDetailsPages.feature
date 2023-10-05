@@ -64,7 +64,7 @@ Feature: Secondary Contact details for the filing member
     And The Heading should be Is there someone else we can contact if Contact Name Test is not available?
     And The Body content should be This can be a team mailbox or another contact who is able to deal with enquiries about the group's management of Pillar 2 top-up tax
     When I select option No and continue to next
-    Then I should navigate to under construction page
+    Then I should navigate to Contact address input page
     When I select back link
     Then I should navigate to Second Contact details page
     When I select option Yes and continue to next
@@ -82,7 +82,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Second Contact Input page
     When I enter Second Contact Input as 1234554
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to Contact address input page
     When I select back link
     Then I should navigate to Second Contact Input page
     And I should see the Second Contact Input field is pre-populated with 1234554
@@ -218,7 +218,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Second Contact Input page
     When I enter Second Contact Input as 1234554
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to Contact address input page
 
   Scenario: 4 - Secondary contact details pages Error validations
     Given Organisation User logs in with credId TestPlaybackNFM for Pillar2
