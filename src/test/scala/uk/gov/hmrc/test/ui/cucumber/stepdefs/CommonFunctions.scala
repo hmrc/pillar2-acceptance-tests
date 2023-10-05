@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BookMarkPage, BusinessActivityEQPage, ConfirmationPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsTelephonePage, EmployeeStatusPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, SecondContactDetailsPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BookMarkPage, BusinessActivityEQPage, ConfirmationPage, ContactAddressInputPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsTelephonePage, EmployeeStatusPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, SecondContactDetailsPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 
@@ -87,7 +87,8 @@ trait CommonFunctions
       case "Second Contact email page"         => SecondContactEmailPage
       case "Second Contact number page"        => SecondContactNumberPage
       case "Second Contact Input page"         => SecondContactInputPage
-      case "Bookmark page"                    => BookMarkPage
+      case "Bookmark page"                     => BookMarkPage
+      case "Contact address input page"        => ContactAddressInputPage
     }
   }
 }
