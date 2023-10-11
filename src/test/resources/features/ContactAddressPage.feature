@@ -88,7 +88,7 @@ Feature: Enter contact address
     And I enter Postal Code as EH5 5WY
     And I select country as United Kingdom
     When I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to Contact details Check answers page
     When I select back link
     Then I should navigate to Contact address input page
     When I select back link
@@ -111,7 +111,7 @@ Feature: Enter contact address
     And I should see the Postal Code field is pre-populated with EH5 5WY
     And I should see the Country field is selected with GB
     When I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to Contact details Check answers page
 
   Scenario: 2 - Contact address page Error validations
     Given I clear the cache
