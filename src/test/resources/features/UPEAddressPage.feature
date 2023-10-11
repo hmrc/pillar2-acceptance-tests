@@ -78,17 +78,16 @@ Feature: Enter UPE registered address
     Then I should navigate to input-upe-address page
     And I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I select country as United Kingdom
-    And I click on Continue button
-    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
-    And I enter Postal Code as invalid post code
-    And I click on Continue button
-    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
     And I select country as India
+    And I click on Continue button
+    Then I should see address error message Enter the postal code on the Postal code Element
     And I enter Postal Code as enter long postal code
     And I click on Continue button
     Then I should see address error message The postal code must be 10 characters or less on the Postal code Element
-
+    And I select country as United Kingdom
+    And I enter Postal Code as invalid
+    And I click on Continue button
+    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
 
   Scenario: 6 - Display an error message, when user continues without entering Country
     Given Organisation User logs in as upe for Pillar2

@@ -11,6 +11,7 @@ Feature: Enter NFM registered Name and address
     When I enter UPE name as Test NFM
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Address Line 1
+    And I enter Postal Code as 500090
     And I enter City as City
     And I select country as India
     And I click on Continue button
