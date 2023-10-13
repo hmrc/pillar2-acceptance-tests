@@ -17,11 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import org.scalatestplus.selenium.Chrome.currentUrl
-import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationToPageUrl, assertNavigationUrl}
+import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InitialGuidancePage, NFMRegistrationPage}
+import uk.gov.hmrc.test.ui.cucumber.{ Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, NFMRegistrationPage}
 
 class BusinessActivityEQs extends CommonFunctions {
 
@@ -30,7 +29,7 @@ class BusinessActivityEQs extends CommonFunctions {
       case "Yes" => Input.clickById("value_0")
       case "No" => Input.clickById("value_1")
     }
-      BusinessActivityEQPage.clickContinue()
+    BusinessActivityEQPage.clickContinue()
   }
 
   And("""^I select back link$""") { () =>
