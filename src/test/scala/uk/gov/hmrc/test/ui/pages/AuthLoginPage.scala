@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, PageObject}
-import uk.gov.hmrc.test.ui.pages.BAGuidancePage.rootUrl
+
 
 object AuthLoginPage extends BasePage with PageObject {
   val url: String                         = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
@@ -42,6 +42,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndFDGroupStatusUrl: String    = s"$rootUrl"+"further-details/group-status"
   val frontEndNFMCAUrl: String            =s"$rootUrl"+"business-matching/filing-member/no-id/check-answers"
   val frontEndFDCAUrl: String             =s"$rootUrl"+"further-details/check-answers"
+  val frontEndDashboardUrl: String        =s"$rootUrl"+"pillar2-top-up-tax-home"
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
@@ -165,6 +166,13 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginToNFMName(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMNameUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton
+  }
+
+  def loginToDashboard(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndDashboardUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton
   }
