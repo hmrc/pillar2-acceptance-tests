@@ -33,7 +33,7 @@ Feature: UPE Check your Answers page
     And I should see row 2 key Address
     And I should see row 3 key Contact name
     And I should see row 4 key Email address
-    And I should see row 5 key Telephone contact
+    And I should see row 5 key Can we contact by telephone?
     And I should see row 6 key Telephone number
     And I should see row 1 value Test CYA
     And I should see row 2 value Address Line 1 CYA

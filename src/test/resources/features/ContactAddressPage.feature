@@ -96,8 +96,8 @@ Feature: Enter contact address
     When I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in with credId ContactAddress1 for Pillar2
-    Then The Task Edit Contact details status should be Completed
-    When I click Edit Contact details link
+    Then The Task Edit contact details status should be Completed
+    When I click Edit contact details link
     When I click on Continue button
     Then I should navigate to Contact details display page
     When I click on Continue button
