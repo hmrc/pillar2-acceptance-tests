@@ -111,6 +111,11 @@ class TaskListPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
 
+      case "Check your answers" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(4).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(4).getText.contains(status))
+
     }
   }
   Then("""^I navigate back to TaskList Page from (.*) Page""") { (page: String) =>
