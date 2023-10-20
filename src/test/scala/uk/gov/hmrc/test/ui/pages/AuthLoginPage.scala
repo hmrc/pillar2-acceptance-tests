@@ -42,6 +42,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndFDGroupStatusUrl: String    = s"$rootUrl"+"further-details/group-status"
   val frontEndNFMCAUrl: String            =s"$rootUrl"+"business-matching/filing-member/no-id/check-answers"
   val frontEndFDCAUrl: String             =s"$rootUrl"+"further-details/check-answers"
+  val frontEndSubUrl: String              =s"$rootUrl"+"review-submit/confirmation"
   val frontEndDashboardUrl: String        =s"$rootUrl"+"pillar2-top-up-tax-home"
 
   def loginWithUser(name: String): Unit = {
@@ -160,6 +161,14 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
     selectAffinityGroupOrg()
     selectCredRoleAssistant
+    clickSubmitButton
+  }
+
+  def loginToSubWithCredID(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndSubUrl, redirectUrlField)
+    selectAffinityGroupOrg()
     clickSubmitButton
   }
 

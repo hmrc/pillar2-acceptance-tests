@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{ContactDetailsCheckAnswersPage, FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, ReviewAnswersPage, UPECheckYourAnswersPage}
+import uk.gov.hmrc.test.ui.pages.{ContactDetailsCheckAnswersPage, FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, UPECheckYourAnswersPage}
 
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
@@ -27,10 +27,6 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
   And("""^I should see row (\d+) key (.*)""") { (row: Int, key: String) =>
     assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
   }
-
-// And("""^I should see row (\d+) key (.*) on review page""") { (row: Int, key: String) =>
-//    assert(driver.findElements(By.cssSelector(ReviewAnswersPage.keyList)).get(row - 1).getText.contains(key))
-//  }
 
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")

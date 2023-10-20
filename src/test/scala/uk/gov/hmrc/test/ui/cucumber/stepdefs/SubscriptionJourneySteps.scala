@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{getAttribueOf, getAttributeOf, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ContactAddressInputPage, GroupAccountingPeriodPage, InputUPENamePage}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{ContactAddressInputPage, GroupAccountingPeriodPage, InputUPENamePage, RegistrationConfirmationPage}
 
 class SubscriptionJourneySteps extends CommonFunctions {
 
@@ -140,6 +140,29 @@ class SubscriptionJourneySteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.countryErrorMessage)
         getTextOf(By cssSelector (ContactAddressInputPage.countryErrorMessage)) should include(error)
     }
+  }
+
+  Then("""^The Header should be Report Pillar 2 top-up taxes$""") { () =>
+    Check.checkH1("Registration complete")
+  }
+
+  And("""^The url of page should be ending with (.*)$""") { (url: String) =>
+    Check.checkUrlContains(url = "/review-submit/confirmation")
+  }
+
+  And("""^The page should display message (.*) and ID$""") { (text: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.header)).getText.contains(text))
+    Check.checkBodyText(text)
+  }
+  Then("""^The Id text should be (.*)$""") { caption: String =>
+    Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.registrationID)
+    assert(getTextOf(By.cssSelector(RegistrationConfirmationPage.registrationID)).contains(caption))
+  }
+
+  Then("""^The Information header should be (.*)$""") { caption: String =>
+    Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.header2)
+    assert(getTextOf(By.cssSelector(RegistrationConfirmationPage.header2)).contains(caption))
   }
 
 }
