@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
-import uk.gov.hmrc.test.ui.pages.ContactDetailsDisplayPage.continue
 
 
 object ContactDetailsCheckAnswersPage extends PageObject {

@@ -30,12 +30,12 @@ object Input extends BasePage {
 
   def clickAndContinue(id: String): Unit = {
     findById(id).click()
-    clickSubmit
+    clickSubmit()
   }
 
-  def clickSubmit() = findById("submit").click()
+  def clickSubmit(): Unit = findById("submit").click()
 
-  def clickContinue() = findByXpath("/html/body/div/main/div/div/div/div/a/button").click()
+ /* def clickContinue() = findByXpath("/html/body/div/main/div/div/div/div/a/button").click()*/
 
   def clickByXpath(id: String): Unit = findByXpath(id).click()
 

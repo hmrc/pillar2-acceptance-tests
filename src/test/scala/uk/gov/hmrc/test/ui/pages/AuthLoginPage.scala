@@ -160,7 +160,7 @@ object AuthLoginPage extends BasePage with PageObject {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    selectCredRoleAssistant
+    selectCredRoleAssistant()
     clickSubmitButton
   }
 
