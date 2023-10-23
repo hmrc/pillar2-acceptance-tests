@@ -17,9 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{getAttribueOf, getAttributeOf, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{ getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ContactAddressInputPage, GroupAccountingPeriodPage, InputUPENamePage, RegistrationConfirmationPage}
+import uk.gov.hmrc.test.ui.pages.{ContactAddressInputPage, GroupAccountingPeriodPage, RegistrationConfirmationPage}
+
 
 class SubscriptionJourneySteps extends CommonFunctions {
 

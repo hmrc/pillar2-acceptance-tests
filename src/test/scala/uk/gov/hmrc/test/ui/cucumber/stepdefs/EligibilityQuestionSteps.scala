@@ -19,10 +19,10 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{ Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, NFMRegistrationPage}
+import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, ConfirmationPage, NFMRegistrationPage}
 
-class BusinessActivityEQs extends CommonFunctions {
+class EligibilityQuestionSteps extends CommonFunctions {
 
   And("""^I choose (.*) and continue$""") { (option: String) =>
     option match {
@@ -58,5 +58,9 @@ class BusinessActivityEQs extends CommonFunctions {
 
   And("""^I continue|I continue without selecting an option$""") { () =>
     BusinessActivityEQPage.clickContinue()
+  }
+  Then("""^The inset text should be (.*)$""") { insetText: String =>
+    Wait.waitForElementToPresentByCssSelector(ConfirmationPage.insetText)
+    assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).contains(insetText))
   }
 }

@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
-import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, PageObject, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BookMarkPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMEQPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BookMarkPage, BusinessActivityEQPage, ContactDetailsDisplayPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -73,10 +73,10 @@ class StepDef extends BaseStepDef {
     }
   }
 
-    Given("""^(.*) logs in to nfm org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
-      name match {
-        case "Organisation User" => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
-      }
+  Given("""^(.*) logs in to nfm org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
+    }
 
   }
   Given("""^(.*) logs in to upe registered in UK page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
@@ -89,17 +89,17 @@ class StepDef extends BaseStepDef {
       case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
     }
   }
-    Given("""^(.*) logs in to nfm name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
-      name match {
-        case "Organisation User" => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
-      }
+  Given("""^(.*) logs in to nfm name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
     }
+  }
 
   Given("""^Organisation User navigates to (.*) check your answer page with credId (.*)$""") { (name: String, credId: String) =>
     name match {
       case "UPE" => AuthLoginPage.loginToCA(name, credId)
       case "NFM" => AuthLoginPage.loginToNFMCA(name, credId)
-      case "FD"  => AuthLoginPage.loginToFDCA(name, credId)
+      case "FD" => AuthLoginPage.loginToFDCA(name, credId)
 
     }
   }
@@ -138,9 +138,8 @@ class StepDef extends BaseStepDef {
   }
 
   When(
-    """^(I click Continue button|click Confirm and send|click Try Again)$"""
-  ) { (negate: String) =>
-    Input.clickSubmit
+    """^(I click Continue button|click Confirm and send|click Try Again)$""") { (negate: String) =>
+    Input.clickSubmit()
   }
   When("""^(I click on Continue button)""") { (negate: String) =>
     InitialGuidancePage.clickContinue()
@@ -159,19 +158,10 @@ class StepDef extends BaseStepDef {
 
   And("""^I select (.*) and continue$""") { (id: String) =>
     Input.clickById(id)
-    Input.clickSubmit
-  }
-
-  And("""^I select SignOut link$""") { (id: String) =>
-    Input.clickById(id)
-    Input.clickSubmit
+    Input.clickSubmit()
   }
 
   And("""^click (.*)$""") { (id: String) =>
-    Input.clickByLinkText(id)
-  }
-
-  And("""^I click browser back$""") { (id: String) =>
     Input.clickByLinkText(id)
   }
 
@@ -198,7 +188,7 @@ class StepDef extends BaseStepDef {
 
   And("""^I should see error message (.*) on the (.*) Page$""") { (error: String, page: String) =>
     page match {
-      case "Business activity EQ" =>
+      case "Eligibility question" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorSummary)
 
@@ -218,16 +208,6 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorMessage)
         getTextOf(By cssSelector (GlobalGrossRevenueEQPage.errorMessage)) should include(error)
 
-      case "Multiple Territories EQ" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorLink)
-        getTextOf(By cssSelector (MultipleTerritoriesEQPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.errorMessage)
-        getTextOf(By cssSelector (MultipleTerritoriesEQPage.errorMessage)) should include(error)
-
       case "UPE business EQ" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorSummary)
@@ -237,26 +217,6 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
-
-      case "UPE EQ" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEEQPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEEQPage.errorLink)
-        getTextOf(By cssSelector (UPEEQPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEEQPage.errorMessage)
-        getTextOf(By cssSelector (UPEEQPage.errorMessage)) should include(error)
-
-      case "NFM EQ" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMEQPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(NFMEQPage.errorLink)
-        getTextOf(By cssSelector (NFMEQPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(NFMEQPage.errorMessage)
-        getTextOf(By cssSelector (NFMEQPage.errorMessage)) should include(error)
 
       case "UPE Org type" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -421,7 +381,7 @@ class StepDef extends BaseStepDef {
     }
   }
   And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
-    page match {
+    page match{
       case "Address Line" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
@@ -430,7 +390,7 @@ class StepDef extends BaseStepDef {
         getTextOf(By cssSelector (UPEAddressPage.addressErrorLink)) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorMessage)
-        getTextOf(By cssSelector  (UPEAddressPage.addressErrorMessage)) should include(error)
+        getTextOf(By cssSelector (UPEAddressPage.addressErrorMessage)) should include(error)
 
       case "Address Line 2" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -440,7 +400,7 @@ class StepDef extends BaseStepDef {
         getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorLink)) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorMessage)
-        getTextOf(By cssSelector  (UPEAddressPage.addressLine2ErrorMessage)) should include(error)
+        getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorMessage)) should include(error)
 
       case "City" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -450,7 +410,7 @@ class StepDef extends BaseStepDef {
         getTextOf(By cssSelector (UPEAddressPage.cityErrorLink)) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorMessage)
-        getTextOf(By cssSelector  (UPEAddressPage.cityErrorMessage)) should include(error)
+        getTextOf(By cssSelector (UPEAddressPage.cityErrorMessage)) should include(error)
 
       case "Region" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -460,7 +420,7 @@ class StepDef extends BaseStepDef {
         getTextOf(By cssSelector (UPEAddressPage.regionLink)) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionErrorMessage)
-        getTextOf(By cssSelector  (UPEAddressPage.regionErrorMessage)) should include(error)
+        getTextOf(By cssSelector (UPEAddressPage.regionErrorMessage)) should include(error)
 
       case "Postal code" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -470,7 +430,7 @@ class StepDef extends BaseStepDef {
         getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorLink)) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorMessage)
-        getTextOf(By cssSelector  (UPEAddressPage.postalCodeErrorMessage)) should include(error)
+        getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorMessage)) should include(error)
 
       case "Country" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -480,7 +440,7 @@ class StepDef extends BaseStepDef {
         getTextOf(By cssSelector (UPEAddressPage.countryErrorLink)) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorMessage)
-        getTextOf(By cssSelector  (UPEAddressPage.countryErrorMessage)) should include(error)
+        getTextOf(By cssSelector (UPEAddressPage.countryErrorMessage)) should include(error)
     }
   }
 
@@ -524,7 +484,15 @@ class StepDef extends BaseStepDef {
         case "What is the main address of your business page" => Forms.addressNonUK()
       }
       Input.clickSubmit()
-    }
+
+    And("""^I select SignOut link$""") { (id: String) =>
+     Input.clickById(id)
+     Input.clickSubmit
+   }
+
+   And("""^I click browser back$""") { (id: String) =>
+    Input.clickByLinkText(id)
+  }
 
     And(
       """^(click Continue button|click Confirm and send|click Try Again)$"""

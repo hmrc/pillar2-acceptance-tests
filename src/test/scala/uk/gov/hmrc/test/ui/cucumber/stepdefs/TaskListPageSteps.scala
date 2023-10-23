@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import com.sun.tools.javac.comp.Check
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
