@@ -17,7 +17,6 @@ As an eligible authenticated user
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
 
-@tests1
   Scenario: 2 - User navigates back to Task List from initial guidance page
     Given I clear the cache
     Given Organisation User logs in to subscribe for Pillar2
