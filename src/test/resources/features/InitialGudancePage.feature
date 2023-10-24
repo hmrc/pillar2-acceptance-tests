@@ -1,4 +1,4 @@
-@tests @zap_accessibility
+ @tests @zap_accessibility
 Feature: Initial Guidance Page
 As an eligible authenticated user
   I should be able to navigate to Links on Task list page.
@@ -17,7 +17,7 @@ As an eligible authenticated user
     And The caption must be Business details
     And The Heading should be Is the ultimate parent entity registered in the UK?
 
-
+@tests1
   Scenario: 2 - User navigates back to Task List from initial guidance page
     Given I clear the cache
     Given Organisation User logs in to subscribe for Pillar2
@@ -30,6 +30,9 @@ As an eligible authenticated user
     When I select back link
     Then I should navigate to Task list page
     And The Heading should be Register for Pillar 2 top-up tax
+    And The header should display BETA banner
+    When I click feedback link
+    Then I should be navigated to Send your feedback page
 
 
 

@@ -41,7 +41,7 @@ class PaymentSteps extends CommonFunctions {
 
   }
 
-  Then("""^I should be navigated to Draft guidance page in new tab""") { () =>
+  Then("""^I should be navigated to Draft guidance page in new tab$""") { () =>
     val handles = driver.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
     driver.switchTo().window(newWindow)

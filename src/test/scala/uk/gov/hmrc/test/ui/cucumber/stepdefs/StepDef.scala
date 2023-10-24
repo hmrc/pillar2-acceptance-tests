@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
-import uk.gov.hmrc.test.ui.cucumber.{Check, Forms, Input, Nav, Wait}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BookMarkPage, BusinessActivityEQPage, ContactDetailsDisplayPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 
@@ -478,6 +478,14 @@ class StepDef extends BaseStepDef {
     assert(driver.findElement(By.cssSelector(ContactDetailsDisplayPage.contactDetails)).getText.contains(details))
   }
 
+  And("""^The header should display (.*) banner$"""){ (beta: String) =>
+    Find.findByXpath(UPEPage.betatag)
+  }
+
+  Then("""^I should be navigated to (.*) page$""") { (text: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    assert(driver.findElement(By.cssSelector(UPEPage.sendyourfeedback)).getText.contains(text))
+  }
 
   /*  Given("""^I fill (.*) and continue$""") { page: String =>
       page match {
