@@ -16,12 +16,12 @@ Feature: Enter UPE registered Contact details
     And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What is the name of the person or team we should contact from the ultimate parent entity?
     When I enter UPE Person/Team name as Test Person/Team
     And I click on Continue button
     Then I should navigate to UPE Contact Email page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What is the email address for Test Person/Team?
     When I enter UPE Email address as testteam@email.com
     And I click on Continue button

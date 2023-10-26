@@ -21,12 +21,12 @@ Feature: Ultimate parent entity based in UK EQs
     When I enter UPE Email address as testteam@email.com
     And I click on Continue button
     Then I should navigate to UPE Telephone page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Can we contact Test Telephone by telephone?
     And The Body content should be We will call if we have any questions about the management of Pillar 2 top-up tax for this business
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What is the telephone number for Test Telephone?
     And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
     When I enter Telephone Number as 123456
@@ -51,7 +51,7 @@ Feature: Ultimate parent entity based in UK EQs
     When I enter UPE Email address as testteam@email.com
     And I click on Continue button
     Then I should navigate to UPE Telephone page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Can we contact Test Telephone by telephone?
     When I select option No and continue to next
     Then I should be on Check your answers page

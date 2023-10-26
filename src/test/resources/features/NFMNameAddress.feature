@@ -31,10 +31,10 @@ Feature: Enter NFM registered Name and address
     Then I should navigate to NFM details page
     When I select option No and continue to next
     Then I should navigate to NFM Name page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What is the name of the nominated filing member?
     When I enter NFM name as NFM Test
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Where is the registered office address of NFM Test?
     When I enter Address Line 1 as Test Address Line 1
     And I enter Address Line 2 as Test Address Line 2

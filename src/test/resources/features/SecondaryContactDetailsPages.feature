@@ -70,7 +70,7 @@ Feature: Secondary Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
     And The caption must be Contact details
-    And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
+    And The Heading should be What is the name of the individual or team we should contact?
     And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter Second Contact Name as Second Contact Name Test
     And I click on Continue button

@@ -33,12 +33,12 @@ Feature: Enter NFM contact Telephone number
     When I enter NFM Contact Email as test@email.com
     And I click on Continue button
     Then I should navigate to NFM Telephone page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Can we contact NFM Telephone Contact by telephone?
     And The Body content should be We will use this to confirm your records
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What is the telephone number for NFM Telephone Contact?
     And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192
     When I enter NFM Telephone Number as 9923-456
