@@ -77,7 +77,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Contact details input email page
     And The caption must be Contact details
     And The Heading should be What is the email address for Contact Name Test
-    And The Body content should be We will only use this to contact you about Pillar 2 top-up taxes
+    And The Body content should be We will use this to confirm your records
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
     Then I should navigate to Contact details telephone page

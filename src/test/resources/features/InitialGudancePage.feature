@@ -11,7 +11,7 @@ As an eligible authenticated user
     Then I should navigate to Initial guidance Page
     And The caption must be Group details
     And The Heading should be We need to match the details of the ultimate parent entity to HMRC records
-    And The Body content should be We will ask you for several pieces of identifying information about the ultimate parent of this group so that we can best match the ultimate parent to our records.
+    And The Body content should be We will ask you for several pieces of identifying information about the ultimate parent so we can match it with our records.
     When I click on Continue button
     Then I should navigate to UPE business page
     And The caption must be Business details
@@ -28,7 +28,7 @@ As an eligible authenticated user
     And The Heading should be We need to match the details of the ultimate parent entity to HMRC records
     When I select back link
     Then I should navigate to Task list page
-    And The Heading should be Register for Pillar 2 top-up tax
+    And The Heading should be Register your group
     And The header should display BETA banner
     When I click feedback link
     Then I should be navigated to Send your feedback page

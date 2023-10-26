@@ -9,7 +9,7 @@ Feature: Task list page
     And The page header should be Report Pillar 2 top-up taxes
     And The Heading should be Register your group
     And I should see task list sections
-    And I should see section 1 as Business details
+    And I should see section 1 as Group details
     And I should see section 2 as Contact details
     And I should see section 3 as Review and submit
     And I should see the task name Add ultimate parent's details on Business details section
