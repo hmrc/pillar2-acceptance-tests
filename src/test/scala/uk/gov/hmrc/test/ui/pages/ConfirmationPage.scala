@@ -21,7 +21,6 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ConfirmationPage extends PageObject {
   val url: String     = s"$rootUrl"+"eligibility/confirmation"
-
+  val insetText       =".govuk-inset-text"
   val caption         = "Check if your group is liable"
-
 }

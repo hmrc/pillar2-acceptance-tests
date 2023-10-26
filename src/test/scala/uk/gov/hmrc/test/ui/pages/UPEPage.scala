@@ -30,6 +30,8 @@ object UPEPage extends PageObject {
   val errorLink        = "[href*='#value']"
   val backLink         = ".govuk-back-link"
   val errorMessage     = ".govuk-error-message"
+  val betatag          = "/html/body/header/div[2]/div/p/strong"
+  val sendyourfeedback = ".govuk-heading-xl"
 
   def clickContinue()  = findByCss(continue).click()
 

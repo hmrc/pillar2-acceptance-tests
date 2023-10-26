@@ -16,10 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, PageObject}
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{clickSubmitButton, frontEndUrl, redirectUrlField, selectAffinityGroupOrg, url}
+import uk.gov.hmrc.test.ui.cucumber.PageObject
+
 
 object BusinessActivityEQPage extends PageObject {
   val url: String      = s"$rootUrl"+"eligibility/activities-within-the-uk"

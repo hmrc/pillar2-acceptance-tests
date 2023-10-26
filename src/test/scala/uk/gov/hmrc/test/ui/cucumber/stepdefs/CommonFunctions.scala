@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BookMarkPage, BusinessActivityEQPage, ConfirmationPage, ContactAddressInputPage, ContactDetailsCheckAnswersPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsTelephonePage, DashboardPage, DraftGuidancePage, EmployeeStatusPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, InitialGuidancePage, InputCRNPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, NextEQPage, RegistrationConfirmationPage, ReviewAnswersPage, SecondContactDetailsPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEContactPage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BAGuidancePage, BookMarkPage, BusinessActivityEQPage, ConfirmationPage, ContactAddressInputPage, ContactDetailsCheckAnswersPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsTelephonePage, DashboardPage, DraftGuidancePage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, InitialGuidancePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, RegistrationConfirmationPage, ReviewAnswersPage, SecondContactDetailsPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 
 trait CommonFunctions
@@ -34,7 +34,6 @@ trait CommonFunctions
       case "NFM details page"                 => NFMDetailsPage
       case "NFM registration page"            => NFMRegistrationPage
       case "business EQ page"                 => BusinessActivityEQPage
-      case "next EQ page"                     => NextEQPage
       case "guidance page"                    => GuidancePage
       case "Global gross revenue"             => GlobalGrossRevenueEQPage
       case "confirmation page"                => ConfirmationPage
@@ -46,18 +45,15 @@ trait CommonFunctions
       case "auth-login page"                  => AuthLoginPage
       case "Task list page"                   => TaskListPage
       case "Initial guidance Page"            => InitialGuidancePage
-      case "employee status page"             => EmployeeStatusPage
       case "UPE business page"                => UPEPage
       case "UPE EQ page"                      => UPEEQPage
       case "input-upe-name page"              => InputUPENamePage
-      case "input-crn page"                   => InputCRNPage
       case "input-upe-address page"           => UPEAddressPage
       case "UPE Telephone page"               => UPETelephonePage
       case "input telephone page"             => InputUPETelephonePage
       case "under construction page"          => UnderConstructionPage
       case "UPE Contact person/team Name page"=> UPEContactNamePage
       case "UPE Contact Email page"           => UPEContactEmailPage
-      case "UPE Contact page"                 => UPEContactPage
       case "UPE Org type page"                => UPEOrgTypePage
       case "NFM Org type page"                => NFMOrgTypePage
       case "UKCompany GRS page"               => UKCompanyGRSPage
