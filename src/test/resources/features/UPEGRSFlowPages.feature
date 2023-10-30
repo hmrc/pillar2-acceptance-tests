@@ -7,11 +7,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 1 - Display an error message, when user continue without selecting an option
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I click on Continue button
     Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
@@ -19,11 +19,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
@@ -37,11 +37,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
@@ -54,11 +54,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
@@ -70,11 +70,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 5 - User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
@@ -87,11 +87,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 6 - User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
@@ -103,11 +103,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 7 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
@@ -119,11 +119,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 8 - User registered as LimitedLiabilityPartnership successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
@@ -137,11 +137,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
@@ -154,11 +154,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 10 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
@@ -170,11 +170,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 11 - User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
@@ -187,11 +187,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 12 - User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
@@ -203,11 +203,11 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 13 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What type of company is the ultimate parent entity?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page

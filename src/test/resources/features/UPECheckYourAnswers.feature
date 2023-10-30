@@ -27,7 +27,7 @@ Feature: UPE Check your Answers page
     And I enter Telephone Number as 1234569
     And I click on Continue button
     Then I should be on Check your answers page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Check your answers
     And I should see row 1 key Name
     And I should see row 2 key Address
@@ -75,7 +75,7 @@ Feature: UPE Check your Answers page
   Scenario: 2 - Change UPE fields from check your answers page
     Given Organisation User navigates to UPE check your answer page with credId UPECYA
     Then I should be on Check your answers page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Check your answers
     When I click on change hyperlink next to the UPE Name
     And I enter UPE name as Name Change

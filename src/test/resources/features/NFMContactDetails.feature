@@ -27,7 +27,7 @@ Feature: Enter NFM registered contact name and contact email address
     And I select country as United Kingdom
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What is the name of the person or team we should contact from the nominated filing member?
     And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter NFM Contact name as NFM Test Contact

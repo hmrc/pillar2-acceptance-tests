@@ -7,9 +7,9 @@ Feature: Task list page
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The page header should be Report Pillar 2 top-up taxes
-    And The Heading should be Register for Pillar 2 top-up tax
+    And The Heading should be Register your group
     And I should see task list sections
-    And I should see section 1 as Business details
+    And I should see section 1 as Group details
     And I should see section 2 as Contact details
     And I should see section 3 as Review and submit
     And I should see the task name Add ultimate parent's details on Business details section
@@ -41,7 +41,7 @@ Feature: Task list page
   Scenario: 3 - Status update Enter ultimate parent's details task
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    And The Heading should be Register for Pillar 2 top-up tax
+    And The Heading should be Register your group
     And The Task Add ultimate parent's details status should be Not started
     When I click Add ultimate parent's details link
     Then I should navigate to Initial guidance Page
@@ -54,7 +54,7 @@ Feature: Task list page
   Scenario: 4 - Verify the signout functionality
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    And The Heading should be Register for Pillar 2 top-up tax
+    And The Heading should be Register your group
     When I click Sign out link
     Then I am on feedback survey page
     When I click the browser back button
@@ -63,7 +63,7 @@ Feature: Task list page
   Scenario: 5 - Task list page status update validation after Task1 completion
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    And The Heading should be Register for Pillar 2 top-up tax
+    And The Heading should be Register your group
     When I click Add ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
@@ -226,7 +226,7 @@ Feature: Task list page
   Scenario: 8 - Task list page status update validation after Task1 completion and navigating to different pages
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    And The Heading should be Register for Pillar 2 top-up tax
+    And The Heading should be Register your group
     When I click Add ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
@@ -279,7 +279,7 @@ Feature: Task list page
   Scenario: 9 - User completes GRS journey and Navigate to different pages of GRS journey and validates status
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    And The Heading should be Register for Pillar 2 top-up tax
+    And The Heading should be Register your group
     When I click Add ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button

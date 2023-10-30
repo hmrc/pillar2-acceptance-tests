@@ -27,7 +27,7 @@ Feature: Enter Further Details Group status as MNE or Domestic
     And The Task Add further group details status should be Not started
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Where does the group operate?
     When I select option In the UK and other countries in further details group status page
     And I click on Continue button
@@ -70,7 +70,7 @@ Feature: Enter Further Details Group status as MNE or Domestic
     And The Task Add further group details status should be Not started
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Where does the group operate?
     When I select option Only in the UK in further details group status page
     And I click on Continue button

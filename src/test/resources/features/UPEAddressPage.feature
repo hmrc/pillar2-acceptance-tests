@@ -10,7 +10,7 @@ Feature: Enter UPE registered address
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test Address
     Then I should navigate to input-upe-address page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Where is the registered office address of Test Address?
     When I enter Address Line 1 as Test Address Line 1
     And I enter Address Line 2 as Test Address Line 2
