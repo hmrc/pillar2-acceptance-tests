@@ -12,7 +12,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I click on Continue button
     Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
 
@@ -24,7 +24,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -42,7 +42,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -59,7 +59,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -75,7 +75,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -92,7 +92,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -108,7 +108,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -124,7 +124,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -142,7 +142,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -159,7 +159,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -175,7 +175,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -192,7 +192,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -208,7 +208,7 @@ Feature: Ultimate parent entity GRS journies
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
     And The caption must be Group details
-    And The Heading should be What type of company is the ultimate parent entity?
+    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -227,3 +227,13 @@ Feature: Ultimate parent entity GRS journies
     Then I should be on UPE Org type page
     When I select back link
     Then I should be on UPE business page
+
+  Scenario: 15 - User can navigate to Entity type not listed hyperlink on UPE Org type page
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE business page
+    When I select option Yes and continue to next
+    Then I should navigate to UPE Org type page
+    And I should see Entity type not listed hyperLink
+    When I click Entity type not listed link
+    Then I should navigate to input-upe-name page
+
