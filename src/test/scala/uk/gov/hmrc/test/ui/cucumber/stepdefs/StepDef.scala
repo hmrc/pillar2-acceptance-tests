@@ -487,55 +487,60 @@ class StepDef extends BaseStepDef {
     assert(driver.findElement(By.cssSelector(UPEPage.sendyourfeedback)).getText.contains(text))
   }
 
-  /*  Given("""^I fill (.*) and continue$""") { page: String =>
-      page match {
-        case "What is the main address of your business page" => Forms.addressNonUK()
-      }
-      Input.clickSubmit()
-
-    And("""^I select SignOut link$""") { (id: String) =>
-     Input.clickById(id)
-     Input.clickSubmit
-   }
-
-   And("""^I click browser back$""") { (id: String) =>
-    Input.clickByLinkText(id)
+  And("""^I should see (.*) hyperLink$""") { (linkText: String) =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.inputUpeNamePageLink)
   }
 
-    And(
-      """^(click Continue button|click Confirm and send|click Try Again)$"""
-    ) { (negate: String) =>
-      Input.clickSubmit
-    }
+      /*  Given("""^I fill (.*) and continue$""") { page: String =>
+          page match {
+            case "What is the main address of your business page" => Forms.addressNonUK()
+          }
+          Input.clickSubmit()
 
-    Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
-      Input.sendKeysById(text, id)
-    }
+        And("""^I select SignOut link$""") { (id: String) =>
+         Input.clickById(id)
+         Input.clickSubmit
+       }
 
-    And("""^I select (.*) and continue$""") { (id: String) =>
-      Input.clickById(id)
-      Input.clickSubmit
-    }
+       And("""^I click browser back$""") { (id: String) =>
+        Input.clickByLinkText(id)
+      }
 
-    And("""^I click (.*)$""") { (id: String) =>
-      Input.clickByLinkText(id)
-    }
+        And(
+          """^(click Continue button|click Confirm and send|click Try Again)$"""
+        ) { (negate: String) =>
+          Input.clickSubmit
+        }
 
-    And("""^click (.*) element$""") { (id: String) =>
-      Input.clickById(id)
-    }
+        Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
+          Input.sendKeysById(text, id)
+        }
 
-    Then("""^The Page should include (.*)$""") { text: String =>
-      Check.checkBodyText(text)
-    }
+        And("""^I select (.*) and continue$""") { (id: String) =>
+          Input.clickById(id)
+          Input.clickSubmit
+        }
 
-    Then("""wait for (.*) seconds$""") { (secs: Int) =>
-      Wait.secondsWait(secs)
-    }
+        And("""^I click (.*)$""") { (id: String) =>
+          Input.clickByLinkText(id)
+        }
 
-    Given("""^the user should be on the new window with heading (.*)""") { (title: String) =>
-      Input.switchToNewWindow
-      Check.checkH1(title)
-    }*/
+        And("""^click (.*) element$""") { (id: String) =>
+          Input.clickById(id)
+        }
+
+        Then("""^The Page should include (.*)$""") { text: String =>
+          Check.checkBodyText(text)
+        }
+
+        Then("""wait for (.*) seconds$""") { (secs: Int) =>
+          Wait.secondsWait(secs)
+        }
+
+        Given("""^the user should be on the new window with heading (.*)""") { (title: String) =>
+          Input.switchToNewWindow
+          Check.checkH1(title)
+        }*/
 
 }

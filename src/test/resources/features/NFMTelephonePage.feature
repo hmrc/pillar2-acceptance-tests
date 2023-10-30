@@ -40,7 +40,7 @@ Feature: Enter NFM contact Telephone number
     Then I should navigate to input nfm telephone page
     And The caption must be Group details
     And The Heading should be What is the telephone number for NFM Telephone Contact?
-    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192
+    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
     When I enter NFM Telephone Number as 9923-456
     And I click on Continue button
     Then I should navigate to NFM Check your answers page
