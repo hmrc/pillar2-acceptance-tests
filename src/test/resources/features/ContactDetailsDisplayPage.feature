@@ -77,7 +77,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Contact details input email page
     And The caption must be Contact details
     And The Heading should be What is the email address for Contact Name Test
-    And The Body content should be We will use this to confirm your records
+    And The Body content should be We will use this to send confirmation of your Pillar 2 top-up tax compliance actions or if we have any questions about them.
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
     Then I should navigate to Contact details telephone page
@@ -91,7 +91,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Contact details input telephone page
     And The caption must be Contact details
     And The Heading should be What is the telephone number for Contact Name Test?
-    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192
+    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
     When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page

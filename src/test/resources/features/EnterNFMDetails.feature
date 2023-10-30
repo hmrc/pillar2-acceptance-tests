@@ -20,8 +20,8 @@ Feature: Register NFM and enter NFM details
     Then I should navigate to NFM registration page
     And The caption is Group details
     And The Heading should be Do you want to register a nominated filing member for this group?
-    And The Body content should be This step is optional. If you do not enter the details for a nominated filing member, the ultimate parent entity (UPE) will be used as the default.
-    And The Body content should be You must have permission from the UPE to nominate a company as a filing member and be able to access the information required to file Pillar 2 top-up tax on the groups behalf.
+    And The Body content should be If you do not enter the details for a nominated filing member, the ultimate parent entity (UPE) will be used as the default.
+    And The Body content should be You must have permission from the UPE to nominate a company as a filing member and be able to access the information required to file Pillar 2 top-up tax on the group's behalf.
     When I continue to next page
     Then I should see error message Select yes if there is a nominated filing member for this group on the NFM registration page Page
     When I select No option and continue to next

@@ -14,7 +14,7 @@ As an eligible authenticated user
     And The Body content should be We will ask you for several pieces of identifying information about the ultimate parent so we can match it with our records.
     When I click on Continue button
     Then I should navigate to UPE business page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
 
   Scenario: 2 - User navigates back to Task List from initial guidance page
