@@ -58,4 +58,3 @@ fi
 }
 
 sbt -Dbrowser=browserstack -Dbrowserstack.project="Pillar2" -Dbrowserstack.build="Pillar2" -Dbrowserstack.username="anujsharma_smV9ey" -Dbrowserstack.key="D9WytPU6zFhv6TnFjEay"  -Denvironment="$ENV" -Dbrowserstack.idleTimeout="150" -Dbrowserstack.browser_version="112" -Dbrowserstack.browser="Chrome" -Dbrowserstack.os="Windows" -Dbrowserstack.os_version="11" 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.BrowserStackTestRunner'
-vhjklkjjkl;kmn'\\\ll;'''''''';l,                  b  nbb b '
