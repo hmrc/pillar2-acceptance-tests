@@ -1,4 +1,4 @@
-@tests @zap_accessibility @BrowserStack
+@tests @zap_accessibility
 Feature: Business activity within UK EQs
   As a MNE user
   I want to answer the Business activity within UK EQ

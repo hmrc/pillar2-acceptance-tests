@@ -16,12 +16,11 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import com.sun.tools.javac.comp.Check
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, CheckYourAnswersPage, InitialGuidancePage, TaskListPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, TaskListPage}
 
 class TaskListPageSteps extends CommonFunctions {
 
@@ -41,6 +40,12 @@ class TaskListPageSteps extends CommonFunctions {
     assert(driver.findElement(By.cssSelector(TaskListPage.taskItems)).getText.contains(taskName))
   }
 
+  And("""^I should see the task section (\d+) with task name as (.*) on Contact details section$""") { (sectionNumber: Int, taskName: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
+    assert(driver.findElements(By.cssSelector(TaskListPage.taskSection)).get(sectionNumber - 1).getText.contains(taskName))
+  }
+
   And("""^I should see employee status link (.*)""") { (empStatusLink: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
@@ -48,26 +53,86 @@ class TaskListPageSteps extends CommonFunctions {
   }
   And("""^The Task (.*) status should be (.*)$""") { (taskName: String, status: String) =>
     taskName match {
-      case "Enter ultimate parent's details" =>
+      case "Add ultimate parent's details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         println(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText)
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
 
-      case "Enter filing member's details" =>
+      case "Edit ultimate parent's details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
+        println(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText)
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
+
+      case "Filing member's details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+
+      case "Add filing member's details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+
+      case "Edit filing member's details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+
+      case "Further group details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+
+      case "Add further group details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+
+      case "Edit further group details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+
+      case "Contact details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
+
+      case "Add Contact details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
+
+      case "Edit contact details" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
+
+      case "Check your answers" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(4).getText.contains(taskName))
+        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(4).getText.contains(status))
+
     }
-
   }
+  Then("""^I navigate back to TaskList Page from (.*) Page""") { (page: String) =>
+    page match {
+      case "Name" =>
+        for (i <- 1 to 3) {
+          clickByCss(BusinessActivityEQPage.backLink)
+        }
 
-  And("""^I navigate back to TaskList Page from Name Page""") {
-    for (i <- 1 to 3)
-      {
-        clickByCss(BusinessActivityEQPage.backLink)
-      }
+      case "GRS" =>
+        for (i <- 1 to 4) {
+          clickByCss(BusinessActivityEQPage.backLink)
+        }
+
+      case "Telephone" =>
+        for (i <- 1 to 8) {
+          clickByCss(BusinessActivityEQPage.backLink)
+        }
+    }
   }
-
-
 }

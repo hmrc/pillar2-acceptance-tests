@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object LLPGRSPage extends PageObject {
-  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode&entityType=limitedLiabilityPartnership"
+//  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode&entityType=limitedLiabilityPartnership"
+  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=limitedLiabilityPartnership"
 
   val header           = ".govuk-caption-l"
   val saveAndContinue  = ".govuk-button"

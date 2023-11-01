@@ -16,11 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, InputTelephonePage, InputUPENamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage, UPETelephonePage}
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl, include}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
 
 
 class UPEPageSteps extends CommonFunctions {
@@ -32,35 +30,40 @@ class UPEPageSteps extends CommonFunctions {
         Input.sendKeysByCss(name, InputUPENamePage.nameField)
         clickByCss(InputUPENamePage.continue)
 
+      case "NFM name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(name, InputUPENamePage.nameField)
+        clickByCss(InputUPENamePage.continue)
+
       case "Address Line 1" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(UPEAddressPage.addressLine1)
-        Input.sendKeysById(name, UPEAddressPage.addressLine1)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine1)
+        Input.sendKeysByCss(name, UPEAddressPage.addressLine1)
 
       case "Address Line 2" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(UPEAddressPage.addressLine2)
-        Input.sendKeysById(name, UPEAddressPage.addressLine2)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2)
+        Input.sendKeysByCss(name, UPEAddressPage.addressLine2)
 
       case "City" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(UPEAddressPage.townOrCity)
-        Input.sendKeysById(name, UPEAddressPage.townOrCity)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.townOrCity)
+        Input.sendKeysByCss(name, UPEAddressPage.townOrCity)
 
       case "Region" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(UPEAddressPage.region)
-        Input.sendKeysById(name, UPEAddressPage.region)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.region)
+        Input.sendKeysByCss(name, UPEAddressPage.region)
 
       case "Postal Code" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(UPEAddressPage.postalCode)
-        Input.sendKeysById(name, UPEAddressPage.postalCode)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCode)
+        Input.sendKeysByCss(name, UPEAddressPage.postalCode)
 
       case "Country" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(UPEAddressPage.country)
-        Input.sendKeysById(name, UPEAddressPage.country)
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.country)
+        Input.sendKeysByCss(name, UPEAddressPage.country)
 
       case "UPE Person/Team name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -74,8 +77,59 @@ class UPEPageSteps extends CommonFunctions {
 
       case "Telephone Number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(InputTelephonePage.telephoneNumber)
-        Input.sendKeysByCss(name, InputTelephonePage.telephoneNumber)
+        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.telephoneNumber)
+        Input.sendKeysByCss(name, InputUPETelephonePage.telephoneNumber)
+
+      case "NFM Contact name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.contactName)
+        Input.sendKeysByCss(name, NFMContactNamePage.contactName)
+
+      case "NFM Contact Email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
+        Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
+
+      case "NFM Telephone Number" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.telephoneNumber)
+        Input.sendKeysByCss(name, InputNFMTelephonePage.telephoneNumber)
+
+      case "Contact Details Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
+        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
+
+      case "Contact Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
+        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
+
+      case "Contact Email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputEmailPage.contactEmail)
+        Input.sendKeysByCss(name, ContactDetailsInputEmailPage.contactEmail)
+
+      case "Contact Telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputTelephonePage.contactTelephone)
+        Input.sendKeysByCss(name, ContactDetailsInputTelephonePage.contactTelephone)
+
+      case "Second Contact Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(SecondContactNamePage.contactName)
+        Input.sendKeysByCss(name, SecondContactNamePage.contactName)
+
+      case "Second Contact Email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(SecondContactEmailPage.contactEmail)
+        Input.sendKeysByCss(name, SecondContactEmailPage.contactEmail)
+
+      case "Second Contact Input" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactTelephone)
+        Input.sendKeysByCss(name, SecondContactInputPage.contactTelephone)
+
 
     }
 
@@ -94,31 +148,57 @@ class UPEPageSteps extends CommonFunctions {
   }
 
 
-    And("""^I should see the (.*) field is pre-populated with (.*)$""") { (field: String, name: String) =>
-      field match {
-        case "UPE name" =>
-          assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
-        case "Address Line 1" =>
-          assert(getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name))
-        case "Address Line 2" =>
-          assert(getAttributeOf(UPEAddressPage.addressLine2, "value").equals(name))
-        case "City" =>
-          assert(getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name))
-        case "Region" =>
-          assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
-        case "Postal Code" =>
-          assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
-        case "Country" =>
-          assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
-        case "UPE Person/Team name" =>
-          assert(getAttributeOf(UPEContactNamePage.contactName, "value").equals(name))
-        case "UPE Email address" =>
-          assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
-        case "Telephone number" =>
-          assert(getAttribueOf(InputTelephonePage.telephoneNumber, "value").equals(name))
-
-      }
+  And("""^I should see the (.*) field is pre-populated with (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "UPE name" =>
+        assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
+      case "NFM name" =>
+        assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
+      case "Address Line 1" =>
+        assert(getAttribueOf(UPEAddressPage.addressLine1, "value").equals(name))
+      case "Address Line 2" =>
+        assert(getAttribueOf(UPEAddressPage.addressLine2, "value").equals(name))
+      case "City" =>
+        assert(getAttribueOf(UPEAddressPage.townOrCity, "value").equals(name))
+      case "Region" =>
+        assert(getAttribueOf(UPEAddressPage.region, "value").equals(name))
+      case "Postal Code" =>
+        assert(getAttribueOf(UPEAddressPage.postalCode, "value").equals(name))
+      case "Country" =>
+        assert(getAttribueOf(UPEAddressPage.country, "value").equals(name))
+      case "UPE Person/Team name" =>
+        assert(getAttributeOf(UPEContactNamePage.contactName, "value").equals(name))
+      case "UPE Email address" =>
+        assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
+      case "Telephone number" =>
+        assert(getAttribueOf(InputUPETelephonePage.telephoneNumber, "value").equals(name))
+      case "NFM Contact name" =>
+        assert(getAttribueOf(NFMContactNamePage.contactName, "value").equals(name))
+      case "NFM Contact Email" =>
+        assert(getAttribueOf(NFMContactEmailPage.contactEmail, "value").equals(name))
+      case "NFM Telephone number" =>
+        assert(getAttribueOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
+      case "Contact Name" =>
+        assert(getAttribueOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
+      case "Contact Email" =>
+        assert(getAttribueOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
+      case "Contact Telephone" =>
+        assert(getAttribueOf(ContactDetailsInputTelephonePage.contactTelephone, "value").equals(name))
+      case "Second Contact Name" =>
+        assert(getAttribueOf(SecondContactNamePage.contactName, "value").equals(name))
+      case "Second Contact Email" =>
+        assert(getAttribueOf(SecondContactEmailPage.contactEmail, "value").equals(name))
+      case "Second Contact Input" =>
+        assert(getAttribueOf(SecondContactInputPage.contactTelephone, "value").equals(name))
     }
+  }
+
+  And("""^I should see the (.*) field is selected with (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "Country" =>
+        assert(getAttribueOf(NFMAddressPage.country, "value").equals(name))
+    }
+  }
 
     When("""I continue to next page""") { () =>
       UPEPage.clickContinue();
@@ -131,6 +211,13 @@ class UPEPageSteps extends CommonFunctions {
       }
       UPEOrgTypePage.clickContinue()
     }
+
+  And("""^I select option (.*) in further details group status page$""") { (option: String) =>
+    option match {
+      case "In the UK and other countries" => Input.clickById("value_0")
+      case "Only in the UK" => Input.clickById("value_1")
+    }
+  }
 
     And("""^I registered successfully with (.*)""") { (option: String) =>
       option match {

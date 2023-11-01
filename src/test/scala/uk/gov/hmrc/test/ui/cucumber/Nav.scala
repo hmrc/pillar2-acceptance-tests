@@ -29,8 +29,8 @@ object Nav extends BasePage {
     driver.navigate().back()
   }
 
-  def clearCollections(): Unit = {
-    navigateTo("http://localhost:10050/pillar-two/test-only/clear-all")
+   def clearCollections(): Unit = {
+    navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/clear-all")
   }
 
   def isVisible(by: By): Boolean =

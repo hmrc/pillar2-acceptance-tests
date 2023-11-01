@@ -11,7 +11,8 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone
@@ -20,12 +21,12 @@ Feature: Ultimate parent entity based in UK EQs
     When I enter UPE Email address as testteam@email.com
     And I click on Continue button
     Then I should navigate to UPE Telephone page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Can we contact Test Telephone by telephone?
     And The Body content should be We will call if we have any questions about the management of Pillar 2 top-up tax for this business
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be What is the telephone number for Test Telephone?
     And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
     When I enter Telephone Number as 123456
@@ -40,7 +41,8 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone
@@ -49,7 +51,7 @@ Feature: Ultimate parent entity based in UK EQs
     When I enter UPE Email address as testteam@email.com
     And I click on Continue button
     Then I should navigate to UPE Telephone page
-    And The caption must be Business details
+    And The caption must be Group details
     And The Heading should be Can we contact Test Telephone by telephone?
     When I select option No and continue to next
     Then I should be on Check your answers page
@@ -62,7 +64,8 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone Error
@@ -75,6 +78,7 @@ Feature: Ultimate parent entity based in UK EQs
     When I click on Continue button
     Then I should see error message Select yes if we can contact Test Telephone Error by telephone on the UPE Telephone Page
 
+
   Scenario: 4 - Display an error message, when user continue without selecting an option
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -83,7 +87,8 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone Error
@@ -99,7 +104,7 @@ Feature: Ultimate parent entity based in UK EQs
     When I click on Continue button
     Then I should see error message You need to enter the telephone for Test Telephone Error on the Input Telephone Page
 
-  Scenario: 5 - User navigates back to email page from input Telephone page
+  Scenario: 5 - Display an error message, when user continue without selecting an option
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option No and continue to next
@@ -107,7 +112,36 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
+    And I click on Continue button
+    Then I should navigate to UPE Contact person/team Name page
+    When I enter UPE Person/Team name as Test Telephone Error
+    And I click on Continue button
+    Then I should navigate to UPE Contact Email page
+    When I enter UPE Email address as testteam@email.com
+    And I click on Continue button
+    Then I should navigate to UPE Telephone page
+    And The Heading should be Can we contact Test Telephone Error by telephone?
+    When I select option Yes and continue to next
+    Then I should navigate to input telephone page
+    And I enter Telephone Number as 1234512345123451234512345
+    When I click on Continue button
+    Then I should see error message The telephone number should be 24 characters or less on the Input Telephone Page
+    And I enter Telephone Number as zero one two three
+    When I click on Continue button
+    Then I should see error message Enter a telephone number in the correct format on the Input Telephone Page
+
+  Scenario:6 - User navigates back to email page from input Telephone page
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE business page
+    When I select option No and continue to next
+    And I enter UPE name as Test UPE
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Test Address Line 1
+    And I enter City as Test City
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Telephone Back
@@ -129,7 +163,7 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should navigate to UPE Telephone page
     And The Heading should be Can we contact Test Telephone Back by telephone?
 
-  Scenario: 6 - Prepopulate the answers on Telephone Selection and Telephone input after sign out
+  Scenario: 7 - Prepopulate the answers on Telephone Selection and Telephone input after sign out
     Given Organisation User logs in as upe with credId TestUPETelephone for Pillar2
     Then I should be on UPE business page
     When I select option No and continue to next
@@ -138,7 +172,8 @@ Feature: Ultimate parent entity based in UK EQs
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Country as Test Country
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Test Person

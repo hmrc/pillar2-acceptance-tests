@@ -16,12 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
-import uk.gov.hmrc.test.ui.pages.GGRGuidancePage.rootUrl
 
 
-object EmployeeStatusPage extends PageObject {
- // TO DO Update this after the implementation
-//  val url: String        = s"$rootUrl"+"/business-matching/ultimate-parent/match-hmrc-records"
-  val url: String     = s"$rootUrl"+"under-construction"
+object SecondContactNamePage extends PageObject {
+  val url: String        = s"$rootUrl"+"contact-details/second-input-name"
+
+  val caption            = ".govuk-caption-l"
+  val continue           = ".govuk-button"
+  val contactName        = "#value"
+
+  def clickContinue()    = findByCss(continue).click()
 }

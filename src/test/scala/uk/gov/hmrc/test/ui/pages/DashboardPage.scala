@@ -16,21 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
-import uk.gov.hmrc.test.ui.pages.BusinessActivityEQPage.rootUrl
-import uk.gov.hmrc.test.ui.pages.GuidancePage.rootUrl
 
-object NextEQPage extends PageObject {
-  val url: String     = s"$rootUrl"+"under-construction"
+object DashboardPage extends PageObject {
+  val url: String      = s"$rootUrl"+"pillar2-top-up-tax-home"
+  val continue         = "#submit"
+  val sectionHeading   = ".govuk-heading-m"
+  val userDetails      =".govuk-caption-m"
 
-  val caption         = "form[action*='eligibility'] .govuk-caption-l"
-  val eqForm          = "form[action*='eligibility']"
-  val eq              = "form[action*='eligibility'] .govuk-fieldset"
-  val continue        = "form[action*='eligibility'] button"
-
-  def clickContinue() = findByCss(continue).click()
-
+  def clickContinue()  = findByCss(continue).click()
 
 }

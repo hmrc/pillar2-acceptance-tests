@@ -19,34 +19,71 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{CheckYourAnswersPage, InitialGuidancePage}
+import uk.gov.hmrc.test.ui.pages.{ContactDetailsCheckAnswersPage, FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, UPECheckYourAnswersPage}
 
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
 
   And("""^I should see row (\d+) key (.*)""") { (row: Int, key: String) =>
-    assert(driver.findElements(By.cssSelector(CheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
+    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
   }
 
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElements(By.cssSelector(CheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
+    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
   }
 
   And("""^I click on change hyperlink next to the (.*)""") { (link: String) =>
     link match {
-      case "Name" =>
-        clickByCss(CheckYourAnswersPage.changeName)
-      case "Address" =>
-        clickByCss(CheckYourAnswersPage.changeAddress)
+      case "UPE Name" =>
+        clickByCss(UPECheckYourAnswersPage.changeName)
+      case "UPE Address" =>
+        clickByCss(UPECheckYourAnswersPage.changeAddress)
+      case "UPE Contact Name" =>
+        clickByCss(UPECheckYourAnswersPage.changeContactname)
+      case "UPE Email Address" =>
+        clickByCss(UPECheckYourAnswersPage.changeEmailaddress)
+      case "UPE Telephone Contact" =>
+        clickByCss(UPECheckYourAnswersPage.changeTelephonecontact)
+      case "UPE Telephone Number" =>
+        clickByCss(UPECheckYourAnswersPage.changeTelephonenumber)
+      case "NFM Name" =>
+        clickByCss(NFMCheckYourAnswersPage.changeName)
+      case "NFM Address" =>
+        clickByCss(NFMCheckYourAnswersPage.changeAddress)
+      case "NFM Contact Name" =>
+        clickByCss(NFMCheckYourAnswersPage.changeContactname)
+      case "NFM Email Address" =>
+        clickByCss(NFMCheckYourAnswersPage.changeEmailaddress)
+      case "NFM Telephone Contact" =>
+        clickByCss(NFMCheckYourAnswersPage.changeTelephonecontact)
+      case "NFM Telephone Number" =>
+        clickByCss(NFMCheckYourAnswersPage.changeTelephonenumber)
+      case "FD Group Status" =>
+        clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
+      case "Accounting Period" =>
+        clickByCss(FurtherDetailsCheckYourAnswersPage.changeAccountingPeriod)
+    }
+  }
+
+  And("""^I click on change link for (.*)""") { (link: String) =>
+    link match {
       case "Contact Name" =>
-        clickByCss(CheckYourAnswersPage.changeContactname)
-      case "Email Address" =>
-        clickByCss(CheckYourAnswersPage.changeEmailaddress)
-      case "Telephone Contact" =>
-        clickByCss(CheckYourAnswersPage.changeTelephonecontact)
-      case "Telephone Number" =>
-        clickByCss(CheckYourAnswersPage.changeTelephonenumber)
+        clickByCss(ContactDetailsCheckAnswersPage.changeName)
+      case "Email address" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeEmail)
+      case "Telephone number" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeContactNumber)
+
+      case "Do you have a second contact?" =>
+        clickByCss(ContactDetailsCheckAnswersPage.secondContact)
+      case "Second Contact Name" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondName)
+      case "Second Contact Email" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
+      case "Telephone number" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
+
     }
   }
   Then("""^I navigate back to check your answers page from (.*) page""") { (page: String) =>
@@ -70,7 +107,6 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
       case "telephone number" =>
         InitialGuidancePage.clickContinue()
     }
-
   }
-
 }
+

@@ -18,13 +18,17 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
-import uk.gov.hmrc.test.ui.pages.NextEQPage.rootUrl
+import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
+import uk.gov.hmrc.test.ui.pages.UPEPage.rootUrl
 
-object InputCRNPage extends PageObject {
-//  val url: String      = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/input-crn"
-  val url: String      = s"$rootUrl"+"under-construction"
-  val continue         = "#submit"
+object RegistrationConfirmationPage extends PageObject{
+  val url: String      = s"$rootUrl"+"review-submit/confirmation"
+  val header: String = "h1.govuk-panel__title"
+  val registrationID = ".govuk-panel__body"
+  val header2        = "h2.govuk-heading-m"
+  val pageHeader     = "a[href='/report-pillar2-top-up-taxes']"
+  val surveylink     = "a[href='/report-pillar2-top-up-taxes/under-construction']"
 
-  def clickContinue()  = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 }

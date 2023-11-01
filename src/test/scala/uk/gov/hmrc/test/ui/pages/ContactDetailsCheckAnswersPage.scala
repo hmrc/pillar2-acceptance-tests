@@ -16,20 +16,29 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 
-object CheckYourAnswersPage extends PageObject {
-  val url: String             = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
+object ContactDetailsCheckAnswersPage extends PageObject {
+  val url: String             = s"$rootUrl" + "contact-details/check-answers"
   val header: String          = "h1.govuk-heading-l"
   val keyList                 = ".govuk-summary-list__key"
   val valueList               = ".govuk-summary-list__value"
   val actionsList             = ".govuk-summary-list__actions"
   val rowNumber               = "govuk-summary-list__row"
-  val changeName              = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-name']"
-  val changeAddress           = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-address']"
-  val changeContactname       = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-business-name']"
-  val changeEmailaddress      = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-email']"
-  val changeTelephonecontact  = "a[href*='/change-telephone']"
-  val changeTelephonenumber  = "a[href='/pillar-two/business-matching/ultimate-parent/no-id/change-input-telephone']"
+  val continue                = "#continue"
+
+  val changeName              = "a[href*='/change-input-name']"
+  val changeEmail             = "a[href*='/change-input-email']"
+  val changeContact           = "a[href*='/change-telephone']"
+  val changeContactNumber     = "a[href*='/change-input-telephone']"
+
+  val secondContact           = "a[href*='/change-second-contact']"
+  val changeSecondName        = "a[href*='/change-second-input-name']"
+  val changeSecondEmail       = "a[href*='/change-input-email']"
+  val secondTelephone         = "a[href*='/change-telephone']"
+  val changeSecondTelephone   = "a[href*='/change-input-telephone']"
+
+  def saveAndContinue()       = findByCss(continue).click()
 }
