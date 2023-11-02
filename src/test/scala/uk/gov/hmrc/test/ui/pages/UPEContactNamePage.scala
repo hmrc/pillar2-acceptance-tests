@@ -25,11 +25,11 @@ object UPEContactNamePage extends PageObject {
 
   val caption            = ".govuk-caption-l"
   val continue           = ".govuk-button"
-  val contactName        = "upeContactName"
+  val contactName        = "value"
   val errorSummary       = ".govuk-error-summary__list"
-  val errorLink          = "[href='#upeContactName']"
+  val errorLink          = "[href='#value']"
   val backLink           = ".govuk-back-link"
-  val errorMessage       = "#upeContactName-error"
+  val errorMessage       = "#value-error"
 
   def clickContinue()    = findByCss(continue).click()
 }

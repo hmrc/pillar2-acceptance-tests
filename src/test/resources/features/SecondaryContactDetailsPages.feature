@@ -800,13 +800,15 @@ Feature: Secondary Contact details for the filing member
     And I should see row 22 value Yes
     And I should see row 23 value 1234554
     And I click on Save&Continue button
-    #Then I should navigate to Registration confirmation page (Commented this lines as Tax Enrolment issue should be fixed )
+    #Then I should navigate to Registration confirmation page #Tax enrolments issues needs to be fixed
     #And The Header should be Report Pillar 2 top-up taxes
     #And The Heading should be Registration complete
     #And The Id text should be Pillar 2 top-up tax ID
     #And The Information header should be What happens next
     #And The Body content should be You have set up an account for reporting and managing Pillar 2 top-up taxes.
     #And The Body content should be You can save this ID number by making a note or taking a screenshot.
+    #When I click on Continue button
+    #Then I should be on Dashboard page
 
  Scenario: 8 - UPE GRS flow ID and GRS flow ID, Review and submit your answers page
    Given Organisation User logs in as upe for Pillar2
@@ -928,7 +930,7 @@ Feature: Secondary Contact details for the filing member
    And I should see row 19 value Yes
    And I should see row 20 value 1234554
    And I click on Save&Continue button
-   #Then I should navigate to Registration confirmation page (Commented this lines as Tax Enrolment issue should be fixed )
+   #Then I should navigate to Registration confirmation page #Tax enrolments issues needs to be fixed
    #And The Header should be Report Pillar 2 top-up taxes
    #And The Heading should be Registration complete
    #And The Id text should be Pillar 2 top-up tax ID
@@ -939,3 +941,5 @@ Feature: Secondary Contact details for the filing member
    #Then I should navigate to under construction page
    #When I select back link
    #Then I should navigate to Registration confirmation page
+   #When I click on Continue button
+   #Then I should be on Dashboard page

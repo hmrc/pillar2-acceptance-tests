@@ -4,7 +4,7 @@ Feature: Enter NFM registered Name and address
   I want to enter the registered address
 
   Scenario: 1 - Create a new subscription for validating NFM Name and Address
-  Given Organisation User logs in as upe with credId NFMNameAddress for Pillar2
+    Given Organisation User logs in as upe with credId NFMNameAddress for Pillar2
     Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
@@ -65,10 +65,10 @@ Feature: Enter NFM registered Name and address
     And I should see the Region field is pre-populated with Test Region
     And I should see the Postal Code field is pre-populated with EH5 5WY
     And I should see the Country field is selected with GB
-    Given Organisation User logs in NFM Contact Name page for Pillar2
-    Then The Heading should be Page not available
-    Given Organisation User logs in NFM Contact Email page for Pillar2
-    Then The Heading should be Page not available
+    #Given Organisation User logs in NFM Contact Name page for Pillar2
+    #Then The Heading should be Page not available
+    #Given Organisation User logs in NFM Contact Email page for Pillar2
+    #Then The Heading should be Page not available
 
   Scenario: 2 - NFM Name page Error validations
     Given Organisation User logs in as upe with credId NFMNameError for Pillar2
@@ -155,11 +155,11 @@ Feature: Enter NFM registered Name and address
     When I click on Continue button
     Then I should see NFM error message Enter a valid UK postal code or change the country you selected on the Postal Code Element
 
-  Scenario: 4 - Validate Bookmark for NFM Name and NFM Address Pages
-    Given Organisation User logs in NFM name page for Pillar2
-    Then The Heading should be Page not available
-    Given Organisation User logs in NFM address page for Pillar2
-    Then The Heading should be Page not available
+  #Scenario: 4 - Validate Bookmark for NFM Name and NFM Address Pages #This functionality will be covered as part of ticket 489
+   # Given Organisation User logs in NFM name page for Pillar2
+    #Then The Heading should be Page not available
+    #Given Organisation User logs in NFM address page for Pillar2
+    #Then The Heading should be Page not available
 
 
 

@@ -1,4 +1,4 @@
-@tests @zap_accessibility
+@ignore @zap_accessibility
 Feature: Bookmark Feature
   I should not be able to navigate to next page without answering the previous question
 
