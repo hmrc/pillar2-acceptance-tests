@@ -113,8 +113,8 @@ Feature: Enter NFM contact Telephone number
     And I click on Continue button
     Then I should see error message Enter a telephone number in the correct format on the Input Nfm Telephone Page
 
-  Scenario: 3 - Validate Bookmark for NFM Name and NFM Address Pages
-    Given Organisation User logs in NFM Telephone page for Pillar2
-    Then The Heading should be Page not available
-    Given Organisation User logs in NFM Telephone input page for Pillar2
-    Then The Heading should be Page not available
+  #Scenario: 3 - Validate Bookmark for NFM Name and NFM Address Pages #This functionality will be covered as part of ticket 489
+   # Given Organisation User logs in NFM Telephone page for Pillar2
+    #Then The Heading should be Page not available
+    #Given Organisation User logs in NFM Telephone input page for Pillar2
+    #Then The Heading should be Page not available

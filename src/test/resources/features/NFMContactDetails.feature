@@ -110,8 +110,8 @@ Feature: Enter NFM registered contact name and contact email address
     When I click on Continue button
     Then I should see NFM error message The email address should be 132 characters or less on the Input NFM Contact Email Element
 
-  Scenario: 3 - Validate Bookmark for NFM Contact Name and NFM Contact Email Pages
-    Given Organisation User logs in NFM Contact Name page for Pillar2
-    Then The Heading should be Page not available
-    Given Organisation User logs in NFM Contact Email page for Pillar2
-    Then The Heading should be Page not available
+  #Scenario: 3 - Validate Bookmark for NFM Contact Name and NFM Contact Email Pages #This functionality will be covered as part of ticket 489
+   #Given Organisation User logs in NFM Contact Name page for Pillar2
+    #Then The Heading should be Page not available
+    #Given Organisation User logs in NFM Contact Email page for Pillar2
+    #Then The Heading should be Page not available

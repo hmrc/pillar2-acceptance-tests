@@ -121,6 +121,7 @@ class NFMPageSteps extends CommonFunctions {
 
         Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.errorMessage)
         getTextOf(By cssSelector (NFMContactNamePage.errorMessage)) should include(error)
+
       case "Input NFM Contact Email" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorSummary)
@@ -130,7 +131,6 @@ class NFMPageSteps extends CommonFunctions {
 
         Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorMessage)
         getTextOf(By cssSelector (NFMContactEmailPage.errorMessage)) should include(error)
-
 
     }
   }
