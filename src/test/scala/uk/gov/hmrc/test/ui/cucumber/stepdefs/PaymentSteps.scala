@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.openqa.selenium.{By,WebElement}
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Wait
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage}
 
@@ -31,6 +31,7 @@ class PaymentSteps extends CommonFunctions {
   Given("""^(.*) logs in Dashboard page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToDashboard(name)
+      case _ => AuthLoginPage.loginToDashboard(name)
     }
   }
 

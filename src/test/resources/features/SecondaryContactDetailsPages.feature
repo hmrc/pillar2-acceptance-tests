@@ -940,6 +940,6 @@ Feature: Secondary Contact details for the filing member
    #When I click What did you think of this service link
    #Then I should navigate to under construction page
    #When I select back link
-   #Then I should navigate to Registration confirmation page
+   #When I should navigate to Registration confirmation page
    #When I click on Continue button
    #Then I should be on Dashboard page

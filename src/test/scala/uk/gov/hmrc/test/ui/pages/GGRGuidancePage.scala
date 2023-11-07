@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
-import uk.gov.hmrc.test.ui.pages.BAGuidancePage.rootUrl
 
 
 object GGRGuidancePage extends PageObject {

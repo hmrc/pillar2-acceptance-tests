@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BookMarkPage, BusinessActivityEQPage, ContactDetailsDisplayPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, MultipleTerritoriesEQPage, NFMDetailsPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BookMarkPage, BusinessActivityEQPage, ContactDetailsDisplayPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMDetailsPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -30,68 +30,67 @@ class StepDef extends BaseStepDef {
       case "Organisation User" => AuthLoginPage.loginWithUser(name)
       case "Individual User" => AuthLoginPage.loginAsInd(name)
       case "Assistant User" => AuthLoginPage.loginAssistant(name)
+      case _ => AuthLoginPage.loginWithUser(name)
     }
   }
 
   Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
+      case _ => AuthLoginPage.loginToSubscribe(name)
     }
   }
 
   Given("""^(.*) logs in as upe for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPE(name)
-    }
-  }
-
-  Given("""^(.*) logs in to upe with organisation type for Pillar2$""") { (name: String) =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToUPEAs()
+      case _ => AuthLoginPage.loginToUPE(name)
     }
   }
 
   Given("""^(.*) logs in as upe with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name, credId)
-    }
-  }
-  Given("""^(.*) logs in to subscription with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToSubWithCredID(name, credId)
+      case _ => AuthLoginPage.loginToUPEWithCredID(name, credId)
     }
   }
 
   Given("""^(.*) logs in with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginAsUserWithCredId(name, credId)
+      case _ =>  AuthLoginPage.loginAsUserWithCredId(name, credId)
     }
   }
   Given("""^(.*) logs in to upe org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToOrgWithCredID(name, credId)
+      case _ =>  AuthLoginPage.loginToOrgWithCredID(name, credId)
     }
   }
 
   Given("""^(.*) logs in to nfm org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
+      case _ =>  AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
     }
 
   }
   Given("""^(.*) logs in to upe registered in UK page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToRegWithCredID(name, credId)
+      case _ =>  AuthLoginPage.loginToRegWithCredID(name, credId)
     }
   }
   Given("""^(.*) logs in to upe name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
+      case _ =>  AuthLoginPage.loginToUPEName(name, credId)
     }
   }
   Given("""^(.*) logs in to nfm name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
+      case _ => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
     }
   }
 
@@ -100,7 +99,6 @@ class StepDef extends BaseStepDef {
       case "UPE" => AuthLoginPage.loginToCA(name, credId)
       case "NFM" => AuthLoginPage.loginToNFMCA(name, credId)
       case "FD" => AuthLoginPage.loginToFDCA(name, credId)
-
     }
   }
 
@@ -179,10 +177,6 @@ class StepDef extends BaseStepDef {
         navigateTo(GlobalGrossRevenueEQPage.url)
         Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.eqForm)
         isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
-      case "Multiple Territories EQ" =>
-        navigateTo(MultipleTerritoriesEQPage.url)
-        Wait.waitForElementToPresentByCssSelector(MultipleTerritoriesEQPage.eqForm)
-        isVisible(By.cssSelector(MultipleTerritoriesEQPage.eq)) shouldBe true
     }
   }
 
@@ -378,69 +372,6 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(SecondContactDetailsDisplayPage.errorMessage)
         getTextOf(By cssSelector (SecondContactDetailsDisplayPage.errorMessage)) should include(error)
 
-    }
-  }
-  And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
-    page match{
-      case "Address Line" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.addressErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.addressErrorMessage)) should include(error)
-
-      case "Address Line 2" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorMessage)) should include(error)
-
-      case "City" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.cityErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.cityErrorMessage)) should include(error)
-
-      case "Region" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionLink)
-        getTextOf(By cssSelector (UPEAddressPage.regionLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.regionErrorMessage)) should include(error)
-
-      case "Postal code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorMessage)) should include(error)
-
-      case "Country" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.countryErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.countryErrorMessage)) should include(error)
     }
   }
 

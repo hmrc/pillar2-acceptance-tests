@@ -30,6 +30,6 @@ trait BaseStepDef
 
   sys.addShutdownHook {
     Try(Nav.clearCollections())
-    Try(SingletonDriver.closeInstance)
+    Try(SingletonDriver.closeInstance())
   }
 }

@@ -24,6 +24,8 @@ object Input extends BasePage {
 
   def clickById(id: String): Unit = findById(id).click()
 
+  def isSelected(css:String): Unit = findByCss(css).isSelected()
+
   def clickByLinkText(text: String): Unit = findByLinkText(text).click()
 
   def clickByCss(css: String): Unit = findByCss(css).click()
@@ -59,7 +61,7 @@ object Input extends BasePage {
 
   def switchToNewWindow: WebDriver = {
     val handles    = driver.getWindowHandles.toArray().toSeq
-    val mainWindow = handles.head.toString
+    //val mainWindow = handles.head.toString
     val newWindow  = handles(1).toString
     driver.close()
     driver.switchTo().window(newWindow)
