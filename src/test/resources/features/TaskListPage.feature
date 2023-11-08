@@ -1,7 +1,7 @@
 @tests @zap_accessibility
 Feature: Task list page
   As a MNE user
-  I want to create a new subscription
+  I should have access to Task List page
 
   Scenario: 1 - Task list page Sections and status validation
     Given Organisation User logs in to subscribe for Pillar2
@@ -20,38 +20,10 @@ Feature: Task list page
     And The Task Further group details status should be Cannot start yet
     And I should see the task section 2 with task name as Contact details on Contact details section
     And The Task Contact details status should be Cannot start yet
+    And I should see the task section 3 with task name as Review and submit on Contact details section
+    And The Task Check your answers status should be Cannot start yet
 
-  Scenario: 2 - Prepopulate the answers on UPE pages after signout
-    Given Organisation User logs in as upe with credId TestCredID1 for Pillar2
-    Then I should be on UPE business page
-    When I select option No and continue to next
-    Then I should navigate to input-upe-name page
-    When I enter UPE name as Test UPE
-    Then I should navigate to input-upe-address page
-    When I select back link
-    And I click Sign out link
-    Then I am on feedback survey page
-    When Organisation User logs in as upe with credId TestCredID1 for Pillar2
-    Then I should be on UPE business page
-    And I should see the answer No remain selected
-    When I continue to next page
-    Then I should navigate to input-upe-name page
-    And I should see the UPE name field is pre-populated with Test UPE
-
-  Scenario: 3 - Status update Enter ultimate parent's details task
-    Given Organisation User logs in to subscribe for Pillar2
-    Then I should be on Task list page
-    And The Heading should be Register your group
-    And The Task Add ultimate parent's details status should be Not started
-    When I click Add ultimate parent's details link
-    Then I should navigate to Initial guidance Page
-    When I click on Continue button
-    Then I should navigate to UPE business page
-    When I select option No and continue to next
-    And I navigate back to TaskList Page from Name Page
-    Then The Task Add ultimate parent's details status should be In progress
-
-  Scenario: 4 - Verify the signout functionality
+  Scenario: 2 - Verify the sign out functionality
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group
@@ -60,40 +32,7 @@ Feature: Task list page
     When I click the browser back button
     Then I should be on auth-login page
 
-  Scenario: 5 - Task list page status update validation after Task1 completion
-    Given Organisation User logs in to subscribe for Pillar2
-    Then I should be on Task list page
-    And The Heading should be Register your group
-    When I click Add ultimate parent's details link
-    Then I should navigate to Initial guidance Page
-    And I click on Continue button
-    Then I should be on UPE business page
-    When I select option No and continue to next
-    Then I should navigate to input-upe-name page
-    When I enter UPE name as Test Task List
-    Then I should navigate to input-upe-address page
-    When I enter Address Line 1 as Address Line 1
-    And I enter City as City
-    And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
-    And I click on Continue button
-    Then I should navigate to UPE Contact person/team Name page
-    When I enter UPE Person/Team name as Contact
-    And I click on Continue button
-    Then I should navigate to UPE Contact Email page
-    When I enter UPE Email address as test@email.com
-    And I click on Continue button
-    Then I should navigate to UPE Telephone page
-    When I select option No and continue to next
-    Then I should be on Check your answers page
-    When I click on Continue button
-    Then I should be on Task list page
-    And I should see the task name Edit ultimate parent's details on Business details section
-    And The Task Edit ultimate parent's details status should be Completed
-    And I should see the task name Add filing member's details on Business details section
-    And The Task Add filing member's details status should be Not started
-
-  Scenario: 6 - Complete the GRS journey for UPE/NFM and change the journey to no ID
+  Scenario: 3 - Complete the GRS journey for UPE/NFM and change the journey to no ID
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     When I click Add ultimate parent's details link
@@ -142,7 +81,7 @@ Feature: Task list page
     Then I should be on Task list page
     And The Task Add ultimate parent's details status should be In progress
 
-  Scenario: 7 - Complete the No ID journey for UPE/NFM and change the journey to GRS
+  Scenario: 4 - Complete the No ID journey for UPE/NFM and change the journey to GRS
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     When I click Add ultimate parent's details link
@@ -223,7 +162,7 @@ Feature: Task list page
     Then I should be on Task list page
     And The Task Add ultimate parent's details status should be In progress
 
-  Scenario: 8 - Task list page status update validation after Task1 completion and navigating to different pages
+  Scenario: 5 - Task list page status update validation after Task1 completion and navigating to different pages
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group
@@ -276,7 +215,7 @@ Feature: Task list page
     Then I should be on Task list page
     And The Task Edit ultimate parent's details status should be Completed
 
-  Scenario: 9 - User completes GRS journey and Navigate to different pages of GRS journey and validates status
+  Scenario: 6 - User completes GRS journey and Navigate to different pages of GRS journey and validates status
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group

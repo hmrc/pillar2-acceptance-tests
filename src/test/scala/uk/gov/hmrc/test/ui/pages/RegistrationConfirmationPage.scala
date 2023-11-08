@@ -19,7 +19,6 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
-import uk.gov.hmrc.test.ui.pages.UPEPage.rootUrl
 
 object RegistrationConfirmationPage extends PageObject{
   val url: String      = s"$rootUrl"+"review-submit/confirmation"

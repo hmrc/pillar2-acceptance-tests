@@ -138,6 +138,7 @@ class NFMPageSteps extends CommonFunctions {
   Given("""^(.*) logs in NFM name page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMName(name)
+      case _ => AuthLoginPage.loginToNFMName(name)
     }
   }
 
@@ -145,36 +146,42 @@ class NFMPageSteps extends CommonFunctions {
   Given("""^(.*) logs in NFM address page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMAddress(name)
+      case _ => AuthLoginPage.loginToNFMAddress(name)
     }
   }
 
   Given("""^(.*) logs in NFM Contact Name page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMContactName(name)
+      case _ => AuthLoginPage.loginToNFMContactName(name)
     }
   }
 
   Given("""^(.*) logs in NFM Contact Email page for Pillar2$""") { name: String =>
     name match {
      case "Organisation User" => AuthLoginPage.loginToNFMContactEmail(name)
+     case _ => AuthLoginPage.loginToNFMContactEmail(name)
     }
   }
 
   Given("""^(.*) logs in NFM Telephone page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMTelephone(name)
+      case _ => AuthLoginPage.loginToNFMTelephone(name)
     }
   }
 
   Given("""^(.*) logs in Further details group status page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToFDGroupStatus(name)
+      case _ => AuthLoginPage.loginToFDGroupStatus(name)
     }
   }
 
   Given("""^(.*) logs in NFM Telephone input page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMTelephoneInput(name)
+      case _ => AuthLoginPage.loginToNFMTelephoneInput(name)
     }
   }
 

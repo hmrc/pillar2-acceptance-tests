@@ -1,10 +1,10 @@
 @tests @zap_accessibility
-Feature: Ultimate parent entity GRS journies
+Feature: Ultimate parent entity GRS journey
   As a MNE user
   I want to determine that the UPE is based in UK or LLP
   So that I can navigate to the correct GRS journey.
 
-  Scenario: 1 - Display an error message, when user continue without selecting an option
+  Scenario: 1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     And The caption must be Group details
@@ -13,18 +13,19 @@ Feature: Ultimate parent entity GRS journies
     Then I should be on UPE Org type page
     And The caption must be Group details
     And The Heading should be What entity type is the ultimate parent?
+    And I should see Entity type not listed hyperLink
+    When I click Entity type not listed link
+    Then I should navigate to input-upe-name page
+    When I select back link
+    Then I should be on UPE Org type page
     When I click on Continue button
     Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
 
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -37,12 +38,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -54,12 +51,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -87,12 +80,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 6 - User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -103,12 +92,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 7 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -119,12 +104,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 8 - User registered as LimitedLiabilityPartnership successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -137,12 +118,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -154,12 +131,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 10 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -170,12 +143,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 11 - User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -187,12 +156,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 12 - User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -203,12 +168,8 @@ Feature: Ultimate parent entity GRS journies
   Scenario: 13 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
-    And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE Org type page
-    And The caption must be Group details
-    And The Heading should be What entity type is the ultimate parent?
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -227,13 +188,4 @@ Feature: Ultimate parent entity GRS journies
     Then I should be on UPE Org type page
     When I select back link
     Then I should be on UPE business page
-
-  Scenario: 15 - User can navigate to Entity type not listed hyperlink on UPE Org type page
-    Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE business page
-    When I select option Yes and continue to next
-    Then I should navigate to UPE Org type page
-    And I should see Entity type not listed hyperLink
-    When I click Entity type not listed link
-    Then I should navigate to input-upe-name page
 

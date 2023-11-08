@@ -133,6 +133,11 @@ class TaskListPageSteps extends CommonFunctions {
         for (i <- 1 to 8) {
           clickByCss(BusinessActivityEQPage.backLink)
         }
+
+      case "Telephone Input" =>
+        for (i <- 1 to 9) {
+          clickByCss(BusinessActivityEQPage.backLink)
+        }
     }
   }
 }

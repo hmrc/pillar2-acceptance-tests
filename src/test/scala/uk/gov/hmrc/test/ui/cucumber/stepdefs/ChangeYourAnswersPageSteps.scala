@@ -74,7 +74,6 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(ContactDetailsCheckAnswersPage.changeEmail)
       case "Telephone number" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeContactNumber)
-
       case "Do you have a second contact?" =>
         clickByCss(ContactDetailsCheckAnswersPage.secondContact)
       case "Second Contact Name" =>
@@ -83,7 +82,8 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
       case "Telephone number" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
-
+      case _ =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeName)
     }
   }
   Then("""^I navigate back to check your answers page from (.*) page""") { (page: String) =>

@@ -49,7 +49,7 @@ object AuthLoginPage extends BasePage with PageObject {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginAsUserWithCredId(name: String,credId: String): Unit = {
@@ -57,7 +57,7 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToOrgWithCredID(name: String, credId: String): Unit = {
@@ -65,49 +65,43 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndUPEOrgTypeUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
   def loginToNfmOrgWithCredID(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndNFMOrgTypeUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
   def loginToRegWithCredID(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndUPERegTypeUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
   def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndSubscribeUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToUPE(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
-  def loginToUPEAs(): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(frontEndUPEOrgTypeUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton
-  }
 
   def loginToUPEName(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndNameUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToNFMNameWithCredID(name: String, credId: String): Unit = {
@@ -115,7 +109,7 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndNFMNameUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToCA(name: String,credId: String): Unit={
@@ -123,7 +117,7 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndCAUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToNFMCA(name: String, credId: String): Unit = {
@@ -131,7 +125,7 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndNFMCAUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToFDCA(name: String, credId: String): Unit = {
@@ -139,7 +133,7 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndFDCAUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToUPEWithCredID(name: String,credId: String): Unit = {
@@ -147,13 +141,13 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginAsInd(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginAssistant(name: String): Unit = {
@@ -161,71 +155,62 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
     selectAffinityGroupOrg()
     selectCredRoleAssistant()
-    clickSubmitButton
-  }
-
-  def loginToSubWithCredID(name: String, credId: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysById(credId, credIdField)
-    Input.sendKeysByName(frontEndSubUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToNFMName(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMNameUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToDashboard(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndDashboardUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToNFMAddress(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMAddressUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToNFMContactName(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMContactNameUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToNFMContactEmail(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMContactEmailUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
   def loginToNFMTelephone(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMTelephoneUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
   def loginToNFMTelephoneInput(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMTelephoneInputUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
 
   def loginToFDGroupStatus(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndFDGroupStatusUrl, redirectUrlField)
     selectAffinityGroupOrg()
-    clickSubmitButton
+    clickSubmitButton()
   }
-
   private def selectAffinityGroupOrg() =
     new Select(findAffinityGroup()).selectByVisibleText("Organisation")
 
@@ -236,6 +221,6 @@ object AuthLoginPage extends BasePage with PageObject {
 
   private def findCredentialRole() = Find.findByName("credentialRole")
 
-  def clickSubmitButton = Find.findById("submit").click()
+  def clickSubmitButton() = Find.findById("submit").click()
 
 }

@@ -16,7 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
 import uk.gov.hmrc.test.ui.pages.{ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEOrgTypePage, UPEPage}
 
@@ -129,10 +130,71 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactTelephone)
         Input.sendKeysByCss(name, SecondContactInputPage.contactTelephone)
-
-
     }
+  }
 
+  And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
+    page match {
+      case "Address Line" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.addressErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorMessage)
+        getTextOf(By cssSelector (UPEAddressPage.addressErrorMessage)) should include(error)
+
+      case "Address Line 2" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorMessage)
+        getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorMessage)) should include(error)
+
+      case "City" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.cityErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorMessage)
+        getTextOf(By cssSelector (UPEAddressPage.cityErrorMessage)) should include(error)
+
+      case "Region" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionLink)
+        getTextOf(By cssSelector (UPEAddressPage.regionLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionErrorMessage)
+        getTextOf(By cssSelector (UPEAddressPage.regionErrorMessage)) should include(error)
+
+      case "Postal code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorMessage)
+        getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorMessage)) should include(error)
+
+      case "Country" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorLink)
+        getTextOf(By cssSelector (UPEAddressPage.countryErrorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorMessage)
+        getTextOf(By cssSelector (UPEAddressPage.countryErrorMessage)) should include(error)
+    }
   }
 
   And("""^I am on feedback survey page$""") { () =>

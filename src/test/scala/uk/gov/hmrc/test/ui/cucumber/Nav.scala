@@ -25,7 +25,7 @@ object Nav extends BasePage {
   def navigateTo(url: String): Unit =
     driver.navigate.to(url)
 
-  def browserBack() {
+  def browserBack() : Unit = {
     driver.navigate().back()
   }
 
