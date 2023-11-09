@@ -48,6 +48,25 @@ As a registered user
     And I should navigate back to dashboard page
     And I should be on Dashboard page
 
+  Scenario: 1 - User navigates to group details page and validates the data
+    Given Organisation User logs in Dashboard page for Pillar2
+    Then I should be on Dashboard page
+    And I should see User details in dashboard page
+    And I should see user details 1 as Pillar 2 top-up taxes ID:
+    And I should see user details 2 as Registration date:
+    And I should see user details 3 as Ultimate parent entity:
+    And I should see the heading 1 on Dashboard page as Payments
+    When I click View and amend group details link
+    Then I should navigate to accounts summary page
+    And I should see row 1 key Where does the group operate?
+    And I should see row 2 key Group's consolidated accounting period
+    And I should see row 3 key Start date
+    And I should see row 4 key End date
+    And I should see row 1 value Only in the UK
+    And I should see row 3 value 6 April 2023
+    And I should see row 4 value 6 April 2025
+    And I click on Continue button
+    Then I should navigate to under construction page
 
 
 
