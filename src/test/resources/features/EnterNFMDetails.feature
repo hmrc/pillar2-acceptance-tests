@@ -1,4 +1,4 @@
-@tests @zap_accessibility
+@tests @zap_accessibility @BrowserStack
 Feature: Register NFM and enter NFM details
   As a NFM user
   I want to create a new subscription

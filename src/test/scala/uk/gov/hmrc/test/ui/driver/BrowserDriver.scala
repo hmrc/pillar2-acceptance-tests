@@ -20,12 +20,11 @@ import com.typesafe.scalalogging.LazyLogging
 import org.openqa.selenium.WebDriver
 import uk.gov.hmrc.webdriver.SingletonDriver
 import org.openqa.selenium.chrome.ChromeOptions
-
 trait BrowserDriver extends LazyLogging {
   logger.info(
     s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
   )
-
+  
   // chrome
   private def setupChromeOptions(): ChromeOptions = {
 
