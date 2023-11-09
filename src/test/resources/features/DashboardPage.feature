@@ -8,9 +8,9 @@ As a registered user
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 top-up taxes account
     And I should see User details in dashboard page
-    And I should see user details 1 as Pillar 2 top-up taxes ID:
-    And I should see user details 2 as Registration date:
-    And I should see user details 3 as Ultimate parent entity:
+    And I should see user details row 1 key Pillar 2 top-up taxes ID:
+    And I should see user details row 2 key Registration date:
+    And I should see user details row 3 key Ultimate parent entity:
     And I should see the heading 1 on Dashboard page as Payments
     And The Body content should be You have no payments due
     And The Body content should be Make a voluntary payment
@@ -52,10 +52,14 @@ As a registered user
     Given Organisation User logs in Dashboard page for Pillar2
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details 1 as Pillar 2 top-up taxes ID:
-    And I should see user details 2 as Registration date:
-    And I should see user details 3 as Ultimate parent entity:
+    And I should see user details row 1 key Pillar 2 top-up taxes ID:
+    And I should see user details row 2 key Registration date:
+    And I should see user details row 3 key Ultimate parent entity:
+    And I should see user details row 1 value PLRID
+    And I should see user details row 2 value 31 January 2022
+    And I should see user details row 3 value International Organisation Inc.
     And I should see the heading 1 on Dashboard page as Payments
+    And I should see the heading 2 on Dashboard page as Manage your account
     When I click View and amend group details link
     Then I should navigate to accounts summary page
     And I should see row 1 key Where does the group operate?
