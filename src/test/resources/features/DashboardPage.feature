@@ -47,6 +47,23 @@ As a registered user
     Then I close Draft guidance page tab
     And I should navigate back to dashboard page
     And I should be on Dashboard page
+    When I click Sign out link
+    Then I am on feedback survey page
+
+
+    Scenario: 2 - Validate sign-in to dashboard page for existing entity
+      Given Organisation User logs in Dashboard page for Pillar2
+      Then I should be on Dashboard page
+      And The Heading should be Your Pillar 2 top-up taxes account
+      And I should see User details in dashboard page
+      And I should see user details 1 as Pillar 2 top-up taxes ID:
+      And I should see user details 2 as Registration date:
+      And I should see user details 3 as Ultimate parent entity:
+      When I click Sign out link
+      Then I am on feedback survey page
+      When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+      Then I should be on Dashboard page
+
 
 
 
