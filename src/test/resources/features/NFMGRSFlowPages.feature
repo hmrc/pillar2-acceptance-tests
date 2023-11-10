@@ -103,10 +103,31 @@ Feature: NFM GRS journey
     Then I should be on NFM Org type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
-    And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with party type mismatch error
-    #And I click on Save&Continue button #Needs to be fixed
-    #Then I should navigate to under construction page
+    And I click on Save&Continue button
+    Then I should be on NFM registration failed error page
+    And The Heading should be The details you entered did not match our records
+    And The second heading should be How can I confirm my details
+    And The Body content should be We could not match the details you entered with records held by HMRC.
+    And The Body content should be If you think you made an error when entering them you can go back to select the entity type and try again using different details.
+    And The Body content should be You can search Companies House for the company registration number and registered office address (opens in a new tab).
+    And The Body content should be You can ask for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab).
+    When I click go back to select the entity type link
+    Then I should be on NFM Org type page
+    When I select back link
+    Then I should be on NFM registration failed error page
+    When I click search Companies House for the company registration number and registered office address (opens in a new tab). link
+    Then I should be navigated to new tab
+    And  I should be on search register page
+    Then I close new tab
+    And I should navigate back to main tab
+    Then I should be on NFM registration failed error page
+    When I click ask for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab). link
+    Then I should be navigated to new tab
+    And  I should be on Corporation Tax UTR page
+    Then I close new tab
+    And I should navigate back to main tab
+    Then I should be on NFM registration failed error page
 
   Scenario: 5 - NFM User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
@@ -132,8 +153,7 @@ Feature: NFM GRS journey
     And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with generic error error
     And I click on Save&Continue button
-    #Then I should navigate to Task list page #This needs to be fixed
-    #And The Task Edit ultimate parent's details status should be Completed
+    Then I should be on NFM registration failed error page
 
   Scenario: 6 - NFM User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
@@ -159,7 +179,15 @@ Feature: NFM GRS journey
     And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with identifiers not match error
     And I click on Save&Continue button
-    #Then I should navigate to under construction page
+    Then I should be on NFM registration not called error page
+    And The Heading should be Sorry, there is a problem with the service
+    And The Body content should be Try again later.
+    And The Body content should be Your company details could not be confirmed.
+    And The Body content should be Go back to select the entity type to try again.
+    When I click Go back to select the entity type link
+    Then I should be on NFM Org type page
+    When I select back link
+    Then I should be on NFM registration not called error page
 
   Scenario: 7 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
@@ -185,7 +213,7 @@ Feature: NFM GRS journey
     And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with BV failed error
     And I click on Save&Continue button
-    #Then I should navigate to under construction page
+    Then I should be on NFM registration not called error page
 
   Scenario: 8 - NFM User registered as LimitedLiabilityPartnership successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
@@ -267,7 +295,7 @@ Feature: NFM GRS journey
     And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with party type mismatch error
     And I click on Save&Continue button
-    #Then I should navigate to under construction page #This needs to be fixed
+    Then I should be on NFM registration failed error page
 
   Scenario: 11 - User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
@@ -293,8 +321,7 @@ Feature: NFM GRS journey
     And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with generic error error
     And I click on Save&Continue button
-    #Then I should navigate to Task list page #This needs to be fixed
-    #And The Task Edit ultimate parent's details status should be Completed #This needs to be fixed
+    Then I should be on NFM registration failed error page
 
   Scenario: 12 - User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
@@ -320,7 +347,7 @@ Feature: NFM GRS journey
     And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with identifiers not match error
     And I click on Save&Continue button
-    #Then I should navigate to under construction page #This needs fix
+    Then I should be on NFM registration not called error page
 
   Scenario: 13 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
@@ -346,7 +373,7 @@ Feature: NFM GRS journey
     And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with BV failed error
     And I click on Save&Continue button
-    #Then I should navigate to under construction page #This needs fix
+    Then I should be on NFM registration not called error page
 
   Scenario: 14 - User navigates to UPE Page
     Given Organisation User logs in as upe for Pillar2

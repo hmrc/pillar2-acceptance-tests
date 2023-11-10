@@ -119,6 +119,7 @@ class StepDef extends BaseStepDef {
   Then("""^The Heading should be (.*)$""") { header: String =>
     Check.checkH1(header)
   }
+
   Then("""^The page header should be (.*)$""") { header: String =>
     Wait.waitForElementToPresentByCssSelector(TaskListPage.pageHeader)
     assert(getTextOf(By.cssSelector(TaskListPage.pageHeader)).contains(header))

@@ -42,12 +42,11 @@ As a registered user
     When I select back link
     Then I should be on Dashboard page
     When I click draft guidance (opens in new tab) link
-    Then I should be navigated to Draft guidance page in new tab
+    Then I should be navigated to new tab
     And  I should be on Draft guidance page
-    Then I close Draft guidance page tab
-    And I should navigate back to dashboard page
+    Then I close new tab
+    And I should navigate back to main tab
     And I should be on Dashboard page
-
 
 
 
