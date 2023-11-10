@@ -34,8 +34,8 @@ As a registered user
     When I select back link
     Then I should be on Dashboard page
     When I click View and amend contact details link
-    Then I should navigate to under construction page
-    When I select back link
+    Then I should navigate to accounts summary page
+    When I click the browser back button
     Then I should be on Dashboard page
     When I click View and amend group details link
     Then I should navigate to under construction page
@@ -48,7 +48,7 @@ As a registered user
     And I should navigate back to dashboard page
     And I should be on Dashboard page
 
-  Scenario: 1 - User navigates to group details page and validates the data
+  Scenario: 2 - User navigates to group details page and validates the data
     Given Organisation User logs in Dashboard page for Pillar2
     Then I should be on Dashboard page
     And I should see User details in dashboard page
@@ -62,6 +62,7 @@ As a registered user
     And I should see the heading 2 on Dashboard page as Manage your account
     When I click View and amend group details link
     Then I should navigate to accounts summary page
+    And The Heading should be Group details
     And I should see row 1 key Where does the group operate?
     And I should see row 2 key Group's consolidated accounting period
     And I should see row 3 key Start date
