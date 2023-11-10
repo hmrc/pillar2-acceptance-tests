@@ -47,6 +47,8 @@ As a registered user
     Then I close Draft guidance page tab
     And I should navigate back to dashboard page
     And I should be on Dashboard page
+    When I click Sign out link
+    Then I am on feedback survey page
 
   Scenario: 2 - User navigates to group details page and validates the data
     Given Organisation User logs in Dashboard page for Pillar2
