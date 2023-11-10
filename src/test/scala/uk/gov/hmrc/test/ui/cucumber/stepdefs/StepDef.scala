@@ -423,6 +423,11 @@ class StepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.inputUpeNamePageLink)
   }
 
+  When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+  }
+
       /*  Given("""^I fill (.*) and continue$""") { page: String =>
           page match {
             case "What is the main address of your business page" => Forms.addressNonUK()
