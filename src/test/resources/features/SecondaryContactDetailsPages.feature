@@ -811,7 +811,7 @@ Feature: Secondary Contact details for the filing member
     #Then I should be on Dashboard page
 
  Scenario: 8 - UPE GRS flow ID and GRS flow ID, Review and submit your answers page
-   Given Organisation User logs in as upe with credId SecondContact for Pillar2
+   Given Organisation User logs in as upe for Pillar2
    Then I should be on UPE business page
    When I select option Yes and continue to next
    Then I should be on UPE Org type page
@@ -821,7 +821,7 @@ Feature: Secondary Contact details for the filing member
    When I registered successfully with BV enabled
    And I click on Save&Continue button
    Then I should navigate to Task list page
-   When I click Add filing member's details link
+   And I click Add filing member's details link
    Then I should navigate to NFM registration page
    When I select Yes option and continue to next
    Then I should navigate to NFM details page

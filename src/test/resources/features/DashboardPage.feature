@@ -49,11 +49,3 @@ As a registered user
     And I should be on Dashboard page
     When I click Sign out link
     Then I am on feedback survey page
-
-
-
-
-
-
-
-
