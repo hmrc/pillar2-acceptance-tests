@@ -34,12 +34,12 @@ As a registered user
     When I select back link
     Then I should be on Dashboard page
     When I click View and amend contact details link
-    Then I should navigate to accounts summary page
-    When I click the browser back button
-    Then I should be on Dashboard page
-    When I click View and amend group details link
     Then I should navigate to under construction page
     When I select back link
+    Then I should be on Dashboard page
+    When I click View and amend group details link
+    Then I should navigate to accounts summary page
+    When I click the browser back button
     Then I should be on Dashboard page
     When I click draft guidance (opens in new tab) link
     Then I should be navigated to Draft guidance page in new tab

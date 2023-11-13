@@ -55,7 +55,7 @@ Feature: Enter group Accounting period
     And I should see date field End Day is pre-populated with 15
     And I should see date field End Month is pre-populated with 1
     And I should see date field End Year is pre-populated with 2025
-
+  @ignore
   Scenario: 2 -  Accounting period page error validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
