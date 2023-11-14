@@ -58,8 +58,12 @@ class PaymentSteps extends CommonFunctions {
     driver.close()
   }
 
-  And("""^I should see user details (\d+) as (.*)""") { (detailNumber: Int, detailName: String) =>
+  And("""^I should see user details row (\d+) key (.*)""") { (detailNumber: Int, detailName: String) =>
     assert(driver.findElements(By.cssSelector(DashboardPage.userDetails)).get(detailNumber - 1).getText.contains(detailName))
+  }
+
+  And("""^I should see user details row (\d+) value (.*)""") { (detailNumber: Int, detailValue: String) =>
+    assert(driver.findElements(By.cssSelector(DashboardPage.userDetails)).get(detailNumber - 1).getText.contains(detailValue))
   }
 }
 

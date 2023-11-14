@@ -8,9 +8,9 @@ As a registered user
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 top-up taxes account
     And I should see User details in dashboard page
-    And I should see user details 1 as Pillar 2 top-up taxes ID:
-    And I should see user details 2 as Registration date:
-    And I should see user details 3 as Ultimate parent entity:
+    And I should see user details row 1 key Pillar 2 top-up taxes ID:
+    And I should see user details row 2 key Registration date:
+    And I should see user details row 3 key Ultimate parent entity:
     And I should see the heading 1 on Dashboard page as Payments
     And The Body content should be You have no payments due
     And The Body content should be Make a voluntary payment
@@ -38,8 +38,8 @@ As a registered user
     When I select back link
     Then I should be on Dashboard page
     When I click View and amend group details link
-    Then I should navigate to under construction page
-    When I select back link
+    Then I should navigate to accounts summary page
+    When I click the browser back button
     Then I should be on Dashboard page
     When I click draft guidance (opens in new tab) link
     Then I should be navigated to Draft guidance page in new tab
@@ -49,3 +49,28 @@ As a registered user
     And I should be on Dashboard page
     When I click Sign out link
     Then I am on feedback survey page
+
+  Scenario: 2 - User navigates to group details page and validates the data
+    Given Organisation User logs in Dashboard page for Pillar2
+    Then I should be on Dashboard page
+    And I should see User details in dashboard page
+    And I should see user details row 1 key Pillar 2 top-up taxes ID:
+    And I should see user details row 2 key Registration date:
+    And I should see user details row 3 key Ultimate parent entity:
+    And I should see user details row 1 value PLRID
+    And I should see user details row 2 value 31 January 2022
+    And I should see user details row 3 value International Organisation Inc.
+    And I should see the heading 1 on Dashboard page as Payments
+    And I should see the heading 2 on Dashboard page as Manage your account
+    When I click View and amend group details link
+    Then I should navigate to accounts summary page
+    And The Heading should be Group details
+    And I should see row 1 key Where does the group operate?
+    And I should see row 2 key Group's consolidated accounting period
+    And I should see row 3 key Start date
+    And I should see row 4 key End date
+    And I should see row 1 value Only in the UK
+    And I should see row 3 value 6 April 2023
+    And I should see row 4 value 6 April 2025
+    And I click on Continue button
+    Then I should be navigated to Under Construction page
