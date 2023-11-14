@@ -26,7 +26,6 @@ object UPEContactPage extends PageObject {
 
   val caption            = ".govuk-caption-l"
   val continue           = ".govuk-button"
-
   val eqForm             = ".govuk-form-group"
   val eq                 = ".govuk-form-group .govuk-fieldset"
   val errorSummary       = ".govuk-error-summary__list"

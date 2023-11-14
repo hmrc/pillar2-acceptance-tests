@@ -20,7 +20,6 @@ import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, PageObject}
 
-
 object AuthLoginPage extends BasePage with PageObject {
   val url: String                         = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
   val frontEndUrl: String                 = TestConfiguration.url("pillar2-frontend")
@@ -44,6 +43,9 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndFDCAUrl: String             =s"$rootUrl"+"further-details/check-answers"
   val frontEndSubUrl: String              =s"$rootUrl"+"review-submit/confirmation"
   val frontEndDashboardUrl: String        =s"$rootUrl"+"pillar2-top-up-tax-home"
+  val enrolmentKeyField:String            ="enrolment[0].name"
+  val identifierNameField:String          ="input-0-0-name"
+  val identifierValueField:String         ="input-0-0-value"
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
@@ -211,6 +213,17 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
+
+  def loginWithExistingEntity(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(enrolmentKey, enrolmentKeyField)
+    Input.sendKeysById(identifierName, identifierNameField)
+    Input.sendKeysById(identifierValue, identifierValueField)
+    Input.sendKeysByName(frontEndDashboardUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
   private def selectAffinityGroupOrg() =
     new Select(findAffinityGroup()).selectByVisibleText("Organisation")
 

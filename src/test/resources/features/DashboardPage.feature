@@ -47,10 +47,5 @@ As a registered user
     Then I close new tab
     And I should navigate back to main tab
     And I should be on Dashboard page
-
-
-
-
-
-
-
+    When I click Sign out link
+    Then I am on feedback survey page
