@@ -73,11 +73,4 @@ As a registered user
     And I should see row 3 value 6 April 2023
     And I should see row 4 value 6 April 2025
     And I click on Continue button
-    Then I should navigate to under construction page
-
-
-
-
-
-
-
+    Then I should be navigated to Under Construction page

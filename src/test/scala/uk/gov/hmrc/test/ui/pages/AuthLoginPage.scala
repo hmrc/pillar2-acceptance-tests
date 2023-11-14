@@ -219,7 +219,7 @@ object AuthLoginPage extends BasePage with PageObject {
     Input.sendKeysById(enrolmentKey, enrolmentKeyField)
     Input.sendKeysById(identifierName, identifierNameField)
     Input.sendKeysById(identifierValue, identifierValueField)
-    Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    Input.sendKeysByName(frontEndDashboardUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
