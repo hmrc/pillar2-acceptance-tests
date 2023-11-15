@@ -42,19 +42,19 @@ class PaymentSteps extends CommonFunctions {
 
   }
 
-  Then("""^I should be navigated to Draft guidance page in new tab$""") { () =>
+  Then("""^I should be navigated to new tab$""") { () =>
     val handles = driver.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
     driver.switchTo().window(newWindow)
   }
 
-  Then("""^I should navigate back to dashboard page""") { () =>
+  Then("""^I should navigate back to main tab""") { () =>
     val handles = driver.getWindowHandles.toArray().toSeq
     val mainWindow = handles.head.toString
     driver.switchTo().window(mainWindow)
   }
 
-  Then("""^I close Draft guidance page tab""") { () =>
+  Then("""^I close new tab""") { () =>
     driver.close()
   }
 
