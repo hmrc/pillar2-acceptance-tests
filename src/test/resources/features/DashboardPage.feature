@@ -70,7 +70,25 @@ As a registered user
     And I should see row 3 key Start date
     And I should see row 4 key End date
     And I should see row 1 value Only in the UK
-    And I should see row 3 value 6 April 2023
+    And I should see row 3 value 6 January 2024
     And I should see row 4 value 6 April 2025
-    And I click on Continue button
-    Then I should be navigated to Under Construction page
+    When I click on change hyperlink next to the FD Group Status
+    When I select option Only in the UK in further details group status page
+    When I click on Continue button
+    When I click on Continue button
+    Then I should navigate to accounts summary page
+    And I should see row 1 value Only in the UK
+    When I click on change hyperlink next to the Accounting Period
+    When Accounting Period Start Day is entered as 5
+    And Accounting Period Start Month is entered as 5
+    And Accounting Period Start Year is entered as 2025
+    When Accounting Period End Day is entered as 5
+    And Accounting Period End Month is entered as 6
+    And Accounting Period End Year is entered as 2026
+    When I click on Continue button
+    And I should see row 3 value 5 May 2025
+    And I should see row 4 value 5 June 2026
+
+
+#    And I click on Continue button
+#    Then I should be navigated to Under Construction page
