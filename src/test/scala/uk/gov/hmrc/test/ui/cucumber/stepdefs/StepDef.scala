@@ -103,6 +103,13 @@ class StepDef extends BaseStepDef {
     }
   }
 
+  When("""^Organisation User logs in to (.*) page with credId (.*)$""") { (name: String, credId: String) =>
+    name match {
+      case "NFM email" => AuthLoginPage.loginToNFMEmail(name, credId)
+      case "NFM address" => AuthLoginPage.loginToNFMInputAddress(name, credId)
+    }
+  }
+
   Then("""^I navigate to (.*) page$""") { page: String =>
     page match {
       case "start" =>
@@ -119,6 +126,7 @@ class StepDef extends BaseStepDef {
 
   Then("""^The Heading should be (.*)$""") { header: String =>
     Check.checkH1(header)
+
   }
 
   Then("""^The page header should be (.*)$""") { header: String =>
@@ -144,9 +152,7 @@ class StepDef extends BaseStepDef {
   When("""^(I click on Continue button)""") { (negate: String) =>
     InitialGuidancePage.clickContinue()
   }
-  When("""^(I click on Start again button)""") { (negate: String) =>
-    BookMarkPage.clickStartAgain()
-  }
+
   And("""^(I navigate from Name page to Telephone page)""") { (negate: String) =>
     for (i <- 1 to 5) {
       InitialGuidancePage.clickContinue()

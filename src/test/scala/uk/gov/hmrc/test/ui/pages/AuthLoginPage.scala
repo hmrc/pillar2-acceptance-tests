@@ -29,7 +29,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val redirectUrlField: String            = "redirectionUrl"
   val credIdField: String                 = "authorityId"
   val frontEndNameUrl: String             = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-name"
-  val frontEndCAUrl: String               =s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
+  val frontEndCAUrl: String               = s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
   val frontEndUPERegTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
   val frontEndNFMNameUrl: String          = s"$rootUrl"+"business-matching/filing-member/no-id/input-name"
   val frontEndNFMOrgTypeUrl: String       = s"$rootUrl"+"business-matching/filing-member/uk-based/org-type"
@@ -39,10 +39,12 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndNFMTelephoneUrl: String     = s"$rootUrl"+"business-matching/filing-member/no-id/telephone"
   val frontEndNFMTelephoneInputUrl: String= s"$rootUrl"+"business-matching/filing-member/no-id/input-telephone"
   val frontEndFDGroupStatusUrl: String    = s"$rootUrl"+"further-details/group-status"
-  val frontEndNFMCAUrl: String            =s"$rootUrl"+"business-matching/filing-member/no-id/check-answers"
-  val frontEndFDCAUrl: String             =s"$rootUrl"+"further-details/check-answers"
-  val frontEndSubUrl: String              =s"$rootUrl"+"review-submit/confirmation"
-  val frontEndDashboardUrl: String        =s"$rootUrl"+"pillar2-top-up-tax-home"
+  val frontEndFDAccountPeriod: String     = s"$rootUrl"+"further-details/accounting-period"
+  val frontEndCDAddressUrl: String        = s"$rootUrl"+"contact-details/address/input"
+  val frontEndNFMCAUrl: String            = s"$rootUrl"+"business-matching/filing-member/no-id/check-answers"
+  val frontEndFDCAUrl: String             = s"$rootUrl"+"further-details/check-answers"
+  val frontEndSubUrl: String              = s"$rootUrl"+"review-submit/confirmation"
+  val frontEndDashboardUrl: String        = s"$rootUrl"+"pillar2-top-up-tax-home"
   val enrolmentKeyField:String            ="enrolment[0].name"
   val identifierNameField:String          ="input-0-0-name"
   val identifierValueField:String         ="input-0-0-value"
@@ -189,6 +191,14 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  def loginToNFMInputAddress(name: String,credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndNFMAddressUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
   def loginToNFMContactName(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMContactNameUrl, redirectUrlField)
@@ -198,6 +208,13 @@ object AuthLoginPage extends BasePage with PageObject {
 
   def loginToNFMContactEmail(name: String): Unit = {
     Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndNFMContactEmailUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+  def loginToNFMEmail(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndNFMContactEmailUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()

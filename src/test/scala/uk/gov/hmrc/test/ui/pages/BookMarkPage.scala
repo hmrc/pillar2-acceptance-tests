@@ -15,18 +15,13 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
-
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object BookMarkPage extends PageObject {
-  val url: String     = s"$rootUrl"+"there-is-a-problem"
 
-  val header: String  = "h1.govuk-heading-l"
-  val startAgain        = ".govuk-button"
-  val backLink        = ".govuk-back-link"
-
-  def clickStartAgain() = findByCss(startAgain).click()
+  val url: String                 = s"$rootUrl"+"errors/restart-error"
+  val header: String              = "h1.govuk-heading-l"
+  val backLink                    = ".govuk-back-link"
 
 
 }
