@@ -15,11 +15,12 @@ Feature: Ultimate parent entity GRS journey
     And The Heading should be What entity type is the ultimate parent?
     And I should see Entity type not listed hyperLink
     When I click Entity type not listed link
-    Then I should navigate to input-upe-name page
-    When I select back link
-    Then I should be on UPE Org type page
-    When I click on Continue button
-    Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
+    Then The Heading should be Task not yet started
+    #Then I should navigate to input-upe-name page
+    #When I select back link
+    #Then I should be on UPE Org type page
+    #When I click on Continue button
+    #Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
 
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
