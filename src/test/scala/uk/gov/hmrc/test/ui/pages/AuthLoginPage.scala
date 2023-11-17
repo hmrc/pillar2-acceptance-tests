@@ -90,6 +90,7 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+
   def loginToUPE(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
@@ -149,6 +150,13 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginAsInd(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    clickSubmitButton()
+  }
+
+  def loginAsAgent(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    selectAffinityGroupAgent()
     clickSubmitButton()
   }
 
@@ -226,6 +234,9 @@ object AuthLoginPage extends BasePage with PageObject {
 
   private def selectAffinityGroupOrg() =
     new Select(findAffinityGroup()).selectByVisibleText("Organisation")
+
+  private def selectAffinityGroupAgent() =
+    new Select(findAffinityGroup()).selectByVisibleText("Agent")
 
   private def selectCredRoleAssistant() =
     new Select(findCredentialRole()).selectByVisibleText("Assistant")

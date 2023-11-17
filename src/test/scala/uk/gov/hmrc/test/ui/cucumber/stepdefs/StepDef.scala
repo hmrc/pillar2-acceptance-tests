@@ -29,8 +29,9 @@ class StepDef extends BaseStepDef {
     name match {
       case "Organisation User" => AuthLoginPage.loginWithUser(name)
       case "Individual User" => AuthLoginPage.loginAsInd(name)
+      case "Agent User" => AuthLoginPage.loginAsAgent(name)
       case "Assistant User" => AuthLoginPage.loginAssistant(name)
-      case _ => AuthLoginPage.loginWithUser(name)
+
     }
   }
 
