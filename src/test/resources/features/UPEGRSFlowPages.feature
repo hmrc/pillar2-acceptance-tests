@@ -15,8 +15,7 @@ Feature: Ultimate parent entity GRS journey
     And The Heading should be What entity type is the ultimate parent?
     And I should see Entity type not listed hyperLink
     When I click Entity type not listed link
-    Then The Heading should be Task not yet started
-    #Then I should navigate to input-upe-name page
+    #Then I should navigate to input-upe-name page #need to be fixed as part of PIL-598
     #When I select back link
     #Then I should be on UPE Org type page
     #When I click on Continue button
