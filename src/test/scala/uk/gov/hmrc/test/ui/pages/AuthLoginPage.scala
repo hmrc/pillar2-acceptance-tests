@@ -239,22 +239,6 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def loginToFDGroupPeriod(name: String, credId: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysById(credId, credIdField)
-    Input.sendKeysByName(frontEndFDAccountPeriod, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-
-  def loginToContactDetailsAddress(name: String, credId: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysById(credId, credIdField)
-    Input.sendKeysByName(frontEndCDAddressUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-
   def loginWithExistingEntity(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysById(enrolmentKey, enrolmentKeyField)
