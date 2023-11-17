@@ -103,12 +103,10 @@ class StepDef extends BaseStepDef {
     }
   }
 
-  Given("""^Organisation User logs in to (.*) page with credId (.*)$""") { (name: String, credId: String) =>
+  When("""^Organisation User logs in to (.*) page with credId (.*)$""") { (name: String, credId: String) =>
     name match {
       case "NFM email" => AuthLoginPage.loginToNFMEmail(name, credId)
       case "NFM address" => AuthLoginPage.loginToNFMInputAddress(name, credId)
-      case "FD AccountingPeriod" => AuthLoginPage.loginToFDGroupPeriod(name, credId)
-      case "ContactDetails address" => AuthLoginPage.loginToContactDetailsAddress(name, credId)
     }
   }
 

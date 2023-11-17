@@ -117,7 +117,7 @@ Feature: Enter Further Details Group status as MNE or Domestic
     And I click on Continue button
     Then I should see error message Select where the group operates on the Further Details Group Status Page
 
-  #Scenario: 4 - Validate Bookmark for Further details group status page #This functionality will be covered as part of ticket 489
-    #Given Organisation User logs in Further details group status page for Pillar2
-    #Then The Heading should be Page not available
+  Scenario: 4 - Validate Bookmark for Further details group status page
+    Given Organisation User logs in Further details group status page for Pillar2
+    Then The Heading should be Task not yet started
 
