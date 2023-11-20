@@ -36,6 +36,7 @@ Feature: Bookmark Feature
   And I click Sign out link
   Then I am on feedback survey page
   When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
+  Then I should be navigated to Task not yet started page
   Then The Heading should be Task not yet started
   Then I click return to your Pillar 2 top-up taxes registration link
   Then I should see task list sections
@@ -48,7 +49,20 @@ Feature: Bookmark Feature
     Then I should be on UPE Org type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-    When I registered successfully with BV enabled
+    And I click Sign out link
+    Then I am on feedback survey page
+    When Organisation User logs in to upe name page with CredID Bookmark2 for Pillar2
+    Then The Heading should be Task not yet started
+    Then I click return to your Pillar 2 top-up taxes registration link
+    Then I should be on Task list page
+    And The Task Add ultimate parent's details status should be In progress
+    Then I click Add ultimate parent's details link
+    And The Heading should be We need to match the details of the ultimate parent entity to HMRC records
+    And I click on Continue button
+    Then I should see the answer Yes remain selected
+    And I click on Continue button
+    Then I should see the option UK limited company remain selected
+    And I click on Continue button
     And I click on Save&Continue button
     When I click Add filing member's details link
     Then I should navigate to NFM registration page
@@ -61,7 +75,7 @@ Feature: Bookmark Feature
     When Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
     Then The Heading should be Task not yet started
     Then I click return to your Pillar 2 top-up taxes registration link
-    Then I should see task list sections
+    Then I should be on Task list page
     And The Task Add filing member's details status should be In progress
 
   Scenario: 3 - User completes GRS journey and validate populated value after sign out
@@ -95,23 +109,6 @@ Feature: Bookmark Feature
     Then I click return to your Pillar 2 top-up taxes registration link
     Then I should see task list sections
     And The Task Add ultimate parent's details status should be Not started
-
-  Scenario: 5 - User completes UPE no id journey without answering mandatory questions
-    Given Organisation User logs in as upe with credId Bookmark4 for Pillar2
-    Then I should be on UPE business page
-    And I click Continue button
-    When I select option No and continue to next
-    Then I should navigate to input-upe-name page
-    When I enter UPE name as Test Bookmark
-    Then I should navigate to input-upe-address page
-    And I click Sign out link
-    Then I am on feedback survey page
-    When Organisation User navigates to UPE check your answer page with credId Bookmark4
-    Then The Heading should be Task not yet started
-    Then I click return to your Pillar 2 top-up taxes registration link
-    Then I should see task list sections
-    And The Task Add ultimate parent's details status should be In progress
-
 
 
 

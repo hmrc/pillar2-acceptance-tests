@@ -152,9 +152,7 @@ class StepDef extends BaseStepDef {
   When("""^(I click on Continue button)""") { (negate: String) =>
     InitialGuidancePage.clickContinue()
   }
-  When("""^(I click on Start again button)""") { (negate: String) =>
-    BookMarkPage.clickStartAgain()
-  }
+
   And("""^(I navigate from Name page to Telephone page)""") { (negate: String) =>
     for (i <- 1 to 5) {
       InitialGuidancePage.clickContinue()
