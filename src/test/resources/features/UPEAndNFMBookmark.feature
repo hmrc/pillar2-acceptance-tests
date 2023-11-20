@@ -37,6 +37,7 @@ Feature: Bookmark Feature
   Then I am on feedback survey page
   When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
   Then I should be navigated to Task not yet started page
+  And Url for bookmark error page should be ending with /errors/restart-error
   Then The Heading should be Task not yet started
   Then I click return to your Pillar 2 top-up taxes registration link
   Then I should see task list sections
