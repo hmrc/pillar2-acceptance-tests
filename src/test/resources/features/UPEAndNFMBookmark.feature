@@ -35,7 +35,7 @@ Feature: Bookmark Feature
   Then I should navigate to NFM Name page
   And I click Sign out link
   Then I am on feedback survey page
-  When Organisation User logs in to NFM address page with credId Bookmark1
+  When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
   Then The Heading should be Task not yet started
   Then I click return to your Pillar 2 top-up taxes registration link
   Then I should see task list sections
@@ -58,14 +58,11 @@ Feature: Bookmark Feature
     Then I should be on NFM Org type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
-    And I click on Save&Continue button
-    And I click Sign out link
-    Then I am on feedback survey page
-    When Organisation User logs in to NFM email page with credId Bookmark2
+    When Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
     Then The Heading should be Task not yet started
     Then I click return to your Pillar 2 top-up taxes registration link
     Then I should see task list sections
-    And The Task Edit filing member's details status should be Completed
+    And The Task Add filing member's details status should be In progress
 
   Scenario: 3 - User completes GRS journey and validate populated value after sign out
     Given Organisation User logs in as upe with credId Bookmark3 for Pillar2
