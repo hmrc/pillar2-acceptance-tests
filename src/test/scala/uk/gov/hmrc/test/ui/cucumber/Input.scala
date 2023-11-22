@@ -24,7 +24,6 @@ object Input extends BasePage {
 
   def clickById(id: String): Unit = findById(id).click()
 
-  def isSelected(css:String): Unit = findByCss(css).isSelected()
 
   def clickByLinkText(text: String): Unit = findByLinkText(text).click()
 

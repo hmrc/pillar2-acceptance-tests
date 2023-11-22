@@ -26,8 +26,6 @@ object Check extends BasePage {
 
   def checkH1(h1: String): Assertion = Find.findByTagName("h1").getText should include(h1)
 
-  def checkH2(h2: String): Assertion = Find.findByTagName("h2").getText should include(h2)
-
   def checkID(id: String): Boolean = Find.findById(id).isDisplayed
 
   def checkUrlContains(url: String): Assertion = Find.findURL() should include(url)

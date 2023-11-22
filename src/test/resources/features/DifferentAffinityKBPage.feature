@@ -16,7 +16,7 @@ Feature: Failure scenarios with different Affinity groups
     When I select back link
     Then I should be on auth-login page
 
-  Scenario: 2 - User logins as organisation user and standard role
+  Scenario: 2 - User logins as Agent
     Given Agent User logs in to register for Pillar2
     Then I should be on Agent affinity KB page
     And The Heading should be Sorry, you're unable to use this service
@@ -38,7 +38,7 @@ Feature: Failure scenarios with different Affinity groups
     When I select back link
     Then I should be on auth-login page
 
-  Scenario: 3 - User logins as organisation user and standard role
+  Scenario: 3 - User logins as Individual User
     Given Individual User logs in to register for Pillar2
     Then I should be on Individual affinity KB page
     And The Heading should be Sorry, you're unable to use this service
