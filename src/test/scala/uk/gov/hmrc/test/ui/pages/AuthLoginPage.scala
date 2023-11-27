@@ -241,10 +241,10 @@ object AuthLoginPage extends BasePage with PageObject {
 
   def loginWithExistingEntity(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
     Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndDashboardUrl, redirectUrlField)
     Input.sendKeysById(enrolmentKey, enrolmentKeyField)
     Input.sendKeysById(identifierName, identifierNameField)
     Input.sendKeysById(identifierValue, identifierValueField)
-    Input.sendKeysByName(frontEndDashboardUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }

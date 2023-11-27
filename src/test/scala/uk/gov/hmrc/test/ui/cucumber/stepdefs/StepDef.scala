@@ -432,7 +432,6 @@ class StepDef extends BaseStepDef {
   }
 
   When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
     AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
   }
 

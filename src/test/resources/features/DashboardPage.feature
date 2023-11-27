@@ -4,7 +4,7 @@ As a registered user
   I should be able to navigate to Links on dashboard page
 
   Scenario: 1 - User navigates to Dashboard page and validates the links
-    Given Organisation User logs in Dashboard page for Pillar2
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 top-up taxes account
     And I should see User details in dashboard page
@@ -51,13 +51,13 @@ As a registered user
     Then I am on feedback survey page
 
   Scenario: 2 - User navigates to group details page and validates the data
-    Given Organisation User logs in Dashboard page for Pillar2
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
     And I should see user details row 1 key Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
-    And I should see user details row 1 value PLRID
+    And I should see user details row 1 value XMPLR0012345676
     And I should see user details row 2 value 31 January 2022
     And I should see user details row 3 value International Organisation Inc.
     And I should see the heading 1 on Dashboard page as Payments
@@ -88,7 +88,5 @@ As a registered user
     When I click on Continue button
     And I should see row 3 value 5 May 2025
     And I should see row 4 value 5 June 2026
-
-
 #    And I click on Continue button
 #    Then I should be navigated to Under Construction page
