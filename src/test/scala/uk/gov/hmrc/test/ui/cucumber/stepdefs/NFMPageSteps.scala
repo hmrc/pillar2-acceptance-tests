@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Wait}
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NFMNamePage, UPEAddressPage}
 
@@ -141,7 +141,6 @@ class NFMPageSteps extends CommonFunctions {
       case _ => AuthLoginPage.loginToNFMName(name)
     }
   }
-
 
   Given("""^(.*) logs in NFM address page for Pillar2$""") { name: String =>
     name match {
