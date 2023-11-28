@@ -1,9 +1,9 @@
 @tests @zap_accessibility
-Feature: Nominated Filing member check your answers page
+Feature: NFM NO ID journey
   As a MNE user
-  I would like to change data from change your answers page
+  I would like to enter my details via NFM No ID journey
 
-  Scenario: 1 - User navigates to check your answer page answering all the questions of UPE and NFM
+  Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -20,6 +20,7 @@ Feature: Nominated Filing member check your answers page
     When I select option No and continue to next
     Then I should navigate to NFM Name page
     When I enter NFM name as Test CYA
+    Then I should navigate to NFM Address page
     And I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
     And I enter Postal Code as EH5 5WY
@@ -84,8 +85,9 @@ Feature: Nominated Filing member check your answers page
     And I should see the answer Yes remain selected
     And I click on Continue button
     Then I should see the NFM Telephone number field is pre-populated with 1234569
+    And I click on Continue button
 
-  Scenario: 2 - Change all the details from check your answers page
+  Scenario: 2 - Verify back link and change answers for all NFM No ID journey pages
     Given Organisation User navigates to NFM check your answer page with credId NFMCYA
     Then I should be on NFM Check your answers page
     And The Heading should be Check your answers
@@ -121,12 +123,80 @@ Feature: Nominated Filing member check your answers page
     Then I should be on NFM Check your answers page
     And I should see row 5 value No
 
-
-
-
-
-
-
-
+  Scenario: 3 - Validate different error messages for NFM no ID journey pages
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE business page
+    And I select option Yes and continue to next
+    And I select option UK limited company and continue to GRS page
+    And I registered successfully with BV enabled
+    When I click on Save&Continue button
+    Then I should navigate to Task list page
+    When I click Add filing member's details link
+    Then I should navigate to NFM registration page
+    When I select Yes option and continue to next
+    Then I should navigate to NFM details page
+    When I select option No and continue to next
+    Then I should navigate to NFM Name page
+    And The caption must be Group details
+    And The Heading should be What is the name of the nominated filing member?
+    When I click on Continue button
+    Then I should see NFM error message You need to enter the name of the nominated filing member on the Input NFM Name Element
+    When I enter NFM name as NFM Name character length Error validation and Maximum NFM character length should be entered 105 characters.
+    Then I should see NFM error message The name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
+    When I enter NFM name as NFM Test
+    Then I should navigate to NFM Address page
+    When I click on Continue button
+    Then I should see NFM error message Enter the first line of the address on the Address Line 1 Element
+    And I should see NFM error message Enter the town or city on the City Element
+    And I should see NFM error message Select a country on the Country Element
+    When I enter Address Line 1 as Address Line 1 Character Length Test1
+    And I enter Address Line 2 as Address Line 2 Character Length Test1
+    And I enter City as City Field Character Length Test Error
+    And I enter Region as Region Field Character Length Test Error
+    And I enter Postal Code as 12345678901
+    And I select country as India
+    And I click on Continue button
+    Then I should see NFM error message The first line of the address must be 35 characters or less on the Address Line 1 Element
+    And I should see NFM error message The second line of the address must be 35 characters or less on the Address Line 2 Element
+    And I should see NFM error message The town or city must be 35 characters or less on the City Element
+    And I should see NFM error message The region must be 35 characters or less on the Region Element
+    And I should see NFM error message The postal code must be 10 characters or less on the Postal Code Element
+    When I enter Address Line 1 as Test Address Line 1
+    And I enter Address Line 2 as Test Address Line 2
+    And I enter Region as Region
+    And I enter City as Test City
+    And I enter Postal Code as EH55Y
+    And I select country as India
+    When I click on Continue button
+    Then I should navigate to NFM Contact Name page
+    And I click on Continue button
+    Then I should see NFM error message You need to enter the name of the person or team we should contact from the nominated filing member on the Input NFM Contact Name Element
+    When I enter NFM Contact name as NFM Contact
+    Then I should navigate to NFM Contact Email page
+    When I click on Continue button
+    Then I should see NFM error message You need to enter the email address for NFM Test Contact on the Input NFM Contact Email Element
+    When I enter NFM Contact Email as incorrect email
+    When I click on Continue button
+    Then I should see NFM error message Enter an email address in the correct format, like name@example.com on the Input NFM Contact Email Element
+    When I enter NFM Contact Email as NFMNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
+    When I click on Continue button
+    Then I should see NFM error message The email address should be 132 characters or less on the Input NFM Contact Email Element
+    And I enter NFM Contact Email as test@email.com
+    When I click on Continue button
+    Then I should navigate to NFM Telephone page
+    When I click on Continue button
+    Then I should see error message Select yes if we can contact NFM Telephone Contact by telephone on the NFM Telephone Page
+    When I select option Yes and continue to next
+    Then I should navigate to input nfm telephone page
+    When I click on Continue button
+    Then I should see error message You need to enter the telephone for NFM Telephone Contact on the Input Nfm Telephone Page
+    When I enter NFM Telephone Number as 1234567812345678123456780
+    And I click on Continue button
+    Then I should see error message The telephone number should be 24 characters or less on the Input Nfm Telephone Page
+    When I enter NFM Telephone Number as 1234567@
+    And I click on Continue button
+    Then I should see error message Enter a telephone number in the correct format on the Input Nfm Telephone Page
+    When I enter NFM Telephone Number as 9923-456
+    When I click on Continue button
 
 

@@ -111,6 +111,18 @@ Feature: Bookmark Feature
     Then I should see task list sections
     And The Task Add ultimate parent's details status should be Not started
 
+  Scenario: 5 - Validate Bookmark error for NFM Contact Name and NFM Contact Email Pages
+    Given Organisation User logs in NFM Contact Name page for Pillar2
+    Then The Heading should be Task not yet started
+    Given Organisation User logs in NFM Contact Email page for Pillar2
+    Then The Heading should be Task not yet started
+
+  Scenario: 6 - Validate Bookmark for NFM Name and NFM Address Pages
+    Given Organisation User logs in NFM name page for Pillar2
+    Then The Heading should be Task not yet started
+    Given Organisation User logs in NFM address page for Pillar2
+    Then The Heading should be Task not yet started
+
 
 
 
