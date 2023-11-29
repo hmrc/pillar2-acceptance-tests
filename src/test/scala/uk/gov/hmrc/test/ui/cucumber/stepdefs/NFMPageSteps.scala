@@ -21,7 +21,7 @@ import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NFMNamePage, UPEAddressPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMNamePage, NFMRegistrationPage, UPEAddressPage}
 
 
 class NFMPageSteps extends CommonFunctions {
@@ -132,6 +132,25 @@ class NFMPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorMessage)
         getTextOf(By cssSelector (NFMContactEmailPage.errorMessage)) should include(error)
 
+      case "NFM registration page" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorLink)
+        getTextOf(By cssSelector (NFMRegistrationPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorMessage)
+        getTextOf(By cssSelector (NFMRegistrationPage.errorMessage)) should include(error)
+
+      case "NFM details page" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorLink)
+        getTextOf(By cssSelector (NFMDetailsPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorMessage)
+        getTextOf(By cssSelector (NFMDetailsPage.errorMessage)) should include(error)
     }
   }
 
@@ -141,7 +160,6 @@ class NFMPageSteps extends CommonFunctions {
       case _ => AuthLoginPage.loginToNFMName(name)
     }
   }
-
 
   Given("""^(.*) logs in NFM address page for Pillar2$""") { name: String =>
     name match {

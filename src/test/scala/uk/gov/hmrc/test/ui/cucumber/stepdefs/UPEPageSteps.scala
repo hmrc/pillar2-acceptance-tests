@@ -209,7 +209,6 @@ class UPEPageSteps extends CommonFunctions {
     Check.checkOptionSelected(answer)
   }
 
-
   And("""^I should see the (.*) field is pre-populated with (.*)$""") { (field: String, name: String) =>
     field match {
       case "UPE name" =>
