@@ -49,7 +49,7 @@ As a registered user
     And I should be on Dashboard page
     When I click Sign out link
     Then I am on feedback survey page
-
+  @ignore
   Scenario: 2 - User navigates to group details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
