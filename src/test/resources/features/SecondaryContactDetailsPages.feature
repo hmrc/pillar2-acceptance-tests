@@ -808,10 +808,10 @@ Feature: Secondary Contact details for the filing member
     And The Body content should be You have set up an account for reporting and managing Pillar 2 top-up taxes.
     And The Body content should be You can save this ID number by making a note or taking a screenshot.
     When I click on Continue button
-    #Then I should be on Dashboard page
-#    And I should see user details row 1 value XMPLR0012345674
-#    And I should see user details row 2 value 31 January 2022
-#    And I should see user details row 3 value International Organisation Inc.
+    Then I should be on Dashboard page
+    And I should see user details row 1 value XMPLR0012345674
+    And I should see user details row 2 value 31 January 2022
+    And I should see user details row 3 value International Organisation Inc.
 
  Scenario: 8 - UPE GRS flow ID and GRS flow ID, Review and submit your answers page
    Given Organisation User logs in as upe for Pillar2
@@ -944,9 +944,9 @@ Feature: Secondary Contact details for the filing member
    Then I should navigate to under construction page
    When I select back link
    When I should navigate to Registration confirmation page
-   #When I click on Continue button
-   #Then I should be on Dashboard page
-   #When I click Sign out link
-   #Then I am on feedback survey page
-   #When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
-   #Then I should be on Dashboard page
+   When I click on Continue button
+   Then I should be on Dashboard page
+   When I click Sign out link
+   Then I am on feedback survey page
+   When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+   Then I should be on Dashboard page
