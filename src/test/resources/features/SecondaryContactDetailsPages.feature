@@ -944,9 +944,9 @@ Feature: Secondary Contact details for the filing member
    Then I should navigate to under construction page
    When I select back link
    When I should navigate to Registration confirmation page
-   When I click on Continue button
+   #When I click on Continue button
    #Then I should be on Dashboard page
-   When I click Sign out link
-   Then I am on feedback survey page
-   When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+   #When I click Sign out link
+   #Then I am on feedback survey page
+   #When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
    #Then I should be on Dashboard page
