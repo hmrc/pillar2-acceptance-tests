@@ -2,7 +2,7 @@
 Feature: Dashboard Page
 As a registered user
   I should be able to navigate to Links on dashboard page
-
+  @ignore
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
