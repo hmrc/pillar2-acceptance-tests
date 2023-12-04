@@ -8,5 +8,5 @@ fi
 
 environment="local"
 
-sbt -Dzap.proxy=true -Denvironment="$environment" -Dbrowser="chrome" clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner'
+sbt -Dzap.proxy=true -Denvironment="$environment" -Dbrowser="$browser" clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner'
 
