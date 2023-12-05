@@ -129,16 +129,16 @@ As a registered user
     And I should see row 9 key Second contact telephone number
     And I should see row 5 value Yes
     And I should see row 6 value Donald Trump
-    And I should see row 7 value fred.flintstone@potus.com
+    And I should see row 7 value onald.trump@potus.com
     And I should see row 8 value Yes
-    And I should see row 9 value 0115 9700 700
+    And I should see row 9 value 0115 9700 701
     And I should see row 10 key Address
     And I should see row 10 value 1 High Street
     And I should see row 10 value Egham
+    And I should see row 10 value Wycombe
     And I should see row 10 value Surrey
     And I should see row 10 value HP13 6TT
     And I should see row 10 value United Kingdom
-
     When I click on change link for Contact Name
     When I enter Contact Name as Contact Name Test
     And I click on Continue button
@@ -176,6 +176,15 @@ As a registered user
     And I click on Continue button
     And I click on Continue button
     Then I should navigate to contact details summary page
+    When I click on change link for Address
+    When I enter Address Line 1 as Test Address Line 1
+    When I enter Address Line 2 as Test Address Line 2
+    And I enter City as Test City
+    And I enter Region as Test Region
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
+    And I click on Continue button
+    Then I should navigate to contact details summary page
     And I should see row 1 value Contact Name Test
     And I should see row 2 value contact@email.com
     And I should see row 3 value Yes
@@ -190,3 +199,10 @@ As a registered user
     And I should see row 7 value secondContact@email.com
     And I should see row 8 value Yes
     And I should see row 9 value 1234554878
+    And I should see row 10 key Address
+    And I should see row 10 value Test Address Line 1
+    And I should see row 10 value Test Address Line 2
+    And I should see row 10 value Test City
+    And I should see row 10 value Test Region
+    And I should see row 10 value EH5 5WY
+    And I should see row 10 value United Kingdom
