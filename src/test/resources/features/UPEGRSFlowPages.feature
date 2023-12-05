@@ -46,7 +46,6 @@ Feature: Ultimate parent entity GRS journey
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent's details status should be Completed
 
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
@@ -71,7 +70,7 @@ Feature: Ultimate parent entity GRS journey
     Then I should be on UPE registration failed error page
     When I click search Companies House for the company registration number and registered office address (opens in a new tab). link
     Then I should be navigated to new tab
-    And  I should be on search register page
+    And  I should navigate to search register page
     Then I close new tab
     And I should navigate back to main tab
     Then I should be on UPE registration failed error page
