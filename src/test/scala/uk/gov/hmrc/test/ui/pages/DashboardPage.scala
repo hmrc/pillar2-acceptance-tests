@@ -24,6 +24,7 @@ object DashboardPage extends PageObject {
   val continue         = "#submit"
   val sectionHeading   = ".govuk-heading-m"
   val userDetails      = ".govuk-caption-m"
+  val inactiveStatus   =".govuk-notification-banner__heading"
 
   def clickContinue()  = findByCss(continue).click()
 

@@ -7,6 +7,13 @@ As a registered user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 top-up taxes account
+    And The inactive status should be Your account is currently inactive. For additional information, please refer to the draft guidance (opens in a new tab).
+    When I click draft guidance (opens in a new tab) link
+    Then I should be navigated to new tab
+    And  I should be on Draft guidance page
+    Then I close new tab
+    And I should navigate back to main tab
+    And I should be on Dashboard page
     And I should see User details in dashboard page
     And I should see user details row 1 key Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:

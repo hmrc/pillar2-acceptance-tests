@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Wait
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage}
 
@@ -64,6 +65,11 @@ class PaymentSteps extends CommonFunctions {
 
   And("""^I should see user details row (\d+) value (.*)""") { (detailNumber: Int, detailValue: String) =>
     assert(driver.findElements(By.cssSelector(DashboardPage.userDetails)).get(detailNumber - 1).getText.contains(detailValue))
+  }
+
+  Then("""^The inactive status should be (.*)$""") { header: String =>
+    Wait.waitForElementToPresentByCssSelector(DashboardPage.inactiveStatus)
+    assert(getTextOf(By.cssSelector(DashboardPage.inactiveStatus)).contains(header))
   }
 }
 
