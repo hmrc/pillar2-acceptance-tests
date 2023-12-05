@@ -38,7 +38,7 @@ object Wait extends BasePage {
   def secondsWait(secs: Int): Unit = Thread.sleep(secs.*(1000))
 
   def waitForElementToClicktagName(tagName: String): WebElement = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(3))
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5))
     driverWait.until(ExpectedConditions.elementToBeClickable(By.tagName(tagName)))
   }
 
