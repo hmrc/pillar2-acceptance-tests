@@ -2,7 +2,7 @@
 Feature: NFM NO ID journey
   As a MNE user
   I would like to enter my details via NFM No ID journey
-
+  @zap_accessibility
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     Then I should be on UPE business page
@@ -78,7 +78,7 @@ Feature: NFM NO ID journey
     And The Task Edit filing member's details status should be Completed
     Then I click Sign out link
     Then I am on feedback survey page
-  @zap_accessibility
+
   Scenario: 2 - Verify change answers for all NFM No ID journey pages
     Given Organisation User logs in with credId NFMCYA for Pillar2
     When I click Edit filing member's details link
