@@ -1,9 +1,9 @@
-@tests @zap_accessibility
+@tests
 Feature: Ultimate parent entity GRS journey
   As a MNE user
   I want to determine that the UPE is based in UK or LLP
   So that I can navigate to the correct GRS journey.
-
+  @zap_accessibility
   Scenario: 1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -20,7 +20,7 @@ Feature: Ultimate parent entity GRS journey
     #Then I should be on UPE Org type page
     #When I click on Continue button
     #Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
-
+  @zap_accessibility
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page

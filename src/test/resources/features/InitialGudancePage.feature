@@ -1,8 +1,8 @@
- @tests @zap_accessibility
+ @tests
 Feature: Initial Guidance Page
   As an eligible authenticated user
   I should be able to navigate to Links on Task list page.
-
+  @zap_accessibility
   Scenario: 1 - User navigates to next page from initial guidance page
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page

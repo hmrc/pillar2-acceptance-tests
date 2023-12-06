@@ -8,6 +8,8 @@ Feature: Eligibility Questions for Pillar 2
     And The caption should be Check if the group needs to report
     And The Heading should be Are you registering as the ultimate parent of this group?
     And The Body content should be An ultimate parent is not a subsidiary of any other company and has a controlling interest in one or more other entities.
+    When I continue without selecting an option
+    Then I should see error message Select yes if you are registering as the ultimate parent of this group on the Eligibility question Page
     When I choose Yes and continue
     Then I should navigate to business EQ page
     And The caption should be Check if the group needs to report
@@ -18,6 +20,8 @@ Feature: Eligibility Questions for Pillar 2
     And The caption should be Check if the group needs to report
     And The Heading should be Has the group had consolidated annual revenues of €750 million or more in at least 2 of the previous 4 accounting periods?
     And The Body content should be If the group accounting period is not 365 days, you can calculate the threshold by multiplying €750 million by the number of days in your accounting period and dividing it by 365
+    When I continue without selecting an option
+    Then I should see error message Select yes if the group had consolidated annual revenues of €750 million or more in at least 2 of the previous 4 accounting periods on the Global gross revenue Page
     When I choose Yes and continue
     Then I should navigate to confirmation page
     And The Heading should be You need to register this group to report Pillar 2 top-up taxes
@@ -33,6 +37,8 @@ Feature: Eligibility Questions for Pillar 2
     And The caption should be Check if the group needs to report
     And The Heading should be Are you registering to report Pillar 2 top-up taxes as the nominated filing member for this group?
     And The Body content should be The nominated filing member is responsible for managing the group's tax returns and keeping business records.
+    When I continue without selecting an option
+    Then I should see error message Select yes if you are registering as the nominated filing member for this group on the Eligibility question Page
     When I choose No and continue
     Then I should navigate to NFM guidance page
     And The Heading should be Based on your answers, you cannot register this group to report Pillar 2 top-up taxes
@@ -46,6 +52,8 @@ Feature: Eligibility Questions for Pillar 2
     Then I should navigate to NFM EQ page
     When I choose Yes and continue
     Then I am on Business activity EQ Page
+    When I continue without selecting an option
+    Then I should see error message Select yes if the group has business operations in the UK on the Eligibility question Page
     When I choose No and continue
     Then I should navigate to BA guidance page
     And The Heading should be Based on your answers, this group does not need to report Pillar 2 top-up taxes in the UK
@@ -70,24 +78,3 @@ Feature: Eligibility Questions for Pillar 2
     Then I should navigate to GGR guidance page
     When I select back link
     Then I should navigate to Global gross revenue
-
-  Scenario: 3 - Display an error message, when user continue without selecting an option in eligibility questions
-    Given I clear the cache
-    Given I am on UPE EQ Page
-    When I continue without selecting an option
-    Then I should see error message Select yes if you are registering as the ultimate parent of this group on the Eligibility question Page
-    When I choose No and continue
-    Then I should be on NFM EQ page
-    When I continue without selecting an option
-    Then I should see error message Select yes if you are registering as the nominated filing member for this group on the Eligibility question Page
-    When I select back link
-    When I select back link
-    Then I should navigate to UPE EQ page
-    When I choose Yes and continue
-    And I am on Business activity EQ Page
-    When I continue without selecting an option
-    Then I should see error message Select yes if the group has business operations in the UK on the Eligibility question Page
-    When I choose Yes and continue
-    Then I should navigate to Global gross revenue
-    When I continue without selecting an option
-    Then I should see error message Select yes if the group had consolidated annual revenues of €750 million or more in at least 2 of the previous 4 accounting periods on the Global gross revenue Page

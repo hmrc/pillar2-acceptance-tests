@@ -1,8 +1,8 @@
-@tests @zap_accessibility
+@tests
 Feature: UPE NO ID journey
   As a MNE user
   I would like to enter my details via UPE No ID journey
-
+  @zap_accessibility
   Scenario: 1 - UPE No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId UPENoIDJourney for Pillar2
     Then I should be on UPE business page
@@ -128,7 +128,7 @@ Feature: UPE NO ID journey
     Then I should navigate to input-upe-name page
     When I select back link
     Then I should be on UPE business page
-
+  @zap_accessibility
   Scenario: 3 - Validate different error messages for UPE no ID journey pages
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -200,7 +200,7 @@ Feature: UPE NO ID journey
     And I enter Telephone Number as #incorrect number
     When I click on Continue button
     Then I should see error message Enter a telephone number in the correct format on the Input Telephone Page
-
+  @zap_accessibility
   Scenario: 4 - Change UPE fields from UPE check your answers page
     Given Organisation User navigates to UPE check your answer page with credId UPENoIDJourney
     Then I should be on Check your answers page
