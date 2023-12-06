@@ -1,4 +1,4 @@
-@tests @zap_accessibility
+@tests
 Feature: Dashboard Page
 As a registered user
   I should be able to navigate to Links on dashboard page
@@ -57,6 +57,7 @@ As a registered user
     When I click Sign out link
     Then I am on feedback survey page
 
+  @zap_accessibility
   Scenario: 2 - User navigates to group details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page

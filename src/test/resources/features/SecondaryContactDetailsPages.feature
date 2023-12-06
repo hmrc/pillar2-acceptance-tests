@@ -1,4 +1,4 @@
-@tests @zap_accessibility
+@tests
 Feature: Secondary Contact details for the filing member
   As a NFM Subscription user
   I want to enter the secondary contact details,in case the first in not able to be reached
@@ -116,7 +116,7 @@ Feature: Secondary Contact details for the filing member
     Then The Task Add Contact details status should be In progress
     When I click Sign out link
     Then I am on feedback survey page
-
+  @zap_accessibility
   Scenario: 2 - Provide secondary contact details for NFM user and use existing primary contact details
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -190,7 +190,7 @@ Feature: Secondary Contact details for the filing member
     When I enter Second Contact Input as 1234554
     And I click on Continue button
     Then I should navigate to Contact address input page
-
+  @zap_accessibility
   Scenario: 2 - Secondary contact details pages Error validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
@@ -502,7 +502,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 7 value secondContact@email.com
     And I should see row 8 value Yes
     And I should see row 9 value 1234554
-
+  @zap_accessibility
   Scenario: 6 - UPE No flow ID and NFM NO flow ID, Review and submit your answers page
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -662,7 +662,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 24 value secondContact@email.com
     And I should see row 25 value Yes
     And I should see row 26 value 1234554
-
+  @zap_accessibility
   Scenario: 7 - UPE GRS flow ID and NFM NO flow ID, Review and submit your answers page
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page

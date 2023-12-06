@@ -1,10 +1,10 @@
-@tests @zap_accessibility
+@tests
 Feature: NFM GRS journey
   As a MNE user
   I want to determine that the NFM is based in UK or LLP
   So that I can navigate to the correct GRS flow journey.
-
-  Scenario: 1 - Display an error message, when user continue without selecting an option
+  @zap_accessibility
+  Scenario: 1 - NFM User registered as UkLimitedCompany successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -25,26 +25,6 @@ Feature: NFM GRS journey
     Then I should be on NFM Org type page
     When I click on Continue button
     Then I should see error message Select what type of company the nominated filing member is on the NFM Org type Page
-
-  Scenario: 2 - NFM User registered as UkLimitedCompany successfully with BV enabled
-    Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE business page
-    When I select option Yes and continue to next
-    Then I should be on UPE Org type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to UKCompany GRS page
-    And The Heading should be Stub GRS Journey Data
-    When I registered successfully with BV enabled
-    And I click on Save&Continue button
-    Then I should navigate to Task list page
-    And The Task Edit ultimate parent's details status should be Completed
-    And The Task Add filing member's details status should be Not started
-    When I click Add filing member's details link
-    Then I should navigate to NFM registration page
-    When I select Yes option and continue to next
-    Then I should navigate to NFM details page
-    When I select option Yes and continue to next
-    Then I should be on NFM Org type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -53,8 +33,8 @@ Feature: NFM GRS journey
     And I click on Save&Continue button
     Then I should navigate to Task list page
     And The Task Edit filing member's details status should be Completed
-
-  Scenario: 3 - NFM User registered as UkLimitedCompany successfully with BV disabled
+  @zap_accessibility
+  Scenario: 2 - NFM User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -82,7 +62,7 @@ Feature: NFM GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member's details status should be Completed
 
-  Scenario: 4 - NFM User registration as UkLimitedCompany failed with party type mismatch error
+  Scenario: 3 - NFM User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -128,8 +108,8 @@ Feature: NFM GRS journey
     Then I close new tab
     And I should navigate back to main tab
     Then I should be on NFM registration failed error page
-
-  Scenario: 5 - NFM User registration as UkLimitedCompany failed with generic error
+  @zap_accessibility
+  Scenario: 4 - NFM User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -155,7 +135,7 @@ Feature: NFM GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration failed error page
 
-  Scenario: 6 - NFM User registration as UkLimitedCompany failed with identifiers not match error
+  Scenario: 5 - NFM User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -188,8 +168,8 @@ Feature: NFM GRS journey
     Then I should be on NFM Org type page
     When I select back link
     Then I should be on NFM registration not called error page
-
-  Scenario: 7 - User registration as UkLimitedCompany failed with BV failed error
+  @zap_accessibility
+  Scenario: 6 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -215,7 +195,7 @@ Feature: NFM GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
 
-  Scenario: 8 - NFM User registered as LimitedLiabilityPartnership successfully with BV enabled
+  Scenario: 7 - NFM User registered as LimitedLiabilityPartnership successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -243,7 +223,7 @@ Feature: NFM GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member's details status should be Completed
 
-  Scenario: 9 - NFM User registered as UkLimitedCompany successfully with BV disabled
+  Scenario: 8 - NFM User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -271,7 +251,7 @@ Feature: NFM GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member's details status should be Completed
 
-  Scenario: 10 - User registration as UkLimitedCompany failed with party type mismatch error
+  Scenario: 9 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -297,7 +277,7 @@ Feature: NFM GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration failed error page
 
-  Scenario: 11 - User registration as UkLimitedCompany failed with generic error
+  Scenario: 10 - User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -323,7 +303,7 @@ Feature: NFM GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration failed error page
 
-  Scenario: 12 - User registration as UkLimitedCompany failed with identifiers not match error
+  Scenario: 11 - User registration as UkLimitedCompany failed with identifiers not match error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -349,7 +329,7 @@ Feature: NFM GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
 
-  Scenario: 13 - User registration as UkLimitedCompany failed with BV failed error
+  Scenario: 12 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -375,45 +355,7 @@ Feature: NFM GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
 
-  Scenario: 14 - User navigates to UPE Page and No NFM journey
-    Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE business page
-    When I select option Yes and continue to next
-    Then I should be on UPE Org type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to UKCompany GRS page
-    And The Heading should be Stub GRS Journey Data
-    When I registered successfully with BV enabled
-    And I click on Save&Continue button
-    Then I should navigate to Task list page
-    And The Task Edit ultimate parent's details status should be Completed
-    And The Task Add filing member's details status should be Not started
-    When I click Add filing member's details link
-    Then I should navigate to NFM registration page
-    And The caption is Group details
-    And The Heading should be Do you want to register a nominated filing member for this group?
-    And The Body content should be If you do not enter the details for a nominated filing member, the ultimate parent entity (UPE) will be used as the default.
-    And The Body content should be You must have permission from the UPE to nominate a company as a filing member and be able to access the information required to file Pillar 2 top-up tax on the group's behalf.
-    When I continue to next page
-    Then I should see error message Select yes if there is a nominated filing member for this group on the NFM registration page Page
-    When I select No option and continue to next
-    Then I should navigate to Task list page
-    And The Task Edit filing member's details status should be Completed
-    When I click Edit filing member's details link
-    When I select Yes option and continue to next
-    Then I should navigate to NFM details page
-    When I select option Yes and continue to next
-    Then I should be on NFM Org type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to NFM UKCompany GRS page
-    When I select back link
-    Then I should be on NFM Org type page
-    When I select back link
-    Then I should be on NFM details page
-    When I select back link
-    Then I should be on NFM registration page
-
-  Scenario: 15 - User can navigate to Entity type not listed hyperlink on NFM Org type page
+  Scenario: 13 - User can navigate to Entity type not listed hyperlink on NFM Org type page
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next

@@ -1,8 +1,8 @@
-@tests @zap_accessibility
+@tests
 Feature: Further Details Task page validation
   As a MNE user
   I should be taken to all the Further detail pages
-
+  @zap_accessibility
   Scenario: 1 - User navigates to check your answer page answering all the questions of Further Details Page
     Given Organisation User logs in as upe with credId FDTask for Pillar2
     Then I should be on UPE business page
