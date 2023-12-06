@@ -8,6 +8,8 @@ Feature: Eligibility Questions for Pillar 2
     And The caption should be Check if the group needs to report
     And The Heading should be Are you registering as the ultimate parent of this group?
     And The Body content should be An ultimate parent is not a subsidiary of any other company and has a controlling interest in one or more other entities.
+    When I continue without selecting an option
+    Then I should see error message Select yes if you are registering as the ultimate parent of this group on the Eligibility question Page
     When I choose Yes and continue
     Then I should navigate to business EQ page
     And The caption should be Check if the group needs to report
