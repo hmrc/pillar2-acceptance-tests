@@ -950,3 +950,99 @@ Feature: Secondary Contact details for the filing member
    Then I am on feedback survey page
    When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
    Then I should be on Dashboard page
+
+  Scenario: 8 - UPE GRS flow ID and GRS flow ID, registration error page navigation validation
+    Given Organisation User logs in as upe for Pillar2
+    Then I should be on UPE business page
+    When I select option Yes and continue to next
+    Then I should be on UPE Org type page
+    When I select option UK limited company and continue to GRS page
+    Then I should navigate to UKCompany GRS page
+    And The Heading should be Stub GRS Journey Data
+    When I registered successfully with BV enabled
+    And I click on Save&Continue button
+    Then I should navigate to Task list page
+    And I click Add filing member's details link
+    Then I should navigate to NFM registration page
+    When I select Yes option and continue to next
+    Then I should navigate to NFM details page
+    When I select option Yes and continue to next
+    Then I should be on NFM Org type page
+    When I select option UK limited company and continue to GRS page
+    Then I should navigate to NFM UKCompany GRS page
+    And The Heading should be Stub GRS Journey Data
+    When I registered successfully with BV enabled
+    And I click on Save&Continue button
+    Then I should navigate to Task list page
+    When I click Add further group details link
+    Then I should navigate to MNE or domestic page
+    When I select option In the UK and other countries in further details group status page
+    And I click on Continue button
+    Then I should navigate to Group accounting period page
+    When Accounting Period Start Day is entered as 15
+    And Accounting Period Start Month is entered as 1
+    And Accounting Period Start Year is entered as 2024
+    When Accounting Period End Day is entered as 15
+    And Accounting Period End Month is entered as 1
+    And Accounting Period End Year is entered as 2025
+    And I click on Continue button
+    Then I should navigate to FD check your answers page
+    And I click on Continue button
+    Then I should navigate to Task list page
+    When I click Add Contact details link
+    Then I should navigate to Contact details guidance page
+    When I click on Continue button
+    Then I should navigate to Contact details input name page
+    When I enter Contact Name as Test Name
+    And I click on Continue button
+    Then I should navigate to Contact details input email page
+    When I enter Contact Email as testContact@email.com
+    And I click on Continue button
+    Then I should navigate to Contact details telephone page
+    When I select option Yes and continue to next
+    Then I should navigate to Contact details input telephone page
+    When I enter Contact Telephone as 1234554
+    When I click on Continue button
+    Then I should navigate to Second Contact details page
+    When I select option Yes and continue to next
+    Then I should navigate to Second Contact name page
+    When I enter Second Contact Name as Second Contact Name Test
+    And I click on Continue button
+    Then I should navigate to Second Contact email page
+    When I enter Second Contact Email as secondContact@email.com
+    And I click on Continue button
+    Then I should navigate to Second Contact number page
+    When I select option Yes and continue to next
+    Then I should navigate to Second Contact Input page
+    When I enter Second Contact Input as 1234554
+    And I click on Continue button
+    Then I should navigate to Contact address input page
+    When I enter Address Line 1 as Address Line 1 Contact
+    And I enter Address Line 2 as Address Line 2 Contact
+    And I enter City as City Contact
+    And I enter Region as Region Contact
+    And I enter Postal Code as EH5 5WY
+    And I select country as United Kingdom
+    When I click on Continue button
+    Then I should navigate to Contact details Check answers page
+    When I click on Continue button
+    Then I should navigate to Task list page
+    And The Task Edit contact details status should be Completed
+    And The Task Check your answers status should be Not started
+    When I click Check your answers link
+    Then I should navigate to Review answers page
+    And I click on Save&Continue button
+    Then I should navigate to Registration confirmation page
+    And I click the browser back button
+    Then I should navigate to Registration return error page
+    And The Heading should be You cannot return, your registration is complete
+    And The Body content should be You have successfully registered to report pillar 2 top-up taxes.
+    And The Body content should be You can now report and manage your pillar 2 top-up taxes.
+    And I click report and manage your pillar 2 top-up taxes. link
+    And I should be on Dashboard page
+    And I click the browser back button
+    Then I should be on Registration return error page
+    And I click the browser back button
+    Then I should navigate to Registration confirmation page
+    When I click on Continue button
+    And I should be on Dashboard page
