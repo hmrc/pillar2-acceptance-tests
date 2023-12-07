@@ -1,8 +1,8 @@
-@tests @zap_accessibility
+@tests
 Feature: Contact details guidance and logic to play back contact details
   As a Subscription user
   I should be displayed with contact details in use contact page
-
+  @zap_accessibility
   Scenario: 1 - Create a new subscription with NFM No Id flow for validating play back contact details
     Given Organisation User logs in as upe with credId TestPlaybackNFM for Pillar2
     Then I should be on UPE business page

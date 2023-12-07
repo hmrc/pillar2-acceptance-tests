@@ -1,8 +1,8 @@
-@tests @zap_accessibility
+@tests
 Feature: Task list page
   As a MNE user
   I should have access to Task List page
-
+  @zap_accessibility
   Scenario: 1 - Task list page Sections and status validation
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -22,7 +22,7 @@ Feature: Task list page
     And The Task Contact details status should be Cannot start yet
     And I should see the task section 3 with task name as Review and submit on Contact details section
     And The Task Check your answers status should be Cannot start yet
-
+  @zap_accessibility
   Scenario: 2 - Verify the sign out functionality
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
