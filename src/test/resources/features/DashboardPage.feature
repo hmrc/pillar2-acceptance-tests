@@ -42,7 +42,7 @@ As a registered user
     Then I should be on Dashboard page
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
-    When I select back link
+    When I click the browser back button
     Then I should be on Dashboard page
     When I click View and amend group details link
     Then I should navigate to accounts summary page
