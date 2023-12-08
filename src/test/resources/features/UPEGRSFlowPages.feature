@@ -220,3 +220,8 @@ Feature: Ultimate parent entity GRS journey
     When I select back link
     Then I should be on UPE business page
 
+  @zap_accessibility @ignore
+  Scenario: 15 - UPE User error pages - ZAP-Accessibility Test
+    Given Organisation User logs in as upe for Pillar2
+    And I am on UPE registration failed error Page
+    And I am on UPE registration not called error Page

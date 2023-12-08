@@ -135,6 +135,7 @@ Feature: NFM NO ID journey
     And I select option No and continue to next
     Then I should be on NFM Check your answers page
     And I should see row 5 value No
+
   @zap_accessibility
   Scenario: 3 - Validate different error messages for NFM no ID journey pages
     Given Organisation User logs in as upe for Pillar2

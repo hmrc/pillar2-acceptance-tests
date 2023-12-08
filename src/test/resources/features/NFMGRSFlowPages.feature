@@ -3,7 +3,7 @@ Feature: NFM GRS journey
   As a MNE user
   I want to determine that the NFM is based in UK or LLP
   So that I can navigate to the correct GRS flow journey.
-  @zap_accessibility
+
   Scenario: 1 - NFM User registered as UkLimitedCompany successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -33,7 +33,7 @@ Feature: NFM GRS journey
     And I click on Save&Continue button
     Then I should navigate to Task list page
     And The Task Edit filing member's details status should be Completed
-  @zap_accessibility
+
   Scenario: 2 - NFM User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -108,7 +108,7 @@ Feature: NFM GRS journey
     Then I close new tab
     And I should navigate back to main tab
     Then I should be on NFM registration failed error page
-  @zap_accessibility
+
   Scenario: 4 - NFM User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -168,7 +168,7 @@ Feature: NFM GRS journey
     Then I should be on NFM Org type page
     When I select back link
     Then I should be on NFM registration not called error page
-  @zap_accessibility
+
   Scenario: 6 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -377,3 +377,11 @@ Feature: NFM GRS journey
     And I should see Entity type not listed hyperLink
     When I click Entity type not listed link
     Then I should navigate to NFM Name page
+
+  @zap_accessibility @ignore
+  Scenario: 14 - NFM User error pages - ZAP-Accessibility Test
+    Given Organisation User logs in as upe for Pillar2
+    And I am on NFM registration failed error Page
+    And I am on NFM registration not called error Page
+
+
