@@ -1,7 +1,7 @@
  @tests
 Feature: Bookmark Feature
   I should not be able to navigate to next page without answering the previous question
-  @zap_accessibility
+
   Scenario: 1 - User fill the information for UPE and NFM no ID flow and try moving ahead in the journey without answering mandatory questions
   Given Organisation User logs in as upe with credId Bookmark1 for Pillar2
   Then I should be on UPE business page
@@ -42,7 +42,7 @@ Feature: Bookmark Feature
   Then I click return to your Pillar 2 top-up taxes registration link
   Then I should see task list sections
   And The Task Add filing member's details status should be In progress
-  @zap_accessibility
+
   Scenario: 2 - User completes UPE GRS journey and try navigating to NFM NO ID flow
     Given Organisation User logs in as upe with credId Bookmark2 for Pillar2
     Then I should be on UPE business page
@@ -111,17 +111,29 @@ Feature: Bookmark Feature
     Then I should see task list sections
     And The Task Add ultimate parent's details status should be Not started
 
+  @zap_accessibility
   Scenario: 5 - Validate Bookmark error for NFM Contact Name and NFM Contact Email Pages
     Given Organisation User logs in NFM Contact Name page for Pillar2
     Then The Heading should be Task not yet started
     Given Organisation User logs in NFM Contact Email page for Pillar2
     Then The Heading should be Task not yet started
 
-  Scenario: 6 - Validate Bookmark for NFM Name and NFM Address Pages
+  @zap_accessibility @ignore
+  Scenario: 6 - Validate Bookmark for UPE/NFM Name and NFM Address Pages
+    When Organisation User logs in to upe name page with CredID Bookmark2 for Pillar2
+    Then The Heading should be Task not yet started
+    Given Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
+    Then The Heading should be Task not yet started
     Given Organisation User logs in NFM name page for Pillar2
     Then The Heading should be Task not yet started
     Given Organisation User logs in NFM address page for Pillar2
     Then The Heading should be Task not yet started
+
+  @zap_accessibility @ignore
+  Scenario: 7 - Validate Bookmark for UPE/NFM Name and NFM Address Pages
+    When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
+    Then I should be navigated to Task not yet started page
+
 
 
 

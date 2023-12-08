@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMDetailsPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMDetailsPage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -185,6 +185,22 @@ class StepDef extends BaseStepDef {
         navigateTo(GlobalGrossRevenueEQPage.url)
         Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.eqForm)
         isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
+      case "NFM registration failed error" =>
+        navigateTo(NFMGRSRegistrationFailedErrorPage.url)
+        Wait.waitForElementToPresentByCssSelector(NFMGRSRegistrationFailedErrorPage.content)
+        isVisible(By.cssSelector(NFMGRSRegistrationFailedErrorPage.header)) shouldBe true
+      case "NFM registration not called error" =>
+        navigateTo(NFMGRSRegistrationNotCalledErrorPage.url)
+        Wait.waitForElementToPresentByCssSelector(NFMGRSRegistrationNotCalledErrorPage.content)
+        isVisible(By.cssSelector(NFMGRSRegistrationNotCalledErrorPage.header)) shouldBe true
+      case "UPE registration failed error" =>
+        navigateTo(UPEGRSRegistrationFailedErrorPage.url)
+        Wait.waitForElementToPresentByCssSelector(UPEGRSRegistrationFailedErrorPage.content)
+        isVisible(By.cssSelector(UPEGRSRegistrationFailedErrorPage.header)) shouldBe true
+      case "UPE registration not called error" =>
+        navigateTo(UPEGRSRegistrationNotCalledErrorPage.url)
+        Wait.waitForElementToPresentByCssSelector(UPEGRSRegistrationNotCalledErrorPage.content)
+        isVisible(By.cssSelector(UPEGRSRegistrationNotCalledErrorPage.header)) shouldBe true
     }
   }
 
