@@ -210,3 +210,98 @@ As a registered user
     And I should see row 10 value United Kingdom
     When I click on Continue button
     Then I should be on Dashboard page
+
+  Scenario: 5 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    And I should see User details in dashboard page
+    When I click View and amend contact details link
+    Then I should navigate to contact details summary page
+    And I should see row 1 key Contact name
+    And I should see row 1 value Fred Flintstone
+    When I click on change link for Contact Name
+    When I enter Contact Name as 400
+    And I click on Continue button
+    And I select back link
+    And I select back link
+    Then I should navigate to contact details summary page
+    When I click on Continue button
+    Then I should be on error place holder page
+    When I click start over CTA
+    Then I should be on Dashboard page
+
+  Scenario: 6 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    And I should see User details in dashboard page
+    When I click View and amend contact details link
+    Then I should navigate to contact details summary page
+    And I should see row 1 key Contact name
+    And I should see row 1 value Fred Flintstone
+    When I click on change link for Contact Name
+    When I enter Contact Name as 409
+    And I click on Continue button
+    And I select back link
+    And I select back link
+    Then I should navigate to contact details summary page
+    When I click on Continue button
+    Then I should be on error place holder page
+    When I click start over CTA
+    Then I should be on Dashboard page
+
+  Scenario: 7 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    And I should see User details in dashboard page
+    When I click View and amend contact details link
+    Then I should navigate to contact details summary page
+    And I should see row 1 key Contact name
+    And I should see row 1 value Fred Flintstone
+    When I click on change link for Contact Name
+    When I enter Contact Name as 422
+    And I click on Continue button
+    And I select back link
+    And I select back link
+    Then I should navigate to contact details summary page
+    When I click on Continue button
+    Then I should be on error place holder page
+    When I click start over CTA
+    Then I should be on Dashboard page
+
+  Scenario: 8 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    And I should see User details in dashboard page
+    When I click View and amend contact details link
+    Then I should navigate to contact details summary page
+    And I should see row 1 key Contact name
+    And I should see row 1 value Fred Flintstone
+    When I click on change link for Contact Name
+    When I enter Contact Name as 500
+    And I click on Continue button
+    And I select back link
+    And I select back link
+    Then I should navigate to contact details summary page
+    When I click on Continue button
+    Then I should be on error place holder page
+    When I click start over CTA
+    Then I should be on Dashboard page
+
+  Scenario: 9 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    And I should see User details in dashboard page
+    When I click View and amend contact details link
+    Then I should navigate to contact details summary page
+    And I should see row 1 key Contact name
+    And I should see row 1 value Fred Flintstone
+    When I click on change link for Contact Name
+    When I enter Contact Name as 503
+    And I click on Continue button
+    And I select back link
+    And I select back link
+    Then I should navigate to contact details summary page
+    When I click on Continue button
+    Then I should be on error place holder page
+    When I click start over CTA
+    Then I should be on Dashboard page
