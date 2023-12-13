@@ -211,6 +211,7 @@ As a registered user
     When I click on Continue button
     Then I should be on Dashboard page
 
+  @zap_accessibility
   Scenario: 5 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
