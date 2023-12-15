@@ -3,6 +3,12 @@
 
 #### Acceptance tests for Pillar2 Application Features
 This repository is the automated acceptance tests for Pillar2 Application which include below pages:
+
+These are the acceptance tests for the Pillar2 (Global Minimum Tax) service, which covers user journeys such as 
+Submitting Eligibility Questions, User Registration, Subscription, Amend Subscription, and Maintaining Pillar2 
+tax for MNEs. This service is tested on the Jenkins build pipeline for tests that run through 
+the full journey pages included below:
+
 ## Examples
 * https://www.staging.tax.service.gov.uk/auth-login-stub/gg-sign-in
 * https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/
