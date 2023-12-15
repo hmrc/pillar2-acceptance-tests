@@ -1,7 +1,7 @@
 
 # pillar2-acceptance-tests
 
-####Acceptance tests for Pillar2 Application Features
+#### Acceptance tests for Pillar2 Application Features
 This repository is the automated acceptance tests for Pillar2 Application which include below pages:
 ## Examples
 * https://www.staging.tax.service.gov.uk/auth-login-stub/gg-sign-in
@@ -55,7 +55,7 @@ This repository is the automated acceptance tests for Pillar2 Application which 
 * https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/manage-account/further-details/change-accounting-period
 * https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/manage-account/account-details/summary
 
-####The structure of the project is as follows:
+#### The structure of the project is as follows:
 ```
 ├── src
 │   └── test
@@ -122,7 +122,7 @@ It is built using the following:
 - SBT (build tool),
 - Scala
 
-###Getting started
+### Getting started
 - Ensure that you have installed IntelliJ Idea
 - Once you have installed IntelliJ IDEA, install plugins: Cucumber for scala, Gherkin.
 - Make sure you have cloned the below respositories
@@ -151,7 +151,7 @@ It is built using the following:
     - Create a new JUnit task and set the class to uk.gov.hmrc.test.ui.cucumber.runner
     - Change use "classpath of module" to pillar2-acceptance-tests     
 
-###Source code formatting
+### Source code formatting
 We use Scalafmt to format our code base.
 
 In case of contribution and you are an IntelliJ user, you should install the scalafmt plugin, select Scalafmt 
