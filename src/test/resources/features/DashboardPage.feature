@@ -77,7 +77,7 @@ As a registered user
     And I should see row 2 key Group's consolidated accounting period
     And I should see row 3 key Start date
     And I should see row 4 key End date
-    And I should see row 1 value Only in the UK
+    And I should see row 1 value In the UK and other countries
     And I should see row 3 value 6 January 2024
     And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the FD Group Status
