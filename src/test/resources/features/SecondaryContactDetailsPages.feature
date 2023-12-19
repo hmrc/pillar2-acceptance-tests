@@ -940,10 +940,6 @@ Feature: Secondary Contact details for the filing member
    And The Information header should be What happens next
    And The Body content should be You have set up an account for reporting and managing Pillar 2 top-up taxes.
    And The Body content should be You can save this ID number by making a note or taking a screenshot.
-   When I click What did you think of this service link
-   Then I should navigate to under construction page
-   When I select back link
-   When I should navigate to Registration confirmation page
    When I click on Continue button
    Then I should be on Dashboard page
    When I click Sign out link
