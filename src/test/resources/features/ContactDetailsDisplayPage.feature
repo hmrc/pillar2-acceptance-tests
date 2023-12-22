@@ -23,7 +23,8 @@ Feature: Contact details guidance and logic to play back contact details
     And I enter Address Line 1 as Address Line 1
     And I enter City as City
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact NFM Test
@@ -144,7 +145,8 @@ Feature: Contact details guidance and logic to play back contact details
     When I enter Address Line 1 as Address Line 1
     And I enter City as City
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as UPE Test
@@ -267,7 +269,8 @@ Feature: Contact details guidance and logic to play back contact details
     And I enter Address Line 1 as Address Line 1
     And I enter City as City
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact NFM Test

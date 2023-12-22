@@ -42,8 +42,9 @@ object UPEAddressPage extends PageObject {
   val cityErrorMessage            = "#addressLine3-error"
   val regionErrorMessage          = "#addressLine4-error"
   val countryErrorMessage         = "#countryCode-error"
+  val selected                    ="#countryCode__option--0"
 
 
   def clickContinue() = findByCss(continue).click()
-
+  def clickCountrySelected() = findByCss(selected).click()
 }

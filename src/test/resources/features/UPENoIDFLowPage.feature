@@ -18,8 +18,12 @@ Feature: UPE NO ID journey
     And The Heading should be Where is the registered office address of Test UPE?
     When I enter Address Line 1 as Address Line 1 UPE
     And I enter City as City UPE
-    And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Postal Code as invalid
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    And I click on Continue button
+    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
+    When I enter Postal Code as EH5 5WY
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And The caption must be Group details
@@ -76,7 +80,7 @@ Feature: UPE NO ID journey
     And I should see the Address Line 1 field is pre-populated with Address Line 1 UPE
     And I should see the City field is pre-populated with City UPE
     And I should see the Postal Code field is pre-populated with EH5 5WY
-    And I should see the Country field is pre-populated with GB
+    And I should see the Country field is pre-populated with United Kingdom
     And I click on Continue button
     And I should see the UPE Person/Team name field is pre-populated with Contact UPE
     And I click on Continue button
@@ -96,8 +100,9 @@ Feature: UPE NO ID journey
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
-    And I click on Continue button
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    When I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as UPE Contact Name
     And I click on Continue button
@@ -152,7 +157,8 @@ Feature: UPE NO ID journey
     And I enter City as enter long city name with more than 35 characters
     And I enter Region as enter long Region name with more than 35 characters
     And I enter Postal Code as enter long postal code
-    And I select country as India
+    And I enter Country as Australia
+    And I click on Country selected
     And I click on Continue button
     Then I should see address error message The first line of the address must be 35 characters or less on the Address Line Element
     Then I should see address error message The second line of the address must be 35 characters or less on the Address Line 2 Element
@@ -163,11 +169,7 @@ Feature: UPE NO ID journey
     When I enter Address Line 2 as Test Address Line 2
     And I enter City as Test City
     And I enter Region as Region
-    And I enter Postal Code as invalid
-    And I select country as United Kingdom
-    And I click on Continue button
-    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
-    When I enter Postal Code as EH5 5WY
+    And I enter Postal Code as 123456
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And I click on Continue button
@@ -257,7 +259,8 @@ Feature: UPE NO ID journey
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as UPE Contact Name
@@ -273,20 +276,14 @@ Feature: UPE NO ID journey
     Then I should navigate to Initial guidance Page
     When I click on Continue button
     Then I should navigate to UPE business page
-    When I select option No and continue to next
+    When I click on Continue button
     Then I should navigate to input-upe-name page
-    And I enter UPE name as Test UPE
+    When I click on Continue button
     Then I should navigate to input-upe-address page
-    When I enter Address Line 1 as Test Address Line 1
-    And I enter City as Test City
-    And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
-    And I click on Continue button
+    When I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
-    When I enter UPE Person/Team name as UPE Contact Name
     And I click on Continue button
     Then I should navigate to UPE Contact Email page
-    When I enter UPE Email address as testteam@email.com
     And I click on Continue button
     Then I should navigate to UPE Telephone page
     When I select option Yes and continue to next

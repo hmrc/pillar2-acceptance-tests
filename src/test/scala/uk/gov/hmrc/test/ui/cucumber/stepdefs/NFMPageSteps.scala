@@ -37,7 +37,9 @@ class NFMPageSteps extends CommonFunctions {
     }
   }
   def selectCountryIndia(): Unit =new Select(findCountry()).selectByVisibleText("India")
+
   def selectCountryUK(): Unit =new Select(findCountry()).selectByVisibleText("United Kingdom")
+
   def findCountry(): WebElement =Find.findByName("countryCode")
 
   And("""^I should see NFM error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
