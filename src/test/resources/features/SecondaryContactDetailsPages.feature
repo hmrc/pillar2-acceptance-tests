@@ -137,7 +137,8 @@ Feature: Secondary Contact details for the filing member
     And I enter Address Line 1 as Address Line 1
     And I enter City as City
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact NFM Test
@@ -190,8 +191,8 @@ Feature: Secondary Contact details for the filing member
     When I enter Second Contact Input as 1234554
     And I click on Continue button
     Then I should navigate to Contact address input page
-  @zap_accessibility
-  Scenario: 2 - Secondary contact details pages Error validations
+   @tests @zap_accessibility
+  Scenario: 3 - Secondary contact details pages Error validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -360,7 +361,8 @@ Feature: Secondary Contact details for the filing member
     And I enter City as City Contact
     And I enter Region as Region Contact
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And The caption must be Contact details
@@ -448,7 +450,8 @@ Feature: Secondary Contact details for the filing member
     And I enter City as City Contact
     And I enter Region as Region Contact
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And The caption must be Contact details
@@ -513,7 +516,8 @@ Feature: Secondary Contact details for the filing member
     When I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Contact CYA
@@ -539,7 +543,8 @@ Feature: Secondary Contact details for the filing member
     And I enter Address Line 1 as Address Line 1
     And I enter City as City CYA
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as NFM Test
@@ -597,7 +602,8 @@ Feature: Secondary Contact details for the filing member
     And I enter City as City Contact
     And I enter Region as Region Contact
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     When I click on Continue button
@@ -684,7 +690,8 @@ Feature: Secondary Contact details for the filing member
     And I enter Address Line 1 as Address Line 1
     And I enter City as City CYA
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as NFM Test
@@ -742,7 +749,8 @@ Feature: Secondary Contact details for the filing member
     And I enter City as City Contact
     And I enter Region as Region Contact
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     When I click on Continue button
@@ -884,7 +892,8 @@ Feature: Secondary Contact details for the filing member
    And I enter City as City Contact
    And I enter Region as Region Contact
    And I enter Postal Code as EH5 5WY
-   And I select country as United Kingdom
+   And I enter Country as United Kingdom
+   And I click on Country selected
    When I click on Continue button
    Then I should navigate to Contact details Check answers page
    When I click on Continue button
@@ -1018,7 +1027,8 @@ Feature: Secondary Contact details for the filing member
     And I enter City as City Contact
     And I enter Region as Region Contact
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     When I click on Continue button

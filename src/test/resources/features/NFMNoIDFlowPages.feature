@@ -26,8 +26,11 @@ Feature: NFM NO ID journey
     And The Heading should be Where is the registered office address of Test CYA?
     And I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    When I click on Continue button
+    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     And The caption must be Group details
@@ -93,7 +96,7 @@ Feature: NFM NO ID journey
     And I should see the Address Line 1 field is pre-populated with Address Line 1 CYA
     And I should see the City field is pre-populated with City CYA
     And I should see the Postal Code field is pre-populated with EH5 5WY
-    And I should see the Country field is pre-populated with GB
+    And I should see the Country field is pre-populated with United Kingdom
     And I click on Continue button
     And I should see the NFM Contact name field is pre-populated with Contact CYA
     And I click on Continue button
@@ -176,7 +179,8 @@ Feature: NFM NO ID journey
     And I enter City as City Field Character Length Test Error
     And I enter Region as Region Field Character Length Test Error
     And I enter Postal Code as 12345678901
-    And I select country as India
+    And I enter Country as Australia
+    And I click on Country selected
     And I click on Continue button
     Then I should see NFM error message The first line of the address must be 35 characters or less on the Address Line 1 Element
     And I should see NFM error message The second line of the address must be 35 characters or less on the Address Line 2 Element
@@ -187,11 +191,8 @@ Feature: NFM NO ID journey
     And I enter Address Line 2 as Test Address Line 2
     And I enter Region as Region
     And I enter City as Test City
-    And I select country as United Kingdom
+    When I enter Postal Code as 1334445
     When I click on Continue button
-    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
-    When I enter Postal Code as EH5 5WY
-    And I click on Continue button
     Then I should navigate to NFM Contact Name page
     And I click on Continue button
     Then I should see NFM error message You need to enter the name of the person or team we should contact from the nominated filing member on the Input NFM Contact Name Element
@@ -267,7 +268,8 @@ Feature: NFM NO ID journey
     And I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
+    And I enter Country as United Kingdom
+    And I click on Country selected
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact CYA
