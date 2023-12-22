@@ -18,28 +18,28 @@ As a registered user
     And I should see user details row 1 key Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
-    And I should see the heading 1 on Dashboard page as Payments
-    And The Body content should be You have no payments due
-    And The Body content should be Make a voluntary payment
-    And The Body content should be View your payment history
-    And The Body content should be Request a repayment
-    And I should see the heading 2 on Dashboard page as Manage your account
+    #And I should see the heading 1 on Dashboard page as Payments
+    #And The Body content should be You have no payments due
+    #And The Body content should be Make a voluntary payment
+    #And The Body content should be View your payment history
+    #And The Body content should be Request a repayment
+    And I should see the heading 1 on Dashboard page as Manage your account
     And The Body content should be View and amend contact details
     And The Body content should be View and amend group details
     And The Body content should be This service is being continuously updated. You can anticipate the introduction of more features in line with the development of OECD's policy.
     And The Body content should be For more information, please refer to the draft guidance (opens in new tab)
-    When I click Make a voluntary payment link
-    Then I should navigate to under construction page
-    When I select back link
-    Then I should be on Dashboard page
-    When I click View your payment history link
-    Then I should navigate to under construction page
-    When I select back link
-    Then I should be on Dashboard page
-    When I click Request a repayment link
-    Then I should navigate to under construction page
-    When I select back link
-    Then I should be on Dashboard page
+    #When I click Make a voluntary payment link
+    #Then I should navigate to under construction page
+    #When I select back link
+    #Then I should be on Dashboard page
+    #When I click View your payment history link
+    #Then I should navigate to under construction page
+    #When I select back link
+    #Then I should be on Dashboard page
+    #When I click Request a repayment link
+    #Then I should navigate to under construction page
+    #When I select back link
+    #Then I should be on Dashboard page
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
     When I click the browser back button
@@ -68,8 +68,8 @@ As a registered user
     And I should see user details row 1 value XMPLR0012345676
     And I should see user details row 2 value 31 January 2022
     And I should see user details row 3 value International Organisation Inc.
-    And I should see the heading 1 on Dashboard page as Payments
-    And I should see the heading 2 on Dashboard page as Manage your account
+    #And I should see the heading 1 on Dashboard page as Payments
+    And I should see the heading 1 on Dashboard page as Manage your account
     When I click View and amend group details link
     Then I should navigate to accounts summary page
     And The Heading should be Group details
