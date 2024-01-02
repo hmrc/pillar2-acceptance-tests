@@ -25,7 +25,7 @@ object SecondContactEmailPage extends PageObject {
 
   val caption            = ".govuk-caption-l"
   val continue           = ".govuk-button"
-  val contactEmail        = "#value"
+  val contactEmail        = "#emailAddress"
 
   def clickContinue()    = findByCss(continue).click()
 }
