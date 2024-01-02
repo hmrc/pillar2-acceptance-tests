@@ -153,6 +153,7 @@ class NFMPageSteps extends CommonFunctions {
 
         Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorMessage)
         getTextOf(By cssSelector (NFMDetailsPage.errorMessage)) should include(error)
+
     }
   }
 

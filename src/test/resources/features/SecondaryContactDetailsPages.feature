@@ -263,13 +263,13 @@ Feature: Secondary Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Second Contact email page
     And I click on Continue button
-    Then I should see error message You need to enter the email address for Second Contact Name Test on the Second Contact details Page
+    Then I should see error message You need to enter the email address for Second Contact Name Test on the Contact details email Page
     When I enter Second Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I click on Continue button
-    Then I should see error message The email address should be 160 characters or less on the Second Contact details Page
+    Then I should see error message The email address should be 160 characters or less on the Contact details email Page
     When I enter Second Contact Email as FormatErrorTest.com
     When I click on Continue button
-    Then I should see error message Enter an email address in the correct format, like name@example.com on the Second Contact details Page
+    Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
     When I enter Second Contact Email as testContact@email.com
     And I click on Continue button
     Then I should navigate to Second Contact number page

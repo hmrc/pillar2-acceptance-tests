@@ -26,7 +26,7 @@ object NFMContactEmailPage extends PageObject {
   val contactEmail     = "[type='email']"
   val continue         = ".govuk-button"
   val errorSummary     = ".govuk-error-summary__list"
-  val errorLink        = "[href='#value']"
+  val errorLink        = "[href='#emailAddress']"
   val backLink         = ".govuk-back-link"
   val errorMessage     = ".govuk-error-message"
 

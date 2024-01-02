@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMDetailsPage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -403,6 +403,16 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(SecondContactDetailsDisplayPage.errorMessage)
         getTextOf(By cssSelector (SecondContactDetailsDisplayPage.errorMessage)) should include(error)
+
+      case "Contact details email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorLink)
+        getTextOf(By cssSelector (NFMContactEmailPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorMessage)
+        getTextOf(By cssSelector (NFMContactEmailPage.errorMessage)) should include(error)
 
     }
   }
