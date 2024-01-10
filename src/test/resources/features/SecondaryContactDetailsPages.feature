@@ -811,11 +811,15 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Registration confirmation page
     And The Header should be Report Pillar 2 top-up taxes
     And The Heading should be Registration complete
-    And The Id text should be Pillar 2 top-up tax ID
-    And The Information header should be What happens next
-    And The Body content should be You have set up an account for reporting and managing Pillar 2 top-up taxes.
-    And The Body content should be You can save this ID number by making a note or taking a screenshot.
-    When I click on Continue button
+    And The Id text should be Group's Pillar 2 top-up taxes ID
+    When I should see heading 1 as Registration date:
+    And The Body content should be Your group has registered to report for Domestic Top-up Tax and Multinational Top-up Tax.
+    And The Body content should be You will not be emailed a confirmation of this registration.
+    And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
+    When I should see heading 2 as What happens next
+    And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
+    And The Body content should be Is this page not working properly? (opens in new tab)
+    When I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
     And I should see user details row 1 value XMPLR0012345674
     And I should see user details row 2 value 31 January 2022
@@ -846,7 +850,7 @@ Feature: Secondary Contact details for the filing member
    Then I should navigate to Task list page
    When I click Add further group details link
    Then I should navigate to MNE or domestic page
-   When I select option In the UK and other countries in further details group status page
+   When I select option Only in the UK in further details group status page
    And I click on Continue button
    Then I should navigate to Group accounting period page
    When Accounting Period Start Day is entered as 15
@@ -920,7 +924,7 @@ Feature: Secondary Contact details for the filing member
    And I should see row 9 key Group's consolidated accounting period
    And I should see row 10 key Start date
    And I should see row 11 key End date
-   And I should see row 8 value In the UK and other countries
+   And I should see row 8 value Only in the UK
    And I should see row 10 value 15 January 2024
    And I should see row 11 value 15 January 2025
    And I should see row 12 key Contact name
@@ -945,18 +949,22 @@ Feature: Secondary Contact details for the filing member
    Then I should navigate to Registration confirmation page
    And The Header should be Report Pillar 2 top-up taxes
    And The Heading should be Registration complete
-   And The Id text should be Pillar 2 top-up tax ID
-   And The Information header should be What happens next
-   And The Body content should be You have set up an account for reporting and managing Pillar 2 top-up taxes.
-   And The Body content should be You can save this ID number by making a note or taking a screenshot.
-   When I click on Continue button
+   And The Id text should be Group's Pillar 2 top-up taxes ID
+   When I should see heading 1 as Registration date:
+   And The Body content should be Your group has registered to report for Domestic Top-up Tax.
+   And The Body content should be You will not be emailed a confirmation of this registration.
+   And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
+   When I should see heading 2 as What happens next
+   And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
+   And The Body content should be Is this page not working properly? (opens in new tab)
+   When I click report and manage your Pillar 2 top-up taxes link
    Then I should be on Dashboard page
    When I click Sign out link
    Then I am on feedback survey page
    When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
    Then I should be on Dashboard page
 
-  Scenario: 8 - UPE GRS flow ID and GRS flow ID, registration error page navigation validation
+  Scenario: 9 - UPE GRS flow ID and GRS flow ID, registration error page navigation validation
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -1050,5 +1058,5 @@ Feature: Secondary Contact details for the filing member
     Then I should be on Registration return error page
     And I click the browser back button
     Then I should navigate to Registration confirmation page
-    When I click on Continue button
+    When I click report and manage your Pillar 2 top-up taxes link
     And I should be on Dashboard page
