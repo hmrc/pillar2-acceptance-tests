@@ -17,9 +17,12 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{ getAttributeOf, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ContactAddressInputPage, GroupAccountingPeriodPage, RegistrationConfirmationPage}
+import uk.gov.hmrc.test.ui.pages.{ConfirmationPage, ContactAddressInputPage, GroupAccountingPeriodPage, RegistrationConfirmationPage}
+
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 
 class SubscriptionJourneySteps extends CommonFunctions {
@@ -167,6 +170,11 @@ class SubscriptionJourneySteps extends CommonFunctions {
   Then("""^The Information header should be (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.header2)
     assert(getTextOf(By.cssSelector(RegistrationConfirmationPage.header2)).contains(caption))
+  }
+
+  Then("""^The registration date should be displayed as current day$""") { () =>
+    val todayDate: String = LocalDate.now().format(DateTimeFormatter.ofPattern("dd MMMM yyyy"))
+    assert(getTextOf(By.cssSelector(ConfirmationPage.heading)).contains(todayDate))
   }
 
 }

@@ -813,8 +813,10 @@ Feature: Secondary Contact details for the filing member
     And The Heading should be Registration complete
     And The Id text should be Group's Pillar 2 top-up taxes ID
     When I should see heading 1 as Registration date:
+    And The registration date should be displayed as current day
     And The Body content should be Your group has registered to report for Domestic Top-up Tax and Multinational Top-up Tax.
     And The Body content should be You will not be emailed a confirmation of this registration.
+    And The Body content should be You must record your group's Pillar 2 top-up taxes ID and registration date.
     And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
     When I should see heading 2 as What happens next
     And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
@@ -948,15 +950,6 @@ Feature: Secondary Contact details for the filing member
    And I click on Save&Continue button
    Then I should navigate to Registration confirmation page
    And The Header should be Report Pillar 2 top-up taxes
-   And The Heading should be Registration complete
-   And The Id text should be Group's Pillar 2 top-up taxes ID
-   When I should see heading 1 as Registration date:
-   And The Body content should be Your group has registered to report for Domestic Top-up Tax.
-   And The Body content should be You will not be emailed a confirmation of this registration.
-   And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
-   When I should see heading 2 as What happens next
-   And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
-   And The Body content should be Is this page not working properly? (opens in new tab)
    When I click report and manage your Pillar 2 top-up taxes link
    Then I should be on Dashboard page
    When I click Sign out link
