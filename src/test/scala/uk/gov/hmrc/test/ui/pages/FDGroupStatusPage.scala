@@ -30,6 +30,7 @@ object FDGroupStatusPage extends PageObject {
   val errorLink        = "[href*='#value']"
   val backLink         = ".govuk-back-link"
   val errorMessage     = ".govuk-error-message"
+  val fieldHeader      = ".govuk-fieldset__heading"
 
   def clickContinue()  = findByCss(continue).click()
 
