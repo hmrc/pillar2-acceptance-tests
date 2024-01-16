@@ -15,7 +15,8 @@ Feature: UPE NO ID journey
     When I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
     And The caption must be Group details
-    And The Heading should be Where is the registered office address of Test UPE?
+    And The Heading should be What is the registered office address of Test UPE?
+    And The hint text should be Enter text and then choose from the list.
     When I enter Address Line 1 as Address Line 1 UPE
     And I enter City as City UPE
     And I enter Postal Code as invalid
@@ -33,17 +34,18 @@ Feature: UPE NO ID journey
     Then I should navigate to UPE Contact Email page
     And The caption must be Group details
     And The Heading should be What is the email address for Contact UPE?
+    And The hint text should be We will use this to confirm your records.
     When I enter UPE Email address as testcontactupe@email.com
     And I click on Continue button
     Then I should navigate to UPE Telephone page
     And The caption must be Group details
     And The Heading should be Can we contact Contact UPE by telephone?
-    And The Body content should be We will call if we have any questions about the management of Pillar 2 top-up tax for this business
+    And The hint text should be We will use this to confirm your records.
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
     And The caption must be Group details
     And The Heading should be What is the telephone number for Contact UPE?
-    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
+    And The hint text should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
     And I enter Telephone Number as 1234569
     And I click on Continue button
     Then I should be on Check your answers page

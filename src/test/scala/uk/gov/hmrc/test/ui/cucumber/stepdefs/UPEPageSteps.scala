@@ -320,4 +320,9 @@ class UPEPageSteps extends CommonFunctions {
   And("""^I should see heading (\d+) as (.*)""") { (sectionNumber: Int, sectionName: String) =>
     assert(driver.findElements(By.cssSelector(ConfirmationPage.heading)).get(sectionNumber - 1).getText.contains(sectionName))
   }
+
+  Then("""^The hint text should be (.*)$""") { text: String =>
+    Wait.waitForElementToPresentByCssSelector(UPEAddressPage.hintText)
+    assert(getTextOf(By.cssSelector(UPEAddressPage.hintText)).equals(text))
+  }
 }

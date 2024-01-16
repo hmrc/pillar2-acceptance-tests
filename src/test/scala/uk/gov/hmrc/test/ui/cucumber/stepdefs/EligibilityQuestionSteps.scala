@@ -38,7 +38,7 @@ class EligibilityQuestionSteps extends CommonFunctions {
 
   Then("""^The caption should be (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.caption)
-    assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).contains(caption))
+    assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).equals(caption))
   }
 
   Then("""^The caption is (.*)$""") { caption: String =>
@@ -59,8 +59,8 @@ class EligibilityQuestionSteps extends CommonFunctions {
   And("""^I continue|I continue without selecting an option$""") { () =>
     BusinessActivityEQPage.clickContinue()
   }
-  Then("""^The inset text should be (.*)$""") { insetText: String =>
+  Then("""^The insert text should be (.*)$""") { insetText: String =>
     Wait.waitForElementToPresentByCssSelector(ConfirmationPage.insetText)
-    assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).contains(insetText))
+    assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).equals(insetText))
   }
 }
