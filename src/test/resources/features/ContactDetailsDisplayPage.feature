@@ -7,7 +7,7 @@ Feature: Contact details guidance and logic to play back contact details
     Given Organisation User logs in as upe with credId TestPlaybackNFM for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
@@ -207,7 +207,7 @@ Feature: Contact details guidance and logic to play back contact details
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
@@ -253,7 +253,7 @@ Feature: Contact details guidance and logic to play back contact details
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled

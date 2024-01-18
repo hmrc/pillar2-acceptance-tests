@@ -7,7 +7,7 @@ Feature: Secondary Contact details for the filing member
     Given Organisation User logs in as upe with credId SecondContact for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -21,7 +21,7 @@ Feature: Secondary Contact details for the filing member
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
-    Then I should be on NFM Org type page
+    Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     When I registered successfully with BV enabled
@@ -61,7 +61,7 @@ Feature: Secondary Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Second Contact details page
     And The caption must be Contact details
-    And The Heading should be Is there someone else we can contact if Contact Name Test is not available?
+    And The Heading should be Is there someone else we can contact?
     And The Body content should be This can be a team mailbox or another contact who is able to deal with enquiries about the group's management of Pillar 2 top-up tax
     When I select option No and continue to next
     Then I should navigate to Contact address input page
@@ -121,7 +121,7 @@ Feature: Secondary Contact details for the filing member
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
@@ -197,7 +197,7 @@ Feature: Secondary Contact details for the filing member
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -211,7 +211,7 @@ Feature: Secondary Contact details for the filing member
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
-    Then I should be on NFM Org type page
+    Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     When I registered successfully with BV enabled
@@ -290,7 +290,7 @@ Feature: Secondary Contact details for the filing member
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -304,7 +304,7 @@ Feature: Secondary Contact details for the filing member
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
-    Then I should be on NFM Org type page
+    Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     When I registered successfully with BV enabled
@@ -390,7 +390,7 @@ Feature: Secondary Contact details for the filing member
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -404,7 +404,7 @@ Feature: Secondary Contact details for the filing member
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
-    Then I should be on NFM Org type page
+    Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     When I registered successfully with BV enabled
@@ -673,7 +673,7 @@ Feature: Secondary Contact details for the filing member
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -831,7 +831,7 @@ Feature: Secondary Contact details for the filing member
    Given Organisation User logs in as upe for Pillar2
    Then I should be on UPE business page
    When I select option Yes and continue to next
-   Then I should be on UPE Org type page
+   Then I should be on UPE entity type page
    When I select option UK limited company and continue to GRS page
    Then I should navigate to UKCompany GRS page
    And The Heading should be Stub GRS Journey Data
@@ -843,7 +843,7 @@ Feature: Secondary Contact details for the filing member
    When I select Yes option and continue to next
    Then I should navigate to NFM details page
    When I select option Yes and continue to next
-   Then I should be on NFM Org type page
+   Then I should be on NFM entity type page
    When I select option UK limited company and continue to GRS page
    Then I should navigate to NFM UKCompany GRS page
    And The Heading should be Stub GRS Journey Data
@@ -961,7 +961,7 @@ Feature: Secondary Contact details for the filing member
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -973,7 +973,7 @@ Feature: Secondary Contact details for the filing member
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
-    Then I should be on NFM Org type page
+    Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     And The Heading should be Stub GRS Journey Data

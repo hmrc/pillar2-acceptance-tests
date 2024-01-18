@@ -10,14 +10,14 @@ Feature: Ultimate parent entity GRS journey
     And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     And The caption must be Group details
     And The Heading should be What entity type is the ultimate parent?
     And I should see Entity type not listed hyperLink
     When I click Entity type not listed link
     #Then I should navigate to input-upe-name page #need to be fixed as part of PIL-598
     #When I select back link
-    #Then I should be on UPE Org type page
+    #Then I should be on UPE entity type page
     #When I click on Continue button
     #Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
   @zap_accessibility
@@ -25,7 +25,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -39,7 +39,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -51,7 +51,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -65,7 +65,7 @@ Feature: Ultimate parent entity GRS journey
     And The Body content should be You can search Companies House for the company registration number and registered office address (opens in a new tab).
     And The Body content should be You can ask for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab).
     When I click go back to select the entity type link
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select back link
     Then I should be on UPE registration failed error page
     When I click search Companies House for the company registration number and registered office address (opens in a new tab). link
@@ -87,7 +87,7 @@ Feature: Ultimate parent entity GRS journey
     And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     And The caption must be Group details
     And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
@@ -100,7 +100,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -112,7 +112,7 @@ Feature: Ultimate parent entity GRS journey
     And The Body content should be Your company details could not be confirmed.
     And The Body content should be Go back to select the entity type to try again.
     When I click Go back to select the entity type link
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select back link
     Then I should be on UPE registration not called error page
 
@@ -120,7 +120,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
@@ -133,7 +133,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -147,7 +147,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -160,7 +160,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -173,7 +173,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -186,7 +186,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -199,7 +199,7 @@ Feature: Ultimate parent entity GRS journey
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
@@ -207,16 +207,15 @@ Feature: Ultimate parent entity GRS journey
     And I click on Save&Continue button
     Then I should be on UPE registration not called error page
 
-
   Scenario: 14 - User navigates to UPE Page
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should navigate to UPE Org type page
+    Then I should navigate to UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I select back link
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select back link
     Then I should be on UPE business page
 

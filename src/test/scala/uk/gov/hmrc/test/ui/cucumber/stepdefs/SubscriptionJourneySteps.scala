@@ -153,7 +153,7 @@ class SubscriptionJourneySteps extends CommonFunctions {
   And("""^Url for (.*) page should be ending with (.*)$""") { (page: String, url: String) =>
     page match {
       case "registration submit" => Check.checkUrlContains(url = "/review-submit/confirmation")
-      case "bookmark error" => Check.checkUrlContains(url = "/errors/restart-error")
+      case "bookmark error" => Check.checkUrlContains(url = "/errors/task-not-yet-started")
     }
   }
 
