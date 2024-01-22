@@ -422,6 +422,11 @@ class StepDef extends BaseStepDef {
     assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).contains(caption))
   }
 
+  Then("""^the page title should be (.*)$""") { pageTitle: String =>
+    Wait.waitForElementToClicktagName("h1")
+    assert(driver.getTitle.contains(pageTitle))
+  }
+
   And("""^I click (.*) link$""") { (linkText: String) =>
     Input.clickByLinkText(linkText)
   }

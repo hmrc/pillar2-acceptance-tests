@@ -60,6 +60,7 @@ Feature: Secondary Contact details for the filing member
     When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
+    And the page title should be Is there someone else we can contact? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be Is there someone else we can contact?
     And The Body content should be This can be a team mailbox or another contact who is able to deal with enquiries about the group's management of Pillar 2 top-up tax
@@ -75,11 +76,14 @@ Feature: Secondary Contact details for the filing member
     When I enter Second Contact Name as Second Contact Name Test
     And I click on Continue button
     Then I should navigate to Second Contact email page
+    And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
     And I click on Continue button
     Then I should navigate to Second Contact number page
+    And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
+    And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
     When I enter Second Contact Input as 1234554
     And I click on Continue button
     Then I should navigate to Contact address input page
