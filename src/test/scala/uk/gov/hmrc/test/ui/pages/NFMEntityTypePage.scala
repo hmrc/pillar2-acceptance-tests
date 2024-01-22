@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object NFMOrgTypePage extends PageObject {
-  val url: String      = s"$rootUrl"+"business-matching/filing-member/uk-based/org-type"
+object NFMEntityTypePage extends PageObject {
+  val url: String      = s"$rootUrl"+"business-matching/filing-member/uk-based/entity-type"
 
   val caption          = ".govuk-caption-l"
   val eqForm           = ".govuk-form-group"

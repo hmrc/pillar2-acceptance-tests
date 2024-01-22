@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMOrgTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEOrgTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMEntityTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEEntityTypePage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -246,23 +246,23 @@ class StepDef extends BaseStepDef {
 
       case "UPE Org type" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.errorSummary)
+        Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.errorLink)
-        getTextOf(By cssSelector (UPEOrgTypePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.errorLink)
+        getTextOf(By cssSelector (UPEEntityTypePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.errorMessage)
-        getTextOf(By cssSelector (UPEOrgTypePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.errorMessage)
+        getTextOf(By cssSelector (UPEEntityTypePage.errorMessage)) should include(error)
 
       case "NFM Org type" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMOrgTypePage.errorSummary)
+        Wait.waitForElementToPresentByCssSelector(NFMEntityTypePage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMOrgTypePage.errorLink)
-        getTextOf(By cssSelector (NFMOrgTypePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(NFMEntityTypePage.errorLink)
+        getTextOf(By cssSelector (NFMEntityTypePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(NFMOrgTypePage.errorMessage)
-        getTextOf(By cssSelector (NFMOrgTypePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(NFMEntityTypePage.errorMessage)
+        getTextOf(By cssSelector (NFMEntityTypePage.errorMessage)) should include(error)
 
       case "Input UPE Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -422,6 +422,11 @@ class StepDef extends BaseStepDef {
     assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).contains(caption))
   }
 
+  Then("""^the page title should be (.*)$""") { pageTitle: String =>
+    Wait.waitForElementToClicktagName("h1")
+    assert(driver.getTitle.contains(pageTitle))
+  }
+
   And("""^I click (.*) link$""") { (linkText: String) =>
     Input.clickByLinkText(linkText)
   }
@@ -462,7 +467,7 @@ class StepDef extends BaseStepDef {
 
   And("""^I should see (.*) hyperLink$""") { (linkText: String) =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEOrgTypePage.inputUpeNamePageLink)
+        Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.inputUpeNamePageLink)
   }
 
   When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String) =>
