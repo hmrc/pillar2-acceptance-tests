@@ -46,7 +46,7 @@ Feature: Bookmark Feature
     Given Organisation User logs in as upe with credId Bookmark2 for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And I click Sign out link
@@ -69,7 +69,7 @@ Feature: Bookmark Feature
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
-    Then I should be on NFM Org type page
+    Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     When Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
@@ -82,7 +82,7 @@ Feature: Bookmark Feature
     Given Organisation User logs in as upe with credId Bookmark3 for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
@@ -94,7 +94,7 @@ Feature: Bookmark Feature
     When Organisation User logs in to upe registered in UK page with CredID Bookmark3 for Pillar2
     Then I should be on UPE business page
     When I click on Continue button
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     And I should see the option UK limited company remain selected
 
   Scenario: 4 - User completes UPE GRS journey without answering mandatory questions

@@ -7,7 +7,7 @@ Feature: Contact details guidance and logic to play back contact details
     Given Organisation User logs in as upe with credId TestPlaybackNFM for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
@@ -76,12 +76,14 @@ Feature: Contact details guidance and logic to play back contact details
     When I enter Contact Name as Contact Name Test
     And I click on Continue button
     Then I should navigate to Contact details input email page
+    And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be What is the email address for Contact Name Test
     And The Body content should be We will use this to send confirmation of your Pillar 2 top-up tax compliance actions or if we have any questions about them.
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
     Then I should navigate to Contact details telephone page
+    And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be Can we contact Contact Name Test by telephone?
     When I select option No and continue to next
@@ -90,6 +92,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
+    And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be What is the telephone number for Contact Name Test?
     And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
@@ -207,7 +210,7 @@ Feature: Contact details guidance and logic to play back contact details
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
@@ -253,7 +256,7 @@ Feature: Contact details guidance and logic to play back contact details
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE Org type page
+    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled

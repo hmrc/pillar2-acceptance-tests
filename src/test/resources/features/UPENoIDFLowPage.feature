@@ -14,6 +14,7 @@ Feature: UPE NO ID journey
     And The Heading should be What is the name of the ultimate parent entity?
     When I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
+    And the page title should be Where is the registered office address? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Group details
     And The Heading should be What is the registered office address of Test UPE?
     And The hint text should be Enter text and then choose from the list.
@@ -32,17 +33,20 @@ Feature: UPE NO ID journey
     When I enter UPE Person/Team name as Contact UPE
     And I click on Continue button
     Then I should navigate to UPE Contact Email page
+    And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Group details
     And The Heading should be What is the email address for Contact UPE?
     And The hint text should be We will use this to confirm your records.
     When I enter UPE Email address as testcontactupe@email.com
     And I click on Continue button
     Then I should navigate to UPE Telephone page
+    And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Group details
     And The Heading should be Can we contact Contact UPE by telephone?
     And The hint text should be We will use this to confirm your records.
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
+    And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Group details
     And The Heading should be What is the telephone number for Contact UPE?
     And The hint text should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.

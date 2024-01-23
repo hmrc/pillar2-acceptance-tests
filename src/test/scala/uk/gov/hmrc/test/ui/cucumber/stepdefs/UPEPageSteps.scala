@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEGRSRegistrationFailedErrorPage, UPEOrgTypePage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEGRSRegistrationFailedErrorPage, UPEEntityTypePage, UPEPage}
 
 class UPEPageSteps extends CommonFunctions {
 
@@ -268,7 +268,7 @@ class UPEPageSteps extends CommonFunctions {
         case "UK limited company"            => Input.clickById("value_0")
         case "Limited liability partnership" => Input.clickById("value_1")
       }
-      UPEOrgTypePage.clickContinue()
+      UPEEntityTypePage.clickContinue()
     }
 
   And("""^I select option (.*) in further details group status page$""") { (option: String) =>
@@ -305,7 +305,7 @@ class UPEPageSteps extends CommonFunctions {
     }
 
     And("""^I click on Save&Continue button""") {
-      UPEOrgTypePage.clickContinue()
+      UPEEntityTypePage.clickContinue()
     }
 
   Then("""^The second heading should be (.*)$""") { header: String =>

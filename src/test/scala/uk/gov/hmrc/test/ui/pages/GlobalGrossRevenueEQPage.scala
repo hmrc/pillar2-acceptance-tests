@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object GlobalGrossRevenueEQPage extends PageObject {
-  val url: String      = s"$rootUrl"+"eligibility/global-gross-revenue"
+  val url: String      = s"$rootUrl"+"eligibility/group-consolidated-annual-revenues"
 
   val caption          = "form[action*='eligibility'] .govuk-caption-l"
   val eqForm           = "form[action*='eligibility']"
