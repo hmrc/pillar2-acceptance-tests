@@ -273,8 +273,8 @@ class UPEPageSteps extends CommonFunctions {
 
   And("""^I select option (.*) in further details group status page$""") { (option: String) =>
     option match {
-      case "In the UK and other countries" => Input.clickById("value_0")
-      case "Only in the UK" => Input.clickById("value_1")
+      case "In the UK and other countries" => Input.clickById("value_1")
+      case "Only in the UK" => Input.clickById("value_0")
     }
   }
 

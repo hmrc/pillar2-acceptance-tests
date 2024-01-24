@@ -81,6 +81,16 @@ As a registered user
     And I should see row 3 value 6 January 2024
     And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the FD Group Status
+    And The caption must be Group details
+    And The Heading should be Group operations
+    And The Body content should be Group operations refer to the collective activities of the group. You must answer this question on behalf of the whole group.
+    And The Body content should be There are two Pillar 2 top-up taxes in the UK:
+    And The Body content should be Multinational Top-up Tax
+    And The Body content should be Domestic Top-up Tax
+    And The Body content should be Groups that operate only in the UK will register to report for Domestic Top-up Tax.
+    And The Body content should be Groups that operate in the UK and other countries will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
+    And The Body content should be If group operations change, you must amend the group's details.
+    And The field heading should be Where does the group operate?
     When I select option Only in the UK in further details group status page
     When I click on Continue button
     When I click on Continue button
