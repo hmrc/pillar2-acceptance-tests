@@ -648,7 +648,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 12 value Yes
     And I should see row 13 value 12345678
     And I should see row 14 key Where does the group operate?
-    And I should see row 15 key Group's consolidated accounting period
+    And I should see row 15 key Group’s consolidated accounting period
     And I should see row 16 key Start date
     And I should see row 17 key End date
     And I should see row 14 value In the UK and other countries
@@ -787,7 +787,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 9 value Yes
     And I should see row 10 value 12345678
     And I should see row 11 key Where does the group operate?
-    And I should see row 12 key Group's consolidated accounting period
+    And I should see row 12 key Group’s consolidated accounting period
     And I should see row 13 key Start date
     And I should see row 14 key End date
     And I should see row 11 value In the UK and other countries
@@ -927,7 +927,7 @@ Feature: Secondary Contact details for the filing member
    And I should see row 6 value 76543210
    And I should see row 7 value 1234567890
    And I should see row 8 key Where does the group operate?
-   And I should see row 9 key Group's consolidated accounting period
+   And I should see row 9 key Group’s consolidated accounting period
    And I should see row 10 key Start date
    And I should see row 11 key End date
    And I should see row 8 value Only in the UK
