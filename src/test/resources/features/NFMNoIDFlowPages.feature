@@ -13,7 +13,7 @@ Feature: NFM NO ID journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -78,13 +78,13 @@ Feature: NFM NO ID journey
     Then I should be on NFM Check your answers page
     When I click on Continue button
     Then I should be on Task list page
-    And The Task Edit filing member's details status should be Completed
+    And The Task Edit filing member’s details status should be Completed
     Then I click Sign out link
     Then I am on feedback survey page
 
   Scenario: 2 - Verify change answers for all NFM No ID journey pages
     Given Organisation User logs in with credId NFMCYA for Pillar2
-    When I click Edit filing member's details link
+    When I click Edit filing member’s details link
     Then I should navigate to NFM registration page
     When I click on Continue button
     Then I should navigate to NFM details page
@@ -148,12 +148,12 @@ Feature: NFM NO ID journey
     And I registered successfully with BV enabled
     When I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     And The caption is Group details
     And The Heading should be Do you want to register a nominated filing member for this group?
     And The Body content should be If you do not enter the details for a nominated filing member, the ultimate parent entity (UPE) will be used as the default.
-    And The Body content should be You must have permission from the UPE to nominate a company as a filing member and be able to access the information required to file Pillar 2 top-up tax on the group's behalf.
+    And The Body content should be You must have permission from the UPE to nominate a company as a filing member and be able to access the information required to file Pillar 2 top-up tax on the group’s behalf.
     When I click on Continue button
     Then I should see NFM error message Select yes if there is a nominated filing member for this group on the NFM registration page Element
     When I select Yes option and continue to next
@@ -238,7 +238,7 @@ Feature: NFM NO ID journey
     And I click Continue button
     Then I should be on NFM Check your answers page
     And I click on Continue button
-    Then The Task Edit filing member's details status should be Completed
+    Then The Task Edit filing member’s details status should be Completed
 
   Scenario: 4 - Verify back link for all NFM No ID journey pages and status validation
     Given Organisation User logs in as upe with credId NFMBack for Pillar2
@@ -250,8 +250,8 @@ Feature: NFM NO ID journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    Then The Task Add filing member's details status should be Not started
-    When I click Add filing member's details link
+    Then The Task Add filing member’s details status should be Not started
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -263,8 +263,8 @@ Feature: NFM NO ID journey
     Then I should be on NFM registration page
     And I select back link
     Then I should be on Task list page
-    And The Task Add filing member's details status should be In progress
-    And I click Add filing member's details link
+    And The Task Add filing member’s details status should be In progress
+    And I click Add filing member’s details link
     And I click on Continue button
     And I click on Continue button
     Then I should navigate to NFM Name page

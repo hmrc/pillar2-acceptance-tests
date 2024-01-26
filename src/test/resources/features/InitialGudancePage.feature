@@ -7,7 +7,7 @@ Feature: Initial Guidance Page
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group
-    When I click Add ultimate parent's details link
+    When I click Add ultimate parent’s details link
     Then I should navigate to Initial guidance Page
     And The caption must be Group details
     And The Heading should be We need to match the details of the ultimate parent entity to HMRC records
@@ -20,7 +20,7 @@ Feature: Initial Guidance Page
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group
-    When I click Add ultimate parent's details link
+    When I click Add ultimate parent’s details link
     Then I should navigate to Initial guidance Page
     When I select back link
     Then I should navigate to Task list page

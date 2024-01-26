@@ -13,7 +13,7 @@ Feature: Further Details Task page validation
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
@@ -28,7 +28,7 @@ Feature: Further Details Task page validation
     And The Body content should be Domestic Top-up Tax
     And The Body content should be Groups that operate only in the UK will register to report for Domestic Top-up Tax.
     And The Body content should be Groups that operate in the UK and other countries will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
-    And The Body content should be If group operations change, you must amend the group's details.
+    And The Body content should be If group operations change, you must amend the group’s details.
     And The field heading should be Where does the group operate?
     And I click on Continue button
     Then I should see error message Select where the group operates on the Further Details Group Status Page
@@ -148,7 +148,7 @@ Feature: Further Details Task page validation
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
