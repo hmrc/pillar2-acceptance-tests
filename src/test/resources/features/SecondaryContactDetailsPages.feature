@@ -35,7 +35,7 @@ Feature: Secondary Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Group accounting period page
     And The caption must be Group details
-    And The Heading should be What are the start and end dates of the group's consolidated accounting period?
+    And The Heading should be What are the start and end dates of the group’s consolidated accounting period?
     And The Body content should be This will be the first accounting period the group uses for their consolidated financial statements following the implementation of Pillar 2 top-up taxes in the UK, on 31 December 2023.
     When Accounting Period Start Day is entered as 15
     And Accounting Period Start Month is entered as 1
