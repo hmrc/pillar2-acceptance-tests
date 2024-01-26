@@ -24,8 +24,8 @@ Feature: Further Details Task page validation
     And The Heading should be Group operations
     And The Body content should be Group operations refer to the collective activities of the group. You must answer this question on behalf of the whole group.
     And The Body content should be There are two Pillar 2 top-up taxes in the UK:
-    And The Body content should be Multinational top-up tax
-    And The Body content should be Domestic top-up tax
+    And The Body content should be Multinational Top-up Tax
+    And The Body content should be Domestic Top-up Tax
     And The Body content should be Groups that operate only in the UK will register to report for Domestic Top-up Tax.
     And The Body content should be Groups that operate in the UK and other countries will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
     And The Body content should be If group operations change, you must amend the group's details.
