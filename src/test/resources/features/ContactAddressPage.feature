@@ -4,7 +4,6 @@ Feature: Enter contact address
   I want to enter the contact address
 
   Scenario: 1 - Create a new subscription with NFM No Id flow for validating address details
-    Given I clear the cache
     Given Organisation User logs in as upe with credId ContactAddress1 for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -14,7 +13,7 @@ Feature: Enter contact address
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -67,7 +66,7 @@ Feature: Enter contact address
     When I select option No and continue to next
     Then I should navigate to Contact address input page
     And The caption must be Contact details
-    And The Heading should be What address do you want to use as the filing member’s contact address?
+    And The Heading should be What address do you want to use as the filing member's contact address?
     When I select back link
     Then I should navigate to Second Contact details page
     When I select back link
@@ -129,7 +128,7 @@ Feature: Enter contact address
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page

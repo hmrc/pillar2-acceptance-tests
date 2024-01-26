@@ -15,7 +15,7 @@ As a registered user
     And I should navigate back to main tab
     And I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
     #And I should see the heading 1 on Dashboard page as Payments
@@ -26,10 +26,8 @@ As a registered user
     And I should see the heading 1 on Dashboard page as Manage your account
     And The Body content should be View and amend contact details
     And The Body content should be View and amend group details
-    And The Body content should be This service is being developed as the UK’s implementation of Pillar 2, part of the G20 and the Organisation for Economic Cooperation and Development’s (OECD) two-pillar solution.
-    And The Body content should be The first deadline to submit a return is 18 months after the last day of the group’s accounting period that started on or after 31 December 2023.
-    And The Body content should be This service will allow groups to access other features such as the submission of UK tax returns (UKTR), ahead of this deadline.
-    And The Body content should be For more information about the UK’s implementation of Pillar 2 top-up taxes, please refer to the draft guidance (opens in new tab).
+    And The Body content should be This service is being continuously updated. You can anticipate the introduction of more features in line with the development of OECD's policy.
+    And The Body content should be For more information, please refer to the draft guidance (opens in new tab)
     #When I click Make a voluntary payment link
     #Then I should navigate to under construction page
     #When I select back link
@@ -64,7 +62,7 @@ As a registered user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
     And I should see user details row 1 value XMPLR0012345676
@@ -116,7 +114,7 @@ As a registered user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
     And I should see user details row 1 value XMPLR0012345676

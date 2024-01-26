@@ -13,7 +13,7 @@ Feature: Contact details guidance and logic to play back contact details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -165,7 +165,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should be on Check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
@@ -216,7 +216,7 @@ Feature: Contact details guidance and logic to play back contact details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
@@ -262,7 +262,7 @@ Feature: Contact details guidance and logic to play back contact details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member's details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
