@@ -34,6 +34,9 @@ Feature: Secondary Contact details for the filing member
     When I select option In the UK and other countries in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
+    And The caption must be Group details
+    And The Heading should be What are the start and end dates of the group’s consolidated accounting period?
+    And The Body content should be This will be the first accounting period the group uses for their consolidated financial statements following the implementation of Pillar 2 top-up taxes in the UK, on 31 December 2023.
     When Accounting Period Start Day is entered as 15
     And Accounting Period Start Month is entered as 1
     And Accounting Period Start Year is entered as 2024
@@ -62,8 +65,8 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Second Contact details page
     And the page title should be Is there someone else we can contact? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
-    And The Heading should be Is there someone else we can contact?
-    And The Body content should be This can be a team mailbox or another contact who is able to deal with enquiries about the group’s management of Pillar 2 top-up tax
+    And The Heading should be Is there someone else we can contact if Contact Name Test is not available?
+    And The Body content should be This can be a team mailbox or another contact who is able to deal with enquiries about the group’s management of Pillar 2 top-up taxes.
     When I select option No and continue to next
     Then I should navigate to Contact address input page
     When I select back link
@@ -71,11 +74,14 @@ Feature: Secondary Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
     And The caption must be Contact details
-    And The Heading should be What is the name of the individual or team we should contact?
+    And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
     And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter Second Contact Name as Second Contact Name Test
     And I click on Continue button
     Then I should navigate to Second Contact email page
+    And The caption must be Contact details
+    And The Heading should be What is the email address for Second Contact Name Test?
+    And The Body content should be We will only use this to contact you about Pillar 2 top-up taxes.
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
     And I click on Continue button
@@ -357,6 +363,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Second Contact number page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
+    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
     When I enter Second Contact Input as 1234554
     And I click on Continue button
     Then I should navigate to Contact address input page
