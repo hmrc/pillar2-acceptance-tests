@@ -69,13 +69,13 @@ Feature: Ultimate parent entity GRS journey
     Then I should be on UPE entity type page
     When I select back link
     Then I should be on UPE registration failed error page
-    When I click searching Companies House for the company registration number and registered office address (opens in a new tab). link
+    When I click searching Companies House for the company registration number and registered office address (opens in a new tab) link
     Then I should be navigated to new tab
     And  I should navigate to search register page
     Then I close new tab
     And I should navigate back to main tab
     Then I should be on UPE registration failed error page
-    When I click asking for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab). link
+    When I click asking for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab) link
     Then I should be navigated to new tab
     And  I should be on Corporation Tax UTR page
     Then I close new tab
