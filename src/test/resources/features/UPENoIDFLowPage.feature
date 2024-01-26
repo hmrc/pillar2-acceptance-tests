@@ -70,8 +70,8 @@ Feature: UPE NO ID journey
     And I should see row 6 value 1234569
     When I click on Continue button
     Then I should be on Task list page
-    And The Task Edit ultimate parent's details status should be Completed
-    And The Task Add filing member's details status should be Not started
+    And The Task Edit ultimate parent’s details status should be Completed
+    And The Task Add filing member’s details status should be Not started
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId UPENoIDJourney for Pillar2
@@ -242,17 +242,17 @@ Feature: UPE NO ID journey
     Then I should be on Check your answers page
     And I should see row 5 value No
 
-  Scenario: 5 - Status update for Enter ultimate parent's details task
+  Scenario: 5 - Status update for Enter ultimate parent’s details task
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    When I click Add ultimate parent's details link
+    When I click Add ultimate parent’s details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
     Then I should be on UPE business page
     When I select option No and continue to next
     And I navigate back to TaskList Page from Name Page
-    Then The Task Add ultimate parent's details status should be In progress
-    When I click Add ultimate parent's details link
+    Then The Task Add ultimate parent’s details status should be In progress
+    When I click Add ultimate parent’s details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
     Then I should navigate to UPE business page
@@ -275,8 +275,8 @@ Feature: UPE NO ID journey
     Then I should navigate to UPE Telephone page
     When I select option Yes and continue to next
     And I navigate back to TaskList Page from Telephone Page
-    Then The Task Add ultimate parent's details status should be In progress
-    When I click Add ultimate parent's details link
+    Then The Task Add ultimate parent’s details status should be In progress
+    When I click Add ultimate parent’s details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
     Then I should navigate to UPE business page
@@ -295,7 +295,7 @@ Feature: UPE NO ID journey
     When I enter Telephone Number as 123456
     And I click on Continue button
     And I navigate back to TaskList Page from Telephone Input Page
-    Then The Task Edit ultimate parent's details status should be Completed
+    Then The Task Edit ultimate parent’s details status should be Completed
 
 
 

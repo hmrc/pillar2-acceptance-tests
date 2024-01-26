@@ -24,5 +24,5 @@ object UPEGRSRegistrationFailedErrorPage extends PageObject {
   val content            = "#main-content"
   val header: String     = "h1.govuk-heading-l"
   val backLink           = ".govuk-back-link"
-  val secondHeader       = ".govuk-heading-s"
+  val secondHeader       = ".govuk-heading-m"
 }
