@@ -91,7 +91,7 @@ As a registered user
     And The Body content should be Domestic Top-up Tax
     And The Body content should be Groups that operate only in the UK will register to report for Domestic Top-up Tax.
     And The Body content should be Groups that operate in the UK and other countries will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
-    And The Body content should be If group operations change, you must amend the group's details.
+    And The Body content should be If group operations change, you must amend the group’s details.
     And The field heading should be Where does the group operate?
     When I select option Only in the UK in further details group status page
     When I click on Continue button
