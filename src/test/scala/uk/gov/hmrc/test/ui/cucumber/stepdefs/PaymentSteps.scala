@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
-import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage}
+import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, MakePaymentPage}
 
 
 class PaymentSteps extends CommonFunctions {
@@ -71,6 +71,30 @@ class PaymentSteps extends CommonFunctions {
     Wait.waitForElementToPresentByCssSelector(DashboardPage.inactiveStatus)
     assert(getTextOf(By.cssSelector(DashboardPage.inactiveStatus)).contains(header))
   }
+
+  When("""^I click on dropdown (\d+) link (.*)$""") { (detailNumber: Int, header: String) =>
+    Wait.waitForElementToPresentByCssSelector(MakePaymentPage.dropDownLink)
+    assert(driver.findElements(By.cssSelector(MakePaymentPage.dropDownLink)).get(detailNumber - 1).getText.contains(header))
+    MakePaymentPage.clickDropDownLink()
+  }
+
+  Then("""^The table caption (\d+) should be (.*)$""") { (detailNumber: Int, caption: String) =>
+    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCaption)).get(detailNumber - 1).getText.contains(caption))
+  }
+
+  Then("""^The warning message should be (.*)$""") { message: String =>
+    Wait.waitForElementToPresentByCssSelector(MakePaymentPage.warningMessage)
+    assert(getTextOf(By.cssSelector(MakePaymentPage.warningMessage)).contains(message))
+  }
+
+  And("""^The table header value (\d+) should be (.*)$""") { (detailNumber: Int, header: String) =>
+    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableHeader)).get(detailNumber - 1).getText.contains(header))
+  }
+
+  And("""^The table cell value (\d+) should be (.*)$""") { (detailNumber: Int, cell: String) =>
+    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCell)).get(detailNumber - 1).getText.contains(cell))
+  }
+
 }
 
 
