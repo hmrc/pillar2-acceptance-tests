@@ -2,7 +2,7 @@
 Feature: Dashboard Page
 As a registered user
   I should be able to navigate to Links on dashboard page
-
+  
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
@@ -31,23 +31,21 @@ As a registered user
     When I click Make a payment link
     Then I should navigate to Make a payment page
     And The Heading should be Pay your Pillar 2 top-up taxes
+    And I click on toggle link How long it takes
     And The inset text should be You have no payments due.
     And The second heading should be How to make a payment
     And The Body content should be Payments can be made by bank transfer.
     And The Body content should be To make a bank transfer payment, you can visit your bank’s website, use their mobile app, or go to a branch and use HMRC’s banking details.
-    When I click on dropdown 1 link How long it takes
     And The Body content should be Faster Payments will usually reach HMRC the same or next day, including weekends and bank holidays.
     And The Body content should be CHAPS payments usually reach HMRC the same working day if you pay within your bank’s processing times.
     And The Body content should be Bacs payments usually take 3 working days.
     And The warning message should be You must use XMPLR0012345674 as your payment reference. HMRC will use this to match your payment.
-    When I click on dropdown 2 link Make a payment from outside the UK
-    And The table caption 1 should be HMRC’s bank details
-    And The table header value 1 should be Sort code
-    And The table header value 2 should be Account number
-    And The table header value 3 should be Account name
-    And The table cell value 1 should be 08 32 10
-    And The table cell value 2 should be 12001020
-    And The table cell value 3 should be HMRC Shipley
+    And The caption for section 1 should be HMRC’s bank details
+    And The section 1 with header Sort code value should be 08 32 10
+    And The section 2 with header Account number value should be 12001020
+    And The section 3 with header Account name value should be HMRC Shipley
+    And I click on toggle link Make a payment from outside the UK
+    And The caption for section 2 should be HMRC’s overseas bank details
     When I select back link
     #Then I should be on Dashboard page
     #When I click View your payment history link

@@ -72,13 +72,7 @@ class PaymentSteps extends CommonFunctions {
     assert(getTextOf(By.cssSelector(DashboardPage.inactiveStatus)).contains(header))
   }
 
-  When("""^I click on dropdown (\d+) link (.*)$""") { (detailNumber: Int, header: String) =>
-    Wait.waitForElementToPresentByCssSelector(MakePaymentPage.dropDownLink)
-    assert(driver.findElements(By.cssSelector(MakePaymentPage.dropDownLink)).get(detailNumber - 1).getText.contains(header))
-    MakePaymentPage.clickDropDownLink()
-  }
-
-  Then("""^The table caption (\d+) should be (.*)$""") { (detailNumber: Int, caption: String) =>
+  Then("""^The caption for section (\d+) should be (.*)$""") { (detailNumber: Int, caption: String) =>
     assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCaption)).get(detailNumber - 1).getText.contains(caption))
   }
 
@@ -87,15 +81,16 @@ class PaymentSteps extends CommonFunctions {
     assert(getTextOf(By.cssSelector(MakePaymentPage.warningMessage)).contains(message))
   }
 
-  And("""^The table header value (\d+) should be (.*)$""") { (detailNumber: Int, header: String) =>
+  And("""^The section (\d+) with header (.*) value should be (.*)$""") { (detailNumber: Int, header: String, cell: String) =>
     assert(driver.findElements(By.cssSelector(MakePaymentPage.tableHeader)).get(detailNumber - 1).getText.contains(header))
-  }
-
-  And("""^The table cell value (\d+) should be (.*)$""") { (detailNumber: Int, cell: String) =>
     assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCell)).get(detailNumber - 1).getText.contains(cell))
   }
 
+  When("""^I click on toggle link (.*)$""")  {(option: String)=>
+    option match {
+      case "How long it takes" => Input.clickByXpath(MakePaymentPage.firstToggleLink)
+      case "Make a payment from outside the UK" =>Input.clickByXpath(MakePaymentPage.secondToggleLink)
+    }
+  }
 }
-
-
 
