@@ -474,6 +474,10 @@ class StepDef extends BaseStepDef {
     AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
   }
 
+  When("""^I refresh the page$""") { () =>
+    driver.navigate.refresh()
+  }
+
       /*  Given("""^I fill (.*) and continue$""") { page: String =>
           page match {
             case "What is the main address of your business page" => Forms.addressNonUK()

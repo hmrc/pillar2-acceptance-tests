@@ -13,7 +13,7 @@ Feature: Contact details guidance and logic to play back contact details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -72,14 +72,14 @@ Feature: Contact details guidance and logic to play back contact details
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
     And The caption must be Contact details
-    And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up tax?
+    And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
     When I enter Contact Name as Contact Name Test
     And I click on Continue button
     Then I should navigate to Contact details input email page
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be What is the email address for Contact Name Test
-    And The Body content should be We will use this to send confirmation of your Pillar 2 top-up tax compliance actions or if we have any questions about them.
+    And The Body content should be We will only use this to contact you about Pillar 2 top-up taxes.
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
     Then I should navigate to Contact details telephone page
@@ -95,7 +95,7 @@ Feature: Contact details guidance and logic to play back contact details
     And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be What is the telephone number for Contact Name Test?
-    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
+    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
     When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
@@ -165,7 +165,7 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should be on Check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
@@ -216,7 +216,7 @@ Feature: Contact details guidance and logic to play back contact details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
@@ -262,7 +262,7 @@ Feature: Contact details guidance and logic to play back contact details
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page

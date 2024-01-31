@@ -14,9 +14,9 @@ Feature: Secondary Contact details for the filing member
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent's details status should be Completed
-    And The Task Add filing member's details status should be Not started
-    When I click Add filing member's details link
+    And The Task Edit ultimate parent’s details status should be Completed
+    And The Task Add filing member’s details status should be Not started
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -28,12 +28,15 @@ Feature: Secondary Contact details for the filing member
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member's details status should be Completed
+    And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and other countries in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
+    And The caption must be Group details
+    And The Heading should be What are the start and end dates of the group’s consolidated accounting period?
+    And The Body content should be This will be the first accounting period the group uses for their consolidated financial statements following the implementation of Pillar 2 top-up taxes in the UK, on 31 December 2023.
     When Accounting Period Start Day is entered as 15
     And Accounting Period Start Month is entered as 1
     And Accounting Period Start Year is entered as 2024
@@ -62,8 +65,8 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Second Contact details page
     And the page title should be Is there someone else we can contact? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
-    And The Heading should be Is there someone else we can contact?
-    And The Body content should be This can be a team mailbox or another contact who is able to deal with enquiries about the group's management of Pillar 2 top-up tax
+    And The Heading should be Is there someone else we can contact if Contact Name Test is not available?
+    And The Body content should be This can be a team mailbox or another contact who is able to deal with enquiries about the group’s management of Pillar 2 top-up taxes.
     When I select option No and continue to next
     Then I should navigate to Contact address input page
     When I select back link
@@ -71,11 +74,14 @@ Feature: Secondary Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
     And The caption must be Contact details
-    And The Heading should be What is the name of the individual or team we should contact?
+    And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
     And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter Second Contact Name as Second Contact Name Test
     And I click on Continue button
     Then I should navigate to Second Contact email page
+    And The caption must be Contact details
+    And The Heading should be What is the email address for Second Contact Name Test?
+    And The Body content should be We will only use this to contact you about Pillar 2 top-up taxes.
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
     And I click on Continue button
@@ -131,7 +137,7 @@ Feature: Secondary Contact details for the filing member
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -208,9 +214,9 @@ Feature: Secondary Contact details for the filing member
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent's details status should be Completed
-    And The Task Add filing member's details status should be Not started
-    When I click Add filing member's details link
+    And The Task Edit ultimate parent’s details status should be Completed
+    And The Task Add filing member’s details status should be Not started
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -222,7 +228,7 @@ Feature: Secondary Contact details for the filing member
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member's details status should be Completed
+    And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and other countries in further details group status page
@@ -270,7 +276,7 @@ Feature: Secondary Contact details for the filing member
     Then I should see error message You need to enter the email address for Second Contact Name Test on the Contact details email Page
     When I enter Second Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I click on Continue button
-    Then I should see error message The email address should be 160 characters or less on the Contact details email Page
+    Then I should see error message The email address should be 132 characters or less on the Contact details email Page
     When I enter Second Contact Email as FormatErrorTest.com
     When I click on Continue button
     Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
@@ -301,9 +307,9 @@ Feature: Secondary Contact details for the filing member
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent's details status should be Completed
-    And The Task Add filing member's details status should be Not started
-    When I click Add filing member's details link
+    And The Task Edit ultimate parent’s details status should be Completed
+    And The Task Add filing member’s details status should be Not started
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -315,7 +321,7 @@ Feature: Secondary Contact details for the filing member
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member's details status should be Completed
+    And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and other countries in further details group status page
@@ -357,6 +363,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Second Contact number page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
+    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
     When I enter Second Contact Input as 1234554
     And I click on Continue button
     Then I should navigate to Contact address input page
@@ -401,9 +408,9 @@ Feature: Secondary Contact details for the filing member
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent's details status should be Completed
-    And The Task Add filing member's details status should be Not started
-    When I click Add filing member's details link
+    And The Task Edit ultimate parent’s details status should be Completed
+    And The Task Add filing member’s details status should be Not started
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -415,7 +422,7 @@ Feature: Secondary Contact details for the filing member
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member's details status should be Completed
+    And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and other countries in further details group status page
@@ -537,7 +544,7 @@ Feature: Secondary Contact details for the filing member
     Then I should be on Check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -648,7 +655,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 12 value Yes
     And I should see row 13 value 12345678
     And I should see row 14 key Where does the group operate?
-    And I should see row 15 key Group's consolidated accounting period
+    And I should see row 15 key Group’s consolidated accounting period
     And I should see row 16 key Start date
     And I should see row 17 key End date
     And I should see row 14 value In the UK and other countries
@@ -684,7 +691,7 @@ Feature: Secondary Contact details for the filing member
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member's details link
+    When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -787,7 +794,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 9 value Yes
     And I should see row 10 value 12345678
     And I should see row 11 key Where does the group operate?
-    And I should see row 12 key Group's consolidated accounting period
+    And I should see row 12 key Group’s consolidated accounting period
     And I should see row 13 key Start date
     And I should see row 14 key End date
     And I should see row 11 value In the UK and other countries
@@ -815,12 +822,12 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Registration confirmation page
     And The Header should be Report Pillar 2 top-up taxes
     And The Heading should be Registration complete
-    And The Id text should be Group's Pillar 2 top-up taxes ID
+    And The Id text should be Group’s Pillar 2 top-up taxes ID
     When I should see heading 1 as Registration date:
     And The registration date should be displayed as current day
     And The Body content should be Your group has registered to report for Domestic Top-up Tax and Multinational Top-up Tax.
     And The Body content should be You will not be emailed a confirmation of this registration.
-    And The Body content should be You must record your group's Pillar 2 top-up taxes ID and registration date.
+    And The Body content should be You must record your group’s Pillar 2 top-up taxes ID and registration date.
     And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
     When I should see heading 2 as What happens next
     And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
@@ -842,7 +849,7 @@ Feature: Secondary Contact details for the filing member
    When I registered successfully with BV enabled
    And I click on Save&Continue button
    Then I should navigate to Task list page
-   And I click Add filing member's details link
+   And I click Add filing member’s details link
    Then I should navigate to NFM registration page
    When I select Yes option and continue to next
    Then I should navigate to NFM details page
@@ -927,7 +934,7 @@ Feature: Secondary Contact details for the filing member
    And I should see row 6 value 76543210
    And I should see row 7 value 1234567890
    And I should see row 8 key Where does the group operate?
-   And I should see row 9 key Group's consolidated accounting period
+   And I should see row 9 key Group’s consolidated accounting period
    And I should see row 10 key Start date
    And I should see row 11 key End date
    And I should see row 8 value Only in the UK
@@ -972,7 +979,7 @@ Feature: Secondary Contact details for the filing member
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And I click Add filing member's details link
+    And I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page

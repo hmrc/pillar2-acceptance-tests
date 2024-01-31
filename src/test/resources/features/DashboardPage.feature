@@ -15,7 +15,7 @@ As a registered user
     And I should navigate back to main tab
     And I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
     #And I should see the heading 1 on Dashboard page as Payments
@@ -26,8 +26,10 @@ As a registered user
     And I should see the heading 1 on Dashboard page as Manage your account
     And The Body content should be View and amend contact details
     And The Body content should be View and amend group details
-    And The Body content should be This service is being continuously updated. You can anticipate the introduction of more features in line with the development of OECD's policy.
-    And The Body content should be For more information, please refer to the draft guidance (opens in new tab)
+    And The Body content should be This service is being developed as the UK’s implementation of Pillar 2, part of the G20 and the Organisation for Economic Cooperation and Development’s (OECD) two-pillar solution.
+    And The Body content should be The first deadline to submit a return is 18 months after the last day of the group’s accounting period that started on or after 31 December 2023.
+    And The Body content should be This service will allow groups to access other features such as the submission of UK tax returns (UKTR), ahead of this deadline.
+    And The Body content should be For more information about the UK’s implementation of Pillar 2 top-up taxes, please refer to the draft guidance (opens in new tab).
     #When I click Make a voluntary payment link
     #Then I should navigate to under construction page
     #When I select back link
@@ -62,7 +64,7 @@ As a registered user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
     And I should see user details row 1 value XMPLR0012345676
@@ -74,13 +76,23 @@ As a registered user
     Then I should navigate to accounts summary page
     And The Heading should be Group details
     And I should see row 1 key Where does the group operate?
-    And I should see row 2 key Group's consolidated accounting period
+    And I should see row 2 key Group’s consolidated accounting period
     And I should see row 3 key Start date
     And I should see row 4 key End date
     And I should see row 1 value In the UK and other countries
     And I should see row 3 value 6 January 2024
     And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the FD Group Status
+    And The caption must be Group details
+    And The Heading should be Group operations
+    And The Body content should be Group operations refer to the collective activities of the group. You must answer this question on behalf of the whole group.
+    And The Body content should be There are two Pillar 2 top-up taxes in the UK:
+    And The Body content should be Multinational Top-up Tax
+    And The Body content should be Domestic Top-up Tax
+    And The Body content should be Groups that operate only in the UK will register to report for Domestic Top-up Tax.
+    And The Body content should be Groups that operate in the UK and other countries will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
+    And The Body content should be If group operations change, you must amend the group’s details.
+    And The field heading should be Where does the group operate?
     When I select option Only in the UK in further details group status page
     When I click on Continue button
     When I click on Continue button
@@ -104,7 +116,7 @@ As a registered user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
     And I should see user details row 1 value XMPLR0012345676
@@ -228,7 +240,7 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
 
   Scenario: 6 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
@@ -247,7 +259,7 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
 
   Scenario: 7 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
@@ -266,7 +278,7 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
 
   Scenario: 8 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
@@ -285,7 +297,7 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
 
   Scenario: 9 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
@@ -304,5 +316,5 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page

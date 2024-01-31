@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 
 object ErrorPlaceHolderPage extends PageObject {
-  val url: String        = s"$rootUrl"+"there-is-a-problem"
+  val url: String        = s"$rootUrl"+"error/restart-error"
   val content            = "main#main-content"
   val header: String     = "h1.govuk-heading-xl"
   val backLink           = ".govuk-back-link"
