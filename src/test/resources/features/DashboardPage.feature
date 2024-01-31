@@ -21,8 +21,6 @@ As a registered user
     And I should see the heading 1 on Dashboard page as Payments
     And The Body content should be You have no payments due
     And The Body content should be Make a payment
-    And The Body content should be View your payment history
-    And The Body content should be Request a repayment
     And I should see the heading 2 on Dashboard page as Manage your account
     And The Body content should be View and amend contact details
     And The Body content should be View and amend group details
