@@ -2,7 +2,7 @@
 Feature: Dashboard Page
 As a registered user
   I should be able to navigate to Links on dashboard page
-
+  
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
@@ -18,21 +18,35 @@ As a registered user
     And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
-    #And I should see the heading 1 on Dashboard page as Payments
-    #And The Body content should be You have no payments due
-    #And The Body content should be Make a voluntary payment
-    #And The Body content should be View your payment history
-    #And The Body content should be Request a repayment
-    And I should see the heading 1 on Dashboard page as Manage your account
+    And I should see the heading 1 on Dashboard page as Payments
+    And The Body content should be You have no payments due
+    And The Body content should be Make a payment
+    And I should see the heading 2 on Dashboard page as Manage your account
     And The Body content should be View and amend contact details
     And The Body content should be View and amend group details
     And The Body content should be This service is being developed as the UK’s implementation of Pillar 2, part of the G20 and the Organisation for Economic Cooperation and Development’s (OECD) two-pillar solution.
     And The Body content should be The first deadline to submit a return is 18 months after the last day of the group’s accounting period that started on or after 31 December 2023.
     And The Body content should be This service will allow groups to access other features such as the submission of UK tax returns (UKTR), ahead of this deadline.
     And The Body content should be For more information about the UK’s implementation of Pillar 2 top-up taxes, please refer to the draft guidance (opens in new tab).
-    #When I click Make a voluntary payment link
-    #Then I should navigate to under construction page
-    #When I select back link
+    When I click Make a payment link
+    Then I should navigate to Make a payment page
+    And The Heading should be Pay your Pillar 2 top-up taxes
+    And I click on toggle link How long it takes
+    And The inset text should be You have no payments due.
+    And The second heading should be How to make a payment
+    And The Body content should be Payments can be made by bank transfer.
+    And The Body content should be To make a bank transfer payment, you can visit your bank’s website, use their mobile app, or go to a branch and use HMRC’s banking details.
+    And The Body content should be Faster Payments will usually reach HMRC the same or next day, including weekends and bank holidays.
+    And The Body content should be CHAPS payments usually reach HMRC the same working day if you pay within your bank’s processing times.
+    And The Body content should be Bacs payments usually take 3 working days.
+    And The warning message should be You must use XMPLR0012345674 as your payment reference. HMRC will use this to match your payment.
+    And The caption for section 1 should be HMRC’s bank details
+    And The section 1 with header Sort code value should be 08 32 10
+    And The section 2 with header Account number value should be 12001020
+    And The section 3 with header Account name value should be HMRC Shipley
+    And I click on toggle link Make a payment from outside the UK
+    And The caption for section 2 should be HMRC’s overseas bank details
+    When I select back link
     #Then I should be on Dashboard page
     #When I click View your payment history link
     #Then I should navigate to under construction page
@@ -70,8 +84,8 @@ As a registered user
     And I should see user details row 1 value XMPLR0012345676
     And I should see user details row 2 value 31 January 2022
     And I should see user details row 3 value International Organisation Inc.
-    #And I should see the heading 1 on Dashboard page as Payments
-    And I should see the heading 1 on Dashboard page as Manage your account
+    And I should see the heading 1 on Dashboard page as Payments
+    And I should see the heading 2 on Dashboard page as Manage your account
     When I click View and amend group details link
     Then I should navigate to accounts summary page
     And The Heading should be Group details
