@@ -118,7 +118,7 @@ Feature: Enter contact address
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
 
-  Scenario: 2 - Contact address page Error validations
+  Scenario: 2 -  Error validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
