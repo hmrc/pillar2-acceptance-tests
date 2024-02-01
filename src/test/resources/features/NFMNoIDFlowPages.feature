@@ -18,7 +18,7 @@ Feature: NFM NO ID journey
     And The caption must be Group details
     And The Heading should be Do you want to register a nominated filing member to report for this group?
     And The Body content should be If you do not register a nominated filing member, we will use the ultimate parent entity (UPE) as the filing member.
-    And The insert text should be A nominated filing member must be nominated by the UPE and must be able to access the information required to report Pillar 2 top-up taxes on the group’s behalf.
+    And The inset text should be A nominated filing member must be nominated by the UPE and must be able to access the information required to report Pillar 2 top-up taxes on the group’s behalf.
     When I select Yes option and continue to next
     And The caption must be Group details
     And The Heading should be Is the nominated filing member registered in the UK?
@@ -170,6 +170,7 @@ Feature: NFM NO ID journey
     Then I should see NFM error message The name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
     When I enter NFM name as NFM Test
     Then I should navigate to NFM Address page
+    And the page title should be What is the registered office address? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
     Then I should see NFM error message Enter the first line of the address on the Address Line 1 Element
     And I should see NFM error message Enter the town or city on the City Element
@@ -199,6 +200,7 @@ Feature: NFM NO ID journey
     When I enter NFM Contact name as NFM Contact
     When I click on Continue button
     Then I should navigate to NFM Contact Email page
+    And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
     Then I should see NFM error message You need to enter the email address for NFM Contact on the Input NFM Contact Email Element
     When I enter NFM Contact Email as incorrect email
@@ -210,6 +212,7 @@ Feature: NFM NO ID journey
     And I enter NFM Contact Email as test@email.com
     When I click on Continue button
     Then I should navigate to NFM Telephone page
+    And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
     Then I should see error message Select yes if we can contact NFM Contact by telephone on the NFM Telephone Page
     When I select option Yes and continue to next

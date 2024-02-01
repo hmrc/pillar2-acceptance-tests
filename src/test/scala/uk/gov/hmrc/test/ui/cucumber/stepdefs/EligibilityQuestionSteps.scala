@@ -59,7 +59,7 @@ class EligibilityQuestionSteps extends CommonFunctions {
   And("""^I continue|I continue without selecting an option$""") { () =>
     BusinessActivityEQPage.clickContinue()
   }
-  Then("""^The insert text should be (.*)$""") { insetText: String =>
+  Then("""^The inset text should be (.*)$""") { insetText: String =>
     Wait.waitForElementToPresentByCssSelector(ConfirmationPage.insetText)
     assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).equals(insetText))
   }
