@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
-import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage}
+import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, MakePaymentPage}
 
 
 class PaymentSteps extends CommonFunctions {
@@ -71,7 +71,26 @@ class PaymentSteps extends CommonFunctions {
     Wait.waitForElementToPresentByCssSelector(DashboardPage.inactiveStatus)
     assert(getTextOf(By.cssSelector(DashboardPage.inactiveStatus)).contains(header))
   }
+
+  Then("""^The caption for section (\d+) should be (.*)$""") { (detailNumber: Int, caption: String) =>
+    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCaption)).get(detailNumber - 1).getText.contains(caption))
+  }
+
+  Then("""^The warning message should be (.*)$""") { message: String =>
+    Wait.waitForElementToPresentByCssSelector(MakePaymentPage.warningMessage)
+    assert(getTextOf(By.cssSelector(MakePaymentPage.warningMessage)).contains(message))
+  }
+
+  And("""^The section (\d+) with header (.*) value should be (.*)$""") { (detailNumber: Int, header: String, cell: String) =>
+    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableHeader)).get(detailNumber - 1).getText.contains(header))
+    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCell)).get(detailNumber - 1).getText.contains(cell))
+  }
+
+  When("""^I click on toggle link (.*)$""")  {(option: String)=>
+    option match {
+      case "How long it takes" => Input.clickByXpath(MakePaymentPage.firstToggleLink)
+      case "Make a payment from outside the UK" =>Input.clickByXpath(MakePaymentPage.secondToggleLink)
+    }
+  }
 }
-
-
 

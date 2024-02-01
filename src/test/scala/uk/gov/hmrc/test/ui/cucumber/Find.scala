@@ -50,7 +50,6 @@ object Find extends BasePage {
 
   def findURL(): String = driver.getCurrentUrl
 
-
   def findH1(): WebElement = findByTagName("h1")
 
 }
