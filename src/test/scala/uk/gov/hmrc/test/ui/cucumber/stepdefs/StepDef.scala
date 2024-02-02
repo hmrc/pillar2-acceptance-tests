@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMEntityTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEEntityTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, CreateSubErrorPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -468,6 +468,11 @@ class StepDef extends BaseStepDef {
   And("""^I should see (.*) hyperLink$""") { (linkText: String) =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.inputUpeNamePageLink)
+  }
+
+  And("""^I should see (.*) link$""") { (linkText: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(CreateSubErrorPage.taskListPageLink)
   }
 
   When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String) =>
