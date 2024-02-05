@@ -14,7 +14,7 @@ Feature: Eligibility Questions for Pillar 2
     Then I should navigate to business EQ page
     And The caption should be Check if the group needs to report
     And The Heading should be Does the group have business operations in the UK?
-    And The Body content should be Business operations refer to activities that businesses engage in to increase the value of the enterprise and earn profit.
+    And The Body content should be Business operations refer to activities that businesses engage in to increase the value of the enterprise.
     When I choose Yes and continue
     Then I should navigate to Global gross revenue
     And The caption should be Check if the group needs to report
@@ -25,8 +25,7 @@ Feature: Eligibility Questions for Pillar 2
     When I choose Yes and continue
     Then I should navigate to confirmation page
     And The Heading should be You need to register this group to report Pillar 2 top-up taxes
-    And The Body content should be Sign in to HMRC online services to register.
-    And The inset text should be Please make sure that the Government Gateway ID you use to start the registration process is linked to the business that will act as the filing member. Otherwise, there is a risk of losing access to your account.
+    And The Body content should be You now need to sign in with a Government Gateway user ID associated with the filling member.
     When I continue
     Then I should be on auth-login page
 

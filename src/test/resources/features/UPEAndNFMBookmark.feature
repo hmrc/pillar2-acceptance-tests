@@ -37,9 +37,8 @@ Feature: Bookmark Feature
   And I click Sign out link
   Then I am on feedback survey page
   When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
-  Then I should be navigated to Task not yet started page
-  And Url for bookmark error page should be ending with /errors/task-not-yet-started
-  Then The Heading should be Task not yet started
+  Then I should be on Bookmark page
+  Then The Heading should be There has been an error
   Then I click return to your Pillar 2 top-up taxes registration link
   Then I should see task list sections
   And The Task Add filing member’s details status should be In progress
@@ -54,12 +53,13 @@ Feature: Bookmark Feature
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in to upe name page with CredID Bookmark2 for Pillar2
-    Then The Heading should be Task not yet started
+    Then I should be on Bookmark page
     Then I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Task list page
     And The Task Add ultimate parent’s details status should be In progress
     Then I click Add ultimate parent’s details link
     And The Heading should be We need to match the details of the ultimate parent entity to HMRC records
+    Then I should be on Initial guidance Page
     And I click on Continue button
     Then I should see the answer Yes remain selected
     And I click on Continue button
@@ -75,7 +75,7 @@ Feature: Bookmark Feature
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     When Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
-    Then The Heading should be Task not yet started
+    Then I should be on Bookmark page
     Then I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Task list page
     And The Task Add filing member’s details status should be In progress
@@ -105,8 +105,7 @@ Feature: Bookmark Feature
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in to upe org page with CredID Bookmark4 for Pillar2
-    Then The Heading should be Task not yet started
-    And The Body content should be The task you are trying to access cannot be started until the previous task has been completed.
+    Then I should be on Bookmark page
     And The Body content should be You must return to your Pillar 2 top-up taxes registration and complete the required tasks.
     Then I click return to your Pillar 2 top-up taxes registration link
     Then I should see task list sections
@@ -115,25 +114,25 @@ Feature: Bookmark Feature
   @zap_accessibility
   Scenario: 5 - Validate Bookmark error for NFM Contact Name and NFM Contact Email Pages
     Given Organisation User logs in NFM Contact Name page for Pillar2
-    Then The Heading should be Task not yet started
+    Then I should be on Bookmark page
     Given Organisation User logs in NFM Contact Email page for Pillar2
-    Then The Heading should be Task not yet started
+    Then I should be on Bookmark page
 
   @zap_accessibility @ignore
   Scenario: 6 - Validate Bookmark for UPE/NFM Name and NFM Address Pages
     When Organisation User logs in to upe name page with CredID Bookmark2 for Pillar2
-    Then The Heading should be Task not yet started
+    Then I should be on Bookmark page
     Given Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
-    Then The Heading should be Task not yet started
+    Then I should be on Bookmark page
     Given Organisation User logs in NFM name page for Pillar2
-    Then The Heading should be Task not yet started
+    Then I should be on Bookmark page
     Given Organisation User logs in NFM address page for Pillar2
-    Then The Heading should be Task not yet started
+    Then I should be on Bookmark page
 
   @zap_accessibility @ignore
   Scenario: 7 - Validate Bookmark for UPE/NFM Name and NFM Address Pages
     When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
-    Then I should be navigated to Task not yet started page
+    Then I should be on Bookmark page
 
 
 

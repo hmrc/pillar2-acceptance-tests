@@ -254,7 +254,7 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
 
   Scenario: 6 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
@@ -273,7 +273,7 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
 
   Scenario: 7 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
@@ -292,7 +292,7 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
 
   Scenario: 8 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
@@ -311,7 +311,7 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
 
   Scenario: 9 - verify that user routed to a placeholder error page, when etmp  returns Error while amending contact details
@@ -330,5 +330,5 @@ As a registered user
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on error place holder page
-    When I click start over CTA
+    When I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Dashboard page
