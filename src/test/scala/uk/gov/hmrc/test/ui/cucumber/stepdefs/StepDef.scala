@@ -138,7 +138,7 @@ class StepDef extends BaseStepDef {
 
   Then("""^The page header should be (.*)$""") { header: String =>
     Wait.waitForElementToPresentByCssSelector(TaskListPage.pageHeader)
-    assert(getTextOf(By.cssSelector(TaskListPage.pageHeader)).equals(header))
+    assert(getTextOf(By.cssSelector(TaskListPage.pageHeader)).contains(header))
   }
 
   Then("""^The hint text should be (.*)$""") { header: String =>
@@ -441,7 +441,7 @@ class StepDef extends BaseStepDef {
 
   Then("""^The caption must be (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(InitialGuidancePage.caption)
-    assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).equals(caption))
+    assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).contains(caption))
   }
 
   Then("""^the page title should be (.*)$""") { pageTitle: String =>

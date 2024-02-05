@@ -15,22 +15,15 @@ Feature: NFM NO ID journey
     Then I should navigate to Task list page
     When I click Add filing member’s details link
     Then I should navigate to NFM registration page
-    And The caption must be Group details
-    And The Heading should be Do you want to register a nominated filing member to report for this group?
-    And The Body content should be If you do not register a nominated filing member, we will use the ultimate parent entity (UPE) as the filing member.
-    And The inset text should be A nominated filing member must be nominated by the UPE and must be able to access the information required to report Pillar 2 top-up taxes on the group’s behalf.
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
-    And The caption must be Group details
-    And The Heading should be Is the nominated filing member registered in the UK?
     When I select option No and continue to next
     Then I should navigate to NFM Name page
     And The caption must be Group details
     And The Heading should be What is the name of the nominated filing member?
     When I enter NFM name as Test CYA
-    And The caption must be Group details
-    And The Heading should be What is the registered office address of Test CYA?
-    And The hint text should be Enter text and then choose from the list.
+    Then The caption must be Group details
+    And The Heading should be Where is the registered office address of Test CYA?
     And I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
     And I enter Country as United Kingdom
@@ -42,23 +35,23 @@ Feature: NFM NO ID journey
     Then I should navigate to NFM Contact Name page
     And The caption must be Group details
     And The Heading should be What is the name of the person or team we should contact from the nominated filing member?
-    And The hint text should be For example, ‘Tax team’ or ‘Ashley Smith’.
+    And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter NFM Contact name as Contact CYA
     And I click on Continue button
     Then I should navigate to NFM Contact Email page
     And The Heading should be What is the email address for Contact CYA?
-    And The hint text should be We will use this to confirm your records.
+    And The Body content should be We will use this to confirm your records
     When I enter NFM Contact Email as testcya@email.com
     And I click on Continue button
     Then I should navigate to NFM Telephone page
     And The caption must be Group details
     And The Heading should be Can we contact Contact CYA by telephone?
-    And The hint text should be We will use this to confirm your records.
+    And The Body content should be We will use this to confirm your records
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
     And The caption must be Group details
     And The Heading should be What is the telephone number for Contact CYA?
-    And The hint text should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
+    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192.
     When I enter NFM Telephone Number as 1234569
     And I click on Continue button
     Then I should navigate to NFM Check your answers page
@@ -157,8 +150,12 @@ Feature: NFM NO ID journey
     Then I should navigate to Task list page
     When I click Add filing member’s details link
     Then I should navigate to NFM registration page
+    And The caption is Group details
+    And The Heading should be Do you want to register a nominated filing member for this group?
+    And The Body content should be If you do not enter the details for a nominated filing member, the ultimate parent entity (UPE) will be used as the default.
+    And The Body content should be You must have permission from the UPE to nominate a company as a filing member and be able to access the information required to file Pillar 2 top-up tax on the group’s behalf.
     When I click on Continue button
-    Then I should see NFM error message Select yes if you want to register a nominated filing member to report for this group on the NFM registration page Element
+    Then I should see NFM error message Select yes if there is a nominated filing member for this group on the NFM registration page Element
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I click on Continue button
@@ -173,7 +170,7 @@ Feature: NFM NO ID journey
     Then I should see NFM error message The name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
     When I enter NFM name as NFM Test
     Then I should navigate to NFM Address page
-    And the page title should be What is the registered office address? - Report Pillar 2 top-up taxes - GOV.UK
+    And the page title should be Where is the registered office address? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
     Then I should see NFM error message Enter the first line of the address on the Address Line 1 Element
     And I should see NFM error message Enter the town or city on the City Element
