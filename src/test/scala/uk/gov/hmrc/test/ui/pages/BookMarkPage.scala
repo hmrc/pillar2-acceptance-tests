@@ -19,7 +19,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object BookMarkPage extends PageObject {
 
-  val url: String                 = s"$rootUrl"+"errors/task-not-yet-started"
+  val url: String                 = s"$rootUrl"+"error/restart-error"
   val header: String              = "h1.govuk-heading-l"
   val backLink                    = ".govuk-back-link"
 
