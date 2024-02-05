@@ -90,7 +90,7 @@ As a registered user
     Then I should navigate to accounts summary page
     And The Heading should be Group details
     And I should see row 1 key Where does the group operate?
-    And I should see row 2 key Group’s consolidated accounting period
+    And I should see row 2 key Group’s current consolidated accounting period
     And I should see row 3 key Start date
     And I should see row 4 key End date
     And I should see row 1 value In the UK and other countries
