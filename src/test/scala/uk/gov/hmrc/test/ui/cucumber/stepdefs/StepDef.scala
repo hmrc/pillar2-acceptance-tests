@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMEntityTypePage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEEntityTypePage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -38,6 +38,13 @@ class StepDef extends BaseStepDef {
   Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
+      case _ => AuthLoginPage.loginToSubscribe(name)
+    }
+  }
+
+  Given("""^(.*) logs in with BTA for Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginUsingBta(name)
       case _ => AuthLoginPage.loginToSubscribe(name)
     }
   }
@@ -132,6 +139,11 @@ class StepDef extends BaseStepDef {
   Then("""^The page header should be (.*)$""") { header: String =>
     Wait.waitForElementToPresentByCssSelector(TaskListPage.pageHeader)
     assert(getTextOf(By.cssSelector(TaskListPage.pageHeader)).equals(header))
+  }
+
+  Then("""^The hint text should be (.*)$""") { header: String =>
+    Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.hintText)
+    assert(getTextOf(By.cssSelector(BTAPillar2IDCheckPage.hintText)).contains(header))
   }
 
   Then("""^The Body content should be (.*)$""") { text: String =>
@@ -413,6 +425,16 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorMessage)
         getTextOf(By cssSelector (NFMContactEmailPage.errorMessage)) should include(error)
+
+      case "BTA Pillar2 validation" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorLink)
+        getTextOf(By cssSelector (BTAPillar2IDCheckPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorMessage)
+        getTextOf(By cssSelector (BTAPillar2IDCheckPage.errorMessage)) should include(error)
 
     }
   }
