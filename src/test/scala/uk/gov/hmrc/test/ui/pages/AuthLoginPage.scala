@@ -24,6 +24,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val url: String                         = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
   val frontEndUrl: String                 = TestConfiguration.url("pillar2-frontend")
   val frontEndSubscribeUrl: String        = s"$rootUrl"+"check-progress/register-your-group"
+  val frontEndBtaUrl: String              = s"$rootUrl"+"bta/pillar2-id"
   val frontEndUPEUrl: String              = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
   val frontEndUPEOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/entity-type"
   val redirectUrlField: String            = "redirectionUrl"
@@ -88,6 +89,13 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndSubscribeUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
+  def loginUsingBta(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndBtaUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
