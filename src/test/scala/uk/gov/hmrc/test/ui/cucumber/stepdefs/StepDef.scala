@@ -141,10 +141,10 @@ class StepDef extends BaseStepDef {
     assert(getTextOf(By.cssSelector(TaskListPage.pageHeader)).equals(header))
   }
 
-  /*Then("""^The hint text should be (.*)$""") { header: String =>
+  Then("""^The hint text should be (.*)$""") { header: String =>
     Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.hintText)
     assert(getTextOf(By.cssSelector(BTAPillar2IDCheckPage.hintText)).contains(header))
-  }*/
+  }
 
   Then("""^The Body content should be (.*)$""") { text: String =>
     Check.checkBodyText(text)
