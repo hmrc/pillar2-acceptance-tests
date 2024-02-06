@@ -205,6 +205,8 @@ Feature: Contact details guidance and logic to play back contact details
     When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
 
   Scenario: 3 - Create a new subscription with no data in UPE/NFM for validating play back contact details
     Given Organisation User logs in as upe for Pillar2
@@ -250,6 +252,8 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Contact details input telephone page
     When I enter Contact Telephone as 1234554
     And I click on Continue button
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
 
   Scenario: 4 - Guidance and play back contact details page Error validations
     Given I clear the cache

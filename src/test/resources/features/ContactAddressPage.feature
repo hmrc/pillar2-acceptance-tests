@@ -117,6 +117,8 @@ Feature: Enter contact address
     And I should see the Country field is selected with United Kingdom
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
 
   Scenario: 2 -  Error validations
     Given I clear the cache
@@ -197,5 +199,7 @@ Feature: Enter contact address
     And I should see contact address error message The town or city must be 35 characters or less on the City
     And I should see contact address error message The region must be 35 characters or less on the Region
     And I should see contact address error message The postal code must be 10 characters or less on the Postal Code
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
 
 

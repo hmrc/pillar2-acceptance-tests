@@ -2,7 +2,7 @@
 Feature: Dashboard Page
 As a registered user
   I should be able to navigate to Links on dashboard page
-  
+
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
@@ -46,7 +46,8 @@ As a registered user
     And The section 3 with header Account name value should be HMRC Shipley
     And I click on toggle link Make a payment from outside the UK
     And The caption for section 2 should be HMRC’s overseas bank details
-    When I select back link
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
     #Then I should be on Dashboard page
     #When I click View your payment history link
     #Then I should navigate to under construction page

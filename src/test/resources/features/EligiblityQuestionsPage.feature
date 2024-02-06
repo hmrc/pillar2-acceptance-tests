@@ -26,6 +26,10 @@ Feature: Eligibility Questions for Pillar 2
     Then I should navigate to confirmation page
     And The Heading should be You need to register this group to report Pillar 2 top-up taxes
     And The Body content should be You now need to sign in with a Government Gateway user ID associated with the filling member.
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to gov uk guidance page
+    When I click the browser back button
+    Then I should be on confirmation page
     When I continue
     Then I should be on auth-login page
 
@@ -77,3 +81,5 @@ Feature: Eligibility Questions for Pillar 2
     Then I should navigate to GGR guidance page
     When I select back link
     Then I should navigate to Global gross revenue
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to gov uk guidance page
