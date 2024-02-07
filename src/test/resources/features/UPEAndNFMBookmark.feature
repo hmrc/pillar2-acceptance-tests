@@ -34,6 +34,8 @@ Feature: Bookmark Feature
   Then I should navigate to NFM details page
   When I select option No and continue to next
   Then I should navigate to NFM Name page
+  When I click Report Pillar 2 top-up taxes link
+  Then I should navigate to Task list page
   And I click Sign out link
   Then I am on feedback survey page
   When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
@@ -74,6 +76,8 @@ Feature: Bookmark Feature
     Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
     When Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
     Then I should be on Bookmark page
     Then I click return to your Pillar 2 top-up taxes registration link
@@ -97,6 +101,8 @@ Feature: Bookmark Feature
     When I click on Continue button
     Then I should be on UPE entity type page
     And I should see the option UK limited company remain selected
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
 
   Scenario: 4 - User completes UPE GRS journey without answering mandatory questions
     Given Organisation User logs in as upe with credId Bookmark4 for Pillar2

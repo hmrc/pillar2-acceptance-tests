@@ -95,6 +95,8 @@ Feature: UPE NO ID journey
     And I should see the answer Yes remain selected
     And I click on Continue button
     Then I should see the Telephone number field is pre-populated with 1234569
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
 
   Scenario: 2 - Verify back link for all UPE No ID journey pages
     Given Organisation User logs in as upe for Pillar2
@@ -139,6 +141,9 @@ Feature: UPE NO ID journey
     Then I should navigate to input-upe-name page
     When I select back link
     Then I should be on UPE business page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
+
   @zap_accessibility
   Scenario: 3 - Validate different error messages for UPE no ID journey pages
     Given Organisation User logs in as upe for Pillar2
@@ -243,6 +248,8 @@ Feature: UPE NO ID journey
     And I select option No and continue to next
     Then I should be on Check your answers page
     And I should see row 5 value No
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
 
   Scenario: 5 - Status update for Enter ultimate parent’s details task
     Given Organisation User logs in to subscribe for Pillar2
