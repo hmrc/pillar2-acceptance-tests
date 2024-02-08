@@ -16,10 +16,17 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
+object BTARegisterGuidancePage extends PageObject {
 
-object GUKGuidancePage extends PageObject {
-  val url: String        = "https://www.gov.uk/government/publications/introduction-of-the-new-multinational-top-up-tax/multinational-top-up-tax-uk-adoption-of-organisation-for-economic-co-operation-and-development-pillar-2"
-  val header: String     = "h1.govuk-heading-xl"
+  val url: String     = s"$rootUrl" + "bta/register"
+  val header: String  = "h1.govuk-heading-l"
+  val backLink        = ".govuk-back-link"
+  val registerLink    = ".govuk-link--no-visited-state"
+  val returnToBTA     = "[href*='business-account']"
+
 }
+
+

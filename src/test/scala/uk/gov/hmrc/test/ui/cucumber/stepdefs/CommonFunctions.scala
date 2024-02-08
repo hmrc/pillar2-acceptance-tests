@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AccountsSummaryPage, AgentAffinityKBPage, AgentServicesAccountPage, AssistantRoleKBPage, AuthLoginPage, BAGuidancePage, BTAPillar2IDCheckPage, BookMarkPage, BusinessActivityEQPage, ConfirmationPage, ContactAddressInputPage, ContactDetailsCheckAnswersPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsSummaryPage, ContactDetailsTelephonePage, CorporationTaxUTRPage, DashboardPage, DraftGuidancePage, DuplicateAckRefErrorPage, ErrorPlaceHolderPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, IndividualAffinityKBPage, InitialGuidancePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MakePaymentPage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, RegistrationConfirmationPage, RegistrationReturnErrorPage, ReviewAnswersPage, SearchRegisterPage, SecondContactDetailsPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage, UnderConstructionPage}
+import uk.gov.hmrc.test.ui.pages.{AccountsSummaryPage, AgentAffinityKBPage, AgentServicesAccountPage, AssistantRoleKBPage, AuthLoginPage, BAGuidancePage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BookMarkPage, BusinessActivityEQPage, ConfirmationPage, ContactAddressInputPage, ContactDetailsCheckAnswersPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsSummaryPage, ContactDetailsTelephonePage, CorporationTaxUTRPage, DashboardPage, DraftGuidancePage, DuplicateAckRefErrorPage, EACDPage, ErrorPlaceHolderPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage1, GUKGuidancePage2, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, GuidancePage, IndividualAffinityKBPage, InitialGuidancePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MakePaymentPage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, RegistrationConfirmationPage, RegistrationReturnErrorPage, ReviewAnswersPage, SearchRegisterPage, SecondContactDetailsPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage, UnderConstructionPage}
 
 trait CommonFunctions
   extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
@@ -40,7 +40,8 @@ trait CommonFunctions
       case "NFM guidance page"                    => NFMGuidancePage
       case "MT guidance page"                     => MTGuidancePage
       case "GGR guidance page"                    => GGRGuidancePage
-      case "gov uk guidance page"                 => GUKGuidancePage
+      case "gov uk guidance page1"                => GUKGuidancePage1
+      case "gov uk guidance page2"                => GUKGuidancePage2
       case "auth-login page"                      => AuthLoginPage
       case "Task list page"                       => TaskListPage
       case "Initial guidance Page"                => InitialGuidancePage
@@ -105,6 +106,9 @@ trait CommonFunctions
       case "duplicate ack ref error page"         => DuplicateAckRefErrorPage
       case "Make a payment page"                  => MakePaymentPage
       case "bta pillar2 ID check page"            => BTAPillar2IDCheckPage
+      case "eacd page"                            => EACDPage
+      case "bta register guidance page"           => BTARegisterGuidancePage
+      case "bta register confirmation page"       => BTARegisterConfirmationPage
     }
   }
 }
