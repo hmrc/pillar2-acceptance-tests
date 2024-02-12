@@ -2,6 +2,10 @@
 Feature: Enter contact address
   As an user
   I want to enter the contact address
+  
+  
+  
+  
 
   Scenario: 1 - Create a new subscription with NFM No Id flow for validating address details
     Given I clear the cache
