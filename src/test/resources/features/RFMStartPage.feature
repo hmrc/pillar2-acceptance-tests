@@ -18,8 +18,13 @@ Feature: RFM Start page
     And I should see confirmation checkbox
     When I click on Continue button
     Then I should see error message You must select the checkbox to continue on the RFM start Page
+    When I click go back to the service start page for more information link
+    Then I should navigate to gov uk guidance page3
+    When I click the browser back button
+    Then I should be on RFM start page
     When I select confirmation checkbox
     And I click on Continue button
     Then I should be on under construction page
     When I select back link
     Then I should be on RFM start page
+
