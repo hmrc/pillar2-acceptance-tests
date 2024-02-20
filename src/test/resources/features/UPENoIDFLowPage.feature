@@ -154,8 +154,10 @@ Feature: UPE NO ID journey
     Then I should navigate to input-upe-name page
     When I click on Continue button
     Then I should see error message You need to enter the name of the ultimate parent entity on the Input UPE Name Page
-    When I enter NFM name as UPE Name character length Error validation and Maximum UPE character length should be entered 105 characters.
+    When I enter UPE name as UPE Name character length Error validation and Maximum UPE character length should be entered 105 characters.
     Then I should see error message The name of the ultimate parent entity must be 105 characters or less on the Input UPE Name Page
+    When I enter UPE name as Test <script>alert(document.domain)</script>
+    Then I should see error message The name of the ultimate parent entity must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Input UPE Name Page
     And I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
     When I click on Continue button
