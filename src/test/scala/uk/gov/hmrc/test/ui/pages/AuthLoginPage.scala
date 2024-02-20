@@ -28,6 +28,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndUPEUrl: String              = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
   val frontEndUPEOrgTypeUrl: String       = s"$rootUrl"+"business-matching/ultimate-parent/uk-based/entity-type"
   val redirectUrlField: String            = "redirectionUrl"
+  val redirectionUrlField: String         = "#redirectionUrl"
   val credIdField: String                 = "authorityId"
   val frontEndNameUrl: String             = s"$rootUrl"+"business-matching/ultimate-parent/no-id/input-name"
   val frontEndCAUrl: String               = s"$rootUrl"+"business-matching/ultimate-parent/no-id/check-answers"
@@ -46,6 +47,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndFDCAUrl: String             = s"$rootUrl"+"further-details/check-answers"
   val frontEndSubUrl: String              = s"$rootUrl"+"review-submit/confirmation"
   val frontEndDashboardUrl: String        = s"$rootUrl"+"pillar2-top-up-tax-home"
+  val rfmUrl: String                      = s"$rootUrl"+"replace-filing-member/security/enter-pillar2-id"
   val enrolmentKeyField:String            ="enrolment[0].name"
   val identifierNameField:String          ="input-0-0-name"
   val identifierValueField:String         ="input-0-0-value"
@@ -53,6 +55,13 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
+  def loginWithUserToRFM(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(rfmUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
@@ -163,6 +172,12 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  def loginAsIndToRFM(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(rfmUrl, redirectUrlField)
+    clickSubmitButton()
+  }
+
   def loginAsAgent(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
@@ -170,9 +185,24 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  def loginAsAgentToRFM(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(rfmUrl, redirectUrlField)
+    selectAffinityGroupAgent()
+    clickSubmitButton()
+  }
+
   def loginAssistant(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    selectCredRoleAssistant()
+    clickSubmitButton()
+  }
+
+  def loginAssistantToRFM(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(rfmUrl, redirectUrlField)
     selectAffinityGroupOrg()
     selectCredRoleAssistant()
     clickSubmitButton()

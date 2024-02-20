@@ -17,12 +17,12 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
+import uk.gov.hmrc.test.ui.cucumber.Input.{getAttribueOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
 import uk.gov.hmrc.test.ui.pages.RFMStartPage.sections
 import uk.gov.hmrc.test.ui.pages.UPEPage.rootUrl
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, RFMStartPage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, RFMStartPage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -33,6 +33,16 @@ class StepDef extends BaseStepDef {
       case "Individual User" => AuthLoginPage.loginAsInd(name)
       case "Agent User" => AuthLoginPage.loginAsAgent(name)
       case "Assistant User" => AuthLoginPage.loginAssistant(name)
+
+    }
+  }
+
+  Given("""^(.*) logs in with rfm URL to Pillar2$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginWithUserToRFM(name)
+      case "Individual User" => AuthLoginPage.loginAsIndToRFM(name)
+      case "Agent User" => AuthLoginPage.loginAsAgentToRFM(name)
+      case "Assistant User" => AuthLoginPage.loginAssistantToRFM(name)
 
     }
   }
@@ -552,55 +562,55 @@ class StepDef extends BaseStepDef {
     RFMStartPage.clickConfirm()
   }
 
-  /*  Given("""^I fill (.*) and continue$""") { page: String =>
-      page match {
-        case "What is the main address of your business page" => Forms.addressNonUK()
+      /*  Given("""^I fill (.*) and continue$""") { page: String =>
+          page match {
+            case "What is the main address of your business page" => Forms.addressNonUK()
+          }
+          Input.clickSubmit()
+
+        And("""^I select SignOut link$""") { (id: String) =>
+         Input.clickById(id)
+         Input.clickSubmit
+       }
+
+       And("""^I click browser back$""") { (id: String) =>
+        Input.clickByLinkText(id)
       }
-      Input.clickSubmit()
 
-    And("""^I select SignOut link$""") { (id: String) =>
-     Input.clickById(id)
-     Input.clickSubmit
-   }
+        And(
+          """^(click Continue button|click Confirm and send|click Try Again)$"""
+        ) { (negate: String) =>
+          Input.clickSubmit
+        }
 
-   And("""^I click browser back$""") { (id: String) =>
-    Input.clickByLinkText(id)
-  }
+        Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
+          Input.sendKeysById(text, id)
+        }
 
-    And(
-      """^(click Continue button|click Confirm and send|click Try Again)$"""
-    ) { (negate: String) =>
-      Input.clickSubmit
-    }
+        And("""^I select (.*) and continue$""") { (id: String) =>
+          Input.clickById(id)
+          Input.clickSubmit
+        }
 
-    Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
-      Input.sendKeysById(text, id)
-    }
+        And("""^I click (.*)$""") { (id: String) =>
+          Input.clickByLinkText(id)
+        }
 
-    And("""^I select (.*) and continue$""") { (id: String) =>
-      Input.clickById(id)
-      Input.clickSubmit
-    }
+        And("""^click (.*) element$""") { (id: String) =>
+          Input.clickById(id)
+        }
 
-    And("""^I click (.*)$""") { (id: String) =>
-      Input.clickByLinkText(id)
-    }
+        Then("""^The Page should include (.*)$""") { text: String =>
+          Check.checkBodyText(text)
+        }
 
-    And("""^click (.*) element$""") { (id: String) =>
-      Input.clickById(id)
-    }
+        Then("""wait for (.*) seconds$""") { (secs: Int) =>
+          Wait.secondsWait(secs)
+        }
 
-    Then("""^The Page should include (.*)$""") { text: String =>
-      Check.checkBodyText(text)
-    }
-
-    Then("""wait for (.*) seconds$""") { (secs: Int) =>
-      Wait.secondsWait(secs)
-    }
-
-    Given("""^the user should be on the new window with heading (.*)""") { (title: String) =>
-      Input.switchToNewWindow
-      Check.checkH1(title)
-    }*/
+        Given("""^the user should be on the new window with heading (.*)""") { (title: String) =>
+          Input.switchToNewWindow
+          Check.checkH1(title)
+        }*/
 
 }

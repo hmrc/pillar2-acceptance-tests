@@ -28,3 +28,58 @@ Feature: RFM Start page
     When I select back link
     Then I should be on RFM start page
 
+  @zap_accessibility @tests
+  Scenario: 2 - Verify Individual RFM KB page
+    Given I access RFM start page
+    Then I should be on RFM start page
+    When I select confirmation checkbox
+    And I click on Continue button
+    Then I should be on auth-login page
+    And I should see the Redirect URL field is pre-populated with /replace-filing-member/security/enter-pillar2-id
+    When Individual User logs in with rfm URL to Pillar2
+    Then I should be on Individual RFM KB Page
+    And The Heading should be Sorry, you’re unable to use this service
+    And The Body content should be You’ve signed in with an individual account. Only users with an organisation account can replace their nominated filing member.
+    And The Body content should be If you need to replace a nominated filing member, sign in to Government Gateway with an organisation account.
+    When I click sign in to Government Gateway with an organisation account link
+    Then I should be on auth-login page
+    And I should see the Redirect URL field is pre-populated with /replace-filing-member/start
+    When I click the browser back button
+    Then I should be on Individual RFM KB Page
+    When I click Go back to the Replace filing member for Pillar 2 top-up taxes start page for more information on who can use this service link
+    Then I should be on RFM start page
+
+  @tests
+  Scenario: 3 - Verify Agent RFM KB page
+    Given I access RFM start page
+    Then I should be on RFM start page
+    When I select confirmation checkbox
+    And I click on Continue button
+    Then I should be on auth-login page
+    And I should see the Redirect URL field is pre-populated with /replace-filing-member/security/enter-pillar2-id
+    When Agent User logs in with rfm URL to Pillar2
+    Then I should be on Agent RFM KB Page
+    And The Heading should be Sorry, you’re unable to use this service
+    And The Body content should be You’ve signed in using an agent’s Government Gateway user ID.
+    And The Body content should be Agents cannot use this service to replace a nominated filing member.
+    And The Body content should be Someone with an administrator’s Government Gateway user ID who is the new nominated filing member will need to replace the current filing member.
+    When I click Go back to the Replace filing member for Pillar 2 top-up taxes start page for more information on who can use this service link
+    Then I should be on RFM start page
+    
+  @zap_accessibility @tests1
+  Scenario: 4 - Verify security question1 page
+    Given I access RFM start page
+    Then I should be on RFM start page
+    When I select confirmation checkbox
+    And I click on Continue button
+    Then I should be on auth-login page
+    And I should see the Redirect URL field is pre-populated with /replace-filing-member/security/enter-pillar2-id
+    When Organisation User logs in with rfm URL to Pillar2
+
+
+
+
+
+
+
+
