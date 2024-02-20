@@ -201,7 +201,7 @@ Feature: Secondary Contact details for the filing member
     When I enter Second Contact Input as 1234554
     And I click on Continue button
     Then I should navigate to Contact address input page
-   @tests @zap_accessibility
+  @zap_accessibility
   Scenario: 3 - Secondary contact details pages Error validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
@@ -269,7 +269,10 @@ Feature: Secondary Contact details for the filing member
     When I enter Second Contact Name as Testing the character limit of contact details field is 160 character limit. Maximum character limit of contact details name field should be 160 characters, user should not be able to continue with more than 160 characters.
     And I click on Continue button
     Then I should see error message The name of the contact person or team should be 160 characters or less on the Second Contact details Page
-    When I enter Second Contact Name as Second Contact Name Test
+     When I enter Second Contact Name as Test <script>alert(document.domain)</script>
+     And I click on Continue button
+     Then I should see error message The name of the contact person or team must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Second Contact details Page
+     When I enter Second Contact Name as Second Contact Name Test
     And I click on Continue button
     Then I should navigate to Second Contact email page
     And I click on Continue button
