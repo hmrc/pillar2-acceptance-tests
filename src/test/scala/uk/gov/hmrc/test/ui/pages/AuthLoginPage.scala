@@ -287,6 +287,16 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  def loginWithExistingEntityWithRFM(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(rfmUrl, redirectUrlField)
+    Input.sendKeysById(enrolmentKey, enrolmentKeyField)
+    Input.sendKeysById(identifierName, identifierNameField)
+    Input.sendKeysById(identifierValue, identifierValueField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
   private def selectAffinityGroupOrg() =
     new Select(findAffinityGroup()).selectByVisibleText("Organisation")
 

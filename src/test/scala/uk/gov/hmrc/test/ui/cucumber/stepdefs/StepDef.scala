@@ -20,9 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{getAttribueOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.RFMStartPage.sections
-import uk.gov.hmrc.test.ui.pages.UPEPage.rootUrl
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, RFMStartPage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -37,16 +35,6 @@ class StepDef extends BaseStepDef {
     }
   }
 
-  Given("""^(.*) logs in with rfm URL to Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginWithUserToRFM(name)
-      case "Individual User" => AuthLoginPage.loginAsIndToRFM(name)
-      case "Agent User" => AuthLoginPage.loginAsAgentToRFM(name)
-      case "Assistant User" => AuthLoginPage.loginAssistantToRFM(name)
-
-    }
-  }
-
   Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
@@ -54,9 +42,7 @@ class StepDef extends BaseStepDef {
     }
   }
 
-  Given("""^I access RFM start page$""") { () =>
-    Nav.navigateTo(RFMStartPage.url)
-  }
+
 
   Given("""^(.*) logs in with BTA for Pillar2$""") { name: String =>
     name match {
@@ -451,17 +437,6 @@ class StepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorMessage)
         getTextOf(By cssSelector (BTAPillar2IDCheckPage.errorMessage)) should include(error)
-
-      case "RFM start" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMStartPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMStartPage.errorLink)
-        getTextOf(By cssSelector (RFMStartPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMStartPage.errorMessage)
-        getTextOf(By cssSelector (RFMStartPage.errorMessage)) should include(error)
-
     }
   }
 
@@ -541,25 +516,6 @@ class StepDef extends BaseStepDef {
 
   When("""^I refresh the page$""") { () =>
     driver.navigate.refresh()
-  }
-
-  And("""^I should see 4 sections on RFM start page""") { () =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(RFMStartPage.sections)
-    assert(driver.findElements(By.cssSelector(RFMStartPage.sections)).size() == 4)
-  }
-
-  And("""^I should see the section (\d+) as (.*)""") { (sectionNumber: Int, sectionName: String) =>
-    assert(driver.findElements(By.cssSelector(RFMStartPage.sections)).get(sectionNumber - 1).getText.contains(sectionName))
-  }
-
-  And("""^I should see confirmation checkbox""") { () =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(RFMStartPage.confirmCheckBox)
-  }
-
-  And("""^I select confirmation checkbox""") { () =>
-    RFMStartPage.clickConfirm()
   }
 
       /*  Given("""^I fill (.*) and continue$""") { page: String =>
