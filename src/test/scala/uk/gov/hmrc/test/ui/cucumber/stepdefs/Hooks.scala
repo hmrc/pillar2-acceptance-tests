@@ -18,19 +18,24 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 import org.openqa.selenium.{OutputType, TakesScreenshot}
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.selenium.webdriver.{Browser, Driver}
 
-class Hooks extends ScalaDsl with EN with BrowserDriver {
+class Hooks extends ScalaDsl with EN with Browser {
 
-  Before { scenario: Scenario =>
-    driver.manage().deleteAllCookies()
+  BeforeAll {
+    startBrowser()
+    Driver.instance.manage().deleteAllCookies()
   }
 
   After { scenario: Scenario =>
     if (scenario.isFailed) {
       val screenshotName = scenario.getName.replaceAll(" ", "_")
-      val screenshot     = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
+      val screenshot = Driver.instance.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
       scenario.attach(screenshot, "image/png", screenshotName)
+    }
+
+    AfterAll {
+      quitBrowser()
     }
   }
 }
