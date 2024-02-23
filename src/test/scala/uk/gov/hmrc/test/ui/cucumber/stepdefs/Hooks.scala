@@ -20,7 +20,7 @@ import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 import org.openqa.selenium.{OutputType, TakesScreenshot}
 import uk.gov.hmrc.selenium.webdriver.{Browser, Driver}
 
-class Hooks extends ScalaDsl with EN with Browser {
+object Hooks extends ScalaDsl with EN with Browser {
 
   BeforeAll {
     startBrowser()
