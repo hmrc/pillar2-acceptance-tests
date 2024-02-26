@@ -1,4 +1,4 @@
-@tests1
+@tests
 Feature: RFM check your answers page
   As a replacing filing member
   I want to access CYA page to check my answers and change
