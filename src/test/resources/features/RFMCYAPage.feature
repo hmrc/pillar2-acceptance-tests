@@ -1,4 +1,4 @@
-@tests
+@tests1
 Feature: RFM check your answers page
   As a replacing filing member
   I want to access CYA page to check my answers and change
@@ -27,7 +27,6 @@ Feature: RFM check your answers page
     When I click change link for RFM Pillar 2 top-up taxes ID
     When I provide RFM pillar2 id as XMPLR0123456111
     And I click on Continue button
-    And I click on Continue button
     And I should see row 1 key Pillar 2 top-up taxes ID
     And I should see row 1 value XMPLR0123456111
     When I click change link for RFM Registration date
@@ -37,3 +36,5 @@ Feature: RFM check your answers page
     And I click on Continue button
     And I should see row 2 key Registration date
     And I should see row 2 value 10 February 2024
+    And I click on Continue button
+    Then I should navigate to under construction page
