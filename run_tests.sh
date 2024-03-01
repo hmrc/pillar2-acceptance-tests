@@ -7,4 +7,4 @@ fi
 
 environment="local"
 
-sbt -Denvironment="$environment" -Dbrowser="$browser"  clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner'
+sbt -Denvironment="$environment" -Dbrowser="$browser" clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner'
