@@ -48,7 +48,7 @@ Feature: Ultimate parent entity GRS journey
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-  @tests1
+
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
