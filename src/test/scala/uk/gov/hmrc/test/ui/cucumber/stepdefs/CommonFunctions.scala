@@ -21,8 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AccountsSummaryPage, AgentAffinityKBPage, AgentRFMKBPage, AgentServicesAccountPage, AssistantRoleKBPage, AssistantUserRFMKBPage, AuthLoginPage, BAGuidancePage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BookMarkPage, BusinessActivityEQPage, ConfirmationPage, ContactAddressInputPage, ContactDetailsCheckAnswersPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsSummaryPage, ContactDetailsTelephonePage, CorporationTaxUTRPage, DashboardPage, DraftGuidancePage, DuplicateAckRefErrorPage, DuplicateRFMKBPage, EACDPage, ErrorPlaceHolderPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage1, GUKGuidancePage2, GUKGuidancePage3, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, Pillar2GovUkGuidancePage, IndividualAffinityKBPage, IndividualRFMKBPage, InitialGuidancePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MakePaymentPage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, P2SubmissionSetUpPage, RFMCYAPage, RFMCorpPositionPage, RFMEnterPillar2IdPage, RFMRegistrationDatePage, RFMStartPage, RegistrationConfirmationPage, RegistrationReturnErrorPage, ReviewAnswersPage, SearchRegisterPage, SecondContactDetailsPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage, SubscriptionAPIerrorPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage, UnderConstructionPage}
-
+import uk.gov.hmrc.test.ui.pages.{AccountsSummaryPage, AgentAffinityKBPage, AgentRFMKBPage, AgentServicesAccountPage, AssistantRoleKBPage, AssistantUserRFMKBPage, AuthLoginPage, BAGuidancePage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BookMarkPage, BusinessActivityEQPage, ConfirmationPage, ContactAddressInputPage, ContactDetailsChangeTelephonePage, ContactDetailsCheckAnswersPage, ContactDetailsDisplayPage, ContactDetailsGuidancePage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, ContactDetailsSummaryPage, ContactDetailsTelephonePage, CorporationTaxUTRPage, DashboardPage, DraftGuidancePage, DuplicateAckRefErrorPage, DuplicateRFMKBPage, EACDPage, ErrorPlaceHolderPage, FDGroupStatusPage, FurtherDetailsCheckYourAnswersPage, GGRGuidancePage, GUKGuidancePage1, GUKGuidancePage2, GUKGuidancePage3, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, IncompleteDataSubmissionErrorPage, IndividualAffinityKBPage, IndividualRFMKBPage, InitialGuidancePage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, LLPGRSPage, MTGuidancePage, MakePaymentPage, MultipleTerritoriesEQPage, NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMEQPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMGuidancePage, NFMLLPGRSPage, NFMNamePage, NFMRegistrationPage, NFMTelephonePage, NFMUKCompanyGRSPage, P2SubmissionSetUpPage, Pillar2GovUkGuidancePage, RFMCYAPage, RFMCorpPositionPage, RFMEnterPillar2IdPage, RFMRegistrationDatePage, RFMStartPage, RegistrationAPIerrorPage, RegistrationConfirmationPage, RegistrationReturnErrorPage, ReviewAnswersPage, SearchRegisterPage, SecondContactDetailsPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage, SubscriptionAPIerrorPage, TaskListPage, UKCompanyGRSPage, UPEAddressPage, UPECheckYourAnswersPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage, UnderConstructionPage}
 trait CommonFunctions
   extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
@@ -78,6 +77,7 @@ trait CommonFunctions
       case "Contact details input name page"      => ContactDetailsInputNamePage
       case "Contact details input email page"     => ContactDetailsInputEmailPage
       case "Contact details telephone page"       => ContactDetailsTelephonePage
+      case "Contact details change telephone page"=> ContactDetailsChangeTelephonePage
       case "Contact details input telephone page" => ContactDetailsInputTelephonePage
       case "Second Contact details page"          => SecondContactDetailsPage
       case "Second Contact name page"             => SecondContactNamePage
@@ -111,6 +111,7 @@ trait CommonFunctions
       case "bta register guidance page"           => BTARegisterGuidancePage
       case "bta register confirmation page"       => BTARegisterConfirmationPage
       case "Subscription API error page"          => SubscriptionAPIerrorPage
+      case "Registration API error page"          => RegistrationAPIerrorPage
       case "RFM start page"                       => RFMStartPage
       case "Individual RFM KB Page"               => IndividualRFMKBPage
       case "Agent RFM KB Page"                    => AgentRFMKBPage
@@ -118,6 +119,7 @@ trait CommonFunctions
       case "Assistant User RFM KB Page"           => AssistantUserRFMKBPage
       case "Duplicate RFM KB Page"                => DuplicateRFMKBPage
       case "RFM Registration Date Page"           => RFMRegistrationDatePage
+      case "Incomplete Data Submission Error Page"=> IncompleteDataSubmissionErrorPage
       case "RFM CYA Page"                         => RFMCYAPage
       case "RFM Corp Position Page"               => RFMCorpPositionPage
       case "P2 Submission Set Up Page"            => P2SubmissionSetUpPage
