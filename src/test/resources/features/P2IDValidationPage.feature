@@ -19,7 +19,7 @@ Feature: BTA user registration for Pillar 2 service
     And I should see return to BTA button
     When I click Find out how to register to report Pillar 2 top-up taxes (opens in new tab) link
     Then I should be navigated to new tab
-    Then I should navigate to gov uk guidance page2
+    Then I should navigate to guidance page
     Then I close new tab
     And I should navigate back to main tab
 

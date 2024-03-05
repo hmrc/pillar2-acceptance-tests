@@ -19,10 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 
-object GuidancePage extends PageObject {
-//  val url: String     = s"$rootUrl"+"eligibility/kb-in-the-uk-ineligible"
-  val url: String     = s"$rootUrl"+"under-construction"
-
-  val caption         = "Check if your group is liable"
+object Pillar2GovUkGuidancePage extends PageObject {
+  val url: String     = "https://www.gov.uk/guidance/report-pillar-2-top-up-taxes"
 
 }

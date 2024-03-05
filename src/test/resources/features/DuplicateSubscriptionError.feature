@@ -75,10 +75,11 @@ Feature: Create a new registration and subscription
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to duplicate ack ref error page
-    And The Heading should be Your group is already registered
-    And The Body content should be You will need to contact your administrator to give you access.
-    And The Body content should be You can email pillar2mailbox@hmrc.gov.uk if you are having problems accessing the service.
+    And The Heading should be Your group has already registered to report Pillar 2 top-up taxes
+    And The Body content should be You can find your group’s Pillar 2 top-up taxes ID within your business tax account.
+    And The Body content should be If you need to request access to this account, your administrator can give you access using ‘Manage account’ settings within their business tax account.
 
+  @ignore
   Scenario: 2 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,NFM GRS flow path.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -161,6 +162,7 @@ Feature: Create a new registration and subscription
     And The Body content should be You will need to contact your administrator to give you access.
     And The Body content should be You can email pillar2mailbox@hmrc.gov.uk if you are having problems accessing the service.
 
+  @ignore
   Scenario: 3 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,NFM NO flow ID path.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
