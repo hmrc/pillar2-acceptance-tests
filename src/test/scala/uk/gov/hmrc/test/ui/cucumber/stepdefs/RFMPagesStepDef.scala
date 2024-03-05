@@ -140,6 +140,14 @@ class RFMPagesStepDef extends BaseStepDef {
     RFMStartPage.clickConfirm()
   }
 
+  And("""^I click change link for RFM (.*)""") { (link: String) =>
+    link match {
+      case "Pillar 2 top-up taxes ID" =>
+        clickByCss(RFMCYAPage.changePID)
+      case "Registration date" =>
+        clickByCss(RFMCYAPage.changeRegistrationDate)
+    }
+  }
   And("""^I select corp position as (.*)$""") { (option: String) =>
     option match {
       case "UPE" => Input.clickById("value_0")
