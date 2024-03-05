@@ -42,7 +42,7 @@ Feature: Eligibility Questions for Pillar 2
     And The Body content should be The nominated filing member is responsible for managing the group’s tax returns and keeping business records.
     When I continue without selecting an option
     Then I should see error message Select yes if you are registering as the nominated filing member for this group on the Eligibility question Page
-    When I choose No and continue
+    When I choose Eligibility No NFM and continue
     Then I should navigate to NFM guidance page
     And The Heading should be Based on your answers, you cannot register this group to report Pillar 2 top-up taxes
     And The Body content should be Only the ultimate parent or nominated filing member for an eligible group can register to report Pillar 2 top-up taxes.
@@ -53,7 +53,7 @@ Feature: Eligibility Questions for Pillar 2
     Then I should navigate to NFM guidance page
     When I select back link
     Then I should navigate to NFM EQ page
-    When I choose Yes and continue
+    When I choose Eligibility Yes NFM and continue
     Then I am on Business activity EQ Page
     When I continue without selecting an option
     Then I should see error message Select yes if the group has business operations in the UK on the Eligibility question Page
