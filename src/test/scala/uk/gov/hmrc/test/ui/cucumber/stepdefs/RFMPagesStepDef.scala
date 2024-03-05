@@ -38,6 +38,10 @@ class RFMPagesStepDef extends BaseStepDef {
     Nav.navigateTo(RFMStartPage.url)
   }
 
+  Given("""^I access RFM corporate position page$""") { () =>
+    Nav.navigateTo(RFMCorpPositionPage.url)
+  }
+
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>
@@ -78,6 +82,16 @@ class RFMPagesStepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(RFMRegistrationDatePage.errorMessage)
         getTextOf(By cssSelector (RFMRegistrationDatePage.errorMessage)) should include(error)
+
+      case "corp position" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorLink)
+        getTextOf(By cssSelector (RFMCorpPositionPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorMessage)
+        getTextOf(By cssSelector (RFMCorpPositionPage.errorMessage)) should include(error)
 
     }
   }
@@ -134,4 +148,11 @@ class RFMPagesStepDef extends BaseStepDef {
         clickByCss(RFMCYAPage.changeRegistrationDate)
     }
   }
+  And("""^I select corp position as (.*)$""") { (option: String) =>
+    option match {
+      case "UPE" => Input.clickById("value_0")
+      case "NFM" => Input.clickById("value_1")
+    }
+  }
+
 }

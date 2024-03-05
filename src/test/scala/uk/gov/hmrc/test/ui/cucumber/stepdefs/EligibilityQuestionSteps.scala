@@ -28,6 +28,8 @@ class EligibilityQuestionSteps extends CommonFunctions {
     option match {
       case "Yes" => Input.clickById("value_0")
       case "No" => Input.clickById("value_1")
+      case "Eligibility Yes NFM" => Input.clickById("registeringNfmGroup_0")
+      case "Eligibility No NFM" => Input.clickById("registeringNfmGroup_1")
     }
     BusinessActivityEQPage.clickContinue()
   }
