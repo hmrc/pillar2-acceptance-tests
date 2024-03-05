@@ -24,6 +24,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val url: String                         = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
   val frontEndUrl: String                 = TestConfiguration.url("pillar2-frontend")
   val incorrectUrl: String                 = TestConfiguration.url("pillar2-frontend")+"randomUrl"
+  val submissionFrontEndUrl: String       = TestConfiguration.url("pillar2-submission-frontend")
   val frontEndSubscribeUrl: String        = s"$rootUrl"+"check-progress/register-your-group"
   val frontEndBtaUrl: String              = s"$rootUrl"+"bta/pillar2-id"
   val frontEndUPEUrl: String              = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
@@ -56,6 +57,13 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
+  def logonToP2SubmissionWithUser(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(submissionFrontEndUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
