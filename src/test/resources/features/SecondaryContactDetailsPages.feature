@@ -2,41 +2,43 @@
 Feature: Secondary Contact details for the filing member
   As a NFM Subscription user
   I want to enter the secondary contact details,in case the first in not able to be reached
-
-  Scenario: 1 - Provide secondary contact details for NFM user and validating play back secondary contact details
+  @tests1
+  Scenario: 1 - Create a new subscription with UPE GRS Flow and NFM No Id flow to validate Contact Details
     Given Organisation User logs in as upe with credId SecondContact for Pillar2
     Then I should be on UPE business page
+    When I select option No and continue to next
+    Then I should navigate to input-upe-name page
+    When I enter UPE name as Test
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Address Line 1
+    And I enter City as City
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to UPE Contact person/team Name page
+    When I enter UPE Person/Team name as UPE Test
+    And I click on Continue button
+    Then I should navigate to UPE Contact Email page
+    When I enter UPE Email address as testupe@email.com
+    And I click on Continue button
+    Then I should navigate to UPE Telephone page
     When I select option Yes and continue to next
-    Then I should be on UPE entity type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to UKCompany GRS page
-    And The Heading should be Stub GRS Journey Data
-    When I registered successfully with BV enabled
-    And I click on Save&Continue button
+    Then I should navigate to input telephone page
+    And I enter Telephone Number as 123456
+    And I click on Continue button
+    Then I should be on Check your answers page
+    And I click on Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    And The Task Add filing member’s details status should be Not started
     When I click Add filing member’s details link
     Then I should navigate to NFM registration page
-    When I select Yes option and continue to next
-    Then I should navigate to NFM details page
-    When I select option Yes and continue to next
-    Then I should be on NFM entity type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to NFM UKCompany GRS page
-    When I registered successfully with BV enabled
-    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
-    And I click on Save&Continue button
+    When I select No option and continue to next
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and other countries in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
-    And The caption must be Group details
-    And The Heading should be What are the start and end dates of the group’s consolidated accounting period?
-    And The Body content should be This will be the first accounting period the group uses for their consolidated financial statements following the implementation of Pillar 2 top-up taxes in the UK, on 31 December 2023.
     When Accounting Period Start Day is entered as 15
     And Accounting Period Start Month is entered as 1
     And Accounting Period Start Year is entered as 2024
@@ -50,16 +52,44 @@ Feature: Secondary Contact details for the filing member
     Then The Task Add Contact details status should be Not started
     When I click Add Contact details link
     Then I should navigate to Contact details guidance page
+    And The caption must be Contact details
+    And The Heading should be We need contact details for the filing member
+    And The Body content should be We need information about the filing member of this group so we can contact the right person or team when reviewing your compliance with Pillar 2 top-up taxes.
+    And The Body content should be These may be different to any contact details you have already provided during registration, which were used to match your business with our records.
     When I click on Continue button
+    Then I should navigate to Contact details display page
+    And The caption must be Contact details
+    And The Heading should be Do you want to use this as your primary contact?
+    And I should see the contact details UPE Test on use contact page
+    And I should see the contact details testupe@email.com on use contact page
+    And I should see the contact details 123456 on use contact page
+    When I select option No and continue to next
     Then I should navigate to Contact details input name page
+    And The caption must be Contact details
+    And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
     When I enter Contact Name as Contact Name Test
     And I click on Continue button
     Then I should navigate to Contact details input email page
+    And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
+    And The caption must be Contact details
+    And The Heading should be What is the email address for Contact Name Test
+    And The Body content should be We will only use this to contact you about Pillar 2 top-up taxes.
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
     Then I should navigate to Contact details telephone page
+    And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
+    And The caption must be Contact details
+    And The Heading should be Can we contact Contact Name Test by telephone?
+    When I select option No and continue to next
+    Then I should navigate to Second Contact details page
+    When I select back link
+    Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
+    And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
+    And The caption must be Contact details
+    And The Heading should be What is the telephone number for Contact Name Test?
+    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
     When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
@@ -89,9 +119,41 @@ Feature: Secondary Contact details for the filing member
     And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
-    And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
     When I enter Second Contact Input as 1234554
     And I click on Continue button
+    Then I should navigate to Contact address input page
+    And The caption must be Contact details
+    And The Heading should be What address do you want to use as the filing member’s contact address?
+    When I enter Address Line 1 as Address Line 1 Contact
+    And I enter Address Line 2 as Address Line 2 Contact
+    And I enter City as City Contact
+    And I enter Region as Region Contact
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    When I click on Continue button
+    Then I should navigate to Contact details Check answers page
+    And The caption must be Contact details
+    And The Heading should be Check your answers
+    And I should see row 1 key Contact name
+    And I should see row 2 key Email address
+    And I should see row 3 key Can we contact by telephone?
+    And I should see row 4 key Telephone number
+    And I should see row 1 value Contact Name Test
+    And I should see row 2 value testContact@email.com
+    And I should see row 3 value Yes
+    And I should see row 4 value 1234554
+    And I should see row 5 key Do you have a second contact?
+    And I should see row 6 key Second contact name
+    And I should see row 7 key Second contact email address
+    And I should see row 8 key Can we contact by telephone?
+    And I should see row 9 key Second contact telephone number
+    And I should see row 5 value Yes
+    And I should see row 6 value Second Contact Name Test
+    And I should see row 7 value secondContact@email.com
+    And I should see row 8 value Yes
+    And I should see row 9 value 1234554
+    When I select back link
     Then I should navigate to Contact address input page
     When I select back link
     Then I should navigate to Second Contact Input page
@@ -120,14 +182,19 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details input name page
     And I should see the Contact Name field is pre-populated with Contact Name Test
     When I select back link
+    Then I should navigate to Contact details display page
+    And I should see the answer No remain selected
+    When I select back link
     Then I should navigate to Contact details guidance page
     When I select back link
     Then I should navigate to Task list page
     Then The Task Add Contact details status should be In progress
     When I click Sign out link
     Then I am on feedback survey page
-  @zap_accessibility
-  Scenario: 2 - Provide secondary contact details for NFM user and use existing primary contact details
+
+  @tests1 @zap_accessibility
+  Scenario: 3 - Contact details pages Error validations
+    Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -183,86 +250,50 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
-    And I should see the contact details NFM Test on use contact page
-    And I should see the contact details testNFM@email.com on use contact page
-    And I should see the contact details 12345678 on use contact page
-    When I select option Yes and continue to next
-    Then I should navigate to Second Contact details page
-    When I select option Yes and continue to next
-    Then I should navigate to Second Contact name page
-    When I enter Second Contact Name as Second Contact Name Test
-    And I click on Continue button
-    Then I should navigate to Second Contact email page
-    When I enter Second Contact Email as secondContact@email.com
-    And I click on Continue button
-    Then I should navigate to Second Contact number page
-    When I select option Yes and continue to next
-    Then I should navigate to Second Contact Input page
-    When I enter Second Contact Input as 1234554
-    And I click on Continue button
-    Then I should navigate to Contact address input page
-  @zap_accessibility
-  Scenario: 3 - Secondary contact details pages Error validations
-    Given I clear the cache
-    Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE business page
-    When I select option Yes and continue to next
-    Then I should be on UPE entity type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to UKCompany GRS page
-    And The Heading should be Stub GRS Journey Data
-    When I registered successfully with BV enabled
-    And I click on Save&Continue button
-    Then I should navigate to Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    And The Task Add filing member’s details status should be Not started
-    When I click Add filing member’s details link
-    Then I should navigate to NFM registration page
-    When I select Yes option and continue to next
-    Then I should navigate to NFM details page
-    When I select option Yes and continue to next
-    Then I should be on NFM entity type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to NFM UKCompany GRS page
-    When I registered successfully with BV enabled
-    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
-    And I click on Save&Continue button
-    Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
-    When I click Add further group details link
-    Then I should navigate to MNE or domestic page
-    When I select option In the UK and other countries in further details group status page
-    And I click on Continue button
-    Then I should navigate to Group accounting period page
-    When Accounting Period Start Day is entered as 15
-    And Accounting Period Start Month is entered as 1
-    And Accounting Period Start Year is entered as 2024
-    When Accounting Period End Day is entered as 15
-    And Accounting Period End Month is entered as 1
-    And Accounting Period End Year is entered as 2025
-    And I click on Continue button
-    Then I should navigate to FD check your answers page
-    And I click on Continue button
-    Then I should navigate to Task list page
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
-    Then I should navigate to Contact details guidance page
     When I click on Continue button
+    Then I should see error message Select yes if you want to use this as your primary contact on the Contact details display Page
+    When I select option No and continue to next
     Then I should navigate to Contact details input name page
+    And I click on Continue button
+    Then I should see error message Enter name of the person of team we should contact on the Contact details display Page
+    When I enter Contact Details Name as Testing the character limit of contact details field is 160 character limit. Maximum character limit of contact details name field should be 160 characters, user should not be able to continue with more than 160 characters.
+    And I click on Continue button
+    Then I should see error message The name of the contact person or team should be 160 characters or less on the Contact details display Page
+    When I enter Contact Details Name as Test <script>alert(document.domain)</script>
+    And I click on Continue button
+    Then I should see error message The name of the contact person or team must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Contact details display Page
     When I enter Contact Name as Contact Name Test
     And I click on Continue button
     Then I should navigate to Contact details input email page
+    When I click on Continue button
+    Then I should see error message You need to enter the email address for Contact Name Test on the Contact details email Page
+    When I enter Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
+    When I click on Continue button
+    Then I should see error message The email address should be 132 characters or less on the Contact details email Page
+    When I enter Contact Email as FormatErrorTest.com
+    When I click on Continue button
+    Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
     Then I should navigate to Contact details telephone page
+    When I click on Continue button
+    Then I should see error message Select yes if we can contact Contact Name Test by telephone on the Contact details display Page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
-    When I enter Contact Telephone as 1234554
-    And I click on Continue button
-    Then I should navigate to Second Contact details page
     When I click on Continue button
-    Then I should see error message Select yes if there is someone else we can contact on the Second Contact details Page
-    When I select option Yes and continue to next
+    Then I should see error message You need to enter the telephone for Contact Name Test on the Contact details display Page
+    When I enter NFM Telephone Number as 12345678@
+    When I click on Continue button
+    Then I should see error message Enter a telephone number in the correct format on the Contact details display Page
+    When I enter NFM Telephone Number as 1234567890123456789012345
+    When I click on Continue button
+    Then I should see error message The telephone number should be 24 characters or less on the Contact details display Page
+    When I enter NFM Telephone Number as 12345343
+    When I click on Continue button
+    Then I should navigate to Second Contact details page
+     When I click on Continue button
+     Then I should see error message Select yes if there is someone else we can contact on the Second Contact details Page
+     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
     And I click on Continue button
     Then I should see error message Enter name of the person of team we should contact on the Second Contact details Page
@@ -298,6 +329,28 @@ Feature: Secondary Contact details for the filing member
     When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
     Then I should see error message The telephone number should be 24 characters or less on the Second Contact details Page
+    When I enter NFM Telephone Number as 1234567
+    When I click on Continue button
+    Then I should navigate to Contact address input page
+    When I click on Continue button
+    Then I should see contact address error message Enter the first line of the address on the Address Line 1
+    And I should see contact address error message Enter the town or city on the City
+    And I should see contact address error message Select a country on the Country
+    When I enter Address Line 1 as Address Line 1 Character Length Test1
+    And I enter Address Line 2 as Address Line 2 Character Length Test1
+    And I enter City as City Field Character Length Test Error
+    And I enter Region as Region Field Character Length Test Error
+    And I enter Postal Code as 12345678901
+    And I enter Country as Angola
+    And I click on Country selected
+    When I click on Continue button
+    Then I should see contact address error message The first line of the address must be 35 characters or less on the Address Line 1
+    And I should see contact address error message The second line of the address must be 35 characters or less on the Address Line 2
+    And I should see contact address error message The town or city must be 35 characters or less on the City
+    And I should see contact address error message The region must be 35 characters or less on the Region
+    And I should see contact address error message The postal code must be 10 characters or less on the Postal Code
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Task list page
 
   Scenario: 4 - Validate check your answers page with second contact details for NFM user
     Given Organisation User logs in as upe for Pillar2
@@ -310,8 +363,6 @@ Feature: Secondary Contact details for the filing member
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    And The Task Add filing member’s details status should be Not started
     When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
@@ -399,6 +450,12 @@ Feature: Secondary Contact details for the filing member
     And I should see row 7 value secondContact@email.com
     And I should see row 8 value Yes
     And I should see row 9 value 1234554
+    And I should see row 10 key Address
+    And I should see row 10 value Test CYA
+    And I should see row 10 value Address Line 1
+    And I should see row 10 value City CYA
+    And I should see row 10 value EH5 5WY
+    And I should see row 10 value United Kingdom
 
   Scenario: 5 - Validate check your answers page without second contact details for NFM user
     Given Organisation User logs in as upe for Pillar2

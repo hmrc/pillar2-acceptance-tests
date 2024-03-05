@@ -312,43 +312,5 @@ Feature: Contact details guidance and logic to play back contact details
     When I click Add Contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
-    Then I should navigate to Contact details display page
-    When I click on Continue button
-    Then I should see error message Select yes if you want to use this as your primary contact on the Contact details display Page
-    When I select option No and continue to next
-    Then I should navigate to Contact details input name page
-    And I click on Continue button
-    Then I should see error message Enter name of the person of team we should contact on the Contact details display Page
-    When I enter Contact Details Name as Testing the character limit of contact details field is 160 character limit. Maximum character limit of contact details name field should be 160 characters, user should not be able to continue with more than 160 characters.
-    And I click on Continue button
-    Then I should see error message The name of the contact person or team should be 160 characters or less on the Contact details display Page
-    When I enter Contact Details Name as Test <script>alert(document.domain)</script>
-    And I click on Continue button
-    Then I should see error message The name of the contact person or team must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Contact details display Page
-    When I enter Contact Name as Contact Name Test
-    And I click on Continue button
-    Then I should navigate to Contact details input email page
-    When I click on Continue button
-    Then I should see error message You need to enter the email address for Contact Name Test on the Contact details email Page
-    When I enter Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
-    When I click on Continue button
-    Then I should see error message The email address should be 132 characters or less on the Contact details email Page
-    When I enter Contact Email as FormatErrorTest.com
-    When I click on Continue button
-    Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
-    When I enter Contact Email as testContact@email.com
-    And I click on Continue button
-    Then I should navigate to Contact details telephone page
-    When I click on Continue button
-    Then I should see error message Select yes if we can contact Contact Name Test by telephone on the Contact details display Page
-    When I select option Yes and continue to next
-    Then I should navigate to Contact details input telephone page
-    When I click on Continue button
-    Then I should see error message You need to enter the telephone for Contact Name Test on the Contact details display Page
-    When I enter NFM Telephone Number as 12345678@
-    When I click on Continue button
-    Then I should see error message Enter a telephone number in the correct format on the Contact details display Page
-    When I enter NFM Telephone Number as 1234567890123456789012345
-    When I click on Continue button
-    Then I should see error message The telephone number should be 24 characters or less on the Contact details display Page
+
 
