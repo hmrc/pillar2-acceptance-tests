@@ -296,7 +296,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details input name page
@@ -384,7 +384,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
