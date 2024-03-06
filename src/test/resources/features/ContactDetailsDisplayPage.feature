@@ -55,8 +55,8 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     And The caption must be Contact details
     And The Heading should be We need contact details for the filing member
@@ -117,12 +117,12 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to Contact details guidance page
     When I select back link
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be In progress
+    Then The Task Add contact details status should be In progress
     When I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in with credId TestPlaybackNFM for Pillar2
-    Then The Task Add Contact details status should be In progress
-    When I click Add Contact details link
+    Then The Task Add contact details status should be In progress
+    When I click Add contact details link
     When I click on Continue button
     Then I should navigate to Contact details display page
     And I should see the contact details NFM Test on use contact page
@@ -184,8 +184,8 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -237,8 +237,8 @@ Feature: Contact details guidance and logic to play back contact details
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details input name page
@@ -308,8 +308,8 @@ Feature: Contact details guidance and logic to play back contact details
     And I click on Continue button
     Then I should navigate to FD check your answers page
     And I click on Continue button
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
