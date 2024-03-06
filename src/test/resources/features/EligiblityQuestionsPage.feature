@@ -27,7 +27,7 @@ Feature: Eligibility Questions for Pillar 2
     And The Heading should be You need to register this group to report Pillar 2 top-up taxes
     And The Body content should be You now need to sign in with a Government Gateway user ID associated with the filling member.
     When I click Report Pillar 2 top-up taxes link
-    Then I should navigate to gov uk guidance page1
+    Then I should navigate to guidance page
     When I click the browser back button
     Then I should be on confirmation page
     When I continue
@@ -42,28 +42,28 @@ Feature: Eligibility Questions for Pillar 2
     And The Body content should be The nominated filing member is responsible for managing the group’s tax returns and keeping business records.
     When I continue without selecting an option
     Then I should see error message Select yes if you are registering as the nominated filing member for this group on the Eligibility question Page
-    When I choose No and continue
+    When I choose Eligibility No NFM and continue
     Then I should navigate to NFM guidance page
     And The Heading should be Based on your answers, you cannot register this group to report Pillar 2 top-up taxes
-    And The Body content should be Only the ultimate parent or nominated filing member for an eligible group can register to report Pillar 2 top-up tax.
+    And The Body content should be Only the ultimate parent or nominated filing member for an eligible group can register to report Pillar 2 top-up taxes.
     And The Body content should be This group may still need to register.
-    When I click Go back to the start page for more information link
-    Then I should navigate to gov uk guidance page1
+    When I click Find out more about who can use this service link
+    Then I should navigate to guidance page
     When I click the browser back button
     Then I should navigate to NFM guidance page
     When I select back link
     Then I should navigate to NFM EQ page
-    When I choose Yes and continue
+    When I choose Eligibility Yes NFM and continue
     Then I am on Business activity EQ Page
     When I continue without selecting an option
     Then I should see error message Select yes if the group has business operations in the UK on the Eligibility question Page
     When I choose No and continue
     Then I should navigate to BA guidance page
     And The Heading should be Based on your answers, this group does not need to report Pillar 2 top-up taxes in the UK
-    And The Body content should be Pillar 2 top-up taxes may be collected in the UK when you have business operations here.
-    And The Body content should be If your group only operates in other jurisdictions, you should check where any liability might apply.
-    When I click Go back to the start page for more information link
-    Then I should navigate to gov uk guidance page1
+    And The Body content should be Pillar 2 top-up taxes may be collected when you have business activities located in the UK.
+    And The Body content should be If your business activities are only located outside the UK, you should check where any liability may apply.
+    When I click Find out more about who is eligible for Pillar 2 top-up taxes link
+    Then I should navigate to guidance page
     When I click the browser back button
     Then I should navigate to BA guidance page
     When I select back link
@@ -75,11 +75,11 @@ Feature: Eligibility Questions for Pillar 2
     And The Heading should be Based on your answers, this group does not need to report Pillar 2 top-up taxes
     And The Body content should be Pillar 2 top-up taxes apply to groups that have consolidated global revenues of €750 million or more in at least 2 of the previous 4 accounting periods.
     And The Body content should be You may need to report Pillar 2 top-up taxes if the global turnover meets the €750 million threshold in future accounting periods.
-    When I click Go back to the start page for more information link
-    Then I should navigate to gov uk guidance page1
+    When I click Find out more about who is eligible for Pillar 2 top-up taxes link
+    Then I should navigate to guidance page
     When I click the browser back button
     Then I should navigate to GGR guidance page
     When I select back link
     Then I should navigate to Global gross revenue
     When I click Report Pillar 2 top-up taxes link
-    Then I should navigate to gov uk guidance page1
+    Then I should navigate to guidance page

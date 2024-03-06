@@ -18,17 +18,14 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
-object UPETelephonePage extends PageObject {
-  val url: String = s"$rootUrl" + "business-matching/ultimate-parent/no-id/telephone"
-  val continue = "#submit"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href*='#value']"
-  val backLink = ".govuk-back-link"
-  val errorMessage = ".govuk-error-message"
-
+object IncompleteDataSubmissionErrorPage extends PageObject{
+  val url: String      = s"$rootUrl"+"error/incomplete"
+  val backLink        = ".govuk-back-link"
+  val header: String = "h1.govuk-heading-l"
+  val pageHeader     = "a[href='/report-pillar2-top-up-taxes']"
 
   def clickContinue() = findByCss(continue).click()
 
 }
-

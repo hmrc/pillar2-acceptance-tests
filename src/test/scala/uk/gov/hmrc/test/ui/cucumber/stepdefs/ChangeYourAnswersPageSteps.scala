@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{ContactDetailsCheckAnswersPage, ContactDetailsSummaryPage, FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, UPECheckYourAnswersPage}
+import uk.gov.hmrc.test.ui.pages.{ContactDetailsCheckAnswersPage, ContactDetailsSummaryPage, FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, ReviewAnswersPage, UPECheckYourAnswersPage}
 
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
@@ -84,6 +84,8 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
       case "Address" =>
         clickByCss(ContactDetailsSummaryPage.changeAddress)
+      case "Primary Contact" =>
+        clickByCss(ReviewAnswersPage.changeUPEContact)
       case _ =>
         clickByCss(ContactDetailsCheckAnswersPage.changeName)
     }
