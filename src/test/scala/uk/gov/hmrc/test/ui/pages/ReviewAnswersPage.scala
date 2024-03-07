@@ -67,5 +67,7 @@ object ReviewAnswersPage extends PageObject {
   // Contact Address Section
   val changeContactAddress   = "a[href*='address/change-input']"
 
+  val printPreviewArea       = "#previewArea"
+
   def saveAndContinue()       = findByCss(continue).click()
 }
