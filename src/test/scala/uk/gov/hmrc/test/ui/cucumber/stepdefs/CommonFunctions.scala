@@ -125,6 +125,9 @@ trait CommonFunctions
       case "P2 Submission Set Up Page"            => P2SubmissionSetUpPage
       case "New NFM guidance page"                => NewNFMGuidancePage
       case "RFM registered in UK page"            => RFMRegisteredInUKPage
+      case "RFM Contact Guidance page"            => RFMContactGuidancePage
+      case "RFM Contact Detail Page"              => RFMContactDetailNamePage
+
     }
   }
 }

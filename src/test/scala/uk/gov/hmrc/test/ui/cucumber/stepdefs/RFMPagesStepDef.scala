@@ -43,12 +43,26 @@ class RFMPagesStepDef extends BaseStepDef {
   }
 
 
+  Given("""^I access RFM Contact Guidance page$""") { () =>
+    Nav.navigateTo(RFMContactGuidancePage.url)
+
+  }
+  Given("""^I access RFM Contact Detail page$""") { () =>
+    Nav.navigateTo(RFMContactDetailNamePage.url)
+
+  }
+
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
         Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+
+      case "contact name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
+        Input.sendKeysByCss(name, RFMContactDetailNamePage.nameField)
     }
   }
 
@@ -93,6 +107,16 @@ class RFMPagesStepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorMessage)
         getTextOf(By cssSelector (RFMCorpPositionPage.errorMessage)) should include(error)
+
+      case "contact detail" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorLink)
+        getTextOf(By cssSelector (RFMContactDetailNamePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
+        getTextOf(By cssSelector (RFMContactDetailNamePage.errorMessage)) should include(error)
 
     }
   }
