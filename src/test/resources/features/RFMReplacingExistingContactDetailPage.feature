@@ -26,17 +26,3 @@ Feature: replacing existing contact details
     When I provide RFM contact name as RFM test contact
     And I click on Continue button
     Then I should navigate to under construction page
-
-
-
-
-
-
-
-
-
-
-
-
-
-

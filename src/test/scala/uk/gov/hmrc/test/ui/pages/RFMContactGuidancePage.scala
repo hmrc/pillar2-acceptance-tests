@@ -24,11 +24,6 @@ object RFMContactGuidancePage extends PageObject {
   val caption               = ".govuk-caption-l"
   val continue              = ".govuk-button"
   val header: String        = "h1.govuk-heading-l"
-  val hintText              = ".govuk-hint"
-  val regDay                = "rfmRegistrationDate.day"
-  val regMonth              = "rfmRegistrationDate.month"
-  val regYear               = "rfmRegistrationDate.year"
-
   val errorMessage          = ".govuk-error-message"
   val errorLink             = "[href='#rfmRegistrationDate']"
   val errorSummary          = ".govuk-error-summary__list"
