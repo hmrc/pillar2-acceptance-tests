@@ -29,6 +29,11 @@
       "ruleId": 10202
     },
     {
+      "reason": "Pillar2 service guidance page is outside our scope.",
+      "url": "https://www.gov.uk/guidance/report-pillar-2-top-up-taxes",
+      "ruleId": 10038
+    },
+    {
       "reason": "Stub implementation for FM - outside our control",
       "url": "http://localhost:10050/report-pillar2-top-up-taxes/test-only/stub-grs-journey-data?continueUrl=normalmode/fm&entityType=ukLimitedCompany",
       "ruleId": 90022
