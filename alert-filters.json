@@ -6,6 +6,11 @@
       "ruleId": 10202
     },
     {
+      "reason": "This is not in scope.",
+      "url": "http://localhost:10050/report-pillar2-top-up-taxes/under-construction",
+      "ruleId": 10023
+    },
+    {
       "reason": "Guidance Page is outside our scope.",
       "url": "https:\\/\\/www.gov.uk\\/guidance\\/.*",
       "ruleId": 10202,
