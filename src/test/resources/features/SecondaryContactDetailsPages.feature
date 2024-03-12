@@ -47,8 +47,8 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details input name page
@@ -123,7 +123,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details guidance page
     When I select back link
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be In progress
+    Then The Task Add contact details status should be In progress
     When I click Sign out link
     Then I am on feedback survey page
   @zap_accessibility
@@ -179,7 +179,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -244,8 +244,8 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details input name page
@@ -340,8 +340,8 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details input name page
@@ -441,8 +441,8 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details input name page
@@ -589,7 +589,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -736,7 +736,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -832,7 +832,7 @@ Feature: Secondary Contact details for the filing member
     And The Body content should be You will not be emailed a confirmation of this registration.
     And The Body content should be You must record your group’s Pillar 2 top-up taxes ID and registration date.
     And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
-    When I should see heading 2 as What happens next
+    When I should see heading 3 as What happens next
     And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
     And The Body content should be Is this page not working properly? (opens in new tab)
     When I click report and manage your Pillar 2 top-up taxes link
@@ -840,6 +840,8 @@ Feature: Secondary Contact details for the filing member
     And I should see user details row 1 value XMPLR0012345674
     And I should see user details row 2 value 31 January 2022
     And I should see user details row 3 value International Organisation Inc.
+    And I click the browser back button
+    Then I can see Print this page link
 
  Scenario: 8 - UPE GRS flow ID and GRS flow ID, Review and submit your answers page
    Given Organisation User logs in as upe for Pillar2
@@ -879,7 +881,7 @@ Feature: Secondary Contact details for the filing member
    Then I should navigate to FD check your answers page
    And I click on Continue button
    Then I should navigate to Task list page
-   When I click Add Contact details link
+   When I click Add contact details link
    Then I should navigate to Contact details guidance page
    When I click on Continue button
    Then I should navigate to Contact details input name page
@@ -1009,7 +1011,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details input name page

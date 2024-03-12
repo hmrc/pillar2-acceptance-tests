@@ -18,11 +18,11 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
+object AgentRFMKBPage extends PageObject {
+  val url: String     = s"$rootUrl"+"replace-filing-member/error/agent-sign-in"
 
-object GuidancePage extends PageObject {
-//  val url: String     = s"$rootUrl"+"eligibility/kb-in-the-uk-ineligible"
-  val url: String     = s"$rootUrl"+"under-construction"
+  val header: String  = "h1.govuk-heading-l"
+  val backLink        = ".govuk-back-link"
 
-  val caption         = "Check if your group is liable"
 
 }
