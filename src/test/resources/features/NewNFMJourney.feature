@@ -10,7 +10,7 @@ Feature: New NFM Journey
     Then I should be on New NFM guidance page
     And The caption must be Group details
     And The Heading should be We need to match the details of the new nominated filing member to HMRC records
-    And The Body content should be We will ask you for several pieces of identifying information about the new nominated filing member for this group so that we can best match them to our records.
+    And The Body content should be We will ask you for several pieces of identifying information about the new nominated filing member so that we can best match them to our records.
     When I click on Continue button
     Then I should be on RFM registered in UK page
     When I select back link
