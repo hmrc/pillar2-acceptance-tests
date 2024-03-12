@@ -1,4 +1,4 @@
-@tests1
+@tests
 Feature: replacing existing contact details
   As a Subscription user
   I should be displayed with contact details in use contact page
