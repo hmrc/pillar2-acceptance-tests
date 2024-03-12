@@ -34,13 +34,14 @@ class RFMPagesStepDef extends BaseStepDef {
     }
   }
 
-  Given("""^I access RFM start page$""") { () =>
-    Nav.navigateTo(RFMStartPage.url)
+  Given("""^I access RFM (.*) page$""") { (name:String) =>
+    name match {
+      case "start" => Nav.navigateTo(RFMStartPage.url)
+      case "corporate position" =>Nav.navigateTo(RFMCorpPositionPage.url)
+      case "New NFM guidance"  =>Nav.navigateTo(NewNFMGuidancePage.url)
+    }
   }
 
-  Given("""^I access RFM corporate position page$""") { () =>
-    Nav.navigateTo(RFMCorpPositionPage.url)
-  }
 
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
@@ -83,7 +84,7 @@ class RFMPagesStepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(RFMRegistrationDatePage.errorMessage)
         getTextOf(By cssSelector (RFMRegistrationDatePage.errorMessage)) should include(error)
 
-      case "corp position" =>
+      case "journey error" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorMessage)
 

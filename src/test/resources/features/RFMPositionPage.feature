@@ -12,7 +12,7 @@ Feature: RFM Corporate position page
     And The Heading should be What is your position in the corporate structure of the group?
     And The hint text should be To replace the existing filing member for this account you must have access to the information required to report Pillar 2 top-up taxes on the group’s behalf.
     When I click on Continue button
-    Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM corp position Page
+    Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as UPE
     And I click on Continue button
     Then I should navigate to under construction page
@@ -20,4 +20,4 @@ Feature: RFM Corporate position page
     Then I should be on RFM Corp Position Page
     When I select corp position as NFM
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should be on New NFM guidance page
