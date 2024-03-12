@@ -6,6 +6,11 @@
       "ruleId": 10202
     },
     {
+      "reason": "This is not in scope.",
+      "url": "http://localhost:10050/report-pillar2-top-up-taxes/under-construction",
+      "ruleId": 10023
+    },
+    {
       "reason": "Guidance Page is outside our scope.",
       "url": "https:\\/\\/www.gov.uk\\/guidance\\/.*",
       "ruleId": 10202,
@@ -27,6 +32,11 @@
       "reason": "Govt Publications Pages are outside our scope.",
       "url": "https://www.gov.uk/government/publications/introduction-of-the-new-multinational-top-up-tax/multinational-top-up-tax-uk-adoption-of-organisation-for-economic-co-operation-and-development-pillar-2",
       "ruleId": 10202
+    },
+    {
+      "reason": "Pillar2 service guidance page is outside our scope.",
+      "url": "https://www.gov.uk/guidance/report-pillar-2-top-up-taxes",
+      "ruleId": 10038
     },
     {
       "reason": "Stub implementation for FM - outside our control",
