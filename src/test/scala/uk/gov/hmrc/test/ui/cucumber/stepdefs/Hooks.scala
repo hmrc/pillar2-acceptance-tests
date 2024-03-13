@@ -33,9 +33,10 @@ object Hooks extends ScalaDsl with EN with Browser {
       val screenshot = Driver.instance.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
       scenario.attach(screenshot, "image/png", screenshotName)
     }
+  }
 
-    AfterAll {
+  AfterAll {
       quitBrowser()
     }
-  }
+
 }

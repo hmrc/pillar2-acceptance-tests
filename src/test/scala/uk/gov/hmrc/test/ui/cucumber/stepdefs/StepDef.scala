@@ -140,6 +140,10 @@ class StepDef extends BaseStepDef with BrowserDriver{
     Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/eligibility/clear-session")
   }
 
+  Then("""^I clear the database$""") {
+    Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/clear-all")
+  }
+
   Then("""^The Heading should be (.*)$""") { header: String =>
     Check.checkH1(header)
 

@@ -424,3 +424,4 @@ Feature: Create a new registration and subscription
     Then I click return to your Pillar 2 top-up taxes registration link
     Then I should see task list sections
     And The Task Add ultimate parent’s details status should be Not started
+    Then I click Sign out link

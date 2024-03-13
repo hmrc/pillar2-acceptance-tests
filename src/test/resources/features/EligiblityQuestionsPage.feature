@@ -4,6 +4,7 @@ Feature: Eligibility Questions for Pillar 2
   I should be navigated to all the Eligibility questions
 
   Scenario: 1 - User navigates to next eligibility question page by selecting yes option
+    Given I clear the cache
     Given I am on UPE EQ Page
     And The caption should be Check if the group needs to report
     And The Heading should be Are you registering as the ultimate parent of this group?
@@ -34,6 +35,7 @@ Feature: Eligibility Questions for Pillar 2
     Then I should be on auth-login page
 
   Scenario: 2 - User navigates to guidance page by selecting No option in eligibility questions
+    Given I clear the cache
     Given I am on UPE EQ Page
     When I choose No and continue
     Then I should navigate to NFM EQ page
@@ -54,6 +56,7 @@ Feature: Eligibility Questions for Pillar 2
     When I select back link
     Then I should navigate to NFM EQ page
     When I choose Eligibility Yes NFM and continue
+    And I click on Continue button
     Then I am on Business activity EQ Page
     When I continue without selecting an option
     Then I should see error message Select yes if the group has business operations in the UK on the Eligibility question Page
