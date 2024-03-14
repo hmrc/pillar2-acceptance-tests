@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import org.scalatest.Assertion
-import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Check extends BasePage {
@@ -45,7 +44,7 @@ object Check extends BasePage {
 
   def assertNavigationToPageUrl(page: PageObject) = {
     Wait.waitForUrlToBeVisible(page.url)
-    currentUrl shouldBe page.url
+    driver.getCurrentUrl().equals(page.url)
   }
 
   def checkAnswerSelection(option: String) = {

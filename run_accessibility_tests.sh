@@ -1,11 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash -e
 
-browser="chrome"
-if [ $# -gt 0  ];
-then
-  browser="$1"
-fi
+ENV="local"
+BROWSER="chrome"
 
-environment="local"
-
-sbt -Denvironment="$environment" -Dbrowser="$browser"  clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.ZapRunner'
+sbt -Dlogback.configurationFile=logback.xml -Dbrowser=$BROWSER -Denvironment=$ENV -Daccessibility.test=true "testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner" testReport

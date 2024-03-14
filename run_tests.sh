@@ -1,10 +1,5 @@
 #!/bin/bash -e
-browser="chrome"
-if [ $# -gt 0  ];
-then
-  browser="$1"
-fi
+BROWSER=$1
+ENVIRONMENT=$2
 
-environment="local"
-
-sbt -Denvironment="$environment" -Dbrowser="$browser" clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner'
+sbt clean -Dbrowser="${BROWSER:=chrome}" -Denvironment="${ENVIRONMENT:=local}" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner" testReport

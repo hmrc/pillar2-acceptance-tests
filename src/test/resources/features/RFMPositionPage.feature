@@ -21,3 +21,4 @@ Feature: RFM Corporate position page
     When I select corp position as NFM
     And I click on Continue button
     Then I should be on New NFM guidance page
+    When I click Sign out link
