@@ -15,7 +15,7 @@ Feature: RFM Corporate position page
     Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as UPE
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should be on RFM Contact Guidance page
     When I select back link
     Then I should be on RFM Corp Position Page
     When I select corp position as NFM
