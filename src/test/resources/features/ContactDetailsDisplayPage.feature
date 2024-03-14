@@ -4,6 +4,7 @@ Feature: Contact details guidance and logic to play back contact details
   I should be displayed with contact details in use contact page
   @zap_accessibility
   Scenario: 1 - Create a new subscription with NFM No Id flow for validating play back contact details
+    Given I clear the cache
     Given Organisation User logs in as upe with credId TestPlaybackNFM for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next

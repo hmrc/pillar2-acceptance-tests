@@ -308,8 +308,3 @@ Feature: UPE NO ID journey
     And I navigate back to TaskList Page from Telephone Input Page
     Then The Task Edit ultimate parent’s details status should be Completed
 
-
-
-
-
-
