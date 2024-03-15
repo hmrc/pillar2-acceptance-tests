@@ -183,9 +183,9 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
-    And I should see the contact details NFM Test on use contact page
-    And I should see the contact details testNFM@email.com on use contact page
-    And I should see the contact details 12345678 on use contact page
+    And I should see row 1 the contact details NFM Test on use contact page
+    And I should see row 2 the contact details testNFM@email.com on use contact page
+    And I should see row 3 the contact details 12345678 on use contact page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact details page
     When I select option Yes and continue to next
@@ -593,9 +593,9 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
-    And I should see the contact details NFM Test on use contact page
-    And I should see the contact details testNFM@email.com on use contact page
-    And I should see the contact details 12345678 on use contact page
+    And I should see row 1 the contact details NFM Test on use contact page
+    And I should see row 2 the contact details testNFM@email.com on use contact page
+    And I should see row 3 the contact details 12345678 on use contact page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact details page
     When I select option Yes and continue to next
@@ -740,9 +740,9 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
-    And I should see the contact details NFM Test on use contact page
-    And I should see the contact details testNFM@email.com on use contact page
-    And I should see the contact details 12345678 on use contact page
+    And I should see row 1 the contact details NFM Test on use contact page
+    And I should see row 2 the contact details testNFM@email.com on use contact page
+    And I should see row 3 the contact details 12345678 on use contact page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact details page
     When I select option Yes and continue to next
@@ -832,7 +832,7 @@ Feature: Secondary Contact details for the filing member
     And The Body content should be You will not be emailed a confirmation of this registration.
     And The Body content should be You must record your group’s Pillar 2 top-up taxes ID and registration date.
     And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
-    When I should see heading 3 as What happens next
+    When I should see heading 2 as What happens next
     And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
     And The Body content should be Is this page not working properly? (opens in new tab)
     When I click report and manage your Pillar 2 top-up taxes link

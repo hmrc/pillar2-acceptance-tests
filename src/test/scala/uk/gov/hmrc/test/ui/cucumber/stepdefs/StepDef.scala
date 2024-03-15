@@ -481,9 +481,9 @@ class StepDef extends BaseStepDef {
     Nav.browserBack()
   }
 
-  And("""^I should see the contact details (.*) on use contact page""") { (details: String) =>
+  And("""^I should see row (\d+) the contact details (.*) on use contact page""") { (row: Int, details: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElement(By.cssSelector(ContactDetailsDisplayPage.contactDetails)).getText.contains(details))
+    assert(driver.findElements(By.cssSelector(ContactDetailsDisplayPage.valueList)).get(row - 1).getText.contains(details))
   }
 
   And("""^The header should display (.*) banner$"""){ (beta: String) =>
