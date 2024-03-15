@@ -16,14 +16,21 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
-import org.openqa.selenium.{By, WebDriver}
+import io.cucumber.scala.Scenario
+import org.apache.commons.io.FileUtils
+import org.openqa.selenium.io.FileHandler
+import org.openqa.selenium.{By, OutputType, TakesScreenshot, WebDriver}
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.cucumber.Find._
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
+
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
 
 object Input extends BasePage {
 
   def clickById(id: String): Unit = findById(id).click()
-
 
   def clickByLinkText(text: String): Unit = findByLinkText(text).click()
 
@@ -35,8 +42,6 @@ object Input extends BasePage {
   }
 
   def clickSubmit(): Unit = findById("submit").click()
-
- /* def clickContinue() = findByXpath("/html/body/div/main/div/div/div/div/a/button").click()*/
 
   def clickByXpath(id: String): Unit = findByXpath(id).click()
 
@@ -58,12 +63,26 @@ object Input extends BasePage {
     findByName(name).sendKeys(value)
   }
 
-  def switchToNewWindow: WebDriver = {
-    val handles    = driver.getWindowHandles.toArray().toSeq
-    //val mainWindow = handles.head.toString
-    val newWindow  = handles(1).toString
-    driver.close()
-    driver.switchTo().window(newWindow)
+  def switchToNewWindow(driver: WebDriver): Unit = {
+    val handles = driver.getWindowHandles.toArray().toSeq
+
+    if (handles.length > 1) {
+      val newWindow = handles(1).toString
+      driver.close()
+      driver.switchTo().window(newWindow)
+    } else {
+      println("No new window to switch to.")
+    }
+  }
+
+  def takeScreenshot(scenarioName: String, s: String, dr: TakesScreenshot): Unit = {
+    val name = scenarioName + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
+    if (!new java.io.File(s"./target/test-reports/$name$s.png").exists) {
+      val scr = dr.getScreenshotAs(OutputType.FILE)
+      FileHandler.copy(scr, new File(s"./target/test-reports/$name$s.png"))
+      // val byteFile = dr.getScreenshotAs(OutputType.BYTES)
+      // scenario.attach(byteFile, "image/png", "print_page")
+    }
   }
 
   def getTextOf(by: By) =

@@ -58,7 +58,7 @@ Feature: Enter contact address
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -76,8 +76,8 @@ Feature: Enter contact address
     Then I should navigate to Contact details guidance page
     When I select back link
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be In progress
-    When I click Add Contact details link
+    Then The Task Add contact details status should be In progress
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -173,8 +173,8 @@ Feature: Enter contact address
     And I click on Continue button
     Then I should navigate to FD check your answers page
     And I click on Continue button
-    Then The Task Add Contact details status should be Not started
-    When I click Add Contact details link
+    Then The Task Add contact details status should be Not started
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page

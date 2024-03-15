@@ -34,12 +34,13 @@ class RFMPagesStepDef extends BaseStepDef {
     }
   }
 
-  Given("""^I access RFM start page$""") { () =>
-    Nav.navigateTo(RFMStartPage.url)
-  }
-
-  Given("""^I access RFM corporate position page$""") { () =>
-    Nav.navigateTo(RFMCorpPositionPage.url)
+  Given("""^I access RFM (.*) page$""") { (name:String) =>
+    name match {
+      case "start" => Nav.navigateTo(RFMStartPage.url)
+      case "corporate position"  => Nav.navigateTo(RFMCorpPositionPage.url)
+      case "New NFM guidance"    => Nav.navigateTo(NewNFMGuidancePage.url)
+      case "Contact Guidance"    => Nav.navigateTo(RFMContactGuidancePage.url)
+    }
   }
 
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
@@ -48,6 +49,11 @@ class RFMPagesStepDef extends BaseStepDef {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
         Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+
+      case "contact name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
+        Input.sendKeysByCss(name, RFMContactDetailNamePage.nameField)
     }
   }
 
@@ -83,7 +89,7 @@ class RFMPagesStepDef extends BaseStepDef {
         Wait.waitForElementToPresentByCssSelector(RFMRegistrationDatePage.errorMessage)
         getTextOf(By cssSelector (RFMRegistrationDatePage.errorMessage)) should include(error)
 
-      case "corp position" =>
+      case "journey error" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorMessage)
 
@@ -92,6 +98,16 @@ class RFMPagesStepDef extends BaseStepDef {
 
         Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorMessage)
         getTextOf(By cssSelector (RFMCorpPositionPage.errorMessage)) should include(error)
+
+      case "contact detail" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorLink)
+        getTextOf(By cssSelector (RFMContactDetailNamePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
+        getTextOf(By cssSelector (RFMContactDetailNamePage.errorMessage)) should include(error)
 
     }
   }

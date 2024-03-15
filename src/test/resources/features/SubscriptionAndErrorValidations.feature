@@ -50,7 +50,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -133,7 +133,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -231,7 +231,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -296,7 +296,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details input name page
@@ -336,7 +336,7 @@ Feature: Create a new registration and subscription
     And The Body content should be go back to register your group and complete any in progress tasks.
     When I click go back to register your group and complete any in progress tasks. link
     Then I should navigate to Task list page
-    Then The Task Add Contact details status should be In progress
+    Then The Task Add contact details status should be In progress
 
   Scenario: 5 - User redirected to a placeholder error page, for an invalid request during registration.
     Given Organisation User logs in to subscribe for Pillar2
@@ -384,7 +384,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
-    When I click Add Contact details link
+    When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -495,7 +495,8 @@ Feature: Create a new registration and subscription
     And The Task Check your answers status should be Not started
     When I click Check your answers link
     Then I should navigate to Review answers page
-    When I click Print this page link
+    And I should see Print this page link on Review answers page
+    When I click Print this page link on Review answers page
     And I should see print preview
     And The Body content should be Please check that you have entered the correct web address.
 
