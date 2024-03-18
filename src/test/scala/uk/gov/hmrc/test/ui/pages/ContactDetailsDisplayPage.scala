@@ -27,6 +27,7 @@ object ContactDetailsDisplayPage extends PageObject {
   val backLink = ".govuk-back-link"
   val errorMessage = ".govuk-error-message"
   val contactDetails = ".govuk-list"
+  val valueList = ".govuk-summary-list__value"
 
 
   def clickContinue() = findByCss(continue).click()

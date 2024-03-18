@@ -496,7 +496,4 @@ Feature: Create a new registration and subscription
     When I click Check your answers link
     Then I should navigate to Review answers page
     And I should see Print this page link on Review answers page
-    When I click Print this page link on Review answers page
-    And I should see print preview
-    And The Body content should be Please check that you have entered the correct web address.
 

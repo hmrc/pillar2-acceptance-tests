@@ -54,7 +54,7 @@ Feature: UPE NO ID journey
     And I click on Continue button
     Then I should be on Check your answers page
     And The caption must be Group details
-    And The Heading should be Check your answers
+    And The Heading should be Check your answers for ultimate parent details
     And I should see row 1 key Name
     And I should see row 2 key Address
     And I should see row 3 key Contact name
@@ -107,7 +107,7 @@ Feature: UPE NO ID journey
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Postal Code as EH5 5WY
+    And I enter Postal Code as E H 5 5 W Y
     And I enter Country as United Kingdom
     And I click on Country selected
     When I click on Continue button
