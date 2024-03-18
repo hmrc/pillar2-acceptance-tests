@@ -23,7 +23,6 @@ import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
 
-
 class StepDef extends BaseStepDef with BrowserDriver{
 
   Given("""^(.*) logs in to register for Pillar2$""") { name: String =>
