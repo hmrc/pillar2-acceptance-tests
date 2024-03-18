@@ -375,8 +375,7 @@ Feature: NFM GRS journey
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
     Then I should be on NFM entity type page
-    And I should see Entity type not listed hyperLink
-    When I click Entity type not listed link
+    When I select option Entity type not listed and continue to NFM Name page
     Then I should navigate to NFM Name page
 
   @zap_accessibility @ignore
