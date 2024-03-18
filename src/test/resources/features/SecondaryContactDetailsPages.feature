@@ -380,7 +380,7 @@ Feature: Secondary Contact details for the filing member
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And The caption must be Contact details
-    And The Heading should be Check your answers
+    And The Heading should be Check your answers for contact details
     And I should see row 1 key Contact name
     And I should see row 2 key Email address
     And I should see row 3 key Can we contact by telephone?
@@ -832,7 +832,7 @@ Feature: Secondary Contact details for the filing member
     And The Body content should be You will not be emailed a confirmation of this registration.
     And The Body content should be You must record your group’s Pillar 2 top-up taxes ID and registration date.
     And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
-    When I should see heading 2 as What happens next
+    When The second heading should be What happens next
     And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
     And The Body content should be Is this page not working properly? (opens in new tab)
     When I click report and manage your Pillar 2 top-up taxes link

@@ -54,7 +54,7 @@ Feature: UPE NO ID journey
     And I click on Continue button
     Then I should be on Check your answers page
     And The caption must be Group details
-    And The Heading should be Check your answers
+    And The Heading should be Check your answers for ultimate parent details
     And I should see row 1 key Name
     And I should see row 2 key Address
     And I should see row 3 key Contact name

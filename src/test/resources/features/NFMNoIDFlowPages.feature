@@ -18,6 +18,8 @@ Feature: NFM NO ID journey
     And The caption must be Group details
     And The Heading should be Nominate a filing member
     And The Body content should be A nominated filing member must be nominated by the UPE and must have access to information required to report Pillar 2 top-up taxes.
+    And The Body content should be If you select ‘No’, we will use the ultimate parent entity (UPE) as the filing member.
+    And The second heading should be Do you want to register a nominated filing member to report for this group?
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     And The caption must be Group details
@@ -62,7 +64,7 @@ Feature: NFM NO ID journey
     And I click on Continue button
     Then I should navigate to NFM Check your answers page
     And The caption must be Group details
-    And The Heading should be Check your answers
+    And The Heading should be Check your answers for filing member details
     And I should see row 1 key Name
     And I should see row 2 key Address
     And I should see row 3 key Contact name
