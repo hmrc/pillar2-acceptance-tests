@@ -352,4 +352,3 @@ Feature: Contact details guidance and logic to play back contact details
     When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
     Then I should see error message The telephone number should be 24 characters or less on the Contact details display Page
-
