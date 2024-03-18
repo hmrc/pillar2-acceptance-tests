@@ -425,7 +425,6 @@ Feature: Create a new registration and subscription
     Then I should see task list sections
     And The Task Add ultimate parent’s details status should be Not started
 
-  @tests1
   Scenario: 1 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
