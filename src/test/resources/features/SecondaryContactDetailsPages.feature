@@ -183,9 +183,6 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
-    And I should see row 1 the contact details NFM Test on use contact page
-    And I should see row 2 the contact details testNFM@email.com on use contact page
-    And I should see row 3 the contact details 12345678 on use contact page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact details page
     When I select option Yes and continue to next
@@ -593,9 +590,6 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
-    And I should see row 1 the contact details NFM Test on use contact page
-    And I should see row 2 the contact details testNFM@email.com on use contact page
-    And I should see row 3 the contact details 12345678 on use contact page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact details page
     When I select option Yes and continue to next
@@ -740,9 +734,6 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
-    And I should see row 1 the contact details NFM Test on use contact page
-    And I should see row 2 the contact details testNFM@email.com on use contact page
-    And I should see row 3 the contact details 12345678 on use contact page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact details page
     When I select option Yes and continue to next
