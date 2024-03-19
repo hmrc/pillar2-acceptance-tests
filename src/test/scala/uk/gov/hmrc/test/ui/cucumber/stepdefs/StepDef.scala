@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, RegistrationConfirmationPage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, RegistrationConfirmationPage, ReviewAnswersPage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -533,6 +533,16 @@ class StepDef extends BaseStepDef {
     Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
     assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
   }
+
+  And("""^I should see (.*) link on (.*)$""") { (linkText: String, page: String) =>
+    page match {
+      case "Review answers page" =>
+        Wait.waitForTagNameToBeRefreshed ("h1")
+        Wait.waitForElementToPresentByCssSelector (ReviewAnswersPage.printthispage)
+        assert (driver.findElement (By.cssSelector (ReviewAnswersPage.printthispage) ).getText.contains (linkText) )
+    }
+  }
+
       /*  Given("""^I fill (.*) and continue$""") { page: String =>
           page match {
             case "What is the main address of your business page" => Forms.addressNonUK()
