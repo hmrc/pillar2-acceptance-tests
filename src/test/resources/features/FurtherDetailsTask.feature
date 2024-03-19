@@ -122,7 +122,6 @@ Feature: Further Details Task page validation
     When I click on change hyperlink next to the FD Group Status
     When I select option In the UK and other countries in further details group status page
     When I click on Continue button
-    When I click on Continue button
     Then I should be on FD check your answers page
     And I should see row 1 value In the UK and other countries
     When I click on change hyperlink next to the Accounting Period

@@ -2,7 +2,7 @@
 Feature: NFM NO ID journey
   As a MNE user
   I would like to enter my details via NFM No ID journey
-  @zap_accessibility
+   @zap_accessibility
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     Then I should be on UPE business page
@@ -117,30 +117,29 @@ Feature: NFM NO ID journey
     Then I should be on NFM Check your answers page
     When I click on change hyperlink next to the NFM Name
     And I enter NFM name as Name Change
-    Then I navigate back to check your answers page from name page
     Then I should be on NFM Check your answers page
     And I should see row 1 value Name Change
     When I click on change hyperlink next to the NFM Address
     And I enter Address Line 1 as Change Address
-    Then I navigate back to check your answers page from address page
-    And I should be on NFM Check your answers page
+    And I click on Continue button
+    Then I should be on NFM Check your answers page
     And I should see row 2 value Change Address
     And I should see row 2 value City CYA
     And I should see row 2 value United Kingdom
     When I click on change hyperlink next to the NFM Contact Name
     And I enter NFM Contact name as Change Contact Person
-    Then I navigate back to check your answers page from contact name page
-    And I should be on NFM Check your answers page
+    And I click on Continue button
+    Then I should be on NFM Check your answers page
     And I should see row 3 value Change Contact Person
     When I click on change hyperlink next to the NFM Email Address
     And I enter NFM Contact Email as changetest@email.com
-    Then I navigate back to check your answers page from email address page
-    And I should be on NFM Check your answers page
+    And I click on Continue button
+    Then I should be on NFM Check your answers page
     And I should see row 4 value changetest@email.com
     When I click on change hyperlink next to the NFM Telephone Number
     And I enter NFM Telephone Number as 12345679
-    Then I navigate back to check your answers page from telephone number page
-    And I should be on NFM Check your answers page
+    And I click on Continue button
+    Then I should be on NFM Check your answers page
     And I should see row 6 value 12345679
     When I click on change hyperlink next to the NFM Telephone Contact
     And I select option No and continue to next
