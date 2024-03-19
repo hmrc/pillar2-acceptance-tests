@@ -478,22 +478,16 @@ Feature: Secondary Contact details for the filing member
     And I should see row 4 value 1234554
     And I should see row 5 value No
     When I click on change link for Contact Name
-    When I enter Contact Name as Contact Name Test
+    When I enter Contact Name as Contact Name Change
     And I click on Continue button
-    And I select back link
-    And I select back link
     Then I should navigate to Contact details Check answers page
     When I click on change link for Email address
-    When I enter Contact Email as Contact Email Test
+    When I enter Contact Email as emailchange@test.com
     And I click on Continue button
-    And I select back link
-    And I select back link
     Then I should navigate to Contact details Check answers page
     When I click on change link for Telephone number
     When I enter Contact Telephone as 1234555
     And I click on Continue button
-    And I select back link
-    And I select back link
     Then I should navigate to Contact details Check answers page
     When I click on change link for Do you have a second contact?
     When I select option Yes and continue to next
@@ -502,10 +496,12 @@ Feature: Secondary Contact details for the filing member
     When I enter Second Contact Email as secondContact@email.com
     And I click on Continue button
     When I select option Yes and continue to next
-    When I enter Second Contact Input as 1234554
-    And I click on Continue button
+    When I enter Second Contact Input as 1234559
     And I click on Continue button
     Then I should navigate to Contact details Check answers page
+    And I should see row 1 value Contact Name Change
+    And I should see row 2 value emailchange@test.com
+    And I should see row 4 value 1234555
     And I should see row 5 key Do you have a second contact?
     And I should see row 6 key Second contact name
     And I should see row 7 key Second contact email address
@@ -515,7 +511,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 6 value Second Contact Name Test
     And I should see row 7 value secondContact@email.com
     And I should see row 8 value Yes
-    And I should see row 9 value 1234554
+    And I should see row 9 value 1234559
   @zap_accessibility
   Scenario: 6 - UPE No flow ID and NFM NO flow ID, Review and submit your answers page
     Given Organisation User logs in as upe for Pillar2

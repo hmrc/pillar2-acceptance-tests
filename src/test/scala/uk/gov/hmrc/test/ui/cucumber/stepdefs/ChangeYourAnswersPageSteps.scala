@@ -90,27 +90,5 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(ContactDetailsCheckAnswersPage.changeName)
     }
   }
-  Then("""^I navigate back to check your answers page from (.*) page""") { (page: String) =>
-    page match {
-      case "name" =>
-        for (i <- 1 to 5) {
-          InitialGuidancePage.clickContinue()
-        }
-      case "address" =>
-        for (i <- 1 to 5) {
-          InitialGuidancePage.clickContinue()
-        }
-      case "contact name" =>
-        for (i <- 1 to 4) {
-          InitialGuidancePage.clickContinue()
-        }
-      case "email address" =>
-        for (i <- 1 to 3) {
-          InitialGuidancePage.clickContinue()
-        }
-      case "telephone number" =>
-        InitialGuidancePage.clickContinue()
-    }
-  }
 }
 

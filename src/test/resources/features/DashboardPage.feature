@@ -110,7 +110,6 @@ As a registered user
     And The field heading should be Where does the group operate?
     When I select option Only in the UK in further details group status page
     When I click on Continue button
-    When I click on Continue button
     Then I should navigate to accounts summary page
     And I should see row 1 value Only in the UK
     When I click on change hyperlink next to the Accounting Period
@@ -171,25 +170,17 @@ As a registered user
     When I click on change link for Contact Name
     When I enter Contact Name as Contact Name Test
     And I click on Continue button
-    And I select back link
-    And I select back link
     Then I should navigate to contact details summary page
     When I click on change link for Email address
     When I enter Contact Email as contact@email.com
     And I click on Continue button
-    And I select back link
-    And I select back link
     Then I should navigate to contact details summary page
     When I click on change link for Telephone number
     When I enter Contact Telephone as 123456789
     And I click on Continue button
-    And I select back link
-    And I select back link
     Then I should navigate to contact details summary page
     When I click on change link for Do you have a second contact?
     When I select option No and continue to next
-    And I select back link
-    And I select back link
     Then I should navigate to contact details summary page
     And I should see row 5 key Do you have a second contact?
     And I should see row 5 value No
@@ -202,7 +193,6 @@ As a registered user
     And I click on Continue button
     When I select option Yes and continue to next
     When I enter Second Contact Input as 1234554878
-    And I click on Continue button
     And I click on Continue button
     Then I should navigate to contact details summary page
     When I click on change link for Address
@@ -258,8 +248,6 @@ As a registered user
     When I click on change link for Contact Name
     When I enter Contact Name as 400
     And I click on Continue button
-    And I select back link
-    And I select back link
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on Subscription API error page
