@@ -533,6 +533,16 @@ class StepDef extends BaseStepDef with BrowserDriver{
     Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
     assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
   }
+
+  And("""^I should see (.*) link on (.*)$""") { (linkText: String, page: String) =>
+    page match {
+      case "Review answers page" =>
+        Wait.waitForTagNameToBeRefreshed ("h1")
+        Wait.waitForElementToPresentByCssSelector (ReviewAnswersPage.printthispage)
+        assert (driver.findElement (By.cssSelector (ReviewAnswersPage.printthispage) ).getText.contains (linkText) )
+    }
+  }
+
       /*  Given("""^I fill (.*) and continue$""") { page: String =>
           page match {
             case "What is the main address of your business page" => Forms.addressNonUK()
