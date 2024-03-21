@@ -129,7 +129,6 @@ Feature: Ultimate parent entity GRS journey
     When registration is unsuccessful with BV failed error
     And I click on Save&Continue button
     Then I should be on UPE registration not called error page
-#
 
   Scenario: 8 - User registered as LimitedLiabilityPartnership successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2

@@ -19,10 +19,10 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
 
-
-class RFMPagesStepDef extends BaseStepDef {
+class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
 
   Given("""^(.*) logs in with rfm URL to Pillar2$""") { name: String =>
     name match {
