@@ -40,19 +40,21 @@ class PaymentSteps extends CommonFunctions {
     Wait.waitForTagNameToBeRefreshed("h1")
     Wait.waitForElementToPresentByCssSelector(DashboardPage.userDetails)
     assert(driver.findElements(By.cssSelector(DashboardPage.userDetails)).size() == 3)
-
   }
 
   Then("""^I should be navigated to new tab$""") { () =>
+
     val handles = driver.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
     driver.switchTo().window(newWindow)
+    Wait.waitForTagNameToBeRefreshed("h1")
   }
 
   Then("""^I should navigate back to main tab""") { () =>
     val handles = driver.getWindowHandles.toArray().toSeq
     val mainWindow = handles.head.toString
     driver.switchTo().window(mainWindow)
+    Wait.waitForTagNameToBeRefreshed("h1")
   }
 
   Then("""^I close new tab""") { () =>

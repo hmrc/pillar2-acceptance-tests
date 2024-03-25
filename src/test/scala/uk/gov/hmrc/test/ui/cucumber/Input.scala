@@ -16,14 +16,10 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
-import io.cucumber.scala.Scenario
-import org.apache.commons.io.FileUtils
 import org.openqa.selenium.io.FileHandler
 import org.openqa.selenium.{By, OutputType, TakesScreenshot, WebDriver}
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.cucumber.Find._
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
-
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
