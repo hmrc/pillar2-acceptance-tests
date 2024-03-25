@@ -311,7 +311,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member’s details status should be Completed
 
-  Scenario: 10 - User registration as UkLimitedCompany failed with party type mismatch error
+  Scenario: 10 - User registration with LLP with different errors
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next
@@ -345,8 +345,19 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I select option Yes and continue to next
     Then I should be on NFM entity type page
     When I select option Limited liability partnership and continue to GRS page
-    Then I should navigate to LLP GRS page
     And The Heading should be Stub GRS Journey Data
+    When registration is unsuccessful with party type mismatch error
+    And I click on Save&Continue button
+    Then I should be on NFM registration failed error page
+    When I click the browser back button
+    When registration is unsuccessful with generic error error
+    And I click on Save&Continue button
+    Then I should be on NFM registration failed error page
+    When I click the browser back button
+    When registration is unsuccessful with identifiers not match error
+    And I click on Save&Continue button
+    Then I should be on NFM registration not called error page
+    When I click the browser back button
     When registration is unsuccessful with BV failed error
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
