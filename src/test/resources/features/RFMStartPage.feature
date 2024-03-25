@@ -5,6 +5,7 @@ Feature: RFM Start page
 
   @zap_accessibility
   Scenario: 1 - Verify RFM start page and validations
+    Given I clear the cache
     Given I access RFM start page
     Then I should be on RFM start page
     And The caption must be Replace filing member
@@ -57,6 +58,7 @@ Feature: RFM Start page
     Then I should see an error message Enter a Pillar 2 top-up taxes ID in the correct format on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
+    When I click Sign out link
 
   @zap_accessibility
   Scenario: 3 - Verify Individual RFM KB page

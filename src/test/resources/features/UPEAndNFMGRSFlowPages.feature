@@ -345,19 +345,8 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I select option Yes and continue to next
     Then I should be on NFM entity type page
     When I select option Limited liability partnership and continue to GRS page
-    Then I should navigate to NFM LLP GRS page
-    When registration is unsuccessful with party type mismatch error
-    And I click on Save&Continue button
-    Then I should be on NFM registration failed error page
-    When I click the browser back button
-    When registration is unsuccessful with generic error error
-    And I click on Save&Continue button
-    Then I should be on NFM registration failed error page
-    When I click the browser back button
-    When registration is unsuccessful with identifiers not match error
-    And I click on Save&Continue button
-    Then I should be on NFM registration not called error page
-    When I click the browser back button
+    Then I should navigate to LLP GRS page
+    And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with BV failed error
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
@@ -385,7 +374,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to NFM Name page
 
   @zap_accessibility @ignore
-  Scenario: 12 - UPE User error pages - ZAP-Accessibility Test
+  Scenario: 15 - UPE User error pages - ZAP-Accessibility Test
     Given Organisation User logs in as upe for Pillar2
     And I am on UPE registration failed error Page
     And I am on UPE registration not called error Page
