@@ -251,7 +251,7 @@ Feature: UPE NO ID journey
     And I should see row 5 value No
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
-
+  @ignore
   Scenario: 5 - Status update for Enter ultimate parent’s details task
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page

@@ -1,5 +1,5 @@
 @tests1
-Feature: Ultimate parent entity GRS journey
+Feature: Ultimate parent entity and Nominated Filling Member GRS journey
   As a MNE user
   I want to determine that the UPE is based in UK or LLP
   So that I can navigate to the correct GRS journey.

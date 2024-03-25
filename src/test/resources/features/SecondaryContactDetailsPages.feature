@@ -270,7 +270,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Task list page
 
    @zap_accessibility
-  Scenario: 3 - Contact details pages Error validations
+  Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
