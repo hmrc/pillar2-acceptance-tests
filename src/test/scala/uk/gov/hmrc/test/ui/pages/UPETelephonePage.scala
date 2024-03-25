@@ -31,3 +31,4 @@ object UPETelephonePage extends PageObject {
   def clickContinue() = findByCss(continue).click()
 
 }
+

@@ -54,7 +54,7 @@ Feature: UPE NO ID journey
     And I click on Continue button
     Then I should be on Check your answers page
     And The caption must be Group details
-    And The Heading should be Check your answers
+    And The Heading should be Check your answers for ultimate parent details
     And I should see row 1 key Name
     And I should see row 2 key Address
     And I should see row 3 key Contact name
@@ -107,7 +107,7 @@ Feature: UPE NO ID journey
     Then I should navigate to input-upe-address page
     When I enter Address Line 1 as Test Address Line 1
     And I enter City as Test City
-    And I enter Postal Code as EH5 5WY
+    And I enter Postal Code as E H 5 5 W Y
     And I enter Country as United Kingdom
     And I click on Country selected
     When I click on Continue button
@@ -221,30 +221,29 @@ Feature: UPE NO ID journey
     Then I should be on Check your answers page
     When I click on change hyperlink next to the UPE Name
     And I enter UPE name as Name Change
-    Then I navigate back to check your answers page from name page
     Then I should be on Check your answers page
     And I should see row 1 value Name Change
     When I click on change hyperlink next to the UPE Address
     And I enter Address Line 1 as Change Address
-    Then I navigate back to check your answers page from address page
-    And I should be on Check your answers page
+    And I click on Continue button
+    Then I should be on Check your answers page
     And I should see row 2 value Change Address
     And I should see row 2 value City UPE
     And I should see row 2 value United Kingdom
     When I click on change hyperlink next to the UPE Contact Name
     And I enter UPE Person/Team name as Change Contact Person
-    Then I navigate back to check your answers page from contact name page
-    And I should be on Check your answers page
+    And I click on Continue button
+    Then I should be on Check your answers page
     And I should see row 3 value Change Contact Person
     When I click on change hyperlink next to the UPE Email Address
     And I enter UPE Email address as changetest@email.com
-    Then I navigate back to check your answers page from email address page
-    And I should be on Check your answers page
+    And I click on Continue button
+    Then I should be on Check your answers page
     And I should see row 4 value changetest@email.com
     When I click on change hyperlink next to the UPE Telephone Number
     And I enter Telephone Number as 12345679
-    Then I navigate back to check your answers page from telephone number page
-    And I should be on Check your answers page
+    And I click on Continue button
+    Then I should be on Check your answers page
     And I should see row 6 value 12345679
     When I click on change hyperlink next to the UPE Telephone Contact
     And I select option No and continue to next

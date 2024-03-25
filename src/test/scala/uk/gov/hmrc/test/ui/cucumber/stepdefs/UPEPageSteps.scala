@@ -273,6 +273,13 @@ class UPEPageSteps extends CommonFunctions {
     UPEEntityTypePage.clickContinue()
   }
 
+    And("""^I select option (.*) and continue to NFM Name page$""") { (option: String) =>
+      option match {
+        case "Entity type not listed" => Input.clickById("value_2")
+      }
+      UPEEntityTypePage.clickContinue()
+    }
+
   And("""^I select option (.*) in further details group status page$""") { (option: String) =>
     option match {
       case "In the UK and other countries" => Input.clickById("value_1")

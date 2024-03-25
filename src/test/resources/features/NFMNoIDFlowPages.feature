@@ -2,7 +2,7 @@
 Feature: NFM NO ID journey
   As a MNE user
   I would like to enter my details via NFM No ID journey
-  @zap_accessibility
+   @zap_accessibility
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     Then I should be on UPE business page
@@ -16,9 +16,10 @@ Feature: NFM NO ID journey
     When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     And The caption must be Group details
-    And The Heading should be Do you want to register a nominated filing member to report for this group?
-    And The Body content should be If you do not register a nominated filing member, we will use the ultimate parent entity (UPE) as the filing member.
-    And The inset text should be A nominated filing member must be nominated by the UPE and must be able to access the information required to report Pillar 2 top-up taxes on the group’s behalf.
+    And The Heading should be Nominate a filing member
+    And The Body content should be A nominated filing member must be nominated by the UPE and must have access to information required to report Pillar 2 top-up taxes.
+    And The Body content should be If you select ‘No’, we will use the ultimate parent entity (UPE) as the filing member.
+    And The second heading should be Do you want to register a nominated filing member to report for this group?
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     And The caption must be Group details
@@ -63,7 +64,7 @@ Feature: NFM NO ID journey
     And I click on Continue button
     Then I should navigate to NFM Check your answers page
     And The caption must be Group details
-    And The Heading should be Check your answers
+    And The Heading should be Check your answers for filing member details
     And I should see row 1 key Name
     And I should see row 2 key Address
     And I should see row 3 key Contact name
@@ -116,30 +117,29 @@ Feature: NFM NO ID journey
     Then I should be on NFM Check your answers page
     When I click on change hyperlink next to the NFM Name
     And I enter NFM name as Name Change
-    Then I navigate back to check your answers page from name page
     Then I should be on NFM Check your answers page
     And I should see row 1 value Name Change
     When I click on change hyperlink next to the NFM Address
     And I enter Address Line 1 as Change Address
-    Then I navigate back to check your answers page from address page
-    And I should be on NFM Check your answers page
+    And I click on Continue button
+    Then I should be on NFM Check your answers page
     And I should see row 2 value Change Address
     And I should see row 2 value City CYA
     And I should see row 2 value United Kingdom
     When I click on change hyperlink next to the NFM Contact Name
     And I enter NFM Contact name as Change Contact Person
-    Then I navigate back to check your answers page from contact name page
-    And I should be on NFM Check your answers page
+    And I click on Continue button
+    Then I should be on NFM Check your answers page
     And I should see row 3 value Change Contact Person
     When I click on change hyperlink next to the NFM Email Address
     And I enter NFM Contact Email as changetest@email.com
-    Then I navigate back to check your answers page from email address page
-    And I should be on NFM Check your answers page
+    And I click on Continue button
+    Then I should be on NFM Check your answers page
     And I should see row 4 value changetest@email.com
     When I click on change hyperlink next to the NFM Telephone Number
     And I enter NFM Telephone Number as 12345679
-    Then I navigate back to check your answers page from telephone number page
-    And I should be on NFM Check your answers page
+    And I click on Continue button
+    Then I should be on NFM Check your answers page
     And I should see row 6 value 12345679
     When I click on change hyperlink next to the NFM Telephone Contact
     And I select option No and continue to next

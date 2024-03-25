@@ -13,8 +13,7 @@ Feature: Ultimate parent entity GRS journey
     Then I should be on UPE entity type page
     And The caption must be Group details
     And The Heading should be What entity type is the ultimate parent?
-    And I should see Entity type not listed hyperLink
-    When I click Entity type not listed link
+    When I select option Entity type not listed and continue to NFM Name page
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
     #Then I should navigate to input-upe-name page #need to be fixed as part of PIL-598

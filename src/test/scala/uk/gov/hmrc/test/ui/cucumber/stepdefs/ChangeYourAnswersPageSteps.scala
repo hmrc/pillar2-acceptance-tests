@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{ContactDetailsCheckAnswersPage, ContactDetailsSummaryPage, FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, UPECheckYourAnswersPage}
+import uk.gov.hmrc.test.ui.pages.{ContactDetailsCheckAnswersPage, ContactDetailsSummaryPage, FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, ReviewAnswersPage, UPECheckYourAnswersPage}
 
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
@@ -80,34 +80,14 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondName)
       case "Second Contact Email" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
-      case "Telephone number" =>
+      case "Second Contact Telephone number" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
       case "Address" =>
         clickByCss(ContactDetailsSummaryPage.changeAddress)
+      case "Primary Contact" =>
+        clickByCss(ReviewAnswersPage.changeUPEContact)
       case _ =>
         clickByCss(ContactDetailsCheckAnswersPage.changeName)
-    }
-  }
-  Then("""^I navigate back to check your answers page from (.*) page""") { (page: String) =>
-    page match {
-      case "name" =>
-        for (i <- 1 to 5) {
-          InitialGuidancePage.clickContinue()
-        }
-      case "address" =>
-        for (i <- 1 to 5) {
-          InitialGuidancePage.clickContinue()
-        }
-      case "contact name" =>
-        for (i <- 1 to 4) {
-          InitialGuidancePage.clickContinue()
-        }
-      case "email address" =>
-        for (i <- 1 to 3) {
-          InitialGuidancePage.clickContinue()
-        }
-      case "telephone number" =>
-        InitialGuidancePage.clickContinue()
     }
   }
 }

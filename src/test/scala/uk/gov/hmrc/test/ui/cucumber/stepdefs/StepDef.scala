@@ -17,10 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{getAttribueOf, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, BTAPillar2IDCheckPage, BTARegisterConfirmationPage, BTARegisterGuidancePage, BusinessActivityEQPage, ContactDetailsDisplayPage, ErrorPlaceHolderPage, FDGroupStatusPage, GlobalGrossRevenueEQPage, GroupAccountingPeriodPage, InitialGuidancePage, InputNFMTelephonePage, InputUPETelephonePage, NFMContactEmailPage, NFMDetailsPage, NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMRegistrationPage, NFMTelephonePage, RegistrationConfirmationPage, ReviewAnswersPage, SecondContactDetailsDisplayPage, TaskListPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEQPage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage, UPEPage, UPETelephonePage}
 
 
 class StepDef extends BaseStepDef {
@@ -116,6 +116,8 @@ class StepDef extends BaseStepDef {
       case "UPE" => AuthLoginPage.loginToCA(name, credId)
       case "NFM" => AuthLoginPage.loginToNFMCA(name, credId)
       case "FD" => AuthLoginPage.loginToFDCA(name, credId)
+      case "Contact Details" => AuthLoginPage.loginToCDCA(name, credId)
+      case "Final Check Your Answers" => AuthLoginPage.loginToFinalCA(name, credId)
     }
   }
 
@@ -481,9 +483,9 @@ class StepDef extends BaseStepDef {
     Nav.browserBack()
   }
 
-  And("""^I should see the contact details (.*) on use contact page""") { (details: String) =>
+  And("""^I should see the contact details row (\d+) as (.*) on use contact page""") { (row: Int, details: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElement(By.cssSelector(ContactDetailsDisplayPage.contactDetails)).getText.contains(details))
+    assert(driver.findElements(By.cssSelector(ContactDetailsDisplayPage.valueList)).get(row - 1).getText.contains(details))
   }
 
   And("""^The header should display (.*) banner$"""){ (beta: String) =>
@@ -523,6 +525,24 @@ class StepDef extends BaseStepDef {
 
   When("""^I refresh the page$""") { () =>
     driver.navigate.refresh()
+  }
+
+  Given("""^I access random page$""") { () =>
+    Nav.navigateTo(AuthLoginPage.incorrectUrl)
+  }
+
+  Then("""^I can see (.*) link$"""){ (linkText: String) =>
+    Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
+    assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
+  }
+
+  And("""^I should see (.*) link on (.*)$""") { (linkText: String, page: String) =>
+    page match {
+      case "Review answers page" =>
+        Wait.waitForTagNameToBeRefreshed ("h1")
+        Wait.waitForElementToPresentByCssSelector (ReviewAnswersPage.printthispage)
+        assert (driver.findElement (By.cssSelector (ReviewAnswersPage.printthispage) ).getText.contains (linkText) )
+    }
   }
 
       /*  Given("""^I fill (.*) and continue$""") { page: String =>

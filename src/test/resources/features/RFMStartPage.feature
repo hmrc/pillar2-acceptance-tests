@@ -25,7 +25,7 @@ Feature: RFM Start page
     When I select confirmation checkbox
     And I click on Continue button
     Then I should be on auth-login page
-
+  @zap_accessibility
   Scenario: 2 - Verify RFM enter pillar2 id page and error validations
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
