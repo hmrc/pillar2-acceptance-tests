@@ -121,10 +121,8 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Contact address input page
     And The caption must be Contact details
     And The Heading should be What address do you want to use as the filing member’s contact address?
-    When I enter Address Line 1 as Address Line 1 Contact
-    And I enter Address Line 2 as Address Line 2 Contact
-    And I enter City as City Contact
-    And I enter Region as Region Contact
+    When I enter Address Line 1 as Address Line 1
+    And I enter City as City
     And I enter Postal Code as EH5 5WY
     And I enter Country as United Kingdom
     And I click on Country selected
@@ -188,11 +186,16 @@ Feature: Secondary Contact details for the filing member
     And I should see row 7 key Second contact email address
     And I should see row 8 key Can we contact by telephone?
     And I should see row 9 key Second contact telephone number
+    And I should see row 10 key Address
     And I should see row 5 value Yes
     And I should see row 6 value Second Contact Name Test
     And I should see row 7 value secondContact@email.com
     And I should see row 8 value Yes
     And I should see row 9 value 1234554
+    And I should see row 10 value Address Line 1
+    And I should see row 10 value City
+    And I should see row 10 value EH5 5WY
+    And I should see row 10 value United Kingdom
     When I click on change link for Contact Name
     When I enter Contact Name as Contact Name Change
     And I click on Continue button
@@ -214,6 +217,9 @@ Feature: Secondary Contact details for the filing member
     When I click on change link for Second Contact Telephone number
     When I enter Second Contact Input as 71235643
     And I click on Continue button
+    When I click on change link for Address
+    When I enter Address Line 1 as Address Change
+    And I click on Continue button
     And I should see row 1 value Contact Name Change
     And I should see row 2 value emailchange@test.com
     And I should see row 4 value 1234555
@@ -221,6 +227,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 7 value secondContactchange@email.com
     And I should see row 8 value Yes
     And I should see row 9 value 71235643
+    And I should see row 10 value Address Change
     And I click on Continue button
     When I click Check your answers link
     Then I should be on Review answers page
@@ -257,6 +264,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 18 key Second contact email address
     And I should see row 19 key Can we contact by telephone?
     And I should see row 20 key Second contact telephone number
+    And I should see row 21 key Address
     And I should see row 12 value Contact Name Change
     And I should see row 13 value emailchange@test.com
     And I should see row 14 value Yes
@@ -266,8 +274,40 @@ Feature: Secondary Contact details for the filing member
     And I should see row 18 value secondContactchange@email.com
     And I should see row 19 value Yes
     And I should see row 20 value 71235643
+    And I should see row 21 value Address Change
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
+    Then I click Edit contact details link
+    Then I should navigate to Contact details guidance page
+    When I click on Continue button
+    Then I should navigate to Contact details display page
+    When I select option Yes and continue to next
+    Then I should navigate to Second Contact details page
+    When I select option No and continue to next
+    Then I should navigate to Contact address input page
+    When I click on Continue button
+    Then I should be on Contact details Check answers page
+    And I should see row 1 key Contact name
+    And I should see row 2 key Email address
+    And I should see row 3 key Can we contact by telephone?
+    And I should see row 4 key Telephone number
+    And I should see row 1 value UPE Test
+    And I should see row 2 value testupe@email.com
+    And I should see row 3 value Yes
+    And I should see row 4 value 123456
+    And I should see row 5 key Do you have a second contact?
+    And I should see row 6 key Address
+    And I should see row 5 value No
+    And I should see row 6 value Address Change
+    And I click on Continue button
+    When I click Check your answers link
+    Then I should be on Review answers page
+    And I should see row 12 value UPE Test
+    And I should see row 13 value testupe@email.com
+    And I should see row 14 value Yes
+    And I should see row 15 value 123456
+    And I should see row 16 value No
+    And I should see row 17 value Address Change
 
    @zap_accessibility
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
@@ -310,7 +350,7 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Task list page
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    When I select option In the UK and other countries in further details group status page
+    When I select option Only in the UK in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
     When Accounting Period Start Day is entered as 15
@@ -466,7 +506,7 @@ Feature: Secondary Contact details for the filing member
     And The Id text should be Group’s Pillar 2 top-up taxes ID
     When I should see heading 1 as Registration date:
     And The registration date should be displayed as current day
-    And The Body content should be Your group has registered to report for Domestic Top-up Tax and Multinational Top-up Tax.
+    And The Body content should be Your group has registered to report for Domestic Top-up Tax.
     And The Body content should be You will not be emailed a confirmation of this registration.
     And The Body content should be You must record your group’s Pillar 2 top-up taxes ID and registration date.
     And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
@@ -566,6 +606,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 16 value No
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
+    And The Body content should be Your group has registered to report for Domestic Top-up Tax and Multinational Top-up Tax.
     And I click the browser back button
     Then I should navigate to Registration return error page
     And The Heading should be You cannot return, your registration is complete
