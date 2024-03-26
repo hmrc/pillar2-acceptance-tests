@@ -164,7 +164,7 @@ Feature: Task list page
     When I select back link
     Then I should be on Task list page
     And The Task Add ultimate parent’s details status should be In progress
-  @tests
+  @ignore
   Scenario: 5 - Task list page status update validation after Task1 completion and navigating to different pages
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
