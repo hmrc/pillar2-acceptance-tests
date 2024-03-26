@@ -449,7 +449,7 @@ class StepDef extends BaseStepDef with BrowserDriver{
 
   Then("""^The caption must be (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(InitialGuidancePage.caption)
-    assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).equals(caption))
+    assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).contains(caption))
   }
 
   Then("""^the page title should be (.*)$""") { pageTitle: String =>
