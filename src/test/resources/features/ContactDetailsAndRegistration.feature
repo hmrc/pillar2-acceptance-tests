@@ -620,5 +620,3 @@ Feature: Secondary Contact details for the filing member
     Then I should navigate to Registration confirmation page
     When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
-
-
