@@ -40,7 +40,7 @@ class EligibilityQuestionSteps extends CommonFunctions {
 
   Then("""^The caption should be (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.caption)
-    assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).contains(caption))
+    assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).equals(caption))
   }
 
   Then("""^The caption is (.*)$""") { caption: String =>
