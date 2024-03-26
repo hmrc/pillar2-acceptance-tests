@@ -26,11 +26,8 @@ object RFMEnterPillar2IdPage extends PageObject {
   val header: String        = "h1.govuk-label-wrapper"
   val hintText              = "value-hint"
   val pillar2topuptaxid     = "#value"
-
   val errorMessage          = ".govuk-error-message"
   val errorLink             = "[href*='#value']"
-  //val errorLink1            = "div.govuk-error-summary>div> div>ul >li:nth-child(1)>a"
-  //val errorLink2            = "div.govuk-error-summary>div> div>ul >li:nth-child(2)>a"
   val errorSummary          = ".govuk-error-summary__list"
 
 }
