@@ -47,6 +47,8 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndCDAddressUrl: String        = s"$rootUrl"+"contact-details/address/input"
   val frontEndNFMCAUrl: String            = s"$rootUrl"+"business-matching/filing-member/no-id/check-answers"
   val frontEndFDCAUrl: String             = s"$rootUrl"+"further-details/check-answers"
+  val frontEndCDCAUrl: String             = s"$rootUrl"+"contact-details/check-answers"
+  val frontEndFinalReviewCAUrl: String    = s"$rootUrl"+"review-submit/check-answers"
   val frontEndSubUrl: String              = s"$rootUrl"+"review-submit/confirmation"
   val frontEndDashboardUrl: String        = s"$rootUrl"+"pillar2-top-up-tax-home"
   val rfmUrl: String                      = s"$rootUrl"+"replace-filing-member/security/enter-pillar2-id"
@@ -163,6 +165,22 @@ object AuthLoginPage extends BasePage with PageObject {
     Nav.navigateTo(url)
     Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(frontEndFDCAUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
+  def loginToCDCA(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndCDCAUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
+  def loginToFinalCA(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysByName(frontEndFinalReviewCAUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }

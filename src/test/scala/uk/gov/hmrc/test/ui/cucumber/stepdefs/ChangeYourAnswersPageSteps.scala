@@ -80,10 +80,12 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondName)
       case "Second Contact Email" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
-      case "Telephone number" =>
+      case "Second Contact Telephone number" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
       case "Address" =>
         clickByCss(ContactDetailsSummaryPage.changeAddress)
+      case "Dashboard Address" =>
+        clickByCss(ContactDetailsSummaryPage.dashboardAddressChange)
       case "Primary Contact" =>
         clickByCss(ReviewAnswersPage.changeUPEContact)
       case _ =>
