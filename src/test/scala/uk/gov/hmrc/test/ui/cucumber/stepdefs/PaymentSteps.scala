@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, MakePaymentPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, MakePaymentPage, SearchRegisterPage}
 
 
 class PaymentSteps extends CommonFunctions {
@@ -43,18 +43,37 @@ class PaymentSteps extends CommonFunctions {
   }
 
   Then("""^I should be navigated to new tab$""") { () =>
-
     val handles = driver.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
     driver.switchTo().window(newWindow)
-    Wait.waitForTagNameToBeRefreshed("h1")
   }
 
   Then("""^I should navigate back to main tab""") { () =>
     val handles = driver.getWindowHandles.toArray().toSeq
     val mainWindow = handles.head.toString
     driver.switchTo().window(mainWindow)
-    Wait.waitForTagNameToBeRefreshed("h1")
+  }
+
+  Then("""I should be redirected to search register page in a new tab""") { () =>
+    val handles = driver.getWindowHandles.toArray().toSeq
+    val newWindow = handles(1).toString
+    val mainWindow = handles.head.toString
+    driver.switchTo().window(newWindow)
+    Wait.waitForElementToPresentByCssSelector(SearchRegisterPage.element)
+    assert(driver.findElement(By.cssSelector(SearchRegisterPage.element)).isDisplayed)
+    driver.close()
+    driver.switchTo().window(mainWindow)
+  }
+
+  Then("""I should be redirected to guidance page in a new tab""") { () =>
+    val handles = driver.getWindowHandles.toArray().toSeq
+    val newWindow = handles(1).toString
+    val mainWindow = handles.head.toString
+    driver.switchTo().window(newWindow)
+    Wait.waitForElementToPresentByCssSelector(GUKGuidancePage3.header)
+    assert(driver.findElement(By.cssSelector(GUKGuidancePage3.header)).isDisplayed)
+    driver.close()
+    driver.switchTo().window(mainWindow)
   }
 
   Then("""^I close new tab""") { () =>

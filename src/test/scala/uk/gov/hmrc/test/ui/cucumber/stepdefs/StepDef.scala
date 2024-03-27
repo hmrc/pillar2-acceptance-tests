@@ -116,6 +116,8 @@ class StepDef extends BaseStepDef with BrowserDriver{
       case "UPE" => AuthLoginPage.loginToCA(name, credId)
       case "NFM" => AuthLoginPage.loginToNFMCA(name, credId)
       case "FD" => AuthLoginPage.loginToFDCA(name, credId)
+      case "Contact Details" => AuthLoginPage.loginToCDCA(name, credId)
+      case "Final Check Your Answers" => AuthLoginPage.loginToFinalCA(name, credId)
     }
   }
 

@@ -195,7 +195,7 @@ As a registered user
     When I enter Second Contact Input as 1234554878
     And I click on Continue button
     Then I should navigate to contact details summary page
-    When I click on change link for Address
+    When I click on change link for Dashboard Address
     When I enter Address Line 1 as Test Address Line 1
     When I enter Address Line 2 as Test Address Line 2
     And I enter City as Test City

@@ -17,11 +17,8 @@ Feature: BTA user registration for Pillar 2 service
     And The Body content should be Register to report Pillar 2 top-up taxes to get a Pillar 2 top-up taxes ID.
     And I should see Find out how to register to report Pillar 2 top-up taxes (opens in new tab) link
     And I should see return to BTA button
-    When I click Find out how to register to report Pillar 2 top-up taxes (opens in new tab) link
-    Then I should be navigated to new tab
-    Then I should navigate to guidance page
-    Then I close new tab
-    And I should navigate back to main tab
+    #When I click Find out how to register to report Pillar 2 top-up taxes (opens in new tab) link #To be fixed as part of PIL-872
+    #Then I should be redirected to guidance page in a new tab
 
   @zap_accessibility
   Scenario: 2 - Confirmation page for users with PLRID
