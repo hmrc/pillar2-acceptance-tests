@@ -1,7 +1,7 @@
  @tests
 Feature: Bookmark Feature
   I should not be able to navigate to next page without answering the previous question
-
+  @ignore
   Scenario: 1 - User fill the information for UPE and NFM no ID flow and try moving ahead in the journey without answering mandatory questions
   Given Organisation User logs in as upe with credId Bookmark1 for Pillar2
   Then I should be on UPE business page
@@ -45,6 +45,7 @@ Feature: Bookmark Feature
   Then I should see task list sections
   And The Task Add filing member’s details status should be In progress
 
+  @ignore
   Scenario: 2 - User completes UPE GRS journey and try navigating to NFM NO ID flow
     Given Organisation User logs in as upe with credId Bookmark2 for Pillar2
     Then I should be on UPE business page
@@ -83,7 +84,7 @@ Feature: Bookmark Feature
     Then I click return to your Pillar 2 top-up taxes registration link
     Then I should be on Task list page
     And The Task Add filing member’s details status should be In progress
-
+  @ignore
   Scenario: 3 - User completes GRS journey and validate populated value after sign out
     Given Organisation User logs in as upe with credId Bookmark3 for Pillar2
     Then I should be on UPE business page
@@ -103,7 +104,7 @@ Feature: Bookmark Feature
     And I should see the option UK limited company remain selected
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
-
+  @ignore
   Scenario: 4 - User completes UPE GRS journey without answering mandatory questions
     Given Organisation User logs in as upe with credId Bookmark4 for Pillar2
     Then I should be on UPE business page

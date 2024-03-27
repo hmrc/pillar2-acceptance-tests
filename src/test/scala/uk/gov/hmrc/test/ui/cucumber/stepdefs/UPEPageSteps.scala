@@ -199,9 +199,9 @@ class UPEPageSteps extends CommonFunctions {
     Check.checkH1("Give feedback")
   }
 
-    And("""^I should see the answer (.*) remain selected$""") { (answer: String) =>
-      Check.checkAnswerSelection(answer)
-    }
+  And("""^I should see the answer (.*) remain selected$""") { (answer: String) =>
+    Check.checkAnswerSelection(answer)
+  }
 
   And("""^I should see the option (.*) remain selected$""") { (answer: String) =>
     Check.checkOptionSelected(answer)
@@ -261,19 +261,19 @@ class UPEPageSteps extends CommonFunctions {
     }
   }
 
-    When("""I continue to next page""") { () =>
-      UPEPage.clickContinue();
-    }
+  When("""I continue to next page""") { () =>
+    UPEPage.clickContinue();
+  }
 
-    And("""^I select option (.*) and continue to GRS page$""") { (option: String) =>
-      option match {
-        case "UK limited company"            => Input.clickById("value_0")
-        case "Limited liability partnership" => Input.clickById("value_1")
-      }
-      UPEEntityTypePage.clickContinue()
+  And("""^I select option (.*) and continue to GRS page$""") { (option: String) =>
+    option match {
+      case "UK limited company" => Input.clickById("value_0")
+      case "Limited liability partnership" => Input.clickById("value_1")
     }
+    UPEEntityTypePage.clickContinue()
+  }
 
-    And("""^I select option (.*) and continue to NFM Name page$""") { (option: String) =>
+    And("""^I select option (.*) and continue to Name page$""") { (option: String) =>
       option match {
         case "Entity type not listed" => Input.clickById("value_2")
       }
@@ -287,35 +287,35 @@ class UPEPageSteps extends CommonFunctions {
     }
   }
 
-    And("""^I registered successfully with (.*)""") { (option: String) =>
-      option match {
-        case "BV disabled" => Wait.waitForElement("registrationSuccessBvDisabled")
-          Input.clickById("registrationSuccessBvDisabled")
-        case "BV enabled" => Wait.waitForElement("registrationSuccessBvEnabled")
-          Input.clickById("registrationSuccessBvEnabled")
-      }
+  And("""^I registered successfully with (.*)""") { (option: String) =>
+    option match {
+      case "BV disabled" => Wait.waitForElement("registrationSuccessBvDisabled")
+        Input.clickById("registrationSuccessBvDisabled")
+      case "BV enabled" => Wait.waitForElement("registrationSuccessBvEnabled")
+        Input.clickById("registrationSuccessBvEnabled")
     }
+  }
 
-    And("""^registration is unsuccessful with (.*) error""") { (error: String) =>
-      error match {
-        case "party type mismatch" => Wait.waitForElement("registrationFailedPartyTypeMismatch")
-          Input.clickById("registrationFailedPartyTypeMismatch")
-        case "generic error" => Wait.waitForElement("registrationFailedGeneric")
-          Input.clickById("registrationFailedGeneric")
-        case "identifiers not match" => Wait.waitForElement("registrationFailedGeneric")
-          Input.clickById("registrationNotCalledIdentifierMismatch")
-        case "BV failed" => Wait.waitForElement("registrationFailedGeneric")
-          Input.clickById("registrationNotCalledBvFailed")
-      }
+  And("""^registration is unsuccessful with (.*) error""") { (error: String) =>
+    error match {
+      case "party type mismatch" => Wait.waitForElement("registrationFailedPartyTypeMismatch")
+        Input.clickById("registrationFailedPartyTypeMismatch")
+      case "generic error" => Wait.waitForElement("registrationFailedGeneric")
+        Input.clickById("registrationFailedGeneric")
+      case "identifiers not match" => Wait.waitForElement("registrationFailedGeneric")
+        Input.clickById("registrationNotCalledIdentifierMismatch")
+      case "BV failed" => Wait.waitForElement("registrationFailedGeneric")
+        Input.clickById("registrationNotCalledBvFailed")
     }
+  }
 
-    Then("""^The json response Body should contain the status (.*)$""") { text: String =>
-      Check.checkBodyText(text)
-    }
+  Then("""^The json response Body should contain the status (.*)$""") { text: String =>
+    Check.checkBodyText(text)
+  }
 
-    And("""^I click on Save&Continue button""") {
-      UPEEntityTypePage.clickContinue()
-    }
+  And("""^I click on Save&Continue button""") {
+    UPEEntityTypePage.clickContinue()
+  }
 
   Then("""^The second heading should be (.*)$""") { header: String =>
     Wait.waitForElementToPresentByCssSelector(UPEGRSRegistrationFailedErrorPage.secondHeader)

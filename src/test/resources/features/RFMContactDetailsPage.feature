@@ -30,7 +30,7 @@ Feature: replacing existing contact details
     And The Heading should be What is the email address for RFM test contact?
     And The hint text should be We will only use this to contact you about Pillar 2 top-up taxes.
     And I click on Continue button
-    Then I should see an error message You need to enter the email address for RFM test contact on the RFM Contact Email Page
+    Then I should see an error message Enter email address for RFM test contact on the RFM Contact Email Page
     When I provide RFM contact email as FormatErrorTest.com
     And I click on Continue button
     Then I should see an error message Enter an email address in the correct format, like name@example.com on the RFM Contact Email Page

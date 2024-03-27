@@ -47,4 +47,5 @@ object UPEAddressPage extends PageObject {
 
   def clickContinue() = findByCss(continue).click()
   def clickCountrySelected() = findByCss(selected).click()
+
 }
