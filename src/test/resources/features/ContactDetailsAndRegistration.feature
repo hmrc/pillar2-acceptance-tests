@@ -309,7 +309,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 16 value No
     And I should see row 17 value Address Change
 
-   @zap_accessibility
+  @zap_accessibility
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
@@ -408,19 +408,19 @@ Feature: Secondary Contact details for the filing member
     When I enter NFM Telephone Number as 12345343
     When I click on Continue button
     Then I should navigate to Second Contact details page
-     When I click on Continue button
-     Then I should see error message Select yes if there is someone else we can contact on the Second Contact details Page
-     When I select option Yes and continue to next
+    When I click on Continue button
+    Then I should see error message Select yes if there is someone else we can contact on the Second Contact details Page
+    When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
     And I click on Continue button
     Then I should see error message Enter name of the person of team we should contact on the Second Contact details Page
     When I enter Second Contact Name as Testing the character limit of contact details field is 160 character limit. Maximum character limit of contact details name field should be 160 characters, user should not be able to continue with more than 160 characters.
     And I click on Continue button
     Then I should see error message The name of the contact person or team should be 160 characters or less on the Second Contact details Page
-     When I enter Second Contact Name as Test <script>alert(document.domain)</script>
-     And I click on Continue button
-     Then I should see error message The name of the contact person or team must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Second Contact details Page
-     When I enter Second Contact Name as Second Contact Name Test
+    When I enter Second Contact Name as Test <script>alert(document.domain)</script>
+    And I click on Continue button
+    Then I should see error message The name of the contact person or team must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Second Contact details Page
+    When I enter Second Contact Name as Second Contact Name Test
     And I click on Continue button
     Then I should navigate to Second Contact email page
     And I click on Continue button
@@ -510,7 +510,7 @@ Feature: Secondary Contact details for the filing member
     And The Body content should be You will not be emailed a confirmation of this registration.
     And The Body content should be You must record your group’s Pillar 2 top-up taxes ID and registration date.
     And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
-    When The second heading should be What happens next
+    When I should see heading 2 as What happens next
     And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
     And The Body content should be Is this page not working properly? (opens in new tab)
     When I click report and manage your Pillar 2 top-up taxes link
@@ -521,7 +521,7 @@ Feature: Secondary Contact details for the filing member
     And I click the browser back button
     Then I can see Print this page link
 
-  Scenario: 5 - Validate check your answers page with UPE and NFM GRS and without second contact details for NFM user
+  Scenario: 4 - Validate check your answers page with UPE and NFM GRS and without second contact details for NFM user
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
     When I select option Yes and continue to next

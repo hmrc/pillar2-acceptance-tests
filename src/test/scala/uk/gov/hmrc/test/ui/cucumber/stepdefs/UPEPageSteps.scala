@@ -327,6 +327,12 @@ class UPEPageSteps extends CommonFunctions {
     assert(getTextOf(By.cssSelector(FDGroupStatusPage.fieldHeader)).contains(header))
   }
   And("""^I should see heading (\d+) as (.*)""") { (sectionNumber: Int, sectionName: String) =>
-    assert(driver.findElements(By.cssSelector(ConfirmationPage.heading)).get(sectionNumber - 1).getText.contains(sectionName))
+    sectionNumber match {
+      case 1 =>
+        assert(driver.findElements(By.cssSelector(ConfirmationPage.firstHeading)).get(sectionNumber - 1).getText.contains(sectionName))
+      case 2 =>
+        assert(driver.findElements(By.cssSelector(ConfirmationPage.secondHeading)).get(sectionNumber - 2).getText.contains(sectionName))
+    }
   }
+
 }
