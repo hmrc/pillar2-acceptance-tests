@@ -173,7 +173,7 @@ class SubscriptionJourneySteps extends CommonFunctions {
 
   Then("""^The registration date should be displayed as current day$""") { () =>
     val todayDate: String = LocalDate.now().format(DateTimeFormatter.ofPattern("d MMMM yyyy"))
-    assert(getTextOf(By.cssSelector(ConfirmationPage.heading)).contains(todayDate))
+    assert(getTextOf(By.cssSelector(ConfirmationPage.firstHeading)).contains(todayDate))
   }
 
 }
