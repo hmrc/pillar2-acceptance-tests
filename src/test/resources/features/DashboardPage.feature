@@ -7,8 +7,8 @@ As a registered user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 top-up taxes account
-    And The inactive status should be Your account is currently inactive. For additional information, please refer to the draft guidance (opens in a new tab).
-    When I click draft guidance (opens in a new tab) link
+    And The inactive status should be HMRC has received a Below Threshold Notification for this account. Please contact the pillar2mailbox@hmrc.gov.uk if your circumstances change.
+    When I click draft guidance (opens in new tab) link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page
     Then I close new tab
@@ -90,7 +90,7 @@ As a registered user
     When I click View and amend group details link
     Then I should navigate to accounts summary page
     And The Heading should be Group details
-    And I should see row 1 key Where does the group operate?
+    And I should see row 1 key Where are the entities in your group located?
     And I should see row 2 key Group’s current consolidated accounting period
     And I should see row 3 key Start date
     And I should see row 4 key End date
@@ -99,15 +99,8 @@ As a registered user
     And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the FD Group Status
     And The caption must be Group details
-    And The Heading should be Group operations
-    And The Body content should be Group operations refer to the collective activities of the group. You must answer this question on behalf of the whole group.
-    And The Body content should be There are two Pillar 2 top-up taxes in the UK:
-    And The Body content should be Multinational Top-up Tax
-    And The Body content should be Domestic Top-up Tax
-    And The Body content should be Groups that operate only in the UK will register to report for Domestic Top-up Tax.
-    And The Body content should be Groups that operate in the UK and other countries will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
-    And The Body content should be If group operations change, you must amend the group’s details.
-    And The field heading should be Where does the group operate?
+    And The Heading should be Entity locations
+    And The field heading should be Where are the entities in your group located?
     When I select option Only in the UK in further details group status page
     When I click on Continue button
     Then I should navigate to accounts summary page
