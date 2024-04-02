@@ -14,13 +14,11 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The caption must be Group details
     And The Heading should be What entity type is the ultimate parent?
     When I select option Entity type not listed and continue to Name page
-    When I click Report Pillar 2 top-up taxes link
-    Then I should navigate to Task list page
-    #Then I should navigate to input-upe-name page #need to be fixed as part of PIL-598
-    #When I select back link
-    #Then I should be on UPE entity type page
-    #When I click on Continue button
-    #Then I should see error message Select what type of company the ultimate parent entity is on the UPE Org type Page
+    Then I should navigate to input-upe-name page
+    When I select back link
+    Then I should be on UPE entity type page
+    When I click on Continue button
+    Then I should navigate to input-upe-name page
 
   @zap_accessibility
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
