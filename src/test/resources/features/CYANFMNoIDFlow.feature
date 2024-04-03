@@ -7,7 +7,7 @@ Feature: CYA - NFM No ID flow
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in with rfm URL to Pillar2
     When I access RFM CYA NFM page
-    Then I should navigate to RFM New NFM Contact Detail Name Page
+    Then I should navigate to RFM New NFM Contact Name Page
     When I click on Continue button
     Then I should see an error message Enter the name of the new nominated filing member on the RFM contact name change Page
     When I enter NFM name as RFMNewNFMContactNameCharacterLengthErrorValidationMaximumNFMNameCharacterLengthShouldBeEnteredLessThanOneHundredFive
@@ -27,7 +27,6 @@ Feature: CYA - NFM No ID flow
     Then I should see address error message Enter first line of the address on the Address Line Element
     Then I should see address error message Enter town or city on the City Element
     Then I should see address error message Enter a full UK postal code on the Postal code Element
-#    Then I should see address error message Enter country on the Country Element
     When I refresh the page
     And I enter Address Line 1 as enter long first line of address with more than 35 characters
     And I enter Address Line 2 as enter long second line of address with more than 35 characters
@@ -50,12 +49,6 @@ Feature: CYA - NFM No ID flow
     And I click on Country selected
     And I click on Continue button
     Then I should be on RFM No ID CYA Page
-#    When I select back link
-#    Then I should be on RFM New NFM Contact Address Page
-#    And I select back link
-#    Then I should be on CYA NFM
-#    And I click on Continue button
-#    And I click on Continue button
     Then The caption must be Group details
     And The Heading should be Check your answers
     And I should see row 1 key Name

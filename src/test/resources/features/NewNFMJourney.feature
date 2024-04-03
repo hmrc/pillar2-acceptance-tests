@@ -23,10 +23,8 @@ Feature: New NFM Journey
     Then I should see an error message Select yes if the new nominated filing member is registered in the UK on the RFM journey error Page
     When I select option No and continue to next
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to RFM New NFM Contact Name Page
     When I select back link
     Then I should be on RFM registered in UK page
-    When I select option Yes and continue to next
-    And I click on Continue button
-    Then I should navigate to under construction page
+
 
