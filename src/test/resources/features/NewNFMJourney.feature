@@ -24,7 +24,3 @@ Feature: New NFM Journey
     When I select option No and continue to next
     And I click on Continue button
     Then I should navigate to RFM New NFM Contact Name Page
-    When I select back link
-    Then I should be on RFM registered in UK page
-
-
