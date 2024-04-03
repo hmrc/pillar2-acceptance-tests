@@ -248,7 +248,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 6 value 123456
     And I should see row 7 key Is there a nominated filing member
     And I should see row 7 value No
-    And I should see row 8 key Where does the group operate?
+    And I should see row 8 key Where are the entities in your group located?
     And I should see row 9 key Group’s consolidated accounting period
     And I should see row 10 key Start date
     And I should see row 11 key End date
