@@ -25,8 +25,8 @@ Feature: Further Details Task page validation
     And The Body content should be You must consider the locations of all the entities within your group.
     And The Body content should be The entity locations determine which Pillar 2 top-up tax your group needs to report for.
     And The Body content should be There are two Pillar 2 top-up taxes in the UK:
-    And The Body content should be Multinational top-up tax
-    And The Body content should be Domestic top-up tax
+    And The Body content should be Multinational Top-up Tax
+    And The Body content should be Domestic Top-up Tax
     And The Body content should be Groups with entities that are located only in the UK will register to report for Domestic Top-up Tax.
     And The Body content should be Groups with entities that are located in the UK and other jurisdictions will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
     And The Body content should be If any future changes occur that affect the location of the entities within your group, you must amend these details within your account.
