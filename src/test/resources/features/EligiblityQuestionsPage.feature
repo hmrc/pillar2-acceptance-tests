@@ -14,8 +14,8 @@ Feature: Eligibility Questions for Pillar 2
     When I choose Yes and continue
     Then I should navigate to business EQ page
     And The caption should be Check if the group needs to report
-    And The Heading should be Does the group have business operations in the UK?
-    And The Body content should be Business operations refer to activities that businesses engage in to increase the value of the enterprise.
+    And The Heading should be Does the group have an entity located in the UK?
+    And The Body content should be Pillar 2 top-up taxes may be collected when your group has an entity located in the UK.
     When I choose Yes and continue
     Then I should navigate to Global gross revenue
     And The caption should be Check if the group needs to report
@@ -62,8 +62,8 @@ Feature: Eligibility Questions for Pillar 2
     When I choose No and continue
     Then I should navigate to BA guidance page
     And The Heading should be Based on your answers, this group does not need to report Pillar 2 top-up taxes in the UK
-    And The Body content should be Pillar 2 top-up taxes may be collected when you have business activities located in the UK.
-    And The Body content should be If your business activities are only located outside the UK, you should check where any liability may apply.
+    And The Body content should be Pillar 2 top-up taxes may be collected when you have an entity located in the UK.
+    And The Body content should be If your group members are only located outside the UK, you should check where any liability may apply.
     When I click Find out more about who is eligible for Pillar 2 top-up taxes link
     Then I should navigate to guidance page
     When I click the browser back button
