@@ -21,15 +21,16 @@ Feature: Further Details Task page validation
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     And The caption must be Group details
-    And The Heading should be Group operations
-    And The Body content should be Group operations refer to the collective activities of the group. You must answer this question on behalf of the whole group.
+    And The Heading should be Entity locations
+    And The Body content should be You must consider the locations of all the entities within your group.
+    And The Body content should be The entity locations determine which Pillar 2 top-up tax your group needs to report for.
     And The Body content should be There are two Pillar 2 top-up taxes in the UK:
     And The Body content should be Multinational Top-up Tax
     And The Body content should be Domestic Top-up Tax
-    And The Body content should be Groups that operate only in the UK will register to report for Domestic Top-up Tax.
-    And The Body content should be Groups that operate in the UK and other countries will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
-    And The Body content should be If group operations change, you must amend the group’s details.
-    And The field heading should be Where does the group operate?
+    And The Body content should be Groups with entities that are located only in the UK will register to report for Domestic Top-up Tax.
+    And The Body content should be Groups with entities that are located in the UK and other jurisdictions will register to report for both Domestic Top-up Tax and Multinational Top-up Tax.
+    And The Body content should be If any future changes occur that affect the location of the entities within your group, you must amend these details within your account.
+    And The field heading should be Where are the entities in your group located?
     And I click on Continue button
     Then I should see error message Select where the group operates on the Further Details Group Status Page
     When I select option In the UK and other countries in further details group status page
@@ -83,7 +84,7 @@ Feature: Further Details Task page validation
     Then I should navigate to FD check your answers page
     And The caption must be Group details
     And The Heading should be Check your answers for further group details
-    And I should see row 1 key Where does the group operate?
+    And I should see row 1 key Where are the entities in your group located?
     And I should see row 2 key Group’s consolidated accounting period
     And I should see row 3 key Start date
     And I should see row 4 key End date
