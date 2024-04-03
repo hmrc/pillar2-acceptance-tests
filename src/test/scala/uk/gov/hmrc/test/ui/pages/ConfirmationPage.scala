@@ -23,5 +23,6 @@ object ConfirmationPage extends PageObject {
   val url: String     = s"$rootUrl"+"eligibility/confirmation"
   val insetText       =".govuk-inset-text"
   val caption         = "Check if your group is liable"
-  val heading         = ".govuk-heading-s"
+  val firstHeading    = ".govuk-panel +.govuk-heading-m"
+  val secondHeading   = ".govuk-body + .govuk-heading-m"
 }
