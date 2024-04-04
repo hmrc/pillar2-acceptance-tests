@@ -513,9 +513,6 @@ class StepDef extends BaseStepDef with BrowserDriver{
       case "return to" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(BTARegisterGuidancePage.returnToBTA)
-      case "continue to" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(BTARegisterConfirmationPage.continueToBTA)
     }
   }
 
