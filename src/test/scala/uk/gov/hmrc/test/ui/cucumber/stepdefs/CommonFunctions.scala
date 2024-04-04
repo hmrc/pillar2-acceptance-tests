@@ -109,7 +109,6 @@ trait CommonFunctions
       case "bta pillar2 ID check page"            => BTAPillar2IDCheckPage
       case "eacd page"                            => EACDPage
       case "bta register guidance page"           => BTARegisterGuidancePage
-      case "bta register confirmation page"       => BTARegisterConfirmationPage
       case "Subscription API error page"          => SubscriptionAPIerrorPage
       case "Registration API error page"          => RegistrationAPIerrorPage
       case "RFM start page"                       => RFMStartPage
