@@ -126,6 +126,11 @@ trait CommonFunctions
       case "RFM registered in UK page"            => RFMRegisteredInUKPage
       case "RFM Contact Guidance page"            => RFMContactGuidancePage
       case "RFM Contact Detail Page"              => RFMContactDetailNamePage
+      case "RFM New NFM Contact Name Page"        => RFMNewNFMContactNamePage
+      case "RFM New NFM Contact Address Page"     => RFMNewNFMContactAddressInputPage
+      case "RFM No ID CYA Page"                   => RFMNoIDCYAPage
+      case "RFM New NFM Contact Name Change"      => RFMNewNFMContactNameChangePage
+      case "RFM No ID Change CYA Page"            => RFMNoIDChangeCYAPage
     }
   }
 }
