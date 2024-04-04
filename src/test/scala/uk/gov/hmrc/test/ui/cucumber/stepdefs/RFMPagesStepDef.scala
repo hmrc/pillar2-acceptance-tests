@@ -119,36 +119,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
         getTextOf(By cssSelector (RFMContactDetailNamePage.errorMessage)) should include(error)
 
-      case "Contact Email" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMContactEmailPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMContactEmailPage.errorLink)
-        getTextOf(By cssSelector (RFMContactEmailPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMContactEmailPage.errorMessage)
-        getTextOf(By cssSelector (RFMContactEmailPage.errorMessage)) should include(error)
-
-      case "Contact Number" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMContactNumberPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMContactNumberPage.errorLink)
-        getTextOf(By cssSelector (RFMContactNumberPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMContactNumberPage.errorMessage)
-        getTextOf(By cssSelector (RFMContactNumberPage.errorMessage)) should include(error)
-
-      case "Contact Input" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.errorLink)
-        getTextOf(By cssSelector (RFMContactInputPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.errorMessage)
-        getTextOf(By cssSelector (RFMContactInputPage.errorMessage)) should include(error)
-
     }
   }
 
