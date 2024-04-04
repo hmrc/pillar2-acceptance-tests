@@ -57,6 +57,16 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
         Input.sendKeysByCss(name, RFMContactDetailNamePage.nameField)
 
+      case "contact email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMContactEmailPage.emailField)
+        Input.sendKeysByCss(name, RFMContactEmailPage.emailField)
+
+      case "contact number" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.telephoneField)
+        Input.sendKeysByCss(name, RFMContactInputPage.telephoneField)
+
       case "New NFM Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.nameField)
