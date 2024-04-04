@@ -40,6 +40,8 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "corporate position"  => Nav.navigateTo(RFMCorpPositionPage.url)
       case "New NFM guidance"    => Nav.navigateTo(NewNFMGuidancePage.url)
       case "Contact Guidance"    => Nav.navigateTo(RFMContactGuidancePage.url)
+      case "CYA NFM"             => Nav.navigateTo(RFMNewNFMContactNamePage.url)
+
     }
   }
 
@@ -64,6 +66,12 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.telephoneField)
         Input.sendKeysByCss(name, RFMContactInputPage.telephoneField)
+
+      case "New NFM Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.nameField)
+        Input.sendKeysByCss(name, RFMNewNFMContactNamePage.nameField)
+
     }
   }
 
@@ -119,6 +127,25 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
         getTextOf(By cssSelector (RFMContactDetailNamePage.errorMessage)) should include(error)
 
+      case "contact name change" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorLink)
+        getTextOf(By cssSelector (RFMNewNFMContactNameChangePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorMessage)
+        getTextOf(By cssSelector (RFMNewNFMContactNameChangePage.errorMessage)) should include(error)
+
+      case "contact address change" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactAddressChange.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactAddressChange.errorLink)
+        getTextOf(By cssSelector (RFMNewNFMContactAddressChange.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactAddressChange.errorMessage)
+        getTextOf(By cssSelector (RFMNewNFMContactAddressChange.errorMessage)) should include(error)
     }
   }
 
@@ -172,6 +199,8 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         clickByCss(RFMCYAPage.changePID)
       case "Registration date" =>
         clickByCss(RFMCYAPage.changeRegistrationDate)
+      case "New NFM Name" =>
+        clickByCss(RFMNoIDCYAPage.changeName)
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
@@ -182,3 +211,4 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   }
 
 }
+

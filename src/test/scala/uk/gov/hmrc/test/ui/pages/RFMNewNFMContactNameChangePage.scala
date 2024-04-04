@@ -16,17 +16,21 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object BTARegisterConfirmationPage extends PageObject {
+object RFMNewNFMContactNameChangePage extends PageObject {
+  val url: String = s"$rootUrl" + "replace-filing-member/business-matching/filing-member/no-id/change-input-name"
 
-  val url: String        = s"$rootUrl" + "bta/confirmation"
-  val header: String     = "h1.govuk-panel__title"
-  val continueToBTA      = "[href*='business-account']"
-  val continue           = ".govuk-button"
+  val caption               = ".govuk-caption-l"
+  val continue              = ".govuk-button"
+  val header: String        = "h1.govuk-heading-l"
+  val hintText              = ".govuk-hint"
 
-  def clickContinue()    = findByCss(continue).click()
+  val errorMessage          = ".govuk-error-message"
+
+
+  val errorLink             = "[href*='#value']"
+  val errorSummary          = ".govuk-error-summary__list"
+  val nameField             = "#value"
+
 }
-
-

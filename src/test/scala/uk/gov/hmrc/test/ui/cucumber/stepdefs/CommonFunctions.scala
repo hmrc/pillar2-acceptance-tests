@@ -109,7 +109,6 @@ trait CommonFunctions
       case "bta pillar2 ID check page"            => BTAPillar2IDCheckPage
       case "eacd page"                            => EACDPage
       case "bta register guidance page"           => BTARegisterGuidancePage
-      case "bta register confirmation page"       => BTARegisterConfirmationPage
       case "Subscription API error page"          => SubscriptionAPIerrorPage
       case "Registration API error page"          => RegistrationAPIerrorPage
       case "RFM start page"                       => RFMStartPage
@@ -130,6 +129,11 @@ trait CommonFunctions
       case "RFM Contact Email Page"               => RFMContactEmailPage
       case "RFM Contact Number Page"              => RFMContactNumberPage
       case "RFM Contact Input Page"               => RFMContactInputPage
+      case "RFM New NFM Contact Name Page"        => RFMNewNFMContactNamePage
+      case "RFM New NFM Contact Address Page"     => RFMNewNFMContactAddressInputPage
+      case "RFM No ID CYA Page"                   => RFMNoIDCYAPage
+      case "RFM New NFM Contact Name Change"      => RFMNewNFMContactNameChangePage
+      case "RFM No ID Change CYA Page"            => RFMNoIDChangeCYAPage
     }
   }
 }

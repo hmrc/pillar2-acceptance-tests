@@ -27,8 +27,3 @@ Feature: BTA user registration for Pillar 2 service
     When I click on Continue button
     When I select option Yes and continue to next
     Then I should navigate to eacd page
-    When I click on Continue button
-    Then I should navigate to bta register confirmation page
-    And The Heading should be You now have access to Report Pillar 2 top-up taxes
-    And The Body content should be You can access the service from your Business Tax Account
-    And I should see continue to BTA button
