@@ -27,8 +27,7 @@ object RFMSecondContactTelephoneQuestionPage extends PageObject {
   val hintText              = ".govuk-hint"
 
   val errorMessage          = ".govuk-error-message"
-  val errorLink             = "[href='#telephoneNumber']"
-  val errorSummary          = ".govuk-error-summary__list"
+  val errorLink             = "[href*='#value']"
   val telephoneField        = "#telephoneNumber"
 
 }

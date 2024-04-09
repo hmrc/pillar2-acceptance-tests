@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMSecondContactTelephonePage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/contact-details/input-telephone"
+  val url: String = s"$rootUrl" + "replace-filing-member/contact-details/second-input-telephone"
 
   val caption               = ".govuk-caption-l"
   val continue              = ".govuk-button"
@@ -29,6 +29,6 @@ object RFMSecondContactTelephonePage extends PageObject {
   val errorMessage          = ".govuk-error-message"
   val errorLink             = "[href='#telephoneNumber']"
   val errorSummary          = ".govuk-error-summary__list"
-  val telephoneField        = "#telephoneNumber"
+  val telephoneField        = "#value"
 
 }

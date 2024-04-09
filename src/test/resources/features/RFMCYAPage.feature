@@ -1,7 +1,7 @@
 @tests
 Feature: RFM check your answers page
   As a replacing filing member
-  I want to access CYA page to check my answers and change
+  I want to enter my subscription details and access CYA page to check my answers and change
   @zap_accessibility
   Scenario: 1 - Verify RFM check your answers page
     Given Organisation User logs in with rfm URL to Pillar2
