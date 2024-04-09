@@ -31,14 +31,14 @@ object GroupAccountingPeriodPage extends PageObject {
   val backLink              = ".govuk-back-link"
   val errorMessageStartDate = "#startDate-error"
   val errorMessageEndDate   = "#endDate-error"
-  val startDay             = "startDate.day"
-  val startMonth           = "startDate.month"
-  val startYear            = "startDate.year"
-  val endDay               = "endDate.day"
-  val endMonth             = "endDate.month"
-  val endYear              = "endDate.year"
-  val dateMessage          =".govuk-fieldset__heading"
+  val startDay              = "startDate.day"
+  val startMonth            = "startDate.month"
+  val startYear             = "startDate.year"
+  val endDay                = "endDate.day"
+  val endMonth              = "endDate.month"
+  val endYear               = "endDate.year"
+  val dateMessage           =".govuk-fieldset__heading"
 
-  def clickContinue()      = findByCss(continue).click()
+  def clickContinue()       = findByCss(continue).click()
 
 }
