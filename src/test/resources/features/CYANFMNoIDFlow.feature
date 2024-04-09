@@ -64,4 +64,4 @@ Feature: CYA - NFM No ID flow
     And I click on Continue button
     Then I should navigate to RFM No ID Change CYA Page
     When I click on Continue button
-    Then I should be on under construction page
+    Then I should be on RFM Contact Guidance page
