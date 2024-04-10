@@ -134,6 +134,11 @@ trait CommonFunctions
       case "RFM No ID CYA Page"                   => RFMNoIDCYAPage
       case "RFM New NFM Contact Name Change"      => RFMNewNFMContactNameChangePage
       case "RFM No ID Change CYA Page"            => RFMNoIDChangeCYAPage
+      case "RFM Second Contact Question Page"     => RFMSecondContactQuestionPage
+      case "RFM second contact name page"         => RFMSecondContactNamePage
+      case "RFM second contact email page"        => RFMSecondContactEmailPage
+      case "RFM second contact telephone question page" => RFMSecondContactTelephoneQuestionPage
+      case "RFM second contact telephone page"    => RFMSecondContactTelephonePage
     }
   }
 }
