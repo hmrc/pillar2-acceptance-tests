@@ -22,22 +22,9 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object RFMSecondContactAddressPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/contact-details/address/input"
   val continue = ".govuk-button"
-  val errorSummary = ".govuk-error-summary__list"
-  val addressLine1ErrorLink = "[href='#addressLine1']"
-  val addressLine2ErrorLink = "[href='#addressLine2']"
-  val cityErrorLink = "[href='#addressLine3']"
-  val regionErrorLink = "[href='#addressLine4']"
-  val postcodeErrorLink = "[href='#postalCode']"
-  val countryErrorLink = "[href='#countryCode']"
   val country = "#countryCode"
   val backLink = ".govuk-back-link"
-  val addressLine1ErrorMessage = "#addressLine1-error"
-  val addressLine2ErrorMessage = "#addressLine2-error"
-  val cityErrorMessage = "#addressLine3-error"
-  val regionErrorMessage = "#addressLine4-error"
-  val postcodeErrorMessage = "#postalCode-error"
-  val countryErrorMessage = "#countryCode-error"
-
+  
   def clickContinue() = findByCss(continue).click()
 
 }
