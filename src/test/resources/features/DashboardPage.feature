@@ -89,6 +89,7 @@ As a registered user
     And I should see the heading 2 on Dashboard page as Manage your account
     When I click View and amend group details link
     Then I should navigate to accounts summary page
+    And the page title should be Group details - Report Pillar 2 top-up taxes - GOV.UK
     And The Heading should be Group details
     And I should see row 1 key Where are the entities in your group located?
     And I should see row 2 key Group’s current consolidated accounting period
@@ -129,6 +130,7 @@ As a registered user
     And I should see user details row 3 value International Organisation Inc.
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
+    And the page title should be Contact details - Report Pillar 2 top-up taxes - GOV.UK
     And The Heading should be Contact details
     And I should see sub section 1 as First contact
     And I should see sub section 2 as Second contact
