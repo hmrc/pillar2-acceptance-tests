@@ -24,7 +24,7 @@ object RFMSecondContactAddressPage extends PageObject {
   val continue = ".govuk-button"
   val country = "#countryCode"
   val backLink = ".govuk-back-link"
-  
+
   def clickContinue() = findByCss(continue).click()
 
 }

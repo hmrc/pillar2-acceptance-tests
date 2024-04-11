@@ -101,7 +101,7 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Continue button
     Then I should navigate to RFM Second Contact Question Page
     And I select option No and continue to next
-    Then I should navigate to under construction page
+    Then I should be on RFM Second Contact Address Page
     When I select back link
     And I select option Yes and continue to next
     Then I should navigate to RFM second contact name page
