@@ -139,7 +139,13 @@ trait CommonFunctions
       case "RFM second contact email page"        => RFMSecondContactEmailPage
       case "RFM second contact telephone question page" => RFMSecondContactTelephoneQuestionPage
       case "RFM second contact telephone page"    => RFMSecondContactTelephonePage
+      case "RFM UK based entity type page"        => RFMGRSEntityTypePage
+      case "RFM UK limited Company GRSPage"       => RFMUKlimitedCompanyGRSPage
+      case "RFM LLP GRS page"                     => RFMLLPGRSPage
+      case "RFM GRS Registration Not Called Error Page" => RFMGRSRegistrationNotCalledErrorPage
+      case "RFM GRS Registration Mismatch Error Page"   => RFMGRSRegistrationMismatchErrorPage
       case "RFM Second Contact Address Page"      => RFMSecondContactAddressPage
+
     }
   }
 }
