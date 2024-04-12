@@ -139,6 +139,7 @@ trait CommonFunctions
       case "RFM second contact email page"        => RFMSecondContactEmailPage
       case "RFM second contact telephone question page" => RFMSecondContactTelephoneQuestionPage
       case "RFM second contact telephone page"    => RFMSecondContactTelephonePage
+      case "RFM Second Contact Address Page"      => RFMSecondContactAddressPage
     }
   }
 }
