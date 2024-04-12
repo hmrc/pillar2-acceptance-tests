@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,14 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object RFMGRSEntityTypePage  extends PageObject {
-  val url: String      = s"$rootUrl"+"replace-filing-member/business-matching/filing-member/uk-based/org-type"
+object RFMLLPGRSPage extends PageObject {
 
-  val caption                  = ".govuk-caption-l"
-  val eqForm                   = ".govuk-form-group"
-  val eq                       = ".govuk-form-group .govuk-fieldset"
-  val continue                 = "button.govuk-button"
-  val errorSummary             = ".govuk-error-summary__list"
-  val errorLink                = "[href*='#value']"
-  val backLink                 = ".govuk-back-link"
-  val errorMessage             = ".govuk-error-message"
+  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=limitedLiabilityPartnership"
 
-  def clickContinue()  = findByCss(continue).click()
+  val header           = ".govuk-caption-l"
+  val saveAndContinue  = ".govuk-button"
+  val backLink         = ".govuk-back-link"
 
+  def clickContinue()  = findByCss(saveAndContinue).click()
 
 }

@@ -12,10 +12,10 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     Then I should be on New NFM guidance page
     When I click on Continue button
     Then I should be on RFM registered in UK page
-    And I select Yes option and continue to next
+    And I select option Yes and continue to next
     Then I should be on RFM UK based entity type page
     When I click on Continue button
-    And I should see an error message Select what type of entity the new filing member is on the journey error Page
+    And I should see an error message Select what type of entity the new filing member is on the RFM journey error Page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to RFM UK limited Company GRSPage
     When I registered successfully with BV enabled
@@ -33,18 +33,18 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     Then I should be on New NFM guidance page
     When I click on Continue button
     Then I should be on RFM registered in UK page
-    And I select Yes option and continue to next
-    Then I should be on RFM UK based org type
+    And I select option Yes and continue to next
+    Then I should be on RFM UK based entity type page
     When I select option Limited liability partnership and continue to GRS page
-    Then I should navigate to RFM UK limited Company GRSPage
+    Then I should navigate to RFM LLP GRS page
     When registration is unsuccessful with party type mismatch error
     And I click on Save&Continue button
-    Then I should be on RFM registration failed error page
+    Then I should be on RFM GRS Registration Mismatch Error Page
     And The Heading should be The details you entered did not match our records
     When I click go back to select the entity type link
     Then I should be on RFM UK based entity type page
     When I select option Limited liability partnership and continue to GRS page
-    Then I should navigate to RFM UK limited Company GRSPage
+    Then I should navigate to RFM LLP GRS page
     When I registered successfully with BV disabled
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
@@ -58,8 +58,8 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     Then I should be on New NFM guidance page
     When I click on Continue button
     Then I should be on RFM registered in UK page
-    And I select Yes option and continue to next
-    Then I should be on RFM UK based org type
+    And I select option Yes and continue to next
+    Then I should be on RFM UK based entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to RFM UK limited Company GRSPage
     When registration is unsuccessful with identifiers not match error
