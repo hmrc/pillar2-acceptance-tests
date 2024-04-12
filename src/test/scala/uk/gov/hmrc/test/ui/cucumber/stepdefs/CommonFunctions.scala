@@ -144,6 +144,8 @@ trait CommonFunctions
       case "RFM LLP GRS page"                     => RFMLLPGRSPage
       case "RFM GRS Registration Not Called Error Page" => RFMGRSRegistrationNotCalledErrorPage
       case "RFM GRS Registration Mismatch Error Page"   => RFMGRSRegistrationMismatchErrorPage
+      case "RFM Second Contact Address Page"      => RFMSecondContactAddressPage
+
     }
   }
 }
