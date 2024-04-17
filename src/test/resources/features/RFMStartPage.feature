@@ -55,9 +55,6 @@ Feature: RFM Start page
     Then I should see an error message Enter a Pillar 2 top-up taxes ID in the correct format on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as XMplr0123456789
     And I click on Continue button
-    Then I should see an error message Enter a Pillar 2 top-up taxes ID in the correct format on the RFM enter pillar2 id Page
-    When I provide RFM pillar2 id as XMPLR0123456789
-    And I click on Continue button
     When I click Sign out link
 
   @zap_accessibility
