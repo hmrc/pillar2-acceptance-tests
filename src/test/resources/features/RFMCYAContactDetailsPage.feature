@@ -54,7 +54,6 @@ Feature: RFM check your answers page
     When I provide RFM second contact number as 09872960001
     And I click on Continue button
     Then I should navigate to RFM Contact Details CYA Page
-    #Then I should navigate to Change Second contact page
     And I should see the row 5 value Yes
     And I should see the row 6 value RFM second test contact
     And I should see the row 7 value rfmsecondcontact@email.com
@@ -73,31 +72,3 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to RFM Contact Details CYA Page
     And I should see the row 9 value Address Line 1 CYA change
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
