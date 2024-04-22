@@ -145,6 +145,7 @@ trait CommonFunctions
       case "RFM GRS Registration Not Called Error Page" => RFMGRSRegistrationNotCalledErrorPage
       case "RFM GRS Registration Mismatch Error Page"   => RFMGRSRegistrationMismatchErrorPage
       case "RFM Second Contact Address Page"      => RFMSecondContactAddressPage
+      case "ASA Pillar2 Input Page"               => ASAPillar2InputPage
 
     }
   }
