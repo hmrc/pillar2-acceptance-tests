@@ -148,6 +148,8 @@ trait CommonFunctions
       case "RFM Contact Details Final CYA Page"         => RFMContactDetailsFinalCYAPage
       case "RFM Contact Address Page"                   =>RFMContactAddressPage
       case "RFM Change Contact Details CYA Page"        =>RFMChangeContactDetailsCYAPage
+      case "ASA Pillar2 Input Page"                     => ASAPillar2InputPage
+      case "RFM No record Match Error Page"             => RFMNoMatchErrorPage
 
     }
   }
