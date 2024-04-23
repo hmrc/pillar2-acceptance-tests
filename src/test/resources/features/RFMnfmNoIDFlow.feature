@@ -133,4 +133,4 @@ Feature: RFM CYA - NFM No ID flow
     And I enter Country as United Kingdom
     And I click on Country selected
     When I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to RFM Contact Details Final CYA Page

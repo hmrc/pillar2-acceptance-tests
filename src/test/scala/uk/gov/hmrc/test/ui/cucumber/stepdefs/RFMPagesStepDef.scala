@@ -226,6 +226,12 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         clickByCss(RFMCYAPage.changeRegistrationDate)
       case "New NFM Name" =>
         clickByCss(RFMNoIDCYAPage.changeName)
+      case "New RFM CYA Change Contact preference" =>
+        clickByCss(RFMContactDetailsFinalCYAPage.changeTelephonecontact)
+      case "Change Second Contact Preference" =>
+        clickByCss(RFMContactDetailsFinalCYAPage.changeSecondContactPreference)
+      case "Change Address" =>
+        clickByCss(RFMContactDetailsFinalCYAPage.changeAddress)
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
@@ -233,6 +239,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "UPE" => Input.clickById("value_0")
       case "NFM" => Input.clickById("value_1")
     }
+  }
+  And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    assert(driver.findElements(By.cssSelector(RFMContactDetailsFinalCYAPage.valueList)).get(row - 1).getText.contains(value))
   }
 
 }
