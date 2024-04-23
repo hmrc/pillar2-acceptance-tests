@@ -516,7 +516,7 @@ Feature: Secondary Contact details for the filing member
     When I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
     And I should see user details row 1 value XMPLR0012345674
-    And I should see user details row 2 value 31 January 2022
+    And I should see user details row 2 value 31 January 2024
     And I should see user details row 3 value International Organisation Inc.
     And I click the browser back button
     Then I can see Print this page link
