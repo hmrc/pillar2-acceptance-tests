@@ -93,21 +93,17 @@ Feature: RFM check your answers page
     And I enter Country as Australia
     And I click on Country selected
     And I click on Continue button
-    Then I should navigate to RFM Contact Details Final CYA Page
+    Then I should navigate to RFM Final Review Page
     When  I click change link for RFM Change Second Contact Preference
     And I select option Yes and continue to next
-    Then I should navigate to RFM second contact name page
     When I provide RFM contact name as RFM second test contact
     And I click on Continue button
-    Then I should be on RFM second contact email page
     When I provide RFM contact email as rfmsecondcontact@email.com
     And I click on Continue button
-    Then I should be on RFM second contact telephone question page
     When I select option Yes and continue to next
-    Then I should be on RFM second contact telephone page
     When I provide RFM second contact number as 09872960001
     And I click on Continue button
-    Then I should navigate to RFM Contact Details Final CYA Page
+    Then I should navigate to RFM Final Review Page
     And I should see the row 9 value Yes
     And I should see the row 10 value RFM second test contact
     And I should see the row 11 value rfmsecondcontact@email.com
@@ -116,14 +112,14 @@ Feature: RFM check your answers page
     When I click change link for RFM New NFM Name
     And I provide RFM contact name as RFM test contact change
     And I click on Continue button
-    Then I should navigate to RFM Contact Details Final CYA Page
+    Then I should navigate to RFM Final Review Page
     And I should see the row 5 value RFM test contact change
     When I click change link for RFM New RFM CYA Change Contact preference
     And I select option No and continue to next
-    Then I should navigate to RFM Contact Details Final CYA Page
+    Then I should navigate to RFM Final Review Page
     When I click change link for RFM Change Address
     And I enter Address Line 1 as Address Line 1 CYA change
     And I click on Continue button
-    Then I should navigate to RFM Contact Details Final CYA Page
+    Then I should navigate to RFM Final Review Page
     And I should see the row 13 value Address Line 1 CYA change
     And I should see Print this page link on Review answers page

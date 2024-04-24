@@ -226,12 +226,20 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         clickByCss(RFMCYAPage.changeRegistrationDate)
       case "New NFM Name" =>
         clickByCss(RFMNoIDCYAPage.changeName)
+      case "Corporate Position" =>
+        clickByCss(RFMFinalReviewCYAPage.changeCorporatePosition)
+      case "Company" =>
+        clickByCss(RFMFinalReviewCYAPage.changeCompany)
+      case "Input Name" =>
+        clickByCss(RFMFinalReviewCYAPage.changeInputName)
+      case "Input Address" =>
+        clickByCss(RFMFinalReviewCYAPage.changeInputAddress)
       case "New RFM CYA Change Contact preference" =>
-        clickByCss(RFMContactDetailsFinalCYAPage.changeTelephonecontact)
+        clickByCss(RFMFinalReviewCYAPage.changeTelephonecontact)
       case "Change Second Contact Preference" =>
-        clickByCss(RFMContactDetailsFinalCYAPage.changeSecondContactPreference)
+        clickByCss(RFMFinalReviewCYAPage.changeSecondContactPreference)
       case "Change Address" =>
-        clickByCss(RFMContactDetailsFinalCYAPage.changeAddress)
+        clickByCss(RFMFinalReviewCYAPage.changeAddress)
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
@@ -242,7 +250,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   }
   And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElements(By.cssSelector(RFMContactDetailsFinalCYAPage.valueList)).get(row - 1).getText.contains(value))
+    assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
   }
 
 }
