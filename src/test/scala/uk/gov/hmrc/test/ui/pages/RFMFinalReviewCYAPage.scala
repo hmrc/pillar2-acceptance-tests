@@ -27,7 +27,7 @@ object RFMFinalReviewCYAPage extends PageObject {
   val actionsList             = ".govuk-summary-list__actions"
   val rowNumber               = "govuk-summary-list__row"
   val changeCorporatePosition = "a[href*='/change-corporate-position']"
-  val changeCompany           = "a[href*='/registered-in-uk']"
+  val changeCompany           = "a[href*='/change-registered-in-uk']"
   val changeInputName         = "a[href*='/change-input-name']"
   val changeInputAddress      = "a[href*='/change-input-address']"
   val changeName              = "a[href*='/change-input-name']"

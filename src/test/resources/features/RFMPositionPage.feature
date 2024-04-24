@@ -50,7 +50,7 @@ Feature: RFM Corporate position page and further validation
     Then I should be on RFM second contact telephone page
     When I provide RFM second contact number as 09872960001
     And I click on Continue button
-    Then I should be on RFM Second Contact Address Page
+    Then I should be on RFM Contact Address Page
 
   Scenario:2 - Verify RFM corporate position as a new NFM and further validations - No ID flow
     Given Organisation User logs in as upe for Pillar2
