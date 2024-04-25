@@ -540,6 +540,7 @@ class StepDef extends BaseStepDef with BrowserDriver{
         Wait.waitForElementToPresentByCssSelector (ReviewAnswersPage.printthispage)
         assert (driver.findElement (By.cssSelector (ReviewAnswersPage.printthispage) ).getText.contains (linkText) )
     }
+
   }
 
       /*  Given("""^I fill (.*) and continue$""") { page: String =>

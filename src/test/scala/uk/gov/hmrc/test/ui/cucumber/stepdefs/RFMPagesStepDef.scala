@@ -226,6 +226,20 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         clickByCss(RFMCYAPage.changeRegistrationDate)
       case "New NFM Name" =>
         clickByCss(RFMNoIDCYAPage.changeName)
+      case "Corporate Position" =>
+        clickByCss(RFMFinalReviewCYAPage.changeCorporatePosition)
+      case "Company" =>
+        clickByCss(RFMFinalReviewCYAPage.changeCompany)
+      case "Input Name" =>
+        clickByCss(RFMFinalReviewCYAPage.changeInputName)
+      case "Input Address" =>
+        clickByCss(RFMFinalReviewCYAPage.changeInputAddress)
+      case "New RFM CYA Change Contact preference" =>
+        clickByCss(RFMFinalReviewCYAPage.changeTelephonecontact)
+      case "Change Second Contact Preference" =>
+        clickByCss(RFMFinalReviewCYAPage.changeSecondContactPreference)
+      case "Change Address" =>
+        clickByCss(RFMFinalReviewCYAPage.changeAddress)
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
@@ -233,6 +247,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "UPE" => Input.clickById("value_0")
       case "NFM" => Input.clickById("value_1")
     }
+  }
+  And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
   }
 
 }

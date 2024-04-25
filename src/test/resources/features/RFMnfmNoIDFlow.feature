@@ -101,7 +101,7 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Continue button
     Then I should navigate to RFM Second Contact Question Page
     And I select option No and continue to next
-    Then I should be on RFM Second Contact Address Page
+    Then I should be on RFM Contact Address Page
     When I select back link
     And I select option Yes and continue to next
     Then I should navigate to RFM second contact name page
@@ -118,7 +118,7 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Continue button
     Then I should see an error message Select yes if we can contact Second contact NFM by telephone on the RFM input telephone Page
     And I select option No and continue to next
-    Then I should be on RFM Second Contact Address Page
+    Then I should be on RFM Contact Address Page
     When I select back link
     And I select option Yes and continue to next
     Then I should be on RFM second contact telephone page
@@ -126,11 +126,11 @@ Feature: RFM CYA - NFM No ID flow
     Then I should see an error message You need to enter the telephone for Second contact NFM on the RFM input telephone Page
     When I enter Contact Telephone as 01632976880
     And I click on Continue button
-    Then I should be on RFM Second Contact Address Page
+    Then I should be on RFM Contact Address Page
     When I enter Address Line 1 as RFMSC Address Line 1
     And I enter City as RFMSC City
     And I enter Postal Code as EH5 5WY
     And I enter Country as United Kingdom
     And I click on Country selected
     When I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to RFM Final Review Page
