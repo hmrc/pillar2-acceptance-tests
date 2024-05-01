@@ -84,10 +84,10 @@ object Input extends BasePage {
   def getTextOf(by: By) =
     driver.findElement(by).getText
 
-  def getAttribueOf(locator: String,attributeName: String) =
+  def getAttributeOf(locator: String,attributeName: String) =
     driver.findElement(By.cssSelector(locator)).getAttribute(attributeName)
 
-  def getAttributeOf(locator: String, attributeName: String) =
+  def getAttributeOfId(locator: String, attributeName: String) =
     driver.findElement(By.id(locator)).getAttribute(attributeName)
 
 }
