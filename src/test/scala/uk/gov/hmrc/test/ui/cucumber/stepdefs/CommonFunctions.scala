@@ -52,6 +52,7 @@ trait CommonFunctions
       case "UPE Telephone page"                   => UPETelephonePage
       case "input telephone page"                 => InputUPETelephonePage
       case "under construction page"              => UnderConstructionPage
+      case "under construction error page"        => UnderConstructionErrorPage
       case "UPE Contact person/team Name page"    => UPEContactNamePage
       case "UPE Contact Email page"               => UPEContactEmailPage
       case "UPE entity type page"                 => UPEEntityTypePage
@@ -150,6 +151,7 @@ trait CommonFunctions
       case "ASA Pillar2 Input Page"               => ASAPillar2InputPage
       case "RFM No record Match Error Page"       => RFMNoMatchErrorPage
       case "ASA No record Match Error Page"       => ASANoMatchErrorPage
+      case "ASA Confirmation Page"                => ASAConfirmationPage
 
     }
   }
