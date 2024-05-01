@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage,ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{ASAPillar2InputPage, AuthLoginPage, ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
 
 class UPEPageSteps extends CommonFunctions {
 
@@ -251,6 +251,8 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttribueOf(SecondContactInputPage.contactTelephone, "value").equals(name))
       case "Redirect URL" =>
         assert(getAttribueOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
+      case "PLRID" =>
+        assert(getAttribueOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
     }
   }
 

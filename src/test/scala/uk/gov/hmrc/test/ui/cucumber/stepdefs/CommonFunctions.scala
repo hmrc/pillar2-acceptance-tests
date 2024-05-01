@@ -52,6 +52,7 @@ trait CommonFunctions
       case "UPE Telephone page"                   => UPETelephonePage
       case "input telephone page"                 => InputUPETelephonePage
       case "under construction page"              => UnderConstructionPage
+      case "under construction error page"        => UnderConstructionErrorPage
       case "UPE Contact person/team Name page"    => UPEContactNamePage
       case "UPE Contact Email page"               => UPEContactEmailPage
       case "UPE entity type page"                 => UPEEntityTypePage
@@ -134,6 +135,24 @@ trait CommonFunctions
       case "RFM No ID CYA Page"                   => RFMNoIDCYAPage
       case "RFM New NFM Contact Name Change"      => RFMNewNFMContactNameChangePage
       case "RFM No ID Change CYA Page"            => RFMNoIDChangeCYAPage
+      case "RFM Second Contact Question Page"     => RFMSecondContactQuestionPage
+      case "RFM second contact name page"         => RFMSecondContactNamePage
+      case "RFM second contact email page"        => RFMSecondContactEmailPage
+      case "RFM second contact telephone question page" => RFMSecondContactTelephoneQuestionPage
+      case "RFM second contact telephone page"    => RFMSecondContactTelephonePage
+      case "RFM UK based entity type page"        => RFMGRSEntityTypePage
+      case "RFM UK limited Company GRSPage"       => RFMUKlimitedCompanyGRSPage
+      case "RFM LLP GRS page"                     => RFMLLPGRSPage
+      case "RFM GRS Registration Not Called Error Page" => RFMGRSRegistrationNotCalledErrorPage
+      case "RFM GRS Registration Mismatch Error Page"   => RFMGRSRegistrationMismatchErrorPage
+      case "RFM Contact Address Page"             => RFMContactAddressPage
+      case "RFM Final Review Page"                => RFMFinalReviewCYAPage
+      case "RFM Contact Details Final CYA Page"   => RFMFinalReviewCYAPage
+      case "ASA Pillar2 Input Page"               => ASAPillar2InputPage
+      case "RFM No record Match Error Page"       => RFMNoMatchErrorPage
+      case "ASA No record Match Error Page"       => ASANoMatchErrorPage
+      case "ASA Confirmation Page"                => ASAConfirmationPage
+
     }
   }
 }

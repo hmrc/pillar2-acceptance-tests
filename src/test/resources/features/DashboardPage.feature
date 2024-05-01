@@ -83,12 +83,13 @@ As a registered user
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
     And I should see user details row 1 value XMPLR0012345676
-    And I should see user details row 2 value 31 January 2022
+    And I should see user details row 2 value 31 January 2024
     And I should see user details row 3 value International Organisation Inc.
     And I should see the heading 1 on Dashboard page as Payments
     And I should see the heading 2 on Dashboard page as Manage your account
     When I click View and amend group details link
     Then I should navigate to accounts summary page
+    And the page title should be Group details - Report Pillar 2 top-up taxes - GOV.UK
     And The Heading should be Group details
     And I should see row 1 key Where are the entities in your group located?
     And I should see row 2 key Group’s current consolidated accounting period
@@ -125,10 +126,11 @@ As a registered user
     And I should see user details row 2 key Registration date:
     And I should see user details row 3 key Ultimate parent entity:
     And I should see user details row 1 value XMPLR0012345676
-    And I should see user details row 2 value 31 January 2022
+    And I should see user details row 2 value 31 January 2024
     And I should see user details row 3 value International Organisation Inc.
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
+    And the page title should be Contact details - Report Pillar 2 top-up taxes - GOV.UK
     And The Heading should be Contact details
     And I should see sub section 1 as First contact
     And I should see sub section 2 as Second contact
@@ -221,7 +223,7 @@ As a registered user
 
   @zap_accessibility
   Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to view subscription API
-    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XE0000123456500 for Pillar2 service
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR0123456500 for Pillar2 service
     Then I should be on Subscription API error page
     And The Heading should be Sorry, there is a problem with the service
     And The Body content should be Please try again later.

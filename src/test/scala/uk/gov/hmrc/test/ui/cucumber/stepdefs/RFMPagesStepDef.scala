@@ -72,6 +72,11 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.nameField)
         Input.sendKeysByCss(name, RFMNewNFMContactNamePage.nameField)
 
+      case "second contact number" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephonePage.telephoneField)
+        Input.sendKeysByCss(name, RFMSecondContactTelephonePage.telephoneField)
+
     }
   }
 
@@ -146,6 +151,26 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
 
         Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactAddressChange.errorMessage)
         getTextOf(By cssSelector (RFMNewNFMContactAddressChange.errorMessage)) should include(error)
+
+      case "contact email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorLink)
+        getTextOf(By cssSelector (RFMSecondContactEmailPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorMessage)
+        getTextOf(By cssSelector (RFMSecondContactEmailPage.errorMessage)) should include(error)
+
+      case "input telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorLink)
+        getTextOf(By cssSelector (RFMSecondContactTelephoneQuestionPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorMessage)
+        getTextOf(By cssSelector (RFMSecondContactTelephoneQuestionPage.errorMessage)) should include(error)
     }
   }
 
@@ -201,6 +226,20 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         clickByCss(RFMCYAPage.changeRegistrationDate)
       case "New NFM Name" =>
         clickByCss(RFMNoIDCYAPage.changeName)
+      case "Corporate Position" =>
+        clickByCss(RFMFinalReviewCYAPage.changeCorporatePosition)
+      case "Company" =>
+        clickByCss(RFMFinalReviewCYAPage.changeCompany)
+      case "Input Name" =>
+        clickByCss(RFMFinalReviewCYAPage.changeInputName)
+      case "Input Address" =>
+        clickByCss(RFMFinalReviewCYAPage.changeInputAddress)
+      case "New RFM CYA Change Contact preference" =>
+        clickByCss(RFMFinalReviewCYAPage.changeTelephonecontact)
+      case "Change Second Contact Preference" =>
+        clickByCss(RFMFinalReviewCYAPage.changeSecondContactPreference)
+      case "Change Address" =>
+        clickByCss(RFMFinalReviewCYAPage.changeAddress)
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
@@ -208,6 +247,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "UPE" => Input.clickById("value_0")
       case "NFM" => Input.clickById("value_1")
     }
+  }
+  And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
   }
 
 }
