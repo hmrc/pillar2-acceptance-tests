@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
@@ -49,20 +49,20 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   And("""^I should see RFM field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>
-        assert(getAttribueOf(RFMEnterPillar2IdPage.pillar2topuptaxid, "value").equals(name))
+        assert(getAttributeOf(RFMEnterPillar2IdPage.pillar2topuptaxid, "value").equals(name))
     }
   }
 
   And("""^I should see RFM date field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
     field match {
       case "Start Day" =>
-        assert(getAttributeOf(RFMRegistrationDatePage.regDay, "value").equals(name))
+        assert(getAttributeOfId(RFMRegistrationDatePage.regDay, "value").equals(name))
 
       case "Start Month" =>
-        assert(getAttributeOf(RFMRegistrationDatePage.regMonth, "value").equals(name))
+        assert(getAttributeOfId(RFMRegistrationDatePage.regMonth, "value").equals(name))
 
       case "Start Year" =>
-        assert(getAttributeOf(RFMRegistrationDatePage.regYear, "value").equals(name))
+        assert(getAttributeOfId(RFMRegistrationDatePage.regYear, "value").equals(name))
     }
   }
 
