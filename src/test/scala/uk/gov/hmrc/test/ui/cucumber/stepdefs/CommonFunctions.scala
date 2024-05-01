@@ -150,7 +150,7 @@ trait CommonFunctions
       case "RFM Contact Details Final CYA Page"   => RFMFinalReviewCYAPage
       case "ASA Pillar2 Input Page"               => ASAPillar2InputPage
       case "RFM No record Match Error Page"       => RFMNoMatchErrorPage
-      case "RFM Saving Progress Page"             =>RFMSavingProgressPage
+      case "RFM Saving Progress Page"             => RFMSavingProgressPage
       case "ASA No record Match Error Page"       => ASANoMatchErrorPage
       case "ASA Confirmation Page"                => ASAConfirmationPage
 
