@@ -19,12 +19,27 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
 import uk.gov.hmrc.test.ui.pages.{ConfirmationPage, ContactAddressInputPage, GroupAccountingPeriodPage, RegistrationConfirmationPage}
-
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
+import io.cucumber.datatable.DataTable
+
+
+
 
 class SubscriptionJourneySteps extends CommonFunctions {
+
+  And("""^I enter account period as:$""") { (accountPeriod: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+//    Input.sendKeysById(accountPeriod.asList().get(0), GroupAccountingPeriodPage.startDay)
+//    Input.sendKeysById(accountPeriod.asList().get(1), GroupAccountingPeriodPage.startMonth)
+//    Input.sendKeysById(accountPeriod.asList().get(2), GroupAccountingPeriodPage.startYear)
+//    Input.sendKeysById(accountPeriod.asList().get(3), GroupAccountingPeriodPage.endDay)
+//    Input.sendKeysById(accountPeriod.asList().get(4), GroupAccountingPeriodPage.endMonth)
+//    Input.sendKeysById(accountPeriod.asList().get(5), GroupAccountingPeriodPage.endYear)
+    Input.enterData(accountPeriod)
+  }
+
 
   And("""^Accounting Period (.*) is entered as (.*)$""") { (field: String, name: String) =>
     field match {
