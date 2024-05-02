@@ -51,10 +51,16 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndFinalReviewCAUrl: String    = s"$rootUrl"+"review-submit/check-answers"
   val frontEndSubUrl: String              = s"$rootUrl"+"review-submit/confirmation"
   val frontEndDashboardUrl: String        = s"$rootUrl"+"pillar2-top-up-tax-home"
+  val frontEndASAUrl: String              = s"$rootUrl"+"asa/input-pillar-2-id"
   val rfmUrl: String                      = s"$rootUrl"+"replace-filing-member/security/enter-pillar2-id"
   val enrolmentKeyField:String            ="enrolment[0].name"
   val identifierNameField:String          ="input-0-0-name"
   val identifierValueField:String         ="input-0-0-value"
+  val delegatedEnrolmentKeyField:String   ="delegatedEnrolment[0].key"
+  val delegatedIdentifierNameField:String ="input-delegated-0-0-name"
+  val delegatedIdentifierValueField:String="input-delegated-0-0-value"
+  val delegatedAuthRuleField:String       ="delegatedEnrolment[0].delegatedAuthRule"
+  val addDelegatedEnrolmentCTA:String     ="[onclick='addDelegatedEnrolment()']"
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
@@ -70,8 +76,38 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  def logonToP2SubmissionWithAssistantUser(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(submissionFrontEndUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    selectCredRoleAssistant()
+    clickSubmitButton()
+  }
+
+  def logonToP2SubmissionWithAgentUser(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(submissionFrontEndUrl, redirectUrlField)
+    selectAffinityGroupAgent()
+    clickSubmitButton()
+  }
+
+  def logonToP2SubmissionWithIndividualUser(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(submissionFrontEndUrl, redirectUrlField)
+    selectAffinityGroupIndividual()
+    clickSubmitButton()
+  }
+
   def loginWithUserToRFM(name: String): Unit = {
     Nav.navigateTo(url)
+    Input.sendKeysByName(rfmUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
+  def loginWithUserToRFMWithCredId(name: String, credId: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysById(credId, credIdField)
     Input.sendKeysByName(rfmUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
@@ -314,6 +350,15 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  def agentLoginWithExistingEntity(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndASAUrl, redirectUrlField)
+    Input.sendKeysById(enrolmentKey, enrolmentKeyField)
+    Input.sendKeysById(identifierName, identifierNameField)
+    Input.sendKeysById(identifierValue, identifierValueField)
+    selectAffinityGroupAgent()
+  }
+
   def loginWithExistingEntityWithRFM(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(rfmUrl, redirectUrlField)
@@ -324,11 +369,24 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  def addDelegatedEnrolment(enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String): Unit = {
+    clickAddDelegatedEnrolmentCTA()
+    Input.sendKeysByName(enrolmentkey, delegatedEnrolmentKeyField)
+    Input.sendKeysById(identifiername, delegatedIdentifierNameField)
+    Input.sendKeysById(identifiervalue, delegatedIdentifierValueField)
+    Input.sendKeysById(authRule, delegatedAuthRuleField)
+    clickSubmitButton()
+  }
+
+
   private def selectAffinityGroupOrg() =
     new Select(findAffinityGroup()).selectByVisibleText("Organisation")
 
   private def selectAffinityGroupAgent() =
     new Select(findAffinityGroup()).selectByVisibleText("Agent")
+
+  private def selectAffinityGroupIndividual() =
+    new Select(findAffinityGroup()).selectByVisibleText("Individual")
 
   private def selectCredRoleAssistant() =
     new Select(findCredentialRole()).selectByVisibleText("Assistant")
@@ -338,5 +396,7 @@ object AuthLoginPage extends BasePage with PageObject {
   private def findCredentialRole() = Find.findByName("credentialRole")
 
   def clickSubmitButton() = Find.findById("submit").click()
+
+  def clickAddDelegatedEnrolmentCTA() = Find.findByCss(addDelegatedEnrolmentCTA).click()
 
 }

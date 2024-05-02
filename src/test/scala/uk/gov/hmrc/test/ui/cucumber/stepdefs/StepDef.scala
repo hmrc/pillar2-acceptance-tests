@@ -44,8 +44,11 @@ class StepDef extends BaseStepDef with BrowserDriver{
 
   Given("""^(.*) logs in to subscribe for Pillar2 Submission$""") { name: String =>
     name match {
-      case "Organisation User" => AuthLoginPage.logonToP2SubmissionWithUser(name)
-      case _ => AuthLoginPage.loginToSubscribe(name)
+      case "Organisation User"           => AuthLoginPage.logonToP2SubmissionWithUser(name)
+      case "Organisation Assistant User" => AuthLoginPage.logonToP2SubmissionWithAssistantUser(name)
+      case "Agent User"                  => AuthLoginPage.logonToP2SubmissionWithAgentUser(name)
+      case "Individual User"             => AuthLoginPage.logonToP2SubmissionWithIndividualUser(name)
+      case _                             => AuthLoginPage.loginToSubscribe(name)
     }
   }
 
@@ -516,8 +519,15 @@ class StepDef extends BaseStepDef with BrowserDriver{
     }
   }
 
-  When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String) =>
-    AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+  When("""^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") { (userType: String, enrolmentkey: String, identifiername: String, identifiervalue: String) =>
+    userType match {
+      case "Organisation" => AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+      case "Agent" => AuthLoginPage.agentLoginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+    }
+  }
+
+  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String,authRule: String) =>
+     AuthLoginPage.addDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue,authRule)
   }
 
   When("""^I refresh the page$""") { () =>

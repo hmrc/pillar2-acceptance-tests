@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{getAttributeOf, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
 import uk.gov.hmrc.test.ui.pages.{ConfirmationPage, ContactAddressInputPage, GroupAccountingPeriodPage, RegistrationConfirmationPage}
 
@@ -62,22 +62,22 @@ class SubscriptionJourneySteps extends CommonFunctions {
   And("""^I should see date field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
     field match {
       case "Start Day" =>
-        assert(getAttributeOf(GroupAccountingPeriodPage.startDay, "value").equals(name))
+        assert(getAttributeOfId(GroupAccountingPeriodPage.startDay, "value").equals(name))
 
       case "Start Month" =>
-        assert(getAttributeOf(GroupAccountingPeriodPage.startMonth, "value").equals(name))
+        assert(getAttributeOfId(GroupAccountingPeriodPage.startMonth, "value").equals(name))
 
       case "Start Year" =>
-        assert(getAttributeOf(GroupAccountingPeriodPage.startYear, "value").equals(name))
+        assert(getAttributeOfId(GroupAccountingPeriodPage.startYear, "value").equals(name))
 
       case "End Day" =>
-        assert(getAttributeOf(GroupAccountingPeriodPage.endDay, "value").equals(name))
+        assert(getAttributeOfId(GroupAccountingPeriodPage.endDay, "value").equals(name))
 
       case "End Month" =>
-        assert(getAttributeOf(GroupAccountingPeriodPage.endMonth, "value").equals(name))
+        assert(getAttributeOfId(GroupAccountingPeriodPage.endMonth, "value").equals(name))
 
       case "End Year" =>
-        assert(getAttributeOf(GroupAccountingPeriodPage.endYear, "value").equals(name))
+        assert(getAttributeOfId(GroupAccountingPeriodPage.endYear, "value").equals(name))
     }
   }
 

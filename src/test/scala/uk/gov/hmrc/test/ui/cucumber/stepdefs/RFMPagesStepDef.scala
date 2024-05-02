@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
@@ -34,15 +34,40 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
-  Given("""^I access RFM (.*) page$""") { (name:String) =>
+  Given("""^I access RFM (.*) page$""") { (name: String) =>
     name match {
       case "start" => Nav.navigateTo(RFMStartPage.url)
-      case "corporate position"  => Nav.navigateTo(RFMCorpPositionPage.url)
-      case "New NFM guidance"    => Nav.navigateTo(NewNFMGuidancePage.url)
-      case "Contact Guidance"    => Nav.navigateTo(RFMContactGuidancePage.url)
-      case "CYA NFM"             => Nav.navigateTo(RFMNewNFMContactNamePage.url)
+      case "corporate position" => Nav.navigateTo(RFMCorpPositionPage.url)
+      case "New NFM guidance" => Nav.navigateTo(NewNFMGuidancePage.url)
+      case "Contact Guidance" => Nav.navigateTo(RFMContactGuidancePage.url)
+      case "CYA NFM" => Nav.navigateTo(RFMNewNFMContactNamePage.url)
+      case "Saving Progress" => Nav.navigateTo(RFMSavingProgressPage.url)
+
 
     }
+  }
+  And("""^I should see RFM field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "pillar2 id" =>
+        assert(getAttributeOf(RFMEnterPillar2IdPage.pillar2topuptaxid, "value").equals(name))
+    }
+  }
+
+  And("""^I should see RFM date field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "Start Day" =>
+        assert(getAttributeOfId(RFMRegistrationDatePage.regDay, "value").equals(name))
+
+      case "Start Month" =>
+        assert(getAttributeOfId(RFMRegistrationDatePage.regMonth, "value").equals(name))
+
+      case "Start Year" =>
+        assert(getAttributeOfId(RFMRegistrationDatePage.regYear, "value").equals(name))
+    }
+  }
+
+  And("""^I should see the corporate position (.*) remain selected$""") { (answer: String) =>
+    Check.checkOptionSelected(answer)
   }
 
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
@@ -244,5 +269,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
   }
 
+  Given("""^(.*) logs in to RFM with credId (.*) for Pillar2""") { (name: String, credId: String) =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
+      case _ =>  AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
+    }
+  }
 }
-

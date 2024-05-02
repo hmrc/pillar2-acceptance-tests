@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttribueOf, getAttributeOf, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage,ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{ASAPillar2InputPage, AuthLoginPage, ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
 
 class UPEPageSteps extends CommonFunctions {
 
@@ -210,54 +210,56 @@ class UPEPageSteps extends CommonFunctions {
   And("""^I should see the (.*) field is pre-populated with (.*)$""") { (field: String, name: String) =>
     field match {
       case "UPE name" =>
-        assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
+        assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
       case "NFM name" =>
-        assert(getAttribueOf(InputUPENamePage.nameField, "value").equals(name))
+        assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
       case "Address Line 1" =>
-        assert(getAttribueOf(UPEAddressPage.addressLine1, "value").equals(name))
+        assert(getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name))
       case "Address Line 2" =>
-        assert(getAttribueOf(UPEAddressPage.addressLine2, "value").equals(name))
+        assert(getAttributeOf(UPEAddressPage.addressLine2, "value").equals(name))
       case "City" =>
-        assert(getAttribueOf(UPEAddressPage.townOrCity, "value").equals(name))
+        assert(getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name))
       case "Region" =>
-        assert(getAttribueOf(UPEAddressPage.region, "value").equals(name))
+        assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
       case "Postal Code" =>
-        assert(getAttribueOf(UPEAddressPage.postalCode, "value").equals(name))
+        assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
       case "Country" =>
-        assert(getAttribueOf(UPEAddressPage.country, "value").equals(name))
+        assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
       case "UPE Person/Team name" =>
-        assert(getAttributeOf(UPEContactNamePage.contactName, "value").equals(name))
+        assert(getAttributeOfId(UPEContactNamePage.contactName, "value").equals(name))
       case "UPE Email address" =>
-        assert(getAttributeOf(UPEContactEmailPage.emailField, "value").equals(name))
+        assert(getAttributeOfId(UPEContactEmailPage.emailField, "value").equals(name))
       case "Telephone number" =>
-        assert(getAttribueOf(InputUPETelephonePage.telephoneNumber, "value").equals(name))
+        assert(getAttributeOf(InputUPETelephonePage.telephoneNumber, "value").equals(name))
       case "NFM Contact name" =>
-        assert(getAttribueOf(NFMContactNamePage.contactName, "value").equals(name))
+        assert(getAttributeOf(NFMContactNamePage.contactName, "value").equals(name))
       case "NFM Contact Email" =>
-        assert(getAttribueOf(NFMContactEmailPage.contactEmail, "value").equals(name))
+        assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
       case "NFM Telephone number" =>
-        assert(getAttribueOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
+        assert(getAttributeOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
       case "Contact Name" =>
-        assert(getAttribueOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
+        assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
       case "Contact Email" =>
-        assert(getAttribueOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
+        assert(getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
       case "Contact Telephone" =>
-        assert(getAttribueOf(ContactDetailsInputTelephonePage.contactTelephone, "value").equals(name))
+        assert(getAttributeOf(ContactDetailsInputTelephonePage.contactTelephone, "value").equals(name))
       case "Second Contact Name" =>
-        assert(getAttribueOf(SecondContactNamePage.contactName, "value").equals(name))
+        assert(getAttributeOf(SecondContactNamePage.contactName, "value").equals(name))
       case "Second Contact Email" =>
-        assert(getAttribueOf(SecondContactEmailPage.contactEmail, "value").equals(name))
+        assert(getAttributeOf(SecondContactEmailPage.contactEmail, "value").equals(name))
       case "Second Contact Input" =>
-        assert(getAttribueOf(SecondContactInputPage.contactTelephone, "value").equals(name))
+        assert(getAttributeOf(SecondContactInputPage.contactTelephone, "value").equals(name))
       case "Redirect URL" =>
-        assert(getAttribueOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
+        assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
+      case "PLRID" =>
+        assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
     }
   }
 
   And("""^I should see the (.*) field is selected with (.*)$""") { (field: String, name: String) =>
     field match {
       case "Country" =>
-        assert(getAttribueOf(NFMAddressPage.country, "value").equals(name))
+        assert(getAttributeOf(NFMAddressPage.country, "value").equals(name))
     }
   }
 
