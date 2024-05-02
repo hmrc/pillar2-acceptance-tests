@@ -99,9 +99,12 @@ trait CommonFunctions
       case "NFM registration not called error page" => NFMGRSRegistrationNotCalledErrorPage
       case "accounts summary page"                => AccountsSummaryPage
       case "Assistant role KB page"               => AssistantRoleKBPage
+      case "P2 Submission Assistant role KB page" => P2SubAssistantRoleKBPage
       case "Agent affinity KB page"               => AgentAffinityKBPage
+      case "P2 Submission Agent affinity KB page" => P2SubAgentAffinityKBPage
       case "Agent services account page"          => AgentServicesAccountPage
       case "Individual affinity KB page"          => IndividualAffinityKBPage
+      case "P2 Submission Individual affinity KB page"=> P2SubIndividualAffinityKBPage
       case "Registration return error page"       => RegistrationReturnErrorPage
       case "contact details summary page"         => ContactDetailsSummaryPage
       case "error place holder page"              => ErrorPlaceHolderPage
@@ -150,6 +153,7 @@ trait CommonFunctions
       case "RFM Contact Details Final CYA Page"   => RFMFinalReviewCYAPage
       case "ASA Pillar2 Input Page"               => ASAPillar2InputPage
       case "RFM No record Match Error Page"       => RFMNoMatchErrorPage
+      case "RFM Saving Progress Page"             => RFMSavingProgressPage
       case "ASA No record Match Error Page"       => ASANoMatchErrorPage
       case "ASA Confirmation Page"                => ASAConfirmationPage
 

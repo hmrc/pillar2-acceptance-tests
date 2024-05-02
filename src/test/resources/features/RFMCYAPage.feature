@@ -29,7 +29,7 @@ Feature: RFM check your answers page
     And I click on Continue button
     And I should see row 1 value XMPLR0123456111
     And I click on Continue button
-    Then I should navigate to RFM Corp Position Page
+    Then I should be on RFM Saving Progress Page
 
   Scenario: 2 - Verify error handling on submission of Pillar id and registration date for RFM journey
     Given Organisation User logs in with rfm URL to Pillar2
