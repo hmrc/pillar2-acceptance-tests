@@ -31,7 +31,7 @@ Feature: RFM Start page
     Then I should be on RFM enter pillar2 id page
     And The caption must be Replace filing member
     And The Heading should be Enter the group’s Pillar 2 top-up taxes ID
-    And The hint text should be This is 15 characters, for example, XMPLR0123456789. The current filing member can find it on their Pillar 2 top-up taxes account.
+    And The hint text should be This is 15 characters, for example, XMPLR0123456789. The current filing member can find it within their Pillar 2 top-up taxes account.
     When I select back link
     Then I should be on RFM start page
     And I click on Continue button
