@@ -234,15 +234,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     assert(driver.findElements(By.cssSelector(RFMStartPage.sections)).get(sectionNumber - 1).getText.contains(sectionName))
   }
 
-  And("""^I should see confirmation checkbox""") { () =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(RFMStartPage.confirmCheckBox)
-  }
-
-  And("""^I select confirmation checkbox""") { () =>
-    RFMStartPage.clickConfirm()
-  }
-
   And("""^I click change link for RFM (.*)""") { (link: String) =>
     link match {
       case "Pillar 2 top-up taxes ID" =>
