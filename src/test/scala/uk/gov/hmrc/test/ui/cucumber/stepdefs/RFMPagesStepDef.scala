@@ -204,17 +204,17 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "Day" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regDay)
-        Input.sendKeysById(name, RFMRegistrationDatePage.regDay)
+        Input.sendKeysById(RFMRegistrationDatePage.regDay, name)
 
       case "Month" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regMonth)
-        Input.sendKeysById(name, RFMRegistrationDatePage.regMonth)
+        Input.sendKeysById(RFMRegistrationDatePage.regMonth, name)
 
       case "Year" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
-        Input.sendKeysById(name, RFMRegistrationDatePage.regYear)
+        Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
 
     }
   }

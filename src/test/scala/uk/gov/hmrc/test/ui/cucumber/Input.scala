@@ -53,7 +53,7 @@ object Input extends BasePage {
 
   def clickByXpath(id: String): Unit = findByXpath(id).click()
 
-  def sendKeysById(value: String, id: String): Unit = {
+  def sendKeysById(id: String, value: String): Unit = {
     findById(id)
     findById(id).clear()
     findById(id).sendKeys(value)

@@ -31,12 +31,6 @@ class SubscriptionJourneySteps extends CommonFunctions {
 
   And("""^I enter account period as:$""") { (accountPeriod: DataTable) =>
     Wait.waitForTagNameToBeRefreshed("h1")
-//    Input.sendKeysById(accountPeriod.asList().get(0), GroupAccountingPeriodPage.startDay)
-//    Input.sendKeysById(accountPeriod.asList().get(1), GroupAccountingPeriodPage.startMonth)
-//    Input.sendKeysById(accountPeriod.asList().get(2), GroupAccountingPeriodPage.startYear)
-//    Input.sendKeysById(accountPeriod.asList().get(3), GroupAccountingPeriodPage.endDay)
-//    Input.sendKeysById(accountPeriod.asList().get(4), GroupAccountingPeriodPage.endMonth)
-//    Input.sendKeysById(accountPeriod.asList().get(5), GroupAccountingPeriodPage.endYear)
     Input.enterData(accountPeriod)
   }
 
@@ -46,32 +40,32 @@ class SubscriptionJourneySteps extends CommonFunctions {
       case "Start Day" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startDay)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.startDay)
+        Input.sendKeysById(GroupAccountingPeriodPage.startDay, name)
 
       case "Start Month" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startMonth)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.startMonth)
+        Input.sendKeysById(GroupAccountingPeriodPage.startMonth, name)
 
       case "Start Year" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startYear)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.startYear)
+        Input.sendKeysById(GroupAccountingPeriodPage.startYear, name)
 
       case "End Day" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endDay)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.endDay)
+        Input.sendKeysById(GroupAccountingPeriodPage.endDay, name)
 
       case "End Month" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endMonth)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.endMonth)
+        Input.sendKeysById(GroupAccountingPeriodPage.endMonth, name)
 
       case "End Year" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endYear)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.endYear)
+        Input.sendKeysById(GroupAccountingPeriodPage.endYear, name)
     }
   }
   And("""^I should see date field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
