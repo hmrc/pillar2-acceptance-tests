@@ -25,17 +25,13 @@ object RFMStartPage extends PageObject {
   val caption               = ".govuk-caption-l"
   val continue              = ".govuk-button"
   val header: String        = "h1.govuk-heading-l"
-  val confirmCheckBox       = ".govuk-checkboxes__input"
   val serviceStartPageLink  = ".govuk-link--no-visited-state"
   val sections              = ".govuk-heading-m"
-  val confirmationCheckbox  = "govuk-checkboxes__item"
-
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href*='#confirmation']"
-  val backLink = ".govuk-back-link"
-  val errorMessage = ".govuk-error-message"
+  val errorSummary          = ".govuk-error-summary__list"
+  val errorLink             = "[href*='#confirmation']"
+  val backLink              = ".govuk-back-link"
+  val errorMessage          = ".govuk-error-message"
 
   def clickContinue()       = findByCss(continue).click()
-  def clickConfirm()        = findByCss(confirmCheckBox).click()
 
 }

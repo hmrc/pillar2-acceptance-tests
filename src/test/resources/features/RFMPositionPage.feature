@@ -10,7 +10,6 @@ Feature: RFM Corporate position page and further validation
     Then I should be on RFM Corp Position Page
     And The caption must be Replace filing member
     And The Heading should be What is your position in the corporate structure of the group?
-    And The hint text should be To replace the existing filing member for this account you must have access to the information required to report Pillar 2 top-up taxes on the group’s behalf.
     When I click on Continue button
     Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as UPE
@@ -61,7 +60,8 @@ Feature: RFM Corporate position page and further validation
     Then I should be on New NFM guidance page
     And The caption must be Group details
     And The Heading should be We need to match the details of the new nominated filing member to HMRC records
-    And The Body content should be We will ask you for several pieces of identifying information about the new nominated filing member so that we can best match them to our records.
+    And The Body content should be If the new filing member is registered in the UK, we will ask you for identifying information so we can best match it with our records.
+    And The Body content should be If the new filing member is registered outside of the UK or if they are not a listed entity type, we will ask you for identifying information so we can create a new HMRC record.
     When I click on Continue button
     Then I should be on RFM registered in UK page
     When I select back link
@@ -108,7 +108,6 @@ Feature: RFM Corporate position page and further validation
     And I click Sign out link
     And Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2
     Then I access RFM start page
-    When I select confirmation checkbox
     And I click on Continue button
     Then I should be on RFM enter pillar2 id page
     And The caption must be Replace filing member
