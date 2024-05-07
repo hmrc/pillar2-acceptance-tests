@@ -25,9 +25,9 @@ Feature: Agent user journeys
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to under construction page
-    When I select back link
-    When I select back link
+    Then I should navigate to ASA Dashboard page
+    And I can see Agent Services Account link
+    When I click Change client link
     And I provide ASA Pillar2 ID as XMPLR0123456789
     And I click on Continue button
     And I click on Continue button
