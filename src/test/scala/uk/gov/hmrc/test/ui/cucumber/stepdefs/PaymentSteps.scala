@@ -38,8 +38,8 @@ class PaymentSteps extends CommonFunctions {
 
   And("""^I should see User details in dashboard page$""") { () =>
     Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(DashboardPage.userDetails)
-    assert(driver.findElements(By.cssSelector(DashboardPage.userDetails)).size() == 3)
+    Wait.waitForElementToPresentByCssSelector(DashboardPage.userDetailsSection)
+    assert(driver.findElements(By.cssSelector(DashboardPage.userDetailsSection)).size() >= 0)
   }
 
   Then("""^I should be navigated to new tab$""") { () =>

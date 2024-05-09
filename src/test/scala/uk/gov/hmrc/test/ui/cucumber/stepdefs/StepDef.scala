@@ -540,7 +540,7 @@ class StepDef extends BaseStepDef with BrowserDriver{
 
   Then("""^I can see (.*) link$""") { (linkText: String) =>
     linkText match {
-      case "print this page" =>
+      case "Print this page" =>
         Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
         assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
       case "Agent Services Account" =>
