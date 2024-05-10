@@ -1,9 +1,9 @@
-@tests
+@tests1 @batch1
 Feature: Task list page
   As a MNE user
   I should have access to Task List page
   @zap_accessibility
-  Scenario: 1 - Task list page Sections and status validation
+  Scenario: 1 - Task list page Sections ,status validation and Verify signout functionality
     Given I clear the cache
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -23,18 +23,13 @@ Feature: Task list page
     And The Task Contact details status should be Cannot start yet
     And I should see the task section 3 with task name as Review and submit on Contact details section
     And The Task Check your answers status should be Cannot start yet
-
-  @zap_accessibility
-  Scenario: 2 - Verify the sign out functionality
-    Given Organisation User logs in to subscribe for Pillar2
-    Then I should be on Task list page
-    And The Heading should be Register your group
     When I click Sign out link
     Then I am on feedback survey page
     When I click the browser back button
     Then I should be on auth-login page
+
   @ignore
-  Scenario: 3 - Complete the GRS journey for UPE/NFM and change the journey to no ID
+  Scenario: 2 - Complete the GRS journey for UPE/NFM and change the journey to no ID
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     When I click Add ultimate parent’s details link
@@ -83,7 +78,7 @@ Feature: Task list page
     Then I should be on Task list page
     And The Task Add ultimate parent’s details status should be In progress
   @ignore
-  Scenario: 4 - Complete the No ID journey for UPE/NFM and change the journey to GRS
+  Scenario: 3 - Complete the No ID journey for UPE/NFM and change the journey to GRS
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     When I click Add ultimate parent’s details link
@@ -166,7 +161,7 @@ Feature: Task list page
     Then I should be on Task list page
     And The Task Add ultimate parent’s details status should be In progress
   @ignore
-  Scenario: 5 - Task list page status update validation after Task1 completion and navigating to different pages
+  Scenario: 4 - Task list page status update validation after Task1 completion and navigating to different pages
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group
@@ -220,7 +215,7 @@ Feature: Task list page
     Then I should be on Task list page
     And The Task Edit ultimate parent’s details status should be Completed
   @ignore
-  Scenario: 6 - User completes GRS journey and Navigate to different pages of GRS journey and validates status
+  Scenario: 5 - User completes GRS journey and Navigate to different pages of GRS journey and validates status
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group

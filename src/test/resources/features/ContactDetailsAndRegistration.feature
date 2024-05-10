@@ -1,7 +1,7 @@
-@tests
-Feature: Secondary Contact details for the filing member
+@tests  @batch2
+Feature: Contact details for the filing member
   As a NFM Subscription user
-  I want to enter the secondary contact details,in case the first in not able to be reached
+  I want to enter contact details and navigate to dashboard page
 
   Scenario: 1 - Create a new subscription with UPE GRS Flow and NFM No Id flow to validate Contact Details
     Given Organisation User logs in as upe with credId ContactDetails for Pillar2

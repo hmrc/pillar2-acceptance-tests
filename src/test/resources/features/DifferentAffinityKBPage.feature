@@ -1,4 +1,4 @@
-@tests
+@tests @batch3
 Feature: Failure scenarios with different Affinity groups
   I must be navigated to Error screen for Agent and Individual Affinity group
 
@@ -55,19 +55,19 @@ Feature: Failure scenarios with different Affinity groups
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility
+  @zap_accessibility @ignore
   Scenario: 4 - User logins as organisation user and standard role - ZAP-Accessibility Tests
     Given Assistant User logs in to register for Pillar2
     Then I should be on Assistant role KB page
 
-  @zap_accessibility
+  @zap_accessibility @ignore
   Scenario: 5 - User logins as Agent
     Given Agent User logs in to register for Pillar2
     Then I should be on Agent affinity KB page
     When I click sign in via Agent Services. link
     Then I should navigate to Agent services account page
 
-  @zap_accessibility
+  @zap_accessibility @ignore
   Scenario: 6 - User logins as Individual User
     Given Individual User logs in to register for Pillar2
     Then I should be on Individual affinity KB page

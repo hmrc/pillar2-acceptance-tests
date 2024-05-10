@@ -1,4 +1,4 @@
-@tests
+@tests @batch3
 Feature: RFM Start page
   As a New Filing member
   I want to access start page of Replace Filing Member(RFM) journey

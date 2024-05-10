@@ -1,4 +1,4 @@
-@tests
+@tests @batch3
 Feature: RFM Corporate position page and further validation
   As a Replacing Filing member
   I want to select options from corporate position question page and continue my journey of RFM.

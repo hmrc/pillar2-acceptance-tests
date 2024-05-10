@@ -1,4 +1,4 @@
-@tests
+@tests @batch1
 Feature: Ultimate parent entity and Nominated Filling Member GRS journey
   As a MNE user
   I want to determine that the UPE is based in UK or LLP
@@ -379,7 +379,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to NFM Name page
 
   @zap_accessibility @ignore
-  Scenario: 15 - UPE User error pages - ZAP-Accessibility Test
+  Scenario: 12 - UPE User error pages - ZAP-Accessibility Test
     Given Organisation User logs in as upe for Pillar2
     And I am on UPE registration failed error Page
     And I am on UPE registration not called error Page

@@ -1,4 +1,4 @@
-@tests
+@tests @batch1
 Feature: Create a new registration and subscription
   As an user
   I want to create a new registration and subscription
