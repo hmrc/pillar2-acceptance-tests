@@ -156,6 +156,7 @@ trait CommonFunctions
       case "RFM Saving Progress Page"             => RFMSavingProgressPage
       case "ASA No record Match Error Page"       => ASANoMatchErrorPage
       case "ASA Confirmation Page"                => ASAConfirmationPage
+      case "ASA Dashboard page"                   => ASADashboardPage
 
     }
   }

@@ -538,9 +538,15 @@ class StepDef extends BaseStepDef with BrowserDriver{
     Nav.navigateTo(AuthLoginPage.incorrectUrl)
   }
 
-  Then("""^I can see (.*) link$"""){ (linkText: String) =>
-    Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
-    assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
+  Then("""^I can see (.*) link$""") { (linkText: String) =>
+    linkText match {
+      case "Print this page" =>
+        Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
+        assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
+      case "Agent Services Account" =>
+        Wait.waitForElementToPresentByCssSelector(ASADashboardPage.ASALink)
+        assert(driver.findElement(By.cssSelector(ASADashboardPage.ASALink)).getText.contains(linkText))
+    }
   }
 
   And("""^I should see (.*) link on (.*)$""") { (linkText: String, page: String) =>
