@@ -58,8 +58,21 @@ Feature: RFM check your answers page
     Then I should be on RFM CYA Page
     And I click Sign out link
 
-  Scenario: 3 - Verify RFM corporate position as an UPE and further validations
+  Scenario: 3 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations
     Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I access RFM corporate position page
     And I access RFM corporate position page
     When I select corp position as NFM
     And I click on Continue button
@@ -123,6 +136,8 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     And I should see the row 13 value Address Line 1 CYA change
     And I should see Print this page link on Review answers page
+    And I click on Continue button
+    Then I should navigate to under construction page
 
   Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
     Given Organisation User logs in with rfm URL to Pillar2
