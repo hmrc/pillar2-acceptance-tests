@@ -123,6 +123,7 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     And I should see the row 13 value Address Line 1 CYA change
     And I should see Print this page link on Review answers page
+    When I click on Continue button
 
   Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
     Given Organisation User logs in with rfm URL to Pillar2
@@ -227,3 +228,133 @@ Feature: RFM check your answers page
     And I should see row 2 value Test Example Company Name
     And I should see row 3 value 76543210
     And I should see row 4 value 1234567890
+
+  Scenario: 5 - Verify that UPE can replace existing FM on the Pillar 2 account
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    Then I access RFM corporate position page
+    When I select corp position as UPE
+    And I click on Continue button
+    When I click on Continue button
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    And I select option Yes and continue to next
+    When I provide RFM contact number as 01632960001
+    And I click on Continue button
+    And I select option Yes and continue to next
+    When I provide RFM contact name as RFM second test contact
+    And I click on Continue button
+    When I provide RFM contact email as rfmsecondcontact@email.com
+    And I click on Continue button
+    When I select option Yes and continue to next
+    When I provide RFM second contact number as 09872960001
+    And I click on Continue button
+    Then I should be on RFM Contact Address Page
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I click on Continue button
+    Then I should navigate to under construction page
+
+  Scenario: 6 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I access RFM corporate position page
+    When I select corp position as NFM
+    And I click on Continue button
+    When I click on Continue button
+    And I select option Yes and continue to next
+    When I select option UK limited company and continue to GRS page
+    And I click on Continue button
+    And I click on Save&Continue button
+    And I click on Continue button
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    And I select option No and continue to next
+    And I select option No and continue to next
+    Then I should be on RFM Contact Address Page
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I click on Continue button
+    Then I should navigate to under construction page
+
+  Scenario: 7 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I access RFM corporate position page
+    When I select corp position as NFM
+    And I click on Continue button
+    When I click on Continue button
+    And I select option No and continue to next
+    When I provide RFM New NFM Name as Test CYA
+    And I click on Continue button
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    And I click on Continue button
+    And I click on Continue button
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    And I select option No and continue to next
+    And I select option No and continue to next
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I click on Continue button
+    Then I should navigate to under construction page
