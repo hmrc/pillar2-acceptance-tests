@@ -124,7 +124,6 @@ Feature: RFM check your answers page
     And I should see the row 13 value Address Line 1 CYA change
     And I should see Print this page link on Review answers page
 
-
   Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
     Given Organisation User logs in with rfm URL to Pillar2
     And I access RFM corporate position page
