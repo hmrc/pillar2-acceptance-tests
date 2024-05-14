@@ -123,7 +123,7 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     And I should see the row 13 value Address Line 1 CYA change
     And I should see Print this page link on Review answers page
-    When I click on Continue button
+
 
   Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
     Given Organisation User logs in with rfm URL to Pillar2
