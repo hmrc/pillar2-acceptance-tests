@@ -16,15 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object ASADashboardPage extends PageObject {
-  val url: String      = s"$rootUrl"+"pillar2-top-up-tax-home?clientPillar2Id=XMPLR0012345674&agentView=true"
 
-
-  val ASALink   ="a[href*='/asa/home']"
-  val inactiveStatus   =".govuk-notification-banner__heading"
-
+object ASAHomePage extends PageObject {
+  val url: String      = s"$rootUrl" + "asa/home"
+  val status          = ".hmrc-status-tag"
+  val pageHeader      = "a[href='/report-pillar2-top-up-taxes']"
 
 }

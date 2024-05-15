@@ -157,6 +157,7 @@ trait CommonFunctions
       case "ASA No record Match Error Page"       => ASANoMatchErrorPage
       case "ASA Confirmation Page"                => ASAConfirmationPage
       case "ASA Dashboard page"                   => ASADashboardPage
+      case  "ASA Home Page"                       => ASAHomePage
 
     }
   }
