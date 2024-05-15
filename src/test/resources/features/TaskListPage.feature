@@ -1,4 +1,4 @@
-@tests1 @batch1
+@tests @batch1
 Feature: Task list page
   As a MNE user
   I should have access to Task List page
