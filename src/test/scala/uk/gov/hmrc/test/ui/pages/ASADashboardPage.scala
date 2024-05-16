@@ -19,14 +19,12 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object DashboardPage extends PageObject {
-  val url: String        = s"$rootUrl"+"pillar2-top-up-tax-home"
-  val continue           = "#submit"
-  val sectionHeading     = ".govuk-heading-m"
-  val userDetailsSection = "h1+p.govuk-body"
-  val userDetails        = "p.govuk-body"
-  val inactiveStatus     =".govuk-notification-banner__heading"
+object ASADashboardPage extends PageObject {
+  val url: String      = s"$rootUrl"+"pillar2-top-up-tax-home?clientPillar2Id=XMPLR0012345674&agentView=true"
 
-  def clickContinue()    = findByCss(continue).click()
+
+  val ASALink   ="a[href*='/asa/home']"
+  val inactiveStatus   =".govuk-notification-banner__heading"
+
 
 }
