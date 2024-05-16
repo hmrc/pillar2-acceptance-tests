@@ -1,34 +1,8 @@
-@tests @batch1
+@ignore
 Feature: Task list page
   As a MNE user
   I should have access to Task List page
-  @zap_accessibility
-  Scenario: 1 - Task list page Sections ,status validation and Verify signout functionality
-    Given I clear the cache
-    Given Organisation User logs in to subscribe for Pillar2
-    Then I should be on Task list page
-    And The page header should be Report Pillar 2 top-up taxes
-    And The Heading should be Register your group
-    And I should see task list sections
-    And I should see section 1 as Group details
-    And I should see section 2 as Contact details
-    And I should see section 3 as Review and submit
-    And I should see the task name Add ultimate parent’s details on Business details section
-    And I should see the task name Filing member’s details on Business details section
-    And I should see the task name Further group details on Business details section
-    And The Task Add ultimate parent’s details status should be Not started
-    And The Task Filing member’s details status should be Cannot start yet
-    And The Task Further group details status should be Cannot start yet
-    And I should see the task section 2 with task name as Contact details on Contact details section
-    And The Task Contact details status should be Cannot start yet
-    And I should see the task section 3 with task name as Review and submit on Contact details section
-    And The Task Check your answers status should be Cannot start yet
-    When I click Sign out link
-    Then I am on feedback survey page
-    When I click the browser back button
-    Then I should be on auth-login page
 
-  @ignore
   Scenario: 2 - Complete the GRS journey for UPE/NFM and change the journey to no ID
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -77,7 +51,7 @@ Feature: Task list page
     When I select back link
     Then I should be on Task list page
     And The Task Add ultimate parent’s details status should be In progress
-  @ignore
+
   Scenario: 3 - Complete the No ID journey for UPE/NFM and change the journey to GRS
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -160,7 +134,7 @@ Feature: Task list page
     When I select back link
     Then I should be on Task list page
     And The Task Add ultimate parent’s details status should be In progress
-  @ignore
+
   Scenario: 4 - Task list page status update validation after Task1 completion and navigating to different pages
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -214,7 +188,7 @@ Feature: Task list page
     When I navigate back to TaskList Page from Telephone Page
     Then I should be on Task list page
     And The Task Edit ultimate parent’s details status should be Completed
-  @ignore
+
   Scenario: 5 - User completes GRS journey and Navigate to different pages of GRS journey and validates status
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -250,5 +224,3 @@ Feature: Task list page
     When I navigate back to TaskList Page from GRS Page
     Then I should be on Task list page
     And The Task Edit ultimate parent’s details status should be Completed
-
-

@@ -1,8 +1,8 @@
-@tests @batch3
+@tests
 Feature: RFM check your answers page
   As a replacing filing member
   I want to enter my subscription details and access CYA page to check my answers and carry on in the journey
-  @zap_accessibility
+  @batch3 @zap_accessibility
   Scenario: 1 - Verify RFM check your answers page and successful navigation to corporate position page
     Given Organisation User logs in with rfm URL to Pillar2
     Then I should be on RFM enter pillar2 id page
@@ -31,6 +31,7 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should be on RFM Saving Progress Page
 
+  @batch3
   Scenario: 2 - Verify error handling on submission of Pillar id and registration date for RFM journey
     Given Organisation User logs in with rfm URL to Pillar2
     When I provide RFM pillar2 id as XEPLR0123456400

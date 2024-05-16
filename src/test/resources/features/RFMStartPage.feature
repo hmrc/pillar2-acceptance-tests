@@ -123,6 +123,7 @@ Feature: RFM Start page
     And I click on Continue button
     Then I should see an error message Enter the registration date on the RFM Registration Date Page
 
+  @batch2
   Scenario: 7 - Verify RFM registration date page error validations, when I enter incorrect date
     Given Organisation User logs in with rfm URL to Pillar2
     Then I should be on RFM enter pillar2 id page

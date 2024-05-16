@@ -1,9 +1,10 @@
-@tests @batch1
+@tests
 Feature: Ultimate parent entity and Nominated Filling Member GRS journey
   As a MNE user
   I want to determine that the UPE is based in UK or LLP
   So that I can navigate to the correct GRS journey.
-  @zap_accessibility
+
+  @zap_accessibility @batch1
   Scenario: 1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -20,7 +21,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I click on Continue button
     Then I should navigate to input-upe-name page
 
-  @zap_accessibility
+  @zap_accessibility @batch1
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -52,6 +53,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member’s details status should be Completed
 
+  @batch1
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -78,6 +80,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member’s details status should be Completed
 
+  @batch2
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -147,6 +150,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     #And I should navigate back to main tab
     #Then I should be on NFM registration failed error page
 
+  @batch2
   Scenario: 5 - User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -178,6 +182,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration failed error page
 
+  @batch2
   Scenario: 6 - User registration as UkLimitedCompany failed with identifiers do not match error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -222,6 +227,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I select back link
     Then I should be on NFM registration not called error page
 
+  @batch2
   Scenario: 7 - User registration as UkLimitedCompany failed with BV failed error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -250,6 +256,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
 
+  @batch1
   Scenario: 8 - User registered as LimitedLiabilityPartnership successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -278,6 +285,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member’s details status should be Completed
 
+  @batch1
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -305,6 +313,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member’s details status should be Completed
 
+  @batch2
   Scenario: 10 - User registration with LLP with different errors
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -356,6 +365,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
 
+  @batch1
   Scenario: 11 - User can navigate to Entity type not listed hyperlink on NFM Org type page
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -378,7 +388,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I select option Entity type not listed and continue to Name page
     Then I should navigate to NFM Name page
 
-  @zap_accessibility @ignore
+  @zap_accessibility @batch2
   Scenario: 12 - UPE User error pages - ZAP-Accessibility Test
     Given Organisation User logs in as upe for Pillar2
     And I am on UPE registration failed error Page

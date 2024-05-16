@@ -1,8 +1,8 @@
-@tests @batch1
+@tests
 Feature: NFM NO ID journey
   As a MNE user
   I would like to enter my details via NFM No ID journey
-   @zap_accessibility
+   @zap_accessibility @batch1
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     Then I should be on UPE business page
@@ -90,7 +90,8 @@ Feature: NFM NO ID journey
     Then I click Sign out link
     Then I am on feedback survey page
 
-  Scenario: 2 - Verify change answers for all NFM No ID journey pages
+  @batch1
+  Scenario: 2 - Verify change answers for all NFM No ID journey pages and Verify back links
     Given Organisation User logs in with credId NFMCYA for Pillar2
     When I click Edit filing member’s details link
     Then I should navigate to NFM registration page
@@ -145,8 +146,24 @@ Feature: NFM NO ID journey
     And I select option No and continue to next
     Then I should be on NFM Check your answers page
     And I should see row 5 value No
+    Then I select back link
+    Then I should be on input nfm telephone page
+    Then I select back link
+    Then I should be on NFM Telephone page
+    Then I select back link
+    Then I should be on NFM Contact Email page
+    Then I select back link
+    Then I should be on NFM Contact Name page
+    Then I select back link
+    Then I should navigate to NFM Address page
+    Then I select back link
+    Then I should be on NFM Name page
+    Then I select back link
+    Then I should be on NFM details page
+    Then I select back link
+    Then I should be on NFM registration page
 
-  @zap_accessibility
+  @zap_accessibility @batch2
   Scenario: 3 - Validate different error messages for NFM no ID journey pages
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -244,75 +261,4 @@ Feature: NFM NO ID journey
     Then I should be on NFM Check your answers page
     And I click on Continue button
     Then The Task Edit filing member’s details status should be Completed
-
-  Scenario: 4 - Verify back link for all NFM No ID journey pages and status validation
-    Given Organisation User logs in as upe with credId NFMBack for Pillar2
-    Then I should be on UPE business page
-    When I select option Yes and continue to next
-    Then I should be on UPE entity type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to UKCompany GRS page
-    When I registered successfully with BV enabled
-    And I click on Save&Continue button
-    Then I should navigate to Task list page
-    Then The Task Add filing member’s details status should be Not started
-    When I click Add filing member’s details link
-    Then I should navigate to NFM registration page
-    When I select Yes option and continue to next
-    Then I should navigate to NFM details page
-    When I select option No and continue to next
-    Then I should navigate to NFM Name page
-    Then I select back link
-    Then I should be on NFM details page
-    And I select back link
-    Then I should be on NFM registration page
-    And I select back link
-    Then I should be on Task list page
-    And The Task Add filing member’s details status should be In progress
-    And I click Add filing member’s details link
-    And I click on Continue button
-    And I click on Continue button
-    Then I should navigate to NFM Name page
-    When I enter NFM name as Test CYA
-    And I enter Address Line 1 as Address Line 1 CYA
-    And I enter City as City CYA
-    And I enter Postal Code as EH5 5WY
-    And I enter Country as United Kingdom
-    And I click on Country selected
-    When I click on Continue button
-    Then I should navigate to NFM Contact Name page
-    When I enter NFM Contact name as Contact CYA
-    And I click on Continue button
-    Then I should navigate to NFM Contact Email page
-    When I enter NFM Contact Email as testcya@email.com
-    And I click on Continue button
-    Then I should navigate to NFM Telephone page
-    When I select option Yes and continue to next
-    Then I should navigate to input nfm telephone page
-    When I enter NFM Telephone Number as 1234569
-    And I click on Continue button
-    Then I should navigate to NFM Check your answers page
-    Then I select back link
-    Then I should be on input nfm telephone page
-    Then I select back link
-    Then I should be on NFM Telephone page
-    Then I select back link
-    Then I should be on NFM Contact Email page
-    Then I select back link
-    Then I should be on NFM Contact Name page
-    Then I select back link
-    Then I should navigate to NFM Address page
-    Then I select back link
-    Then I should be on NFM Name page
-    Then I select back link
-    Then I should be on NFM details page
-    Then I select back link
-    Then I should be on NFM registration page
-
-
-
-
-
-
-
 

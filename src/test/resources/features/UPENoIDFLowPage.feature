@@ -2,7 +2,8 @@
 Feature: UPE NO ID journey
   As a MNE user
   I would like to enter my details via UPE No ID journey
-  @zap_accessibility
+
+  @batch1 @zap_accessibility
   Scenario: 1 - UPE No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId UPENoIDJourney for Pillar2
     Then I should be on UPE business page
@@ -98,8 +99,26 @@ Feature: UPE NO ID journey
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
 
+  @batch1
   Scenario: 2 - Verify back link for all UPE No ID journey pages
     Given Organisation User logs in to subscribe for Pillar2
+    Then I should be on Task list page
+    And The page header should be Report Pillar 2 top-up taxes
+    And The Heading should be Register your group
+    And I should see task list sections
+    And I should see section 1 as Group details
+    And I should see section 2 as Contact details
+    And I should see section 3 as Review and submit
+    And I should see the task name Add ultimate parent’s details on Business details section
+    And I should see the task name Filing member’s details on Business details section
+    And I should see the task name Further group details on Business details section
+    And The Task Add ultimate parent’s details status should be Not started
+    And The Task Filing member’s details status should be Cannot start yet
+    And The Task Further group details status should be Cannot start yet
+    And I should see the task section 2 with task name as Contact details on Contact details section
+    And The Task Contact details status should be Cannot start yet
+    And I should see the task section 3 with task name as Review and submit on Contact details section
+    And The Task Check your answers status should be Cannot start yet
     When I click Add ultimate parent’s details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
@@ -153,7 +172,7 @@ Feature: UPE NO ID journey
     When I click feedback link
     Then I should be navigated to Send your feedback page
 
-  @zap_accessibility
+  @zap_accessibility @batch2
   Scenario: 3 - Validate different error messages for UPE no ID journey pages
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -233,7 +252,7 @@ Feature: UPE NO ID journey
     When I click on Continue button
     Then I should see error message Enter a telephone number in the correct format on the Input Telephone Page
 
-  @zap_accessibility
+  @batch1 @zap_accessibility
   Scenario: 4 - Change UPE fields from UPE check your answers page
     Given Organisation User navigates to UPE check your answer page with credId UPENoIDJourney
     Then I should be on Check your answers page
@@ -269,6 +288,10 @@ Feature: UPE NO ID journey
     And I should see row 5 value No
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
+    When I click Sign out link
+    Then I am on feedback survey page
+    When I click the browser back button
+    Then I should be on auth-login page
 
   @ignore
   Scenario: 5 - Status update for Enter ultimate parent’s details task
