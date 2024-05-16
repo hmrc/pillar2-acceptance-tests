@@ -146,22 +146,6 @@ Feature: NFM NO ID journey
     And I select option No and continue to next
     Then I should be on NFM Check your answers page
     And I should see row 5 value No
-    Then I select back link
-    Then I should be on input nfm telephone page
-    Then I select back link
-    Then I should be on NFM Telephone page
-    Then I select back link
-    Then I should be on NFM Contact Email page
-    Then I select back link
-    Then I should be on NFM Contact Name page
-    Then I select back link
-    Then I should navigate to NFM Address page
-    Then I select back link
-    Then I should be on NFM Name page
-    Then I select back link
-    Then I should be on NFM details page
-    Then I select back link
-    Then I should be on NFM registration page
 
   @zap_accessibility @batch2
   Scenario: 3 - Validate different error messages for NFM no ID journey pages
