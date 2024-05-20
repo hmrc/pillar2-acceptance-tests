@@ -47,4 +47,9 @@ Feature: Agent user journeys
     And I provide ASA Pillar2 ID as XMPLR0123456789
     And I click on Continue button
     And I click on Continue button
-    Then I should navigate to under construction error page
+    Then I should navigate to ASA Not Authorised page
+    When I click request authorisation to report and manage this client’s Pillar 2 top-up taxes link
+    Then I should navigate to ASA Home Page
+    When I select back link
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to ASA Home Page
