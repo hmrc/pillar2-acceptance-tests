@@ -26,7 +26,7 @@ Feature: Eligibility Questions for Pillar 2
     When I choose Yes and continue
     Then I should navigate to confirmation page
     And The Heading should be You need to register this group to report Pillar 2 top-up taxes
-    And The Body content should be You now need to sign in with a Government Gateway user ID associated with the filling member.
+    And The Body content should be You now need to sign in with a Government Gateway user ID associated with the filing member.
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to guidance page
     When I click the browser back button
