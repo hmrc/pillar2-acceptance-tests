@@ -159,6 +159,7 @@ trait CommonFunctions
       case "ASA Dashboard page"                   => ASADashboardPage
       case  "ASA Home Page"                       => ASAHomePage
       case  "RFM No Return Back Error Page"       => RFMNoReturnBackErrorPage
+      case  "ASA Not Authorised page"             => ASANotAuthorisedPage
 
     }
   }
