@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AmendAPIerrorPage_RFM extends PageObject{
 
-  val url: String       = s"$rootUrl" + "error/view"
+  val url: String       = s"$rootUrl" + "replace-filing-member/error/amend-API-failure"
   val header            = ".govuk-heading-xl"
 }
