@@ -291,7 +291,7 @@ Feature: RFM check your answers page
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When Registration Day is entered as 31
     When Registration Month is entered as 1
@@ -331,4 +331,8 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
