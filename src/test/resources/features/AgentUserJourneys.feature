@@ -2,7 +2,7 @@
 Feature: Agent user journeys
   As an Agent
   I should be able to access clients accounts using Pillar2 ID
-
+@tests
   Scenario: 1 - Agent user capturing Pillar2 ID
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
