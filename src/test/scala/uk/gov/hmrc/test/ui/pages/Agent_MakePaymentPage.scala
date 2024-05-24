@@ -20,16 +20,14 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object Agent_MakePaymentPage extends PageObject {
 
-  val url: String             = s"$rootUrl" + "payment/pay"
+  val url: String             = s"$rootUrl" + "payment/pay?clientPillar2Id=XMPLR0012345674"
   val header: String          = "h1.govuk-heading-l"
   val backLink                = ".govuk-back-link"
-  val toggleLink              = ".govuk-details__summary-text"
   val tableCaption            = ".govuk-table__caption"
   val warningMessage          = ".govuk-warning-text__text"
   val tableHeader             = ".govuk-table__header"
   val tableCell               = ".govuk-table__cell"
-  val firstToggleLink         = "//span[normalize-space()='How long it takes']"
-  val secondToggleLink        = "//span[normalize-space()='Make a payment from outside the UK']"
+
 }
 
 

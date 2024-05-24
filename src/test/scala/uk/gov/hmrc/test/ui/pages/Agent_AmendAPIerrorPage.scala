@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object Agent_AmendAPIerrorPage extends PageObject{
 
-  val url: String       = s"$rootUrl" + "error/view"
+  val url: String       = s"$rootUrl" + "error/view?clientPillar2Id=XMPLR0012345674"
   val header            = ".govuk-heading-xl"
+  val page_banner       = "a[href='/report-pillar2-top-up-taxes/banner?clientPillar2Id=XMPLR0012345674']"
 }
