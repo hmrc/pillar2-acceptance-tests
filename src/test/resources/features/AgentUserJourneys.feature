@@ -2,7 +2,7 @@
 Feature: Agent user journeys
   As an Agent
   I should be able to access clients accounts using Pillar2 ID
-
+@tests
   Scenario: 1 - Agent user capturing Pillar2 ID
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -47,4 +47,9 @@ Feature: Agent user journeys
     And I provide ASA Pillar2 ID as XMPLR0123456789
     And I click on Continue button
     And I click on Continue button
-    Then I should navigate to under construction error page
+    Then I should navigate to ASA Not Authorised page
+    When I click request authorisation to report and manage this client’s Pillar 2 top-up taxes link
+    Then I should navigate to ASA Home Page
+    When I select back link
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to ASA Home Page
