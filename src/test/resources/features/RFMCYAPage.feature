@@ -337,7 +337,99 @@ Feature: RFM check your answers page
     When I click report and manage your group's Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
-  Scenario: 7 - Verify error handling on submission of Pillar id and registration date for RFM journey
+  Scenario: 7 - Verify that New NFM can replace existing FM through GRS flow on the Pillar 2 account
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0123456789
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I access RFM corporate position page
+    When I select corp position as NFM
+    And I click on Continue button
+    Then I should be on New NFM guidance page
+    When I click on Continue button
+    Then I should be on RFM registered in UK page
+    And I select option Yes and continue to next
+    Then I should be on RFM UK based entity type page
+    When I select option UK limited company and continue to GRS page
+    And I click on Continue button
+    And I click on Save&Continue button
+    Then I should be on RFM Contact Guidance page
+    And I click on Continue button
+    Then I should navigate to RFM Contact Detail Page
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    Then I should navigate to RFM Contact Number Page
+    And I select option No and continue to next
+    Then I should navigate to RFM Second Contact Question Page
+    And I select option No and continue to next
+    Then I should be on RFM Contact Address Page
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I click on Continue button
+    Then I should navigate to RFM Confirmation Page
+
+  Scenario: 8 - Verify that New NFM can replace existing UPE through NO ID flow on the Pillar 2 account
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0123456789
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I access RFM corporate position page
+    When I select corp position as UPE
+    And I click on Continue button
+    Then I should be on RFM Contact Guidance page
+    And I click on Continue button
+    Then I should navigate to RFM Contact Detail Page
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    Then I should navigate to RFM Contact Number Page
+    When I select option No and continue to next
+    Then I should navigate to RFM Second Contact Question Page
+    And I select option No and continue to next
+    Then I should be on RFM Contact Address Page
+    When I enter Address Line 1 as RFM Address Line 1
+    And I enter City as RFM City
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    When I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I click on Continue button
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+
+  Scenario: 9 - Verify error handling on submission of Pillar id and registration date for RFM journey
     Given Organisation User logs in with rfm URL to Pillar2
     When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
@@ -381,12 +473,12 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
     Then I should navigate to RFM Confirmation Page
-    When I select back link
+    When I click the browser back button
     Then I should navigate to RFM No Return Back Error Page
     And I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
-  Scenario: 8 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey
+  Scenario: 10 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
