@@ -31,7 +31,7 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should be on RFM Saving Progress Page
 
-  @batch3
+  @batch2
   Scenario: 2 - Verify error handling on submission of Pillar id and registration date for RFM journey
     Given Organisation User logs in with rfm URL to Pillar2
     When I provide RFM pillar2 id as XEPLR0123456400
@@ -59,6 +59,7 @@ Feature: RFM check your answers page
     Then I should be on RFM CYA Page
     And I click Sign out link
 
+  @batch3
   Scenario: 3 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
@@ -140,6 +141,7 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to under construction page
 
+  @batch3
   Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
     Given Organisation User logs in with rfm URL to Pillar2
     And I access RFM corporate position page
@@ -244,6 +246,7 @@ Feature: RFM check your answers page
     And I should see row 3 value 76543210
     And I should see row 4 value 1234567890
 
+  @batch3
   Scenario: 5 - Verify that UPE can replace existing FM on the Pillar 2 account
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
@@ -288,6 +291,7 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to under construction page
 
+  @batch3
   Scenario: 6 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
@@ -333,6 +337,7 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
 
+  @batch2
   Scenario: 7 - Verify error handling on submission of Pillar id and registration date for RFM journey
     Given Organisation User logs in with rfm URL to Pillar2
     When I provide RFM pillar2 id as XMPLR0123456789
@@ -382,6 +387,7 @@ Feature: RFM check your answers page
     And I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
+  @batch2
   Scenario: 8 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
