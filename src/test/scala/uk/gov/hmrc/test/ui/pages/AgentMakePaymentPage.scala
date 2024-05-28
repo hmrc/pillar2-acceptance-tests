@@ -18,16 +18,16 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
+object AgentMakePaymentPage extends PageObject {
 
-object TaskListPage extends PageObject {
-  val url: String      = s"$rootUrl" + "check-progress/register-your-group"
-  val header: String   = "h1.govuk-heading-xl"
-  val taskList         = ".app-task-list"
-  val taskSection      = ".app-task-list__section"
-  val taskItems        = ".app-task-list__items"
-  val taskItem         = ".app-task-list__item"
-  val empStatusLink    = "[aria-describedby='eligibility-status']"
-  val status          = ".hmrc-status-tag"
-  val pageHeader      = "a[href='/report-pillar2-top-up-taxes/banner']"
+  val url: String             = s"$rootUrl" + "payment/pay?clientPillar2Id=XMPLR0012345674"
+  val header: String          = "h1.govuk-heading-l"
+  val backLink                = ".govuk-back-link"
+  val tableCaption            = ".govuk-table__caption"
+  val warningMessage          = ".govuk-warning-text__text"
+  val tableHeader             = ".govuk-table__header"
+  val tableCell               = ".govuk-table__cell"
 
 }
+
+

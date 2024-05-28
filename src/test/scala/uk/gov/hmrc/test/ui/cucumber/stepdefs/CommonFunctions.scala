@@ -165,7 +165,10 @@ trait CommonFunctions
       case "Amend API error Page for RFM"         => AmendAPIerrorPage_RFM
       case "ASA Individual KB Page"               => ASAIndividualKBPage
       case "ASA Organisation KB Page"             => ASAOrganisationKBPage
-
+      case "Agent Make a Payment page"            => AgentMakePaymentPage
+      case "Agent Amend API error Page"           => AgentAmendAPIerrorPage
+      case "Agent Contact Detail Summary Page"    => AgentContactDetailSummaryPage
+      case "Agent Account Summary Page"           => AgentAccountSummaryPage
     }
   }
 }
