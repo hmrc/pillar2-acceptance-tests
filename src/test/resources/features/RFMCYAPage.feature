@@ -62,7 +62,7 @@ Feature: RFM check your answers page
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012387879
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When Registration Day is entered as 31
     When Registration Month is entered as 1
@@ -72,7 +72,6 @@ Feature: RFM check your answers page
     When I click on Save&Continue button
     Then I should be on RFM Saving Progress Page
     When I click on Continue button
-    And I access RFM corporate position page
     And I access RFM corporate position page
     When I select corp position as NFM
     And I click on Continue button
@@ -137,7 +136,7 @@ Feature: RFM check your answers page
     And I should see the row 13 value Address Line 1 CYA change
     And I should see Print this page link on Review answers page
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to RFM Confirmation Page
 
   Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
     Given Organisation User logs in with rfm URL to Pillar2
@@ -247,7 +246,7 @@ Feature: RFM check your answers page
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012387879
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When Registration Day is entered as 31
     When Registration Month is entered as 1
@@ -285,13 +284,17 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
 
   Scenario: 6 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When Registration Day is entered as 31
     When Registration Month is entered as 1
@@ -331,6 +334,11 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
 
   Scenario: 7 - Verify error handling on submission of Pillar id and registration date for RFM journey
     Given Organisation User logs in with rfm URL to Pillar2
@@ -375,8 +383,8 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
-    Then I should navigate to under construction page
-    When I select back link
+    Then I should navigate to RFM Confirmation Page
+    When I click the browser back button
     Then I should navigate to RFM No Return Back Error Page
     And I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
@@ -430,4 +438,3 @@ Feature: RFM check your answers page
     Then I should navigate to Amend API error Page for RFM
     And I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
     Then I should navigate to RFM Final Review Page
-
