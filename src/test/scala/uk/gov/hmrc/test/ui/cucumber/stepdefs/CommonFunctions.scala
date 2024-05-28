@@ -162,6 +162,10 @@ trait CommonFunctions
       case  "ASA Not Authorised page"             => ASANotAuthorisedPage
       case  "RFM Confirmation Page"               => RFMConfirmationPage
       case "Amend API error Page for RFM"         => AmendAPIerrorPage_RFM
+      case "Agent Make a Payment page"            => Agent_MakePaymentPage
+      case "Agent Amend API error Page"           => Agent_AmendAPIerrorPage
+      case "Agent Contact Detail Summary Page"    => Agent_ContactDetailSummaryPage
+      case "Agent Account Summary Page"           => Agent_AccountSummaryPage
 
     }
   }

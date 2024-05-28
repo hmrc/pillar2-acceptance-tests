@@ -16,18 +16,20 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
+object Agent_AccountSummaryPage extends PageObject {
+  val url: String        = s"$rootUrl"+"manage-account/account-details/summary?clientPillar2Id=XMPLR0012345674"
 
-object TaskListPage extends PageObject {
-  val url: String      = s"$rootUrl" + "check-progress/register-your-group"
-  val header: String   = "h1.govuk-heading-xl"
-  val taskList         = ".app-task-list"
-  val taskSection      = ".app-task-list__section"
-  val taskItems        = ".app-task-list__items"
-  val taskItem         = ".app-task-list__item"
-  val empStatusLink    = "[aria-describedby='eligibility-status']"
-  val status          = ".hmrc-status-tag"
-  val pageHeader      = "a[href='/report-pillar2-top-up-taxes/banner']"
+  val caption            = ".govuk-caption-l"
+  val continue           = ".govuk-button"
+  val header: String     = "h1.govuk-heading-l"
+  val keyList            = ".govuk-summary-list__key"
+  val valueList          = ".govuk-summary-list__value"
+  val actionsList        = ".govuk-summary-list__actions"
+  val rowNumber          = "govuk-summary-list__row"
+
+  def clickContinue()    = findByCss(continue).click()
 
 }
