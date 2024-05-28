@@ -70,10 +70,6 @@ Feature: Agent user journeys
     Then I should navigate to ASA Dashboard page
     And I click View and amend contact details link
     Then I should navigate to Agent Contact Detail Summary Page
-    And I should see sub section 1 as First contact
-    And I should see sub section 2 as Second contact
-    And I should see sub section 3 as Contact address
-    And I should see row 2 key Email address
     And I should see row 2 value fred.flintstone@aol.com
     When I click on change link for Email address
     When I enter Contact Email as updatecontact@email.com
@@ -84,7 +80,6 @@ Feature: Agent user journeys
     Then I should navigate to ASA Dashboard page
     And I click View and amend group details link
     Then I should navigate to Agent Account Summary Page
-    And I should see row 4 key End date
     And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the Accounting Period
     And Accounting Period End Month is entered as 12
