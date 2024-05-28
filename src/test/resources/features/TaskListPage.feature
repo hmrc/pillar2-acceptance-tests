@@ -2,7 +2,7 @@
 Feature: Task list page
   As a MNE user
   I should have access to Task List page
-  @zap_accessibility
+  @tests1 @zap_accessibility
   Scenario: 1 - Task list page Sections and status validation
     Given I clear the cache
     Given Organisation User logs in to subscribe for Pillar2
