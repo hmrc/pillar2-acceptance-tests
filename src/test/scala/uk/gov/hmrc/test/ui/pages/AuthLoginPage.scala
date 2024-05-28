@@ -235,6 +235,28 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  def loginAsOrgToASA(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndASAUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
+  def loginAsIndToASA(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndASAUrl, redirectUrlField)
+    selectAffinityGroupIndividual()
+    clickSubmitButton()
+  }
+
+  def loginAsAssistantToASA(name: String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(frontEndASAUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    selectCredRoleAssistant()
+    clickSubmitButton()
+  }
+
   def loginAsIndToRFM(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(rfmUrl, redirectUrlField)

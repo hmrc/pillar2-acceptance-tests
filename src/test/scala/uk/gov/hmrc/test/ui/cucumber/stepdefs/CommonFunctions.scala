@@ -103,6 +103,7 @@ trait CommonFunctions
       case "Agent affinity KB page"               => AgentAffinityKBPage
       case "P2 Submission Agent affinity KB page" => P2SubAgentAffinityKBPage
       case "Agent services account page"          => AgentServicesAccountPage
+      case "Agent services account page2"         => AgentServicesAccountPage2
       case "Individual affinity KB page"          => IndividualAffinityKBPage
       case "P2 Submission Individual affinity KB page"=> P2SubIndividualAffinityKBPage
       case "Registration return error page"       => RegistrationReturnErrorPage
@@ -162,6 +163,8 @@ trait CommonFunctions
       case  "ASA Not Authorised page"             => ASANotAuthorisedPage
       case  "RFM Confirmation Page"               => RFMConfirmationPage
       case "Amend API error Page for RFM"         => AmendAPIerrorPage_RFM
+      case "ASA Individual KB Page"               => ASAIndividualKBPage
+      case "ASA Organisation KB Page"             => ASAOrganisationKBPage
 
     }
   }
