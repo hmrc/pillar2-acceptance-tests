@@ -35,6 +35,15 @@ class StepDef extends BaseStepDef with BrowserDriver{
     }
   }
 
+  Given("""^(.*) logs in to register for Pillar2 Agent service$""") { name: String =>
+    name match {
+      case "Organisation User" => AuthLoginPage.loginAsOrgToASA(name)
+      case "Individual User" => AuthLoginPage.loginAsIndToASA(name)
+      case "Assistant User" => AuthLoginPage.loginAsAssistantToASA(name)
+
+    }
+  }
+
   Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
