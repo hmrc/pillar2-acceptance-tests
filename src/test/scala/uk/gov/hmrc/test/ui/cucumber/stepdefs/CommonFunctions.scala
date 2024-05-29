@@ -166,7 +166,8 @@ trait CommonFunctions
       case "Agent Amend API error Page"           => Agent_AmendAPIerrorPage
       case "Agent Contact Detail Summary Page"    => Agent_ContactDetailSummaryPage
       case "Agent Account Summary Page"           => Agent_AccountSummaryPage
-
+      case "RFM journey recovery page"            => RFMJourneyRecoveryPage
+      case "RFM incomplete task error page"       => RFMIncompleteErrorPage
     }
   }
 }
