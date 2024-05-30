@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object Agent_MakePaymentPage extends PageObject {
+object AgentMakePaymentPage extends PageObject {
 
   val url: String             = s"$rootUrl" + "payment/pay?clientPillar2Id=XMPLR0012345674"
   val header: String          = "h1.govuk-heading-l"

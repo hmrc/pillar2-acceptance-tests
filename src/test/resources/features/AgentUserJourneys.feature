@@ -117,3 +117,40 @@ Feature: Agent user journeys
     Then I should navigate to ASA Dashboard page
     And I click Sign out link
 
+  Scenario: 4 - Verify Agent service account user unauthorised pages
+    Given Individual User logs in to register for Pillar2 Agent service
+    Then I should be on ASA Individual KB Page
+    When I click sign in via agent services link
+    Then I should navigate to Agent services account page
+    When I click the browser back button
+    Then I should be on ASA Individual KB Page
+    When I click request authorisation on agent services link
+    Then I should navigate to Agent services account page2
+    When I click the browser back button
+    Then  I should be on ASA Individual KB Page
+    And I click Find out more about who can report for Pillar 2 top-up taxes link
+    Then I should navigate to guidance page
+    When I click the browser back button
+    Then I should navigate to ASA Individual KB Page
+    When I select back link
+    Then I should be on auth-login page
+
+  Scenario: 5 - Verify Agent service account user unauthorised pages
+    Given Organisation User logs in to register for Pillar2 Agent service
+    Then I should be on ASA Organisation KB Page
+    When I click sign in via agent services link
+    Then I should navigate to Agent services account page
+    When I click the browser back button
+    Then I should be on ASA Organisation KB Page
+    When I click request authorisation on agent services link
+    Then I should navigate to Agent services account page2
+    When I click the browser back button
+    Then  I should be on ASA Organisation KB Page
+    And I click Find out more about who can report for Pillar 2 top-up taxes link
+    Then I should navigate to guidance page
+    When I click the browser back button
+    Then I should navigate to ASA Organisation KB Page
+    When I select back link
+    Then I should be on auth-login page
+    When Assistant User logs in to register for Pillar2 Agent service
+    Then I should be on ASA Organisation KB Page
