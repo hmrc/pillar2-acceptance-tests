@@ -438,3 +438,61 @@ Feature: RFM check your answers page
     Then I should navigate to Amend API error Page for RFM
     And I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
     Then I should navigate to RFM Final Review Page
+
+  Scenario: 9 Verify Journey Recovery and Incomplete data errors.
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0123456789
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I access RFM corporate position page
+    When I select corp position as NFM
+    And I click on Continue button
+    When I click on Continue button
+    And I select option No and continue to next
+    When I provide RFM New NFM Name as Test CYA
+    And I click on Continue button
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    And I click on Continue button
+    And I click on Continue button
+    And I access RFM contact email page
+    Then I should be on RFM journey recovery page
+    When I click replace the filing member for a Pillar 2 top-up taxes account to try again link
+    Then I should be on RFM start page
+    When I click the browser back button
+    And I click the browser back button
+    And I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    And I select option No and continue to next
+    And I select option No and continue to next
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    When  I click change link for RFM Change Second Contact Preference
+    And I select option Yes and continue to next
+    When I select back link
+    When I select back link
+    And I click on Continue button
+    Then I should navigate to RFM incomplete task error page
+    When I click replace the filing member for a Pillar 2 top-up taxes account to try again link
+    Then I should be on RFM Final Review Page

@@ -42,6 +42,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "Contact Guidance" => Nav.navigateTo(RFMContactGuidancePage.url)
       case "CYA NFM" => Nav.navigateTo(RFMNewNFMContactNamePage.url)
       case "Saving Progress" => Nav.navigateTo(RFMSavingProgressPage.url)
+      case "contact email" => Nav.navigateTo(RFMContactEmailPage.url)
 
 
     }
