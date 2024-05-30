@@ -24,10 +24,10 @@ object MakePaymentPage extends PageObject {
   val header: String          = "h1.govuk-heading-l"
   val backLink                = ".govuk-back-link"
   val toggleLink              = ".govuk-details__summary-text"
-  val tableCaption            = ".govuk-table__caption"
+  val tableCaption            = ".govuk-heading-s"
   val warningMessage          = ".govuk-warning-text__text"
-  val tableHeader             = ".govuk-table__header"
-  val tableCell               = ".govuk-table__cell"
+  val tableHeader             = ".govuk-summary-list__key"
+  val tableCell               = ".govuk-summary-list__value"
   val firstToggleLink         = "//span[normalize-space()='How long it takes']"
   val secondToggleLink        = "//span[normalize-space()='Make a payment from outside the UK']"
 }
