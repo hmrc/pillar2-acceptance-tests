@@ -169,10 +169,10 @@ trait CommonFunctions
       case "Agent Amend API error Page"           => AgentAmendAPIerrorPage
       case "Agent Contact Detail Summary Page"    => AgentContactDetailSummaryPage
       case "Agent Account Summary Page"           => AgentAccountSummaryPage
-      case "Agent Make a Payment page"            => Agent_MakePaymentPage
-      case "Agent Amend API error Page"           => Agent_AmendAPIerrorPage
-      case "Agent Contact Detail Summary Page"    => Agent_ContactDetailSummaryPage
-      case "Agent Account Summary Page"           => Agent_AccountSummaryPage
+      case "Agent Make a Payment page"            => AgentMakePaymentPage
+      case "Agent Amend API error Page"           => AgentAmendAPIerrorPage
+      case "Agent Contact Detail Summary Page"    => AgentContactDetailSummaryPage
+      case "Agent Account Summary Page"           => AgentAccountSummaryPage
       case "RFM journey recovery page"            => RFMJourneyRecoveryPage
       case "RFM incomplete task error page"       => RFMIncompleteErrorPage
     }
