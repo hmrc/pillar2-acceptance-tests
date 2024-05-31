@@ -6,6 +6,16 @@ Feature: RFM Corporate position page and further validation
   @zap_accessibility
   Scenario: 1 - Verify RFM corporate position as an UPE and further validations
     Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
     And I access RFM corporate position page
     Then I should be on RFM Corp Position Page
     And The caption must be Replace filing member
@@ -53,6 +63,16 @@ Feature: RFM Corporate position page and further validation
 
   Scenario:2 - Verify RFM corporate position as a new NFM and further validations - No ID flow
     Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
     And I access RFM corporate position page
     Then I should be on RFM Corp Position Page
     When I select corp position as NFM
@@ -126,7 +146,14 @@ Feature: RFM Corporate position page and further validation
     Then I access RFM corporate position page
     And I should see the corporate position UPE remain selected
 
-  Scenario: 4 - Validate Bookmark for RFM Saving Progress Pages
+  Scenario: 4 - Validate Security questions for RFM Error handling
     Given Organisation User logs in with rfm URL to Pillar2
+    When I access RFM corporate position page
+    Then I should be on RFM No record Match Error Page
+    When I access RFM New NFM guidance page
+    Then I should be on RFM No record Match Error Page
+    When I access RFM Contact Guidance page
+    Then I should be on RFM No record Match Error Page
     When I access RFM Saving Progress page
-    Then I should be on Bookmark page
+    Then I should be on RFM No record Match Error Page
+

@@ -6,6 +6,16 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
 
   Scenario: 1 - Verify RFM GRS journey when New NFM is based in UK - UK limited company
     Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
     And I access RFM corporate position page
     When I select corp position as NFM
     And I click on Continue button
@@ -27,6 +37,16 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
 
   Scenario: 2 - User registration as Limited liability partnership failed with party type mismatch error and success scenario
     Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
     And I access RFM corporate position page
     When I select corp position as NFM
     And I click on Continue button
@@ -52,6 +72,16 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
 
   Scenario: 3 - User registration as UK limited company failed with identifiers mismatch error and entity type page validation
     Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
     And I access RFM corporate position page
     When I select corp position as NFM
     And I click on Continue button
