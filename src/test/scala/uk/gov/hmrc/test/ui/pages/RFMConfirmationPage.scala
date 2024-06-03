@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags="@batch3 and not @ignore"
-)
-class RunnerBatch3 {}
+object RFMConfirmationPage extends PageObject {
+  val url: String       = s"$rootUrl"+"replace-filing-member/review-submit/confirmation"
+  val header: String    = "h1.govuk-panel__title"
+  val registrationID    = "div+.govuk-body"
+  val header2           = "h2.govuk-heading-m"
+  val printthispage     = "#print-this-page"
 
+  def clickContinue() = findByCss(continue).click()
+
+}

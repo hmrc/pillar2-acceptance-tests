@@ -1,4 +1,4 @@
-@tests @batch1
+@tests
 Feature: UPE NO ID journey
   As a MNE user
   I would like to enter my details via UPE No ID journey

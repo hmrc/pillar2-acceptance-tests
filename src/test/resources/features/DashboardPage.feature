@@ -31,21 +31,17 @@ As a registered user
     When I click Make a payment link
     Then I should navigate to Make a payment page
     And The Heading should be Pay your Pillar 2 top-up taxes
-    And I click on toggle link How long it takes
-    And The inset text should be You have no payments due.
     And The second heading should be How to make a payment
-    And The Body content should be Payments can be made by bank transfer.
-    And The Body content should be To make a bank transfer payment, you can visit your bank’s website, use their mobile app, or go to a branch and use HMRC’s banking details.
+    And The Body content should be Payments can only be made by bank transfer.
     And The Body content should be Faster Payments will usually reach HMRC the same or next day, including weekends and bank holidays.
     And The Body content should be CHAPS payments usually reach HMRC the same working day if you pay within your bank’s processing times.
     And The Body content should be Bacs payments usually take 3 working days.
-    And The warning message should be You must use XMPLR0012345674 as your payment reference. HMRC will use this to match your payment.
-    And The caption for section 1 should be HMRC’s bank details
+    And The warning message should be You must use XMPLR0012345674 as your payment reference. We need this to match your payment.
+    And The caption for section 1 should be HMRC’s bank details for UK payments
     And The section 1 with header Sort code value should be 08 32 10
     And The section 2 with header Account number value should be 12001020
     And The section 3 with header Account name value should be HMRC Shipley
-    And I click on toggle link Make a payment from outside the UK
-    And The caption for section 2 should be HMRC’s overseas bank details
+    And The caption for section 2 should be HMRC’s bank details for payments outside the UK
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
     #Then I should be on Dashboard page

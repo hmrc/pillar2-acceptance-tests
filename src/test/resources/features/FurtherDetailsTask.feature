@@ -2,6 +2,7 @@
 Feature: Further Details Task page validation
   As a MNE user
   I should be taken to all the Further detail pages
+
   @zap_accessibility @batch1
   Scenario: 1 - User navigates to check your answer page answering all the questions of Further Details Page
     Given Organisation User logs in as upe with credId FDTask for Pillar2
@@ -115,6 +116,7 @@ Feature: Further Details Task page validation
     And I should see date field End Year is pre-populated with 2025
     When I select back link
     Then I should navigate to MNE or domestic page
+
   @batch1
   Scenario: 2 - Change all the details from Furthers details check your answers page
     Given Organisation User navigates to FD check your answer page with credId FDTask
@@ -136,6 +138,7 @@ Feature: Further Details Task page validation
     And I should see row 3 value 5 May 2025
     And I should see row 4 value 5 June 2026
     And I should see row 4 value 5 June 2026
+
   @batch2
   Scenario: 3 - Accounting period page Error Validations
     Given I clear the cache

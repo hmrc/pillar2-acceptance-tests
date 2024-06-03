@@ -14,18 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags ="@tests and not @ignore"
-)
-class Runner {}
+object RFMIncompleteErrorPage extends PageObject {
 
+  val url: String                 = s"$rootUrl"+"replace-filing-member/error/incomplete-task"
+  val header: String              = "h1.govuk-heading-l"
+  val backLink                    = ".govuk-back-link"
+
+
+}

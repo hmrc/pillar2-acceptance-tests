@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags ="@tests and not @ignore"
-)
-class Runner {}
+object AgentAmendAPIerrorPage extends PageObject{
 
+  val url: String       = s"$rootUrl" + "error/view?clientPillar2Id=XMPLR0012345674"
+  val header            = ".govuk-heading-xl"
+  val page_banner       = "a[href='/report-pillar2-top-up-taxes/banner?clientPillar2Id=XMPLR0012345674']"
+}
