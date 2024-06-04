@@ -18,16 +18,11 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
+object RFMIncompleteErrorPage extends PageObject {
 
-object TaskListPage extends PageObject {
-  val url: String      = s"$rootUrl" + "check-progress/register-your-group"
-  val header: String   = "h1.govuk-heading-xl"
-  val taskList         = ".app-task-list"
-  val taskSection      = ".app-task-list__section"
-  val taskItems        = ".app-task-list__items"
-  val taskItem         = ".app-task-list__item"
-  val empStatusLink    = "[aria-describedby='eligibility-status']"
-  val status          = ".hmrc-status-tag"
-  val pageHeader      = "a[href='/report-pillar2-top-up-taxes/banner']"
+  val url: String                 = s"$rootUrl"+"replace-filing-member/error/incomplete-task"
+  val header: String              = "h1.govuk-heading-l"
+  val backLink                    = ".govuk-back-link"
+
 
 }

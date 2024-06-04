@@ -1,9 +1,9 @@
-@tests @batch3
+@tests
 Feature: RFM Start page
   As a New Filing member
   I want to access start page of Replace Filing Member(RFM) journey
 
-  @zap_accessibility
+  @zap_accessibility @batch3
   Scenario: 1 - Verify RFM start page and validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
@@ -19,7 +19,7 @@ Feature: RFM Start page
     And I click on Continue button
     Then I should be on RFM enter pillar2 id page
 
-  @zap_accessibility
+  @zap_accessibility @batch3
   Scenario: 2 - Verify RFM enter pillar2 id page and error validations
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
@@ -48,7 +48,7 @@ Feature: RFM Start page
     And I click on Continue button
     When I click Sign out link
 
-  @zap_accessibility
+  @zap_accessibility @batch3
   Scenario: 3 - Verify Individual RFM KB page
     Given I access RFM start page
     Then I should be on RFM start page
@@ -70,7 +70,7 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility
+  @zap_accessibility @batch3
   Scenario: 4 - Verify Agent RFM KB page
     Given Agent User logs in with rfm URL to Pillar2
     Then I should be on Agent RFM KB Page
@@ -85,7 +85,7 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility
+  @zap_accessibility @batch3
   Scenario: 4 - Verify Organisation Assistant User RFM KB page
     Given Assistant User logs in with rfm URL to Pillar2
     Then I should be on Assistant User RFM KB Page
@@ -99,7 +99,7 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility
+  @zap_accessibility @batch3
   Scenario: 5 - Verify already enrolled Organisation User KB page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 with rfm URL to Pillar2 service
     Then I should be on Duplicate RFM KB Page
@@ -113,7 +113,7 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility
+  @zap_accessibility @batch3
   Scenario: 6 - Verify RFM registration date page and validations, when date is not provided
     Given Organisation User logs in with rfm URL to Pillar2
     Then I should be on RFM enter pillar2 id page

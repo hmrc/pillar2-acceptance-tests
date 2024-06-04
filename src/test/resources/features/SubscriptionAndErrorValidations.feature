@@ -1,9 +1,9 @@
-@tests @batch2
+@tests
 Feature: Create a new registration and subscription
   As an user
   I want to create a new registration and subscription
 
-  @zap_accessibility
+  @zap_accessibility @batch2
   Scenario: 1 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -260,7 +260,7 @@ Feature: Create a new registration and subscription
     And The Body content should be You will need to contact your administrator to give you access.
     And The Body content should be You can email pillar2mailbox@hmrc.gov.uk if you are having problems accessing the service.
 
-  @zap_accessibility
+  @zap_accessibility @batch2
   Scenario: 4 - User redirected to a placeholder error page, for an incomplete data submission during registration
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -338,6 +338,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to Task list page
     Then The Task Add contact details status should be In progress
 
+  @batch2
   Scenario: 5 - User redirected to a placeholder error page, for an invalid request during registration.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -415,6 +416,7 @@ Feature: Create a new registration and subscription
     When I click Return to registration to try again link
     Then I should navigate to Task list page
 
+  @batch2
   Scenario: 6 - Verify the link on page can't be found page
     Given Organisation User logs in as upe for Pillar2
     And I access random page
@@ -425,6 +427,7 @@ Feature: Create a new registration and subscription
     Then I should see task list sections
     And The Task Add ultimate parent’s details status should be Not started
 
+  @batch2
   Scenario: 7 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page

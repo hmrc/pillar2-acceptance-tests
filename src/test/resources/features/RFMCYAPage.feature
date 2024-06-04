@@ -2,6 +2,7 @@
 Feature: RFM check your answers page
   As a replacing filing member
   I want to enter my subscription details and access CYA page to check my answers and carry on in the journey
+
   @batch3 @zap_accessibility
   Scenario: 1 - Verify RFM check your answers page and successful navigation to corporate position page
     Given Organisation User logs in with rfm URL to Pillar2
@@ -64,7 +65,7 @@ Feature: RFM check your answers page
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012387879
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When Registration Day is entered as 31
     When Registration Month is entered as 1
@@ -74,7 +75,6 @@ Feature: RFM check your answers page
     When I click on Save&Continue button
     Then I should be on RFM Saving Progress Page
     When I click on Continue button
-    And I access RFM corporate position page
     And I access RFM corporate position page
     When I select corp position as NFM
     And I click on Continue button
@@ -139,7 +139,7 @@ Feature: RFM check your answers page
     And I should see the row 13 value Address Line 1 CYA change
     And I should see Print this page link on Review answers page
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to RFM Confirmation Page
 
   @batch3
   Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
@@ -251,7 +251,7 @@ Feature: RFM check your answers page
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012387879
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When Registration Day is entered as 31
     When Registration Month is entered as 1
@@ -289,14 +289,18 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
-    Then I should navigate to under construction page
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
 
   @batch3
   Scenario: 6 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When Registration Day is entered as 31
     When Registration Month is entered as 1
@@ -336,6 +340,11 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
 
   @batch2
   Scenario: 7 - Verify error handling on submission of Pillar id and registration date for RFM journey
@@ -381,8 +390,8 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
-    Then I should navigate to under construction page
-    When I select back link
+    Then I should navigate to RFM Confirmation Page
+    When I click the browser back button
     Then I should navigate to RFM No Return Back Error Page
     And I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
@@ -438,3 +447,61 @@ Feature: RFM check your answers page
     And I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
     Then I should navigate to RFM Final Review Page
 
+  @batch2
+  Scenario: 9 Verify Journey Recovery and Incomplete data errors.
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0123456789
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I access RFM corporate position page
+    When I select corp position as NFM
+    And I click on Continue button
+    When I click on Continue button
+    And I select option No and continue to next
+    When I provide RFM New NFM Name as Test CYA
+    And I click on Continue button
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    And I click on Continue button
+    And I click on Continue button
+    And I access RFM contact email page
+    Then I should be on RFM journey recovery page
+    When I click replace the filing member for a Pillar 2 top-up taxes account to try again link
+    Then I should be on RFM start page
+    When I click the browser back button
+    And I click the browser back button
+    And I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    And I select option No and continue to next
+    And I select option No and continue to next
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    When  I click change link for RFM Change Second Contact Preference
+    And I select option Yes and continue to next
+    When I select back link
+    When I select back link
+    And I click on Continue button
+    Then I should navigate to RFM incomplete task error page
+    When I click replace the filing member for a Pillar 2 top-up taxes account to try again link
+    Then I should be on RFM Final Review Page

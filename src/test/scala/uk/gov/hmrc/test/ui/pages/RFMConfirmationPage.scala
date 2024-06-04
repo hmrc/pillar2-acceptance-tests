@@ -16,18 +16,17 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
+object RFMConfirmationPage extends PageObject {
+  val url: String       = s"$rootUrl"+"replace-filing-member/review-submit/confirmation"
+  val header: String    = "h1.govuk-panel__title"
+  val registrationID    = "div+.govuk-body"
+  val header2           = "h2.govuk-heading-m"
+  val printthispage     = "#print-this-page"
 
-object TaskListPage extends PageObject {
-  val url: String      = s"$rootUrl" + "check-progress/register-your-group"
-  val header: String   = "h1.govuk-heading-xl"
-  val taskList         = ".app-task-list"
-  val taskSection      = ".app-task-list__section"
-  val taskItems        = ".app-task-list__items"
-  val taskItem         = ".app-task-list__item"
-  val empStatusLink    = "[aria-describedby='eligibility-status']"
-  val status          = ".hmrc-status-tag"
-  val pageHeader      = "a[href='/report-pillar2-top-up-taxes/banner']"
+  def clickContinue() = findByCss(continue).click()
 
 }

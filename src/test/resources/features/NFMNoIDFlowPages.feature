@@ -2,7 +2,8 @@
 Feature: NFM NO ID journey
   As a MNE user
   I would like to enter my details via NFM No ID journey
-   @zap_accessibility @batch1
+
+  @zap_accessibility @batch1
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     Then I should be on UPE business page
