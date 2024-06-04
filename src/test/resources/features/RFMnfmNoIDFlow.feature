@@ -1,9 +1,9 @@
-@tests
+@tests @batch3
 Feature: RFM CYA - NFM No ID flow
   As a MNE user
   I would like to check my details via NFM No ID journey
 
-  @zap_accessibility
+   @zap_accessibility
   Scenario: 1 - Verify RFM journey for NFM No Id flow until check your answers page and validate if data is pre populated once entered
     Given Organisation User logs in with rfm URL to Pillar2
     When I access RFM CYA NFM page

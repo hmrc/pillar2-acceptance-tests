@@ -3,6 +3,7 @@ Feature: Eligibility Questions for Pillar 2
   As a MNE user
   I should be navigated to all the Eligibility questions
 
+  @batch1
   Scenario: 1 - User navigates to next eligibility question page by selecting yes option
     Given I clear the cache
     Given I am on UPE EQ Page
@@ -34,6 +35,7 @@ Feature: Eligibility Questions for Pillar 2
     When I continue
     Then I should be on auth-login page
 
+  @batch2
   Scenario: 2 - User navigates to guidance page by selecting No option in eligibility questions
     Given I clear the cache
     Given I am on UPE EQ Page
