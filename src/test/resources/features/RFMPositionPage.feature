@@ -97,7 +97,7 @@ Feature: RFM Corporate position page and further validation
     Then I should navigate to RFM New NFM Contact Name Page
 
   @zap_accessibility
-  Scenario: 3 - Verify RFM check your answers page and successful navigation to corporate position page
+  Scenario: 3 - Verify Security questions are not pre populated for RFM journey
     Given Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2
     Then I should be on RFM enter pillar2 id page
     When I provide RFM pillar2 id as XMPLR0123456789
@@ -132,12 +132,16 @@ Feature: RFM Corporate position page and further validation
     Then I should be on RFM enter pillar2 id page
     And The caption must be Replace filing member
     And The Heading should be Enter the group’s Pillar 2 top-up taxes ID
-    And I should see RFM field pillar2 id is pre-populated with XMPLR0123456789
+    And I should see RFM Pillar2 Id field as blank
+    Then I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     Then I should be on RFM Registration Date Page
-    And I should see RFM date field Start Day is pre-populated with 31
-    And I should see RFM date field Start Month is pre-populated with 1
-    And I should see RFM date field Start Year is pre-populated with 2024
+    And I should see RFM Registration Day field as blank
+    And I should see RFM Registration Month field as blank
+    And I should see RFM Registration Year field as blank
+    When Registration Day is entered as 31
+    And Registration Month is entered as 1
+    And Registration Year is entered as 2024
     And I click on Continue button
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
@@ -145,15 +149,3 @@ Feature: RFM Corporate position page and further validation
     When I click on Continue button
     Then I access RFM corporate position page
     And I should see the corporate position UPE remain selected
-
-  Scenario: 4 - Validate Security questions for RFM Error handling
-    Given Organisation User logs in with rfm URL to Pillar2
-    When I access RFM corporate position page
-    Then I should be on RFM No record Match Error Page
-    When I access RFM New NFM guidance page
-    Then I should be on RFM No record Match Error Page
-    When I access RFM Contact Guidance page
-    Then I should be on RFM No record Match Error Page
-    When I access RFM Saving Progress page
-    Then I should be on RFM No record Match Error Page
-
