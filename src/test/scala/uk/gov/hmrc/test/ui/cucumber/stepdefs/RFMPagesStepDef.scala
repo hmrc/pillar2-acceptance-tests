@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
+import org.openqa.selenium.By.ById
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
@@ -274,6 +275,26 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     name match {
       case "Organisation User" => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
       case _ =>  AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
+    }
+  }
+
+  And("""^I should see RFM (.*) field as blank$""") { (value: String) =>
+    value match {
+      case "Pillar2 Id" =>
+      Wait.waitForTagNameToBeRefreshed("h1")
+      assert(driver.findElement(By.cssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)).getAttribute("value").isEmpty())
+
+      case "Registration Day" =>
+      Wait.waitForTagNameToBeRefreshed("h1")
+      assert(driver.findElement(By.id(RFMRegistrationDatePage.regDay)).getAttribute("value").isEmpty())
+
+      case "Registration Month" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElement(By.id(RFMRegistrationDatePage.regMonth)).getAttribute("value").isEmpty())
+
+      case "Registration Year" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElement(By.id(RFMRegistrationDatePage.regYear)).getAttribute("value").isEmpty())
     }
   }
 }

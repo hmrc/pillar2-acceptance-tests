@@ -6,6 +6,16 @@ Feature: RFM CYA - NFM No ID flow
    @zap_accessibility
   Scenario: 1 - Verify RFM journey for NFM No Id flow until check your answers page and validate if data is pre populated once entered
     Given Organisation User logs in with rfm URL to Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
     When I access RFM CYA NFM page
     Then I should navigate to RFM New NFM Contact Name Page
     When I click on Continue button
@@ -68,6 +78,16 @@ Feature: RFM CYA - NFM No ID flow
 
   Scenario: 2 - Verify RFM journey for adding Secondary contact details
     Given Organisation User logs in with rfm URL to Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
     When I access RFM CYA NFM page
     Then I should navigate to RFM New NFM Contact Name Page
     When I provide RFM New NFM Name as Test CYA
