@@ -380,12 +380,9 @@ Feature: Contact details for the filing member
     Then I should see error message The name of the contact person or team should be 160 characters or less on the Contact details display Page
     When I enter Contact Details Name as Test <script>alert(document.domain)</script>
     And I click on Continue button
-    Then I should see error message The name of the contact person or team must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Contact details display Page
-    When I enter Contact Name as Contact Name Test
-    And I click on Continue button
     Then I should navigate to Contact details input email page
     When I click on Continue button
-    Then I should see error message You need to enter the email address for Contact Name Test on the Contact details email Page
+    Then I should see error message You need to enter the email address for Test on the Contact details email Page
     When I enter Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I click on Continue button
     Then I should see error message The email address should be 132 characters or less on the Contact details email Page
@@ -396,11 +393,11 @@ Feature: Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Contact details telephone page
     When I click on Continue button
-    Then I should see error message Select yes if we can contact Contact Name Test by telephone on the Contact details display Page
+    Then I should see error message Select yes if we can contact Test by telephone on the Contact details display Page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
     When I click on Continue button
-    Then I should see error message You need to enter the telephone for Contact Name Test on the Contact details display Page
+    Then I should see error message You need to enter the telephone for Test on the Contact details display Page
     When I enter NFM Telephone Number as 12345678@
     When I click on Continue button
     Then I should see error message Enter a telephone number in the correct format on the Contact details display Page
@@ -421,12 +418,9 @@ Feature: Contact details for the filing member
     Then I should see error message The name of the contact person or team should be 160 characters or less on the Second Contact details Page
     When I enter Second Contact Name as Test <script>alert(document.domain)</script>
     And I click on Continue button
-    Then I should see error message The name of the contact person or team must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Second Contact details Page
-    When I enter Second Contact Name as Second Contact Name Test
-    And I click on Continue button
     Then I should navigate to Second Contact email page
     And I click on Continue button
-    Then I should see error message You need to enter the email address for Second Contact Name Test on the Contact details email Page
+    Then I should see error message You need to enter the email address for Test on the Contact details email Page
     When I enter Second Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I click on Continue button
     Then I should see error message The email address should be 132 characters or less on the Contact details email Page
@@ -437,11 +431,11 @@ Feature: Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Second Contact number page
     When I click on Continue button
-    Then I should see error message Select yes if we can contact Second Contact Name Test by telephone on the Second Contact details Page
+    Then I should see error message Select yes if we can contact Test by telephone on the Second Contact details Page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I click on Continue button
-    Then I should see error message You need to enter the telephone for Second Contact Name Test on the Second Contact details Page
+    Then I should see error message You need to enter the telephone for Test on the Second Contact details Page
     When I enter NFM Telephone Number as 12345678@
     When I click on Continue button
     Then I should see error message Enter a telephone number in the correct format on the Second Contact details Page

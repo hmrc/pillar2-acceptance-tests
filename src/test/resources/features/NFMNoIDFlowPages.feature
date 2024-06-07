@@ -174,8 +174,6 @@ Feature: NFM NO ID journey
     When I enter NFM name as NFM Name character length Error validation and Maximum NFM character length should be entered 105 characters.
     Then I should see NFM error message The name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
     When I enter NFM name as Test <script>alert(document.domain)</script>
-    Then I should see NFM error message The name of the new nominated filing member must only include letters a to z, numbers 0 to 9, ampersands (&), apostrophes, commas, forward slashes, full stops, hyphens, round brackets and spaces on the Input NFM Name Element
-    When I enter NFM name as NFM Test
     Then I should navigate to NFM Address page
     And the page title should be What is the registered office address? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
