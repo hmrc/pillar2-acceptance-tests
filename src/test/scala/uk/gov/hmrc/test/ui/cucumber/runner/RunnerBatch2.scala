@@ -16,8 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.runner
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
+import io.cucumber.junit.{Cucumber, CucumberOptions}
 import org.junit.runner.RunWith
 
 @RunWith(classOf[Cucumber])
@@ -25,7 +24,7 @@ import org.junit.runner.RunWith
   features = Array("src/test/resources/features"),
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
   plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags="@tests and not @ignore"
+  tags="@batch2 and not @ignore"
 )
-class Runner {}
+class RunnerBatch2 {}
 

@@ -1,8 +1,9 @@
 @tests
-Feature: Secondary Contact details for the filing member
+Feature: Contact details for the filing member
   As a NFM Subscription user
-  I want to enter the secondary contact details,in case the first in not able to be reached
+  I want to enter contact details and navigate to dashboard page
 
+  @batch1
   Scenario: 1 - Create a new subscription with UPE GRS Flow and NFM No Id flow to validate Contact Details
     Given Organisation User logs in as upe with credId ContactDetails for Pillar2
     Then I should be on UPE business page
@@ -168,6 +169,7 @@ Feature: Secondary Contact details for the filing member
     When I click Sign out link
     Then I am on feedback survey page
 
+  @batch1
   Scenario: 2 - Check you Answers Page Validations
     Given Organisation User navigates to Contact Details check your answer page with credId ContactDetails
     Then I should be on Contact details Check answers page
@@ -309,7 +311,7 @@ Feature: Secondary Contact details for the filing member
     And I should see row 16 value No
     And I should see row 17 value Address Change
 
-  @zap_accessibility
+  @zap_accessibility @batch2
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
@@ -521,6 +523,7 @@ Feature: Secondary Contact details for the filing member
     And I click the browser back button
     Then I can see Print this page link
 
+  @batch1
   Scenario: 4 - Validate check your answers page with UPE and NFM GRS and without second contact details for NFM user
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page

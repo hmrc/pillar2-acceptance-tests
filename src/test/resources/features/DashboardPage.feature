@@ -2,7 +2,7 @@
 Feature: Dashboard Page
 As a registered user
   I should be able to navigate to Links on dashboard page
-  
+  @batch1
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
@@ -70,7 +70,7 @@ As a registered user
     When I click Sign out link
     Then I am on feedback survey page
 
-@zap_accessibility
+  @zap_accessibility @batch1
   Scenario: 2 - User navigates to group details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -113,7 +113,7 @@ As a registered user
     And I click on Continue button
     Then I should be on Dashboard page
 
-  @zap_accessibility
+  @zap_accessibility @batch1
   Scenario: 3 - User navigates to amend contact details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -217,7 +217,7 @@ As a registered user
     When I click on Continue button
     Then I should be on Dashboard page
 
-  @zap_accessibility
+  @zap_accessibility @batch2
   Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to view subscription API
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR0123456500 for Pillar2 service
     Then I should be on Subscription API error page
@@ -226,6 +226,7 @@ As a registered user
     When I click Return to your account homepage to try again link
     Then I should be on Subscription API error page
 
+  @batch2
   Scenario: 5 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
