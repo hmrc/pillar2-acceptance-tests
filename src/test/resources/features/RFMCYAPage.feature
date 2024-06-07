@@ -143,7 +143,6 @@ Feature: RFM check your answers page
     And I access RFM corporate position page
     When I select corp position as UPE
     And I click on Continue button
-
     Then I should be on RFM Contact Guidance page
     And I click on Continue button
     Then I should navigate to RFM Contact Detail Page
