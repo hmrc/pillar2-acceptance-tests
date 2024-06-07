@@ -244,3 +244,101 @@ As a registered user
     And The Body content should be Please try again later.
     When I click Return to your account homepage to try again link
     Then I should be on Dashboard page
+  @batch3
+  Scenario: 6 - User navigates to Non UK bank account details page
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+      Then I should be on Dashboard page
+      And I access Non UK payment page
+      When I select back link
+      Then I should be on Dashboard page
+      And I access Non UK payment page
+      And The Heading should be Bank account details
+      When I click on Continue button
+      Then I should see bank account error message Enter the name of the bank on the Name of the Bank Element
+      And I should see bank account error message Enter the name on the account on the Account Name Element
+      And I should see bank account error message Enter the BIC or SWIFT code on the Swift Code Element
+      And I should see bank account error message Enter the IBAN on the Iban Element
+      When I refresh the page
+      And I enter Bank Name as HSBC
+      And I enter Account Name as HMRC Shipley
+      And I click on Continue button
+      Then I should see bank account error message Enter the BIC or SWIFT code on the Swift Code Element
+      And I should see bank account error message Enter the IBAN on the Iban Element
+      When I refresh the page
+      And I enter Bank Name as HSBC
+      And I enter Account Name as HMRC Shipley
+      And I enter Swift Code as HbuKGb4B
+      And I enter Iban as gb29NWBK60161331926819
+      And I click on Continue button
+      Then I should navigate to under construction page
+      When I select back link
+      Then I should be on Non UK Bank Account Payment Page
+      When I enter Bank Name as NameOfTheBankMustBe40CharactersOrLessError
+      And I click on Continue button
+      Then I should see bank account error message Name of the bank must be 40 characters or less on the Name of the Bank Element
+      When I refresh the page
+      And I enter Bank Name as HSBC
+      And I enter Account Name as NameOnTheAccountMustBe60CharactersOrLessOrThereWillBeAnErrorAsSeen
+      And I enter Swift Code as HBUKGB4B
+      And I enter Iban as GB29NWBK60161331926819
+      And I click on Continue button
+      Then I should see bank account error message Name on the account must be 60 characters or less on the Account Name Element
+      When I refresh the page
+      And I enter Bank Name as HSBC
+      And I enter Account Name as HMRC Shipley
+      And I enter Swift Code as HBUKG
+      And I enter Iban as GB29NWBK60161331926819
+      And I click on Continue button
+      Then I should see bank account error message BIC or SWIFT code must be between 8 and 11 characters long on the Swift Code Element
+      When I refresh the page
+      And I enter Bank Name as HSBC
+      And I enter Account Name as HMRC Shipley
+      And I enter Swift Code as 0BCDEF01A1C
+      And I enter Iban as GB29NWBK60161331926819
+      And I click on Continue button
+      Then I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
+      When I refresh the page
+      And I enter Bank Name as HSBC
+      And I enter Account Name as HMRC Shipley
+      And I enter Swift Code as 12345678
+      And I enter Iban as 1Z03A1234567890ABCBBH1
+      And I click on Continue button
+      And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
+      When I refresh the page
+      And I enter Bank Name as HSBC
+      And I enter Account Name as HMRC Shipley
+      And I enter Swift Code as 12345678
+      And I enter Iban as ErrorMessageIBANMustBeUpto34Characters
+      And I click on Continue button
+      And I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
+      And I should see bank account error message IBAN must be up to 34 characters on the Iban Element
+      When I click Sign out link
+      Then I am on feedback survey page
+      When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+      And I access Non UK payment page
+      When I click Report Pillar 2 top-up taxes link
+      Then I should be on Dashboard page
+      And I click Sign out link
+      When Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+      And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+      Then I should be on ASA Pillar2 Input Page
+      And I directly access Agent Non UK Payment Page page
+      And I enter Account Name as NameOnTheAccountMustBe60CharactersOrLessOrThereWillBeAnErrorAsSeen
+      And I enter Swift Code as 0BCDEF01A1C
+      And I enter Iban as 1Z03A1234567890ABCBBH1
+      And I click on Continue button
+      Then I should see bank account error message Enter the name of the bank on the Name of the Bank Element
+      And I should see bank account error message Name on the account must be 60 characters or less on the Account Name Element
+      And I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
+      And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
+
+
+
+
+
+
+
+
+
+
+
