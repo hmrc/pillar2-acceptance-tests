@@ -17,9 +17,9 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, MakePaymentPage, SearchRegisterPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, MakePaymentPage, NonUKBankAccountPaymentPage, SearchRegisterPage}
 
 
 class PaymentSteps extends CommonFunctions {
@@ -107,11 +107,54 @@ class PaymentSteps extends CommonFunctions {
     assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCell)).get(detailNumber - 1).getText.contains(cell))
   }
 
-  When("""^I click on toggle link (.*)$""")  {(option: String)=>
+  When("""^I click on toggle link (.*)$""") { (option: String) =>
     option match {
       case "How long it takes" => Input.clickByXpath(MakePaymentPage.firstToggleLink)
-      case "Make a payment from outside the UK" =>Input.clickByXpath(MakePaymentPage.secondToggleLink)
+      case "Make a payment from outside the UK" => Input.clickByXpath(MakePaymentPage.secondToggleLink)
+    }
+  }
+  And("""^I should see bank account error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
+    page match {
+      case "Name of the Bank" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorBankNameLink)
+        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorBankNameLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorBankNameMessage)
+        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorBankNameMessage)) should include(error)
+
+      case "Account Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorAccountNameLink)
+        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorAccountNameLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorAccountNameMessage)
+        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorAccountNameMessage)) should include(error)
+
+      case "Swift Code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSwiftCodeLink)
+        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorSwiftCodeLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorBicOrSwiftCodeMessage)
+        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorBicOrSwiftCodeMessage)) should include(error)
+
+      case "Iban" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorIbanLink)
+        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorIbanLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorIbanMessage)
+        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorIbanMessage)) should include(error)
+
     }
   }
 }
-

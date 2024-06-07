@@ -214,6 +214,10 @@ class StepDef extends BaseStepDef with BrowserDriver{
     Input.clickByCss(ErrorPlaceHolderPage.startOverCTA)
   }
 
+  And("""^I access Non UK payment page$""") { () =>
+    navigateTo(NonUKBankAccountPaymentPage.url)
+  }
+
   Given("""^I am on (.*) Page$""") { page: String =>
     page match {
       case "UPE EQ" =>
@@ -458,6 +462,7 @@ class StepDef extends BaseStepDef with BrowserDriver{
 
         Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorMessage)
         getTextOf(By cssSelector (BTAPillar2IDCheckPage.errorMessage)) should include(error)
+
     }
   }
 

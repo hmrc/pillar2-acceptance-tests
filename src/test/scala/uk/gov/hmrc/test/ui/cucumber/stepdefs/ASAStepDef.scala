@@ -30,6 +30,12 @@ class ASAStepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
+  And("""^I directly access (.*) page$""") { (name:String) =>
+    name match {
+      case "Agent Non UK Payment Page" => Nav.navigateTo(AgentNonUKPaymentPage.url)
+    }
+  }
+
 
   And("""^I provide ASA (.*) as (.*)$""") { (field: String, value: String) =>
     field match {
