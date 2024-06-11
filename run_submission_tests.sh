@@ -1,10 +1,9 @@
-#!/bin/bash -e
-browser="chrome"
-if [ $# -gt 0  ];
-then
-  browser="$1"
-fi
+#!/usr/bin/env bash
 
-environment="local"
+ENV="local"
+BROWSER="chrome"
 
-sbt -Denvironment="$environment" -Dbrowser="$browser" -Dcucumber.filter.tags="@p2tests" clean 'testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner'
+tags="@p2tests and not @ignore"
+echo "*** running on $ENVIRONMENT using $BROWSER for tags '$tags' ***"
+
+sbt clean -Dbrowser="${BROWSER:=chrome}" -Denvironment="${ENVIRONMENT:=local}" -Dcucumber.filter.tags="@p2tests" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.Runner" testReport

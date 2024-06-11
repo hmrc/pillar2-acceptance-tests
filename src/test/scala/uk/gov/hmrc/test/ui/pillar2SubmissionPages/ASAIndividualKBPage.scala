@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags="@batch2 and not @ignore"
-)
-class RunnerBatch2 {}
+object ASAIndividualKBPage extends PageObject {
+  val url: String     = s"$p2SubRootUrl"+"asa/error/individual"
 
+  val header: String  = "h1.govuk-heading-l"
+  val startAgain        = ".govuk-button"
+  val backLink        = ".govuk-back-link"
+
+  def clickStartAgain() = findByCss(startAgain).click()
+
+
+}
