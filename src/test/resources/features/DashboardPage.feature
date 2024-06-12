@@ -333,6 +333,33 @@ As a registered user
       And I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
       And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
 
+  @zap_accessibility @batch1
+  Scenario: 7 - Organisation User navigates to repayment guidance and refund amount pages
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    Then I should be on under construction page
+
+  @zap_accessibility @batch1
+  Scenario: 8 - Agent User navigates to repayment guidance and refund amount pages
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Agent Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Agent Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    Then I should be on under construction page
 
 
 

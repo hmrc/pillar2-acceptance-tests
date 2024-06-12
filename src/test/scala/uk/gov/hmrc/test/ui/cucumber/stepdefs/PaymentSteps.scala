@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, MakePaymentPage, NonUKBankAccountPaymentPage, SearchRegisterPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, SearchRegisterPage, UPEAddressPage}
 
 
 class PaymentSteps extends CommonFunctions {
@@ -113,6 +113,7 @@ class PaymentSteps extends CommonFunctions {
       case "Make a payment from outside the UK" => Input.clickByXpath(MakePaymentPage.secondToggleLink)
     }
   }
+
   And("""^I should see bank account error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
     page match {
       case "Name of the Bank" =>
@@ -157,4 +158,10 @@ class PaymentSteps extends CommonFunctions {
 
     }
   }
+
+  And("""^I provide Refund Amount as (.*)$""")((refundAmount: String) => {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.sendKeysByCss(refundAmount, RepaymentAmountPage.refundAmountField)
+    clickByCss(RepaymentAmountPage.continue)
+  })
 }
