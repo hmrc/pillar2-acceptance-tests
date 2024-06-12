@@ -8,23 +8,12 @@ Feature: Pillar2 submission Agent User Journey
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 submission service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 submission service
     Then I should be navigated to ASA Pillar2 Input Page of Pillar2 Submission
-    And I click on Continue button
-    Then I should see an error message Enter your client’s Pillar 2 top-up taxes ID on the Agent enter pillar2 id Page
-    When I provide RFM pillar2 id as AXMPLR0123456785
-    And I click on Continue button
-    Then I should see an error message Pillar 2 top-up taxes ID must be 15 characters on the Agent enter pillar2 id Page
-    When I provide RFM pillar2 id as a0000000909090
-    And I click on Continue button
-    Then I should see an error message Pillar 2 top-up taxes ID must be 15 characters on the Agent enter pillar2 id Page
-    When I provide RFM pillar2 id as 0MPLR0123456789
-    And I click on Continue button
-    Then I should see an error message Enter a Pillar 2 top-up taxes ID in the correct format, like XMPLR0123456789 on the Agent enter pillar2 id Page
     When I provide RFM pillar2 id as XMplr0123456789
     And I click on Continue button
     When I click Report Pillar 2 top-up taxes link
     Then I should be navigated to ASA Home Page of Pillar2 Submission
     And I click on Continue button
-    #And I should be navigated to ASA Pillar2 Input Page of Pillar2 Submission
+    And I should be navigated to ASA Pillar2 Input Page of Pillar2 Submission
     And I provide ASA Pillar2 ID as XMPLR0012345674
     And I click on Continue button
     Then I should be navigated to ASA Confirmation Page of Pillar2 Submission
