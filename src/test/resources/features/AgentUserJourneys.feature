@@ -1,4 +1,3 @@
-@tests
 @tests @zap_accessibility
 Feature: Agent user journeys
   As an Agent
