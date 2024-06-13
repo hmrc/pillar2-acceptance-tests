@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, SearchRegisterPage, UPEAddressPage}
 
@@ -164,4 +164,8 @@ class PaymentSteps extends CommonFunctions {
     Input.sendKeysByCss(refundAmount, RepaymentAmountPage.refundAmountField)
     clickByCss(RepaymentAmountPage.continue)
   })
-}
+
+  And("""^I should see Refund Amount field is pre-populated with (.*)$""") { (amount: String) =>
+        assert(getAttributeOf(RepaymentAmountPage.refundAmountField, "value").equals(amount))
+    }
+  }

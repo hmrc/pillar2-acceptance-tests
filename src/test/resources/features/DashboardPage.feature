@@ -358,10 +358,21 @@ As a registered user
     Then I should navigate to Agent Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
-    When I provide Refund Amount as 100.00
+    When I provide Refund Amount as 9999.99
     Then I should be on under construction page
-
-
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to ASA Home Page
+    And I click on Continue button
+    Then I should be on ASA Pillar2 Input Page
+    And I should see the PLRID field is pre-populated with XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click Request a refund link
+    When I click on Continue button
+    Then I should navigate to Agent Repayment Amount Page
+    And I should see Refund Amount field is pre-populated with 9999.99
 
 
 
