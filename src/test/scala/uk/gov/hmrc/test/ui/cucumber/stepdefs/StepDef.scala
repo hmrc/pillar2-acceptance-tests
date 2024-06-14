@@ -218,6 +218,10 @@ class StepDef extends BaseStepDef with BrowserDriver{
     navigateTo(NonUKBankAccountPaymentPage.url)
   }
 
+  And("""^I access reason for refund page$""") { () =>
+    navigateTo(ReasonForRefundPage.url)
+  }
+
   Given("""^I am on (.*) Page$""") { page: String =>
     page match {
       case "UPE EQ" =>

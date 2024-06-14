@@ -332,6 +332,12 @@ As a registered user
       And I should see bank account error message Name on the account must be 60 characters or less on the Account Name Element
       And I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
       And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
+  @tests1
+  Scenario: 7 - User navigates to Refund reason & type of bank account page
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+    Then I should be on Dashboard page
+    And I access reason for refund page
+    And The Heading should be Why are you requesting a refund?
 
 
 

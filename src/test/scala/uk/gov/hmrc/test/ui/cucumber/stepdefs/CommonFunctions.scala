@@ -177,6 +177,7 @@ trait CommonFunctions
       case "RFM incomplete task error page"       => RFMIncompleteErrorPage
       case "Non UK Bank Account Payment Page"     => NonUKBankAccountPaymentPage
       case "Agent Non UK Payment Page"            => AgentNonUKPaymentPage
+      case  "Reason For Refund Page"              => ReasonForRefundPage
     }
   }
 }
