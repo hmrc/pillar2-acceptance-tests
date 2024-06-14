@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags="@batch3 and not @ignore"
-)
-class RunnerBatch3 {}
+object ASANoMatchErrorPage extends PageObject {
+  val url: String        = s"$p2SubRootUrl"+"asa/error/no-match"
 
+  val header: String     = ".govuk-heading-l"
+
+}
