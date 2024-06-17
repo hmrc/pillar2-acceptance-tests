@@ -338,6 +338,32 @@ As a registered user
     Then I should be on Dashboard page
     And I access reason for refund page
     And The Heading should be Why are you requesting a refund?
+    When I click on Continue button
+    Then I should see error message Enter why you are requesting a refund on the Reason For Refund Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+    And I click the browser back button
+    Then I should be on Reason For Refund Page
+    When I enter Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content that stretches
+    And I click on Continue button
+    Then I should see error message Reason for refund request must be 250 characters or less on the Reason For Refund Page
+    When I refresh the page
+    And I enter Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
+    And I click on Continue button
+    Then I should navigate to Repayment Method Page
+    And The Heading should be What type of account will the refund be sent to?
+    When I click on Continue button
+    Then I should see error message Select what type of account the refund will be sent to on the Repayment Method Page
+    When I refresh the page
+    And I select repayment method as UK bank account
+    And I click on Continue button
+    Then I should navigate to under construction page
+    And I select back link
+    Then I should be on Repayment Method Page
+    When I select repayment method as Non-UK bank account
+    And I click on Continue button
+    Then I should navigate to Non UK Bank Account Payment Page
+
 
 
 

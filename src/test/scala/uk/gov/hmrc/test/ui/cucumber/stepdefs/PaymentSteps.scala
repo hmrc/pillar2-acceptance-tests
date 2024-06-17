@@ -113,6 +113,14 @@ class PaymentSteps extends CommonFunctions {
       case "Make a payment from outside the UK" => Input.clickByXpath(MakePaymentPage.secondToggleLink)
     }
   }
+
+    When("""^I select repayment method as (.*)$""") { (option: String) =>
+      option match {
+        case "UK bank account" => Input.clickById("value_0")
+        case "Non-UK bank account" => Input.clickById("value_1")
+      }
+    }
+
   And("""^I should see bank account error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
     page match {
       case "Name of the Bank" =>
