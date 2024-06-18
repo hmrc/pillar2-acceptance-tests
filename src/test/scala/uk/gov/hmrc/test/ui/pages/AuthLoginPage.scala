@@ -69,35 +69,6 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def logonToP2SubmissionWithUser(name: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(submissionFrontEndUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-
-  def logonToP2SubmissionWithAssistantUser(name: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(submissionFrontEndUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    selectCredRoleAssistant()
-    clickSubmitButton()
-  }
-
-  def logonToP2SubmissionWithAgentUser(name: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(submissionFrontEndUrl, redirectUrlField)
-    selectAffinityGroupAgent()
-    clickSubmitButton()
-  }
-
-  def logonToP2SubmissionWithIndividualUser(name: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(submissionFrontEndUrl, redirectUrlField)
-    selectAffinityGroupIndividual()
-    clickSubmitButton()
-  }
-
   def loginWithUserToRFM(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(rfmUrl, redirectUrlField)

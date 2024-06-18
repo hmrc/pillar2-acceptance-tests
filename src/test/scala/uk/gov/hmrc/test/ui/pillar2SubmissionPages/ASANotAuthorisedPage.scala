@@ -14,17 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags="@batch1 and not @ignore"
-)
-class RunnerBatch1 {}
+object ASANotAuthorisedPage extends PageObject {
+  val url: String        = s"$rootUrl"+"asa/error/not-authorised"
+  val header: String     = ".govuk-heading-l"
 
+}
