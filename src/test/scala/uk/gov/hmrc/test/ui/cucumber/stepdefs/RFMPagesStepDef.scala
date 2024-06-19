@@ -159,15 +159,25 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
         getTextOf(By cssSelector (RFMContactDetailNamePage.errorMessage)) should include(error)
 
-      case "contact name change" =>
+      case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorMessage)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
 
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorLink)
-        getTextOf(By cssSelector (RFMNewNFMContactNameChangePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorLink)
+        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorMessage)
-        getTextOf(By cssSelector (RFMNewNFMContactNameChangePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
+        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorMessage)) should include(error)
+
+      case "second contact name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorLink)
+        getTextOf(By cssSelector (RFMSecondContactNamePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorMessage)
+        getTextOf(By cssSelector (RFMSecondContactNamePage.errorMessage)) should include(error)
 
       case "contact address change" =>
         Wait.waitForTagNameToBeRefreshed("h1")

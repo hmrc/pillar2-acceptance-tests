@@ -16,8 +16,11 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Continue button
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
-    And I access RFM corporate position page
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
     Then I should be on RFM Corp Position Page
+    And I click on Continue button
+    Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
     And I click on Continue button
     Then I should be on New NFM guidance page
@@ -26,10 +29,14 @@ Feature: RFM CYA - NFM No ID flow
     And The Body content should be If the new filing member is registered in the UK, we will ask you for identifying information so we can best match it with our records.
     And The Body content should be If the new filing member is registered outside of the UK or if they are not a listed entity type, we will ask you for identifying information so we can create a new HMRC record.
     When I click on Continue button
-    Then I should see an error message Enter the name of the new nominated filing member on the RFM contact name change Page
+    Then I should be on RFM registered in UK page
+    When I select option No and continue to next
+    Then I should navigate to RFM New NFM Contact Name Page
+     And I click on Continue button
+    Then I should see an error message Enter the name of the new nominated filing member on the RFM contact name Page
     When I enter NFM name as RFMNewNFMContactNameCharacterLengthErrorValidationMaximumNFMNameCharacterLengthShouldBeEnteredLessThanOneHundredFive
     And I click on Continue button
-    Then I should see an error message The name of the new nominated filing must be 105 characters or less on the RFM contact name change Page
+    Then I should see an error message The name of the new nominated filing must be 105 characters or less on the RFM contact name Page
     When I refresh the page
     When I provide RFM New NFM Name as Test CYA
     And I click on Continue button
@@ -78,9 +85,10 @@ Feature: RFM CYA - NFM No ID flow
     Then I should navigate to RFM No ID Change CYA Page
     When I click on Continue button
     Then I should navigate to RFM Contact Guidance page
-
+@tests1
   Scenario: 2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey
-    Given Organisation User logs in with rfm URL to Pillar2
+    Given I clear the cache
+    When Organisation User logs in with rfm URL to Pillar2
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0012345674
@@ -91,7 +99,9 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Continue button
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
-    And I access RFM corporate position page
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    Then I should be on RFM Corp Position Page
     When I select corp position as UPE
     And I click on Continue button
     Then I should be on RFM Contact Guidance page
@@ -187,7 +197,7 @@ Feature: RFM CYA - NFM No ID flow
     And I select option Yes and continue to next
     Then I should navigate to RFM second contact name page
     And I click on Continue button
-    Then I should see an error message Enter name of the person of team we should contact on the RFM contact name change Page
+    Then I should see an error message Enter name of the person of team we should contact on the RFM second contact name Page
     When I provide RFM contact name as RFM second test contact
     And I click on Continue button
     Then I should be on RFM second contact email page
@@ -196,14 +206,12 @@ Feature: RFM CYA - NFM No ID flow
     When I provide RFM contact email as rfmsecondcontact@email.com
     And I click on Continue button
     Then I should be on RFM second contact telephone question page
+    And I click on Continue button
+    Then I should see an error message Select yes if we can contact RFM second test contact by telephone on the RFM input telephone Page
     And I select option No and continue to next
     Then I should be on RFM Contact Address Page
     When I select back link
     And I select option Yes and continue to next
-    Then I should be on RFM second contact telephone page
-    And I click on Continue button
-    Then I should see an error message Select yes if we can contact RFM second test contact by telephone on the RFM journey error Page
-    When I select option Yes and continue to next
     Then I should be on RFM second contact telephone page
     When I provide RFM second contact number as 09872960001
     And I click on Continue button

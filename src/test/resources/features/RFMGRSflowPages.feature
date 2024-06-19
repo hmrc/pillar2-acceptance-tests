@@ -16,7 +16,9 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
-    And I access RFM corporate position page
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    Then I should be on RFM Corp Position Page
     And The Heading should be What is your position in the corporate structure of the group?
     When I click on Continue button
     Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
@@ -54,9 +56,8 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
-    Then I should be on RFM Saving Progress Page
-    When I click on Continue button
-    And I access RFM corporate position page
+    And I click on Continue button
+    And I should be on RFM Corp Position Page
     When I select corp position as NFM
     And I click on Continue button
     Then I should be on New NFM guidance page
@@ -135,9 +136,8 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
-    Then I should be on RFM Saving Progress Page
-    When I click on Continue button
-    Then I access RFM corporate position page
+    And I click on Continue button
+    Then I should be on RFM Corp Position Page
     When I select corp position as UPE
     And I click on Continue button
     When I click on Continue button
@@ -183,7 +183,8 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
-    And I access RFM corporate position page
+    And I click on Continue button
+    Then I should be on RFM Corp Position Page
     When I select corp position as NFM
     And I click on Continue button
     Then I should be on New NFM guidance page
@@ -218,7 +219,8 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
-    And I access RFM corporate position page
+    And I click on Continue button
+    Then I should be on RFM Corp Position Page
     When I select corp position as NFM
     And I click on Continue button
     Then I should be on New NFM guidance page
