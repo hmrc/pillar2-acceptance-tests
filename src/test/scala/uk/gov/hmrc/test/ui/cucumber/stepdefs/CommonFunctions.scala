@@ -181,6 +181,10 @@ trait CommonFunctions
       case "Repayment Amount Page"                => RepaymentAmountPage
       case "Agent Repayment Guidance Page"        => AgentRepaymentGuidancePage
       case "Agent Repayment Amount Page"          => AgentRepaymentAmountPage
+      case "Reason For Refund Page"               => RepaymentReasonPage
+      case "Repayment Method Page"                => RepaymentMethodPage
+      case "Agent Repayment Reason Page"          => AgentRepaymentReasonPage
+      case "Agent Repayment Method Page"          => AgentRepaymentMethodPage
     }
   }
 }

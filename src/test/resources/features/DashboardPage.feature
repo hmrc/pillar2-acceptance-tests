@@ -334,7 +334,7 @@ As a registered user
       And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
 
   @zap_accessibility @batch3
-  Scenario: 7 - Organisation User navigates to repayment guidance and refund amount pages
+  Scenario: 7 - Organisation User navigates to repayment pages
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     When I click Request a refund link
@@ -342,7 +342,31 @@ As a registered user
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
     When I provide Refund Amount as 100.00
-    Then I should be on under construction page
+    Then I should navigate to Reason For Refund Page
+    And I select back link
+    Then I should navigate to Repayment Amount Page
+    And I click on Continue button
+    Then I should navigate to Reason For Refund Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+    And I click the browser back button
+    Then I should be on Reason For Refund Page
+    When I enter Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
+    And The character limit text should display You have 8 characters remaining
+    And I click on Continue button
+    Then I should navigate to Repayment Method Page
+    When I select back link
+    Then I should navigate to Reason For Refund Page
+    And I click on Continue button
+    Then I should navigate to Repayment Method Page
+    And I select repayment method as UK bank account
+    And I click on Continue button
+    Then I should navigate to under construction page
+    And I select back link
+    Then I should be on Repayment Method Page
+    When I select repayment method as Non-UK bank account
+    And I click on Continue button
+    Then I should navigate to Non UK Bank Account Payment Page
 
   @zap_accessibility @batch3
   Scenario: 8 - Agent User navigates to repayment guidance and refund amount pages
@@ -359,17 +383,37 @@ As a registered user
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
     When I provide Refund Amount as 9999.99
-    Then I should be on under construction page
+    And I click on Continue button
+    Then I should navigate to Agent Repayment Reason Page
     When I click Report Pillar 2 top-up taxes link
-    Then I should navigate to ASA Home Page
+    Then I should navigate to ASA Dashboard page
+    When I click the browser back button
+    Then I should navigate to Agent Repayment Reason Page
+    When I enter Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
+    And The character limit text should display You have 8 characters remaining
     And I click on Continue button
-    Then I should be on ASA Pillar2 Input Page
-    And I should see the PLRID field is pre-populated with XMPLR0012345674
+    Then I should navigate to Agent Repayment Method Page
+    And I select repayment method as UK bank account
     And I click on Continue button
-    Then I should navigate to ASA Confirmation Page
-    And I click on Continue button
+    Then I should navigate to under construction page
+    When I select back link
+    When I click Report Pillar 2 top-up taxes link
     Then I should navigate to ASA Dashboard page
     When I click Request a refund link
+    Then I should navigate to Agent Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
     And I should see Refund Amount field is pre-populated with 9999.99
+    And I click on Continue button
+    Then I should navigate to Agent Repayment Reason Page
+    And I should see Repayment reason field is pre-populated with A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
+    And I click on Continue button
+    Then I should navigate to Agent Repayment Method Page
+    And I should see the repayment method UK bank account remain selected
+    And I click on Continue button
+    Then I should navigate to under construction page
+    And I select back link
+    Then I should be on Agent Repayment Method Page
+    When I select repayment method as Non-UK bank account
+    And I click on Continue button
+    Then I should navigate to Agent Non UK Payment Page
