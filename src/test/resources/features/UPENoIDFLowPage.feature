@@ -19,11 +19,12 @@ Feature: UPE NO ID journey
     And The caption must be Group details
     And The Heading should be What is the registered office address of Test UPE?
     And The hint text should be Enter text and then choose from the list.
-    When I enter Address Line 1 as Address Line 1 UPE
-    And I enter City as City UPE
-    And I enter Postal Code as invalid
-    And I enter Country as United Kingdom
-    And I click on Country selected
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | invalid        |
+      | countryCode  | United Kingdom |
     And I click on Continue button
     Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
     When I enter Postal Code as EH5 5WY
@@ -291,7 +292,7 @@ Feature: UPE NO ID journey
     When I click the browser back button
     Then I should be on auth-login page
 
-  @ignore
+
   Scenario: 5 - Status update for Enter ultimate parent’s details task
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -310,11 +311,12 @@ Feature: UPE NO ID journey
     Then I should navigate to input-upe-name page
     And I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
-    When I enter Address Line 1 as Test Address Line 1
-    And I enter City as Test City
-    And I enter Postal Code as EH5 5WY
-    And I enter Country as United Kingdom
-    And I click on Country selected
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | United Kingdom |
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as UPE Contact Name
@@ -346,4 +348,106 @@ Feature: UPE NO ID journey
     And I click on Continue button
     And I navigate back to TaskList Page from Telephone Input Page
     Then The Task Edit ultimate parent’s details status should be Completed
+
+
+  Scenario: 2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey
+    Given I clear the cache
+    When Organisation User logs in with rfm URL to Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    Then I should be on RFM Corp Position Page
+    When I select corp position as UPE
+    And I click on Continue button
+    Then I should be on RFM Contact Guidance page
+    And I click on Continue button
+    Then I should navigate to RFM Contact Detail Page
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    Then I should navigate to RFM Contact Number Page
+    When I select option No and continue to next
+    Then I should navigate to RFM Second Contact Question Page
+    And I select option No and continue to next
+    Then I should be on RFM Contact Address Page
+    When I enter Address Line 1 as RFM Address Line 1
+    And I enter City as RFM City
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    When I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    #And I should see row 1 key Position in the group's corporate structure
+    And I should see row 1 value Ultimate parent entity (UPE)
+    When I click change link for RFM Corporate Position
+    When I select corp position as NFM
+    And I click on Continue button
+    Then I should be on New NFM guidance page
+    And I click on Continue button
+    Then I should be on RFM registered in UK page
+    When I select option No and continue to next
+    And I click on Continue button
+    Then I should navigate to RFM New NFM Contact Name Page
+    When I provide RFM New NFM Name as Test CYA
+    And I click on Continue button
+    Then I should navigate to RFM New NFM Contact Address Page
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should be on RFM No ID CYA Page
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    When I select back link
+    Then I should be on RFM No ID CYA Page
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I should see row 1 value New nominated filing member
+    And I should see row 2 value Test CYA
+    And I should see row 3 value Address Line 1 CYA
+    And I should see row 3 value City CYA
+    And I should see row 3 value EH55WY
+    And I should see row 3 value Australia
+    When I click change link for RFM Input Name
+    When I provide RFM New NFM Name as Test Change
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    When I click change link for RFM Input Address
+    And I enter Address Line 1 as Address Line 1 Change
+    And I enter City as City Change
+    And I enter Postal Code as EH75WK
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I should see row 3 value Address Line 1 Change
+    And I should see row 3 value City Change
+    And I should see row 3 value EH75WK
+    And I click on Continue button
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+
+
+
+
+
+
+
+
+
+
 
