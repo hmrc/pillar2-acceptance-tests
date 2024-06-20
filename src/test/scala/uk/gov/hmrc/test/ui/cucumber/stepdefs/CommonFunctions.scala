@@ -181,6 +181,8 @@ trait CommonFunctions
       case "Repayment Amount Page"                => RepaymentAmountPage
       case "Agent Repayment Guidance Page"        => AgentRepaymentGuidancePage
       case "Agent Repayment Amount Page"          => AgentRepaymentAmountPage
+      case "Repayment Contact Page"               => RepaymentContactPage
+      case "Repayment Contact Email Page"         => RepaymentContactEmailPage
     }
   }
 }

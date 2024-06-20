@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, SearchRegisterPage, UPEAddressPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, RepaymentContactEmailPage, RepaymentContactPage, SearchRegisterPage, UPEAddressPage}
 
 
 class PaymentSteps extends CommonFunctions {
@@ -168,4 +168,16 @@ class PaymentSteps extends CommonFunctions {
   And("""^I should see Refund Amount field is pre-populated with (.*)$""") { (amount: String) =>
         assert(getAttributeOf(RepaymentAmountPage.refundAmountField, "value").equals(amount))
     }
+
+  And("""^I provide Repayment contact as (.*)$""")((contactName: String) => {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.sendKeysByCss(contactName, RepaymentContactPage.contactNameField)
+    clickByCss(RepaymentContactPage.continue)
+  })
+
+  And("""^I provide Repayment contact email as (.*)$""")((contactEmail: String) => {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.sendKeysByCss(contactEmail, RepaymentContactEmailPage.contactEmailField)
+    clickByCss(RepaymentContactEmailPage.continue)
+  })
   }
