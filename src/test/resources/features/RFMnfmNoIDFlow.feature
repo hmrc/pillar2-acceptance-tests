@@ -86,8 +86,7 @@ Feature: RFM CYA - NFM No ID flow
     When I click on Continue button
     Then I should navigate to RFM Contact Guidance page
     And I click Sign out link
-
-
+     
   Scenario: 2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey
     Given I clear the cache
     When Organisation User logs in with rfm URL to Pillar2
