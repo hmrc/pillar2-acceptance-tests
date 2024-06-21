@@ -183,6 +183,10 @@ trait CommonFunctions
       case "Agent Repayment Amount Page"          => AgentRepaymentAmountPage
       case "Repayment Contact Page"               => RepaymentContactPage
       case "Repayment Contact Email Page"         => RepaymentContactEmailPage
+      case "Reason For Refund Page"               => RepaymentReasonPage
+      case "Repayment Method Page"                => RepaymentMethodPage
+      case "Agent Repayment Reason Page"          => AgentRepaymentReasonPage
+      case "Agent Repayment Method Page"          => AgentRepaymentMethodPage
     }
   }
 }

@@ -206,6 +206,10 @@ class StepDef extends BaseStepDef with BrowserDriver{
     navigateTo(NonUKBankAccountPaymentPage.url)
   }
 
+  And("""^I access reason for refund page$""") { () =>
+    navigateTo(RepaymentReasonPage.url)
+  }
+
   Given("""^I am on (.*) Page$""") { page: String =>
     page match {
       case "UPE EQ" =>
@@ -451,7 +455,36 @@ class StepDef extends BaseStepDef with BrowserDriver{
         Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorMessage)
         getTextOf(By cssSelector (BTAPillar2IDCheckPage.errorMessage)) should include(error)
 
-    }
+      case "Reason For Refund" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.errorLink)
+        getTextOf(By cssSelector (RepaymentReasonPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.errorMessage)
+        getTextOf(By cssSelector (RepaymentReasonPage.errorMessage)) should include(error)
+
+      case "Repayment Method" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorLink)
+        getTextOf(By cssSelector (RepaymentMethodPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorMessage)
+        getTextOf(By cssSelector (RepaymentMethodPage.errorMessage)) should include(error)
+
+      case "Agent Repayment Method" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(AgentRepaymentMethodPage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(AgentRepaymentMethodPage.errorLink)
+        getTextOf(By cssSelector (AgentRepaymentMethodPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(AgentRepaymentMethodPage.errorMessage)
+        getTextOf(By cssSelector (AgentRepaymentMethodPage.errorMessage)) should include(error)
+      }
   }
 
   Then("""^The caption must be (.*)$""") { caption: String =>
