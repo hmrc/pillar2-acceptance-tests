@@ -149,10 +149,16 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     When I provide RFM contact number as 01632960001
     And I click on Continue button
     And I select option Yes and continue to next
+    And I click on Continue button
+    Then I should see an error message Enter name of the person of team we should contact on the RFM second contact name Page
     When I provide RFM contact name as RFM second test contact
     And I click on Continue button
+    When I click on Continue button
+    Then I should see an error message You need to enter the email address for RFM second test contact on the RFM contact email Page
     When I provide RFM contact email as rfmsecondcontact@email.com
     And I click on Continue button
+    When I click on Continue button
+    Then I should see an error message Select yes if we can contact RFM second test contact by telephone on the RFM input telephone Page
     When I select option Yes and continue to next
     When I provide RFM second contact number as 09872960001
     And I click on Continue button

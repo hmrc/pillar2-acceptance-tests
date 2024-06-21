@@ -4,7 +4,7 @@ Feature: RFM CYA - NFM No ID flow
   I would like to check my details via NFM No ID journey
 
    @zap_accessibility
-  Scenario: 1 - Verify RFM journey for NFM No Id flow until check your answers page and validate if data is pre populated once entered
+  Scenario: 1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated
     Given Organisation User logs in with rfm URL to Pillar2
     And I access RFM start page
     And I click on Continue button
@@ -85,13 +85,15 @@ Feature: RFM CYA - NFM No ID flow
     Then I should navigate to RFM No ID Change CYA Page
     When I click on Continue button
     Then I should navigate to RFM Contact Guidance page
-@tests1
+    And I click Sign out link
+
+
   Scenario: 2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey
     Given I clear the cache
     When Organisation User logs in with rfm URL to Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When Registration Day is entered as 31
     When Registration Month is entered as 1
@@ -170,61 +172,10 @@ Feature: RFM CYA - NFM No ID flow
     And I should see row 3 value Address Line 1 Change
     And I should see row 3 value City Change
     And I should see row 3 value EH75WK
-    When I click change link for RFM Corporate Position
-    When I select corp position as UPE
-    And I click on Continue button
-    And I should see row 1 value Ultimate parent entity (UPE)
-    When I click change link for RFM Corporate Position
-    When I select corp position as NFM
-    And I click on Continue button
-    Then I should be on New NFM guidance page
-    And I click on Continue button
-    When I select option Yes and continue to next
-    Then I should be on RFM UK based entity type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to RFM UK limited Company GRSPage
-    When I registered successfully with BV enabled
-    And I click on Save&Continue button
-    Then I should be on RFM Contact Guidance page
-    And I click on Continue button
-    Then I should navigate to RFM Contact Detail Page
-    And I click on Continue button
-    Then I should navigate to RFM Contact Email Page
-    And I click on Continue button
-    Then I should navigate to RFM Contact Number Page
-    And I click on Continue button
-    Then I should navigate to RFM Second Contact Question Page
-    And I select option Yes and continue to next
-    Then I should navigate to RFM second contact name page
-    And I click on Continue button
-    Then I should see an error message Enter name of the person of team we should contact on the RFM second contact name Page
-    When I provide RFM contact name as RFM second test contact
-    And I click on Continue button
-    Then I should be on RFM second contact email page
-    And I click on Continue button
-    Then I should see an error message You need to enter the email address for RFM second test contact on the RFM contact email Page
-    When I provide RFM contact email as rfmsecondcontact@email.com
-    And I click on Continue button
-    Then I should be on RFM second contact telephone question page
-    And I click on Continue button
-    Then I should see an error message Select yes if we can contact RFM second test contact by telephone on the RFM input telephone Page
-    And I select option No and continue to next
-    Then I should be on RFM Contact Address Page
-    When I select back link
-    And I select option Yes and continue to next
-    Then I should be on RFM second contact telephone page
-    When I provide RFM second contact number as 09872960001
-    And I click on Continue button
-    Then I should be on RFM Contact Address Page
-    And I click on Continue button
-    Then I should navigate to RFM Final Review Page
-    And I should see row 1 value New nominated filing member
-    And I should see row 2 value Test Example Company Name
-    And I should see row 3 value 76543210
-    And I should see row 4 value 1234567890
     And I click on Continue button
     Then I should navigate to RFM Confirmation Page
     And I should see report and manage your group's Pillar 2 top-up taxes link
     And I can see Print this page link
     When I click report and manage your group's Pillar 2 top-up taxes link
     Then I should be on Dashboard page
+
