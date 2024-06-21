@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ASAPillar2InputPage, AuthLoginPage, ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NonUKBankAccountPaymentPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
+import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{ASAPillar2InputPage, AuthLoginPage, ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NonUKBankAccountPaymentPage, RepaymentReasonPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
 
 class UPEPageSteps extends CommonFunctions {
 
@@ -150,6 +150,10 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.IbanField)
         Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.IbanField)
 
+      case "Refund Reason" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
+        Input.sendKeysByCss(name, RepaymentReasonPage.reasonTextField)
     }
   }
 

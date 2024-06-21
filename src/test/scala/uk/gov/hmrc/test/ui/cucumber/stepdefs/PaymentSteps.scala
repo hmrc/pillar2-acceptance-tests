@@ -18,8 +18,10 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, SearchRegisterPage, UPEAddressPage}
+
+import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Wait}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, RepaymentReasonPage, SearchRegisterPage, UPEAddressPage, RepaymentContactEmailPage, RepaymentContactPage}
+
 
 
 class PaymentSteps extends CommonFunctions {
@@ -102,6 +104,11 @@ class PaymentSteps extends CommonFunctions {
     assert(getTextOf(By.cssSelector(MakePaymentPage.warningMessage)).contains(message))
   }
 
+  Then("""^Hint text should be (.*)$""") { header: String =>
+    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.hintText)
+    assert(getTextOf(By.cssSelector(RepaymentReasonPage.hintText)).contains(header))
+  }
+
   And("""^The section (\d+) with header (.*) value should be (.*)$""") { (detailNumber: Int, header: String, cell: String) =>
     assert(driver.findElements(By.cssSelector(MakePaymentPage.tableHeader)).get(detailNumber - 1).getText.contains(header))
     assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCell)).get(detailNumber - 1).getText.contains(cell))
@@ -111,6 +118,18 @@ class PaymentSteps extends CommonFunctions {
     option match {
       case "How long it takes" => Input.clickByXpath(MakePaymentPage.firstToggleLink)
       case "Make a payment from outside the UK" => Input.clickByXpath(MakePaymentPage.secondToggleLink)
+    }
+  }
+
+  Then("""^The character limit text should display (.*)$""") { header: String =>
+    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.charLimit)
+    assert(getTextOf(By.cssSelector(RepaymentReasonPage.charLimit)).contains(header))
+  }
+
+  And("""^I select repayment method as (.*)$""") { (option: String) =>
+    option match {
+      case "UK bank account" => Input.clickById("value_0")
+      case "Non-UK bank account" => Input.clickById("value_1")
     }
   }
 
@@ -168,4 +187,27 @@ class PaymentSteps extends CommonFunctions {
   And("""^I should see Refund Amount field is pre-populated with (.*)$""") { (amount: String) =>
         assert(getAttributeOf(RepaymentAmountPage.refundAmountField, "value").equals(amount))
     }
+
+  And("""^I provide Repayment contact as (.*)$""")((contactName: String) => {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.sendKeysByCss(contactName, RepaymentContactPage.contactNameField)
+    clickByCss(RepaymentContactPage.continue)
+  })
+
+  And("""^I provide Repayment contact email as (.*)$""")((contactEmail: String) => {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.sendKeysByCss(contactEmail, RepaymentContactEmailPage.contactEmailField)
+    clickByCss(RepaymentContactEmailPage.continue)
+  })
+
+  And("""^I should see Repayment reason field is pre-populated with (.*)$""") { (reason: String) =>
+    assert(getAttributeOf(RepaymentReasonPage.reasonTextField, "value").equals(reason))
+  }
+
+  And("""^I should see the repayment method (.*) remain selected$""") { (accountType: String) =>
+    accountType match {
+      case "UK bank account" => Find.findByCss("#value_0").isSelected
+      case "Non-UK bank account" => Find.findByCss("#value_1").isSelected
+    }
+  }
   }
