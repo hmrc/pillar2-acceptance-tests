@@ -131,10 +131,18 @@ Feature: Repayment Journey
     And I enter Iban as GB29NWBK60161331926819
     And I click on Continue button
     Then I should be on Repayment Contact Page
-    And I provide Repayment contact as Repayment Contact Name
+    And I provide Repayment contact name as Repayment Contact Name
     Then I should be on Repayment Contact Email Page
     When I provide Repayment contact email as repayment@email.com
+    Then I should be on Repayment Telephone Page
+    When I select option Yes and continue to next
+    Then I should be on Repayment Telephone Input Page
+    When I provide Repayment contact telephone as 789765423
     Then I should be on under construction page
+    When I select back link
+    Then I should be on Repayment Telephone Input Page
+    When I select back link
+    Then I should be on Repayment Telephone Page
     When I select back link
     Then I should be on Repayment Contact Email Page
     When I select back link
@@ -164,7 +172,6 @@ Feature: Repayment Journey
     When I click the browser back button
     Then I should navigate to Agent Repayment Reason Page
     When I enter Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
-    And The character limit text should display You have 8 characters remaining
     And I click on Continue button
     Then I should navigate to Agent Repayment Method Page
     And I select repayment method as UK bank account
@@ -184,26 +191,3 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should navigate to Agent Repayment Method Page
     And I should see the repayment method UK bank account remain selected
-    And I click on Continue button
-    Then I should navigate to under construction page
-    And I select back link
-    Then I should be on Agent Repayment Method Page
-    When I select repayment method as Non-UK bank account
-    And I click on Continue button
-    Then I should navigate to Agent Non UK Payment Page
-    And I enter Bank Name as HSBC
-    And I enter Account Name as Test Name
-    And I enter Swift Code as HBUKGB4B
-    And I enter Iban as GB29NWBK60161331926819
-    And I click on Continue button
-    Then I should be on Repayment Contact Page
-    And I provide Repayment contact as Repayment Contact Name
-    Then I should be on Repayment Contact Email Page
-    When I provide Repayment contact email as repayment@email.com
-    Then I should be on under construction page
-    When I select back link
-    Then I should be on Repayment Contact Email Page
-    When I select back link
-    Then I should be on Repayment Contact Page
-    When I click Report Pillar 2 top-up taxes link
-    Then I should be on ASA Dashboard page

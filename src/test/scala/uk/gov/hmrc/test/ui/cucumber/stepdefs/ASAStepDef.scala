@@ -46,6 +46,4 @@ class ASAStepDef extends BaseStepDef with BrowserDriver {
         Input.sendKeysByCss(value, ASAPillar2InputPage.pillar2IDField)
     }
   }
-
 }
-
