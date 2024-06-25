@@ -18,9 +18,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
-
 import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, RepaymentReasonPage, SearchRegisterPage, UPEAddressPage, RepaymentContactEmailPage, RepaymentContactPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentReasonPage, RepaymentTelephoneInputPage, SearchRegisterPage, UPEAddressPage}
 
 
 
@@ -185,20 +184,27 @@ class PaymentSteps extends CommonFunctions {
   })
 
   And("""^I should see Refund Amount field is pre-populated with (.*)$""") { (amount: String) =>
-        assert(getAttributeOf(RepaymentAmountPage.refundAmountField, "value").equals(amount))
+    assert(getAttributeOf(RepaymentAmountPage.refundAmountField, "value").equals(amount))
+  }
+
+  And("""^I provide Repayment contact (.*) as (.*)$""") { (page: String, Value: String) =>
+    page match {
+      case "name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(Value, RepaymentContactPage.contactNameField)
+        clickByCss(RepaymentContactPage.continue)
+
+      case "email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(Value, RepaymentContactEmailPage.contactEmailField)
+        clickByCss(RepaymentContactEmailPage.continue)
+
+      case "telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(Value, RepaymentTelephoneInputPage.contactTelephone)
+        clickByCss(RepaymentTelephoneInputPage.continue)
     }
-
-  And("""^I provide Repayment contact as (.*)$""")((contactName: String) => {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Input.sendKeysByCss(contactName, RepaymentContactPage.contactNameField)
-    clickByCss(RepaymentContactPage.continue)
-  })
-
-  And("""^I provide Repayment contact email as (.*)$""")((contactEmail: String) => {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Input.sendKeysByCss(contactEmail, RepaymentContactEmailPage.contactEmailField)
-    clickByCss(RepaymentContactEmailPage.continue)
-  })
+  }
 
   And("""^I should see Repayment reason field is pre-populated with (.*)$""") { (reason: String) =>
     assert(getAttributeOf(RepaymentReasonPage.reasonTextField, "value").equals(reason))
