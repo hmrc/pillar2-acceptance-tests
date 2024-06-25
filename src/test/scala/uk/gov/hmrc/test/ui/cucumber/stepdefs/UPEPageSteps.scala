@@ -67,12 +67,12 @@ class UPEPageSteps extends CommonFunctions {
       case "UPE Person/Team name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(UPEContactNamePage.contactName)
-        Input.sendKeysById(name, UPEContactNamePage.contactName)
+        Input.sendKeysById(UPEContactNamePage.contactName,name)
 
       case "UPE Email address" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(UPEContactEmailPage.emailField)
-        Input.sendKeysById(name, UPEContactEmailPage.emailField)
+        Input.sendKeysById(UPEContactEmailPage.emailField, name)
 
       case "Telephone Number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
