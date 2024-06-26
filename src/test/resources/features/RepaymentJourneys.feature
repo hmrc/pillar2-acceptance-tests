@@ -138,7 +138,7 @@ Feature: Repayment Journey
     When I select option Yes and continue to next
     Then I should be on Repayment Telephone Input Page
     When I provide Repayment contact telephone as 789765423
-    Then I should be on under construction page
+    Then I should be on Repayment CYA Page
     When I select back link
     Then I should be on Repayment Telephone Input Page
     When I select back link
@@ -147,6 +147,53 @@ Feature: Repayment Journey
     Then I should be on Repayment Contact Email Page
     When I select back link
     Then I should be on Repayment Contact Page
+    When I click on Continue button
+    And I click on Continue button
+    When I click on Continue button
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Amount
+    When I provide Refund Amount as 1000.00
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Reason
+    When I enter Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Method Page
+    And I select repayment method as UK bank account
+    And I click on Continue button
+    Then I should navigate to under construction page
+    And I select back link
+    When I select repayment method as Non-UK bank account
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Bank Name
+    And I enter Bank Name as HSBC2
+    And I enter Account Name as Test Name2
+    And I enter Swift Code as HBUKGB4C
+    And I enter Iban as GB29NWBK60161331926820
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Contact Name
+    And I provide Repayment contact name as Repayment Contact Name change
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Contact Email
+    When I provide Repayment contact email as email@change.com
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Contact Telephone
+    When I select option No and continue to next
+    Then I should be on Repayment CYA Page
+    And I should see the row 1 value 1000
+    And I should see the row 2 value Test Reason
+    And I should see the row 3 value Non-UK bank account
+    And I should see the row 4 value HSBC2
+    And I should see the row 5 value Test Name2
+    And I should see the row 6 value HBUKGB4C
+    And I should see the row 7 value GB29NWBK60161331926820
+    And I should see the row 8 value Repayment Contact Name change
+    And I should see the row 9 value email@change.com
+    And I should see the row 10 value No
+    And I can see Print this page link
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
@@ -207,7 +254,7 @@ Feature: Repayment Journey
     When I select option Yes and continue to next
     Then I should be on Repayment Telephone Input Page
     When I provide Repayment contact telephone as 789765423
-    Then I should be on under construction page
+    Then I should be on Repayment CYA Page
     When I select back link
     Then I should be on Repayment Telephone Input Page
     When I click Report Pillar 2 top-up taxes link
@@ -220,6 +267,52 @@ Feature: Repayment Journey
     Then I should be on Repayment Contact Email Page
     When I select back link
     Then I should be on Repayment Contact Page
+    When I click on Continue button
+    And I click on Continue button
+    When I click on Continue button
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Amount
+    When I provide Refund Amount as 1000.00
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Reason
+    When I enter Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Method Page
+    And I select repayment method as UK bank account
+    And I click on Continue button
+    Then I should navigate to under construction page
+    And I select back link
+    When I select repayment method as Non-UK bank account
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Bank Name
+    And I enter Bank Name as HSBC2
+    And I enter Account Name as Test Name2
+    And I enter Swift Code as HBUKGB4C
+    And I enter Iban as GB29NWBK60161331926820
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Contact Name
+    And I provide Repayment contact name as Repayment Contact Name change
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Contact Email
+    When I provide Repayment contact email as email@change.com
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Contact Telephone
+    When I select option No and continue to next
+    Then I should be on Repayment CYA Page
+    And I should see the row 1 value 1000
+    And I should see the row 2 value Test Reason
+    And I should see the row 3 value Non-UK bank account
+    And I should see the row 4 value HSBC2
+    And I should see the row 5 value Test Name2
+    And I should see the row 6 value HBUKGB4C
+    And I should see the row 7 value GB29NWBK60161331926820
+    And I should see the row 8 value Repayment Contact Name change
+    And I should see the row 9 value email@change.com
+    And I should see the row 10 value No
+    And I can see Print this page link
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
-

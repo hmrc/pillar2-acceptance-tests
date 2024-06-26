@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentReasonPage, RepaymentTelephoneInputPage, SearchRegisterPage, UPEAddressPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RFMCYAPage, RFMFinalReviewCYAPage, RFMNoIDCYAPage, RepaymentAmountPage, RepaymentCYAPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentReasonPage, RepaymentTelephoneInputPage, SearchRegisterPage, UPEAddressPage}
 
 
 
@@ -216,4 +216,32 @@ class PaymentSteps extends CommonFunctions {
       case "Non-UK bank account" => Find.findByCss("#value_1").isSelected
     }
   }
+
+  When("""^I click change link for Repayment (.*)""") { (link: String) =>
+    link match {
+      case "Amount" =>
+        clickByCss(RepaymentCYAPage.changeRefundAmount)
+      case "Reason" =>
+        clickByCss(RepaymentCYAPage.changeRefundReason)
+      case "Method Page" =>
+        clickByCss(RepaymentCYAPage.changeRepaymentMethod)
+      case "Bank Name" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account Name" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account SWIFT" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account IBAN" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Contact Name" =>
+        clickByCss(RepaymentCYAPage.changeContactName)
+      case "Contact Email" =>
+        clickByCss(RepaymentCYAPage.changeContactEmail)
+      case "Contact Telephone" =>
+        clickByCss(RepaymentCYAPage.changeTelephone)
+      case "Contact Telephone Number" =>
+        clickByCss(RepaymentCYAPage.changeTelephoneNumber)
+    }
+  }
+
   }
