@@ -129,30 +129,6 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactTelephone)
         Input.sendKeysByCss(name, SecondContactInputPage.contactTelephone)
 
-      case "Bank Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.bankNameField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.bankNameField)
-
-      case "Account Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.accountNameField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.accountNameField)
-
-      case "Swift Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.swiftCodeField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.swiftCodeField)
-
-      case "Iban" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.IbanField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.IbanField)
-
-      case "Refund Reason" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
-        Input.sendKeysByCss(name, RepaymentReasonPage.reasonTextField)
     }
   }
 
