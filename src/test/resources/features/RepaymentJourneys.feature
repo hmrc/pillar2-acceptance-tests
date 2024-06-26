@@ -223,7 +223,7 @@ Feature: Repayment Journey
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
-  @zap_accessibility @batch3 
+  @zap_accessibility @batch3
   Scenario: 4 - Agent User navigates to repayment journey pages for UK bank account
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -259,10 +259,36 @@ Feature: Repayment Journey
     And I provide value for Sort Code as 565897
     And I provide value for UK Account number as 45376899
     And I click on Continue button
-    Then I should be on under construction page
+    Then I should be on Repayment Contact Page
     When I select back link
     And I should see the UK Bank Name field is pre-populated with Natwest
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to ASA Dashboard page
+    And I click Sign out link
+
+  @batch3
+  Scenario: 5 - Organisation User navigates to repayment journey pages for UK bank account
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    Then I should navigate to Reason For Refund Page
+    When I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
     And I click on Continue button
-    Then I should be on under construction page
-
-
+    Then I should navigate to Repayment Method Page
+    And I select repayment method as UK bank account
+    And I click on Continue button
+    Then I should navigate to UK Bank Account Payment Page
+    And I provide value for UK Bank Name as Natwest
+    And I provide value for UK Account Name as Smith Ltd
+    And I provide value for Sort Code as 56-58-97
+    And I provide value for UK Account number as 04537689
+    And I click on Continue button
+    Then I should be on Repayment Contact Page
+    When I select back link
+    Then I should navigate to UK Bank Account Payment Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
