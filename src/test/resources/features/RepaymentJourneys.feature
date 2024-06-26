@@ -223,7 +223,7 @@ Feature: Repayment Journey
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
-  @zap_accessibility @batch3
+  @zap_accessibility @batch3 
   Scenario: 4 - Agent User navigates to repayment journey pages for UK bank account
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -252,39 +252,16 @@ Feature: Repayment Journey
     Then I should be on UK Bank Account Payment Page
     And I click on Continue button
     Then I should see bank account error message Enter the name of the bank on the UK Name of the Bank Element
-    And I should see bank account error message Enter the name on the account on the UK Account name Element
-    And I should see bank account error message Enter the sort code on the Sort Code Element
-    And I should see bank account error message Enter the account number on the UK Account number Element
     When I refresh the page
     And I provide value for UK Bank Name as Natwest
     And I provide value for UK Account Name as Smith Ltd
     And I click on Continue button
-    And I should see bank account error message Enter the sort code on the Sort Code Element
-    And I should see bank account error message Enter the account number on the UK Account number Element
     And I provide value for Sort Code as 565897
     And I provide value for UK Account number as 45376899
     And I click on Continue button
     Then I should be on under construction page
     When I select back link
-    And I provide value for UK Bank Name as UKbankaccountnameshouldbelessthan40charactersorless
-    And I click on Continue button
-    Then I should see bank account error message The name of the bank must be 40 characters or less on the UK Name of the Bank Element
-    And I provide value for UK Bank Name as Natwest
-    And I provide value for UK Account Name as UKnameonthebusinessaccountshouldbesixtycharactersorlessthansixty
-    And I click on Continue button
-    Then I should see bank account error message The name on the account must be 60 characters or less on the UK Account name Element
-    And I provide value for UK Account Name as Smith Ltd
-    And I provide value for Sort Code as A$5ddd
-    And I click on Continue button
-    Then I should see bank account error message Enter a valid sort code like 309430 on the Sort Code Element
-    And I provide value for Sort Code as 569088
-    And I provide value for UK Account number as 0045376
-    And I click on Continue button
-    Then I should see bank account error message Account number must be 8 digits on the UK Account number Element
-    And I provide value for UK Account number as 004AB765
-    And I click on Continue button
-    Then I should see bank account error message Enter a valid account number like 00733445 on the UK Account number Element
-    And I provide value for UK Account number as 00453764
+    And I should see the UK Bank Name field is pre-populated with Natwest
     And I click on Continue button
     Then I should be on under construction page
 

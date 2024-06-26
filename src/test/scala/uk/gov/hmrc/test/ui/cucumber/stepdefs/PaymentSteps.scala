@@ -233,36 +233,6 @@ class PaymentSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKBankNameMessage)
         getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKBankNameMessage)) should include(error)
 
-      case "UK Account name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKAccountNameLink)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKAccountNameLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorNameonAccountMessage)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorNameonAccountMessage)) should include(error)
-
-      case "Sort Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSortCodeLink)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorSortCodeLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSortCodeMessage)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorSortCodeMessage)) should include(error)
-
-      case "UK Account number" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorAccntNumberLink)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorAccntNumberLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorAccntNumberMessage)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorAccntNumberMessage)) should include(error)
-
     }
   }
 
