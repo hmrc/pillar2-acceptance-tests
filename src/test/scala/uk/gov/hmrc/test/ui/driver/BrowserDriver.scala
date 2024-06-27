@@ -26,4 +26,5 @@ trait BrowserDriver extends LazyLogging {
   )
 
   implicit def driver: RemoteWebDriver = Driver.instance
+
 }

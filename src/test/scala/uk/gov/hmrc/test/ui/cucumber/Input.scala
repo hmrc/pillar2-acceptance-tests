@@ -16,15 +16,30 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.io.FileHandler
 import org.openqa.selenium.{By, OutputType, TakesScreenshot, WebDriver}
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.cucumber.Find._
+
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
 
 object Input extends BasePage {
+
+
+  val enterData = iterator(sendKeysById) _
+
+
+  def iterator(f: (String, String) => Any)(data: DataTable) = {
+    val row = data.asMaps(classOf[String], classOf[String]).iterator()
+    while (row.hasNext) {
+      val map = row.next()
+      f(map.get("KEY"), map.get("VALUE"))
+    }
+  }
+
 
   def clickById(id: String): Unit = findById(id).click()
 
@@ -41,7 +56,7 @@ object Input extends BasePage {
 
   def clickByXpath(id: String): Unit = findByXpath(id).click()
 
-  def sendKeysById(value: String, id: String): Unit = {
+  def sendKeysById(id: String, value: String): Unit = {
     findById(id)
     findById(id).clear()
     findById(id).sendKeys(value)
