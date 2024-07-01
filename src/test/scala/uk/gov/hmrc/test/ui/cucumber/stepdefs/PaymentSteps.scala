@@ -19,9 +19,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RFMCYAPage, RFMFinalReviewCYAPage, RFMNoIDCYAPage, RepaymentAmountPage, RepaymentCYAPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentReasonPage, RepaymentTelephoneInputPage, SearchRegisterPage, UPEAddressPage}
 
-
+import uk.gov.hmrc.test.ui.pages._
 
 class PaymentSteps extends CommonFunctions {
 
@@ -132,6 +131,62 @@ class PaymentSteps extends CommonFunctions {
     }
   }
 
+  And("""^I provide value for (.*) as (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "Bank Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.bankNameField)
+        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.bankNameField)
+
+      case "Account Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.accountNameField)
+        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.accountNameField)
+
+      case "Swift Code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.swiftCodeField)
+        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.swiftCodeField)
+
+      case "Iban" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.IbanField)
+        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.IbanField)
+
+      case "Refund Reason" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
+        Input.sendKeysByCss(name, RepaymentReasonPage.reasonTextField)
+
+      case "UK Bank Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UKbankName)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UKbankName)
+
+      case "UK Account Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UKaccountName)
+        Input.sendKeysByCss(name,UKBankAccountPaymentPage.UKaccountName)
+
+      case "Sort Code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.sortCode)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.sortCode)
+
+      case "UK Account number" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.accountNumber)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.accountNumber)
+    }
+
+  }
+
+  And("""^I provide Refund Reason as (.*)$""")((refundReason: String) => {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
+    Input.sendKeysByCss(refundReason, RepaymentReasonPage.reasonTextField)
+  })
+
   And("""^I should see bank account error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
     page match {
       case "Name of the Bank" =>
@@ -173,6 +228,16 @@ class PaymentSteps extends CommonFunctions {
 
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorIbanMessage)
         getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorIbanMessage)) should include(error)
+
+      case "UK Name of the Bank" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKBankNameLink)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKBankNameLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKBankNameMessage)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKBankNameMessage)) should include(error)
 
     }
   }
