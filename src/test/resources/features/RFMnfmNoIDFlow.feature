@@ -1,4 +1,4 @@
-@tests1 @batch3
+@tests @batch3
 Feature: RFM CYA - NFM No ID flow
   As a MNE user
   I would like to check my details via NFM No ID journey
