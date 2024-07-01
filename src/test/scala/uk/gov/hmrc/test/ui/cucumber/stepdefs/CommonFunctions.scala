@@ -176,11 +176,16 @@ trait CommonFunctions
       case "RFM journey recovery page"            => RFMJourneyRecoveryPage
       case "RFM incomplete task error page"       => RFMIncompleteErrorPage
       case "Non UK Bank Account Payment Page"     => NonUKBankAccountPaymentPage
+      case "UK Bank Account Payment Page"         => UKBankAccountPaymentPage
       case "Agent Non UK Payment Page"            => AgentNonUKPaymentPage
       case "Repayment Guidance Page"              => RepaymentGuidancePage
       case "Repayment Amount Page"                => RepaymentAmountPage
       case "Agent Repayment Guidance Page"        => AgentRepaymentGuidancePage
       case "Agent Repayment Amount Page"          => AgentRepaymentAmountPage
+      case "Repayment Contact Page"               => RepaymentContactPage
+      case "Repayment Contact Email Page"         => RepaymentContactEmailPage
+      case "Repayment Telephone Page"             => RepaymentTelephonePage
+      case "Repayment Telephone Input Page"       => RepaymentTelephoneInputPage
       case "Reason For Refund Page"               => RepaymentReasonPage
       case "Repayment Method Page"                => RepaymentMethodPage
       case "Agent Repayment Reason Page"          => AgentRepaymentReasonPage

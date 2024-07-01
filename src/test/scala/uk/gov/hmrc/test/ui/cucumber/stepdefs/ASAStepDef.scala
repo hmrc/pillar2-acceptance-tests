@@ -27,6 +27,7 @@ class ASAStepDef extends BaseStepDef with BrowserDriver {
   Given("""^I access Agent (.*) page$""") { (name:String) =>
     name match {
       case "Pillar2 ID input" => Nav.navigateTo(ASAPillar2InputPage.url)
+      case "Repayment contact" => Nav.navigateTo(AgentRepaymentContactPage.url)
     }
   }
 

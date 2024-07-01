@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ASAPillar2InputPage, AuthLoginPage, ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NonUKBankAccountPaymentPage, RepaymentReasonPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
+import uk.gov.hmrc.test.ui.pages.{ASAPillar2InputPage, AuthLoginPage, ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NonUKBankAccountPaymentPage, RepaymentReasonPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UKBankAccountPaymentPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
 
 class UPEPageSteps extends CommonFunctions {
 
@@ -129,30 +129,6 @@ class UPEPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactTelephone)
         Input.sendKeysByCss(name, SecondContactInputPage.contactTelephone)
 
-      case "Bank Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.bankNameField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.bankNameField)
-
-      case "Account Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.accountNameField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.accountNameField)
-
-      case "Swift Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.swiftCodeField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.swiftCodeField)
-
-      case "Iban" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.IbanField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.IbanField)
-
-      case "Refund Reason" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
-        Input.sendKeysByCss(name, RepaymentReasonPage.reasonTextField)
     }
   }
 
@@ -278,6 +254,8 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
       case "PLRID" =>
         assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
+      case "UK Bank Name" =>
+        assert(getAttributeOf(UKBankAccountPaymentPage.UKbankName, "value").equals(name))
     }
   }
 
