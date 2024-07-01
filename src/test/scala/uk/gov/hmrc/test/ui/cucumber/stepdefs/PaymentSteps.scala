@@ -309,4 +309,9 @@ class PaymentSteps extends CommonFunctions {
     }
   }
 
+  And("""^(I navigate from Contact page to CYA page)""") { (negate: String) =>
+    for (i <- 1 to 4) {
+      InitialGuidancePage.clickContinue()
+    }
+  }
   }

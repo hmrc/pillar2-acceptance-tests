@@ -147,10 +147,7 @@ Feature: Repayment Journey
     Then I should be on Repayment Contact Email Page
     When I select back link
     Then I should be on Repayment Contact Page
-    When I click on Continue button
-    And I click on Continue button
-    When I click on Continue button
-    And I click on Continue button
+    When I navigate from Contact page to CYA page
     Then I should be on Repayment CYA Page
     When  I click change link for Repayment Amount
     When I provide Refund Amount as 1000.00
@@ -259,10 +256,7 @@ Feature: Repayment Journey
     Then I should be on Repayment Contact Email Page
     When I select back link
     Then I should be on Repayment Contact Page
-    When I click on Continue button
-    And I click on Continue button
-    When I click on Continue button
-    And I click on Continue button
+    When I navigate from Contact page to CYA page
     Then I should be on Repayment CYA Page
     When  I click change link for Repayment Amount
     When I provide Refund Amount as 1000.00
