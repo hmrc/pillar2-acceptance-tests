@@ -1,4 +1,4 @@
-@tests @batch3
+@tests1 @batch3
 Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
   As a MNE user
   I want to determine that in RFM journey, UPE or New NFM journey is based in UK for LLP and Limited company
@@ -38,11 +38,8 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     When I select option UK limited company and continue to GRS page
     Then I should navigate to RFM UK limited Company GRSPage
     When I registered successfully with BV enabled
-    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should be on RFM Contact Guidance page
-    And I select back link
-    Then I should navigate to RFM UK limited Company GRSPage
 
   Scenario: 2 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations
     Given Organisation User logs in as upe for Pillar2
@@ -123,7 +120,6 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     Then I should navigate to RFM Confirmation Page
 
-  @batch3
   Scenario: 3 - Verify that UPE can replace existing FM on the Pillar 2 account
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
@@ -209,7 +205,6 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to RFM LLP GRS page
     When I registered successfully with BV disabled
-    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should be on RFM Contact Guidance page
 

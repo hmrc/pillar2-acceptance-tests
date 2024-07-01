@@ -1,4 +1,4 @@
-@tests @batch3
+@tests1 @batch3
 Feature: RFM CYA - NFM No ID flow
   As a MNE user
   I would like to check my details via NFM No ID journey
@@ -175,6 +175,9 @@ Feature: RFM CYA - NFM No ID flow
     Then I should navigate to RFM Confirmation Page
     And I should see report and manage your group's Pillar 2 top-up taxes link
     And I can see Print this page link
-    When I click report and manage your group's Pillar 2 top-up taxes link
+    When I click the browser back button
+    Then I should navigate to RFM No Return Back Error Page
+    And I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
+
 

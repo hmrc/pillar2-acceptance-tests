@@ -20,6 +20,7 @@ import org.openqa.selenium.io.FileHandler
 import org.openqa.selenium.{By, OutputType, TakesScreenshot, WebDriver}
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.cucumber.Find._
+
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -80,6 +81,7 @@ object Input extends BasePage {
       // scenario.attach(byteFile, "image/png", "print_page")
     }
   }
+
 
   def getTextOf(by: By) =
     driver.findElement(by).getText
