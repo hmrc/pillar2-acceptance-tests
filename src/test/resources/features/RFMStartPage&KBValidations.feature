@@ -4,52 +4,7 @@ Feature: RFM Start page
   I want to access start page of Replace Filing Member(RFM) journey
 
   @zap_accessibility @batch3
-  Scenario: 1 - Verify RFM start page and validations
-    Given I clear the cache
-    Given Organisation User logs in as upe for Pillar2
-    And I access RFM start page
-    Then I should be on RFM start page
-    And The caption must be Replace filing member
-    And The Heading should be Replace the filing member for a Pillar 2 top-up taxes account
-    And I should see 4 sections on RFM start page
-    And I should see the section 1 as Tell HMRC when you have replaced your filing member
-    And I should see the section 3 as Obligations as the filing member
-    And I should see the section 4 as What you will need
-    And I should see register to report Pillar 2 top-up taxes link
-    And I click on Continue button
-    Then I should be on RFM enter pillar2 id page
-
-  @zap_accessibility @batch3
-  Scenario: 2 - Verify RFM enter pillar2 id page and error validations
-    Given Organisation User logs in as upe for Pillar2
-    And I access RFM start page
-    Then I should be on RFM start page
-    And I click on Continue button
-    Then I should be on RFM enter pillar2 id page
-    And The caption must be Replace filing member
-    And The Heading should be Enter the group’s Pillar 2 top-up taxes ID
-    And The hint text should be This is 15 characters, for example, XMPLR0123456789. The current filing member can find it within their Pillar 2 top-up taxes account.
-    When I select back link
-    Then I should be on RFM start page
-    And I click on Continue button
-    Then I should be on RFM enter pillar2 id page
-    And I click on Continue button
-    Then I should see an error message Enter the group’s Pillar 2 top-up taxes ID on the RFM enter pillar2 id Page
-    When I provide RFM pillar2 id as AXMPLR0123456785
-    And I click on Continue button
-    Then I should see an error message Pillar 2 top-up taxes ID must be 15 characters on the RFM enter pillar2 id Page
-    When I provide RFM pillar2 id as a0000000909090
-    And I click on Continue button
-    Then I should see an error message Pillar 2 top-up taxes ID must be 15 characters on the RFM enter pillar2 id Page
-    When I provide RFM pillar2 id as 0MPLR0123456789
-    And I click on Continue button
-    Then I should see an error message Enter a Pillar 2 top-up taxes ID in the correct format on the RFM enter pillar2 id Page
-    When I provide RFM pillar2 id as XMplr0123456789
-    And I click on Continue button
-    When I click Sign out link
-
-  @zap_accessibility @batch3
-  Scenario: 3 - Verify Individual RFM KB page
+  Scenario: 1 - Verify Individual RFM KB page
     Given I access RFM start page
     Then I should be on RFM start page
     And I click on Continue button
@@ -71,7 +26,7 @@ Feature: RFM Start page
     Then I should be on auth-login page
 
   @zap_accessibility @batch3
-  Scenario: 4 - Verify Agent RFM KB page
+  Scenario: 2 - Verify Agent RFM KB page
     Given Agent User logs in with rfm URL to Pillar2
     Then I should be on Agent RFM KB Page
     And The Heading should be Sorry, you’re unable to use this service
@@ -86,7 +41,7 @@ Feature: RFM Start page
     Then I should be on auth-login page
 
   @zap_accessibility @batch3
-  Scenario: 4 - Verify Organisation Assistant User RFM KB page
+  Scenario: 3 - Verify Organisation Assistant User RFM KB page
     Given Assistant User logs in with rfm URL to Pillar2
     Then I should be on Assistant User RFM KB Page
     And The Heading should be Sorry, you’re unable to use this service
@@ -100,7 +55,7 @@ Feature: RFM Start page
     Then I should be on auth-login page
 
   @zap_accessibility @batch3
-  Scenario: 5 - Verify already enrolled Organisation User KB page
+  Scenario: 4 - Verify already enrolled Organisation User KB page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 with rfm URL to Pillar2 service
     Then I should be on Duplicate RFM KB Page
     And The Heading should be You cannot replace the current filing member for this group
@@ -113,23 +68,36 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility @batch3
-  Scenario: 6 - Verify RFM registration date page and validations, when date is not provided
-    Given Organisation User logs in with rfm URL to Pillar2
+  @batch2
+  Scenario: 5 - Verify RFM start page and error validations on Enter pillar2 ID and Registration date page
+    Given I clear the cache
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And The caption must be Replace filing member
+    And The Heading should be Replace the filing member for a Pillar 2 top-up taxes account
+    And I should see 4 sections on RFM start page
+    And I should see the section 1 as Tell HMRC when you have replaced your filing member
+    And I should see the section 3 as Obligations as the filing member
+    And I should see the section 4 as What you will need
+    And I should see register to report Pillar 2 top-up taxes link
+    And I click on Continue button
     Then I should be on RFM enter pillar2 id page
-    When I provide RFM pillar2 id as XMPLR0123456789
+    And I click on Continue button
+    Then I should see an error message Enter the group’s Pillar 2 top-up taxes ID on the RFM enter pillar2 id Page
+    When I provide RFM pillar2 id as AXMPLR0123456785
+    And I click on Continue button
+    Then I should see an error message Pillar 2 top-up taxes ID must be 15 characters on the RFM enter pillar2 id Page
+    When I provide RFM pillar2 id as a0000000909090
+    And I click on Continue button
+    Then I should see an error message Pillar 2 top-up taxes ID must be 15 characters on the RFM enter pillar2 id Page
+    When I provide RFM pillar2 id as 0MPLR0123456789
+    And I click on Continue button
+    Then I should see an error message Enter a Pillar 2 top-up taxes ID in the correct format on the RFM enter pillar2 id Page
+    When I provide RFM pillar2 id as XMplr0123456789
     And I click on Continue button
     Then I should be on RFM Registration Date Page
     And I click on Continue button
     Then I should see an error message Enter the registration date on the RFM Registration Date Page
-
-  @batch2
-  Scenario: 7 - Verify RFM registration date page error validations, when I enter incorrect date
-    Given Organisation User logs in with rfm URL to Pillar2
-    Then I should be on RFM enter pillar2 id page
-    When I provide RFM pillar2 id as XMPLR0123456789
-    And I click on Continue button
-    Then I should be on RFM Registration Date Page
     When Registration Day is entered as 15
     And I click on Continue button
     Then I should see an error message Registration date must include a month and year on the RFM Registration Date Page

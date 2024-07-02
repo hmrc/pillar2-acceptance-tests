@@ -27,8 +27,6 @@ object RFMNewNFMContactNamePage extends PageObject {
   val hintText              = ".govuk-hint"
 
   val errorMessage          = ".govuk-error-message"
-
-
   val errorLink             = "[href*='#value']"
   val errorSummary          = ".govuk-error-summary__list"
   val nameField             = "#value"
