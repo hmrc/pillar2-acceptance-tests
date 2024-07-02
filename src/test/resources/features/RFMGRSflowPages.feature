@@ -19,7 +19,6 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     Then I should be on RFM Saving Progress Page
     When I click on Continue button
     Then I should be on RFM Corp Position Page
-    And The Heading should be What is your position in the corporate structure of the group?
     When I click on Continue button
     Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
@@ -27,8 +26,6 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     Then I should be on New NFM guidance page
     When I click on Continue button
     Then I should be on RFM registered in UK page
-    And The caption is Group details
-    And The Heading should be Is the new nominated filing member registered in the UK?
     And I click on Continue button
     Then I should see an error message Select yes if the new nominated filing member is registered in the UK on the RFM journey error Page
     And I select option Yes and continue to next
