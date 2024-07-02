@@ -19,9 +19,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentReasonPage, RepaymentTelephoneInputPage, SearchRegisterPage, UKBankAccountPaymentPage, UPEAddressPage}
 
-
+import uk.gov.hmrc.test.ui.pages._
 
 class PaymentSteps extends CommonFunctions {
 
@@ -181,6 +180,13 @@ class PaymentSteps extends CommonFunctions {
     }
 
   }
+
+  And("""^I provide Refund Reason as (.*)$""")((refundReason: String) => {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
+    Input.sendKeysByCss(refundReason, RepaymentReasonPage.reasonTextField)
+  })
+
   And("""^I should see bank account error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
     page match {
       case "Name of the Bank" =>
@@ -273,6 +279,39 @@ class PaymentSteps extends CommonFunctions {
     accountType match {
       case "UK bank account" => Find.findByCss("#value_0").isSelected
       case "Non-UK bank account" => Find.findByCss("#value_1").isSelected
+    }
+  }
+
+  When("""^I click change link for Repayment (.*)""") { (link: String) =>
+    link match {
+      case "Amount" =>
+        clickByCss(RepaymentCYAPage.changeRefundAmount)
+      case "Reason" =>
+        clickByCss(RepaymentCYAPage.changeRefundReason)
+      case "Method Page" =>
+        clickByCss(RepaymentCYAPage.changeRepaymentMethod)
+      case "Bank Name" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account Name" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account SWIFT" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account IBAN" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Contact Name" =>
+        clickByCss(RepaymentCYAPage.changeContactName)
+      case "Contact Email" =>
+        clickByCss(RepaymentCYAPage.changeContactEmail)
+      case "Contact Telephone" =>
+        clickByCss(RepaymentCYAPage.changeTelephone)
+      case "Contact Telephone Number" =>
+        clickByCss(RepaymentCYAPage.changeTelephoneNumber)
+    }
+  }
+
+  And("""^(I navigate from Contact page to CYA page)""") { (negate: String) =>
+    for (i <- 1 to 4) {
+      InitialGuidancePage.clickContinue()
     }
   }
   }
