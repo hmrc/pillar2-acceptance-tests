@@ -265,7 +265,7 @@ Feature: Repayment Journey
     And I provide Refund Reason as Test Reason
     And I click on Continue button
     Then I should be on Repayment CYA Page
-    When  I click change link for Repayment Bank Name
+    When I click change link for Repayment Bank Name
     And I provide value for Bank Name as HSBC2
     And I provide value for Account Name as Test Name2
     And I provide value for Swift Code as HBUKGB4C
@@ -327,13 +327,33 @@ Feature: Repayment Journey
     When I refresh the page
     And I provide value for UK Bank Name as Natwest
     And I provide value for UK Account Name as Smith Ltd
-    And I click on Continue button
     And I provide value for Sort Code as 565897
     And I provide value for UK Account number as 45376899
     And I click on Continue button
     Then I should be on Repayment Contact Page
     When I select back link
     And I should see the UK Bank Name field is pre-populated with Natwest
+    And I click on Continue button
+    And I provide Repayment contact name as Repayment Contact Name
+    When I provide Repayment contact email as repayment@email.com
+    When I select option Yes and continue to next
+    When I provide Repayment contact telephone as 789765423
+    Then I should be on Repayment CYA Page
+    And I should see the row 3 value UK bank account
+    And I should see the row 4 value Natwest
+    And I should see the row 5 value Smith Ltd
+    And I should see the row 6 value 565897
+    And I should see the row 7 value 45376899
+    When I click change link for Repayment UK Bank Name
+    And I provide value for UK Bank Name as Natwest Change
+    And I provide value for UK Account Name as Smith Ltd Change
+    And I provide value for Sort Code as 56-58-55
+    And I provide value for UK Account number as 04537555
+    And I click on Continue button
+    And I should see the row 4 value Natwest Change
+    And I should see the row 5 value Smith Ltd Change
+    And I should see the row 6 value 565855
+    And I should see the row 7 value 04537555
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to ASA Dashboard page
     And I click Sign out link
@@ -362,5 +382,26 @@ Feature: Repayment Journey
     Then I should be on Repayment Contact Page
     When I select back link
     Then I should navigate to UK Bank Account Payment Page
+    And I click on Continue button
+    And I provide Repayment contact name as Repayment Contact Name
+    When I provide Repayment contact email as repayment@email.com
+    When I select option Yes and continue to next
+    When I provide Repayment contact telephone as 789765423
+    Then I should be on Repayment CYA Page
+    And I should see the row 3 value UK bank account
+    And I should see the row 4 value Natwest
+    And I should see the row 5 value Smith Ltd
+    And I should see the row 6 value 565897
+    And I should see the row 7 value 04537689
+    When I click change link for Repayment UK Bank Name
+    And I provide value for UK Bank Name as Natwest Change
+    And I provide value for UK Account Name as Smith Ltd Change
+    And I provide value for Sort Code as 56-58-55
+    And I provide value for UK Account number as 04537999
+    And I click on Continue button
+    And I should see the row 4 value Natwest Change
+    And I should see the row 5 value Smith Ltd Change
+    And I should see the row 6 value 565855
+    And I should see the row 7 value 04537999
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
