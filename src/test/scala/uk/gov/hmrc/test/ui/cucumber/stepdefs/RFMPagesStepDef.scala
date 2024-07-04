@@ -302,4 +302,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         assert(driver.findElement(By.id(RFMRegistrationDatePage.regYear)).getAttribute("value").isEmpty())
     }
   }
+
+  Then("""^I navigate back to RFM CYA Page from GRS Page""") { () =>
+    for (i <- 1 to 5) {
+      clickByCss(BusinessActivityEQPage.backLink)
+    }
+  }
 }
