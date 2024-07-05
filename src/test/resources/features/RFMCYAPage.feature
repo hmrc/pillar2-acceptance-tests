@@ -45,6 +45,7 @@ Feature: RFM check your answers page
     Then I should be on RFM CYA Page
     And I click on Continue button
     Then I should navigate to RFM No record Match Error Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click go back to try again using different details. link
     Then I should be on RFM enter pillar2 id page
     And I provide RFM pillar2 id as XEPLR0123456222
@@ -427,6 +428,7 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Confirmation Page
     When I click the browser back button
     Then I should navigate to RFM No Return Back Error Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
@@ -478,6 +480,7 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
     Then I should navigate to Amend API error Page for RFM
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
     Then I should navigate to RFM Final Review Page
 
@@ -537,6 +540,7 @@ Feature: RFM check your answers page
     When I select back link
     And I click on Continue button
     Then I should navigate to RFM incomplete task error page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I click replace the filing member for a Pillar 2 top-up taxes account to try again link
     Then I should be on RFM Final Review Page
 
