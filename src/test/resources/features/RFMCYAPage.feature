@@ -60,48 +60,64 @@ Feature: RFM check your answers page
     Then I should be on RFM CYA Page
     And I click Sign out link
 
-  @batch3
+  @batch3 @tests1
   Scenario: 3 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click on Continue button
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When Registration Day is entered as 31
     When Registration Month is entered as 1
     And Registration Year is entered as 2024
     And I click on Continue button
     Then I should be on RFM CYA Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I click on Save&Continue button
     Then I should be on RFM Saving Progress Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I click on Continue button
     And I access RFM corporate position page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I select corp position as NFM
     And I click on Continue button
     Then I should be on New NFM guidance page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I click on Continue button
     Then I should be on RFM registered in UK page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I select option Yes and continue to next
     Then I should be on RFM UK based entity type page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I select option UK limited company and continue to GRS page
     And I click on Continue button
     And I click on Save&Continue button
     Then I should be on RFM Contact Guidance page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click on Continue button
     Then I should navigate to RFM Contact Detail Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I provide RFM contact name as RFM test contact
     And I click on Continue button
     Then I should navigate to RFM Contact Email Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I provide RFM contact email as rfm@email.com
     And I click on Continue button
     Then I should navigate to RFM Contact Number Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I select option Yes and continue to next
     Then I should navigate to RFM Contact Input Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I provide RFM contact number as 01632960001
     And I click on Continue button
     Then I should navigate to RFM Second Contact Question Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I select option No and continue to next
     Then I should be on RFM Contact Address Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
     And I enter Postal Code as EH5 5WY
@@ -109,13 +125,18 @@ Feature: RFM check your answers page
     And I click on Country selected
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When  I click change link for RFM Change Second Contact Preference
     And I select option Yes and continue to next
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I provide RFM contact name as RFM second test contact
     And I click on Continue button
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I provide RFM contact email as rfmsecondcontact@email.com
     And I click on Continue button
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I select option Yes and continue to next
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     When I provide RFM second contact number as 09872960001
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
@@ -125,14 +146,17 @@ Feature: RFM check your answers page
     And I should see the row 12 value Yes
     And I should see the row 13 value 09872960001
     When I click change link for RFM New NFM Name
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I provide RFM contact name as RFM test contact change
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I should see the row 5 value RFM test contact change
     When I click change link for RFM New RFM CYA Change Contact preference
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I select option No and continue to next
     Then I should navigate to RFM Final Review Page
     When I click change link for RFM Change Address
+    Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I enter Address Line 1 as Address Line 1 CYA change
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
