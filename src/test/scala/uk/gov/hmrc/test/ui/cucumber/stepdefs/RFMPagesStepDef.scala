@@ -308,4 +308,8 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       clickByCss(BusinessActivityEQPage.backLink)
     }
   }
+
+  Then("""^I should see (.*) text is not clickable""") { (linkText: String) =>
+    Wait.waitForCSSElementNotToPresent("[href='report-pillar2-top-up-taxes/banner']")
+  }
 }
