@@ -61,7 +61,7 @@ Feature: RFM check your answers page
     Then I should be on RFM CYA Page
     And I click Sign out link
 
-  @batch3 @tests1
+  @batch3
   Scenario: 3 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
