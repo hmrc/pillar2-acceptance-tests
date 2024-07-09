@@ -306,6 +306,10 @@ class PaymentSteps extends CommonFunctions {
         clickByCss(RepaymentCYAPage.changeTelephone)
       case "Contact Telephone Number" =>
         clickByCss(RepaymentCYAPage.changeTelephoneNumber)
+      case "UK Bank Name" =>
+        clickByCss(RepaymentCYAPage.changeUKBankDetails)
+      case "UK Bank Method" =>
+        clickByCss(RepaymentCYAPage.changeBankAccountType)
     }
   }
 

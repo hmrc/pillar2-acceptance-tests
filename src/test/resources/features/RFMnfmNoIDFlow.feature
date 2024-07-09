@@ -180,4 +180,227 @@ Feature: RFM CYA - NFM No ID flow
     And I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
+  @batch2 @PIL-991
+  Scenario: 3 - Validating RFM Check your answers page navigations
+    Given Organisation User logs in with rfm URL to Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I should navigate to RFM Corp Position Page
+    When I select corp position as UPE
+    And I click on Continue button
+    Then I should be on RFM Contact Guidance page
+    And I click on Continue button
+    Then I should navigate to RFM Contact Detail Page
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    Then I should navigate to RFM Contact Number Page
+    When I select option No and continue to next
+    Then I should navigate to RFM Second Contact Question Page
+    And I select option No and continue to next
+    Then I should be on RFM Contact Address Page
+    When I enter Address Line 1 as RFM Address Line 1
+    And I enter City as RFM City
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    When I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    When I click change link for RFM Corporate Position
+    And I select corp position as NFM
+    And I click on Continue button
+    Then I should be on New NFM guidance page
+    And I click on Continue button
+    Then I should be on RFM registered in UK page
+    When I select option Yes and continue to next
+    Then I should be on RFM UK based entity type page
+    When I select option UK limited company and continue to GRS page
+    Then I should navigate to RFM UK limited Company GRSPage
+    When I navigate back to RFM CYA Page from GRS Page
+    Then I should navigate to RFM Final Review Page
+    When I click change link for RFM Corporate Position
+    And I click on Continue button
+    Then I should be on New NFM guidance page
+    And I click on Continue button
+    Then I should be on RFM registered in UK page
+    And I click on Continue button
+    Then I should be on RFM UK based entity type page
+
+  @batch3
+  Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
+    Given Organisation User logs in with rfm URL to Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0012345674
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    And I access RFM corporate position page
+    When I select corp position as UPE
+    And I click on Continue button
+    Then I should be on RFM Contact Guidance page
+    And I click on Continue button
+    Then I should navigate to RFM Contact Detail Page
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    Then I should navigate to RFM Contact Number Page
+    When I select option No and continue to next
+    Then I should navigate to RFM Second Contact Question Page
+    And I select option No and continue to next
+    Then I should be on RFM Contact Address Page
+    When I enter Address Line 1 as RFM Address Line 1
+    And I enter City as RFM City
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    When I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I should see row 1 key Position in the group’s corporate structure
+    And I should see row 1 value Ultimate parent entity (UPE)
+    When I click change link for RFM Corporate Position
+    When I select corp position as NFM
+    And I click on Continue button
+    Then I should be on New NFM guidance page
+    And I click on Continue button
+    Then I should be on RFM registered in UK page
+    When I select option No and continue to next
+    And I click on Continue button
+    Then I should navigate to RFM New NFM Contact Name Page
+    When I provide RFM New NFM Name as Test CYA
+    And I click on Continue button
+    Then I should navigate to RFM New NFM Contact Address Page
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should be on RFM No ID CYA Page
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    When I select back link
+    Then I should be on RFM No ID CYA Page
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I should see row 1 value New nominated filing member
+    And I should see row 2 value Test CYA
+    And I should see row 3 value Address Line 1 CYA
+    And I should see row 3 value City CYA
+    And I should see row 3 value EH55WY
+    And I should see row 3 value Australia
+    When I click change link for RFM Input Name
+    When I provide RFM New NFM Name as Test Change
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    When I click change link for RFM Input Address
+    And I enter Address Line 1 as Address Line 1 Change
+    And I enter City as City Change
+    And I enter Postal Code as EH75WK
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I should see row 3 value Address Line 1 Change
+    And I should see row 3 value City Change
+    And I should see row 3 value EH75WK
+    When I click change link for RFM Corporate Position
+    When I select corp position as UPE
+    And I click on Continue button
+    And I should see row 1 value Ultimate parent entity (UPE)
+    When I click change link for RFM Corporate Position
+    When I select corp position as NFM
+    And I click on Continue button
+    Then I should be on New NFM guidance page
+    And I click on Continue button
+    When I select option Yes and continue to next
+    Then I should be on RFM UK based entity type page
+    When I select option UK limited company and continue to GRS page
+    Then I should navigate to RFM UK limited Company GRSPage
+    When I registered successfully with BV enabled
+    And I click on Save&Continue button
+    Then I should be on RFM Contact Guidance page
+    And I click on Continue button
+    Then I should navigate to RFM Contact Detail Page
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    And I click on Continue button
+    Then I should navigate to RFM Contact Number Page
+    And I click on Continue button
+    Then I should navigate to RFM Second Contact Question Page
+    And I click on Continue button
+    Then I should be on RFM Contact Address Page
+    When I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I should see row 1 value New nominated filing member
+    And I should see row 2 value Test Example Company Name
+    And I should see row 3 value 76543210
+    And I should see row 4 value 1234567890
+
+  @batch3
+  Scenario: 5 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0123456789
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    Then I should be on RFM Saving Progress Page
+    When I click on Continue button
+    And I access RFM corporate position page
+    When I select corp position as NFM
+    And I click on Continue button
+    When I click on Continue button
+    And I select option No and continue to next
+    When I provide RFM New NFM Name as Test CYA
+    And I click on Continue button
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    And I click on Continue button
+    And I click on Continue button
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    Then I should navigate to RFM Contact Email Page
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    And I select option No and continue to next
+    And I select option No and continue to next
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I click on Continue button
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
 
