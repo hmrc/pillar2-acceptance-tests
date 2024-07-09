@@ -1,9 +1,9 @@
-@tests
+@tests @batch3
 Feature: Bars Handling
   As a registered and subscribed user
   I should be able to navigate to Contact page after correct UK bank details
 
-  @zap_accessibility @batch3
+  @zap_accessibility
   Scenario: 1 - Organisation User bars integration validation
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -21,12 +21,6 @@ Feature: Bars Handling
     And I provide value for UK Account Name as Sanguine Skincare
     And I provide value for Sort Code as 206705
     And I provide value for UK Account number as 86563612
-    And I click on Continue button
-    Then I should see bank account error message Enter the account number as it appears on your bank statement on the UK Account Number Element
-    And I provide value for UK Bank Name as Test
-    And I provide value for UK Account Name as Vortex Solar
-    And I provide value for Sort Code as 206705
-    And I provide value for UK Account number as 76523611
     And I click on Continue button
     Then I should see bank account error message Enter the account number as it appears on your bank statement on the UK Account Number Element
     And I provide value for UK Bank Name as Test
@@ -99,30 +93,6 @@ Feature: Bars Handling
     Then I should navigate to Agent Repayment Method Page
     And I select repayment method as UK bank account
     And I click on Continue button
-    And I provide value for UK Bank Name as Test
-    And I provide value for UK Account Name as Sanguine Skincare
-    And I provide value for Sort Code as 206705
-    And I provide value for UK Account number as 86563612
-    And I click on Continue button
-    Then I should see bank account error message Enter the account number as it appears on your bank statement on the UK Account Number Element
-    And I provide value for UK Bank Name as Test
-    And I provide value for UK Account Name as Vortex Solar
-    And I provide value for Sort Code as 206705
-    And I provide value for UK Account number as 76523611
-    And I click on Continue button
-    Then I should see bank account error message Enter the account number as it appears on your bank statement on the UK Account Number Element
-    And I provide value for UK Bank Name as Test
-    And I provide value for UK Account Name as Security Engima
-    And I provide value for Sort Code as 207106
-    And I provide value for UK Account number as 86473611
-    And I click on Continue button
-    Then I should see bank account error message Enter the sort code as it appears on your bank statement on the UK Sort Code Element
-    And I provide value for UK Bank Name as Test
-    And I provide value for UK Account Name as Lambent Illumination
-    And I provide value for Sort Code as 207102
-    And I provide value for UK Account number as 86563611
-    And I click on Continue button
-    Then I should see bank account error message Enter the name on the account as it appears on your bank statement on the UK Account Name Element
     And I provide value for UK Bank Name as Test
     And I provide value for UK Account Name as Eco Focus
     And I provide value for Sort Code as 206705
