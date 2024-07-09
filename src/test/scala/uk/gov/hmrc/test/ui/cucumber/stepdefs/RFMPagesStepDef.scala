@@ -49,10 +49,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
-  Given("""^I access Repayment contact page$""") { () =>
-      Nav.navigateTo(RepaymentContactPage.url)
-  }
-
   And("""^I should see RFM field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>

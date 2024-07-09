@@ -35,10 +35,10 @@ object UKBankAccountPaymentPage extends PageObject {
   val sortCode                = "#sortCode"
   val accountNumber           = "#accountNumber"
   val continue                = ".govuk-button"
+  val errorUKBankNameLink     = "[href='#bankName']"
+  val errorUKAccountNameLink  = "[href='#accountHolderName']"
+  val errorUKAccountLink      = "[href='#accountNumber']"
+  val errorUKSortCodeLink     = "[href='#sortCode']"
 
-  val errorUKBankNameLink           = "[href='#bankName']"
-  val errorUKBankNameMessage        = "#bankName-error"
-
-  def clickContinue()  = findByCss(continue).click()
 }
 

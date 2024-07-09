@@ -194,6 +194,10 @@ trait CommonFunctions
       case "Agent Repayment Method Page"          => AgentRepaymentMethodPage
       case "Repayment CYA Page"                   => RepaymentCYAPage
       case "Repayment Method Page"                => RepaymentCYAPage
+      case "Repayment Could Not Confirm Error Page" => RepaymentCouldNotConfirmErrorPage
+      case "Repayment Bank Details Error Page"    => RepaymentBankDetailsErrorPage
+      case "Repayment Bars Error Page"            => RepaymentBarsErrorPage
+      case "Repayment Partial Name Error Page"    => RepaymentPartialNameErrorPage
     }
   }
 }
