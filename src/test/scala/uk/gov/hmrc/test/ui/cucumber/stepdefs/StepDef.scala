@@ -202,10 +202,6 @@ class StepDef extends BaseStepDef with BrowserDriver{
     Input.clickByCss(ErrorPlaceHolderPage.startOverCTA)
   }
 
-  And("""^I access Non UK payment page$""") { () =>
-    navigateTo(NonUKBankAccountPaymentPage.url)
-  }
-
   And("""^I access reason for refund page$""") { () =>
     navigateTo(RepaymentReasonPage.url)
   }

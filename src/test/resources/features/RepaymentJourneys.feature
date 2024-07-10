@@ -300,14 +300,13 @@ Feature: Repayment Journey
     When I select repayment method as UK bank account
     And I click on Continue button
     And I provide value for UK Bank Name as Natwest
-    And I provide value for UK Account Name as Smith Ltd
-    And I provide value for Sort Code as 565897
-    And I provide value for UK Account number as 45376899
+    And I provide value for UK Account Name as Epic Adventure Inc
+    And I provide value for Sort Code as 206705
+    And I provide value for UK Account number as 86473611
     And I click on Continue button
-    Then I should be on Repayment CYA Page
     And I can see Print this page link
     And I should see the row 4 value Natwest
-    And I should see the row 7 value 45376899
+    And I should see the row 7 value 86473611
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
@@ -339,12 +338,12 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should be on UK Bank Account Payment Page
     And I click on Continue button
-    Then I should see bank account error message Enter the name of the bank on the UK Name of the Bank Element
+    Then I should see bank account error message Enter the name of the bank on the UK Bank Name Element
     When I refresh the page
     And I provide value for UK Bank Name as Natwest
-    And I provide value for UK Account Name as Smith Ltd
-    And I provide value for Sort Code as 565897
-    And I provide value for UK Account number as 45376899
+    And I provide value for UK Account Name as Epic Adventure Inc
+    And I provide value for Sort Code as 206705
+    And I provide value for UK Account number as 86473611
     And I click on Continue button
     Then I should be on Repayment Contact Page
     When I select back link
@@ -357,19 +356,19 @@ Feature: Repayment Journey
     Then I should be on Repayment CYA Page
     And I should see the row 3 value UK bank account
     And I should see the row 4 value Natwest
-    And I should see the row 5 value Smith Ltd
-    And I should see the row 6 value 565897
-    And I should see the row 7 value 45376899
+    And I should see the row 5 value Epic Adventure Inc
+    And I should see the row 6 value 206705
+    And I should see the row 7 value 86473611
     When I click change link for Repayment UK Bank Name
     And I provide value for UK Bank Name as Natwest Change
-    And I provide value for UK Account Name as Smith Ltd Change
-    And I provide value for Sort Code as 56-58-55
-    And I provide value for UK Account number as 04537555
+    And I provide value for UK Account Name as O'Connor Construction
+    And I provide value for Sort Code as 609593
+    And I provide value for UK Account number as 96863604
     And I click on Continue button
     And I should see the row 4 value Natwest Change
-    And I should see the row 5 value Smith Ltd Change
-    And I should see the row 6 value 565855
-    And I should see the row 7 value 04537555
+    And I should see the row 5 value O'Connor Construction
+    And I should see the row 6 value 609593
+    And I should see the row 7 value 96863604
     When I click change link for Repayment UK Bank Method
     And I click on Continue button
     Then I should be on Repayment CYA Page
@@ -395,9 +394,9 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should navigate to UK Bank Account Payment Page
     And I provide value for UK Bank Name as Natwest
-    And I provide value for UK Account Name as Smith Ltd
-    And I provide value for Sort Code as 56-58-97
-    And I provide value for UK Account number as 04537689
+    And I provide value for UK Account Name as Epic Adventure Inc
+    And I provide value for Sort Code as 206705
+    And I provide value for UK Account number as 86473611
     And I click on Continue button
     Then I should be on Repayment Contact Page
     When I select back link
@@ -410,19 +409,19 @@ Feature: Repayment Journey
     Then I should be on Repayment CYA Page
     And I should see the row 3 value UK bank account
     And I should see the row 4 value Natwest
-    And I should see the row 5 value Smith Ltd
-    And I should see the row 6 value 565897
-    And I should see the row 7 value 04537689
+    And I should see the row 5 value Epic Adventure Inc
+    And I should see the row 6 value 206705
+    And I should see the row 7 value 86473611
     When I click change link for Repayment UK Bank Name
     And I provide value for UK Bank Name as Natwest Change
-    And I provide value for UK Account Name as Smith Ltd Change
-    And I provide value for Sort Code as 56-58-55
-    And I provide value for UK Account number as 04537999
+    And I provide value for UK Account Name as O'Connor Construction
+    And I provide value for Sort Code as 609593
+    And I provide value for UK Account number as 96863604
     And I click on Continue button
     And I should see the row 4 value Natwest Change
-    And I should see the row 5 value Smith Ltd Change
-    And I should see the row 6 value 565855
-    And I should see the row 7 value 04537999
+    And I should see the row 5 value O'Connor Construction
+    And I should see the row 6 value 609593
+    And I should see the row 7 value 96863604
     When I click change link for Repayment UK Bank Method
     When I select repayment method as Non-UK bank account
     And I click on Continue button
