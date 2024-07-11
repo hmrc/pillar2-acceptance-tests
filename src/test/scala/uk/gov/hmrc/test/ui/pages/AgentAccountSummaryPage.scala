@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentAccountSummaryPage extends PageObject {
-  val url: String        = s"$rootUrl"+"manage-account/account-details/summary?clientPillar2Id=XMPLR0012345674"
+  val url: String        = s"$rootUrl"+"manage-account/account-details/summary"
 
   val caption            = ".govuk-caption-l"
   val continue           = ".govuk-button"

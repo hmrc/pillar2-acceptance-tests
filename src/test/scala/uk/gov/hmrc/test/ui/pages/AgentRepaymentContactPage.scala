@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentRepaymentContactPage extends PageObject {
 
-  val url: String             = s"$rootUrl" + "repayment/contact-details/input-name?clientPillar2Id=XMPLR0012345674"
+  val url: String             = s"$rootUrl" + "repayment/contact-details/input-name"
   val header: String          = "h1.govuk-heading-l"
   val backLink                = ".govuk-back-link"
 

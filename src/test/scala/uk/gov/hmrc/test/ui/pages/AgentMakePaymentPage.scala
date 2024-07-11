@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentMakePaymentPage extends PageObject {
 
-  val url: String             = s"$rootUrl" + "payment/pay?clientPillar2Id=XMPLR0012345674"
+  val url: String             = s"$rootUrl" + "payment/pay"
   val header: String          = "h1.govuk-heading-l"
   val backLink                = ".govuk-back-link"
   val tableCaption            = ".govuk-table__caption"
