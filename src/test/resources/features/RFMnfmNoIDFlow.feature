@@ -1,12 +1,19 @@
-@tests @batch3
+@tests
 Feature: RFM CYA - NFM No ID flow
   As a MNE user
   I would like to check my details via NFM No ID journey
 
-   @zap_accessibility
+   @zap_accessibility @batch3
   Scenario: 1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated
     Given Organisation User logs in with rfm URL to Pillar2
     And I access RFM start page
+    And The caption must be Replace filing member
+    And The Heading should be Replace the filing member for a Pillar 2 top-up taxes account
+    And I should see 4 sections on RFM start page
+    And I should see the section 1 as Tell HMRC when you have replaced your filing member
+    And I should see the section 3 as Obligations as the filing member
+    And I should see the section 4 as What you will need
+    And I should see register to report Pillar 2 top-up taxes link
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0012345674
     And I click on Continue button
@@ -86,7 +93,8 @@ Feature: RFM CYA - NFM No ID flow
     When I click on Continue button
     Then I should navigate to RFM Contact Guidance page
     And I click Sign out link
-     
+
+  @batch3
   Scenario: 2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey
     Given I clear the cache
     When Organisation User logs in with rfm URL to Pillar2
@@ -397,6 +405,61 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Country selected
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
+    And I click on Continue button
+    Then I should navigate to RFM Confirmation Page
+    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I can see Print this page link
+    When I click report and manage your group's Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+
+  @batch3
+  Scenario: 6 - Verify that UPE can replace existing FM on the Pillar 2 account
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    When I provide RFM pillar2 id as XMPLR0123456789
+    And I click on Continue button
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    Then I should be on RFM CYA Page
+    When I click on Save&Continue button
+    And I click on Continue button
+    Then I should be on RFM Corp Position Page
+    When I select corp position as UPE
+    And I click on Continue button
+    When I click on Continue button
+    When I provide RFM contact name as RFM test contact
+    And I click on Continue button
+    When I provide RFM contact email as rfm@email.com
+    And I click on Continue button
+    And I select option Yes and continue to next
+    When I provide RFM contact number as 01632960001
+    And I click on Continue button
+    And I select option Yes and continue to next
+    And I click on Continue button
+    Then I should see an error message Enter name of the person of team we should contact on the RFM second contact name Page
+    When I provide RFM contact name as RFM second test contact
+    And I click on Continue button
+    When I click on Continue button
+    Then I should see an error message You need to enter the email address for RFM second test contact on the RFM contact email Page
+    When I provide RFM contact email as rfmsecondcontact@email.com
+    And I click on Continue button
+    When I click on Continue button
+    Then I should see an error message Select yes if we can contact RFM second test contact by telephone on the RFM input telephone Page
+    When I select option Yes and continue to next
+    When I provide RFM second contact number as 09872960001
+    And I click on Continue button
+    Then I should be on RFM Contact Address Page
+    And I enter Address Line 1 as Address Line 1 CYA
+    And I enter City as City CYA
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to RFM Final Review Page
+    And I should see the row 1 value Ultimate parent entity (UPE)
     And I click on Continue button
     Then I should navigate to RFM Confirmation Page
     And I should see report and manage your group's Pillar 2 top-up taxes link

@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import org.openqa.selenium.By.ById
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, clickSubmit, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
@@ -318,4 +318,11 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   Then("""^I should see (.*) text is not clickable""") { (linkText: String) =>
     Wait.waitForCSSElementNotToPresent("[href='report-pillar2-top-up-taxes/banner']")
   }
+
+  And("""^I continue to RFM contact name Page""") { () =>
+    for(i <- 0 to 2) {
+      InitialGuidancePage.clickContinue()
+    }
+  }
+
 }

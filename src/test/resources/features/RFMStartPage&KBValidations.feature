@@ -73,13 +73,6 @@ Feature: RFM Start page
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
-    And The caption must be Replace filing member
-    And The Heading should be Replace the filing member for a Pillar 2 top-up taxes account
-    And I should see 4 sections on RFM start page
-    And I should see the section 1 as Tell HMRC when you have replaced your filing member
-    And I should see the section 3 as Obligations as the filing member
-    And I should see the section 4 as What you will need
-    And I should see register to report Pillar 2 top-up taxes link
     And I click on Continue button
     Then I should be on RFM enter pillar2 id page
     And I click on Continue button

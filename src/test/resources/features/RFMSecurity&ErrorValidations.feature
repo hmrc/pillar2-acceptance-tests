@@ -113,9 +113,7 @@ Feature: RFM check your answers page
     And I enter Postal Code as EH5 5WY
     And I enter Country as Australia
     And I click on Country selected
-    And I click on Continue button
-    And I click on Continue button
-    And I click on Continue button
+    And I continue to RFM contact name Page
     And I access RFM contact email page
     Then I should be on RFM journey recovery page
     When I click replace the filing member for a Pillar 2 top-up taxes account to try again link

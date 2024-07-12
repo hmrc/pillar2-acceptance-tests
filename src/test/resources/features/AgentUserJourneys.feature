@@ -3,7 +3,7 @@ Feature: Agent user journeys
   As an Agent
   I should be able to access clients accounts using Pillar2 ID
 
-  @batch3
+  @batch1
   Scenario: 1 - Agent user capturing Pillar2 ID
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -38,7 +38,7 @@ Feature: Agent user journeys
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to ASA Home Page
 
-  @batch3
+  @batch1
   Scenario: 2 - Agent user accessing dashboard features after login
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -73,7 +73,7 @@ Feature: Agent user journeys
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
 
-  @batch2
+  @batch1
   Scenario: 3 - Agent user API failure scenarios and service banner navigation
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -103,7 +103,7 @@ Feature: Agent user journeys
     Then I should navigate to ASA Dashboard page
     And I click Sign out link
 
-  @batch2
+  @batch1
   Scenario: 4 - Verify Agent service account user unauthorised pages
     Given Individual User logs in to register for Pillar2 Agent service
     Then I should be on ASA Individual KB Page
@@ -122,7 +122,7 @@ Feature: Agent user journeys
     When I select back link
     Then I should be on auth-login page
 
-  @batch2
+  @batch1
   Scenario: 5 - Verify Agent service account user unauthorised pages
     Given Organisation User logs in to register for Pillar2 Agent service
     Then I should be on ASA Organisation KB Page
@@ -143,7 +143,7 @@ Feature: Agent user journeys
     When Assistant User logs in to register for Pillar2 Agent service
     Then I should be on ASA Organisation KB Page
 
-  @batch2
+  @batch1
     #Needs to be fixed as part of PIL-1058
   Scenario: 6 - Agent user Not Authorised Page
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
