@@ -27,5 +27,3 @@ object AgentNonUKPaymentPage extends PageObject {
   val warningMessage          = ".govuk-warning-text__text"
 
 }
-
-
