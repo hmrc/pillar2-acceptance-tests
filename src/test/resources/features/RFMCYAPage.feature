@@ -44,10 +44,11 @@ Feature: RFM check your answers page
     And I click on Continue button
     Then I should be on RFM CYA Page
     And I click on Continue button
-    Then I should navigate to RFM No record Match Error Page
+    Then I should navigate to RFM journey recovery page
     Then I should see Report Pillar 2 top-up taxes text is not clickable
-    And I click go back to try again using different details. link
-    Then I should be on RFM enter pillar2 id page
+    And I click replace the filing member for a Pillar 2 top-up taxes account to try again link
+    Then I should be on RFM start page
+    And I click on Continue button
     And I provide RFM pillar2 id as XEPLR0123456222
     And I click on Continue button
     Then I should be on RFM Registration Date Page
@@ -59,6 +60,17 @@ Feature: RFM check your answers page
     Then I should navigate to RFM No record Match Error Page
     And I select back link
     Then I should be on RFM CYA Page
+    And I access RFM start page
+    And I click on Continue button
+    And I provide RFM pillar2 id as XEPLR0123456404
+    And I click on Continue button
+    Then I should be on RFM Registration Date Page
+    When Registration Day is entered as 31
+    When Registration Month is entered as 1
+    And Registration Year is entered as 2024
+    And I click on Continue button
+    And I click on Continue button
+    Then I should navigate to RFM No record Match Error Page
     And I click Sign out link
 
   @batch3
