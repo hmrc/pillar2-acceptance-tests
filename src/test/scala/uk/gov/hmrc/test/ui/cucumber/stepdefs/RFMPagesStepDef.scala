@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import org.openqa.selenium.By.ById
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, clickSubmit, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
@@ -160,15 +160,25 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
         getTextOf(By cssSelector (RFMContactDetailNamePage.errorMessage)) should include(error)
 
-      case "contact name change" =>
+      case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorMessage)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
 
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorLink)
-        getTextOf(By cssSelector (RFMNewNFMContactNameChangePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorLink)
+        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorMessage)
-        getTextOf(By cssSelector (RFMNewNFMContactNameChangePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
+        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorMessage)) should include(error)
+
+      case "second contact name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorLink)
+        getTextOf(By cssSelector (RFMSecondContactNamePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorMessage)
+        getTextOf(By cssSelector (RFMSecondContactNamePage.errorMessage)) should include(error)
 
       case "contact address change" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -308,4 +318,11 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   Then("""^I should see (.*) text is not clickable""") { (linkText: String) =>
     Wait.waitForCSSElementNotToPresent("[href='report-pillar2-top-up-taxes/banner']")
   }
+
+  And("""^I continue to RFM contact name Page""") { () =>
+    for(i <- 0 to 2) {
+      InitialGuidancePage.clickContinue()
+    }
+  }
+
 }
