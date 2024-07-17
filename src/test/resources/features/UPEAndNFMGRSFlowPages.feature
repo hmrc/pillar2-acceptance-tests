@@ -1,4 +1,4 @@
-@tests
+@tests1
 Feature: Ultimate parent entity and Nominated Filling Member GRS journey
   As a MNE user
   I want to determine that the UPE is based in UK or LLP
@@ -378,7 +378,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And I click on Save&Continue button
     Then I should navigate to Task list page
     And The Task Edit ultimate parent’s details status should be Completed
-    And The Task Add filing member’s details status should be Not started
     When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next

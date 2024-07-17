@@ -16,8 +16,10 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
+import org.openqa.selenium.By.cssSelector
 import org.scalatest.Assertion
 import org.scalatestplus.selenium.Chrome.currentUrl
+import org.scalatestplus.selenium.Edge.findAll
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Check extends BasePage {
@@ -65,5 +67,4 @@ object Check extends BasePage {
 
     }
   }
-
 }

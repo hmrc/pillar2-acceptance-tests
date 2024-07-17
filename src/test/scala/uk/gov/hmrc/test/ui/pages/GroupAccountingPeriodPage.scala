@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
@@ -39,6 +40,21 @@ object GroupAccountingPeriodPage extends PageObject {
   val endYear               = "endDate.year"
   val dateMessage           =".govuk-fieldset__heading"
 
+  def startDay = webDriver.findElement(By.id("start.day"))
+
+  def startMonth = webDriver.findElement(By.id("start.month"))
+
+  def startYear = webDriver.findElement(By.id("start.year"))
+
+  def endDay = webDriver.findElement(By.id("end.day"))
+
+  def endMonth = webDriver.findElement(By.id("end.month"))
+
+  def endYear = webDriver.findElement(By.id("end.year"))
+
   def clickContinue()       = findByCss(continue).click()
+  def getDateValues(elementId: String) = findElement(By.id(elementId)).getAttribute("value").trim
 
 }
+
+object webDriver
