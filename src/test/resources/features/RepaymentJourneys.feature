@@ -81,6 +81,11 @@ Feature: Repayment Journey
     When Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
     And I directly access Agent Non UK Payment Page page
     And I provide value for Account Name as NameOnTheAccountMustBe60CharactersOrLessOrThereWillBeAnErrorAsSeen
     And I provide value for Swift Code as 0BCDEF01A1C

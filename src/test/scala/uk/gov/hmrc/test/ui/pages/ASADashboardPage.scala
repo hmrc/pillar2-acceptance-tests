@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ASADashboardPage extends PageObject {
-  val url: String      = s"$rootUrl"+"pillar2-top-up-tax-home?clientPillar2Id=XMPLR0012345674&agentView=true"
+  val url: String      = s"$rootUrl"+"pillar2-top-up-tax-home"
 
 
   val ASALink   ="a[href*='/asa/home']"

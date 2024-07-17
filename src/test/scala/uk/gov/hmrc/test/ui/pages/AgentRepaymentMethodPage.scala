@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentRepaymentMethodPage extends PageObject {
-  val url: String      = s"$rootUrl"+"repayment/method?clientPillar2Id=XMPLR0012345674"
+  val url: String      = s"$rootUrl"+"repayment/method"
 
   val header           = ".govuk-caption-l"
   val saveAndContinue  = ".govuk-button"
