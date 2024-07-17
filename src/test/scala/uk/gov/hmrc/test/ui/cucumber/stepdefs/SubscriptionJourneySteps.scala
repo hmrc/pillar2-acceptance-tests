@@ -19,44 +19,53 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
 import uk.gov.hmrc.test.ui.pages.{ConfirmationPage, ContactAddressInputPage, GroupAccountingPeriodPage, RegistrationConfirmationPage}
-
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
+import io.cucumber.datatable.DataTable
+
+
+
 
 class SubscriptionJourneySteps extends CommonFunctions {
+
+  And("""^I enter account period as:$""") { (accountPeriod: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.enterData(accountPeriod)
+  }
+
 
   And("""^Accounting Period (.*) is entered as (.*)$""") { (field: String, name: String) =>
     field match {
       case "Start Day" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startDay)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.startDay)
+        Input.sendKeysById(GroupAccountingPeriodPage.startDay, name)
 
       case "Start Month" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startMonth)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.startMonth)
+        Input.sendKeysById(GroupAccountingPeriodPage.startMonth, name)
 
       case "Start Year" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startYear)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.startYear)
+        Input.sendKeysById(GroupAccountingPeriodPage.startYear, name)
 
       case "End Day" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endDay)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.endDay)
+        Input.sendKeysById(GroupAccountingPeriodPage.endDay, name)
 
       case "End Month" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endMonth)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.endMonth)
+        Input.sendKeysById(GroupAccountingPeriodPage.endMonth, name)
 
       case "End Year" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endYear)
-        Input.sendKeysById(name, GroupAccountingPeriodPage.endYear)
+        Input.sendKeysById(GroupAccountingPeriodPage.endYear, name)
     }
   }
   And("""^I should see date field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>

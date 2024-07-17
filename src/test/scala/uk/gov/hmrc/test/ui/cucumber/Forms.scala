@@ -25,17 +25,17 @@ object Forms {
   val postcode     = "NE13 2XH"
 
   def addressNonUK() = {
-    Input.sendKeysById(addressLine1, "addressLine1")
-    Input.sendKeysById(addressLine2, "addressLine2")
-    Input.sendKeysById(city, "addressLine3")
-    Input.sendKeysById(region, "addressLine4")
-    Input.sendKeysById(postcode, "postCode")
+    Input.sendKeysById("addressLine1", addressLine1)
+    Input.sendKeysById("addressLine2", addressLine2)
+    Input.sendKeysById("addressLine3", city)
+    Input.sendKeysById("addressLine4", region)
+    Input.sendKeysById("postCode", postcode)
     Forms.countryAutoSelect("country", "France")
   }
 
   def countryAutoSelect(id: String, countryName: String) = {
     Input.clickById(id)
-    Input.sendKeysById(countryName, id)
+    Input.sendKeysById(id, countryName)
     Input.clickById(id + "__option--0")
   }
 

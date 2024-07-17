@@ -186,7 +186,7 @@ class StepDef extends BaseStepDef with BrowserDriver{
     }
   }
   Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
-    Input.sendKeysById(text, id)
+    Input.sendKeysById(id, text)
   }
 
   And("""^I select (.*) and continue$""") { (id: String) =>
