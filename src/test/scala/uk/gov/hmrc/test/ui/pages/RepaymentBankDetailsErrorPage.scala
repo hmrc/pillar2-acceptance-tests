@@ -18,9 +18,8 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object AgentAmendAPIerrorPage extends PageObject{
+object RepaymentBankDetailsErrorPage extends PageObject{
 
-  val url: String       = s"$rootUrl" + "error/view"
-  val header            = ".govuk-heading-xl"
-  val page_banner       = "a[href='/report-pillar2-top-up-taxes/banner']"
+  val url: String       = s"$rootUrl" + "repayment/error/bank-details"
+
 }

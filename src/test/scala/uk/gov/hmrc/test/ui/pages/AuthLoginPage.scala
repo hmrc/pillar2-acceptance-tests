@@ -78,7 +78,7 @@ object AuthLoginPage extends BasePage with PageObject {
 
   def loginWithUserToRFMWithCredId(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
-    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysById(credIdField, credId)
     Input.sendKeysByName(rfmUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
@@ -86,7 +86,7 @@ object AuthLoginPage extends BasePage with PageObject {
 
   def loginAsUserWithCredId(name: String,credId: String): Unit = {
     Nav.navigateTo(url)
-    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysById(credIdField, credId)
     Input.sendKeysByName(frontEndUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
@@ -94,7 +94,7 @@ object AuthLoginPage extends BasePage with PageObject {
 
   def loginToOrgWithCredID(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
-    Input.sendKeysById(credId, credIdField)
+    Input.sendKeysById(credIdField, credId)
     Input.sendKeysByName(frontEndUPEOrgTypeUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
@@ -355,9 +355,9 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginWithExistingEntityWithRFM(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(rfmUrl, redirectUrlField)
-    Input.sendKeysById(enrolmentKey, enrolmentKeyField)
-    Input.sendKeysById(identifierName, identifierNameField)
-    Input.sendKeysById(identifierValue, identifierValueField)
+    Input.sendKeysById(enrolmentKeyField, enrolmentKey)
+    Input.sendKeysById(identifierNameField, identifierName)
+    Input.sendKeysById(identifierValueField, identifierValue)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }

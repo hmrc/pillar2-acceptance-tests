@@ -3,7 +3,7 @@ Feature: Agent user journeys
   As an Agent
   I should be able to access clients accounts using Pillar2 ID
 
-  @batch3
+  @batch1
   Scenario: 1 - Agent user capturing Pillar2 ID
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -15,20 +15,10 @@ Feature: Agent user journeys
     And I provide ASA Pillar2 ID as XMPLR0012345674
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
-    When I click Report Pillar 2 top-up taxes link
-    Then I should navigate to ASA Home Page
-    When I select back link
-    Then I should navigate to ASA Confirmation Page
     When I select back link
     And I provide ASA Pillar2 ID as XEPLR0123456500
     And I click on Continue button
     Then I should navigate to ASA No record Match Error Page
-    When I click Report Pillar 2 top-up taxes link
-    Then I should navigate to ASA Home Page
-    When I click on Continue button
-    Then I should be on ASA Pillar2 Input Page
-    And I provide ASA Pillar2 ID as XEPLR0123456500
-    And I click on Continue button
     When I click Re-enter your client’s Pillar 2 top-up taxes ID to try again link
     Then I should be on ASA Pillar2 Input Page
     When I provide ASA Pillar2 ID as XMPLR0012345674
@@ -45,17 +35,10 @@ Feature: Agent user journeys
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to ASA Dashboard page
     When I click Change client link
-    And I provide ASA Pillar2 ID as XMPLR0123456789
-    And I click on Continue button
-    And I click on Continue button
-    Then I should navigate to ASA Not Authorised page
-    When I click request authorisation to report and manage this client’s Pillar 2 top-up taxes link
-    Then I should navigate to ASA Home Page
-    When I select back link
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to ASA Home Page
 
-  @batch3
+  @batch1
   Scenario: 2 - Agent user accessing dashboard features after login
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -90,7 +73,7 @@ Feature: Agent user journeys
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
 
-  @batch2
+  @batch1
   Scenario: 3 - Agent user API failure scenarios and service banner navigation
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -120,7 +103,7 @@ Feature: Agent user journeys
     Then I should navigate to ASA Dashboard page
     And I click Sign out link
 
-  @batch2
+  @batch1
   Scenario: 4 - Verify Agent service account user unauthorised pages
     Given Individual User logs in to register for Pillar2 Agent service
     Then I should be on ASA Individual KB Page
@@ -139,7 +122,7 @@ Feature: Agent user journeys
     When I select back link
     Then I should be on auth-login page
 
-  @batch2
+  @batch1
   Scenario: 5 - Verify Agent service account user unauthorised pages
     Given Organisation User logs in to register for Pillar2 Agent service
     Then I should be on ASA Organisation KB Page
@@ -159,3 +142,20 @@ Feature: Agent user journeys
     Then I should be on auth-login page
     When Assistant User logs in to register for Pillar2 Agent service
     Then I should be on ASA Organisation KB Page
+
+  @batch1
+    #Needs to be fixed as part of PIL-1058
+  Scenario: 6 - Agent user Not Authorised Page
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0123456789
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page 
+    And I click on Continue button
+    Then I should navigate to ASA Not Authorised page
+    When I click request authorisation to report and manage this client’s Pillar 2 top-up taxes link
+    Then I should navigate to ASA Home Page
+    When I select back link
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to ASA Home Page

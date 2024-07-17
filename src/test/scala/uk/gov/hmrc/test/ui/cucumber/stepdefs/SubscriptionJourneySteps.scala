@@ -15,17 +15,27 @@
  */
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
-import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
 import uk.gov.hmrc.test.ui.pages.{ConfirmationPage, ContactAddressInputPage, GroupAccountingPeriodPage, RegistrationConfirmationPage, UPEAddressPage}
 
+import uk.gov.hmrc.test.ui.pages.{ConfirmationPage, ContactAddressInputPage, GroupAccountingPeriodPage, RegistrationConfirmationPage}
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
+import io.cucumber.datatable.DataTable
 
- class SubscriptionJourneySteps extends CommonFunctions {
+
+
+
+class SubscriptionJourneySteps extends CommonFunctions {
+
+  And("""^I enter account period as:$""") { (accountPeriod: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.enterData(accountPeriod)
+  }
+
 
   And("""^Accounting Period (.*) is entered as (.*)$""") { (field: String, name: String) =>
     field match {
@@ -177,8 +187,7 @@ import java.time.format.DateTimeFormatter
     assert(getTextOf(By.cssSelector(ConfirmationPage.firstHeading)).contains(todayDate))
   }
 
-  Then("""^I enter Address as:""") { (address: DataTable) =>
-    Input.enterData(address)
-    UPEAddressPage.clickCountrySelected()
-  }
 }
+
+
+

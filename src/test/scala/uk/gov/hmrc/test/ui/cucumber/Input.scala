@@ -25,21 +25,14 @@ import uk.gov.hmrc.test.ui.cucumber.Find._
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
+import io.cucumber.datatable.DataTable
+import org.scalatest.Assertion
+import uk.gov.hmrc.test.ui.cucumber.Check.include
 
 object Input extends BasePage {
 
 
   val enterData = iterator(sendKeysById) _
-
-
-  def iterator(f: (String, String) => Any)(data: DataTable) = {
-    val row = data.asMaps(classOf[String], classOf[String]).iterator()
-    while (row.hasNext) {
-      val map = row.next()
-      f(map.get("KEY"), map.get("VALUE"))
-    }
-  }
-
 
   def clickById(id: String): Unit = findById(id).click()
 
@@ -47,9 +40,18 @@ object Input extends BasePage {
 
   def clickByCss(css: String): Unit = findByCss(css).click()
 
+
   def clickAndContinue(id: String): Unit = {
     findById(id).click()
     clickSubmit()
+  }
+
+  def iterator(f: (String, String) => Any)(data: DataTable) = {
+    val row = data.asMaps(classOf[String], classOf[String]).iterator()
+    while(row.hasNext) {
+      val map = row.next()
+      f(map.get("KEY"), map.get("VALUE"))
+    }
   }
 
   def clickSubmit(): Unit = findById("submit").click()
@@ -95,6 +97,7 @@ object Input extends BasePage {
       // scenario.attach(byteFile, "image/png", "print_page")
     }
   }
+
 
   def getTextOf(by: By) =
     driver.findElement(by).getText

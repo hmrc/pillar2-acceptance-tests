@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,20 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object AgentAmendAPIerrorPage extends PageObject{
+object RepaymentReasonPage extends PageObject {
+  val url: String      = s"$rootUrl"+"repayment/reason"
 
-  val url: String       = s"$rootUrl" + "error/view"
-  val header            = ".govuk-heading-xl"
-  val page_banner       = "a[href='/report-pillar2-top-up-taxes/banner']"
+  val header           = ".govuk-caption-l"
+  val saveAndContinue  = ".govuk-button"
+  val backLink         = ".govuk-back-link"
+  val errorMessage     = ".govuk-error-message"
+  val errorLink        = "[href='#value']"
+  val reasonTextField  = "#value"
+  val hintText         = ".govuk-hint"
+  val charLimit        = ".govuk-character-count__status"
+  def clickContinue()  = findByCss(saveAndContinue).click()
+
 }

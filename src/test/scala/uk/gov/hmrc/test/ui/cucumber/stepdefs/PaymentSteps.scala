@@ -18,9 +18,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, DashboardPage, GUKGuidancePage3, InputUPENamePage, MakePaymentPage, NonUKBankAccountPaymentPage, RepaymentAmountPage, SearchRegisterPage, UPEAddressPage}
-
+import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, Wait}
+import uk.gov.hmrc.test.ui.pages._
 
 class PaymentSteps extends CommonFunctions {
 
@@ -102,6 +101,11 @@ class PaymentSteps extends CommonFunctions {
     assert(getTextOf(By.cssSelector(MakePaymentPage.warningMessage)).contains(message))
   }
 
+  Then("""^Hint text should be (.*)$""") { header: String =>
+    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.hintText)
+    assert(getTextOf(By.cssSelector(RepaymentReasonPage.hintText)).contains(header))
+  }
+
   And("""^The section (\d+) with header (.*) value should be (.*)$""") { (detailNumber: Int, header: String, cell: String) =>
     assert(driver.findElements(By.cssSelector(MakePaymentPage.tableHeader)).get(detailNumber - 1).getText.contains(header))
     assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCell)).get(detailNumber - 1).getText.contains(cell))
@@ -113,6 +117,74 @@ class PaymentSteps extends CommonFunctions {
       case "Make a payment from outside the UK" => Input.clickByXpath(MakePaymentPage.secondToggleLink)
     }
   }
+
+  Then("""^The character limit text should display (.*)$""") { header: String =>
+    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.charLimit)
+    assert(getTextOf(By.cssSelector(RepaymentReasonPage.charLimit)).contains(header))
+  }
+
+  And("""^I select repayment method as (.*)$""") { (option: String) =>
+    option match {
+      case "UK bank account" => Input.clickById("value_0")
+      case "Non-UK bank account" => Input.clickById("value_1")
+    }
+  }
+
+  And("""^I provide value for (.*) as (.*)$""") { (field: String, name: String) =>
+    field match {
+      case "Bank Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.bankNameField)
+        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.bankNameField)
+
+      case "Account Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.accountNameField)
+        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.accountNameField)
+
+      case "Swift Code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.swiftCodeField)
+        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.swiftCodeField)
+
+      case "Iban" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.IbanField)
+        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.IbanField)
+
+      case "Refund Reason" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
+        Input.sendKeysByCss(name, RepaymentReasonPage.reasonTextField)
+
+      case "UK Bank Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UKbankName)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UKbankName)
+
+      case "UK Account Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UKaccountName)
+        Input.sendKeysByCss(name,UKBankAccountPaymentPage.UKaccountName)
+
+      case "Sort Code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.sortCode)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.sortCode)
+
+      case "UK Account number" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.accountNumber)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.accountNumber)
+    }
+
+  }
+
+  And("""^I provide Refund Reason as (.*)$""")((refundReason: String) => {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
+    Input.sendKeysByCss(refundReason, RepaymentReasonPage.reasonTextField)
+  })
 
   And("""^I should see bank account error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
     page match {
@@ -156,6 +228,46 @@ class PaymentSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorIbanMessage)
         getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorIbanMessage)) should include(error)
 
+      case "UK Bank Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKBankNameLink)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKBankNameLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
+
+
+      case "UK Account Name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKAccountNameLink)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKAccountNameLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
+
+      case "UK Sort Code" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKSortCodeLink)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKSortCodeLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
+
+      case "UK Account Number" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKAccountLink)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKAccountLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
+        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
     }
   }
 
@@ -166,6 +278,92 @@ class PaymentSteps extends CommonFunctions {
   })
 
   And("""^I should see Refund Amount field is pre-populated with (.*)$""") { (amount: String) =>
-        assert(getAttributeOf(RepaymentAmountPage.refundAmountField, "value").equals(amount))
+    assert(getAttributeOf(RepaymentAmountPage.refundAmountField, "value").equals(amount))
+  }
+
+  And("""^I provide Repayment contact (.*) as (.*)$""") { (page: String, Value: String) =>
+    page match {
+      case "name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(Value, RepaymentContactPage.contactNameField)
+        clickByCss(RepaymentContactPage.continue)
+
+      case "email" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(Value, RepaymentContactEmailPage.contactEmailField)
+        clickByCss(RepaymentContactEmailPage.continue)
+
+      case "telephone" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(Value, RepaymentTelephoneInputPage.contactTelephone)
+        clickByCss(RepaymentTelephoneInputPage.continue)
     }
+  }
+
+  And("""^I should see Repayment reason field is pre-populated with (.*)$""") { (reason: String) =>
+    assert(getAttributeOf(RepaymentReasonPage.reasonTextField, "value").equals(reason))
+  }
+
+  And("""^I should see the repayment method (.*) remain selected$""") { (accountType: String) =>
+    accountType match {
+      case "UK bank account" => Find.findByCss("#value_0").isSelected
+      case "Non-UK bank account" => Find.findByCss("#value_1").isSelected
+    }
+  }
+
+  When("""^I click change link for Repayment (.*)""") { (link: String) =>
+    link match {
+      case "Amount" =>
+        clickByCss(RepaymentCYAPage.changeRefundAmount)
+      case "Reason" =>
+        clickByCss(RepaymentCYAPage.changeRefundReason)
+      case "Method Page" =>
+        clickByCss(RepaymentCYAPage.changeRepaymentMethod)
+      case "Bank Name" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account Name" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account SWIFT" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Account IBAN" =>
+        clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
+      case "Contact Name" =>
+        clickByCss(RepaymentCYAPage.changeContactName)
+      case "Contact Email" =>
+        clickByCss(RepaymentCYAPage.changeContactEmail)
+      case "Contact Telephone" =>
+        clickByCss(RepaymentCYAPage.changeTelephone)
+      case "Contact Telephone Number" =>
+        clickByCss(RepaymentCYAPage.changeTelephoneNumber)
+      case "UK Bank Name" =>
+        clickByCss(RepaymentCYAPage.changeUKBankDetails)
+      case "UK Bank Method" =>
+        clickByCss(RepaymentCYAPage.changeBankAccountType)
+    }
+  }
+
+  Given("""^I access Repayment contact page$""") { () =>
+    Nav.navigateTo(RepaymentContactPage.url)
+  }
+  And("""^I access (.*) payment page$""") { (page: String) =>
+    page match {
+      case "Non UK" =>
+        Nav.navigateTo (NonUKBankAccountPaymentPage.url)
+      case "UK" =>
+        Nav.navigateTo((UKBankAccountPaymentPage.url))
+    }
+  }
+
+  And("""^I select option (.*) on partial name error page$""") { (option: String) =>
+    option match {
+      case "Yes" => Input.clickById("confirmRepaymentAccountName_0")
+      case "No" => Input.clickById("confirmRepaymentAccountName_1")
+    }
+  }
+
+  And("""^(I navigate from Contact page to CYA page)""") { (negate: String) =>
+    for (i <- 1 to 4) {
+      InitialGuidancePage.clickContinue()
+    }
+  }
   }
