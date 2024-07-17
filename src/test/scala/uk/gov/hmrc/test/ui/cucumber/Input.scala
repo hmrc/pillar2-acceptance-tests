@@ -21,18 +21,13 @@ import org.openqa.selenium.io.FileHandler
 import org.openqa.selenium.{By, OutputType, TakesScreenshot, WebDriver}
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.cucumber.Find._
-
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
+
 import io.cucumber.datatable.DataTable
-import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.cucumber.Check.include
 
 object Input extends BasePage {
-
-
-  val enterData = iterator(sendKeysById) _
 
   def clickById(id: String): Unit = findById(id).click()
 
@@ -40,6 +35,7 @@ object Input extends BasePage {
 
   def clickByCss(css: String): Unit = findByCss(css).click()
 
+  val enterData = iterator(sendKeysById) _
 
   def clickAndContinue(id: String): Unit = {
     findById(id).click()
