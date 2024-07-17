@@ -19,11 +19,12 @@ Feature: UPE NO ID journey
     And The caption must be Group details
     And The Heading should be What is the registered office address of Test UPE?
     And The hint text should be Enter text and then choose from the list.
-    When I enter Address Line 1 as Address Line 1 UPE
-    And I enter City as City UPE
-    And I enter Postal Code as invalid
-    And I enter Country as United Kingdom
-    And I click on Country selected
+    When I enter Address as:
+      | KEY          | VALUE              |
+      | addressLine1 | Address Line 1 UPE |
+      | addressLine3 | City UPE           |
+      | postalCode   | invalid            |
+      | countryCode  | United Kingdom     |
     And I click on Continue button
     Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
     When I enter Postal Code as EH5 5WY
@@ -56,21 +57,17 @@ Feature: UPE NO ID journey
     Then I should be on Check your answers page
     And The caption must be Group details
     And The Heading should be Check your answers for ultimate parent details
-    And I should see row 1 key Name
-    And I should see row 2 key Address
-    And I should see row 3 key Contact name
-    And I should see row 4 key Email address
-    And I should see row 5 key Can we contact by telephone?
-    And I should see row 6 key Telephone number
-    And I should see row 1 value Test UPE
-    And I should see row 2 value Address Line 1 UPE
-    And I should see row 2 value City UPE
-    And I should see row 2 value EH5 5WY
-    And I should see row 2 value United Kingdom
-    And I should see row 3 value Contact UPE
-    And I should see row 4 value testcontactupe@email.com
-    And I should see row 5 value Yes
-    And I should see row 6 value 1234569
+    And I should see details as below:
+      | KEY                          | VALUE                    |
+      | Name                         | Test UPE                 |
+      | Address                      | Address Line 1 UPE       |
+      | Address                      | City UPE                 |
+      | Address                      | EH5 5WY                  |
+      | Address                      | United Kingdom           |
+      | Contact name                 | Contact UPE              |
+      | Email address                | testcontactupe@email.com |
+      | Can we contact by telephone? | Yes                      |
+      | Telephone number             | 1234569                  |
     When I click on Continue button
     Then I should be on Task list page
     And The Task Edit ultimate parent’s details status should be Completed
