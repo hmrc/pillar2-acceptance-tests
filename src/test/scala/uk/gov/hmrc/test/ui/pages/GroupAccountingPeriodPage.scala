@@ -17,44 +17,27 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.Find.{findByCss, findById}
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object GroupAccountingPeriodPage extends PageObject {
-  val url: String           = s"$rootUrl"+"further-details/accounting-period"
+  val url: String = s"$rootUrl" + "further-details/accounting-period"
 
-  val caption               = ".govuk-caption-l"
-  val form                  = ".govuk-form-group"
-  val continue              = ".govuk-button"
-  val errorSummary          = ".govuk-error-summary__list"
-  val errorLinkStartDate    = "[href*='#startDate']"
-  val errorLinkEndDate      = "[href*='#endDate']"
-  val backLink              = ".govuk-back-link"
+  val caption = ".govuk-caption-l"
+  val form = ".govuk-form-group"
+  val continue = ".govuk-button"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLinkStartDate = "[href*='#startDate']"
+  val errorLinkEndDate = "[href*='#endDate']"
+  val backLink = ".govuk-back-link"
   val errorMessageStartDate = "#startDate-error"
-  val errorMessageEndDate   = "#endDate-error"
-  val startDay              = "startDate.day"
-  val startMonth            = "startDate.month"
-  val startYear             = "startDate.year"
-  val endDay                = "endDate.day"
-  val endMonth              = "endDate.month"
-  val endYear               = "endDate.year"
-  val dateMessage           =".govuk-fieldset__heading"
-
-  def startDay = webDriver.findElement(By.id("start.day"))
-
-  def startMonth = webDriver.findElement(By.id("start.month"))
-
-  def startYear = webDriver.findElement(By.id("start.year"))
-
-  def endDay = webDriver.findElement(By.id("end.day"))
-
-  def endMonth = webDriver.findElement(By.id("end.month"))
-
-  def endYear = webDriver.findElement(By.id("end.year"))
-
-  def clickContinue()       = findByCss(continue).click()
-  def getDateValues(elementId: String) = findElement(By.id(elementId)).getAttribute("value").trim
+  val errorMessageEndDate = "#endDate-error"
+  val startDay = "startDate.day"
+  val startMonth = "startDate.month"
+  val startYear = "startDate.year"
+  val endDay = "endDate.day"
+  val endMonth = "endDate.month"
+  val endYear = "endDate.year"
+  val dateMessage = ".govuk-fieldset__heading"
 
 }
-
-object webDriver

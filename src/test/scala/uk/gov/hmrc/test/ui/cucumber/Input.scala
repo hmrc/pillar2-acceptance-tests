@@ -25,8 +25,6 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
 
-import io.cucumber.datatable.DataTable
-
 object Input extends BasePage {
 
   def clickById(id: String): Unit = findById(id).click()
