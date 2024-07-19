@@ -242,15 +242,15 @@ Feature: Contact details for the filing member
       | Where are the entities in your group located? | In the UK and other countries |
       | Start date                                    | 15 January 2024               |
       | End date                                      | 15 January 2025               |
-      | Can we contact by telephone?                  | Yes                           |
       | Do you have a second contact?                 | Yes                           |
       | Second contact name                           | Second Contact Name Change    |
       | Second contact email address                  | secondContactchange@email.com |
-      | Can we contact by telephone?                  | Yes                           |
       | Second contact telephone number               | 71235643                      |
     And I should see row 12 value Contact Name Change
     And I should see row 13 value emailchange@test.com
+    And I should see row 14 value Yes
     And I should see row 15 value 1234555
+    And I should see row 19 value Yes
     And I should see row 21 value Address Change
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
@@ -264,18 +264,14 @@ Feature: Contact details for the filing member
     Then I should navigate to Contact address input page
     When I click on Continue button
     Then I should be on Contact details Check answers page
-    And I should see row 1 key Contact name
-    And I should see row 2 key Email address
-    And I should see row 3 key Can we contact by telephone?
-    And I should see row 4 key Telephone number
-    And I should see row 5 key Do you have a second contact?
-    And I should see row 6 key Address
-    And I should see row 1 value UPE Test
-    And I should see row 2 value testupe@email.com
-    And I should see row 3 value Yes
-    And I should see row 4 value 123456
-    And I should see row 5 value No
-    And I should see row 6 value Address Change
+    And I should see details as below:
+      | KEY                           | VALUE             |
+      | Contact name                  | UPE Test          |
+      | Email address                 | testupe@email.com |
+      | Can we contact by telephone?  | Yes               |
+      | Telephone number              | 123456            |
+      | Do you have a second contact? | No                |
+      | Address                       | Address Change    |
     And I click on Continue button
     When I click Check your answers link
     Then I should be on Review answers page
