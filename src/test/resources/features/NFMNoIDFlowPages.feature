@@ -60,7 +60,7 @@ Feature: NFM NO ID journey
     Then I should navigate to input nfm telephone page
     And The caption must be Group details
     And The Heading should be What is the telephone number for Contact CYA?
-    And The hint text should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
+    And The hint text should be For international numbers include the country code
     When I enter NFM Telephone Number as 1234569
     And I click on Continue button
     Then I should navigate to NFM Check your answers page
@@ -170,16 +170,16 @@ Feature: NFM NO ID journey
     And The caption must be Group details
     And The Heading should be What is the name of the nominated filing member?
     When I click on Continue button
-    Then I should see NFM error message You need to enter the name of the nominated filing member on the Input NFM Name Element
+    Then I should see NFM error message Enter the name of the nominated filing member on the Input NFM Name Element
     When I enter NFM name as NFM Name character length Error validation and Maximum NFM character length should be entered 105 characters.
-    Then I should see NFM error message The name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
+    Then I should see NFM error message Name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
     When I enter NFM name as Test <script>alert(document.domain)</script>
     Then I should navigate to NFM Address page
     And the page title should be What is the registered office address? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
     Then I should see NFM error message Enter the first line of the address on the Address Line 1 Element
     And I should see NFM error message Enter the town or city on the City Element
-    And I should see NFM error message Select a country on the Country Element
+    And I should see NFM error message Enter the country on the Country Element
     When I enter Address Line 1 as Address Line 1 Character Length Test1
     And I enter Address Line 2 as Address Line 2 Character Length Test1
     And I enter City as City Field Character Length Test Error
@@ -188,11 +188,11 @@ Feature: NFM NO ID journey
     And I enter Country as Australia
     And I click on Country selected
     And I click on Continue button
-    Then I should see NFM error message The first line of the address must be 35 characters or less on the Address Line 1 Element
-    And I should see NFM error message The second line of the address must be 35 characters or less on the Address Line 2 Element
-    And I should see NFM error message The town or city must be 35 characters or less on the City Element
-    And I should see NFM error message The region must be 35 characters or less on the Region Element
-    And I should see NFM error message The postal code must be 10 characters or less on the Postal Code Element
+    Then I should see NFM error message First line of the address must be 35 characters or less on the Address Line 1 Element
+    And I should see NFM error message Second line of the address must be 35 characters or less on the Address Line 2 Element
+    And I should see NFM error message Town or city must be 35 characters or less on the City Element
+    And I should see NFM error message Region must be 35 characters or less on the Region Element
+    And I should see NFM error message Postal code must be 10 characters or less on the Postal Code Element
     When I enter Address Line 1 as Test Address Line 1
     And I enter Address Line 2 as Test Address Line 2
     And I enter Region as Region
@@ -201,19 +201,19 @@ Feature: NFM NO ID journey
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     And I click on Continue button
-    Then I should see NFM error message You need to enter the name of the person or team we should contact from the nominated filing member on the Input NFM Contact Name Element
+    Then I should see NFM error message Enter the name of the person or team from the nominated filing member to keep on record on the Input NFM Contact Name Element
     When I enter NFM Contact name as NFM Contact
     When I click on Continue button
     Then I should navigate to NFM Contact Email page
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
-    Then I should see NFM error message You need to enter the email address for NFM Contact on the Input NFM Contact Email Element
+    Then I should see NFM error message Enter the email address for NFM Contact on the Input NFM Contact Email Element
     When I enter NFM Contact Email as incorrect email
     When I click on Continue button
     Then I should see NFM error message Enter an email address in the correct format, like name@example.com on the Input NFM Contact Email Element
     When I enter NFM Contact Email as NFMNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I click on Continue button
-    Then I should see NFM error message The email address should be 132 characters or less on the Input NFM Contact Email Element
+    Then I should see NFM error message Email address must be 132 characters or less on the Input NFM Contact Email Element
     And I enter NFM Contact Email as test@email.com
     When I click on Continue button
     Then I should navigate to NFM Telephone page
@@ -224,13 +224,13 @@ Feature: NFM NO ID journey
     Then I should navigate to input nfm telephone page
     And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
-    Then I should see error message You need to enter the telephone for NFM Contact on the Input Nfm Telephone Page
+    Then I should see error message Enter the telephone number for NFM Contact on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 1234567812345678123456780
     And I click on Continue button
     Then I should see error message The telephone number should be 24 characters or less on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 1234567@
     And I click on Continue button
-    Then I should see error message Enter a telephone number in the correct format on the Input Nfm Telephone Page
+    Then I should see error message Enter the telephone number for NFM Contact in the correct format, like 01632 960 001 or +44 808 157 0192 on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 9923-456
     When I click on Continue button
     Then I should be on NFM Check your answers page
