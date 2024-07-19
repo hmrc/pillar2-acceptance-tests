@@ -15,6 +15,7 @@
  */
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
+
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
@@ -213,50 +214,73 @@ class UPEPageSteps extends CommonFunctions {
     field match {
       case "UPE name" =>
         assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "NFM name" =>
         assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Address Line 1" =>
         assert(getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Address Line 2" =>
         assert(getAttributeOf(UPEAddressPage.addressLine2, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "City" =>
         assert(getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Region" =>
         assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Postal Code" =>
         assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Country" =>
         assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "UPE Person/Team name" =>
         assert(getAttributeOfId(UPEContactNamePage.contactName, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "UPE Email address" =>
         assert(getAttributeOfId(UPEContactEmailPage.emailField, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Telephone number" =>
         assert(getAttributeOf(InputUPETelephonePage.telephoneNumber, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "NFM Contact name" =>
         assert(getAttributeOf(NFMContactNamePage.contactName, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "NFM Contact Email" =>
         assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "NFM Telephone number" =>
         assert(getAttributeOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Contact Name" =>
         assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Contact Email" =>
         assert(getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Contact Telephone" =>
         assert(getAttributeOf(ContactDetailsInputTelephonePage.contactTelephone, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Second Contact Name" =>
         assert(getAttributeOf(SecondContactNamePage.contactName, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Second Contact Email" =>
         assert(getAttributeOf(SecondContactEmailPage.contactEmail, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Second Contact Input" =>
         assert(getAttributeOf(SecondContactInputPage.contactTelephone, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Redirect URL" =>
         assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
+        UPEEntityTypePage.clickContinue()
       case "PLRID" =>
         assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "UK Bank Name" =>
         assert(getAttributeOf(UKBankAccountPaymentPage.UKbankName, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
     }
   }
 
@@ -279,12 +303,12 @@ class UPEPageSteps extends CommonFunctions {
     UPEEntityTypePage.clickContinue()
   }
 
-    And("""^I select option (.*) and continue to Name page$""") { (option: String) =>
-      option match {
-        case "Entity type not listed" => Input.clickById("value_2")
-      }
-      UPEEntityTypePage.clickContinue()
+  And("""^I select option (.*) and continue to Name page$""") { (option: String) =>
+    option match {
+      case "Entity type not listed" => Input.clickById("value_2")
     }
+    UPEEntityTypePage.clickContinue()
+  }
 
   And("""^I select option (.*) in further details group status page$""") { (option: String) =>
     option match {

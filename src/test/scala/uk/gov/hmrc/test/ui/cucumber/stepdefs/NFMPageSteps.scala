@@ -21,7 +21,7 @@ import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
-import uk.gov.hmrc.test.ui.pages.{AuthLoginPage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NFMDetailsPage, NFMNamePage, NFMRegistrationPage, UPEAddressPage}
+import uk.gov.hmrc.test.ui.pages._
 
 
 class NFMPageSteps extends CommonFunctions {

@@ -389,8 +389,6 @@ Feature: RFM CYA - NFM No ID flow
     And I enter Country as Australia
     And I click on Country selected
     And I click on Continue button
-    And I click on Continue button
-    And I click on Continue button
     When I provide RFM contact name as RFM test contact
     And I click on Continue button
     Then I should navigate to RFM Contact Email Page

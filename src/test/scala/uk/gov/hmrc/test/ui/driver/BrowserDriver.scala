@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.driver
 
 import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
 import org.openqa.selenium.remote.RemoteWebDriver
 import uk.gov.hmrc.selenium.webdriver.Driver
 
