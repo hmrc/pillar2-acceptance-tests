@@ -34,6 +34,11 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
     assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
   }
 
+  And("""^I should see row (\d+) with key (.*) and value (.*)""") { (row: Int, key: String,value: String) =>
+    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
+    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
+  }
+
   And("""^I should see details as below:$""") { (details: DataTable) =>
     val detailsData = details.asMaps(classOf[String], classOf[String])
     detailsData.forEach { row =>

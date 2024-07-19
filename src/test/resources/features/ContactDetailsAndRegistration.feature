@@ -246,15 +246,15 @@ Feature: Contact details for the filing member
       | Second contact name                           | Second Contact Name Change    |
       | Second contact email address                  | secondContactchange@email.com |
       | Second contact telephone number               | 71235643                      |
-    And I should see row 12 value Contact Name Change
-    And I should see row 13 value emailchange@test.com
-    And I should see row 14 value Yes
-    And I should see row 15 value 1234555
-    And I should see row 19 value Yes
-    And I should see row 21 value Address Change
+    And I should see row 12 with key Contact name and value Contact Name Change
+    And I should see row 13 with key Email address and value emailchange@test.com
+    And I should see row 14 with key Can we contact by telephone? and value Yes
+    And I should see row 15 with key Telephone number and value 1234555
+    And I should see row 19 with key Can we contact by telephone? and value Yes
+    And I should see row 21 with key Address and value Address Change
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
-    Then I click Edit contact details link
+    When I click Edit contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
