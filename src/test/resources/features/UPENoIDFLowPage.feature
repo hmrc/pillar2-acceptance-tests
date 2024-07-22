@@ -74,19 +74,32 @@ Feature: UPE NO ID journey
     When Organisation User logs in as upe with credId UPENoIDJourney for Pillar2
     Then I should be on UPE business page
     And I should see the answer No remain selected
+    Then I click on Continue button
     And I should see the UPE name field is pre-populated with Test UPE
+    Then I click on Continue button
     And I should see the Postal Code field is pre-populated with EH5 5WY
     And I should see the Country field is pre-populated with United Kingdom
     And I click on Continue button
     And I should see the UPE Person/Team name field is pre-populated with Contact UPE
+    And I click on Continue button
     And I should see the UPE Email address field is pre-populated with testcontactupe@email.com
+    And I click on Continue button
     And I should see the answer Yes remain selected
+    Then I click on Continue button
     Then I should see the Telephone number field is pre-populated with 1234569
+    When I select back link
+    Then I should be on UPE Telephone page
+    When I select back link
+    Then I should be on UPE Contact Email page
+    When I select back link
+    Then I should be on UPE Contact person/team Name page
+    When I select back link
+    Then I should be on input-upe-address page
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
 
   @batch1
-  Scenario: 2 - Verify task list satus
+  Scenario: 2 - Verify task list status
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The header should display BETA banner
@@ -133,7 +146,7 @@ Feature: UPE NO ID journey
     When I select back link
     Then I should navigate to UPE Telephone page
     When I select option No and continue to next
-    Then I should be on Check your answers pagege
+    Then I should be on Check your answers page
     When I click feedback link
     Then I should be navigated to Send your feedback page
 

@@ -84,13 +84,18 @@ Feature: NFM NO ID journey
     When I click Edit filing member’s details link
     When I click on Continue button
     And I should see the answer No remain selected
+    Then I click on Continue button
     Then I should navigate to NFM Name page
     And I should see the NFM name field is pre-populated with Test CYA
+    Then I click on Continue button
     And I should see the Address Line 1 field is pre-populated with Address Line 1 CYA
     And I should see the NFM Contact name field is pre-populated with Contact CYA
     And I should see the NFM Contact Email field is pre-populated with testcya@email.com
+    Then I click on Continue button
     And I should see the answer Yes remain selected
+    Then I click on Continue button
     Then I should see the NFM Telephone number field is pre-populated with 1234569
+    Then I click on Continue button
     When I click on change hyperlink next to the NFM Name
     And I enter NFM name as Name Change
     And I should see row 1 value Name Change

@@ -16,11 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 import com.typesafe.config.{Config, ConfigFactory}
-import org.scalatest.Assertions
-import org.scalatest.matchers.should.Matchers
-import org.scalatestplus.selenium.WebBrowser
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 trait PageObject {
   val config: Config          = ConfigFactory.load()

@@ -79,39 +79,35 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
         Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
-        RFMStartPage.clickContinue()
+
 
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
         Input.sendKeysByCss(name, RFMContactDetailNamePage.nameField)
-        RFMStartPage.clickContinue()
 
       case "contact email" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactEmailPage.emailField)
         Input.sendKeysByCss(name, RFMContactEmailPage.emailField)
-        RFMStartPage.clickContinue()
 
       case "contact number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.telephoneField)
         Input.sendKeysByCss(name, RFMContactInputPage.telephoneField)
-        RFMStartPage.clickContinue()
 
       case "New NFM Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.nameField)
         Input.sendKeysByCss(name, RFMNewNFMContactNamePage.nameField)
-        RFMStartPage.clickContinue()
 
       case "second contact number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephonePage.telephoneField)
         Input.sendKeysByCss(name, RFMSecondContactTelephonePage.telephoneField)
-        RFMStartPage.clickContinue()
 
     }
+    RFMStartPage.clickContinue()
   }
 
   And("""^I should see an error message (.*) on the RFM (.*) Page$""") { (error: String, page: String) =>

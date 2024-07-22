@@ -3,7 +3,7 @@ Feature: Contact details for the filing member
   As a NFM Subscription user
   I want to enter contact details and navigate to dashboard page
 
-  @batch1 @tests1
+  @batch1
   Scenario: 1 - Create a new subscription with UPE GRS Flow and NFM No Id flow to validate Contact Details
     Given Organisation User logs in as upe with credId ContactDetails for Pillar2
     Then I should be on UPE business page
@@ -100,7 +100,6 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I enter Second Contact Input as 1234554
-    And I click on Continue button
     Then I should navigate to Contact address input page
     And The caption must be Contact details
     And The Heading should be What address do you want to use as the filing member’s contact address?
@@ -114,7 +113,6 @@ Feature: Contact details for the filing member
     When I select back link
     Then I should be on Contact address input page
     When I select back link
-    When I select back link
     Then I should be on Second Contact Input page
     And I should see the Second Contact Input field is pre-populated with 1234554
     When I select back link
@@ -127,6 +125,7 @@ Feature: Contact details for the filing member
     When I select back link
     Then I should navigate to Second Contact details page
     And I should see the answer Yes remain selected
+    When I select back link
     When I select back link
     And I should see the Contact Telephone field is pre-populated with 1234554
     When I select back link
