@@ -3,7 +3,7 @@ Feature: Contact details for the filing member
   As a NFM Subscription user
   I want to enter contact details and navigate to dashboard page
 
-  @batch1
+  @batch1 @tests1
   Scenario: 1 - Create a new subscription with UPE GRS Flow and NFM No Id flow to validate Contact Details
     Given Organisation User logs in as upe with credId ContactDetails for Pillar2
     Then I should be on UPE business page
@@ -95,7 +95,6 @@ Feature: Contact details for the filing member
     And The Body content should be We will only use this to contact you about Pillar 2 top-up taxes.
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
-    And I click on Continue button
     Then I should navigate to Second Contact number page
     And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     When I select option Yes and continue to next
@@ -113,12 +112,13 @@ Feature: Contact details for the filing member
       | countryCode  | United Kingdom |
     Then I should navigate to Contact details Check answers page
     When I select back link
-    Then I should navigate to Contact address input page
+    Then I should be on Contact address input page
     When I select back link
-    Then I should navigate to Second Contact Input page
+    When I select back link
+    Then I should be on Second Contact Input page
     And I should see the Second Contact Input field is pre-populated with 1234554
     When I select back link
-    Then I should navigate to Second Contact number page
+    Then I should be on Second Contact number page
     And I should see the answer Yes remain selected
     When I select back link
     And I should see the Second Contact Email field is pre-populated with secondContact@email.com
@@ -151,102 +151,79 @@ Feature: Contact details for the filing member
     Then I should be on Contact details Check answers page
     And The caption must be Contact details
     And The Heading should be Check your answers for contact details
-    And I should see row 1 key Contact name
-    And I should see row 2 key Email address
-    And I should see row 3 key Can we contact by telephone?
-    And I should see row 4 key Telephone number
-    And I should see row 1 value Contact Name Test
-    And I should see row 2 value testContact@email.com
-    And I should see row 3 value Yes
-    And I should see row 4 value 1234554
-    And I should see row 5 key Do you have a second contact?
-    And I should see row 6 key Second contact name
-    And I should see row 7 key Second contact email address
-    And I should see row 8 key Can we contact by telephone?
-    And I should see row 9 key Second contact telephone number
-    And I should see row 10 key Address
-    And I should see row 5 value Yes
-    And I should see row 6 value Second Contact Name Test
-    And I should see row 7 value secondContact@email.com
-    And I should see row 8 value Yes
-    And I should see row 9 value 1234554
-    And I should see row 10 value Address Line 1
-    And I should see row 10 value City
-    And I should see row 10 value EH5 5WY
-    And I should see row 10 value United Kingdom
+    And I should see details as below:
+      | KEY                             | VALUE                    |
+      | Contact name                    | Contact Name Test        |
+      | Email address                   | testContact@email.com    |
+      | Can we contact by telephone?    | Yes                      |
+      | Telephone number                | 1234554                  |
+      | Do you have a second contact?   | Yes                      |
+      | Second contact name             | Second Contact Name Test |
+      | Second contact email address    | secondContact@email.com  |
+      | Can we contact by telephone?    | Yes                      |
+      | Second contact telephone number | 1234554                  |
+      | Address                         | Address Line 1           |
+      | Address                         | City                     |
+      | Address                         | EH5 5WY                  |
+      | Address                         | United Kingdom           |
     When I click on change link for Contact Name
-    When I enter Contact Name as Contact Name Change
+    And I enter Contact Name as Contact Name Change
+    Then I should navigate to Contact details Check answers page
     When I click on change link for Email address
-    When I enter Contact Email as emailchange@test.com
+    And I enter Contact Email as emailchange@test.com
+    Then I should navigate to Contact details Check answers page
     When I click on change link for Telephone number
-    When I enter Contact Telephone as 1234555
+    And I enter Contact Telephone as 1234555
     When I click on change link for Second Contact Name
     And I enter Second Contact Name as Second Contact Name Change
     When I click on change link for Second Contact Email
-    When I enter Second Contact Email as secondContactchange@email.com
-    When I select option Yes and continue to next
-    When I enter Second Contact Input as 71235643
+    And I enter Second Contact Email as secondContactchange@email.com
+    When I click on change link for Second Contact Telephone number
+    And I enter Second Contact Input as 71235643
     When I click on change link for Address
-    When I enter Address Line 1 as Address Change
+    And I enter Address Line 1 as Address Change
     And I click on Continue button
-    And I should see row 1 value Contact Name Change
-    And I should see row 2 value emailchange@test.com
-    And I should see row 4 value 1234555
-    And I should see row 6 value Second Contact Name Change
-    And I should see row 7 value secondContactchange@email.com
-    And I should see row 8 value Yes
-    And I should see row 9 value 71235643
-    And I should see row 10 value Address Change
+    Then I should see details as below:
+      | KEY                             | VALUE                         |
+      | Contact name                    | Contact Name Change           |
+      | Email address                   | emailchange@test.com          |
+      | Telephone number                | 1234555                       |
+      | Second contact name             | Second Contact Name Change    |
+      | Second contact email address    | secondContactchange@email.com |
+      | Can we contact by telephone?    | Yes                           |
+      | Second contact telephone number | 71235643                      |
+      | Address                         | Address Change                |
     And I click on Continue button
     When I click Check your answers link
     Then I should be on Review answers page
-    And I should see row 1 key Name
-    And I should see row 2 key Address
-    And I should see row 3 key Contact name
-    And I should see row 4 key Email address
-    And I should see row 5 key Can we contact by telephone?
-    And I should see row 6 key Telephone number
-    And I should see row 1 value Test
-    And I should see row 2 value Address Line 1
-    And I should see row 2 value City
-    And I should see row 2 value EH5 5WY
-    And I should see row 2 value United Kingdom
-    And I should see row 3 value UPE Test
-    And I should see row 4 value testupe@email.com
-    And I should see row 5 value Yes
-    And I should see row 6 value 123456
-    And I should see row 7 key Is there a nominated filing member
-    And I should see row 7 value No
-    And I should see row 8 key Where are the entities in your group located?
-    And I should see row 9 key Group’s consolidated accounting period
-    And I should see row 10 key Start date
-    And I should see row 11 key End date
-    And I should see row 8 value In the UK and other countries
-    And I should see row 10 value 15 January 2024
-    And I should see row 11 value 15 January 2025
-    And I should see row 12 key Contact name
-    And I should see row 13 key Email address
-    And I should see row 14 key Can we contact by telephone?
-    And I should see row 15 key Telephone number
-    And I should see row 16 key Do you have a second contact?
-    And I should see row 17 key Second contact name
-    And I should see row 18 key Second contact email address
-    And I should see row 19 key Can we contact by telephone?
-    And I should see row 20 key Second contact telephone number
-    And I should see row 21 key Address
-    And I should see row 12 value Contact Name Change
-    And I should see row 13 value emailchange@test.com
-    And I should see row 14 value Yes
-    And I should see row 15 value 1234555
-    And I should see row 16 value Yes
-    And I should see row 17 value Second Contact Name Change
-    And I should see row 18 value secondContactchange@email.com
-    And I should see row 19 value Yes
-    And I should see row 20 value 71235643
-    And I should see row 21 value Address Change
+    And I should see details as below:
+      | KEY                                           | VALUE                         |
+      | Name                                          | Test                          |
+      | Address                                       | Address Line 1                |
+      | Address                                       | City                          |
+      | Address                                       | EH5 5WY                       |
+      | Address                                       | United Kingdom                |
+      | Contact name                                  | UPE Test                      |
+      | Email address                                 | testupe@email.com             |
+      | Can we contact by telephone?                  | Yes                           |
+      | Telephone number                              | 123456                        |
+      | Is there a nominated filing member            | No                            |
+      | Where are the entities in your group located? | In the UK and other countries |
+      | Start date                                    | 15 January 2024               |
+      | End date                                      | 15 January 2025               |
+      | Do you have a second contact?                 | Yes                           |
+      | Second contact name                           | Second Contact Name Change    |
+      | Second contact email address                  | secondContactchange@email.com |
+      | Second contact telephone number               | 71235643                      |
+    And I should see row 12 with key Contact name and value Contact Name Change
+    And I should see row 13 with key Email address and value emailchange@test.com
+    And I should see row 14 with key Can we contact by telephone? and value Yes
+    And I should see row 15 with key Telephone number and value 1234555
+    And I should see row 19 with key Can we contact by telephone? and value Yes
+    And I should see row 21 with key Address and value Address Change
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
-    Then I click Edit contact details link
+    When I click Edit contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
@@ -256,18 +233,14 @@ Feature: Contact details for the filing member
     Then I should navigate to Contact address input page
     When I click on Continue button
     Then I should be on Contact details Check answers page
-    And I should see row 1 key Contact name
-    And I should see row 2 key Email address
-    And I should see row 3 key Can we contact by telephone?
-    And I should see row 4 key Telephone number
-    And I should see row 1 value UPE Test
-    And I should see row 2 value testupe@email.com
-    And I should see row 3 value Yes
-    And I should see row 4 value 123456
-    And I should see row 5 key Do you have a second contact?
-    And I should see row 6 key Address
-    And I should see row 5 value No
-    And I should see row 6 value Address Change
+    And I should see details as below:
+      | KEY                           | VALUE             |
+      | Contact name                  | UPE Test          |
+      | Email address                 | testupe@email.com |
+      | Can we contact by telephone?  | Yes               |
+      | Telephone number              | 123456            |
+      | Do you have a second contact? | No                |
+      | Address                       | Address Change    |
     And I click on Continue button
     When I click Check your answers link
     Then I should be on Review answers page
@@ -418,29 +391,21 @@ Feature: Contact details for the filing member
     And I click on Continue button
     When I click Check your answers link
     Then I should navigate to Review answers page
-    And I should see row 1 key Company
-    And I should see row 2 key Company Registration Number
-    And I should see row 3 key Unique Taxpayer Reference
-    And I should see row 1 value Test Example Company Name
-    And I should see row 2 value 76543210
-    And I should see row 3 value 1234567890
-    And I should see row 4 key Is there a nominated filing member
-    And I should see row 5 key Name
-    And I should see row 6 key Address
-    And I should see row 7 key Contact name
-    And I should see row 8 key Email address
-    And I should see row 9 key Can we contact by telephone?
-    And I should see row 10 key Telephone number
-    And I should see row 4 value Yes
-    And I should see row 5 value Test
-    And I should see row 6 value Address Line 1
-    And I should see row 6 value City
-    And I should see row 6 value EH5 5WY
-    And I should see row 6 value United Kingdom
-    And I should see row 7 value NFM Test
-    And I should see row 8 value testNFM@email.com
-    And I should see row 9 value Yes
-    And I should see row 10 value 12345678
+    And I should see details as below:
+      | KEY                                | VALUE                     |
+      | Company                            | Test Example Company Name |
+      | Company Registration Number        | 76543210                  |
+      | Unique Taxpayer Reference          | 1234567890                |
+      | Is there a nominated filing member | Yes                       |
+      | Name                               | Test                      |
+      | Address                            | Address Line 1            |
+      | Address                            | City                      |
+      | Address                            | EH5 5WY                   |
+      | Address                            | United Kingdom            |
+      | Contact name                       | Contact NFM Test          |
+      | Email address                      | testNFM@email.com         |
+      | Can we contact by telephone?       | Yes                       |
+      | Telephone number                   | 12345678                  |
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
     And The Header should be Report Pillar 2 top-up taxes

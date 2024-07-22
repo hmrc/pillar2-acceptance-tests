@@ -123,31 +123,23 @@ Feature: Dashboard Page
     And I should see sub section 1 as First contact
     And I should see sub section 2 as Second contact
     And I should see sub section 3 as Contact address
-    And I should see row 1 key Contact name
-    And I should see row 2 key Email address
-    And I should see row 3 key Can we contact by telephone?
-    And I should see row 4 key Telephone number
-    And I should see row 1 value Fred Flintstone
-    And I should see row 2 value fred.flintstone@aol.com
-    And I should see row 3 value Yes
-    And I should see row 4 value 0115 9700 700
-    And I should see row 5 key Do you have a second contact?
-    And I should see row 6 key Second contact name
-    And I should see row 7 key Second contact email address
-    And I should see row 8 key Can we contact by telephone?
-    And I should see row 9 key Second contact telephone number
-    And I should see row 5 value Yes
-    And I should see row 6 value Donald Trump
-    And I should see row 7 value onald.trump@potus.com
-    And I should see row 8 value Yes
-    And I should see row 9 value 0115 9700 701
-    And I should see row 10 key Address
-    And I should see row 10 value 1 High Street
-    And I should see row 10 value Egham
-    And I should see row 10 value Wycombe
-    And I should see row 10 value Surrey
-    And I should see row 10 value HP13 6TT
-    And I should see row 10 value United Kingdom
+    And I should see details as below:
+      | KEY                             | VALUE                   |
+      | Contact name                    | Fred Flintstone         |
+      | Email address                   | fred.flintstone@aol.com |
+      | Can we contact by telephone?    | Yes                     |
+      | Telephone number                | 0115 9700 700           |
+      | Do you have a second contact?   | Yes                     |
+      | Second contact name             | Donald Trump            |
+      | Second contact email address    | donald.trump@potus.com  |
+      | Can we contact by telephone?    | Yes                     |
+      | Second contact telephone number | 0115 9700 701           |
+      | Address                         | 1 High Street           |
+      | Address                         | Egham                   |
+      | Address                         | Wycombe                 |
+      | Address                         | Surrey                  |
+      | Address                         | HP13 6TT                |
+      | Address                         | United Kingdom          |
     When I click on change link for Contact Name
     When I enter Contact Name as Contact Name Test
     Then I should navigate to contact details summary page
@@ -171,27 +163,24 @@ Feature: Dashboard Page
     And I enter Region as Test Region
     And I enter Postal Code as EH5 5WY
     And I click on Continue button
-    And I should see row 1 value Contact Name Test
-    And I should see row 2 value contact@email.com
-    And I should see row 3 value Yes
-    And I should see row 4 value 123456789
-    And I should see row 5 key Do you have a second contact?
-    And I should see row 6 key Second contact name
-    And I should see row 7 key Second contact email address
-    And I should see row 8 key Can we contact by telephone?
-    And I should see row 9 key Second contact telephone number
-    And I should see row 5 value Yes
-    And I should see row 6 value Second Contact Name Test
-    And I should see row 7 value secondContact@email.com
-    And I should see row 8 value Yes
-    And I should see row 9 value 1234554878
-    And I should see row 10 key Address
-    And I should see row 10 value Test Address Line 1
-    And I should see row 10 value Test Address Line 2
-    And I should see row 10 value Test City
-    And I should see row 10 value Test Region
-    And I should see row 10 value EH5 5WY
-    And I should see row 10 value United Kingdom
+    Then I should navigate to contact details summary page
+    And I should see details as below:
+      | KEY                             | VALUE                    |
+      | Contact name                    | Contact Name Test        |
+      | Email address                   | contact@email.com        |
+      | Can we contact by telephone?    | Yes                      |
+      | Telephone number                | 123456789                |
+      | Do you have a second contact?   | Yes                      |
+      | Second contact name             | Second Contact Name Test |
+      | Second contact email address    | secondContact@email.com  |
+      | Can we contact by telephone?    | Yes                      |
+      | Second contact telephone number | 1234554878               |
+      | Address                         | Test Address Line 1      |
+      | Address                         | Test Address Line 2      |
+      | Address                         | Test City                |
+      | Address                         | Test Region              |
+      | Address                         | EH5 5WY                  |
+      | Address                         | United Kingdom           |
     When I click on Continue button
     Then I should be on Dashboard page
 

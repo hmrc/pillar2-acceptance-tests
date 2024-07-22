@@ -59,21 +59,17 @@ Feature: NFM NO ID journey
     Then I should navigate to NFM Check your answers page
     And The caption must be Group details
     And The Heading should be Check your answers for filing member details
-    And I should see row 1 key Name
-    And I should see row 2 key Address
-    And I should see row 3 key Contact name
-    And I should see row 4 key Email address
-    And I should see row 5 key Can we contact by telephone?
-    And I should see row 6 key Telephone number
-    And I should see row 1 value Test CYA
-    And I should see row 2 value Address Line 1 CYA
-    And I should see row 2 value City CYA
-    And I should see row 2 value EH5 5WY
-    And I should see row 2 value United Kingdom
-    And I should see row 3 value Contact CYA
-    And I should see row 4 value testcya@email.com
-    And I should see row 5 value Yes
-    And I should see row 6 value 1234569
+    And I should see details as below:
+      | KEY                          | VALUE              |
+      | Name                         | Test CYA           |
+      | Address                      | Address Line 1 CYA |
+      | Address                      | City CYA           |
+      | Address                      | EH5 5WY            |
+      | Address                      | United Kingdom     |
+      | Contact name                 | Contact CYA        |
+      | Email address                | testcya@email.com  |
+      | Can we contact by telephone? | Yes                |
+      | Telephone number             | 1234569            |
     When I select back link
     Then I should navigate to input nfm telephone page
     When I click on Continue button

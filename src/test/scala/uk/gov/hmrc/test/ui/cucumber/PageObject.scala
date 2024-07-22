@@ -23,23 +23,14 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 trait PageObject {
-  val config: Config = ConfigFactory.load()
-  val env: String = config.getString("environment")
-  val defaultConfig: Config = config.getConfig("local")
-  val envConfig: Config = config.getConfig(env).withFallback(defaultConfig)
-  val rootUrl: String = TestConfiguration.url("pillar2-frontend")
-  val p2SubRootUrl: String = TestConfiguration.url("pillar2-submission-frontend")
-  val back = "backLink"
-  val submit = "submit"
+  val config: Config          = ConfigFactory.load()
+  val env: String             = config.getString("environment")
+  val defaultConfig: Config   = config.getConfig("local")
+  val envConfig: Config       = config.getConfig(env).withFallback(defaultConfig)
+  val rootUrl: String         = TestConfiguration.url("pillar2-frontend")
+  val p2SubRootUrl: String    = TestConfiguration.url("pillar2-submission-frontend")
+  val back                    = "backLink"
+  val submit                  = "submit"
   val url: String
 
-  trait PageObject extends WebBrowser with Assertions with Matchers with BrowserDriver {
-    def elementTextAll(selector: String): List[String] = {
-      try {
-        findAll(cssSelector(selector)).map(_.underlying.getText.trim).toList
-      } catch {
-        case _: NoSuchElementException => fail(s"Selector $selector not found in page")
-      }
-    }
-  }
 }

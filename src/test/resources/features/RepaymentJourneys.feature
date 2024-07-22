@@ -141,16 +141,19 @@ Feature: Repayment Journey
     When I provide Repayment contact email as email@change.com
     When  I click change link for Repayment Contact Telephone
     When I select option No and continue to next
-    And I should see the row 1 value 1000
-    And I should see the row 2 value Test Reason
-    And I should see the row 3 value Non-UK bank account
-    And I should see the row 4 value HSBC2
-    And I should see the row 5 value Test Name2
-    And I should see the row 6 value HBUKGB4C
-    And I should see the row 7 value GB29NWBK60161331926820
-    And I should see the row 8 value Repayment Contact Name change
-    And I should see the row 9 value email@change.com
-    And I should see the row 10 value No
+    Then I should be on Repayment CYA Page
+    And I should see details as below:
+      | KEY                                              | VALUE                         |
+      | Refund amount                                    | £1000                         |
+      | Reason for refund request                        | Test Reason                   |
+      | What type of account will the refund be sent to? | Non-UK bank account           |
+      | Name of the bank                                 | HSBC2                         |
+      | Name on account                                  | Test Name2                    |
+      | BIC or SWIFT code                                | HBUKGB4C                      |
+      | IBAN                                             | GB29NWBK60161331926820        |
+      | Contact name                                     | Repayment Contact Name change |
+      | Email address                                    | email@change.com              |
+      | Can we contact by telephone?                     | No                            |
     And I can see Print this page link
     When I click change link for Repayment UK Bank Method
     And I click on Continue button
@@ -248,16 +251,18 @@ Feature: Repayment Journey
     When  I click change link for Repayment Contact Telephone
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
-    And I should see the row 1 value 1000
-    And I should see the row 2 value Test Reason
-    And I should see the row 3 value Non-UK bank account
-    And I should see the row 4 value HSBC2
-    And I should see the row 5 value Test Name2
-    And I should see the row 6 value HBUKGB4C
-    And I should see the row 7 value GB29NWBK60161331926820
-    And I should see the row 8 value Repayment Contact Name change
-    And I should see the row 9 value email@change.com
-    And I should see the row 10 value No
+    And I should see details as below:
+      | KEY                                              | VALUE                         |
+      | Refund amount                                    | £1000                         |
+      | Reason for refund request                        | Test Reason                   |
+      | What type of account will the refund be sent to? | Non-UK bank account           |
+      | Name of the bank                                 | HSBC2                         |
+      | Name on account                                  | Test Name2                    |
+      | BIC or SWIFT code                                | HBUKGB4C                      |
+      | IBAN                                             | GB29NWBK60161331926820        |
+      | Contact name                                     | Repayment Contact Name change |
+      | Email address                                    | email@change.com              |
+      | Can we contact by telephone?                     | No                            |
     When I click change link for Repayment UK Bank Method
     When I select repayment method as UK bank account
     And I click on Continue button

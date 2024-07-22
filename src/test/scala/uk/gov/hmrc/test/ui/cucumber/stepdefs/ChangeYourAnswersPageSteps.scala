@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
@@ -31,6 +32,29 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
+  }
+
+  And("""^I should see row (\d+) with key (.*) and value (.*)""") { (row: Int, key: String,value: String) =>
+    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
+    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
+  }
+
+  And("""^I should see details as below:$""") { (details: DataTable) =>
+    val detailsData = details.asMaps(classOf[String], classOf[String])
+    detailsData.forEach { row =>
+      val key = row.get("KEY")
+      val expectedValue = row.get("VALUE")
+      val labelElement = driver.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
+      val valueElement = labelElement.findElement(By.xpath("following-sibling::dd[1]"))
+      if (key == "Address") {
+        val actualValueLines = valueElement.getText.split("\n").map(_.trim)
+        expectedValue.split("\n").foreach { expectedLine =>
+          actualValueLines should contain(expectedLine)
+        }
+      } else {
+        valueElement.getText shouldEqual expectedValue
+      }
+    }
   }
 
   And("""^I click on change hyperlink next to the (.*)""") { (link: String) =>

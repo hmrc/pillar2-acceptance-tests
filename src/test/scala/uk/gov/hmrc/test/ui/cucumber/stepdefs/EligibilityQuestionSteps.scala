@@ -36,6 +36,7 @@ class EligibilityQuestionSteps extends CommonFunctions {
   }
 
   And("""^I select back link$""") { () =>
+    Wait.waitForElementToClicktagName("h1")
     clickByCss(BusinessActivityEQPage.backLink)
   }
 

@@ -81,14 +81,16 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     When I select option Yes and continue to next
     When I provide RFM second contact number as 09872960001
     Then I should navigate to RFM Final Review Page
-    And I should see the row 2 value Test Example Company Name
-    And I should see the row 3 value 76543210
-    And I should see the row 4 value 1234567890
-    And I should see the row 9 value Yes
-    And I should see the row 10 value RFM second test contact
-    And I should see the row 11 value rfmsecondcontact@email.com
-    And I should see the row 12 value Yes
-    And I should see the row 13 value 09872960001
+    And I should see details as below:
+      | KEY                             | VALUE                      |
+      | Company                         | Test Example Company Name  |
+      | Company Registration Number     | 76543210                   |
+      | Unique Taxpayer Reference       | 1234567890                 |
+      | Do you have a second contact?   | Yes                        |
+      | Second contact name             | RFM second test contact    |
+      | Second contact email address    | rfmsecondcontact@email.com |
+      | Can we contact by telephone?    | Yes                        |
+      | Second contact telephone number | 09872960001                |
     When I click change link for RFM New NFM Name
     And I provide RFM contact name as RFM test contact change
     And I should see the row 5 value RFM test contact change

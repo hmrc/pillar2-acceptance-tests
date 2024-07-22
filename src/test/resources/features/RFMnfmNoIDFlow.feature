@@ -75,13 +75,13 @@ Feature: RFM CYA - NFM No ID flow
     Then I should be on RFM No ID CYA Page
     Then The caption must be Group details
     And The Heading should be Check your answers
-    And I should see row 1 key Name
-    And I should see row 1 value Test CYA
-    And I should see row 2 key Address
-    And I should see row 2 value Address Line 1 CYA
-    And I should see row 2 value City CYA
-    And I should see row 2 value EH55WY
-    And I should see row 2 value Australia
+    And I should see details as below:
+      | KEY     | VALUE              |
+      | Name    | Test CYA           |
+      | Address | Address Line 1 CYA |
+      | Address | City CYA           |
+      | Address | EH55WY             |
+      | Address | Australia          |
     When I click change link for RFM New NFM Name
     Then I should navigate to RFM New NFM Contact Name Change
     When I provide RFM New NFM Name as New NFM Name Change
@@ -139,12 +139,14 @@ Feature: RFM CYA - NFM No ID flow
     Then I should be on RFM No ID CYA Page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
-    And I should see row 1 value New nominated filing member
-    And I should see row 2 value Test CYA
-    And I should see row 3 value Address Line 1 CYA
-    And I should see row 3 value City CYA
-    And I should see row 3 value EH55WY
-    And I should see row 3 value Australia
+    And I should see details as below:
+      | KEY                                         | VALUE                       |
+      | Position in the group’s corporate structure | New nominated filing member |
+      | Name                                        | Test CYA                    |
+      | Address                                     | Address Line 1 CYA          |
+      | Address                                     | City CYA                    |
+      | Address                                     | EH55WY                      |
+      | Address                                     | Australia                   |
     When I click change link for RFM Input Name
     When I provide RFM New NFM Name as Test Change
     Then I should navigate to RFM Final Review Page
@@ -256,13 +258,15 @@ Feature: RFM CYA - NFM No ID flow
     Then I should be on RFM No ID CYA Page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
-    And I should see row 1 value New nominated filing member
-    And I should see row 2 value Test CYA
-    And I should see row 3 value Address Line 1 CYA
-    And I should see row 3 value City CYA
-    And I should see row 3 value EH55WY
-    And I should see row 3 value Australia
-    When I click change link for RFM Input Name
+    And I should see details as below:
+      | KEY                                         | VALUE                       |
+      | Position in the group’s corporate structure | New nominated filing member |
+      | Name                                        | Test CYA                    |
+      | Address                                     | Address Line 1 CYA          |
+      | Address                                     | City CYA                    |
+      | Address                                     | EH55WY                      |
+      | Address                                     | Australia                   |
+   When I click change link for RFM Input Name
     When I provide RFM New NFM Name as Test Change
     Then I should navigate to RFM Final Review Page
     When I click change link for RFM Input Address
@@ -271,9 +275,11 @@ Feature: RFM CYA - NFM No ID flow
     And I enter Postal Code as EH75WK
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
-    And I should see row 3 value Address Line 1 Change
-    And I should see row 3 value City Change
-    And I should see row 3 value EH75WK
+    And I should see details as below:
+      | KEY     | VALUE                 |
+      | Address | Address Line 1 Change |
+      | Address | City Change           |
+      | Address | EH75WK                |
     When I click change link for RFM Corporate Position
     When I select corp position as UPE
     And I should see row 1 value Ultimate parent entity (UPE)
@@ -298,10 +304,12 @@ Feature: RFM CYA - NFM No ID flow
     Then I should be on RFM Contact Address Page
     When I click on Continue button
     Then I should navigate to RFM Final Review Page
-    And I should see row 1 value New nominated filing member
-    And I should see row 2 value Test Example Company Name
-    And I should see row 3 value 76543210
-    And I should see row 4 value 1234567890
+    And I should see details as below:
+      | KEY                                         | VALUE                       |
+      | Position in the group’s corporate structure | New nominated filing member |
+      | Company                                     | Test Example Company Name   |
+      | Company Registration Number                 | 76543210                    |
+      | Unique Taxpayer Reference                   | 1234567890                  |
 
   @batch3
   Scenario: 5 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account
@@ -389,4 +397,3 @@ Feature: RFM CYA - NFM No ID flow
     And I can see Print this page link
     When I click report and manage your group's Pillar 2 top-up taxes link
     Then I should be on Dashboard page
-

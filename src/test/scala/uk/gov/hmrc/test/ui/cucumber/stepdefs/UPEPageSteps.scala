@@ -214,10 +214,8 @@ class UPEPageSteps extends CommonFunctions {
     field match {
       case "UPE name" =>
         assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "NFM name" =>
         assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Address Line 1" =>
         assert(getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name))
       case "Address Line 2" =>
@@ -233,49 +231,34 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
       case "UPE Person/Team name" =>
         assert(getAttributeOfId(UPEContactNamePage.contactName, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "UPE Email address" =>
         assert(getAttributeOfId(UPEContactEmailPage.emailField, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Telephone number" =>
         assert(getAttributeOf(InputUPETelephonePage.telephoneNumber, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "NFM Contact name" =>
         assert(getAttributeOf(NFMContactNamePage.contactName, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "NFM Contact Email" =>
         assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "NFM Telephone number" =>
         assert(getAttributeOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Contact Name" =>
         assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Contact Email" =>
         assert(getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Contact Telephone" =>
         assert(getAttributeOf(ContactDetailsInputTelephonePage.contactTelephone, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Second Contact Name" =>
         assert(getAttributeOf(SecondContactNamePage.contactName, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Second Contact Email" =>
         assert(getAttributeOf(SecondContactEmailPage.contactEmail, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Second Contact Input" =>
         assert(getAttributeOf(SecondContactInputPage.contactTelephone, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Redirect URL" =>
         assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
-        UPEEntityTypePage.clickContinue()
       case "PLRID" =>
         assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "UK Bank Name" =>
         assert(getAttributeOf(UKBankAccountPaymentPage.UKbankName, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
     }
   }
 
