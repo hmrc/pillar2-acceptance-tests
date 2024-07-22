@@ -184,6 +184,7 @@ Feature: Contact details for the filing member
     And I enter Second Contact Name as Second Contact Name Change
     When I click on change link for Second Contact Email
     When I enter Second Contact Email as secondContactchange@email.com
+    When I select option Yes and continue to next
     When I enter Second Contact Input as 71235643
     When I click on change link for Address
     When I enter Address Line 1 as Address Change

@@ -220,22 +220,17 @@ class UPEPageSteps extends CommonFunctions {
         UPEEntityTypePage.clickContinue()
       case "Address Line 1" =>
         assert(getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Address Line 2" =>
         assert(getAttributeOf(UPEAddressPage.addressLine2, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "City" =>
         assert(getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Region" =>
         assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
         UPEEntityTypePage.clickContinue()
       case "Postal Code" =>
         assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "Country" =>
         assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
       case "UPE Person/Team name" =>
         assert(getAttributeOfId(UPEContactNamePage.contactName, "value").equals(name))
         UPEEntityTypePage.clickContinue()

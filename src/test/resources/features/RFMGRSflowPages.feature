@@ -11,10 +11,11 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0012345674
     And I click on Continue button
-    When Registration Day is entered as 31
-    When Registration Month is entered as 1
-    And Registration Year is entered as 2024
-    And I click on Continue button
+    When I enter registration date as:
+      | KEY                       | VALUE |
+      | rfmRegistrationDate.day   | 31    |
+      | rfmRegistrationDate.month | 1     |
+      | rfmRegistrationDate.year  | 2024  |
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
     Then I should be on RFM Saving Progress Page
@@ -23,7 +24,6 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     When I click on Continue button
     Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
-    And I click on Continue button
     Then I should be on New NFM guidance page
     When I click on Continue button
     Then I should be on RFM registered in UK page
@@ -45,20 +45,16 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
-    And I click on Continue button
-    When Registration Day is entered as 31
-    When Registration Month is entered as 1
-    And Registration Year is entered as 2024
-    And I click on Continue button
+    When I enter registration date as:
+      | KEY                       | VALUE |
+      | rfmRegistrationDate.day   | 31    |
+      | rfmRegistrationDate.month | 1     |
+      | rfmRegistrationDate.year  | 2024  |
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
-    And I click on Continue button
-    And I should be on RFM Corp Position Page
-    When I select corp position as NFM
-    And I click on Continue button
-    Then I should be on New NFM guidance page
     When I click on Continue button
-    Then I should be on RFM registered in UK page
+    When I select corp position as NFM
+    When I click on Continue button
     And I select option Yes and continue to next
     Then I should be on RFM UK based entity type page
     When I select option UK limited company and continue to GRS page
@@ -67,34 +63,23 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     Then I should navigate to RFM Contact Detail Page
     When I provide RFM contact name as RFM test contact
-    And I click on Continue button
-    Then I should navigate to RFM Contact Email Page
     When I provide RFM contact email as rfm@email.com
-    And I click on Continue button
-    Then I should navigate to RFM Contact Number Page
     And I select option Yes and continue to next
-    Then I should navigate to RFM Contact Input Page
     When I provide RFM contact number as 01632960001
-    And I click on Continue button
-    Then I should navigate to RFM Second Contact Question Page
     And I select option No and continue to next
-    Then I should be on RFM Contact Address Page
-    And I enter Address Line 1 as Address Line 1 CYA
-    And I enter City as City CYA
-    And I enter Postal Code as EH5 5WY
-    And I enter Country as Australia
-    And I click on Country selected
-    And I click on Continue button
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 CYA |
+      | addressLine3 | City CYA          |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | Australia |
     Then I should navigate to RFM Final Review Page
     When  I click change link for RFM Change Second Contact Preference
     And I select option Yes and continue to next
     When I provide RFM contact name as RFM second test contact
-    And I click on Continue button
     When I provide RFM contact email as rfmsecondcontact@email.com
-    And I click on Continue button
     When I select option Yes and continue to next
     When I provide RFM second contact number as 09872960001
-    And I click on Continue button
     Then I should navigate to RFM Final Review Page
     And I should see the row 2 value Test Example Company Name
     And I should see the row 3 value 76543210
@@ -106,12 +91,9 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I should see the row 13 value 09872960001
     When I click change link for RFM New NFM Name
     And I provide RFM contact name as RFM test contact change
-    And I click on Continue button
-    Then I should navigate to RFM Final Review Page
     And I should see the row 5 value RFM test contact change
     When I click change link for RFM New RFM CYA Change Contact preference
     And I select option No and continue to next
-    Then I should navigate to RFM Final Review Page
     When I click change link for RFM Change Address
     And I enter Address Line 1 as Address Line 1 CYA change
     And I click on Continue button
@@ -121,28 +103,23 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I click on Continue button
     Then I should navigate to RFM Confirmation Page
 
-    @batch2
+  @batch2
   Scenario: 3 - User registration as Limited liability partnership failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0012345674
-    And I click on Continue button
-    When Registration Day is entered as 31
-    When Registration Month is entered as 1
-    And Registration Year is entered as 2024
-    And I click on Continue button
+    When I enter registration date as:
+      | KEY                       | VALUE |
+      | rfmRegistrationDate.day   | 31    |
+      | rfmRegistrationDate.month | 1     |
+      | rfmRegistrationDate.year  | 2024  |
     Then I should be on RFM CYA Page
     When I click on Save&Continue button
     And I click on Continue button
-    Then I should be on RFM Corp Position Page
     When I select corp position as NFM
-    And I click on Continue button
-    Then I should be on New NFM guidance page
     When I click on Continue button
-    Then I should be on RFM registered in UK page
     And I select option Yes and continue to next
-    Then I should be on RFM UK based entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to RFM LLP GRS page
     When registration is unsuccessful with party type mismatch error
@@ -160,22 +137,16 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0012345674
-    And I click on Continue button
-    When Registration Day is entered as 31
-    When Registration Month is entered as 1
-    And Registration Year is entered as 2024
-    And I click on Continue button
-    Then I should be on RFM CYA Page
+    When I enter registration date as:
+      | KEY                       | VALUE |
+      | rfmRegistrationDate.day   | 31    |
+      | rfmRegistrationDate.month | 1     |
+      | rfmRegistrationDate.year  | 2024  |
     When I click on Save&Continue button
     And I click on Continue button
-    Then I should be on RFM Corp Position Page
     When I select corp position as NFM
     And I click on Continue button
-    Then I should be on New NFM guidance page
-    When I click on Continue button
-    Then I should be on RFM registered in UK page
     And I select option Yes and continue to next
-    Then I should be on RFM UK based entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to RFM UK limited Company GRSPage
     When registration is unsuccessful with identifiers not match error

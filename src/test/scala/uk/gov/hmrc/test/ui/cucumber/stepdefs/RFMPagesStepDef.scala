@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
@@ -78,31 +79,37 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
         Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+        RFMStartPage.clickContinue()
 
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
         Input.sendKeysByCss(name, RFMContactDetailNamePage.nameField)
+        RFMStartPage.clickContinue()
 
       case "contact email" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactEmailPage.emailField)
         Input.sendKeysByCss(name, RFMContactEmailPage.emailField)
+        RFMStartPage.clickContinue()
 
       case "contact number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.telephoneField)
         Input.sendKeysByCss(name, RFMContactInputPage.telephoneField)
+        RFMStartPage.clickContinue()
 
       case "New NFM Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.nameField)
         Input.sendKeysByCss(name, RFMNewNFMContactNamePage.nameField)
+        RFMStartPage.clickContinue()
 
       case "second contact number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephonePage.telephoneField)
         Input.sendKeysByCss(name, RFMSecondContactTelephonePage.telephoneField)
+        RFMStartPage.clickContinue()
 
     }
   }
@@ -275,7 +282,9 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "UPE" => Input.clickById("value_0")
       case "NFM" => Input.clickById("value_1")
     }
+    RFMStartPage.clickContinue()
   }
+
   And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
@@ -322,6 +331,12 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     for(i <- 0 to 2) {
       InitialGuidancePage.clickContinue()
     }
+  }
+
+  And("""^I enter registration date as:$""") { (registrationDate: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.enterData(registrationDate)
+    UPEEntityTypePage.clickContinue()
   }
 
 }
