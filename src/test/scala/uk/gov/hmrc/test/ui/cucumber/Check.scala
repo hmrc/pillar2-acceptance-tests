@@ -53,7 +53,6 @@ object Check extends BasePage {
       case "Yes" => Find.findByCss("#value_0").isSelected
       case "No" => Find.findByCss("#value_1").isSelected
     }
-//    UPEEntityTypePage.clickContinue()
   }
 
   def checkOptionSelected(option: String) = {

@@ -89,7 +89,9 @@ Feature: NFM NO ID journey
     And I should see the NFM name field is pre-populated with Test CYA
     Then I click on Continue button
     And I should see the Address Line 1 field is pre-populated with Address Line 1 CYA
+    Then I click on Continue button
     And I should see the NFM Contact name field is pre-populated with Contact CYA
+    Then I click on Continue button
     And I should see the NFM Contact Email field is pre-populated with testcya@email.com
     Then I click on Continue button
     And I should see the answer Yes remain selected
@@ -199,5 +201,6 @@ Feature: NFM NO ID journey
     And I should see row 5 value No
     And I select back link
     Then I should see the answer No remain selected
+    And I click on Continue button
     And I click on Continue button
     Then The Task Edit filing member’s details status should be Completed
