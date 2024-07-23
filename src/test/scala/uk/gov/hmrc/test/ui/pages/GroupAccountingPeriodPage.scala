@@ -16,11 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object GroupAccountingPeriodPage extends PageObject {
-  val url: String           = s"$rootUrl"+"further-details/accounting-period"
+  val url: String = s"$rootUrl" + "further-details/accounting-period"
 
   val caption               = ".govuk-caption-l"
   val form                  = ".govuk-form-group"
@@ -37,8 +36,6 @@ object GroupAccountingPeriodPage extends PageObject {
   val endDay                = "endDate.day"
   val endMonth              = "endDate.month"
   val endYear               = "endDate.year"
-  val dateMessage           =".govuk-fieldset__heading"
-
-  def clickContinue()       = findByCss(continue).click()
+  val dateMessage           = ".govuk-fieldset__heading"
 
 }

@@ -10,44 +10,30 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test
-    Then I should navigate to input-upe-address page
-    When I enter Address Line 1 as Address Line 1
-    And I enter City as City
-    And I enter Postal Code as EH5 5WY
-    And I enter Country as United Kingdom
-    And I click on Country selected
-    And I click on Continue button
-    Then I should navigate to UPE Contact person/team Name page
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | United Kingdom |
     When I enter UPE Person/Team name as UPE Test
-    And I click on Continue button
-    Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as testupe@email.com
-    And I click on Continue button
-    Then I should navigate to UPE Telephone page
     When I select option Yes and continue to next
-    Then I should navigate to input telephone page
     And I enter Telephone Number as 123456
     And I click on Continue button
-    Then I should be on Check your answers page
-    And I click on Continue button
     When I click Add filing member’s details link
-    Then I should navigate to NFM registration page
     When I select No option and continue to next
     When I click Add further group details link
-    Then I should navigate to MNE or domestic page
     When I select option In the UK and other countries in further details group status page
+    When I enter account period as:
+      | KEY             | VALUE |
+      | startDate.day   | 15    |
+      | startDate.month | 1     |
+      | startDate.year  | 2024  |
+      | endDate.day     | 15    |
+      | endDate.month   | 1     |
+      | endDate.year    | 2025  |
     And I click on Continue button
-    Then I should navigate to Group accounting period page
-    When Accounting Period Start Day is entered as 15
-    And Accounting Period Start Month is entered as 1
-    And Accounting Period Start Year is entered as 2024
-    When Accounting Period End Day is entered as 15
-    And Accounting Period End Month is entered as 1
-    And Accounting Period End Year is entered as 2025
-    And I click on Continue button
-    Then I should navigate to FD check your answers page
-    And I click on Continue button
-    Then I should navigate to Task list page
     Then The Task Add contact details status should be Not started
     When I click Add contact details link
     Then I should navigate to Contact details guidance page
@@ -66,14 +52,12 @@ Feature: Contact details for the filing member
     And The caption must be Contact details
     And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
     When I enter Contact Name as Contact Name Test
-    And I click on Continue button
     Then I should navigate to Contact details input email page
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be What is the email address for Contact Name Test
     And The Body content should be We will only use this to contact you about Pillar 2 top-up taxes.
     When I enter Contact Email as testContact@email.com
-    And I click on Continue button
     Then I should navigate to Contact details telephone page
     And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
@@ -105,57 +89,50 @@ Feature: Contact details for the filing member
     And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
     And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter Second Contact Name as Second Contact Name Test
-    And I click on Continue button
     Then I should navigate to Second Contact email page
     And The caption must be Contact details
     And The Heading should be What is the email address for Second Contact Name Test?
     And The Body content should be We will only use this to contact you about Pillar 2 top-up taxes.
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
-    And I click on Continue button
     Then I should navigate to Second Contact number page
     And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I enter Second Contact Input as 1234554
-    And I click on Continue button
     Then I should navigate to Contact address input page
     And The caption must be Contact details
     And The Heading should be What address do you want to use as the filing member’s contact address?
-    When I enter Address Line 1 as Address Line 1
-    And I enter City as City
-    And I enter Postal Code as EH5 5WY
-    And I enter Country as United Kingdom
-    And I click on Country selected
-    When I click on Continue button
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | United Kingdom |
     Then I should navigate to Contact details Check answers page
     When I select back link
-    Then I should navigate to Contact address input page
+    Then I should be on Contact address input page
     When I select back link
-    Then I should navigate to Second Contact Input page
+    Then I should be on Second Contact Input page
     And I should see the Second Contact Input field is pre-populated with 1234554
     When I select back link
-    Then I should navigate to Second Contact number page
+    Then I should be on Second Contact number page
     And I should see the answer Yes remain selected
     When I select back link
-    Then I should navigate to Second Contact email page
     And I should see the Second Contact Email field is pre-populated with secondContact@email.com
     When I select back link
-    Then I should navigate to Second Contact name page
     And I should see the Second Contact Name field is pre-populated with Second Contact Name Test
     When I select back link
     Then I should navigate to Second Contact details page
     And I should see the answer Yes remain selected
     When I select back link
-    Then I should navigate to Contact details input telephone page
+    When I select back link
     And I should see the Contact Telephone field is pre-populated with 1234554
     When I select back link
     And I should see the answer Yes remain selected
     When I select back link
-    Then I should navigate to Contact details input email page
     And I should see the Contact Email field is pre-populated with testContact@email.com
     When I select back link
-    Then I should navigate to Contact details input name page
     And I should see the Contact Name field is pre-populated with Contact Name Test
     When I select back link
     Then I should navigate to Contact details display page
@@ -166,8 +143,6 @@ Feature: Contact details for the filing member
     Then I should navigate to Task list page
     Then The Task Edit contact details status should be Completed
     And The Task Check your answers status should be Not started
-    When I click Sign out link
-    Then I am on feedback survey page
 
   @batch1
   Scenario: 2 - Check you Answers Page Validations
@@ -192,25 +167,18 @@ Feature: Contact details for the filing member
       | Address                         | United Kingdom           |
     When I click on change link for Contact Name
     And I enter Contact Name as Contact Name Change
-    And I click on Continue button
     Then I should navigate to Contact details Check answers page
     When I click on change link for Email address
     And I enter Contact Email as emailchange@test.com
-    And I click on Continue button
     Then I should navigate to Contact details Check answers page
     When I click on change link for Telephone number
     And I enter Contact Telephone as 1234555
-    And I click on Continue button
     When I click on change link for Second Contact Name
     And I enter Second Contact Name as Second Contact Name Change
-    And I click on Continue button
-    Then I should navigate to Contact details Check answers page
     When I click on change link for Second Contact Email
     And I enter Second Contact Email as secondContactchange@email.com
-    And I click on Continue button
     When I click on change link for Second Contact Telephone number
     And I enter Second Contact Input as 71235643
-    And I click on Continue button
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
     And I click on Continue button
@@ -286,58 +254,37 @@ Feature: Contact details for the filing member
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
-    Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    Then I should navigate to Task list page
     When I click Add filing member’s details link
-    Then I should navigate to NFM registration page
     When I select Yes option and continue to next
-    Then I should navigate to NFM details page
     When I select option No and continue to next
-    Then I should navigate to NFM Name page
     When I enter NFM name as Test
-    And I enter Address Line 1 as Address Line 1
-    And I enter City as City
-    And I enter Postal Code as EH5 5WY
-    And I enter Country as United Kingdom
-    And I click on Country selected
-    When I click on Continue button
-    Then I should navigate to NFM Contact Name page
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | United Kingdom |
     When I enter NFM Contact name as Contact NFM Test
-    And I click on Continue button
-    Then I should navigate to NFM Contact Email page
     When I enter NFM Contact Email as testNFM@email.com
-    And I click on Continue button
-    Then I should navigate to NFM Telephone page
     When I select option Yes and continue to next
-    Then I should navigate to input nfm telephone page
     When I enter NFM Telephone Number as 12345678
     And I click on Continue button
-    Then I should navigate to NFM Check your answers page
-    And I click on Continue button
-    Then I should navigate to Task list page
     When I click Add further group details link
-    Then I should navigate to MNE or domestic page
     When I select option Only in the UK in further details group status page
+    When I enter account period as:
+      | KEY             | VALUE |
+      | startDate.day   | 15    |
+      | startDate.month | 1     |
+      | startDate.year  | 2024  |
+      | endDate.day     | 15    |
+      | endDate.month   | 1     |
+      | endDate.year    | 2025  |
     And I click on Continue button
-    Then I should navigate to Group accounting period page
-    When Accounting Period Start Day is entered as 15
-    And Accounting Period Start Month is entered as 1
-    And Accounting Period Start Year is entered as 2024
-    When Accounting Period End Day is entered as 15
-    And Accounting Period End Month is entered as 1
-    And Accounting Period End Year is entered as 2025
-    And I click on Continue button
-    Then I should navigate to FD check your answers page
-    And I click on Continue button
-    Then I should navigate to Task list page
     When I click Add contact details link
-    Then I should navigate to Contact details guidance page
     When I click on Continue button
     Then I should navigate to Contact details display page
     When I click on Continue button
@@ -483,71 +430,43 @@ Feature: Contact details for the filing member
   @batch1
   Scenario: 4 - Validate check your answers page with UPE and NFM GRS and without second contact details for NFM user
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
-    Then I should navigate to UKCompany GRS page
-    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    Then I should navigate to Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    And The Task Add filing member’s details status should be Not started
     When I click Add filing member’s details link
-    Then I should navigate to NFM registration page
     When I select Yes option and continue to next
-    Then I should navigate to NFM details page
     When I select option Yes and continue to next
-    Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
-    Then I should navigate to NFM UKCompany GRS page
     When I registered successfully with BV enabled
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
-    Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
-    Then I should navigate to MNE or domestic page
     When I select option In the UK and other countries in further details group status page
+    When I enter account period as:
+      | KEY             | VALUE |
+      | startDate.day   | 15    |
+      | startDate.month | 1     |
+      | startDate.year  | 2024  |
+      | endDate.day     | 15    |
+      | endDate.month   | 1     |
+      | endDate.year    | 2025  |
     And I click on Continue button
-    Then I should navigate to Group accounting period page
-    When Accounting Period Start Day is entered as 15
-    And Accounting Period Start Month is entered as 1
-    And Accounting Period Start Year is entered as 2024
-    When Accounting Period End Day is entered as 15
-    And Accounting Period End Month is entered as 1
-    And Accounting Period End Year is entered as 2025
-    And I click on Continue button
-    Then I should navigate to FD check your answers page
-    And I click on Continue button
-    Then I should navigate to Task list page
-    Then The Task Add contact details status should be Not started
     When I click Add contact details link
     Then I should navigate to Contact details guidance page
     When I click on Continue button
-    Then I should navigate to Contact details input name page
     When I enter Contact Name as Contact Name Test
-    And I click on Continue button
-    Then I should navigate to Contact details input email page
     When I enter Contact Email as testContact@email.com
-    And I click on Continue button
-    Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
-    Then I should navigate to Contact details input telephone page
     When I enter Contact Telephone as 1234554
-    And I click on Continue button
-    Then I should navigate to Second Contact details page
     When I select option No and continue to next
-    Then I should navigate to Contact address input page
-    When I enter Address Line 1 as Address Line 1 Contact
-    And I enter Address Line 2 as Address Line 2 Contact
-    And I enter City as City Contact
-    And I enter Region as Region Contact
-    And I enter Postal Code as EH5 5WY
-    And I enter Country as United Kingdom
-    And I click on Country selected
-    When I click on Continue button
+    When I enter Address as:
+      | KEY          | VALUE                  |
+      | addressLine1 | Address Line 1 Contact |
+      | addressLine3 | City Contact           |
+      | postalCode   | EH5 5WY                |
+      | countryCode  | United Kingdom         |
     Then I should navigate to Contact details Check answers page
     And I should see row 5 key Do you have a second contact?
     And I should see row 5 value No

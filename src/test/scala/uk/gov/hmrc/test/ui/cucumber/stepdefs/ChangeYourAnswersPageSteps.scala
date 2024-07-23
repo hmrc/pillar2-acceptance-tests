@@ -20,7 +20,7 @@ import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{ContactDetailsCheckAnswersPage, ContactDetailsSummaryPage, DashboardPage, FurtherDetailsCheckYourAnswersPage, InitialGuidancePage, NFMCheckYourAnswersPage, ReviewAnswersPage, UPECheckYourAnswersPage}
+import uk.gov.hmrc.test.ui.pages._
 
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 

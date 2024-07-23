@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber
 
 import org.scalatest.Assertion
 import org.scalatestplus.selenium.Chrome.currentUrl
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.{BasePage}
 
 object Check extends BasePage {
 
@@ -51,7 +51,7 @@ object Check extends BasePage {
   def checkAnswerSelection(option: String) = {
     option match {
       case "Yes" => Find.findByCss("#value_0").isSelected
-      case "No"  => Find.findByCss("#value_1").isSelected
+      case "No" => Find.findByCss("#value_1").isSelected
     }
   }
 
@@ -62,8 +62,6 @@ object Check extends BasePage {
       case "In the UK and other countries" => Find.findByCss("#value_0").isSelected
       case "Only in the UK" => Find.findByCss("#value_1").isSelected
       case "UPE" => Find.findByCss("#value_0").isSelected
-
     }
   }
-
 }

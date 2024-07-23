@@ -1,7 +1,8 @@
 @tests
 Feature: Dashboard Page
-As a registered user
+  As a registered user
   I should be able to navigate to Links on dashboard page
+
   @batch1
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
@@ -44,15 +45,6 @@ As a registered user
     And The caption for section 2 should be HMRC’s bank details for payments outside the UK
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
-    #Then I should be on Dashboard page
-    #When I click View your payment history link
-    #Then I should navigate to under construction page
-    #When I select back link
-    #Then I should be on Dashboard page
-    #When I click Request a repayment link
-    #Then I should navigate to under construction page
-    #When I select back link
-    #Then I should be on Dashboard page
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
     When I click the browser back button
@@ -97,17 +89,17 @@ As a registered user
     When I click on change hyperlink next to the FD Group Status
     And The caption must be Group details
     When I select option Only in the UK in further details group status page
-    When I click on Continue button
     Then I should navigate to accounts summary page
     And I should see row 1 value Only in the UK
     When I click on change hyperlink next to the Accounting Period
-    When Accounting Period Start Day is entered as 5
-    And Accounting Period Start Month is entered as 5
-    And Accounting Period Start Year is entered as 2025
-    When Accounting Period End Day is entered as 5
-    And Accounting Period End Month is entered as 6
-    And Accounting Period End Year is entered as 2026
-    When I click on Continue button
+    When I enter account period as:
+      | KEY             | VALUE |
+      | startDate.day   | 5     |
+      | startDate.month | 5     |
+      | startDate.year  | 2025  |
+      | endDate.day     | 5     |
+      | endDate.month   | 6     |
+      | endDate.year    | 2026  |
     And I should see row 3 value 5 May 2025
     And I should see row 4 value 5 June 2026
     And I click on Continue button
@@ -150,39 +142,26 @@ As a registered user
       | Address                         | United Kingdom          |
     When I click on change link for Contact Name
     When I enter Contact Name as Contact Name Test
-    And I click on Continue button
     Then I should navigate to contact details summary page
     When I click on change link for Email address
     When I enter Contact Email as contact@email.com
-    And I click on Continue button
-    Then I should navigate to contact details summary page
     When I click on change link for Telephone number
     When I enter Contact Telephone as 123456789
-    And I click on Continue button
-    Then I should navigate to contact details summary page
     When I click on change link for Do you have a second contact?
     When I select option No and continue to next
-    Then I should navigate to contact details summary page
-    And I should see row 5 key Do you have a second contact?
     And I should see row 5 value No
-    Then I should navigate to contact details summary page
     When I click on change link for Do you have a second contact?
     When I select option Yes and continue to next
     When I enter Second Contact Name as Second Contact Name Test
-    And I click on Continue button
     When I enter Second Contact Email as secondContact@email.com
-    And I click on Continue button
     When I select option Yes and continue to next
     When I enter Second Contact Input as 1234554878
-    And I click on Continue button
-    Then I should navigate to contact details summary page
     When I click on change link for Dashboard Address
     When I enter Address Line 1 as Test Address Line 1
     When I enter Address Line 2 as Test Address Line 2
     And I enter City as Test City
     And I enter Region as Test Region
     And I enter Postal Code as EH5 5WY
-    And I select country as United Kingdom
     And I click on Continue button
     Then I should navigate to contact details summary page
     And I should see details as below:
@@ -225,7 +204,6 @@ As a registered user
     And I should see row 1 value Fred Flintstone
     When I click on change link for Contact Name
     When I enter Contact Name as 400
-    And I click on Continue button
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on Subscription API error page
