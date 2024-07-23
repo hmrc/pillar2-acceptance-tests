@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
-import uk.gov.hmrc.test.ui.pages.RFMContactNumberPage.rootUrl
 
 object RFMContactInputPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/contact-details/input-telephone"

@@ -15,10 +15,11 @@
  */
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
+
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{ASAPillar2InputPage, AuthLoginPage, ConfirmationPage, ContactDetailsInputEmailPage, ContactDetailsInputNamePage, ContactDetailsInputTelephonePage, FDGroupStatusPage, InputNFMTelephonePage, InputUPENamePage, InputUPETelephonePage, NFMAddressPage, NFMContactEmailPage, NFMContactNamePage, NonUKBankAccountPaymentPage, RepaymentReasonPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, UKBankAccountPaymentPage, UPEAddressPage, UPEContactEmailPage, UPEContactNamePage, UPEEntityTypePage, UPEGRSRegistrationFailedErrorPage, UPEPage}
+import uk.gov.hmrc.test.ui.cucumber.Input._
+import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
+import uk.gov.hmrc.test.ui.pages._
 
 class UPEPageSteps extends CommonFunctions {
 
@@ -66,68 +67,69 @@ class UPEPageSteps extends CommonFunctions {
 
       case "UPE Person/Team name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(UPEContactNamePage.contactName)
-        Input.sendKeysById(UPEContactNamePage.contactName,name)
+        Input.sendKeysById(UPEContactNamePage.contactName, name)
+        clickByCss(InputUPENamePage.continue)
+
 
       case "UPE Email address" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(UPEContactEmailPage.emailField)
         Input.sendKeysById(UPEContactEmailPage.emailField, name)
+        clickByCss(InputUPENamePage.continue)
 
       case "Telephone Number" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.telephoneNumber)
         Input.sendKeysByCss(name, InputUPETelephonePage.telephoneNumber)
+        clickByCss(InputUPENamePage.continue)
 
       case "NFM Contact name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.contactName)
         Input.sendKeysByCss(name, NFMContactNamePage.contactName)
+        clickByCss(InputUPENamePage.continue)
 
       case "NFM Contact Email" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
         Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
+        clickByCss(InputUPENamePage.continue)
 
       case "NFM Telephone Number" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.telephoneNumber)
         Input.sendKeysByCss(name, InputNFMTelephonePage.telephoneNumber)
+        clickByCss(InputUPENamePage.continue)
 
       case "Contact Details Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
         Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
+        clickByCss(InputUPENamePage.continue)
 
       case "Contact Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
         Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
+        clickByCss(InputUPENamePage.continue)
 
       case "Contact Email" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(ContactDetailsInputEmailPage.contactEmail)
         Input.sendKeysByCss(name, ContactDetailsInputEmailPage.contactEmail)
+        clickByCss(InputUPENamePage.continue)
 
       case "Contact Telephone" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(ContactDetailsInputTelephonePage.contactTelephone)
         Input.sendKeysByCss(name, ContactDetailsInputTelephonePage.contactTelephone)
+        clickByCss(InputUPENamePage.continue)
 
       case "Second Contact Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(SecondContactNamePage.contactName)
         Input.sendKeysByCss(name, SecondContactNamePage.contactName)
+        clickByCss(InputUPENamePage.continue)
 
       case "Second Contact Email" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(SecondContactEmailPage.contactEmail)
         Input.sendKeysByCss(name, SecondContactEmailPage.contactEmail)
+        clickByCss(InputUPENamePage.continue)
 
       case "Second Contact Input" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactTelephone)
         Input.sendKeysByCss(name, SecondContactInputPage.contactTelephone)
+        clickByCss(InputUPENamePage.continue)
 
     }
   }
@@ -222,6 +224,7 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name))
       case "Region" =>
         assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
+        UPEEntityTypePage.clickContinue()
       case "Postal Code" =>
         assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
       case "Country" =>
@@ -278,18 +281,19 @@ class UPEPageSteps extends CommonFunctions {
     UPEEntityTypePage.clickContinue()
   }
 
-    And("""^I select option (.*) and continue to Name page$""") { (option: String) =>
-      option match {
-        case "Entity type not listed" => Input.clickById("value_2")
-      }
-      UPEEntityTypePage.clickContinue()
+  And("""^I select option (.*) and continue to Name page$""") { (option: String) =>
+    option match {
+      case "Entity type not listed" => Input.clickById("value_2")
     }
+    UPEEntityTypePage.clickContinue()
+  }
 
   And("""^I select option (.*) in further details group status page$""") { (option: String) =>
     option match {
       case "In the UK and other countries" => Input.clickById("value_1")
       case "Only in the UK" => Input.clickById("value_0")
     }
+    UPEEntityTypePage.clickContinue()
   }
 
   And("""^I registered successfully with (.*)""") { (option: String) =>

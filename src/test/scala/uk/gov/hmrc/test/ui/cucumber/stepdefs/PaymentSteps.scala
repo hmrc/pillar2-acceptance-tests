@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, Wait}
@@ -128,6 +129,7 @@ class PaymentSteps extends CommonFunctions {
       case "UK bank account" => Input.clickById("value_0")
       case "Non-UK bank account" => Input.clickById("value_1")
     }
+    UPEEntityTypePage.clickContinue()
   }
 
   And("""^I provide value for (.*) as (.*)$""") { (field: String, name: String) =>
@@ -136,6 +138,7 @@ class PaymentSteps extends CommonFunctions {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.bankNameField)
         Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.bankNameField)
+
 
       case "Account Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -146,6 +149,7 @@ class PaymentSteps extends CommonFunctions {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.swiftCodeField)
         Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.swiftCodeField)
+
 
       case "Iban" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -165,7 +169,7 @@ class PaymentSteps extends CommonFunctions {
       case "UK Account Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UKaccountName)
-        Input.sendKeysByCss(name,UKBankAccountPaymentPage.UKaccountName)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UKaccountName)
 
       case "Sort Code" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -348,7 +352,7 @@ class PaymentSteps extends CommonFunctions {
   And("""^I access (.*) payment page$""") { (page: String) =>
     page match {
       case "Non UK" =>
-        Nav.navigateTo (NonUKBankAccountPaymentPage.url)
+        Nav.navigateTo(NonUKBankAccountPaymentPage.url)
       case "UK" =>
         Nav.navigateTo((UKBankAccountPaymentPage.url))
     }
@@ -359,11 +363,24 @@ class PaymentSteps extends CommonFunctions {
       case "Yes" => Input.clickById("confirmRepaymentAccountName_0")
       case "No" => Input.clickById("confirmRepaymentAccountName_1")
     }
+    UKBankAccountPaymentPage.clickContinue()
   }
 
   And("""^(I navigate from Contact page to CYA page)""") { (negate: String) =>
     for (i <- 1 to 4) {
-      InitialGuidancePage.clickContinue()
+      UKBankAccountPaymentPage.clickContinue()
     }
+  }
+
+  And("""^I enter UK Bank Account details as:$""") { (details: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.enterData(details)
+    UKBankAccountPaymentPage.clickContinue()
+  }
+
+  And("""^I enter Non UK Bank Account details as:$""") { (details: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.enterData(details)
+    UKBankAccountPaymentPage.clickContinue()
   }
 }
