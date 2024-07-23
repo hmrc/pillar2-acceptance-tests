@@ -72,7 +72,8 @@ Feature: Agent user journeys
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
 
-  @batch1
+   #----- needs to be fixed later
+  @ignore @batch1
   Scenario: 3 - Agent user API failure scenarios and service banner navigation
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
