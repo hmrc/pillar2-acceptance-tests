@@ -117,6 +117,7 @@ Feature: RFM CYA - NFM No ID flow
       | addressLine3 | RFM City           |
       | postalCode   | EH5 5WY            |
       | countryCode  | United Kingdom     |
+    Then I should navigate to RFM Final Review Page
     And I should see row 1 key Position in the group’s corporate structure
     And I should see row 1 value Ultimate parent entity (UPE)
     When I click change link for RFM Corporate Position
@@ -238,8 +239,6 @@ Feature: RFM CYA - NFM No ID flow
       | addressLine3 | RFM City           |
       | postalCode   | EH5 5WY            |
       | countryCode  | United Kingdom     |
-    And I should see row 1 key Position in the group’s corporate structure
-    And I should see row 1 value Ultimate parent entity (UPE)
     When I click change link for RFM Corporate Position
     When I select corp position as NFM
     And I click on Continue button
