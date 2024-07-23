@@ -195,8 +195,8 @@ Feature: Repayment Journey
     When I click change link for Repayment UK Bank Method
     And I click on Continue button
     Then I should be on Repayment CYA Page
-    When I click Report Pillar 2 top-up taxes link
-    Then I should be on Dashboard page
+    Then I click Continue button
+    Then I should be on under construction page
 
   @zap_accessibility @batch3
   Scenario: 3 - Agent User navigates to repayment journey pages
@@ -443,3 +443,86 @@ Feature: Repayment Journey
     And I should see the row 5 value Test Name
     And I should see the row 6 value HBUKGB4C
     And I should see the row 7 value GB29NWBK60161331926820
+
+  @batch3
+  Scenario: 6 - Organisation User navigates to error page when repayment submission API fails to submit data to ETMP
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    Then I should navigate to Reason For Refund Page
+    When I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
+    And I click on Continue button
+    Then I should navigate to Repayment Method Page
+    And I select repayment method as Non-UK bank account
+    And I click on Continue button
+    And I provide value for Bank Name as BBC
+    And I provide value for Account Name as bad person
+    And I provide value for Swift Code as HBUKGB4C
+    And I provide value for Iban as GB29NWBK60161331926820
+    And I click on Continue button
+    Then I should be on Repayment Contact Page
+    And I provide Repayment contact name as Repayment Contact Name
+    When I provide Repayment contact email as repayment@email.com
+    When I select option Yes and continue to next
+    When I provide Repayment contact telephone as 789765423
+    Then I should be on Repayment CYA Page
+    When I click Continue button
+    Then I should navigate to Repayment Service Error page
+    And I click Return to your account homepage link
+    And I should be on Dashboard page
+
+  @batch3
+  Scenario: 7 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP and on correction navigates to confirmation page
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Agent Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Agent Repayment Amount Page
+    When I provide Refund Amount as 999.99
+    Then I should navigate to Agent Repayment Reason Page
+    When I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
+    And I click on Continue button
+    Then I should navigate to Agent Repayment Method Page
+    And I select repayment method as Non-UK bank account
+    And I click on Continue button
+    And I provide value for Bank Name as BBC
+    And I provide value for Account Name as bad person
+    And I provide value for Swift Code as HBUKGB4C
+    And I provide value for Iban as GB29NWBK60161331926820
+    And I click on Continue button
+    Then I should be on Repayment Contact Page
+    And I provide Repayment contact name as Repayment Contact Name
+    When I provide Repayment contact email as repayment@email.com
+    When I select option No and continue to next
+    Then I should be on Repayment CYA Page
+    When I click Continue button
+    Then I should navigate to Repayment Service Error page
+    And I click Return to your account homepage link
+    Then I should be on ASA Dashboard page
+    When I click Request a refund link
+    And I click on Continue button
+    Then I should see Refund Amount field is pre-populated with 999.99
+    And I click on Continue button
+    And I click on Continue button
+    And I click on Continue button
+    And I provide value for Account Name as person
+    And I click on Continue button
+    And I click on Continue button
+    And I click on Continue button
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When I click Continue button
+    Then I should be on under construction page
+
+

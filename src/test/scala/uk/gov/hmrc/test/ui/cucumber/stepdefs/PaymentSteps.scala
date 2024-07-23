@@ -366,4 +366,4 @@ class PaymentSteps extends CommonFunctions {
       InitialGuidancePage.clickContinue()
     }
   }
-  }
+}
