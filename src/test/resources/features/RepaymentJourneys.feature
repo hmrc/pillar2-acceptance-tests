@@ -67,8 +67,8 @@ Feature: Repayment Journey
     And I should see bank account error message Name on the account must be 60 characters or less on the Account Name Element
     And I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
     And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
-    #When I click Report Pillar 2 top-up taxes link --- needs to be fixed with the agent asa home navigation fix
-    #Then I should be on ASA Dashboard page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on ASA Dashboard page
 
   @zap_accessibility @batch3
   Scenario: 2 - Organisation User navigates to repayment pages
@@ -340,8 +340,8 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should be on Repayment CYA Page
     And I select back link
-    #When I click Report Pillar 2 top-up taxes link --- needs to be fixed later
-    #Then I should navigate to ASA Dashboard page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to ASA Dashboard page
     And I click Sign out link
 
   @batch3
