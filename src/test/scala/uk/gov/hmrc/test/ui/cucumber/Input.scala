@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.io.FileHandler
 import org.openqa.selenium.{By, OutputType, TakesScreenshot, WebDriver}
 import uk.gov.hmrc.test.ui.pages.BasePage
@@ -32,16 +33,26 @@ object Input extends BasePage {
 
   def clickByCss(css: String): Unit = findByCss(css).click()
 
+  val enterData = iterator(sendKeysById) _
+
   def clickAndContinue(id: String): Unit = {
     findById(id).click()
     clickSubmit()
+  }
+
+  def iterator(f: (String, String) => Any)(data: DataTable) = {
+    val row = data.asMaps(classOf[String], classOf[String]).iterator()
+    while(row.hasNext) {
+      val map = row.next()
+      f(map.get("KEY"), map.get("VALUE"))
+    }
   }
 
   def clickSubmit(): Unit = findById("submit").click()
 
   def clickByXpath(id: String): Unit = findByXpath(id).click()
 
-  def sendKeysById(value: String, id: String): Unit = {
+  def sendKeysById(id: String, value: String): Unit = {
     findById(id)
     findById(id).clear()
     findById(id).sendKeys(value)
@@ -80,6 +91,7 @@ object Input extends BasePage {
       // scenario.attach(byteFile, "image/png", "print_page")
     }
   }
+
 
   def getTextOf(by: By) =
     driver.findElement(by).getText

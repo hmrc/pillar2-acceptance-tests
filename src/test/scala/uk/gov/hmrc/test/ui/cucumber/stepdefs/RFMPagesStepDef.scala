@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import org.openqa.selenium.By.ById
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
@@ -80,6 +80,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
         Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
 
+
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
@@ -106,6 +107,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Input.sendKeysByCss(name, RFMSecondContactTelephonePage.telephoneField)
 
     }
+    RFMStartPage.clickContinue()
   }
 
   And("""^I should see an error message (.*) on the RFM (.*) Page$""") { (error: String, page: String) =>
@@ -160,15 +162,25 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
         getTextOf(By cssSelector (RFMContactDetailNamePage.errorMessage)) should include(error)
 
-      case "contact name change" =>
+      case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorMessage)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
 
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorLink)
-        getTextOf(By cssSelector (RFMNewNFMContactNameChangePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorLink)
+        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNameChangePage.errorMessage)
-        getTextOf(By cssSelector (RFMNewNFMContactNameChangePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
+        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorMessage)) should include(error)
+
+      case "second contact name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorMessage)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorLink)
+        getTextOf(By cssSelector (RFMSecondContactNamePage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorMessage)
+        getTextOf(By cssSelector (RFMSecondContactNamePage.errorMessage)) should include(error)
 
       case "contact address change" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -207,17 +219,17 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "Day" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regDay)
-        Input.sendKeysById(name, RFMRegistrationDatePage.regDay)
+        Input.sendKeysById(RFMRegistrationDatePage.regDay, name)
 
       case "Month" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regMonth)
-        Input.sendKeysById(name, RFMRegistrationDatePage.regMonth)
+        Input.sendKeysById(RFMRegistrationDatePage.regMonth, name)
 
       case "Year" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
-        Input.sendKeysById(name, RFMRegistrationDatePage.regYear)
+        Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
 
     }
   }
@@ -266,7 +278,9 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "UPE" => Input.clickById("value_0")
       case "NFM" => Input.clickById("value_1")
     }
+    RFMStartPage.clickContinue()
   }
+
   And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
@@ -308,4 +322,17 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   Then("""^I should see (.*) text is not clickable""") { (linkText: String) =>
     Wait.waitForCSSElementNotToPresent("[href='report-pillar2-top-up-taxes/banner']")
   }
+
+  And("""^I continue to RFM contact name Page""") { () =>
+    for(i <- 0 to 2) {
+      InitialGuidancePage.clickContinue()
+    }
+  }
+
+  And("""^I enter registration date as:$""") { (registrationDate: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.enterData(registrationDate)
+    UPEEntityTypePage.clickContinue()
+  }
+
 }

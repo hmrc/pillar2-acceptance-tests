@@ -16,11 +16,12 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, ConfirmationPage, NFMRegistrationPage}
+import uk.gov.hmrc.test.ui.pages._
 
 class EligibilityQuestionSteps extends CommonFunctions {
 
@@ -35,6 +36,7 @@ class EligibilityQuestionSteps extends CommonFunctions {
   }
 
   And("""^I select back link$""") { () =>
+    Wait.waitForElementToClicktagName("h1")
     clickByCss(BusinessActivityEQPage.backLink)
   }
 
@@ -51,6 +53,12 @@ class EligibilityQuestionSteps extends CommonFunctions {
   Then("""^I should navigate to (.*)""") { (page: String) =>
     Wait.waitForElementToClicktagName("h1")
     assertNavigationToPage(pageMatch(page))
+  }
+
+  Then("""^I enter Address as:""") { (address: DataTable) =>
+    Input.enterData(address)
+    UPEAddressPage.clickCountrySelected()
+    UPEEntityTypePage.clickContinue()
   }
 
   Then("""^I should be on (.*)""") { (page: String) =>

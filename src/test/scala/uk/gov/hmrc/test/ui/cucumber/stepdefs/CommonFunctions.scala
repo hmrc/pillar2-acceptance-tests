@@ -165,14 +165,10 @@ trait CommonFunctions
       case "Amend API error Page for RFM"         => AmendAPIerrorPage_RFM
       case "ASA Individual KB Page"               => ASAIndividualKBPage
       case "ASA Organisation KB Page"             => ASAOrganisationKBPage
-      case "Agent Make a Payment page"            => AgentMakePaymentPage
       case "Agent Amend API error Page"           => AgentAmendAPIerrorPage
       case "Agent Contact Detail Summary Page"    => AgentContactDetailSummaryPage
       case "Agent Account Summary Page"           => AgentAccountSummaryPage
       case "Agent Make a Payment page"            => AgentMakePaymentPage
-      case "Agent Amend API error Page"           => AgentAmendAPIerrorPage
-      case "Agent Contact Detail Summary Page"    => AgentContactDetailSummaryPage
-      case "Agent Account Summary Page"           => AgentAccountSummaryPage
       case "RFM journey recovery page"            => RFMJourneyRecoveryPage
       case "RFM incomplete task error page"       => RFMIncompleteErrorPage
       case "Non UK Bank Account Payment Page"     => NonUKBankAccountPaymentPage
@@ -193,7 +189,6 @@ trait CommonFunctions
       case "Agent Repayment Reason Page"          => AgentRepaymentReasonPage
       case "Agent Repayment Method Page"          => AgentRepaymentMethodPage
       case "Repayment CYA Page"                   => RepaymentCYAPage
-      case "Repayment Method Page"                => RepaymentCYAPage
       case "Repayment Could Not Confirm Error Page" => RepaymentCouldNotConfirmErrorPage
       case "Repayment Bank Details Error Page"    => RepaymentBankDetailsErrorPage
       case "Repayment Bars Error Page"            => RepaymentBarsErrorPage
