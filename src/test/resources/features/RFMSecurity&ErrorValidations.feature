@@ -109,7 +109,7 @@ Feature: RFM check your answers page
     And I continue to RFM contact name Page
     And I access RFM contact email page
     Then I should be on RFM journey recovery page
-    When I click replace the filing member for a Pillar 2 top-up taxes account to try again link
+    When I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
     Then I should be on RFM start page
     When I click the browser back button
     And I click the browser back button
