@@ -40,5 +40,7 @@ object UKBankAccountPaymentPage extends PageObject {
   val errorUKAccountLink      = "[href='#accountNumber']"
   val errorUKSortCodeLink     = "[href='#sortCode']"
 
+  def clickContinue()    = findByCss(continue).click()
+
 }
 

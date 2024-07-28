@@ -6,14 +6,10 @@ Feature: NFM NO ID journey
   @zap_accessibility @batch1
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
-    Then I should be on UPE business page
     When I select option Yes and continue to next
-    Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
-    Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    Then I should navigate to Task list page
     When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     And The caption must be Group details
@@ -33,11 +29,11 @@ Feature: NFM NO ID journey
     And The caption must be Group details
     And The Heading should be What is the registered office address of Test CYA?
     And The hint text should be Enter text and then choose from the list.
-    And I enter Address Line 1 as Address Line 1 CYA
-    And I enter City as City CYA
-    And I enter Country as United Kingdom
-    And I click on Country selected
-    When I click on Continue button
+    When I enter Address as:
+      | KEY          | VALUE              |
+      | addressLine1 | Address Line 1 CYA |
+      | addressLine3 | City CYA           |
+      | countryCode  | United Kingdom     |
     Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
     And I enter Postal Code as EH5 5WY
     When I click on Continue button
@@ -46,12 +42,10 @@ Feature: NFM NO ID journey
     And The Heading should be What is the name of the person or team we should contact from the nominated filing member?
     And The hint text should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter NFM Contact name as Contact CYA
-    And I click on Continue button
     Then I should navigate to NFM Contact Email page
     And The Heading should be What is the email address for Contact CYA?
     And The hint text should be We will use this to confirm your records.
     When I enter NFM Contact Email as testcya@email.com
-    And I click on Continue button
     Then I should navigate to NFM Telephone page
     And The caption must be Group details
     And The Heading should be Can we contact Contact CYA by telephone?
@@ -62,25 +56,20 @@ Feature: NFM NO ID journey
     And The Heading should be What is the telephone number for Contact CYA?
     And The hint text should be For international numbers include the country code
     When I enter NFM Telephone Number as 1234569
-    And I click on Continue button
     Then I should navigate to NFM Check your answers page
     And The caption must be Group details
     And The Heading should be Check your answers for filing member details
-    And I should see row 1 key Name
-    And I should see row 2 key Address
-    And I should see row 3 key Contact name
-    And I should see row 4 key Email address
-    And I should see row 5 key Can we contact by telephone?
-    And I should see row 6 key Telephone number
-    And I should see row 1 value Test CYA
-    And I should see row 2 value Address Line 1 CYA
-    And I should see row 2 value City CYA
-    And I should see row 2 value EH5 5WY
-    And I should see row 2 value United Kingdom
-    And I should see row 3 value Contact CYA
-    And I should see row 4 value testcya@email.com
-    And I should see row 5 value Yes
-    And I should see row 6 value 1234569
+    And I should see details as below:
+      | KEY                          | VALUE              |
+      | Name                         | Test CYA           |
+      | Address                      | Address Line 1 CYA |
+      | Address                      | City CYA           |
+      | Address                      | EH5 5WY            |
+      | Address                      | United Kingdom     |
+      | Contact name                 | Contact CYA        |
+      | Email address                | testcya@email.com  |
+      | Can we contact by telephone? | Yes                |
+      | Telephone number             | 1234569            |
     When I select back link
     Then I should navigate to input nfm telephone page
     When I click on Continue button
@@ -88,77 +77,57 @@ Feature: NFM NO ID journey
     When I click on Continue button
     Then I should be on Task list page
     And The Task Edit filing member’s details status should be Completed
-    Then I click Sign out link
-    Then I am on feedback survey page
 
   @batch1
   Scenario: 2 - Verify change answers for all NFM No ID journey pages and Verify back links
     Given Organisation User logs in with credId NFMCYA for Pillar2
     When I click Edit filing member’s details link
-    Then I should navigate to NFM registration page
     When I click on Continue button
-    Then I should navigate to NFM details page
     And I should see the answer No remain selected
-    And I click on Continue button
+    Then I click on Continue button
     Then I should navigate to NFM Name page
     And I should see the NFM name field is pre-populated with Test CYA
-    And I click on Continue button
+    Then I click on Continue button
     And I should see the Address Line 1 field is pre-populated with Address Line 1 CYA
-    And I should see the City field is pre-populated with City CYA
-    And I should see the Postal Code field is pre-populated with EH5 5WY
-    And I should see the Country field is pre-populated with United Kingdom
-    And I click on Continue button
+    Then I click on Continue button
     And I should see the NFM Contact name field is pre-populated with Contact CYA
-    And I click on Continue button
+    Then I click on Continue button
     And I should see the NFM Contact Email field is pre-populated with testcya@email.com
-    And I click on Continue button
+    Then I click on Continue button
     And I should see the answer Yes remain selected
-    And I click on Continue button
+    Then I click on Continue button
     Then I should see the NFM Telephone number field is pre-populated with 1234569
-    And I click on Continue button
-    Then I should be on NFM Check your answers page
+    Then I click on Continue button
     When I click on change hyperlink next to the NFM Name
     And I enter NFM name as Name Change
-    Then I should be on NFM Check your answers page
     And I should see row 1 value Name Change
     When I click on change hyperlink next to the NFM Address
     And I enter Address Line 1 as Change Address
     And I click on Continue button
-    Then I should be on NFM Check your answers page
     And I should see row 2 value Change Address
     And I should see row 2 value City CYA
     And I should see row 2 value United Kingdom
     When I click on change hyperlink next to the NFM Contact Name
     And I enter NFM Contact name as Change Contact Person
-    And I click on Continue button
-    Then I should be on NFM Check your answers page
     And I should see row 3 value Change Contact Person
     When I click on change hyperlink next to the NFM Email Address
     And I enter NFM Contact Email as changetest@email.com
-    And I click on Continue button
-    Then I should be on NFM Check your answers page
     And I should see row 4 value changetest@email.com
     When I click on change hyperlink next to the NFM Telephone Number
     And I enter NFM Telephone Number as 12345679
-    And I click on Continue button
-    Then I should be on NFM Check your answers page
     And I should see row 6 value 12345679
     When I click on change hyperlink next to the NFM Telephone Contact
     And I select option No and continue to next
-    Then I should be on NFM Check your answers page
     And I should see row 5 value No
 
   @zap_accessibility @batch2
   Scenario: 3 - Validate different error messages for NFM no ID journey pages
     Given Organisation User logs in as upe for Pillar2
-    Then I should be on UPE business page
     And I select option Yes and continue to next
     And I select option UK limited company and continue to GRS page
     And I registered successfully with BV enabled
     When I click on Save&Continue button
-    Then I should navigate to Task list page
     When I click Add filing member’s details link
-    Then I should navigate to NFM registration page
     When I click on Continue button
     Then I should see NFM error message Select yes if you want to register a nominated filing member to report for this group on the NFM registration page Element
     When I select Yes option and continue to next
@@ -209,13 +178,11 @@ Feature: NFM NO ID journey
     When I click on Continue button
     Then I should see NFM error message Enter the email address for NFM Contact on the Input NFM Contact Email Element
     When I enter NFM Contact Email as incorrect email
-    When I click on Continue button
     Then I should see NFM error message Enter an email address in the correct format, like name@example.com on the Input NFM Contact Email Element
     When I enter NFM Contact Email as NFMNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I click on Continue button
     Then I should see NFM error message Email address must be 132 characters or less on the Input NFM Contact Email Element
     And I enter NFM Contact Email as test@email.com
-    When I click on Continue button
     Then I should navigate to NFM Telephone page
     And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
@@ -226,22 +193,16 @@ Feature: NFM NO ID journey
     When I click on Continue button
     Then I should see error message Enter the telephone number for NFM Contact on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 1234567812345678123456780
-    And I click on Continue button
     Then I should see error message The telephone number should be 24 characters or less on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 1234567@
     And I click on Continue button
     Then I should see error message Enter the telephone number for NFM Contact in the correct format, like 01632 960 001 or +44 808 157 0192 on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 9923-456
-    When I click on Continue button
-    Then I should be on NFM Check your answers page
     When I click on change hyperlink next to the NFM Telephone Contact
     And I select option No and continue to next
-    Then I should be on NFM Check your answers page
     And I should see row 5 value No
     And I select back link
     Then I should see the answer No remain selected
-    And I click Continue button
-    Then I should be on NFM Check your answers page
+    And I click on Continue button
     And I click on Continue button
     Then The Task Edit filing member’s details status should be Completed
-

@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Nav.isVisible
 import uk.gov.hmrc.test.ui.cucumber.Wait
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, ContactDetailsSummaryPage, TaskListPage}
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, ContactDetailsSummaryPage, InitialGuidancePage, TaskListPage}
 
 class TaskListPageSteps extends CommonFunctions {
 
@@ -140,6 +140,12 @@ class TaskListPageSteps extends CommonFunctions {
         for (i <- 1 to 9) {
           clickByCss(BusinessActivityEQPage.backLink)
         }
+    }
+  }
+
+  Then("""^I navigate to Telephone Question Page from Initial guidance Page""") {() =>
+    for (i <- 1 to 6) {
+      InitialGuidancePage.clickContinue()
     }
   }
 }

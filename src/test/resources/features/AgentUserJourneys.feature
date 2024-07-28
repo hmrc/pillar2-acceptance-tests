@@ -57,7 +57,6 @@ Feature: Agent user journeys
     And I should see row 2 value fred.flintstone@aol.com
     When I click on change link for Email address
     When I enter Contact Email as updatecontact@email.com
-    And I click on Continue button
     Then I should navigate to Agent Contact Detail Summary Page
     And I should see row 2 value updatecontact@email.com
     When I click on Continue button
@@ -92,7 +91,6 @@ Feature: Agent user journeys
     And I click View and amend contact details link
     When I click on change link for Contact Name
     When I enter Contact Name as 400
-    And I click on Continue button
     And I click on Continue button
     Then I should navigate to Agent Amend API error Page
     When I click Report Pillar 2 top-up taxes link

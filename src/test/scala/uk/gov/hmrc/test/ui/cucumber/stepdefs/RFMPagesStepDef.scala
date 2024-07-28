@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import org.openqa.selenium.By.ById
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, clickSubmit, getAttributeOf, getAttributeOfId, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
@@ -80,6 +80,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
         Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
 
+
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
@@ -106,6 +107,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Input.sendKeysByCss(name, RFMSecondContactTelephonePage.telephoneField)
 
     }
+    RFMStartPage.clickContinue()
   }
 
   And("""^I should see an error message (.*) on the RFM (.*) Page$""") { (error: String, page: String) =>
@@ -276,7 +278,9 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
       case "UPE" => Input.clickById("value_0")
       case "NFM" => Input.clickById("value_1")
     }
+    RFMStartPage.clickContinue()
   }
+
   And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
@@ -323,6 +327,12 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     for(i <- 0 to 2) {
       InitialGuidancePage.clickContinue()
     }
+  }
+
+  And("""^I enter registration date as:$""") { (registrationDate: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.enterData(registrationDate)
+    UPEEntityTypePage.clickContinue()
   }
 
 }

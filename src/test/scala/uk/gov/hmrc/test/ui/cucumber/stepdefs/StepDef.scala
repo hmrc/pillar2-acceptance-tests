@@ -23,7 +23,7 @@ import uk.gov.hmrc.test.ui.cucumber.{Check, Find, Forms, Input, Nav, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
 
-class StepDef extends BaseStepDef with BrowserDriver{
+class StepDef extends BaseStepDef with BrowserDriver {
 
   Given("""^(.*) logs in to register for Pillar2$""") { name: String =>
     name match {
@@ -75,33 +75,33 @@ class StepDef extends BaseStepDef with BrowserDriver{
   Given("""^(.*) logs in with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginAsUserWithCredId(name, credId)
-      case _ =>  AuthLoginPage.loginAsUserWithCredId(name, credId)
+      case _ => AuthLoginPage.loginAsUserWithCredId(name, credId)
     }
   }
   Given("""^(.*) logs in to upe org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToOrgWithCredID(name, credId)
-      case _ =>  AuthLoginPage.loginToOrgWithCredID(name, credId)
+      case _ => AuthLoginPage.loginToOrgWithCredID(name, credId)
     }
   }
 
   Given("""^(.*) logs in to nfm org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
-      case _ =>  AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
+      case _ => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
     }
 
   }
   Given("""^(.*) logs in to upe registered in UK page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToRegWithCredID(name, credId)
-      case _ =>  AuthLoginPage.loginToRegWithCredID(name, credId)
+      case _ => AuthLoginPage.loginToRegWithCredID(name, credId)
     }
   }
   Given("""^(.*) logs in to upe name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
-      case _ =>  AuthLoginPage.loginToUPEName(name, credId)
+      case _ => AuthLoginPage.loginToUPEName(name, credId)
     }
   }
   Given("""^(.*) logs in to nfm name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
@@ -480,7 +480,7 @@ class StepDef extends BaseStepDef with BrowserDriver{
 
         Wait.waitForElementToPresentByCssSelector(AgentRepaymentMethodPage.errorMessage)
         getTextOf(By cssSelector (AgentRepaymentMethodPage.errorMessage)) should include(error)
-      }
+    }
   }
 
   Then("""^The caption must be (.*)$""") { caption: String =>
@@ -522,7 +522,7 @@ class StepDef extends BaseStepDef with BrowserDriver{
     assert(driver.findElements(By.cssSelector(ContactDetailsDisplayPage.valueList)).get(row - 1).getText.contains(details))
   }
 
-  And("""^The header should display (.*) banner$"""){ (beta: String) =>
+  And("""^The header should display (.*) banner$""") { (beta: String) =>
     Find.findByXpath(UPEPage.betatag)
   }
 
@@ -532,14 +532,14 @@ class StepDef extends BaseStepDef with BrowserDriver{
   }
 
   And("""^I should see (.*) hyperLink$""") { (linkText: String) =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.inputUpeNamePageLink)
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.inputUpeNamePageLink)
   }
 
   And("""^I should see (.*) link$""") { (linkText: String) =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(BTARegisterGuidancePage.registerLink)
-        assert(driver.findElement(By.cssSelector(BTARegisterGuidancePage.registerLink)).getText.contains(linkText))
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(BTARegisterGuidancePage.registerLink)
+    assert(driver.findElement(By.cssSelector(BTARegisterGuidancePage.registerLink)).getText.contains(linkText))
   }
 
   And("""^I should see (.*) BTA button$""") { (option: String) =>
@@ -557,8 +557,8 @@ class StepDef extends BaseStepDef with BrowserDriver{
     }
   }
 
-  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String,authRule: String) =>
-     AuthLoginPage.addDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue,authRule)
+  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String) =>
+    AuthLoginPage.addDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue, authRule)
   }
 
   When("""^I refresh the page$""") { () =>
@@ -583,62 +583,10 @@ class StepDef extends BaseStepDef with BrowserDriver{
   And("""^I should see (.*) link on (.*)$""") { (linkText: String, page: String) =>
     page match {
       case "Review answers page" =>
-        Wait.waitForTagNameToBeRefreshed ("h1")
-        Wait.waitForElementToPresentByCssSelector (ReviewAnswersPage.printthispage)
-        assert (driver.findElement (By.cssSelector (ReviewAnswersPage.printthispage) ).getText.contains (linkText) )
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Wait.waitForElementToPresentByCssSelector(ReviewAnswersPage.printthispage)
+        assert(driver.findElement(By.cssSelector(ReviewAnswersPage.printthispage)).getText.contains(linkText))
     }
 
   }
-
-      /*  Given("""^I fill (.*) and continue$""") { page: String =>
-          page match {
-            case "What is the main address of your business page" => Forms.addressNonUK()
-          }
-          Input.clickSubmit()
-
-        And("""^I select SignOut link$""") { (id: String) =>
-         Input.clickById(id)
-         Input.clickSubmit
-       }
-
-       And("""^I click browser back$""") { (id: String) =>
-        Input.clickByLinkText(id)
-      }
-
-        And(
-          """^(click Continue button|click Confirm and send|click Try Again)$"""
-        ) { (negate: String) =>
-          Input.clickSubmit
-        }
-
-        Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
-          Input.sendKeysById(text, id)
-        }
-
-        And("""^I select (.*) and continue$""") { (id: String) =>
-          Input.clickById(id)
-          Input.clickSubmit
-        }
-
-        And("""^I click (.*)$""") { (id: String) =>
-          Input.clickByLinkText(id)
-        }
-
-        And("""^click (.*) element$""") { (id: String) =>
-          Input.clickById(id)
-        }
-
-        Then("""^The Page should include (.*)$""") { text: String =>
-          Check.checkBodyText(text)
-        }
-
-        Then("""wait for (.*) seconds$""") { (secs: Int) =>
-          Wait.secondsWait(secs)
-        }
-
-        Given("""^the user should be on the new window with heading (.*)""") { (title: String) =>
-          Input.switchToNewWindow
-          Check.checkH1(title)
-        }*/
-
 }
