@@ -253,18 +253,13 @@ Feature: UPE NO ID journey
     When I click the browser back button
     Then I should be on auth-login page
 
-  @ignore
+  @tests @batch1
   Scenario: 5 - Status update for Enter ultimate parent’s details task
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     When I click Add ultimate parent’s details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
-    When I select option No and continue to next
-    And I navigate back to TaskList Page from Name Page
-    Then The Task Add ultimate parent’s details status should be In progress
-    When I click Add ultimate parent’s details link
-    When I click on Continue button
     When I select option No and continue to next
     And I enter UPE name as Test UPE
     When I enter Address as:
@@ -274,31 +269,15 @@ Feature: UPE NO ID journey
       | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
     When I enter UPE Person/Team name as UPE Contact Name
-    And I click on Continue button
     When I enter UPE Email address as testteam@email.com
-    And I click on Continue button
     Then I should navigate to UPE Telephone page
     When I select option Yes and continue to next
     And I navigate back to TaskList Page from Telephone Page
     Then The Task Add ultimate parent’s details status should be In progress
     When I click Add ultimate parent’s details link
-    Then I should navigate to Initial guidance Page
-    When I click on Continue button
-    Then I should navigate to UPE business page
-    When I click on Continue button
-    Then I should navigate to input-upe-name page
-    When I click on Continue button
-    Then I should navigate to input-upe-address page
-    When I click on Continue button
-    Then I should navigate to UPE Contact person/team Name page
-    And I click on Continue button
-    Then I should navigate to UPE Contact Email page
-    And I click on Continue button
-    Then I should navigate to UPE Telephone page
-    When I select option Yes and continue to next
-    Then I should navigate to input telephone page
-    When I enter Telephone Number as 123456
-    And I click on Continue button
+    And I navigate to Telephone Question Page from Initial guidance Page
+    And I select option Yes and continue to next
+    And I enter Telephone Number as 123456
     And I navigate back to TaskList Page from Telephone Input Page
     Then The Task Edit ultimate parent’s details status should be Completed
 

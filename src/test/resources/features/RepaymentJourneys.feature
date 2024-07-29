@@ -68,7 +68,7 @@ Feature: Repayment Journey
     And I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
     And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
     When I click Report Pillar 2 top-up taxes link
-    Then I should be on Dashboard page
+    Then I should be on ASA Dashboard page
 
   @zap_accessibility @batch3
   Scenario: 2 - Organisation User navigates to repayment pages
