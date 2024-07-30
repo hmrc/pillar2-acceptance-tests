@@ -404,7 +404,7 @@ Feature: Repayment Journey
     And I should see the row 6 value HBUKGB4C
     And I should see the row 7 value GB29NWBK60161331926820
 
-  @batch3
+  @batch3 @tests1
   Scenario: 6 - Organisation User navigates to error page when repayment submission API fails to submit data to ETMP
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -419,12 +419,12 @@ Feature: Repayment Journey
     Then I should navigate to Repayment Method Page
     And I select repayment method as Non-UK bank account
     And I click on Continue button
-    And I provide value for Bank Name as BBC
-    And I provide value for Account Name as bad person
-    And I provide value for Swift Code as HBUKGB4C
-    And I provide value for Iban as GB29NWBK60161331926820
-    And I click on Continue button
-    Then I should be on Repayment Contact Page
+    When I enter Non UK Bank Account details as:
+      | KEY               | VALUE                  |
+      | bankName          | HSBC                   |
+      | nameOnBankAccount | bad person             |
+      | bic               | HBUKGB4C               |
+      | iban              | GB29NWBK60161331926820 |
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
@@ -434,9 +434,14 @@ Feature: Repayment Journey
     Then I should navigate to Repayment Service Error page
     And I click Return to your account homepage link
     And I should be on Dashboard page
+    And I access Non UK payment page
+    Then I provide value for Account Name as person
+    And I navigate to Repayment CYA page from contact Page
+    When I click Continue button
+    Then I should be on under construction page
 
-  @batch3
-  Scenario: 7 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP and on correction navigates to confirmation page
+  @batch3 @tests1
+  Scenario: 7 - Agent User navigates to error page when incomplete data is submitted to ETMP for repayments
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
@@ -456,33 +461,46 @@ Feature: Repayment Journey
     Then I should navigate to Agent Repayment Method Page
     And I select repayment method as Non-UK bank account
     And I click on Continue button
-    And I provide value for Bank Name as BBC
-    And I provide value for Account Name as bad person
-    And I provide value for Swift Code as HBUKGB4C
-    And I provide value for Iban as GB29NWBK60161331926820
-    And I click on Continue button
+    When I enter Non UK Bank Account details as:
+      | KEY               | VALUE                  |
+      | bankName          | BBC                    |
+      | nameOnBankAccount | Test Name              |
+      | bic               | HBUKGB4C               |
+      | iban              | GB29NWBK60161331926820 |
     Then I should be on Repayment Contact Page
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
+    Then I click change link for Repayment UK Bank Method
+    And I select repayment method as UK bank account
     When I click Continue button
-    Then I should navigate to Repayment Service Error page
-    And I click Return to your account homepage link
-    Then I should be on ASA Dashboard page
-    When I click Request a refund link
-    And I click on Continue button
-    Then I should see Refund Amount field is pre-populated with 999.99
-    And I click on Continue button
-    And I click on Continue button
-    And I click on Continue button
-    And I provide value for Account Name as person
-    And I click on Continue button
-    And I click on Continue button
-    And I click on Continue button
-    And I click on Continue button
+    Then I select back link
+    Then I select back link
     Then I should be on Repayment CYA Page
     When I click Continue button
-    Then I should be on under construction page
+    Then I should navigate to Repayment Incomplete Request Error Page
+    When I select back link
+    Then I should be on Repayment CYA Page
+    When I click Continue button
+    Then I should navigate to Repayment Incomplete Request Error Page
+    When I click go back and complete all the required answers link
+    Then I should be on Agent Repayment Guidance Page
+
+  @batch3 @tests1
+  Scenario: 8 - Agent User navigates to journey recovery error page when they try to skip mandatory questions
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Agent Repayment Guidance Page
+    When I click on Continue button
+    And I access reason for refund page
+    Then I should navigate to Repayment Journey Recovery Error Page
 
 

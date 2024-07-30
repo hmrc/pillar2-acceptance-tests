@@ -329,6 +329,12 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
+  And("""^I navigate to Repayment CYA page from contact Page""") { () =>
+    for(i <- 0 to 3) {
+      InitialGuidancePage.clickContinue()
+    }
+  }
+
   And("""^I enter registration date as:$""") { (registrationDate: DataTable) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(registrationDate)
