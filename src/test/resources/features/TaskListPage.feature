@@ -16,7 +16,7 @@ Feature: Task list page
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -37,8 +37,8 @@ Feature: Task list page
     Then I should navigate to NFM registration page
     When I select back link
     Then I should be on Task list page
-    And The Task Add filing member’s details status should be In progress
-    When I click Edit ultimate parent’s details link
+    And The Task Add filing member details status should be In progress
+    When I click Edit ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
     Then I should be on UPE business page
@@ -82,7 +82,7 @@ Feature: Task list page
     And I click on Continue button
     Then I should be on Check your answers page
     When I click on Continue button
-    And I click Add filing member’s details link
+    And I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -120,8 +120,8 @@ Feature: Task list page
     Then I should navigate to NFM registration page
     When I select back link
     Then I should be on Task list page
-    And The Task Add filing member’s details status should be In progress
-    When I click Edit ultimate parent’s details link
+    And The Task Add filing member details status should be In progress
+    When I click Edit ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
     Then I should be on UPE business page
@@ -167,9 +167,9 @@ Feature: Task list page
     Then I should be on Check your answers page
     When I click on Continue button
     Then I should be on Task list page
-    And I should see the task name Edit ultimate parent’s details on Business details section
-    And The Task Edit ultimate parent’s details status should be Completed
-    When I click Edit ultimate parent’s details link
+    And I should see the task name Edit ultimate parent's details on Business details section
+    And The Task Edit ultimate parent's details status should be Completed
+    When I click Edit ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
     Then I should be on UPE business page
@@ -187,7 +187,7 @@ Feature: Task list page
     Then I should navigate to input telephone page
     When I navigate back to TaskList Page from Telephone Page
     Then I should be on Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed
 
   Scenario: 5 - User completes GRS journey and Navigate to different pages of GRS journey and validates status
     Given Organisation User logs in to subscribe for Pillar2
@@ -202,7 +202,7 @@ Feature: Task list page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -212,8 +212,8 @@ Feature: Task list page
     Then I should navigate to NFM UKCompany GRS page
     And I click on Save&Continue button
     Then I should be on Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    When I click Edit ultimate parent’s details link
+    And The Task Edit ultimate parent's details status should be Completed
+    When I click Edit ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
     Then I should be on UPE business page
@@ -223,4 +223,4 @@ Feature: Task list page
     Then I should navigate to UKCompany GRS page
     When I navigate back to TaskList Page from GRS Page
     Then I should be on Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
+    And The Task Edit ultimate parent's details status should be Completed

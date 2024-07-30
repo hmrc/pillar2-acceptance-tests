@@ -62,7 +62,7 @@ class TaskListPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
 
-      case "Edit ultimate parent’s details" =>
+      case "Edit ultimate parent's details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
@@ -72,7 +72,7 @@ class TaskListPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
 
-      case "Add filing member’s details" =>
+      case "Add filing member details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))

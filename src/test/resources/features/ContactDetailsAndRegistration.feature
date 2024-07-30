@@ -21,7 +21,7 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     And I enter Telephone Number as 123456
     And I click on Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select No option and continue to next
     When I click Add further group details link
     When I select option In the UK and other countries in further details group status page
@@ -193,7 +193,7 @@ Feature: Contact details for the filing member
       | Second contact telephone number | 71235643                      |
       | Address                         | Address Change                |
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
     And I should see details as below:
       | KEY                                           | VALUE                         |
@@ -241,7 +241,7 @@ Feature: Contact details for the filing member
       | Do you have a second contact? | No                |
       | Address                       | Address Change    |
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
     And I should see row 12 value UPE Test
     And I should see row 13 value testupe@email.com
@@ -258,7 +258,7 @@ Feature: Contact details for the filing member
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select Yes option and continue to next
     When I select option No and continue to next
     When I enter NFM name as Test
@@ -388,7 +388,7 @@ Feature: Contact details for the filing member
     And I click on Continue button
     Then I should be on Contact details Check answers page
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I should see details as below:
       | KEY                                | VALUE                     |
@@ -435,7 +435,7 @@ Feature: Contact details for the filing member
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select Yes option and continue to next
     When I select option Yes and continue to next
     When I select option UK limited company and continue to GRS page
@@ -471,7 +471,7 @@ Feature: Contact details for the filing member
     And I should see row 5 key Do you have a second contact?
     And I should see row 5 value No
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I should see row 4 key Is there a nominated filing member
     And I should see row 5 key Company

@@ -67,8 +67,8 @@ Feature: UPE NO ID journey
       | Telephone number             | 1234569                  |
     When I click on Continue button
     Then I should be on Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    And The Task Add filing member’s details status should be Not started
+    And The Task Edit ultimate parent's details status should be Completed
+    And The Task Add filing member details status should be Not started
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId UPENoIDJourney for Pillar2
@@ -112,7 +112,7 @@ Feature: UPE NO ID journey
     And I should see the task name Add ultimate parent’s details on Business details section
     And I should see the task name Filing member’s details on Business details section
     And I should see the task name Further group details on Business details section
-    And The Task Add ultimate parent’s details status should be Not started
+    And The Task Add ultimate parent entity details status should be Not started
     And The Task Filing member’s details status should be Cannot start yet
     And The Task Further group details status should be Cannot start yet
     And I should see the task section 2 with task name as Contact details on Contact details section
@@ -155,7 +155,7 @@ Feature: UPE NO ID journey
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group
-    When I click Add ultimate parent’s details link
+    When I click Add ultimate parent's details link
     Then I should navigate to Initial guidance Page
     And The caption must be Group details
     And The Heading should be We need to match the details of the ultimate parent entity to HMRC records

@@ -7,11 +7,11 @@ Feature: Eligibility Questions for Pillar 2
   Scenario: 1 - User navigates to next eligibility question page by selecting yes option
     Given I clear the cache
     Given I am on UPE EQ Page
-    And The caption should be Check if the group needs to report
-    And The Heading should be Are you registering as the ultimate parent of this group?
-    And The Body content should be An ultimate parent is not a subsidiary of any other company and has a controlling interest in one or more other entities.
+    And The caption should be Check if you need to report Pillar 2 top-up taxes
+    And The Heading should be Are you registering as the group’s ultimate parent entity?
+    And The Body content should be An ultimate parent entity is not a subsidiary and controls one or more other entities. In a multi-parent group, only one ultimate parent entity needs to register.
     When I continue without selecting an option
-    Then I should see error message Select yes if you are registering as the ultimate parent of this group on the Eligibility question Page
+    Then I should see error message Select yes if you are registering as the group'’s ultimate parent on the Eligibility question Page
     When I choose Yes and continue
     Then I should navigate to business EQ page
     And The caption should be Check if the group needs to report
@@ -41,11 +41,11 @@ Feature: Eligibility Questions for Pillar 2
     Given I am on UPE EQ Page
     When I choose No and continue
     Then I should navigate to NFM EQ page
-    And The caption should be Check if the group needs to report
-    And The Heading should be Are you registering to report Pillar 2 top-up taxes as the nominated filing member for this group?
-    And The Body content should be The nominated filing member is responsible for managing the group’s tax returns and keeping business records.
+    And The caption should be Check if you need to report Pillar 2 top-up taxes
+    And The Heading should be Are you registering as the group’s nominated filing member?
+    And The Body content should be The nominated filing member is responsible for managing the group’s Pillar 2 top-up tax returns and keeping business records.
     When I continue without selecting an option
-    Then I should see error message Select yes if you are registering as the nominated filing member for this group on the Eligibility question Page
+    Then I should see error message Select yes if you are registering as the group’s nominated filing member on the Eligibility question Page
     When I choose Eligibility No NFM and continue
     Then I should navigate to NFM guidance page
     And The Heading should be Based on your answers, you cannot register this group to report Pillar 2 top-up taxes

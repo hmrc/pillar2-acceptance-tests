@@ -34,9 +34,9 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    And The Task Add filing member’s details status should be Not started
-    When I click Add filing member’s details link
+    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Add filing member details status should be Not started
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -65,7 +65,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -78,7 +78,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
 
   @batch2
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
@@ -119,7 +119,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -169,7 +169,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -206,7 +206,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -243,7 +243,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -269,8 +269,8 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    When I click Add filing member’s details link
+    And The Task Edit ultimate parent entity details status should be Completed
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -297,8 +297,8 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    When I click Add filing member’s details link
+    And The Task Edit ultimate parent entity details status should be Completed
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -341,7 +341,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -377,8 +377,8 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    When I click Add filing member’s details link
+    And The Task Edit ultimate parent entity details status should be Completed
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
