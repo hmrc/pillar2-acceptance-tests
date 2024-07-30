@@ -403,3 +403,135 @@ Feature: Repayment Journey
     And I should see the row 5 value Test Name
     And I should see the row 6 value HBUKGB4C
     And I should see the row 7 value GB29NWBK60161331926820
+
+  @batch3
+  Scenario: 6 - Organisation User navigates to error page when repayment submission API fails to submit data to ETMP
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    And I provide value for Refund Reason as Test Refund
+    And I click on Continue button
+    And I access Repayment CYA page
+    Then I should be on Repayment CYA Page
+    When I click Continue button
+    Then I should navigate to Repayment Service Error Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Dashboard page
+    When I click the browser back button
+    Then I should navigate to Repayment Service Error Page
+    When I select back link
+    Then I should be on Repayment CYA Page
+    When I click Continue button
+    Then I should navigate to Repayment Service Error Page
+    When I click go back and complete all the required answers link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    And I should see Refund Amount field is pre-populated with 100.00
+    And I click on Continue button
+    Then I should navigate to Agent Repayment Reason Page
+    And I should see Repayment reason field is pre-populated with Test Refund
+
+  @batch3
+  Scenario: 7 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    And I provide value for Refund Reason as Test Refund
+    And I click on Continue button
+    And I access Repayment CYA page
+    Then I should be on Repayment CYA Page
+    When I click Continue button
+    Then I should navigate to Repayment Service Error Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to ASA Dashboard page
+    When I click the browser back button
+    Then I should navigate to Repayment Service Error Page
+    When I select back link
+    Then I should be on Repayment CYA Page
+    When I click Continue button
+    Then I should navigate to Repayment Service Error Page
+    When I click go back and complete all the required answers link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    And I should see Refund Amount field is pre-populated with 100.00
+    And I click on Continue button
+    Then I should navigate to Agent Repayment Reason Page
+    And I should see Repayment reason field is pre-populated with Test Refund
+
+  @batch3
+  Scenario: 8 - Organisation User navigates to journey recovery error page when they try to skip mandatory questions
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Agent Repayment Guidance Page
+    When I click on Continue button
+    When I provide Refund Amount as 100.00
+    And I provide Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should be on Repayment Method Page
+    When I select repayment method as Non-UK bank account
+    Then I should be on Non UK Bank Account Payment Page
+    When I enter Non UK Bank Account details as:
+      | KEY               | VALUE                  |
+      | bankName          | HSBC                   |
+      | nameOnBankAccount | Test Name              |
+      | bic               | HBUKGB4B               |
+      | iban              | GB29NWBK60161331926819 |
+    Then I should be on Repayment Contact Page
+    When I access Repayment contact email page
+    Then I should be on Repayment Journey Recovery Error Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to Dashboard page
+    When I click the browser back button
+    Then I should be on Repayment Journey Recovery Error Page
+    When I click Return to account homepage link
+    Then I should navigate to Dashboard page
+
+  @batch3
+  Scenario: 9 - Agent User navigates to journey recovery error page when they try to skip mandatory questions
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Agent Repayment Guidance Page
+    When I click on Continue button
+    When I provide Refund Amount as 100.00
+    And I provide Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should be on Repayment Method Page
+    When I select repayment method as Non-UK bank account
+    Then I should be on Non UK Bank Account Payment Page
+    When I enter Non UK Bank Account details as:
+      | KEY               | VALUE                  |
+      | bankName          | HSBC                   |
+      | nameOnBankAccount | Test Name              |
+      | bic               | HBUKGB4B               |
+      | iban              | GB29NWBK60161331926819 |
+    Then I should be on Repayment Contact Page
+    When I access Repayment contact email page
+    Then I should be on Repayment Journey Recovery Error Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should navigate to ASA Dashboard page
+    When I click the browser back button
+    Then I should be on Repayment Journey Recovery Error Page
+    When I click Return to account homepage link
+    Then I should navigate to ASA Dashboard page
