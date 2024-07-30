@@ -193,6 +193,9 @@ trait CommonFunctions
       case "Repayment Bank Details Error Page"    => RepaymentBankDetailsErrorPage
       case "Repayment Bars Error Page"            => RepaymentBarsErrorPage
       case "Repayment Partial Name Error Page"    => RepaymentPartialNameErrorPage
+      case "Repayment Service Error page"         => RepaymentServiceErrorPage
+      case "Repayment Incomplete Request Error Page" => RepaymentIncompleteRequestErrorPage
+      case "Repayment Journey Recovery Error Page"   => RepaymentJourneyRecoveryErrorPage
     }
   }
 }

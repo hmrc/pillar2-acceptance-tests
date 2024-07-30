@@ -371,6 +371,7 @@ class PaymentSteps extends CommonFunctions {
       UKBankAccountPaymentPage.clickContinue()
     }
   }
+
   And("""^I enter UK Bank Account details as:$""") { (details: DataTable) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
