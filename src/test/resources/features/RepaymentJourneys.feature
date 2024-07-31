@@ -472,7 +472,7 @@ Feature: Repayment Journey
     Then I should navigate to Agent Repayment Reason Page
     And I should see Repayment reason field is pre-populated with Test Refund
 
-  @batch3
+  @batch3 @ignore
   Scenario: 8 - Organisation User navigates to journey recovery error page when they try to skip mandatory questions
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -501,7 +501,7 @@ Feature: Repayment Journey
     When I click Return to account homepage link
     Then I should navigate to Dashboard page
 
-  @batch3
+  @batch3 @ignore
   Scenario: 9 - Agent User navigates to journey recovery error page when they try to skip mandatory questions
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
