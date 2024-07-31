@@ -34,7 +34,7 @@ Feature: NFM NO ID journey
       | addressLine1 | Address Line 1 CYA |
       | addressLine3 | City CYA           |
       | countryCode  | United Kingdom     |
-    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
+    Then I should see address error message Enter a full UK postcode on the Postal code Element
     And I enter Postal Code as EH5 5WY
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
@@ -161,7 +161,7 @@ Feature: NFM NO ID journey
     And I should see NFM error message Second line of the address must be 35 characters or less on the Address Line 2 Element
     And I should see NFM error message Town or city must be 35 characters or less on the City Element
     And I should see NFM error message Region must be 35 characters or less on the Region Element
-    And I should see NFM error message Postal code must be 10 characters or less on the Postal Code Element
+    And I should see NFM error message Postcode must be 10 characters or less on the Postal Code Element
     When I enter Address Line 1 as Test Address Line 1
     And I enter Address Line 2 as Test Address Line 2
     And I enter Region as Region
@@ -180,7 +180,6 @@ Feature: NFM NO ID journey
     When I enter NFM Contact Email as incorrect email
     Then I should see NFM error message Enter an email address in the correct format, like name@example.com on the Input NFM Contact Email Element
     When I enter NFM Contact Email as NFMNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
-    When I click on Continue button
     Then I should see NFM error message Email address must be 132 characters or less on the Input NFM Contact Email Element
     And I enter NFM Contact Email as test@email.com
     Then I should navigate to NFM Telephone page
@@ -195,7 +194,6 @@ Feature: NFM NO ID journey
     When I enter NFM Telephone Number as 1234567812345678123456780
     Then I should see error message The telephone number should be 24 characters or less on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 1234567@
-    And I click on Continue button
     Then I should see error message Enter the telephone number for NFM Contact in the correct format, like 01632 960 001 or +44 808 157 0192 on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 9923-456
     When I click on change hyperlink next to the NFM Telephone Contact
