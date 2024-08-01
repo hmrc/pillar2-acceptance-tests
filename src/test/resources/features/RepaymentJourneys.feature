@@ -158,7 +158,10 @@ Feature: Repayment Journey
     When I click change link for Repayment UK Bank Method
     And I click on Continue button
     Then I should be on Repayment CYA Page
-    When I click Report Pillar 2 top-up taxes link
+    And I click on Continue button
+    Then I should be on Repayment Confirmation Page
+    And I can see Print this page link
+    When I click manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
   @zap_accessibility @batch3
@@ -277,7 +280,7 @@ Feature: Repayment Journey
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
 
-  @zap_accessibility @batch3
+  @zap_accessibility @batch3 @tests1
   Scenario: 4 - Agent User navigates to repayment journey pages for UK bank account
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
