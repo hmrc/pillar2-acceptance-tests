@@ -40,7 +40,6 @@ Feature: RFM check your answers page
     And I should see row 1 value XMPLR0123456111
     And I click Sign out link
 
-
   @batch2
   Scenario: 2 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey
     Given Organisation User logs in as upe for Pillar2

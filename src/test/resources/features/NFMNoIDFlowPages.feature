@@ -76,7 +76,7 @@ Feature: NFM NO ID journey
     Then I should be on NFM Check your answers page
     When I click on Continue button
     Then I should be on Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
 
   @batch1
   Scenario: 2 - Verify change answers for all NFM No ID journey pages and Verify back links

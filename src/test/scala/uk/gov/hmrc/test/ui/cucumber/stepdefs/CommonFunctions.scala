@@ -102,7 +102,7 @@ trait CommonFunctions
       case "P2 Submission Assistant role KB page" => P2SubAssistantRoleKBPage
       case "Agent affinity KB page"               => AgentAffinityKBPage
       case "P2 Submission Agent affinity KB page" => P2SubAgentAffinityKBPage
-      case "Agent services account page"          => AgentServicesAccountPage
+      case "agent services account page"          => AgentServicesAccountPage
       case "Agent services account page2"         => AgentServicesAccountPage2
       case "Individual affinity KB page"          => IndividualAffinityKBPage
       case "P2 Submission Individual affinity KB page"=> P2SubIndividualAffinityKBPage
@@ -193,6 +193,8 @@ trait CommonFunctions
       case "Repayment Bank Details Error Page"    => RepaymentBankDetailsErrorPage
       case "Repayment Bars Error Page"            => RepaymentBarsErrorPage
       case "Repayment Partial Name Error Page"    => RepaymentPartialNameErrorPage
+      case "Repayment Service Error Page"         => RepaymentServiceErrorPage
+      case "Repayment Journey Recovery Error Page"=> RepaymentJourneyRecoveryErrorPage
     }
   }
 }

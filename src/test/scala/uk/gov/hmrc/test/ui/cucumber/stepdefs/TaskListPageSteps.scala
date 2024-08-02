@@ -57,17 +57,17 @@ class TaskListPageSteps extends CommonFunctions {
   }
   And("""^The Task (.*) status should be (.*)$""") { (taskName: String, status: String) =>
     taskName match {
-      case "Add ultimate parent’s details" =>
+      case "Add ultimate parent entity details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
 
-      case "Edit ultimate parent's details" =>
+      case "Edit ultimate parent entity details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
 
-      case "Filing member’s details" =>
+      case "Filing member details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
@@ -77,7 +77,7 @@ class TaskListPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
 
-      case "Edit filing member’s details" =>
+      case "Edit filing member details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))

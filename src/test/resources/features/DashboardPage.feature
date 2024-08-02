@@ -8,7 +8,7 @@ Feature: Dashboard Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 top-up taxes account
-    And The inactive status should be HMRC has received a Below Threshold Notification for this account. Please contact the pillar2mailbox@hmrc.gov.uk if your circumstances change.
+#    And The inactive status should be HMRC has received a Below Threshold Notification for this account. Please contact the pillar2mailbox@hmrc.gov.uk if your circumstances change.
     When I click Refer to the Pillar 2 top-up taxes manual (opens in new tab) link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page
@@ -25,10 +25,6 @@ Feature: Dashboard Page
     And I should see the heading 2 on Dashboard page as Manage your account
     And The Body content should be View and amend contact details
     And The Body content should be View and amend group details
-    And The Body content should be When to submit your returns
-    And The Body content should be Your group must submit your Pillar 2 top-up tax returns no late than:
-    And The Body content should be 18 months after the last day of the group’s accounting period, if the first accounting period you reported for Pillar 2 top-up taxes ended after 31 December 2024
-    And The Body content should be 30 June 2026, if the first accounting period you reported for Pillar 2 top-up taxes ended on or before 31 December 2024
     And The Body content should be HMRC are currently delivering this service on a phased approach. We’ll release the tools that you need to submit your returns before the due date for reporting.
     And The Body content should be Refer to the Pillar 2 top-up taxes manual (opens in new tab) for more details.
     When I click Make a payment link

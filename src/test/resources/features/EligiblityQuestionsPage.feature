@@ -11,19 +11,19 @@ Feature: Eligibility Questions for Pillar 2
     And The Heading should be Are you registering as the group’s ultimate parent entity?
     And The Body content should be An ultimate parent entity is not a subsidiary and controls one or more other entities. In a multi-parent group, only one ultimate parent entity needs to register.
     When I continue without selecting an option
-    Then I should see error message Select yes if you are registering as the group'’s ultimate parent on the Eligibility question Page
+    Then I should see error message Select yes if you are registering as the group’s ultimate parent on the Eligibility question Page
     When I choose Yes and continue
     Then I should navigate to business EQ page
-    And The caption should be Check if the group needs to report
+    And The caption should be Check if you need to report Pillar 2 top-up taxes
     And The Heading should be Does the group have an entity located in the UK?
-    And The Body content should be Pillar 2 top-up taxes may be collected when your group has an entity located in the UK.
+    And The Body content should be Pillar 2 top-up taxes may be collected if you have an entity located in the UK.
     When I choose Yes and continue
     Then I should navigate to Global gross revenue
-    And The caption should be Check if the group needs to report
-    And The Heading should be Has the group had consolidated annual revenues of €750 million or more in at least 2 of the previous 4 accounting periods?
-    And The Body content should be If the group accounting period is not 365 days, you can calculate the threshold by multiplying €750 million by the number of days in your accounting period and dividing it by 365
+    And The caption should be Check if you need to report Pillar 2 top-up taxes
+    And The Heading should be Does the group have consolidated annual revenues of €750 million or more in at least 2 of the previous 4 accounting periods?
+    And The Body content should be If the group’s accounting period is not 365 days, you can calculate the threshold by multiplying €750 million by the number of days in your accounting period and dividing it by 365.
     When I continue without selecting an option
-    Then I should see error message Select yes if the group had consolidated annual revenues of €750 million or more in at least 2 of the previous 4 accounting periods on the Global gross revenue Page
+    Then I should see error message Select yes if the group has consolidated annual revenues of €750 million or more in at least 2 of the previous 4 accounting periods on the Global gross revenue Page
     When I choose Yes and continue
     Then I should navigate to confirmation page
     And The Heading should be You need to register this group to report Pillar 2 top-up taxes
@@ -60,7 +60,7 @@ Feature: Eligibility Questions for Pillar 2
     When I choose Eligibility Yes NFM and continue
     Then I am on Business activity EQ Page
     When I continue without selecting an option
-    Then I should see error message Select yes if the group has business operations in the UK on the Eligibility question Page
+    Then I should see error message Select yes if the group has an entity located in the UK on the Eligibility question Page
     When I choose No and continue
     Then I should navigate to BA guidance page
     And The Heading should be Based on your answers, this group does not need to report Pillar 2 top-up taxes in the UK

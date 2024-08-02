@@ -349,6 +349,15 @@ class PaymentSteps extends CommonFunctions {
   Given("""^I access Repayment contact page$""") { () =>
     Nav.navigateTo(RepaymentContactPage.url)
   }
+
+  Given("""^I access Repayment contact email page$""") { () =>
+    Nav.navigateTo(RepaymentContactEmailPage.url)
+  }
+
+  When("""^I access Repayment CYA page$""") { () =>
+    Nav.navigateTo(RepaymentCYAPage.url)
+  }
+
   And("""^I access (.*) payment page$""") { (page: String) =>
     page match {
       case "Non UK" =>
