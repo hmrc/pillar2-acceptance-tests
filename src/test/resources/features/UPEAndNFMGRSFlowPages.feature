@@ -43,7 +43,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I select option Yes and continue to next
     Then I should be on NFM entity type page
     When I click on Continue button
-    Then I should see error message Select what type of company the nominated filing member is on the NFM Org type Page
+    Then I should see error message Select the entity type of the nominated filing member on the NFM Org type Page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
     And The Heading should be Stub GRS Journey Data
