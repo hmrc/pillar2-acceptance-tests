@@ -99,20 +99,20 @@ Feature: NFM NO ID journey
     Then I should see the NFM Telephone number field is pre-populated with 1234569
     Then I click on Continue button
     When I click on change hyperlink next to the NFM Name
-    And I enter NFM name as Name Change
-    And I should see row 1 value Name Change
+    And I enter NFM name as Name () Change %^
+    And I should see row 1 value Name () Change %^
     When I click on change hyperlink next to the NFM Address
-    And I enter Address Line 1 as Change Address
+    And I enter Address Line 1 as Change# Address $
     And I click on Continue button
-    And I should see row 2 value Change Address
+    And I should see row 2 value Change# Address $
     And I should see row 2 value City CYA
     And I should see row 2 value United Kingdom
     When I click on change hyperlink next to the NFM Contact Name
-    And I enter NFM Contact name as Change Contact Person
-    And I should see row 3 value Change Contact Person
+    And I enter NFM Contact name as Change & Contact $ Person ~
+    And I should see row 3 value Change & Contact $ Person ~
     When I click on change hyperlink next to the NFM Email Address
-    And I enter NFM Contact Email as changetest@email.com
-    And I should see row 4 value changetest@email.com
+    And I enter NFM Contact Email as changetest&*@email.com
+    And I should see row 4 value changetest&*@email.com
     When I click on change hyperlink next to the NFM Telephone Number
     And I enter NFM Telephone Number as 12345679
     And I should see row 6 value 12345679
