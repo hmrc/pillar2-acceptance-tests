@@ -277,10 +277,18 @@ Feature: Repayment Journey
     And I can see Print this page link
     And I should see the row 4 value Natwest
     And I should see the row 7 value 86473611
+    And I click on Continue button
+    Then I should be on Repayment Confirmation Page
+    And I can see Print this page link
+    When I click the browser back button
+    Then I should be on Repayment Return Error Page
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
+    When I click the browser back button
+    When I click report and manage your Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
 
-  @zap_accessibility @batch3 @tests1
+  @zap_accessibility @batch3
   Scenario: 4 - Agent User navigates to repayment journey pages for UK bank account
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service

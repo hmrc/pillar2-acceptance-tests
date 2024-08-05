@@ -83,7 +83,7 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     Then I click Sign out link
 
-  @batch2
+  @batch2 @tests1
   Scenario: 3 - Verify Journey Recovery and Incomplete data errors.
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
