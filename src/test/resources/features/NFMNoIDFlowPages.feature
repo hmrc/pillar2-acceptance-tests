@@ -203,4 +203,4 @@ Feature: NFM NO ID journey
     Then I should see the answer No remain selected
     And I click on Continue button
     And I click on Continue button
-    Then The Task Edit filing member’s details status should be Completed
+    Then The Task Edit filing member details status should be Completed
