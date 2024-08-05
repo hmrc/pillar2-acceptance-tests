@@ -21,7 +21,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I click on Continue button
     Then I should navigate to input-upe-name page
 
-  @zap_accessibility @batch1 @tests1
+  @zap_accessibility @batch1
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page

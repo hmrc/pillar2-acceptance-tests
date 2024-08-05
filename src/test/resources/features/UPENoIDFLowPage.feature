@@ -3,7 +3,7 @@ Feature: UPE NO ID journey
   As a MNE user
   I would like to enter my details via UPE No ID journey
 
-  @batch1 @zap_accessibility @tests1
+  @batch1 @zap_accessibility
   Scenario: 1 - UPE No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId UPENoIDJourney for Pillar2
     Then I should be on UPE business page
@@ -150,7 +150,7 @@ Feature: UPE NO ID journey
     When I click feedback link
     Then I should be navigated to Send your feedback page
 
-  @zap_accessibility @batch2 @tests1
+  @zap_accessibility @batch2
   Scenario: 3 - Validate different error messages for UPE no ID journey pages
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
@@ -223,7 +223,7 @@ Feature: UPE NO ID journey
     Then I should see error message Enter the telephone number for UPE Contact Name in the correct format, like 01632 960 001 or +44 808 157 0192 on the Input Telephone Page
 
 
-  @batch1 @zap_accessibility @tests1
+  @batch1 @zap_accessibility
   Scenario: 4 - Change UPE fields from UPE check your answers page
     Given Organisation User navigates to UPE check your answer page with credId UPENoIDJourney
     Then I should be on Check your answers page

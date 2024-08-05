@@ -3,7 +3,7 @@ Feature: NFM NO ID journey
   As a MNE user
   I would like to enter my details via NFM No ID journey
 
-  @zap_accessibility @batch1 @tests1
+  @zap_accessibility @batch1
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     When I select option Yes and continue to next
@@ -78,7 +78,7 @@ Feature: NFM NO ID journey
     Then I should be on Task list page
     And The Task Edit filing member’s details status should be Completed
 
-  @batch1 @tests1
+  @batch1
   Scenario: 2 - Verify change answers for all NFM No ID journey pages and Verify back links
     Given Organisation User logs in with credId NFMCYA for Pillar2
     When I click Edit filing member’s details link
@@ -120,7 +120,7 @@ Feature: NFM NO ID journey
     And I select option No and continue to next
     And I should see row 5 value No
 
-  @zap_accessibility @batch2 @tests1
+  @zap_accessibility @batch2
   Scenario: 3 - Validate different error messages for NFM no ID journey pages
     Given Organisation User logs in as upe for Pillar2
     And I select option Yes and continue to next
