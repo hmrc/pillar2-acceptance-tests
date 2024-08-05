@@ -51,7 +51,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit ultimate parent entity details status should be Completed
 
   @batch1
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
@@ -283,7 +283,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit ultimate parent entity details status should be Completed
 
   @batch1
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
@@ -311,7 +311,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit ultimate parent entity details status should be Completed
 
   @batch2
   Scenario: 10 - User registration with LLP with different errors
