@@ -428,7 +428,7 @@ Feature: Contact details for the filing member
     Then I can see Print this page link
 
   @batch1
-  Scenario: 4 - Validate check your answers page with UPE and NFM GRS and without second contact details for NFM user
+  Scenario: 4 - Validate No journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.
     Given Organisation User logs in as upe for Pillar2
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -484,6 +484,13 @@ Feature: Contact details for the filing member
     And I should see row 16 key Do you have a second contact?
     And I should see row 16 value No
     And I click on Save&Continue button
+    Then I should navigate to Registration Duplication KB Page
+    And I click on Save&Continue button
+    When I select No option and continue to next
+    Then I should navigate to Review answers page
+    And I should see row 4 key Is there a nominated filing member
+    And I should see row 4 value No
+    And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
     And The Body content should be Your group has registered to report for Domestic Top-up Tax and Multinational Top-up Tax.
     And I click the browser back button
@@ -495,7 +502,84 @@ Feature: Contact details for the filing member
     And I should be on Dashboard page
     And I click the browser back button
     Then I should be on Registration return error page
-    And I click the browser back button
-    Then I should navigate to Registration confirmation page
+    And I click Sign out link
     When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
+
+  @batch1
+  Scenario: 5 - Validate Yes journey from knock back page for duplicate details on registration for UPE and NFM GRS flows
+    Given Organisation User logs in as upe for Pillar2
+    When I select option Yes and continue to next
+    Then I should be on UPE entity type page
+    When I select option UK limited company and continue to GRS page
+    When I registered successfully with BV enabled
+    And I click on Save&Continue button
+    When I click Add filing member’s details link
+    When I select Yes option and continue to next
+    When I select option Yes and continue to next
+    When I select option UK limited company and continue to GRS page
+    When I registered successfully with BV enabled
+    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
+    And I click on Save&Continue button
+    When I click Add further group details link
+    When I select option In the UK and other countries in further details group status page
+    When I enter account period as:
+      | KEY             | VALUE |
+      | startDate.day   | 15    |
+      | startDate.month | 1     |
+      | startDate.year  | 2024  |
+      | endDate.day     | 15    |
+      | endDate.month   | 1     |
+      | endDate.year    | 2025  |
+    And I click on Continue button
+    When I click Add contact details link
+    Then I should navigate to Contact details guidance page
+    When I click on Continue button
+    When I enter Contact Name as Contact Name Test
+    When I enter Contact Email as testContact@email.com
+    When I select option Yes and continue to next
+    When I enter Contact Telephone as 1234554
+    When I select option No and continue to next
+    When I enter Address as:
+      | KEY          | VALUE                  |
+      | addressLine1 | Address Line 1 Contact |
+      | addressLine3 | City Contact           |
+      | postalCode   | EH5 5WY                |
+      | countryCode  | United Kingdom         |
+    Then I should navigate to Contact details Check answers page
+    And I should see row 5 key Do you have a second contact?
+    And I should see row 5 value No
+    And I click on Continue button
+    When I click Check your answers link
+    Then I should navigate to Review answers page
+    And I click on Save&Continue button
+    Then I should navigate to Registration Duplication KB Page
+    When I click Report Pillar 2 top-up taxes link
+    Then The Task Edit filing member’s details status should be Completed
+    When I click Check your answers link
+    Then I should navigate to Review answers page
+    And I click on Save&Continue button
+    Then I should navigate to Registration Duplication KB Page
+    When I select Yes option and continue to next
+    Then I should navigate to NFM details page
+    When I select option No and continue to next
+    When I enter NFM name as NFM Test KB
+    When I enter Address as:
+      | KEY          | VALUE              |
+      | addressLine1 | Address Line 1 CYA |
+      | addressLine3 | City CYA           |
+      | postalCode   | EH5 5WY            |
+      | countryCode  | United Kingdom     |
+    When I click on Continue button
+    When I enter NFM Contact name as Contact CYA
+    When I enter NFM Contact Email as testcya@email.com
+    Then I should navigate to NFM Telephone page
+    When I select option No and continue to next
+    Then I should navigate to NFM Check your answers page
+    When I click on Continue button
+    Then I should be on Task list page
+    When I click Check your answers link
+    Then I should navigate to Review answers page
+    And I click on Save&Continue button
+    Then I should navigate to Registration confirmation page
+
