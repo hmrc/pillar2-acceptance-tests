@@ -8,7 +8,7 @@ Feature: Dashboard Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 top-up taxes account
-#    And The inactive status should be HMRC has received a Below Threshold Notification for this account. Please contact the pillar2mailbox@hmrc.gov.uk if your circumstances change.
+    #And The inactive status should be HMRC has received a Below Threshold Notification for this account. Please contact the pillar2mailbox@hmrc.gov.uk if your circumstances change. -- removed from dashboard --
     When I click draft guidance (opens in new tab). link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page

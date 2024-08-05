@@ -31,7 +31,7 @@ Feature: UPE NO ID journey
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And The caption must be Group details
-    And The Heading should be What is the name of the person or team we should contact from the ultimate parent entity?
+    And The Heading should be What is the name of the person or team from the ultimate parent entity to keep on record?
     When I enter UPE Person/Team name as Contact UPE
     Then I should navigate to UPE Contact Email page
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
@@ -49,7 +49,7 @@ Feature: UPE NO ID journey
     And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Group details
     And The Heading should be What is the telephone number for Contact UPE?
-    And The hint text should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
+    And The hint text should be For international numbers include the country code
     And I enter Telephone Number as 1234569
     Then I should be on Check your answers page
     And The caption must be Group details
@@ -169,14 +169,14 @@ Feature: UPE NO ID journey
     When I click on Continue button
     Then I should see error message You need to enter the name of the ultimate parent entity on the Input UPE Name Page
     When I enter UPE name as UPE Name character length Error validation and Maximum UPE character length should be entered 105 characters.
-    Then I should see error message The name of the ultimate parent entity must be 105 characters or less on the Input UPE Name Page
+    Then I should see error message Name of the ultimate parent entity must be 105 characters or less on the Input UPE Name Page
     When I enter UPE name as Test <script>alert(document.domain)</script>
     Then I should navigate to input-upe-address page
     When I click on Continue button
     Then I should see address error message Enter the first line of the address on the Address Line Element
     Then I should see address error message Enter the town or city on the City Element
-    Then I should see address error message Enter the postal code on the Postal code Element
-    Then I should see address error message Select a country on the Country Element
+    Then I should see address error message Enter the postcode on the Postal code Element
+    Then I should see address error message Enter the country on the Country Element
     When I enter Address as:
       | KEY          | VALUE                                                          |
       | addressLine1 | enter long first line of address with more than 35 characters  |
@@ -185,11 +185,11 @@ Feature: UPE NO ID journey
       | addressLine4 | enter long Region name with more than 35 characters            |
       | postalCode   | enter long postal code                                         |
       | countryCode  | Australia                                                      |
-    Then I should see address error message The first line of the address must be 35 characters or less on the Address Line Element
-    Then I should see address error message The second line of the address must be 35 characters or less on the Address Line 2 Element
-    Then I should see address error message The town or city must be 35 characters or less on the City Element
-    Then I should see address error message The region must be 35 characters or less on the Region Element
-    Then I should see address error message The postal code must be 10 characters or less on the Postal code Element
+    Then I should see address error message First line of the address must be 35 characters or less on the Address Line Element
+    Then I should see address error message Second line of the address must be 35 characters or less on the Address Line 2 Element
+    Then I should see address error message Town or city must be 35 characters or less on the City Element
+    Then I should see address error message Region must be 35 characters or less on the Region Element
+    Then I should see address error message Postcode must be 10 characters or less on the Postal code Element
     When I enter Address Line 1 as Test Address Line 1
     When I enter Address Line 2 as Test Address Line 2
     And I enter City as Test City
@@ -198,17 +198,17 @@ Feature: UPE NO ID journey
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And I click on Continue button
-    Then I should see error message You need to enter the name of the person or team we should contact from the ultimate parent entity on the UPE Contact person/team name Page
+    Then I should see error message Enter the name of the person or team from the ultimate parent entity to keep on record on the UPE Contact person/team name Page
     When I enter UPE name as UPE Name character length Error validation and Maximum UPE character length should be entered 200 characters.UPE Name character length Error validation and Maximum UPE character length should be entered 200 characters.
-    Then I should see error message Name cannot be more than 200 characters on the UPE Contact person/team name Page
+    Then I should see error message The name of the person or team must be 200 characters or less on the UPE Contact person/team name Page
     When I enter UPE Person/Team name as UPE Contact Name
     Then I should navigate to UPE Contact Email page
     And I click on Continue button
-    Then I should see error message You need to enter the email address for UPE Contact Name on the UPE contact email Page
+    Then I should see error message Enter the email address for UPE Contact Name on the UPE contact email Page
     When I enter UPE Email address as testTeamEmail
     Then I should see error message Enter an email address in the correct format, like name@example.com on the UPE contact email Page
     When I enter UPE Email address as NFMNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
-    Then I should see error message The email address should be 132 characters or less on the UPE contact email Page
+    Then I should see error message Email address must be 132 characters or less on the UPE contact email Page
     When I enter UPE Email address as testteam@email.com
     Then I should navigate to UPE Telephone page
     When I click on Continue button
@@ -216,11 +216,12 @@ Feature: UPE NO ID journey
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
     When I click on Continue button
-    Then I should see error message You need to enter the telephone for UPE Contact Name on the Input Telephone Page
+    Then I should see error message Enter the telephone number for UPE Contact Name on the Input Telephone Page
     And I enter Telephone Number as 1234512345123451234512345
-    Then I should see error message The telephone number should be 24 characters or less on the Input Telephone Page
+    Then I should see error message Telephone number should be 24 characters or less on the Input Telephone Page
     And I enter Telephone Number as #incorrect number
-    Then I should see error message Enter a telephone number in the correct format on the Input Telephone Page
+    Then I should see error message Enter the telephone number for UPE Contact Name in the correct format, like 01632 960 001 or +44 808 157 0192 on the Input Telephone Page
+
 
   @batch1 @zap_accessibility @tests1
   Scenario: 4 - Change UPE fields from UPE check your answers page
