@@ -13,7 +13,7 @@ Feature: NFM NO ID journey
     When I click Add filing member details link
     Then I should navigate to NFM registration page
     And The caption must be Group details
-    And The Heading should be Nominate a filing member
+    And The Heading should be Nominated filing member
     And The Body content should be The ultimate parent entity (UPE) is expected to report as the filing member. However, the UPE can nominate another company within your group.
     And The Body content should be If you are nominated to report as the filing member, you must have written permission from your UPE (such as an email). We won’t collect this during registration, but we may request it during compliance checks.
     And The field heading should be Are you registering as the nominated filing member to report for this group?
