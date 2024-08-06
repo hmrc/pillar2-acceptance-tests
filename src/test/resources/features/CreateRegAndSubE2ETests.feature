@@ -13,7 +13,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to UKCompany GRS page
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -85,7 +85,7 @@ Feature: User registration and subscription e2e journey
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
@@ -101,7 +101,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to UKCompany GRS page
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
@@ -167,7 +167,7 @@ Feature: User registration and subscription e2e journey
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
@@ -183,7 +183,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to UKCompany GRS page
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -245,7 +245,7 @@ Feature: User registration and subscription e2e journey
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
@@ -277,7 +277,7 @@ Feature: User registration and subscription e2e journey
     Then I should be on Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -339,7 +339,7 @@ Feature: User registration and subscription e2e journey
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
@@ -371,7 +371,7 @@ Feature: User registration and subscription e2e journey
     Then I should be on Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
@@ -409,7 +409,7 @@ Feature: User registration and subscription e2e journey
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
@@ -444,7 +444,7 @@ Feature: User registration and subscription e2e journey
     Then I should be on Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
@@ -488,7 +488,7 @@ Feature: User registration and subscription e2e journey
     When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page

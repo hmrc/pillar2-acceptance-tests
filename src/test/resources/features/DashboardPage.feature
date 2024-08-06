@@ -9,7 +9,7 @@ Feature: Dashboard Page
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 top-up taxes account
     #And The inactive status should be HMRC has received a Below Threshold Notification for this account. Please contact the pillar2mailbox@hmrc.gov.uk if your circumstances change. -- removed from dashboard --
-    When I click draft guidance (opens in new tab). link
+    When I click Refer to the Pillar 2 top-up taxes manual (opens in new tab) link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page
     Then I close new tab
@@ -25,10 +25,8 @@ Feature: Dashboard Page
     And I should see the heading 2 on Dashboard page as Manage your account
     And The Body content should be View and amend contact details
     And The Body content should be View and amend group details
-    And The Body content should be This service is being developed as the UK’s implementation of Pillar 2, part of the G20 and the Organisation for Economic Cooperation and Development’s (OECD) two-pillar solution.
-    And The Body content should be The first deadline to submit a return is 18 months after the last day of the group’s accounting period that started on or after 31 December 2023.
-    And The Body content should be This service will allow groups to access other features such as the submission of UK tax returns (UKTR), ahead of this deadline.
-    And The Body content should be For more information about the UK’s implementation of Pillar 2 top-up taxes, please refer to the draft guidance (opens in new tab).
+    And The Body content should be HMRC are currently delivering this service on a phased approach. We’ll release the tools that you need to submit your returns before the due date for reporting.
+    And The Body content should be Refer to the Pillar 2 top-up taxes manual (opens in new tab) for more details.
     When I click Make a payment link
     Then I should navigate to Make a payment page
     And The Heading should be Pay your Pillar 2 top-up taxes
@@ -53,7 +51,7 @@ Feature: Dashboard Page
     Then I should navigate to accounts summary page
     When I click the browser back button
     Then I should be on Dashboard page
-    When I click draft guidance (opens in new tab). link
+    When I click Refer to the Pillar 2 top-up taxes manual (opens in new tab) link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page
     Then I close new tab

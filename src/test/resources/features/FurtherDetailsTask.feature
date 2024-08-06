@@ -10,7 +10,7 @@ Feature: Further Details Task page validation
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select No option and continue to next
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
@@ -141,7 +141,7 @@ Feature: Further Details Task page validation
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select No option and continue to next
     When I click Add further group details link
     When I select option Only in the UK in further details group status page

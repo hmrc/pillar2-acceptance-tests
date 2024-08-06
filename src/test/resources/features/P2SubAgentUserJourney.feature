@@ -45,7 +45,7 @@ Feature: Pillar2 submission Agent User Journey
     Given Individual User logs in to register for Pillar2 Submission Agent service
     Then I should be navigated to ASA Individual KB Page of Pillar2 Submission
     When I click sign in via agent services link
-    Then I should navigate to Agent services account page
+    Then I should navigate to agent services account page
     When I click the browser back button
     Then I should be navigated to ASA Individual KB Page of Pillar2 Submission
     When I click request authorisation on agent services link
@@ -61,7 +61,7 @@ Feature: Pillar2 submission Agent User Journey
     Given Organisation User logs in to register for Pillar2 Submission Agent service
     Then I should be navigated to ASA Organisation KB Page of Pillar2 Submission
     When I click sign in via agent services link
-    Then I should navigate to Agent services account page
+    Then I should navigate to agent services account page
     When I click the browser back button
     Then I should be navigated to ASA Organisation KB Page of Pillar2 Submission
     When I click request authorisation on agent services link
