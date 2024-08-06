@@ -428,7 +428,7 @@ Feature: Contact details for the filing member
     Then I can see Print this page link
 
   @batch1
-  Scenario: 4 - Validate No journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.
+  Scenario: 4 - Validate subscription journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.
     Given Organisation User logs in as upe for Pillar2
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
