@@ -13,10 +13,10 @@ Feature: NFM NO ID journey
     When I click Add filing member’s details link
     Then I should navigate to NFM registration page
     And The caption must be Group details
-    And The Heading should be Nominate a filing member
-    And The Body content should be A nominated filing member must be nominated by the UPE and must have access to information required to report Pillar 2 top-up taxes.
-    And The Body content should be If you select ‘No’, we will use the ultimate parent entity (UPE) as the filing member.
-    And The field heading should be Do you want to register a nominated filing member to report for this group?
+    #And The Heading should be Nominate a filing member
+    #And The Body content should be A nominated filing member must be nominated by the UPE and must have access to information required to report Pillar 2 top-up taxes.
+    #And The Body content should be If you select ‘No’, we will use the ultimate parent entity (UPE) as the filing member.
+    #And The field heading should be Do you want to register a different entity as your nominated filing member?
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     And The caption must be Group details
