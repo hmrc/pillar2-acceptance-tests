@@ -229,19 +229,19 @@ Feature: UPE NO ID journey
     Given Organisation User navigates to UPE check your answer page with credId UPENoIDJourney
     Then I should be on Check your answers page
     When I click on change hyperlink next to the UPE Name
-    And I enter UPE name as Name Change
-    And I should see row 1 value Name Change
+    And I enter UPE name as Name Change @&#
+    And I should see row 1 value Name Change @&#
     When I click on change hyperlink next to the UPE Address
-    And I enter Address Line 1 as Change Address
+    And I enter Address Line 1 as Change Address &
     And I click on Continue button
-    And I should see row 2 value Change Address
+    And I should see row 2 value Change Address &
     When I click on change hyperlink next to the UPE Contact Name
-    And I enter UPE Person/Team name as Change Contact Person
+    And I enter UPE Person/Team name as Change Contact Person&~
     Then I should be on Check your answers page
-    And I should see row 3 value Change Contact Person
+    And I should see row 3 value Change Contact Person&~
     When I click on change hyperlink next to the UPE Email Address
-    And I enter UPE Email address as changetest@email.com
-    And I should see row 4 value changetest@email.com
+    And I enter UPE Email address as changetest&@email.com
+    And I should see row 4 value changetest&@email.com
     When I click on change hyperlink next to the UPE Telephone Number
     And I enter Telephone Number as 12345679
     And I should see row 6 value 12345679

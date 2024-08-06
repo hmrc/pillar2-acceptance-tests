@@ -139,10 +139,10 @@ Feature: Dashboard Page
       | Address                         | HP13 6TT                |
       | Address                         | United Kingdom          |
     When I click on change link for Contact Name
-    When I enter Contact Name as Contact Name Test
+    When I enter Contact Name as Contact Name Test #
     Then I should navigate to contact details summary page
     When I click on change link for Email address
-    When I enter Contact Email as contact@email.com
+    When I enter Contact Email as contact*@email.com
     When I click on change link for Telephone number
     When I enter Contact Telephone as 123456789
     When I click on change link for Do you have a second contact?
@@ -150,8 +150,8 @@ Feature: Dashboard Page
     And I should see row 5 value No
     When I click on change link for Do you have a second contact?
     When I select option Yes and continue to next
-    When I enter Second Contact Name as Second Contact Name Test
-    When I enter Second Contact Email as secondContact@email.com
+    When I enter Second Contact Name as Second Contact £ Name Test
+    When I enter Second Contact Email as second&Contact@email.com
     When I select option Yes and continue to next
     When I enter Second Contact Input as 1234554878
     When I click on change link for Dashboard Address
@@ -163,22 +163,22 @@ Feature: Dashboard Page
     And I click on Continue button
     Then I should navigate to contact details summary page
     And I should see details as below:
-      | KEY                             | VALUE                    |
-      | Contact name                    | Contact Name Test        |
-      | Email address                   | contact@email.com        |
-      | Can we contact by telephone?    | Yes                      |
-      | Telephone number                | 123456789                |
-      | Do you have a second contact?   | Yes                      |
-      | Second contact name             | Second Contact Name Test |
-      | Second contact email address    | secondContact@email.com  |
-      | Can we contact by telephone?    | Yes                      |
-      | Second contact telephone number | 1234554878               |
-      | Address                         | Test Address Line 1      |
-      | Address                         | Test Address Line 2      |
-      | Address                         | Test City                |
-      | Address                         | Test Region              |
-      | Address                         | EH5 5WY                  |
-      | Address                         | United Kingdom           |
+      | KEY                             | VALUE                      |
+      | Contact name                    | Contact Name Test #        |
+      | Email address                   | contact*@email.com         |
+      | Can we contact by telephone?    | Yes                        |
+      | Telephone number                | 123456789                  |
+      | Do you have a second contact?   | Yes                        |
+      | Second contact name             | Second Contact £ Name Test |
+      | Second contact email address    | second&Contact@email.com   |
+      | Can we contact by telephone?    | Yes                        |
+      | Second contact telephone number | 1234554878                 |
+      | Address                         | Test Address Line 1        |
+      | Address                         | Test Address Line 2        |
+      | Address                         | Test City                  |
+      | Address                         | Test Region                |
+      | Address                         | EH5 5WY                    |
+      | Address                         | United Kingdom             |
     When I click on Continue button
     Then I should be on Dashboard page
 
