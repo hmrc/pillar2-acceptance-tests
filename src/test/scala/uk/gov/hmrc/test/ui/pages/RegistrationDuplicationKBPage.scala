@@ -18,20 +18,14 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
-object NFMRegistrationPage extends PageObject {
-  val url: String      = s"$rootUrl"+"business-matching/filing-member/nominate"
+object RegistrationDuplicationKBPage extends PageObject{
+  val url: String       = s"$rootUrl"+"review-submit/error/duplicate-details"
+  val header: String    = "h1.govuk-panel__title"
+  val header2           = "h2.govuk-heading-m"
+  val pageHeader        = "a[href='/report-pillar2-top-up-taxes']"
 
-  val caption          = ".govuk-caption-l"
-  val eqForm           = "form[action*='nominate']"
-  val eq               = "form[action*='nominate'] .govuk-fieldset"
-  val continue         = "form[action*='nominate'] button"
-  val errorSummary     = ".govuk-error-summary__list"
-  val errorLink        = "[href='#nominateFilingMember_0']"
-  val backLink         = ".govuk-back-link"
-  val errorMessage     = ".govuk-error-message"
-  val fieldContent     = ".govuk-fieldset__legend"
-
-  def clickContinue()  = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 }
