@@ -6,7 +6,7 @@ Feature: Create a new registration and subscription
   @zap_accessibility @batch2
   Scenario: 1 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.
     Given Organisation User logs in to subscribe for Pillar2
-    When I click Add ultimate parent’s details link
+    When I click Add ultimate parent entity details link
     When I click on Continue button
     When I select option No and continue to next
     And I enter UPE name as XMPLR0009999999
@@ -21,7 +21,7 @@ Feature: Create a new registration and subscription
     When I select option No and continue to next
     Then I should be on Check your answers page
     And I click on Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select No option and continue to next
     When I click Add further group details link
     When I select option In the UK and other countries in further details group status page
@@ -46,7 +46,7 @@ Feature: Create a new registration and subscription
       | countryCode  | United Kingdom |
     Then I should navigate to Contact details Check answers page
     When I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to duplicate ack ref error page
@@ -63,7 +63,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to UKCompany GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I select option Yes and continue to next
@@ -100,7 +100,7 @@ Feature: Create a new registration and subscription
       | countryCode  | United Kingdom |
     Then I should navigate to Contact details Check answers page
     When I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     When I click on change link for Primary Contact
     Then I should navigate to Contact details change telephone page
     When I select option Yes and continue to next
@@ -118,7 +118,7 @@ Feature: Create a new registration and subscription
   Scenario: 3 - User redirected to a placeholder error page, for an invalid request during registration.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    When I click Add ultimate parent’s details link
+    When I click Add ultimate parent entity details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
     Then I should navigate to UPE business page
@@ -136,7 +136,7 @@ Feature: Create a new registration and subscription
     When I select option No and continue to next
     Then I should be on Check your answers page
     And I click on Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     When I click Add further group details link
@@ -165,7 +165,7 @@ Feature: Create a new registration and subscription
       | countryCode  | United Kingdom |
     Then I should navigate to Contact details Check answers page
     When I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     And I click on Save&Continue button
     Then I should navigate to Registration API error page
     And The Heading should be Sorry, there is a problem with the service
@@ -183,13 +183,13 @@ Feature: Create a new registration and subscription
     And The Body content should be You must return to your Pillar 2 top-up taxes registration and complete the required tasks.
     Then I click return to your Pillar 2 top-up taxes registration link
     Then I should see task list sections
-    And The Task Add ultimate parent’s details status should be Not started
+    And The Task Add ultimate parent entity details status should be Not started
 
   @ignore @batch2
   Scenario: 5 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    When I click Add ultimate parent’s details link
+    When I click Add ultimate parent entity details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
     Then I should navigate to UPE business page
@@ -207,7 +207,7 @@ Feature: Create a new registration and subscription
     When I select option No and continue to next
     Then I should be on Check your answers page
     And I click on Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     When I click Add further group details link
@@ -237,7 +237,7 @@ Feature: Create a new registration and subscription
       | countryCode  | United Kingdom |
     Then I should navigate to Contact details Check answers page
     When I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I should see Print this page link on Review answers page
 

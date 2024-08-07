@@ -343,4 +343,8 @@ class UPEPageSteps extends CommonFunctions {
         assert(driver.findElements(By.cssSelector(ConfirmationPage.secondHeading)).get(sectionNumber - 2).getText.contains(sectionName))
     }
   }
+  Then("""^The field content should be (.*)$""") { header: String =>
+    Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.fieldContent)
+    assert(getTextOf(By.cssSelector(NFMRegistrationPage.fieldContent)).contains(header))
+  }
 }

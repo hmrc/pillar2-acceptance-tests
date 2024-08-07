@@ -30,6 +30,7 @@ object NFMRegistrationPage extends PageObject {
   val errorLink        = "[href='#nominateFilingMember_0']"
   val backLink         = ".govuk-back-link"
   val errorMessage     = ".govuk-error-message"
+  val fieldContent     = ".govuk-fieldset__legend"
 
   def clickContinue()  = findByCss(continue).click()
 

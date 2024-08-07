@@ -17,7 +17,7 @@ Feature: Pillar2 submission set up page
     Given Agent User logs in to subscribe for Pillar2 Submission
     Then I should be on P2 Submission Agent affinity KB page
     When I click sign in via Agent Services. link
-    Then I should navigate to Agent services account page
+    Then I should navigate to agent services account page
 
   @p2zap_p2accessibility
   Scenario: 4 - User logins as Individual User

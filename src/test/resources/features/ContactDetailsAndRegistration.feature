@@ -16,12 +16,12 @@ Feature: Contact details for the filing member
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
-    When I enter UPE Person/Team name as UPE Test
-    When I enter UPE Email address as testupe@email.com
+    When I enter UPE Person/Team name as UPE & Test
+    When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
     And I enter Telephone Number as 123456
     And I click on Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select No option and continue to next
     When I click Add further group details link
     When I select option In the UK and other countries in further details group status page
@@ -44,8 +44,8 @@ Feature: Contact details for the filing member
     When I click on Continue button
     Then I should navigate to Contact details display page
     And The Heading should be Saved contact
-    And I should see the contact details row 1 as UPE Test on use contact page
-    And I should see the contact details row 2 as testupe@email.com on use contact page
+    And I should see the contact details row 1 as UPE & Test on use contact page
+    And I should see the contact details row 2 as test&upe@email.com on use contact page
     And I should see the contact details row 3 as 123456 on use contact page
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
@@ -166,56 +166,56 @@ Feature: Contact details for the filing member
       | Address                         | EH5 5WY                  |
       | Address                         | United Kingdom           |
     When I click on change link for Contact Name
-    And I enter Contact Name as Contact Name Change
+    And I enter Contact Name as Contact $ Name & Change
     Then I should navigate to Contact details Check answers page
     When I click on change link for Email address
-    And I enter Contact Email as emailchange@test.com
+    And I enter Contact Email as email&change@test.com
     Then I should navigate to Contact details Check answers page
     When I click on change link for Telephone number
     And I enter Contact Telephone as 1234555
     When I click on change link for Second Contact Name
-    And I enter Second Contact Name as Second Contact Name Change
+    And I enter Second Contact Name as Second & Contact Name Change
     When I click on change link for Second Contact Email
-    And I enter Second Contact Email as secondContactchange@email.com
+    And I enter Second Contact Email as secondContact&change@email.com
     When I click on change link for Second Contact Telephone number
     And I enter Second Contact Input as 71235643
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
     And I click on Continue button
     Then I should see details as below:
-      | KEY                             | VALUE                         |
-      | Contact name                    | Contact Name Change           |
-      | Email address                   | emailchange@test.com          |
-      | Telephone number                | 1234555                       |
-      | Second contact name             | Second Contact Name Change    |
-      | Second contact email address    | secondContactchange@email.com |
-      | Can we contact by telephone?    | Yes                           |
-      | Second contact telephone number | 71235643                      |
-      | Address                         | Address Change                |
+      | KEY                             | VALUE                          |
+      | Contact name                    | Contact $ Name & Change        |
+      | Email address                   | email&change@test.com          |
+      | Telephone number                | 1234555                        |
+      | Second contact name             | Second & Contact Name Change   |
+      | Second contact email address    | secondContact&change@email.com |
+      | Can we contact by telephone?    | Yes                            |
+      | Second contact telephone number | 71235643                       |
+      | Address                         | Address Change                 |
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
     And I should see details as below:
-      | KEY                                           | VALUE                         |
-      | Name                                          | Test                          |
-      | Address                                       | Address Line 1                |
-      | Address                                       | City                          |
-      | Address                                       | EH5 5WY                       |
-      | Address                                       | United Kingdom                |
-      | Contact name                                  | UPE Test                      |
-      | Email address                                 | testupe@email.com             |
-      | Can we contact by telephone?                  | Yes                           |
-      | Telephone number                              | 123456                        |
-      | Is there a nominated filing member            | No                            |
-      | Where are the entities in your group located? | In the UK and other countries |
-      | Start date                                    | 15 January 2024               |
-      | End date                                      | 15 January 2025               |
-      | Do you have a second contact?                 | Yes                           |
-      | Second contact name                           | Second Contact Name Change    |
-      | Second contact email address                  | secondContactchange@email.com |
-      | Second contact telephone number               | 71235643                      |
-    And I should see row 12 with key Contact name and value Contact Name Change
-    And I should see row 13 with key Email address and value emailchange@test.com
+      | KEY                                           | VALUE                          |
+      | Name                                          | Test                           |
+      | Address                                       | Address Line 1                 |
+      | Address                                       | City                           |
+      | Address                                       | EH5 5WY                        |
+      | Address                                       | United Kingdom                 |
+      | Contact name                                  | UPE & Test                     |
+      | Email address                                 | test&upe@email.com             |
+      | Can we contact by telephone?                  | Yes                            |
+      | Telephone number                              | 123456                         |
+      | Is there a nominated filing member            | No                             |
+      | Where are the entities in your group located? | In the UK and other countries  |
+      | Start date                                    | 15 January 2024                |
+      | End date                                      | 15 January 2025                |
+      | Do you have a second contact?                 | Yes                            |
+      | Second contact name                           | Second & Contact Name Change   |
+      | Second contact email address                  | secondContact&change@email.com |
+      | Second contact telephone number               | 71235643                       |
+    And I should see row 12 with key Contact name and value Contact $ Name & Change
+    And I should see row 13 with key Email address and value email&change@test.com
     And I should see row 14 with key Can we contact by telephone? and value Yes
     And I should see row 15 with key Telephone number and value 1234555
     And I should see row 19 with key Can we contact by telephone? and value Yes
@@ -233,22 +233,19 @@ Feature: Contact details for the filing member
     When I click on Continue button
     Then I should be on Contact details Check answers page
     And I should see details as below:
-      | KEY                           | VALUE             |
-      | Contact name                  | UPE Test          |
-      | Email address                 | testupe@email.com |
-      | Can we contact by telephone?  | Yes               |
-      | Telephone number              | 123456            |
-      | Do you have a second contact? | No                |
-      | Address                       | Address Change    |
+      | KEY                           | VALUE          |
+      | Do you have a second contact? | No             |
+      | Address                       | Address Change |
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
-    And I should see row 12 value UPE Test
-    And I should see row 13 value testupe@email.com
+    And I should see row 12 value UPE & Test
+    And I should see row 13 value test&upe@email.com
     And I should see row 14 value Yes
     And I should see row 15 value 123456
     And I should see row 16 value No
     And I should see row 17 value Address Change
+
 
   @zap_accessibility @batch2
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
@@ -258,7 +255,7 @@ Feature: Contact details for the filing member
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select Yes option and continue to next
     When I select option No and continue to next
     When I enter NFM name as Test
@@ -388,7 +385,7 @@ Feature: Contact details for the filing member
     And I click on Continue button
     Then I should be on Contact details Check answers page
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I should see details as below:
       | KEY                                | VALUE                     |
@@ -435,7 +432,7 @@ Feature: Contact details for the filing member
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select Yes option and continue to next
     When I select option Yes and continue to next
     When I select option UK limited company and continue to GRS page
@@ -471,7 +468,7 @@ Feature: Contact details for the filing member
     And I should see row 5 key Do you have a second contact?
     And I should see row 5 value No
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I should see row 4 key Is there a nominated filing member
     And I should see row 5 key Company
@@ -514,7 +511,7 @@ Feature: Contact details for the filing member
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I select Yes option and continue to next
     When I select option Yes and continue to next
     When I select option UK limited company and continue to GRS page
@@ -550,13 +547,13 @@ Feature: Contact details for the filing member
     And I should see row 5 key Do you have a second contact?
     And I should see row 5 value No
     And I click on Continue button
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration Duplication KB Page
     When I click Report Pillar 2 top-up taxes link
-    Then The Task Edit filing member’s details status should be Completed
-    When I click Check your answers link
+    Then The Task Edit filing member details status should be Completed
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration Duplication KB Page
@@ -578,7 +575,7 @@ Feature: Contact details for the filing member
     Then I should navigate to NFM Check your answers page
     When I click on Continue button
     Then I should be on Task list page
-    When I click Check your answers link
+    When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page

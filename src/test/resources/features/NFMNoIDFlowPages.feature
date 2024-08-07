@@ -10,13 +10,13 @@ Feature: NFM NO ID journey
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
     And I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     Then I should navigate to NFM registration page
     And The caption must be Group details
-    #And The Heading should be Nominate a filing member
-    #And The Body content should be A nominated filing member must be nominated by the UPE and must have access to information required to report Pillar 2 top-up taxes.
-    #And The Body content should be If you select ‘No’, we will use the ultimate parent entity (UPE) as the filing member.
-    #And The field heading should be Do you want to register a different entity as your nominated filing member?
+    And The Heading should be Nominated filing member
+    And The Body content should be The ultimate parent entity (UPE) is expected to report as the filing member. However, the UPE can nominate another company within your group.
+    And The Body content should be If you are nominated to report as the filing member, you must have written permission from your UPE (such as an email). We won’t collect this during registration, but we may request it during compliance checks.
+    And The field content should be Are you registering as the nominated filing member to report for this group?
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     And The caption must be Group details
@@ -39,7 +39,7 @@ Feature: NFM NO ID journey
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     And The caption must be Group details
-    And The Heading should be What is the name of the person or team we should contact from the nominated filing member?
+    And The Heading should be What is the name of the person or team from the nominated filing member to keep on record?
     And The hint text should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter NFM Contact name as Contact CYA
     Then I should navigate to NFM Contact Email page
@@ -76,12 +76,12 @@ Feature: NFM NO ID journey
     Then I should be on NFM Check your answers page
     When I click on Continue button
     Then I should be on Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
 
   @batch1
   Scenario: 2 - Verify change answers for all NFM No ID journey pages and Verify back links
     Given Organisation User logs in with credId NFMCYA for Pillar2
-    When I click Edit filing member’s details link
+    When I click Edit filing member details link
     When I click on Continue button
     And I should see the answer No remain selected
     Then I click on Continue button
@@ -99,20 +99,20 @@ Feature: NFM NO ID journey
     Then I should see the NFM Telephone number field is pre-populated with 1234569
     Then I click on Continue button
     When I click on change hyperlink next to the NFM Name
-    And I enter NFM name as Name Change
-    And I should see row 1 value Name Change
+    And I enter NFM name as Name () Change %^
+    And I should see row 1 value Name () Change %^
     When I click on change hyperlink next to the NFM Address
-    And I enter Address Line 1 as Change Address
+    And I enter Address Line 1 as Change# Address $
     And I click on Continue button
-    And I should see row 2 value Change Address
+    And I should see row 2 value Change# Address $
     And I should see row 2 value City CYA
     And I should see row 2 value United Kingdom
     When I click on change hyperlink next to the NFM Contact Name
-    And I enter NFM Contact name as Change Contact Person
-    And I should see row 3 value Change Contact Person
+    And I enter NFM Contact name as Change & Contact $ Person ~
+    And I should see row 3 value Change & Contact $ Person ~
     When I click on change hyperlink next to the NFM Email Address
-    And I enter NFM Contact Email as changetest@email.com
-    And I should see row 4 value changetest@email.com
+    And I enter NFM Contact Email as changetest&*@email.com
+    And I should see row 4 value changetest&*@email.com
     When I click on change hyperlink next to the NFM Telephone Number
     And I enter NFM Telephone Number as 12345679
     And I should see row 6 value 12345679
@@ -127,7 +127,7 @@ Feature: NFM NO ID journey
     And I select option UK limited company and continue to GRS page
     And I registered successfully with BV enabled
     When I click on Save&Continue button
-    When I click Add filing member’s details link
+    When I click Add filing member details link
     When I click on Continue button
     Then I should see NFM error message Select yes if you want to register a nominated filing member to report for this group on the NFM registration page Element
     When I select Yes option and continue to next
@@ -203,4 +203,4 @@ Feature: NFM NO ID journey
     Then I should see the answer No remain selected
     And I click on Continue button
     And I click on Continue button
-    Then The Task Edit filing member’s details status should be Completed
+    Then The Task Edit filing member details status should be Completed

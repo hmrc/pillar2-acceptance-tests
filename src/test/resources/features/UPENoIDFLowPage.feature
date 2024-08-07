@@ -67,8 +67,8 @@ Feature: UPE NO ID journey
       | Telephone number             | 1234569                  |
     When I click on Continue button
     Then I should be on Task list page
-    And The Task Edit ultimate parent’s details status should be Completed
-    And The Task Add filing member’s details status should be Not started
+    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Add filing member details status should be Not started
     And I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in as upe with credId UPENoIDJourney for Pillar2
@@ -109,17 +109,17 @@ Feature: UPE NO ID journey
     And I should see section 1 as Group details
     And I should see section 2 as Contact details
     And I should see section 3 as Review and submit
-    And I should see the task name Add ultimate parent’s details on Business details section
-    And I should see the task name Filing member’s details on Business details section
+    And I should see the task name Add ultimate parent entity details on Business details section
+    And I should see the task name Filing member details on Business details section
     And I should see the task name Further group details on Business details section
-    And The Task Add ultimate parent’s details status should be Not started
-    And The Task Filing member’s details status should be Cannot start yet
+    And The Task Add ultimate parent entity details status should be Not started
+    And The Task Filing member details status should be Cannot start yet
     And The Task Further group details status should be Cannot start yet
     And I should see the task section 2 with task name as Contact details on Contact details section
     And The Task Contact details status should be Cannot start yet
     And I should see the task section 3 with task name as Review and submit on Contact details section
     And The Task Check your answers status should be Cannot start yet
-    When I click Add ultimate parent’s details link
+    When I click Add ultimate parent entity details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
     Then I should be on UPE business page
@@ -155,11 +155,12 @@ Feature: UPE NO ID journey
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
     And The Heading should be Register your group
-    When I click Add ultimate parent’s details link
+    When I click Add ultimate parent entity details link
     Then I should navigate to Initial guidance Page
     And The caption must be Group details
     And The Heading should be We need to match the details of the ultimate parent entity to HMRC records
-    And The Body content should be We will ask you for several pieces of identifying information about the ultimate parent so we can match it with our records.
+    And The Body content should be If the ultimate parent entity is registered in the UK, we will ask you for identifying information about the ultimate parent so we can match it with our records.
+    And The Body content should be If the ultimate parent entity is registered outside of the UK, we will ask you for identifying information about the ultimate parent so we can create a HMRC record.
     When I click on Continue button
     Then I should navigate to UPE business page
     When I click on Continue button
@@ -228,19 +229,19 @@ Feature: UPE NO ID journey
     Given Organisation User navigates to UPE check your answer page with credId UPENoIDJourney
     Then I should be on Check your answers page
     When I click on change hyperlink next to the UPE Name
-    And I enter UPE name as Name Change
-    And I should see row 1 value Name Change
+    And I enter UPE name as Name Change @&#
+    And I should see row 1 value Name Change @&#
     When I click on change hyperlink next to the UPE Address
-    And I enter Address Line 1 as Change Address
+    And I enter Address Line 1 as Change Address &
     And I click on Continue button
-    And I should see row 2 value Change Address
+    And I should see row 2 value Change Address &
     When I click on change hyperlink next to the UPE Contact Name
-    And I enter UPE Person/Team name as Change Contact Person
+    And I enter UPE Person/Team name as Change Contact Person&~
     Then I should be on Check your answers page
-    And I should see row 3 value Change Contact Person
+    And I should see row 3 value Change Contact Person&~
     When I click on change hyperlink next to the UPE Email Address
-    And I enter UPE Email address as changetest@email.com
-    And I should see row 4 value changetest@email.com
+    And I enter UPE Email address as changetest&@email.com
+    And I should see row 4 value changetest&@email.com
     When I click on change hyperlink next to the UPE Telephone Number
     And I enter Telephone Number as 12345679
     And I should see row 6 value 12345679
@@ -258,7 +259,7 @@ Feature: UPE NO ID journey
   Scenario: 5 - Status update for Enter ultimate parent’s details task
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    When I click Add ultimate parent’s details link
+    When I click Add ultimate parent entity details link
     Then I should navigate to Initial guidance Page
     And I click on Continue button
     When I select option No and continue to next
@@ -274,11 +275,11 @@ Feature: UPE NO ID journey
     Then I should navigate to UPE Telephone page
     When I select option Yes and continue to next
     And I navigate back to TaskList Page from Telephone Page
-    Then The Task Add ultimate parent’s details status should be In progress
-    When I click Add ultimate parent’s details link
+    Then The Task Add ultimate parent entity details status should be In progress
+    When I click Add ultimate parent entity details link
     And I navigate to Telephone Question Page from Initial guidance Page
     And I select option Yes and continue to next
     And I enter Telephone Number as 123456
     And I navigate back to TaskList Page from Telephone Input Page
-    Then The Task Edit ultimate parent’s details status should be Completed
+    Then The Task Edit ultimate parent entity details status should be Completed
 
