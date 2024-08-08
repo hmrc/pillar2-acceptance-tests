@@ -578,5 +578,6 @@ Feature: Contact details for the filing member
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
+    Then I should navigate to Registration processing page
     Then I should navigate to Registration confirmation page
 
