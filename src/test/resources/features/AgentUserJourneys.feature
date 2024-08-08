@@ -157,3 +157,52 @@ Feature: Agent user journeys
     When I select back link
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to ASA Home Page
+
+  Scenario: 7 - Verify Transaction History pages for Agent user
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click View your client’s transaction history link
+    Then I should be on Transaction History Page
+    When I select back link
+    Then I should be on ASA Dashboard page
+    When I click View your client’s transaction history link
+    Then I should be on Transaction History Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on ASA Dashboard page
+    And I click Sign out link
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR4040000000 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XEPLR4040000000
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    And I should be on Dashboard page
+    When I click View your client’s transaction history link
+    Then I should be on Transaction History Empty Page
+    When I select back link
+    Then I should be on ASA Dashboard page
+    And I click Sign out link
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR4000000000 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XEPLR4000000000
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click View your client’s transaction history link
+    Then I should be on Transaction History Error Page
+    When I click Return to your account homepage link
+    Then I should be on ASA Dashboard page
+    When I click View your client’s transaction history link
+    Then I should be on Transaction History Error Page
+    When I select back link
+    Then I should be on ASA Dashboard page
