@@ -159,10 +159,6 @@ class SubscriptionJourneySteps extends CommonFunctions {
     Check.checkH1("Registration complete")
   }
 
-  Then("""^I should move to Registration processing page$""") { () =>
-    Wait.waitForUrlToBeVisible(s"$rootUrl"+"review-submit/processing-registration")
-  }
-
   And("""^Url for (.*) page should be ending with (.*)$""") { (page: String, url: String) =>
     page match {
       case "registration submit" => Check.checkUrlContains(url = "/review-submit/confirmation")
