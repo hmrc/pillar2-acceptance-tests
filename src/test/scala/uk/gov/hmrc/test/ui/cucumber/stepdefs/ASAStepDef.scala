@@ -35,7 +35,6 @@ class ASAStepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
-
   And("""^I provide ASA (.*) as (.*)$""") { (field: String, value: String) =>
     field match {
       case "Pillar2 ID" =>

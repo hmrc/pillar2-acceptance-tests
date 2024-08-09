@@ -167,7 +167,7 @@ Feature: Create a new registration and subscription
     When I click on Continue button
     When I click Check your answers before submitting your registration link
     And I click on Save&Continue button
-    Then I should navigate to Registration processing page
+    Then I should move to Registration processing page
     Then I should navigate to Registration API error page
     And The Heading should be Sorry, there is a problem with the service
     And The Body content should be You must still register, please try again later.
