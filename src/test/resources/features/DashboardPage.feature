@@ -210,6 +210,7 @@ Feature: Dashboard Page
     When I click Return to your account homepage to try again link
     Then I should be on Dashboard page
 
+    @batch1
   Scenario: 6 - Verify Transaction History pages for Org user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page

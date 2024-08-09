@@ -149,7 +149,7 @@ Feature: Agent user journeys
     Then I should be on ASA Pillar2 Input Page
     And I provide ASA Pillar2 ID as XMPLR0123456789
     And I click on Continue button
-    Then I should navigate to ASA Confirmation Page 
+    Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Not Authorised page
     When I click request authorisation to report and manage this client’s Pillar 2 top-up taxes link
@@ -158,6 +158,7 @@ Feature: Agent user journeys
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to ASA Home Page
 
+  @batch1
   Scenario: 7 - Verify Transaction History pages for Agent user
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service

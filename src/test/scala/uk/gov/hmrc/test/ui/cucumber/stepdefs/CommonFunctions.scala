@@ -201,6 +201,7 @@ trait CommonFunctions
       case "Transaction History Page"             => TransactionHistoryPage
       case "Transaction History Empty Page"       => TransactionHistoryEmptyPage
       case "Transaction History Error Page"       => TransactionHistoryErrorPage
+      case "Registration processing page"         => RegistrationProcessingPage
     }
   }
 }
