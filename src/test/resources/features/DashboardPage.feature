@@ -29,19 +29,14 @@ Feature: Dashboard Page
     And The Body content should be Refer to the Pillar 2 top-up taxes manual (opens in new tab) for more details.
     When I click Make a payment link
     Then I should navigate to Make a payment page
-    And The Heading should be Pay your Pillar 2 top-up taxes
-    And The second heading should be How to make a payment
-    And The Body content should be Payments can only be made by bank transfer.
-    And The Body content should be Faster Payments will usually reach HMRC the same or next day, including weekends and bank holidays.
-    And The Body content should be CHAPS payments usually reach HMRC the same working day if you pay within your bank’s processing times.
-    And The Body content should be Bacs payments usually take 3 working days.
-    And The warning message should be You must use XMPLR0012345674 as your payment reference. We need this to match your payment.
-    And The caption for section 1 should be HMRC’s bank details for UK payments
-    And The section 1 with header Sort code value should be 08 32 10
-    And The section 2 with header Account number value should be 12001020
-    And The section 3 with header Account name value should be HMRC Shipley
-    And The caption for section 2 should be HMRC’s bank details for payments outside the UK
+    And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 top-up tax payments.
+    And The Body content should be Submit your return before making a payment. Your payment is due on the same date as your return.
+    And The Body content should be You can read the guidance to find the methods you can use to make a payment.
     When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+    When I click Make a payment link
+    Then I should navigate to Make a payment page
+    When I select back link
     Then I should be on Dashboard page
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
