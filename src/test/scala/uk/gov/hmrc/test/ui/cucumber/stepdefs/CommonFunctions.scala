@@ -193,7 +193,7 @@ trait CommonFunctions
       case "Repayment Bank Details Error Page"    => RepaymentBankDetailsErrorPage
       case "Repayment Bars Error Page"            => RepaymentBarsErrorPage
       case "Repayment Partial Name Error Page"    => RepaymentPartialNameErrorPage
-      case "Repayment Service Error Page"         => RepaymentServiceErrorPage
+      case "Repayment Incomplete Error Page"         => RepaymentIncompleteErrorPage
       case "Repayment Journey Recovery Error Page"=> RepaymentJourneyRecoveryErrorPage
       case "Repayment Confirmation Page"          => RepaymentConfirmationPage
       case "Repayment Return Error Page"          => RepaymentReturnErrorPage
@@ -202,6 +202,7 @@ trait CommonFunctions
       case "Transaction History Empty Page"       => TransactionHistoryEmptyPage
       case "Transaction History Error Page"       => TransactionHistoryErrorPage
       case "Registration processing page"         => RegistrationProcessingPage
+      case "Repayment processing page"               => RepaymentProcessingPage
     }
   }
 }
