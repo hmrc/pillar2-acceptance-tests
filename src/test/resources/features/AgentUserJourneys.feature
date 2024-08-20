@@ -52,6 +52,10 @@ Feature: Agent user journeys
     Then I should navigate to Agent Make a Payment page
     And I select back link
     Then I should navigate to ASA Dashboard page
+    When I click Make a payment link
+    Then I should navigate to Make a payment page
+    And I select back link
+    Then I should navigate to ASA Dashboard page
     And I click View and amend contact details link
     Then I should navigate to Agent Contact Detail Summary Page
     And I should see row 2 value fred.flintstone@aol.com

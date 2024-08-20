@@ -278,6 +278,7 @@ Feature: Repayment Journey
     And I should see the row 4 value Natwest
     And I should see the row 7 value 86473611
     And I click on Continue button
+    Then I should be on Repayment processing page
     Then I should be on Repayment Confirmation Page
     And I can see Print this page link
     When I click the browser back button
@@ -429,16 +430,15 @@ Feature: Repayment Journey
     And I access Repayment CYA page
     Then I should be on Repayment CYA Page
     When I click Continue button
-    Then I should be on Repayment processing page
-    Then I should navigate to Repayment Incomplete Error Page
+    Then I should be on Repayment Incomplete Error Page
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Dashboard page
     When I click the browser back button
-    Then I should navigate to Repayment Incomplete Error Page
+    Then I should be on Repayment Incomplete Error Page
     When I select back link
     Then I should be on Repayment CYA Page
     When I click Continue button
-    Then I should navigate to Repayment Incomplete Error Page
+    Then I should be on Repayment Incomplete Error Page
     When I click go back and complete all the required answers link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button

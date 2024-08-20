@@ -203,6 +203,7 @@ trait CommonFunctions
       case "Transaction History Error Page"       => TransactionHistoryErrorPage
       case "Registration processing page"         => RegistrationProcessingPage
       case "Repayment processing page"               => RepaymentProcessingPage
+      case "RFM processing page"                  => RFMProcessingPage
     }
   }
 }
