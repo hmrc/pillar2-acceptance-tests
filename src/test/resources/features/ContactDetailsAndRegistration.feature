@@ -24,7 +24,7 @@ Feature: Contact details for the filing member
     When I click Add filing member details link
     When I select No option and continue to next
     When I click Add further group details link
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
@@ -207,7 +207,7 @@ Feature: Contact details for the filing member
       | Can we contact by telephone?                  | Yes                            |
       | Telephone number                              | 123456                         |
       | Is there a nominated filing member            | No                             |
-      | Where are the entities in your group located? | In the UK and other countries  |
+      | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |
       | End date                                      | 15 January 2025                |
       | Do you have a second contact?                 | Yes                            |
@@ -440,7 +440,7 @@ Feature: Contact details for the filing member
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     When I click Add further group details link
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
@@ -519,7 +519,7 @@ Feature: Contact details for the filing member
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     When I click Add further group details link
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
