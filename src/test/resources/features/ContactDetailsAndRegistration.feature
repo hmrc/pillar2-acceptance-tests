@@ -424,7 +424,7 @@ Feature: Contact details for the filing member
     And I click the browser back button
     Then I can see Print this page link
 
-  @batch1
+  @batch1 @tests1
   Scenario: 4 - Validate subscription journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.
     Given Organisation User logs in as upe for Pillar2
     When I select option Yes and continue to next
@@ -503,7 +503,7 @@ Feature: Contact details for the filing member
     When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
 
-  @batch1
+  @batch1 @tests1
   Scenario: 5 - Validate Yes journey from knock back page for duplicate details on registration for UPE and NFM GRS flows
     Given Organisation User logs in as upe for Pillar2
     When I select option Yes and continue to next

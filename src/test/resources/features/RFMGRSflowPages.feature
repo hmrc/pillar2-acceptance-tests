@@ -9,7 +9,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     And I click on Continue button
     When I enter registration date as:
       | KEY                       | VALUE |
@@ -110,7 +110,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
       | rfmRegistrationDate.day   | 31    |
@@ -138,7 +138,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
       | rfmRegistrationDate.day   | 31    |
