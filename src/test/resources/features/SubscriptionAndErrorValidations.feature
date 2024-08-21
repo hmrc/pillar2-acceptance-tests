@@ -24,7 +24,7 @@ Feature: Create a new registration and subscription
     When I click Add filing member details link
     When I select No option and continue to next
     When I click Add further group details link
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
@@ -72,7 +72,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to NFM UKCompany GRS page
     And I click on Save&Continue button
     When I click Add further group details link
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
@@ -140,7 +140,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     When I click Add further group details link
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
@@ -211,7 +211,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     When I click Add further group details link
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |

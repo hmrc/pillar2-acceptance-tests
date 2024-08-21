@@ -26,7 +26,7 @@ Feature: User registration and subscription e2e journey
     And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
     When I enter account period as:
@@ -108,7 +108,7 @@ Feature: User registration and subscription e2e journey
     And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
     When I enter account period as:
@@ -214,7 +214,7 @@ Feature: User registration and subscription e2e journey
     And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
     When I enter account period as:
@@ -308,7 +308,7 @@ Feature: User registration and subscription e2e journey
     And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
     When I enter account period as:
@@ -378,7 +378,7 @@ Feature: User registration and subscription e2e journey
     And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
     When I enter account period as:
@@ -457,7 +457,7 @@ Feature: User registration and subscription e2e journey
     And The Task Edit filing member’s details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
-    When I select option In the UK and other countries in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     And I click on Continue button
     Then I should navigate to Group accounting period page
     When I enter account period as:
