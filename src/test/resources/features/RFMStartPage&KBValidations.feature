@@ -68,8 +68,24 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
+  @zap_accessibility @batch3
+  Scenario: 5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page
+    Given I clear the cache
+    Given Organisation User logs in as upe for Pillar2
+    And I access RFM start page
+    And I click on Continue button
+    Then I should be on RFM enter pillar2 id page
+    When I provide RFM pillar2 id as XEPLR0444444400
+    Then I should be on RFM Existing Member KB Page
+    When I select back link
+    Then I should be on RFM enter pillar2 id page
+    And I click on Continue button
+    And I click go to your business tax account link
+    When I click the browser back button
+    And I click Sign out link
+
   @batch2
-  Scenario: 5 - Verify RFM start page and error validations on Enter pillar2 ID and Registration date page
+  Scenario: 6 - Verify RFM start page and error validations on Enter pillar2 ID and Registration date page
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page

@@ -45,7 +45,7 @@ Feature: RFM check your answers page
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0012345111
     When I enter registration date as:
       | KEY                       | VALUE |
       | rfmRegistrationDate.day   | 31    |
@@ -63,7 +63,7 @@ Feature: RFM check your answers page
     Then I should be on RFM Contact Guidance page
     Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click on Continue button
-    When I provide RFM contact name as RFM test contact
+    When I provide RFM contact name as 500
     When I provide RFM contact email as rfm@email.com
     And I select option No and continue to next
     And I select option No and continue to next

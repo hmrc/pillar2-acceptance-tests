@@ -15,7 +15,7 @@ Feature: RFM CYA - NFM No ID flow
     And I should see the section 4 as What you will need
     And I should see register to report Pillar 2 top-up taxes link
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
       | rfmRegistrationDate.day   | 31    |
@@ -174,7 +174,7 @@ Feature: RFM CYA - NFM No ID flow
     Given Organisation User logs in with rfm URL to Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
       | rfmRegistrationDate.day   | 31    |
@@ -219,7 +219,7 @@ Feature: RFM CYA - NFM No ID flow
     Given Organisation User logs in with rfm URL to Pillar2
     And I access RFM start page
     And I click on Continue button
-    When I provide RFM pillar2 id as XMPLR0012345674
+    When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
       | rfmRegistrationDate.day   | 31    |

@@ -204,6 +204,7 @@ trait CommonFunctions
       case "Registration processing page"         => RegistrationProcessingPage
       case "Repayment processing page"               => RepaymentProcessingPage
       case "RFM processing page"                  => RFMProcessingPage
+      case "RFM Existing Member KB Page"              => RFMExistingMemberKBPage
     }
   }
 }
