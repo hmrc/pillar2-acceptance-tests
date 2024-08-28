@@ -97,8 +97,8 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The Body content should be We could not match the details you entered with records held by HMRC.
     And The Body content should be You can confirm your details with the records held by HMRC by:
     And The Body content should be You can go back to select the entity type and try again using different details if you think you made an error when entering them.
-    And The Body content should be searching Companies House for the company registration number and registered office address (opens in a new tab).
-    And The Body content should be asking for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab).
+    And The Body content should be search Companies House for the company registration number and registered office address (opens in a new tab)
+    And The Body content should be ask for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab)
     When I click go back to select the entity type link
     Then I should be on UPE entity type page
     When I select back link
@@ -135,8 +135,8 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The Body content should be We could not match the details you entered with records held by HMRC.
     And The Body content should be You can confirm your details with the records held by HMRC by:
     And The Body content should be You can go back to select the entity type and try again using different details if you think you made an error when entering them.
-    And The Body content should be searching Companies House for the company registration number and registered office address (opens in a new tab).
-    And The Body content should be asking for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab).
+    And The Body content should be search Companies House for the company registration number and registered office address (opens in a new tab)
+    And The Body content should be ask for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab)
     When I click go back to select the entity type link
     Then I should be on NFM entity type page
     When I select back link
