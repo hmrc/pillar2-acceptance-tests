@@ -80,7 +80,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
         Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
 
-
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)

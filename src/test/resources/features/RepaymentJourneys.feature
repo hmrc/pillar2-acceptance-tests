@@ -356,7 +356,7 @@ Feature: Repayment Journey
     Then I should navigate to ASA Dashboard page
     And I click Sign out link
 
-  @batch3
+  @batch3 @tests1
   Scenario: 5 - Organisation User navigates to repayment journey pages for UK bank account
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
