@@ -41,16 +41,16 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Continue button
     Then I should see an error message Enter the name of the new nominated filing member on the RFM contact name Page
     When I enter NFM name as RFMNewNFMContactNameCharacterLengthErrorValidationMaximumNFMNameCharacterLengthShouldBeEnteredLessThanOneHundredFive
-    Then I should see an error message The name of the new nominated filing must be 105 characters or less on the RFM contact name Page
+    Then I should see an error message Name of the new nominated filing must be 105 characters or less on the RFM contact name Page
     When I refresh the page
     When I provide RFM New NFM Name as Test CYA
     Then I should navigate to RFM New NFM Contact Address Page
     And I enter Country as United Kingdom
     And I click on Country selected
     And I click on Continue button
-    Then I should see address error message Enter first line of the address on the Address Line Element
-    Then I should see address error message Enter town or city on the City Element
-    Then I should see address error message Enter a full UK postal code on the Postal code Element
+    Then I should see address error message Enter the first line of the address on the Address Line Element
+    Then I should see address error message Enter the town or city on the City Element
+    Then I should see address error message Enter a valid UK postcode or change the country you selected on the Postal code Element
     When I refresh the page
     And I enter Address Line 1 as enter long first line of address with more than 35 characters
     And I enter Address Line 2 as enter long second line of address with more than 35 characters
@@ -64,7 +64,7 @@ Feature: RFM CYA - NFM No ID flow
     Then I should see address error message The second line of the address must be 35 characters or less on the Address Line 2 Element
     Then I should see address error message The town or city must be 35 characters or less on the City Element
     Then I should see address error message The region must be 35 characters or less on the Region Element
-    Then I should see address error message The postal code must be 10 characters or less on the Postal code Element
+    Then I should see address error message The postcode must be 10 characters or less on the Postal code Element
     When I refresh the page
     And I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA

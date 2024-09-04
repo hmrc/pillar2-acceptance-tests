@@ -76,6 +76,7 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click on Continue button
+    Then I should navigate to RFM processing page
     Then I should navigate to Amend API error Page for RFM
     Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
