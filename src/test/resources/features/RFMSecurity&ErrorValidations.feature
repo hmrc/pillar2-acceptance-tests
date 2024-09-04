@@ -4,7 +4,7 @@ Feature: RFM check your answers page
   I want to enter my subscription details and access CYA page to check my answers and carry on in the journey
 
   @batch2
-  Scenario: 1 - Verify error handling on submission of Pillar id and registration date for RFM journey
+  Scenario: 1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey
     Given Organisation User logs in with rfm URL to Pillar2
     When I provide RFM pillar2 id as XEPLR0123456400
     When I enter registration date as:
@@ -84,7 +84,7 @@ Feature: RFM check your answers page
     Then I click Sign out link
 
   @batch2
-  Scenario: 3 - Verify Journey Recovery and Incomplete data errors.
+  Scenario: 3 - Verify Incomplete data error
     Given Organisation User logs in as upe for Pillar2
     And I access RFM start page
     And I click on Continue button
@@ -107,12 +107,6 @@ Feature: RFM check your answers page
       | postalCode   | EH5 5WY            |
       | countryCode  | Australia          |
     And I continue to RFM contact name Page
-    And I access RFM contact email page
-    Then I should be on RFM journey recovery page
-    When I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
-    Then I should be on RFM start page
-    When I click the browser back button
-    And I click the browser back button
     And I provide RFM contact name as RFM test contact
     When I provide RFM contact email as rfm@email.com
     And I select option No and continue to next
