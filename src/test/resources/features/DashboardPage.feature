@@ -239,3 +239,41 @@ Feature: Dashboard Page
     Then I should be on Transaction History Error Page
     When I select back link
     Then I should be on Dashboard page
+
+  @batch2
+  Scenario Outline: 7 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages
+    Given Organisation User logs in to register for Pillar2
+    And I should be on Task list page
+    When I access <page name> page
+    Then I should be on Unauthorised Page
+    When I click Sign out link
+    And Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+    Then I should be on Dashboard page
+    When I access <page name> page
+    Then I should be on <page>
+    And I click Sign out link
+    Examples:
+      | page name                  | page                                  |
+      | contact details summary    | contact details summary page          |
+      | account summary            | accounts summary page                 |
+      | MakePayment                | Make a payment page                   |
+      | repayment guidance         | Repayment Guidance Page               |
+      | repayment amount           | Repayment Amount Page                 |
+      | repayment reason           | Reason For Refund Page                |
+      | repayment method           | Repayment Method Page                 |
+      | uk bank account            | UK Bank Account Payment Page          |
+      | non-uk bank account        | Non UK Bank Account Payment Page      |
+      | repayment contact name     | Repayment Contact Page                |
+      | repayment contact email    | Repayment Journey Recovery Error Page |
+      | repayment telephone        | Repayment Journey Recovery Error Page |
+      | repayment telephone input  | Repayment Journey Recovery Error Page |
+      | repayment CYA              | Repayment CYA Page                    |
+      | repayment change amount    | Repayment change amount Page          |
+      | repayment change method    | Repayment change method Page          |
+      | repayment change name      | Repayment change name Page            |
+      | transaction history        | Transaction History Page              |
+      | manage contact name        | Manage contact name Page              |
+      | manage second contact name | Manage second contact name            |
+      | manage contact address     | Manage contact address Page           |
+      | manage group status        | Manage group status Page              |
+      | manage accounting period   | Manage accounting period Page         |
