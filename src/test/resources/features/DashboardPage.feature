@@ -244,12 +244,12 @@ Feature: Dashboard Page
   Scenario Outline: 7 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages
     Given Organisation User logs in to register for Pillar2
     And I should be on Task list page
-    When I access <page name> page
+    When I access the <page name> page
     Then I should be on Unauthorised Page
     When I click Sign out link
     And Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
-    When I access <page name> page
+    When I access the <page name> page
     Then I should be on <page>
     And I click Sign out link
     Examples:

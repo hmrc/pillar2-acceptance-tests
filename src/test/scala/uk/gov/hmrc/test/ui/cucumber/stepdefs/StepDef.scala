@@ -589,7 +589,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
-  Given("""^I access (.*) page$""") { (page: String) =>
+  Given("""^I access the (.*) page$""") { (page: String) =>
     page match {
       case "contact details summary" =>
         Nav.navigateTo(ContactDetailsSummaryPage.url)
