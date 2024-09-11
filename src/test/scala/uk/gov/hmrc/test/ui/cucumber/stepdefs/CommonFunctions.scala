@@ -193,7 +193,7 @@ trait CommonFunctions
       case "Repayment Bank Details Error Page"    => RepaymentBankDetailsErrorPage
       case "Repayment Bars Error Page"            => RepaymentBarsErrorPage
       case "Repayment Partial Name Error Page"    => RepaymentPartialNameErrorPage
-      case "Repayment Incomplete Error Page"         => RepaymentIncompleteErrorPage
+      case "Repayment Incomplete Error Page"      => RepaymentIncompleteErrorPage
       case "Repayment Journey Recovery Error Page"=> RepaymentJourneyRecoveryErrorPage
       case "Repayment Confirmation Page"          => RepaymentConfirmationPage
       case "Repayment Return Error Page"          => RepaymentReturnErrorPage
@@ -202,9 +202,18 @@ trait CommonFunctions
       case "Transaction History Empty Page"       => TransactionHistoryEmptyPage
       case "Transaction History Error Page"       => TransactionHistoryErrorPage
       case "Registration processing page"         => RegistrationProcessingPage
-      case "Repayment processing page"               => RepaymentProcessingPage
+      case "Repayment processing page"            => RepaymentProcessingPage
       case "RFM processing page"                  => RFMProcessingPage
-      case "RFM Existing Member KB Page"              => RFMExistingMemberKBPage
+      case "RFM Existing Member KB Page"          => RFMExistingMemberKBPage
+      case "Unauthorised Page"                    => UnauthorisedPage
+      case "Repayment change amount Page"         => RepaymentChangeAmountPage
+      case "Repayment change method Page"         => RepaymentChangeMethodPage
+      case "Repayment change name Page"           => RepaymentChangeNamePage
+      case "Manage contact name Page"             => ManageContactNamePage
+      case "Manage second contact name"           => ManageSecondContactNamePage
+      case "Manage contact address Page"          => ManageContactAddressPage
+      case "Manage group status Page"             => ManageGroupStatusPage
+      case "Manage accounting period Page"        => ManageAccountPeriodPage
     }
   }
 }

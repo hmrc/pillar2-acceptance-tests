@@ -587,6 +587,61 @@ class StepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(ReviewAnswersPage.printthispage)
         assert(driver.findElement(By.cssSelector(ReviewAnswersPage.printthispage)).getText.contains(linkText))
     }
+  }
 
+  Given("""^I access (.*) page$""") { (page: String) =>
+    page match {
+      case "contact details summary" =>
+        Nav.navigateTo(ContactDetailsSummaryPage.url)
+      case "account summary" =>
+        Nav.navigateTo(AccountsSummaryPage.url)
+      case "MakePayment" =>
+        Nav.navigateTo(MakePaymentPage.url)
+      case "repayment guidance" =>
+        Nav.navigateTo(RepaymentGuidancePage.url)
+      case "repayment amount" =>
+        Nav.navigateTo(RepaymentAmountPage.url)
+      case "repayment reason" =>
+        Nav.navigateTo(RepaymentReasonPage.url)
+      case "repayment method" =>
+        Nav.navigateTo(RepaymentMethodPage.url)
+      case "uk bank account" =>
+        Nav.navigateTo(UKBankAccountPaymentPage.url)
+      case "non-uk bank account" =>
+        Nav.navigateTo(NonUKBankAccountPaymentPage.url)
+      case "repayment contact name" =>
+        Nav.navigateTo(RepaymentContactPage.url)
+      case "repayment contact email" =>
+        Nav.navigateTo(RepaymentContactEmailPage.url)
+      case "repayment telephone" =>
+        Nav.navigateTo(RepaymentTelephonePage.url)
+      case "repayment telephone input" =>
+        Nav.navigateTo(RepaymentTelephoneInputPage.url)
+      case "repayment CYA" =>
+        Nav.navigateTo(RepaymentCYAPage.url)
+      case "manage contact name" =>
+        Nav.navigateTo(ManageContactNamePage.url)
+      case "manage second contact name" =>
+        Nav.navigateTo(ManageSecondContactNamePage.url)
+      case "manage contact address" =>
+        Nav.navigateTo(ManageContactAddressPage.url)
+      case "manage group status" =>
+        Nav.navigateTo(ManageGroupStatusPage.url)
+      case "manage accounting period" =>
+        Nav.navigateTo(ManageAccountPeriodPage.url)
+      case "repayment change amount" =>
+        Nav.navigateTo(RepaymentChangeAmountPage.url)
+      case "repayment change method" =>
+        Nav.navigateTo(RepaymentChangeMethodPage.url)
+      case "repayment change name" =>
+        Nav.navigateTo(RepaymentChangeNamePage.url)
+      case "transaction history" =>
+        Nav.navigateTo(TransactionHistoryPage.url)
+
+    }
+  }
+
+  Given("""^I access accounts summary page$""") { () =>
+    Nav.navigateTo(AccountsSummaryPage.url)
   }
 }
