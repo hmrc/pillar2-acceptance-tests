@@ -48,7 +48,7 @@ object Wait extends BasePage {
   }
 
   def waitForUrl(url: String): Boolean = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(8))
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
     driverWait.until(ExpectedConditions.urlContains(url))
   }
 
