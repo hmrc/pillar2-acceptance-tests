@@ -292,11 +292,6 @@ Feature: Dashboard Page
     Then I should be on Transaction History Page
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
-    And I click Sign out link
-    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4040000000 for Pillar2 service
-    Then I should be on Dashboard page
-    When I click View your transaction history link
-    Then I should be on Transaction History Page
 
   @batch1
   Scenario: 9 - Verify Transaction History pages with multiple transactions for Agent user
@@ -316,3 +311,5 @@ Feature: Dashboard Page
     And I should see Previous CTA
     When I click Previous CTA
     Then I should be on Transaction History Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
