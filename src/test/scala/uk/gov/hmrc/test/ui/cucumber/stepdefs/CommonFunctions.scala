@@ -199,6 +199,7 @@ trait CommonFunctions
       case "Repayment Return Error Page"          => RepaymentReturnErrorPage
       case "Registration Duplication KB Page"     => RegistrationDuplicationKBPage
       case "Transaction History Page"             => TransactionHistoryPage
+      case "Transaction History Second Page"      => TransactionHistorySecondPage
       case "Transaction History Empty Page"       => TransactionHistoryEmptyPage
       case "Transaction History Error Page"       => TransactionHistoryErrorPage
       case "Registration processing page"         => RegistrationProcessingPage

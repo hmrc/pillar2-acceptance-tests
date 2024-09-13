@@ -644,4 +644,23 @@ class StepDef extends BaseStepDef with BrowserDriver {
   Given("""^I access accounts summary page$""") { () =>
     Nav.navigateTo(AccountsSummaryPage.url)
   }
+
+  Then("""^I should see (.*) CTA$""") { (pageNumber: String) =>
+    pageNumber match {
+      case "Next" =>
+        assert (driver.findElement (By.cssSelector (TransactionHistoryPage.nextPageCTA) ).isDisplayed)
+      case "Previous" =>
+        assert(driver.findElement(By.cssSelector(TransactionHistorySecondPage.previousPageCTA)).isDisplayed)
+    }
+  }
+
+  When("""^I click (.*) CTA$""") { (pageNumber: String) =>
+    pageNumber match {
+      case "Next" =>
+        TransactionHistoryPage.clickNext()
+      case "Previous" =>
+        TransactionHistorySecondPage.clickPrevious()
+    }
+  }
+
 }

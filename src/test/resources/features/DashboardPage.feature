@@ -277,3 +277,42 @@ Feature: Dashboard Page
       | manage contact address     | Manage contact address Page           |
       | manage group status        | Manage group status Page              |
       | manage accounting period   | Manage accounting period Page         |
+
+  @batch1
+  Scenario: 8 - Verify Transaction History pages with multiple transactions for Org user
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0000000122 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click View your transaction history link
+    Then I should be on Transaction History Page
+    And I should see Next CTA
+    When I click Next CTA
+    Then I should be on Transaction History Second Page
+    And I should see Previous CTA
+    When I click Previous CTA
+    Then I should be on Transaction History Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+    And I click Sign out link
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4040000000 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click View your transaction history link
+    Then I should be on Transaction History Page
+
+  @batch1
+  Scenario: 9 - Verify Transaction History pages with multiple transactions for Agent user
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0000000122 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0000000122
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    When I click View your client’s transaction history link
+    Then I should be on Transaction History Page
+    And I should see Next CTA
+    When I click Next CTA
+    Then I should be on Transaction History Second Page
+    And I should see Previous CTA
+    When I click Previous CTA
+    Then I should be on Transaction History Page
