@@ -165,9 +165,9 @@ Feature: Agent user journeys
   @batch1
   Scenario: 7 - Verify Transaction History pages for Agent user
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
-    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0000000122 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
-    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I provide ASA Pillar2 ID as XMPLR0000000122
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
@@ -177,6 +177,12 @@ Feature: Agent user journeys
     When I select back link
     Then I should be on ASA Dashboard page
     When I click View your client’s transaction history link
+    Then I should be on Transaction History Page
+    And I should see Next CTA
+    When I click Next CTA
+    Then I should be on Transaction History Second Page
+    And I should see Previous CTA
+    When I click Previous CTA
     Then I should be on Transaction History Page
     When I click Report Pillar 2 top-up taxes link
     Then I should be on ASA Dashboard page
