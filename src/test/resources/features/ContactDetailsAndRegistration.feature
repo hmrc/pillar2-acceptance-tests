@@ -403,7 +403,8 @@ Feature: Contact details for the filing member
       | Can we contact by telephone?       | Yes                       |
       | Telephone number                   | 12345678                  |
     And I click on Save&Continue button
-    Then I should navigate to Registration confirmation page
+    Then I should navigate to Registration processing page
+    And I should navigate to Registration confirmation page
     And The Header should be Report Pillar 2 top-up taxes
     And The Heading should be Registration complete
     And The Id text should be Group’s Pillar 2 top-up taxes ID
