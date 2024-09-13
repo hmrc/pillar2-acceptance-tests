@@ -161,7 +161,8 @@ Feature: RFM CYA - NFM No ID flow
     And I should see row 3 value City Change
     And I should see row 3 value EH75WK
     And I click on Continue button
-    Then I should navigate to RFM Confirmation Page
+    Then I should navigate to RFM processing page
+    Then I should be on RFM Confirmation Page
     And I should see report and manage your group's Pillar 2 top-up taxes link
     And I can see Print this page link
     When I click the browser back button
@@ -349,7 +350,7 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Continue button
     Then I should navigate to RFM processing page
     And I should see Report Pillar 2 top-up taxes text is not clickable
-    And I should navigate to RFM Confirmation Page
+    And I should be on RFM Confirmation Page
     And I should see report and manage your group's Pillar 2 top-up taxes link
     And I can see Print this page link
     When I click report and manage your group's Pillar 2 top-up taxes link
