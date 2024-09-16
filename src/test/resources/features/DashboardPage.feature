@@ -205,15 +205,21 @@ Feature: Dashboard Page
     When I click Return to your account homepage to try again link
     Then I should be on Dashboard page
 
-    @batch1
+  @batch1
   Scenario: 6 - Verify Transaction History pages for Org user
-    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0000000122 for Pillar2 service
     Then I should be on Dashboard page
     When I click View your transaction history link
     Then I should be on Transaction History Page
     When I select back link
     Then I should be on Dashboard page
     When I click View your transaction history link
+    Then I should be on Transaction History Page
+    And I should see Next CTA
+    When I click Next CTA
+    Then I should be on Transaction History Second Page
+    And I should see Previous CTA
+    When I click Previous CTA
     Then I should be on Transaction History Page
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page

@@ -16,14 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.{findByCss, findById}
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
-import uk.gov.hmrc.test.ui.pages.RFMSavingProgressPage.continue
+import uk.gov.hmrc.test.ui.pages.TransactionHistoryPage.nextPageCTA
 
-object TransactionHistoryPage extends PageObject{
+object TransactionHistorySecondPage extends PageObject{
 
-  val url: String       = s"$rootUrl" + "payment/history"
-  val nextPageCTA       = "[rel='next']"
+  val url: String       = s"$rootUrl" + "payment/history?page=2"
+  val previousPageCTA   = "[rel='prev']"
 
-  def clickNext()       = findByCss(nextPageCTA).click()
+  def clickPrevious()       = findByCss(previousPageCTA).click()
 }
