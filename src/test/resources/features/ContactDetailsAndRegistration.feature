@@ -251,10 +251,20 @@ Feature: Contact details for the filing member
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
+    When I select option No and continue to next
+    Then I should navigate to input-upe-name page
+    When I enter UPE name as Test
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | United Kingdom |
+    When I enter UPE Person/Team name as UPE & Test
+    When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
-    When I select option UK limited company and continue to GRS page
-    When I registered successfully with BV enabled
-    And I click on Save&Continue button
+    And I enter Telephone Number as 123456
+    And I click on Continue button
     When I click Add filing member details link
     When I select Yes option and continue to next
     When I select option No and continue to next
@@ -387,21 +397,12 @@ Feature: Contact details for the filing member
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
-    And I should see details as below:
-      | KEY                                | VALUE                     |
-      | Company                            | Test Example Company Name |
-      | Company Registration Number        | 76543210                  |
-      | Unique Taxpayer Reference          | 1234567890                |
-      | Is there a nominated filing member | Yes                       |
-      | Name                               | Test                      |
-      | Address                            | Address Line 1            |
-      | Address                            | City                      |
-      | Address                            | EH5 5WY                   |
-      | Address                            | United Kingdom            |
-      | Contact name                       | Contact NFM Test          |
-      | Email address                      | testNFM@email.com         |
-      | Can we contact by telephone?       | Yes                       |
-      | Telephone number                   | 12345678                  |
+    And I should see row 7 key Is there a nominated filing member
+    And I should see row 7 value Yes
+    And I should see row 8 key Name
+    And I should see row 8 value Test
+    And I should see row 9 key Address
+    And I should see row 9 value Address Line 1
     And I click on Save&Continue button
     Then I should navigate to Registration processing page
     And I should navigate to Registration confirmation page
@@ -471,6 +472,11 @@ Feature: Contact details for the filing member
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
+    And I should see details as below:
+      | KEY                                | VALUE                     |
+      | Company                            | Test Example Company Name |
+      | Company Registration Number        | 76543210                  |
+      | Unique Taxpayer Reference          | 1234567890                |
     And I should see row 4 key Is there a nominated filing member
     And I should see row 5 key Company
     And I should see row 6 key Company Registration Number
