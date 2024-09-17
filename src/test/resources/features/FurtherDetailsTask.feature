@@ -39,10 +39,10 @@ Feature: Further Details Task page validation
     When I select option Only in the UK in further details group status page
     Then I should navigate to Group accounting period page
     And The caption must be Group details
-    And The Heading should be What are the start and end dates of the group’s consolidated accounting period?
+    And The Heading should be What are the start and end dates of the group’s accounting period?
     And I click on Continue button
-    Then I should see error message Enter the start date of the group’s consolidated accounting period on the Group Accounting Period Start Date Page
-    Then I should see error message Enter the end date of the group’s consolidated accounting period on the Group Accounting Period End Date Page
+    Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
+    Then I should see error message Enter the end date of the group’s accounting period on the Group Accounting Period End Date Page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 30    |
