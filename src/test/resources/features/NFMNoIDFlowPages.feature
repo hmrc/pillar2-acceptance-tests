@@ -192,7 +192,7 @@ Feature: NFM NO ID journey
     When I click on Continue button
     Then I should see error message Enter the telephone number for NFM Contact on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 1234567812345678123456780
-    Then I should see error message The telephone number should be 24 characters or less on the Input Nfm Telephone Page
+    Then I should see error message The telephone number must be 24 characters or less on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 1234567@
     Then I should see error message Enter the telephone number for NFM Contact in the correct format, like 01632 960 001 or +44 808 157 0192 on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 9923-456

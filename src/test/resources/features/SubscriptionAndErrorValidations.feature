@@ -170,7 +170,7 @@ Feature: Create a new registration and subscription
     Then I should navigate to Registration API error page
     And The Heading should be Sorry, there is a problem with the service
     And The Body content should be You must still register, please try again later.
-    And The Body content should be We saved your answers. They will be available for 28 days.
+    And The Body content should be We have saved your answers and they will be available for 28 days. After that time you will need to enter all of the information again.
     When I click Return to registration to try again link
     Then I should navigate to Task list page
 

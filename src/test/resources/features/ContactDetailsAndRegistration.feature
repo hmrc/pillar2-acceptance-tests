@@ -39,8 +39,8 @@ Feature: Contact details for the filing member
     Then I should navigate to Contact details guidance page
     And The caption must be Contact details
     And The Heading should be We need contact details for the filing member
-    And The Body content should be We need information about the filing member of this group so we can contact the right person or team when reviewing your compliance with Pillar 2 top-up taxes.
-    And The Body content should be These may be different to any contact details you have already provided during registration, which were used to match your business with our records.
+    And The Body content should be We need the contact details for the filing member of this group so we can contact the right person or team when about compliance for Pillar 2 top-up taxes.
+    And The Body content should be These may be different to any contact details you have already provided during this registration.
     When I click on Continue button
     Then I should navigate to Contact details display page
     And The Heading should be Saved contact
@@ -50,7 +50,7 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
     And The caption must be Contact details
-    And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
+    And The Heading should be What is the name of the person or team we should contact about compliance for Pillar 2 top-up taxes?
     When I enter Contact Name as Contact Name Test
     Then I should navigate to Contact details input email page
     And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
@@ -71,7 +71,7 @@ Feature: Contact details for the filing member
     And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be What is the telephone number for Contact Name Test?
-    And The Body content should be Enter a telephone number, like 01632 960 001, 07700 900 982. For international numbers include the country code, like +44 808 157 0192 or 0044 808 157 0192.
+    And The Body content should be For international numbers include the country code.
     When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
@@ -86,7 +86,7 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
     And The caption must be Contact details
-    And The Heading should be What is the name of the person or team we should contact about compliance with Pillar 2 top-up taxes?
+    And The Heading should be What is the name of the alternative person or team we should contact about compliance for Pillar 2 top-up taxes?
     And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter Second Contact Name as Second Contact Name Test
     Then I should navigate to Second Contact email page
@@ -281,7 +281,7 @@ Feature: Contact details for the filing member
     When I enter NFM Telephone Number as 12345678
     And I click on Continue button
     When I click Add further group details link
-    When I select option Only in the UK in further details group status page
+    When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
@@ -299,18 +299,18 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
     When I click on Continue button
-    Then I should see error message Enter name of the person of team we should contact on the Contact details display Page
+    Then I should see error message Enter name of the person or team we should contact about compliance for Pillar 2 top-up taxes on the Contact details display Page
     When I enter Contact Details Name as Testing the character limit of contact details field is 160 character limit. Maximum character limit of contact details name field should be 160 characters, user should not be able to continue with more than 160 characters.
     And I click on Continue button
-    Then I should see error message The name of the contact person or team should be 160 characters or less on the Contact details display Page
+    Then I should see error message Name of the contact person or team should be 160 characters or less on the Contact details display Page
     When I enter Contact Details Name as Test <script>alert(document.domain)</script>
     And I click on Continue button
     Then I should navigate to Contact details input email page
     When I click on Continue button
-    Then I should see error message You need to enter the email address for Test on the Contact details email Page
+    Then I should see error message Enter the email address for Test on the Contact details email Page
     When I enter Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I click on Continue button
-    Then I should see error message The email address should be 132 characters or less on the Contact details email Page
+    Then I should see error message Email address must be 132 characters or less on the Contact details email Page
     When I enter Contact Email as FormatErrorTest.com
     When I click on Continue button
     Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
@@ -322,33 +322,33 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
     When I click on Continue button
-    Then I should see error message You need to enter the telephone for Test on the Contact details display Page
+    Then I should see error message Enter telephone number for Test on the Contact details display Page
     When I enter NFM Telephone Number as 12345678@
     When I click on Continue button
-    Then I should see error message Enter a telephone number in the correct format on the Contact details display Page
+    Then I should see error message Enter the telephone number for Test in the correct format, like 01632 960 001 or +44 808 157 0192 on the Contact details display Page
     When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
-    Then I should see error message The telephone number should be 24 characters or less on the Contact details display Page
+    Then I should see error message Telephone number must be 24 characters or less on the Contact details display Page
     When I enter NFM Telephone Number as 12345343
     When I click on Continue button
     Then I should navigate to Second Contact details page
     When I click on Continue button
-    Then I should see error message Select yes if there is someone else we can contact on the Second Contact details Page
+    Then I should see error message Select yes if there is someone else we can contact if Test is not available on the Second Contact details Page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
     And I click on Continue button
-    Then I should see error message Enter name of the person of team we should contact on the Second Contact details Page
+    Then I should see error message Enter the name of the alternative person or team we should contact about compliance for Pillar 2 top-up taxes on the Second Contact details Page
     When I enter Second Contact Name as Testing the character limit of contact details field is 160 character limit. Maximum character limit of contact details name field should be 160 characters, user should not be able to continue with more than 160 characters.
     And I click on Continue button
-    Then I should see error message The name of the contact person or team should be 160 characters or less on the Second Contact details Page
+    Then I should see error message Name of the alternative contact person or team should be 160 characters or less on the Second Contact details Page
     When I enter Second Contact Name as Test <script>alert(document.domain)</script>
     And I click on Continue button
     Then I should navigate to Second Contact email page
     And I click on Continue button
-    Then I should see error message You need to enter the email address for Test on the Contact details email Page
+    Then I should see error message Enter the email address for Test on the Contact details email Page
     When I enter Second Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I click on Continue button
-    Then I should see error message The email address should be 132 characters or less on the Contact details email Page
+    Then I should see error message Email address must be 132 characters or less on the Contact details email Page
     When I enter Second Contact Email as FormatErrorTest.com
     When I click on Continue button
     Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
@@ -360,20 +360,20 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I click on Continue button
-    Then I should see error message You need to enter the telephone for Test on the Second Contact details Page
+    Then I should see error message Enter the telephone number for Test on the Second Contact details Page
     When I enter NFM Telephone Number as 12345678@
     When I click on Continue button
-    Then I should see error message Enter a telephone number in the correct format on the Second Contact details Page
+    Then I should see error message Enter the telephone number for Test in the correct format, like 01632 960 001 or +44 808 157 0192 on the Second Contact details Page
     When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
-    Then I should see error message The telephone number should be 24 characters or less on the Second Contact details Page
+    Then I should see error message Telephone number must be 24 characters or less on the Second Contact details Page
     When I enter NFM Telephone Number as 1234567
     When I click on Continue button
     Then I should navigate to Contact address input page
     When I click on Continue button
     Then I should see contact address error message Enter the first line of the address on the Address Line 1
     And I should see contact address error message Enter the town or city on the City
-    And I should see contact address error message Select a country on the Country
+    And I should see contact address error message Enter the country on the Country
     When I enter Address Line 1 as Address Line 1 Character Length Test1
     And I enter Address Line 2 as Address Line 2 Character Length Test1
     And I enter City as City Field Character Length Test Error
@@ -382,11 +382,11 @@ Feature: Contact details for the filing member
     And I enter Country as Angola
     And I click on Country selected
     When I click on Continue button
-    Then I should see contact address error message The first line of the address must be 35 characters or less on the Address Line 1
-    And I should see contact address error message The second line of the address must be 35 characters or less on the Address Line 2
-    And I should see contact address error message The town or city must be 35 characters or less on the City
-    And I should see contact address error message The region must be 35 characters or less on the Region
-    And I should see contact address error message The postcode must be 10 characters or less on the Postal Code
+    Then I should see contact address error message First line of the address must be 35 characters or less on the Address Line 1
+    And I should see contact address error message Second line of the address must be 35 characters or less on the Address Line 2
+    And I should see contact address error message Town or city must be 35 characters or less on the City
+    And I should see contact address error message Region must be 35 characters or less on the Region
+    And I should see contact address error message Postcode must be 10 characters or less on the Postal Code
     When I enter Address Line 1 as Test Address Line 1
     When I enter Address Line 2 as Test Address Line 2
     And I enter City as Test City
@@ -411,13 +411,10 @@ Feature: Contact details for the filing member
     And The Id text should be Group’s Pillar 2 top-up taxes ID
     When I should see heading 1 as Registration date:
     And The registration date should be displayed as current day
-    And The Body content should be Your group has registered to report for Domestic Top-up Tax.
-    And The Body content should be You will not be emailed a confirmation of this registration.
-    And The Body content should be You must record your group’s Pillar 2 top-up taxes ID and registration date.
-    And The Body content should be You must not disclose your Pillar 2 top-up taxes ID or registration date outside of agreed communications.
+    And The Body content should be Test has successfully registered to report for Domestic Top-up Tax and Multinational Top-up Tax
+    And The Body content should be You will be able to find your Pillar 2 top-up taxes ID and registration date on your account homepage. Keep these details safe.
     When I should see heading 2 as What happens next
     And The Body content should be You can now report and manage your Pillar 2 top-up taxes.
-    And The Body content should be Is this page not working properly? (opens in new tab)
     When I click report and manage your Pillar 2 top-up taxes link
     Then I should be on Dashboard page
     And I should see user details row 1 value XMPLR0012345674
@@ -442,7 +439,7 @@ Feature: Contact details for the filing member
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     When I click Add further group details link
-    When I select option In the UK and outside the UK in further details group status page
+    When I select option Only in the UK in further details group status page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
@@ -496,7 +493,7 @@ Feature: Contact details for the filing member
     And I should see row 4 value No
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
-    And The Body content should be Your group has registered to report for Domestic Top-up Tax and Multinational Top-up Tax.
+    And The Body content should be Test Example Company Name has successfully registered to report for Domestic Top-up Tax
     And I click the browser back button
     Then I should navigate to Registration return error page
     And The Heading should be You cannot return, your registration is complete
