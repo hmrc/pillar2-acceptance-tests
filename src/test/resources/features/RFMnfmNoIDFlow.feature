@@ -377,7 +377,7 @@ Feature: RFM CYA - NFM No ID flow
     When I provide RFM contact number as 01632960001
     And I select option Yes and continue to next
     And I click on Continue button
-    Then I should see an error message Enter name of the person of team we should contact on the RFM second contact name Page
+    Then I should see an error message Enter name of the person or team we should contact on the RFM second contact name Page
     When I provide RFM contact name as RFM second test contact
     When I click on Continue button
     Then I should see an error message You need to enter the email address for RFM second test contact on the RFM contact email Page
