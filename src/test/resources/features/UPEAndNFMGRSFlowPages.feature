@@ -18,8 +18,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to input-upe-name page
     When I select back link
     Then I should be on UPE entity type page
-    When I click on Continue button
-    Then I should navigate to input-upe-name page
 
   @zap_accessibility @batch1
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
