@@ -22,7 +22,6 @@ import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigat
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.pages.BasePage
 
 class EligibilityQuestionSteps extends CommonFunctions {
 

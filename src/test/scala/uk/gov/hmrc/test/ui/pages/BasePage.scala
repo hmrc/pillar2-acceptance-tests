@@ -21,7 +21,6 @@ import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 trait BasePage extends BrowserDriver with Matchers {
   val continueButton     = "continue-button"
-  val loadingSpinner     = ".hods-loading-spinner__spinner"
 
   def submitPage(): Unit =
     driver.findElement(By.id(continueButton)).click()
