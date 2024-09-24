@@ -560,7 +560,7 @@ Feature: User registration and subscription e2e journey
     And I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     When I click on Save&Continue button
-    Then I should navigate to Registration processing page
+    Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
   Scenario: 8 - Create a new registration & subscription with UPE GRS flow and NFM Entity type not listed
@@ -625,5 +625,5 @@ Feature: User registration and subscription e2e journey
     And I click on Continue button
     And I click Check your answers before submitting your registration link
     And I click on Save&Continue button
-    Then I should navigate to Registration processing page
+    Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page

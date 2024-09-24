@@ -22,6 +22,7 @@ import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigat
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pages.BasePage
 
 class EligibilityQuestionSteps extends CommonFunctions {
 
@@ -73,4 +74,12 @@ class EligibilityQuestionSteps extends CommonFunctions {
     Wait.waitForElementToPresentByCssSelector(ConfirmationPage.insetText)
     assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).equals(insetText))
   }
+
+  Then("""^I should be redirect to (.*)""") { (page: String) =>
+    assertNavigationUrl(pageMatch(page))
+    Wait.waitForElementToPresentByCssSelector(RegistrationProcessingPage.loadingSpinner)
+    Wait.waitForElementToClicktagName("h1")
+    Wait.waitForCSSElementNotToPresent(RegistrationProcessingPage.loadingSpinner)
+  }
+
 }

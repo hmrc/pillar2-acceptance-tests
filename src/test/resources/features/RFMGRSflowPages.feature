@@ -103,7 +103,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     And I should see the row 13 value Address Line 1 CYA change
     And I should see Print this page link on Review answers page
     And I click on Continue button
-    And I should be on RFM processing page
+    And I should be redirect to RFM processing page
     Then I should navigate to RFM Confirmation Page
 
   @batch2

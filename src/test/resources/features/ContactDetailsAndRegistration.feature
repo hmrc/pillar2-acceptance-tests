@@ -404,7 +404,7 @@ Feature: Contact details for the filing member
     And I should see row 9 key Address
     And I should see row 9 value Address Line 1
     And I click on Save&Continue button
-    Then I should navigate to Registration processing page
+    Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
     And The Header should be Report Pillar 2 top-up taxes
     And The Heading should be Registration complete
@@ -582,6 +582,6 @@ Feature: Contact details for the filing member
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
-    Then I should navigate to Registration processing page
-    Then I should navigate to Registration confirmation page
+    Then I should be redirect to Registration processing page
+    And I should navigate to Registration confirmation page
 
