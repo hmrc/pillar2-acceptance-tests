@@ -68,7 +68,7 @@ object Wait extends BasePage {
   }
 
   def waitForCSSElementNotToPresent(css: String): Boolean = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(3))
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
     driverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(css)))
   }
 }

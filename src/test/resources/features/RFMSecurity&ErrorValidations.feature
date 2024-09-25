@@ -74,14 +74,14 @@ Feature: RFM check your answers page
       | postalCode   | EH5 5WY            |
       | countryCode  | Australia          |
     Then I should navigate to RFM Final Review Page
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
+    And I should see Report Pillar 2 top-up taxes text is not clickable
     And I click on Continue button
-    Then I should navigate to RFM processing page
-    Then I should navigate to Amend API error Page for RFM
+    Then I should be redirect to RFM processing page
+    And I should navigate to Amend API error Page for RFM
     Then I should see Report Pillar 2 top-up taxes text is not clickable
     And I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
     Then I should navigate to RFM Final Review Page
-    Then I click Sign out link
+    And I click Sign out link
 
   @batch2
   Scenario: 3 - Verify Incomplete data error

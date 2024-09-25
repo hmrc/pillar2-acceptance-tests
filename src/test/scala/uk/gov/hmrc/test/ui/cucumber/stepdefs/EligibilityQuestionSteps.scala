@@ -73,4 +73,12 @@ class EligibilityQuestionSteps extends CommonFunctions {
     Wait.waitForElementToPresentByCssSelector(ConfirmationPage.insetText)
     assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).equals(insetText))
   }
+
+  Then("""^I should be redirect to (.*)""") { (page: String) =>
+    assertNavigationUrl(pageMatch(page))
+    Wait.waitForElementToPresentByCssSelector(RegistrationProcessingPage.loadingSpinner)
+    Wait.waitForElementToClicktagName("h1")
+    Wait.waitForCSSElementNotToPresent(RegistrationProcessingPage.loadingSpinner)
+  }
+
 }
