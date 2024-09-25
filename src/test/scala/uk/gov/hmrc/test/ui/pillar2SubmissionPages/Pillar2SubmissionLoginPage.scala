@@ -30,11 +30,11 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
   val credIdField: String                  = "authorityId"
   val submissionFrontEndASAUrl: String     = s"$p2SubRootUrl"+"asa/input-pillar-2-id"
   val enrolmentKeyField: String            = "enrolment[0].name"
-  val identifierNameField: String          = "input-0-0-name"
-  val identifierValueField: String         = "input-0-0-value"
+  val identifierNameField: String          = "enrolment[0].taxIdentifier[0].name"
+  val identifierValueField: String         = "enrolment[0].taxIdentifier[0].value"
   val delegatedEnrolmentKeyField: String   = "delegatedEnrolment[0].key"
-  val delegatedIdentifierNameField: String = "input-delegated-0-0-name"
-  val delegatedIdentifierValueField: String = "input-delegated-0-0-value"
+  val delegatedIdentifierNameField: String  = "delegatedEnrolment[0].taxIdentifier[0].name"
+  val delegatedIdentifierValueField: String = "delegatedEnrolment[0].taxIdentifier[0].value"
   val delegatedAuthRuleField: String       = "delegatedEnrolment[0].delegatedAuthRule"
   val addDelegatedEnrolmentCTA: String     = "[onclick='addDelegatedEnrolment()']"
 
@@ -77,18 +77,18 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
   def p2SubAgentLoginWithExistingEntity(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(submissionFrontEndASAUrl, redirectUrlField)
-    Input.sendKeysById(enrolmentKey, enrolmentKeyField)
-    Input.sendKeysById(identifierName, identifierNameField)
-    Input.sendKeysById(identifierValue, identifierValueField)
+    Input.sendKeysByName(enrolmentKey, enrolmentKeyField)
+    Input.sendKeysByName(identifierName, identifierNameField)
+    Input.sendKeysByName(identifierValue, identifierValueField)
     selectAffinityGroupAgent()
   }
 
   def p2SubAddDelegatedEnrolment(enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String): Unit = {
     clickAddDelegatedEnrolmentCTA()
     Input.sendKeysByName(enrolmentkey, delegatedEnrolmentKeyField)
-    Input.sendKeysById(identifiername, delegatedIdentifierNameField)
-    Input.sendKeysById(identifiervalue, delegatedIdentifierValueField)
-    Input.sendKeysById(authRule, delegatedAuthRuleField)
+    Input.sendKeysByName(identifiername, delegatedIdentifierNameField)
+    Input.sendKeysByName(identifiervalue, delegatedIdentifierValueField)
+    Input.sendKeysByName(authRule, delegatedAuthRuleField)
     clickSubmitButton()
   }
 

@@ -21,6 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.{P2SubBtnAccountingPage, P2SubBtnAnnualRevenuePage, P2SubBtnDomesticOrMnePage, P2SubBtnFutureAnnualRevenuePage, P2SubBtnStartPage}
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
 trait Pillar2SubmissionPage
@@ -37,6 +38,11 @@ trait Pillar2SubmissionPage
       case "ASA Not Authorised page"               => ASANotAuthorisedPage
       case "ASA Individual KB Page"                => ASAIndividualKBPage
       case "ASA Organisation KB Page"              => ASAOrganisationKBPage
+      case "BTN Start Page"                        => P2SubBtnStartPage
+      case "BTN Accounting Period Page"            => P2SubBtnAccountingPage
+      case "BTN Domestic or MNE Page"              => P2SubBtnDomesticOrMnePage
+      case "BTN Annual Revenue Page"               => P2SubBtnAnnualRevenuePage
+      case "BTN Future Annual Revenue Page"        => P2SubBtnFutureAnnualRevenuePage
     }
   }
 }
