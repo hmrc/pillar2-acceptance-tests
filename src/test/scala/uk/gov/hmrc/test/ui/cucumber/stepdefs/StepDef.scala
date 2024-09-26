@@ -577,6 +577,9 @@ class StepDef extends BaseStepDef with BrowserDriver {
       case "Agent Services Account" =>
         Wait.waitForElementToPresentByCssSelector(ASADashboardPage.ASALink)
         assert(driver.findElement(By.cssSelector(ASADashboardPage.ASALink)).getText.contains(linkText))
+      case "Sign out" =>
+        Wait.waitForElementToPresentByCssSelector(RepaymentConfirmationPage.signOut)
+        assert(driver.findElement(By.cssSelector(RepaymentConfirmationPage.signOut)).getText.contains(linkText))
     }
   }
 

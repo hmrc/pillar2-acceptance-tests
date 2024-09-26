@@ -280,9 +280,11 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should be redirect to Repayment processing page
     And I should be on Repayment Confirmation Page
+    And I can see Sign out link
     And I can see Print this page link
     When I click the browser back button
     Then I should be on Repayment Return Error Page
+    And I can see Sign out link
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
     When I click the browser back button
