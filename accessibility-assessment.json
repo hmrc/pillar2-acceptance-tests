@@ -1,0 +1,16 @@
+{
+  "exclusions": [
+    {
+      "path": "/report-pillar2-top-up-taxes/replace-filing-member/review-submit/processing",
+      "reason": " -- Delayed refresh under 20 hours must not be used -- can be ignored as this is spinning wheel page and this violation is expected"
+    },
+    {
+      "path": "/report-pillar2-top-up-taxes/review-submit/processing-registration",
+      "reason": " -- Delayed refresh under 20 hours must not be used -- can be ignored as this is spinning wheel page and this violation is expected"
+    },
+    {
+      "path": "/report-pillar2-top-up-taxes/repayment/processing-refund",
+      "reason": " -- Delayed refresh under 20 hours must not be used -- can be ignored as this is spinning wheel page and this violation is expected"
+    }
+  ]
+}
