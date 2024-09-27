@@ -25,15 +25,18 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I click the browser back button
     When I select option Yes and continue on Pillar2 submission
     Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
+    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
     When I select back link
-    When I select option No and continue on Pillar2 submission
+    When I select option Yes and continue on Pillar2 submission
     Then I should be navigated to Under Construction Page of Pillar2 Submission
     And I click the browser back button
-    When I select option Yes and continue on Pillar2 submission
+    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
+    Then I should be navigated to Under Construction Page of Pillar2 Submission
+    And I click the browser back button
+    When I select option No and continue on Pillar2 submission
     Then I should be navigated to Under Construction Page of Pillar2 Submission
 
   Scenario: 2 - Agent User navigates to below threshold notification pages
@@ -64,15 +67,16 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I click the browser back button
     When I select option Yes and continue on Pillar2 submission
     Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
+    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
     When I select back link
-    When I select option No and continue on Pillar2 submission
+    When I select option Yes and continue on Pillar2 submission
     Then I should be navigated to Under Construction Page of Pillar2 Submission
     And I click the browser back button
-    When I select option Yes and continue on Pillar2 submission
+    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
     Then I should be navigated to Under Construction Page of Pillar2 Submission
-
-
+    And I click the browser back button
+    When I select option No and continue on Pillar2 submission
+    Then I should be navigated to Under Construction Page of Pillar2 Submission
