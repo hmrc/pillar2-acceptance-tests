@@ -1,9 +1,8 @@
-@p2tests
+@p2tests  @p2zap_p2accessibility
 Feature: Pillar2 submission Agent User Journey
   As an Agent authenticated user
   I should be able to access Agent features
 
-  @p2zap_p2accessibility
   Scenario: 1 - Agent user capturing Pillar2 ID
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 submission service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 submission service
