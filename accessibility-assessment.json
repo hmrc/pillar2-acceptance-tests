@@ -1,0 +1,16 @@
+{
+  "exclusions": [
+    {
+      "path": "/report-pillar2-top-up-taxes/replace-filing-member/review-submit/processing",
+      "reason": "Implementation of spinner page with polling"
+    },
+    {
+      "path": "/report-pillar2-top-up-taxes/repayment/processing-refund",
+      "reason": "Implementation of spinner page with polling"
+    },
+    {
+      "path": "/report-pillar2-top-up-taxes/review-submit/processing-registration",
+      "reason": "Implementation of spinner page with polling"
+    }
+  ]
+}
