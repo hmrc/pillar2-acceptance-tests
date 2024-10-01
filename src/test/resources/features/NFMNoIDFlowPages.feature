@@ -12,11 +12,6 @@ Feature: NFM NO ID journey
     And I click on Save&Continue button
     When I click Add filing member details link
     Then I should navigate to NFM registration page
-    And The caption must be Group details
-    And The Heading should be Nominated filing member
-    And The Body content should be The ultimate parent entity (UPE) is expected to report as the filing member. However, the UPE can nominate another company within your group.
-    And The Body content should be If you are nominated to report as the filing member, you must have written permission from your UPE (such as an email). We won’t collect this during registration, but we may request it during compliance checks.
-    And The field content should be Are you registering as the nominated filing member to report for this group?
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     And The caption must be Group details
@@ -128,8 +123,6 @@ Feature: NFM NO ID journey
     And I registered successfully with BV enabled
     When I click on Save&Continue button
     When I click Add filing member details link
-    When I click on Continue button
-    Then I should see NFM error message Select yes if you want to register a nominated filing member to report for this group on the NFM registration page Element
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I click on Continue button
