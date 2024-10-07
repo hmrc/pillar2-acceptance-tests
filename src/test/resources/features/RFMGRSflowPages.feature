@@ -71,8 +71,11 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
       | KEY          | VALUE          |
       | addressLine1 | Address Line 1 CYA |
       | addressLine3 | City CYA          |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | Australia |
+      | postalCode   | INVALID       |
+      | countryCode  | United Kingdom |
+    Then I should see address error message Enter a valid UK postcode or change the country you selected on the Postal code Element
+    When I enter Postal Code as EH5 5WY
+    And I click on Continue button
     Then I should navigate to RFM Final Review Page
     When  I click change link for RFM Change Second Contact Preference
     And I select option Yes and continue to next

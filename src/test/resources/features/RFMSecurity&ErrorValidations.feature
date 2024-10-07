@@ -106,6 +106,7 @@ Feature: RFM check your answers page
       | addressLine3 | City CYA           |
       | postalCode   | EH5 5WY            |
       | countryCode  | Australia          |
+
     And I continue to RFM contact name Page
     And I provide RFM contact name as RFM test contact
     When I provide RFM contact email as rfm@email.com

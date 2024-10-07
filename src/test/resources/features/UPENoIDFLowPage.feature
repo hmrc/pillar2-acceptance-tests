@@ -23,11 +23,8 @@ Feature: UPE NO ID journey
       | KEY          | VALUE              |
       | addressLine1 | Address Line 1 UPE |
       | addressLine3 | City UPE           |
-      | postalCode   | invalid            |
-      | countryCode  | United Kingdom     |
-    And I click on Continue button
-    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
-    When I enter Postal Code as EH5 5WY
+      | postalCode   | Invalid            |
+      | countryCode  | United Arab Emirates  |
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And The caption must be Group details
@@ -59,8 +56,8 @@ Feature: UPE NO ID journey
       | Name                         | Test UPE                 |
       | Address                      | Address Line 1 UPE       |
       | Address                      | City UPE                 |
-      | Address                      | EH5 5WY                  |
-      | Address                      | United Kingdom           |
+      | Address                      | INVALID                  |
+      | Address                      | United Arab Emirates     |
       | Contact name                 | Contact UPE              |
       | Email address                | testcontactupe@email.com |
       | Can we contact by telephone? | Yes                      |
@@ -77,8 +74,8 @@ Feature: UPE NO ID journey
     Then I click on Continue button
     And I should see the UPE name field is pre-populated with Test UPE
     Then I click on Continue button
-    And I should see the Postal Code field is pre-populated with EH5 5WY
-    And I should see the Country field is pre-populated with United Kingdom
+    And I should see the Postal Code field is pre-populated with INVALID
+    And I should see the Country field is pre-populated with United Arab Emirates
     And I click on Continue button
     And I should see the UPE Person/Team name field is pre-populated with Contact UPE
     And I click on Continue button
@@ -132,7 +129,7 @@ Feature: UPE NO ID journey
       | addressLine1 | Test Address Line 1 |
       | addressLine3 | Test City           |
       | postalCode   | E H 5 5 W Y         |
-      | countryCode  | United Kingdom      |
+      | countryCode  | United Arab Emirates |
     When I click on Continue button
     When I enter UPE Person/Team name as UPE Contact Name
     And I click on Continue button
@@ -269,7 +266,7 @@ Feature: UPE NO ID journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE Contact Name
     When I enter UPE Email address as testteam@email.com
     Then I should navigate to UPE Telephone page

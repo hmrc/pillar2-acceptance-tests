@@ -15,7 +15,7 @@ Feature: Create a new registration and subscription
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE Contact Name
     When I enter UPE Email address as testteam@email.com
     When I select option No and continue to next
@@ -130,7 +130,7 @@ Feature: Create a new registration and subscription
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE Contact Name
     When I enter UPE Email address as testteam@email.com
     When I select option No and continue to next

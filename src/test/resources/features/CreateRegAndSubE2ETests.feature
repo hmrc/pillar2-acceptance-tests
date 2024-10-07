@@ -495,6 +495,7 @@ Feature: User registration and subscription e2e journey
     And I click report and manage your Pillar 2 top-up taxes link
     And I should be on Dashboard page
 
+
   Scenario: 7 - Create a new registration & subscription with UPE Entity type not listed and NFM GRS flow
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -507,8 +508,11 @@ Feature: User registration and subscription e2e journey
       | KEY          | VALUE          |
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
+      | postalCode   | INVALID       |
       | countryCode  | United Kingdom |
+    Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
+    When I enter Postal Code as EH5 5WY
+      And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as UPE Contact Name
     Then I should navigate to UPE Contact Email page
@@ -563,6 +567,7 @@ Feature: User registration and subscription e2e journey
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
+
   Scenario: 8 - Create a new registration & subscription with UPE GRS flow and NFM Entity type not listed
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
@@ -584,8 +589,11 @@ Feature: User registration and subscription e2e journey
       | KEY          | VALUE          |
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
+      | postalCode   | INVALID       |
       | countryCode  | United Kingdom |
+    Then I should see address error message Enter a full UK postcode on the Postal code Element
+    When I enter Postal Code as EH5 5WY
+      And I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact CYA
     Then I should navigate to NFM Contact Email page

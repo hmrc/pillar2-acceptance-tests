@@ -28,9 +28,7 @@ Feature: NFM NO ID journey
       | KEY          | VALUE              |
       | addressLine1 | Address Line 1 CYA |
       | addressLine3 | City CYA           |
-      | countryCode  | United Kingdom     |
-    Then I should see address error message Enter a full UK postcode on the Postal code Element
-    And I enter Postal Code as EH5 5WY
+      | countryCode  | United Arab Emirates |
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     And The caption must be Group details
@@ -59,8 +57,7 @@ Feature: NFM NO ID journey
       | Name                         | Test CYA           |
       | Address                      | Address Line 1 CYA |
       | Address                      | City CYA           |
-      | Address                      | EH5 5WY            |
-      | Address                      | United Kingdom     |
+      | Address                      | United Arab Emirates |
       | Contact name                 | Contact CYA        |
       | Email address                | testcya@email.com  |
       | Can we contact by telephone? | Yes                |
@@ -101,7 +98,7 @@ Feature: NFM NO ID journey
     And I click on Continue button
     And I should see row 2 value Change# Address $
     And I should see row 2 value City CYA
-    And I should see row 2 value United Kingdom
+    And I should see row 2 value United Arab Emirates
     When I click on change hyperlink next to the NFM Contact Name
     And I enter NFM Contact name as Change & Contact $ Person ~
     And I should see row 3 value Change & Contact $ Person ~
