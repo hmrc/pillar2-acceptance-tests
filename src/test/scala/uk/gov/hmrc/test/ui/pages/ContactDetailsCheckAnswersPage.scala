@@ -40,5 +40,5 @@ object ContactDetailsCheckAnswersPage extends PageObject {
   val secondTelephone         = "a[href*='/change-second-telephone']"
   val changeSecondTelephone   = "a[href*='/change-second-input-telephone']"
 
-  def saveAndContinue()       = findByCss(continue).click()
+  def saveAndContinue(): Unit       = findByCss(continue).click()
 }

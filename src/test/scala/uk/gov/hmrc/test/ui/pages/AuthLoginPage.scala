@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, PageObject}
+import uk.gov.hmrc.test.ui.cucumber._
 
 object AuthLoginPage extends BasePage with PageObject {
   val url: String                         = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
@@ -388,8 +388,8 @@ object AuthLoginPage extends BasePage with PageObject {
 
   private def findCredentialRole() = Find.findByName("credentialRole")
 
-  def clickSubmitButton() = Find.findById("submit").click()
+  def clickSubmitButton(): Unit = Find.findById("submit").click()
 
-  def clickAddDelegatedEnrolmentCTA() = Find.findByCss(addDelegatedEnrolmentCTA).click()
+  def clickAddDelegatedEnrolmentCTA(): Unit = Find.findByCss(addDelegatedEnrolmentCTA).click()
 
 }

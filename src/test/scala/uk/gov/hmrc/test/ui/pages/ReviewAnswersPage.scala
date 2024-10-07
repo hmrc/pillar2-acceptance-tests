@@ -70,5 +70,5 @@ object ReviewAnswersPage extends PageObject {
   val printPreviewArea       = "[src*='print.pdf']"
   val printthispage          = "[data-module='hmrc-print-link']"
 
-  def saveAndContinue()       = findByCss(continue).click()
+  def saveAndContinue(): Unit       = findByCss(continue).click()
 }
