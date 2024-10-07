@@ -28,7 +28,7 @@ object UPETelephonePage extends PageObject {
   val errorMessage = ".govuk-error-message"
 
 
-  def clickContinue() = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }
 

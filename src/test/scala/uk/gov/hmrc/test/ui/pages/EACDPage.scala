@@ -26,7 +26,7 @@ object EACDPage extends PageObject {
   val backLink        = ".govuk-back-link"
   val continue           = ".govuk-button"
 
-  def clickContinue()    = findByCss(continue).click()
+  def clickContinue(): Unit    = findByCss(continue).click()
 
 }
 
