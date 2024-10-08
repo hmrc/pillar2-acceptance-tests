@@ -13,8 +13,8 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Start Page of Pillar2 Submission
     When I click on Continue button
     When I click Update your group’s current accounting period link
-    Then I should be on Manage accounting period Page
-    And I select back link
+    Then I should be on accounts summary page
+    And I click the browser back button
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
@@ -42,6 +42,12 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I click the browser back button
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to Under Construction Page of Pillar2 Submission
+    When I access submission BTN UKTR page
+    And I click ensure your group’s details are updated link
+    Then I should be on accounts summary page
+    And I click the browser back button
+    When I click Choose a supplier to submit your UKTR from this list link
+    Then I should be on guidance page
 
   Scenario: 2 - Agent User navigates to below threshold notification pages
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -59,8 +65,8 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Start Page of Pillar2 Submission
     When I click on Continue button
     When I click Update your group’s current accounting period link
-    Then I should be on Manage accounting period Page
-    And I select back link
+    Then I should be on accounts summary page
+    And I click the browser back button
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
@@ -88,3 +94,9 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I click the browser back button
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to Under Construction Page of Pillar2 Submission
+    When I access submission BTN UKTR page
+    And I click ensure your group’s details are updated link
+    Then I should be on accounts summary page
+    And I click the browser back button
+    When I click Choose a supplier to submit your UKTR from this list link
+    Then I should be on guidance page
