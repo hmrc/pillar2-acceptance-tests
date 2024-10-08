@@ -17,10 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 
-import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
+import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
+import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
 import uk.gov.hmrc.test.ui.pages._
 
 
@@ -49,37 +49,37 @@ class NFMPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorSummary)
 
         Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorLink)
-        getTextOf(By cssSelector (NFMNamePage.errorLink)) should be(error)
+        getTextOf(By cssSelector NFMNamePage.errorLink) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorMessage)
-        getTextOf(By cssSelector (NFMNamePage.errorMessage)) should include(error)
+        getTextOf(By cssSelector NFMNamePage.errorMessage) should include(error)
 
       case "Address Line 1" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
 
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.addressLine1ErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.addressLine1ErrorLink)) should be(error)
+        getTextOf(By cssSelector NFMAddressPage.addressLine1ErrorLink) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.addressLine1ErrorMessage)
-        getTextOf(By cssSelector  (NFMAddressPage.addressLine1ErrorMessage)) should include(error)
+        getTextOf(By cssSelector NFMAddressPage.addressLine1ErrorMessage) should include(error)
 
       case "Address Line 2" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
 
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.addressLine2ErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.addressLine2ErrorLink)) should be(error)
+        getTextOf(By cssSelector NFMAddressPage.addressLine2ErrorLink) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.addressLine2ErrorMessage)
-        getTextOf(By cssSelector (NFMAddressPage.addressLine2ErrorMessage)) should include(error)
+        getTextOf(By cssSelector NFMAddressPage.addressLine2ErrorMessage) should include(error)
 
       case "City" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
 
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.cityErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.cityErrorLink)) should be(error)
+        getTextOf(By cssSelector NFMAddressPage.cityErrorLink) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorMessage)
         getTextOf(By cssSelector  (NFMAddressPage.cityErrorMessage)) should include(error)
