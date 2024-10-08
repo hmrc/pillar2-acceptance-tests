@@ -24,6 +24,6 @@ object CorporationTaxUTRPage extends PageObject {
   val continue         ="#submit"
   val element          =".start-now"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 
 }

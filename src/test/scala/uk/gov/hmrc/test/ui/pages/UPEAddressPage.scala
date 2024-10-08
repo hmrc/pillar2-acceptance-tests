@@ -45,7 +45,7 @@ object UPEAddressPage extends PageObject {
   val selected                    ="#countryCode__option--0"
   val hintText                    =".govuk-hint"
 
-  def clickContinue(): Unit = findByCss(continue).click()
-  def clickCountrySelected(): Unit = findByCss(selected).click()
+  def clickContinue() = findByCss(continue).click()
+  def clickCountrySelected() = findByCss(selected).click()
 
 }

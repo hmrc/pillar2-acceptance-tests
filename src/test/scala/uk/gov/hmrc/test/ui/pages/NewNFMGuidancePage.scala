@@ -27,7 +27,7 @@ object NewNFMGuidancePage extends PageObject {
   val continue        = ".govuk-button"
   val backLink        = ".govuk-back-link"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 
 }

@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber
 
 import org.scalatest.Assertion
 import org.scalatestplus.selenium.Chrome.currentUrl
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.{BasePage}
 
 object Check extends BasePage {
 
@@ -34,28 +34,28 @@ object Check extends BasePage {
 
   def checkBodyText(t: String): Assertion = Find.findByTagName("body").getText should include(t)
 
-  def checkSubHeading(p: String): Assertion =
+  def checkSubHeading(p: String) =
     Find.findByCss("#main-content > div > div > p:nth-child(2)").getText should include(p)
 
-  def assertNavigationToPage(page: PageObject): Boolean =
+  def assertNavigationToPage(page: PageObject) =
     Wait.waitForUrlToBeVisible(page.url)
 
-  def assertNavigationUrl(page: PageObject): Boolean =
+  def assertNavigationUrl(page: PageObject) =
     Wait.waitForUrl(page.url)
 
-  def assertNavigationToPageUrl(page: PageObject): Assertion = {
+  def assertNavigationToPageUrl(page: PageObject) = {
     Wait.waitForUrlToBeVisible(page.url)
     currentUrl shouldBe page.url
   }
 
-  def checkAnswerSelection(option: String): Boolean = {
+  def checkAnswerSelection(option: String) = {
     option match {
       case "Yes" => Find.findByCss("#value_0").isSelected
       case "No" => Find.findByCss("#value_1").isSelected
     }
   }
 
-  def checkOptionSelected(option: String): Boolean = {
+  def checkOptionSelected(option: String) = {
     option match {
       case "UK limited company" => Find.findByCss("#value_0").isSelected
       case "Limited liability partnership" => Find.findByCss("#value_1").isSelected

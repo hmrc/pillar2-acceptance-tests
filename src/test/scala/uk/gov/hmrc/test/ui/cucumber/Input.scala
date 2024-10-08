@@ -17,11 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import io.cucumber.datatable.DataTable
-import org.openqa.selenium._
 import org.openqa.selenium.io.FileHandler
-import uk.gov.hmrc.test.ui.cucumber.Find._
+import org.openqa.selenium.{By, OutputType, TakesScreenshot, WebDriver}
 import uk.gov.hmrc.test.ui.pages.BasePage
-
+import uk.gov.hmrc.test.ui.cucumber.Find._
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -34,14 +33,14 @@ object Input extends BasePage {
 
   def clickByCss(css: String): Unit = findByCss(css).click()
 
-  val enterData: DataTable => Unit = iterator(sendKeysById)
+  val enterData = iterator(sendKeysById) _
 
   def clickAndContinue(id: String): Unit = {
     findById(id).click()
     clickSubmit()
   }
 
-  def iterator(f: (String, String) => Any)(data: DataTable): Unit = {
+  def iterator(f: (String, String) => Any)(data: DataTable) = {
     val row = data.asMaps(classOf[String], classOf[String]).iterator()
     while(row.hasNext) {
       val map = row.next()
@@ -94,13 +93,13 @@ object Input extends BasePage {
   }
 
 
-  def getTextOf(by: By): String =
+  def getTextOf(by: By) =
     driver.findElement(by).getText
 
-  def getAttributeOf(locator: String,attributeName: String): String =
+  def getAttributeOf(locator: String,attributeName: String) =
     driver.findElement(By.cssSelector(locator)).getAttribute(attributeName)
 
-  def getAttributeOfId(locator: String, attributeName: String): String =
+  def getAttributeOfId(locator: String, attributeName: String) =
     driver.findElement(By.id(locator)).getAttribute(attributeName)
 
 }

@@ -28,6 +28,6 @@ object UKCompanyGRSPage extends PageObject {
   val backLink         = ".govuk-back-link"
   val errorMessage     = ".govuk-error-message"
 
-  def clickContinue(): Unit  = findByCss(saveAndContinue).click()
+  def clickContinue()  = findByCss(saveAndContinue).click()
 
 }

@@ -24,6 +24,6 @@ object SearchRegisterPage extends PageObject {
   val continue         ="#submit"
   val element          =".search-bar-active"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 
 }

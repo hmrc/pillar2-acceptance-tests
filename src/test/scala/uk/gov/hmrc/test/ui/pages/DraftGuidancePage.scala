@@ -24,6 +24,6 @@ object DraftGuidancePage extends PageObject {
   val continue         = "#submit"
   val element          =".govuk-grid-column-two-thirds"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 
 }

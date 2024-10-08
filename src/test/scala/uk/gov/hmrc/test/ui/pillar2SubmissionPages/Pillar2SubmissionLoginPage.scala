@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.cucumber._
+import uk.gov.hmrc.test.ui.cucumber.{Find, Input, Nav, PageObject}
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Pillar2SubmissionLoginPage extends BasePage with PageObject {
@@ -131,8 +131,8 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
 
   private def findCredentialRole() = Find.findByName("credentialRole")
 
-  def clickSubmitButton(): Unit = Find.findById("submit").click()
+  def clickSubmitButton() = Find.findById("submit").click()
 
-  def clickAddDelegatedEnrolmentCTA(): Unit = Find.findByCss(addDelegatedEnrolmentCTA).click()
+  def clickAddDelegatedEnrolmentCTA() = Find.findByCss(addDelegatedEnrolmentCTA).click()
 
 }

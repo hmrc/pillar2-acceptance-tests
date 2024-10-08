@@ -30,7 +30,7 @@ object AgentRepaymentAmountPage extends PageObject {
   val continue                = ".govuk-button"
 
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 }
 
 

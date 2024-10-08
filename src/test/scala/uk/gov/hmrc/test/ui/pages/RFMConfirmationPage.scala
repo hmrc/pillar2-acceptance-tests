@@ -27,6 +27,6 @@ object RFMConfirmationPage extends PageObject {
   val header2           = "h2.govuk-heading-m"
   val printthispage     = "#print-this-page"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 }

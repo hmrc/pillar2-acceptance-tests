@@ -31,6 +31,6 @@ object NFMDetailsPage extends PageObject {
   val backLink         = ".govuk-back-link"
   val errorMessage     = ".govuk-error-message"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 
 }
