@@ -30,5 +30,5 @@ object UPEContactEmailPage extends PageObject {
   val errorLink          = "[href='#emailAddress']"
   val backLink           = ".govuk-back-link"
   val errorMessage       = "#emailAddress-error"
-  def clickContinue(): Unit    = findByCss(continue).click()
+  def clickContinue()    = findByCss(continue).click()
 }

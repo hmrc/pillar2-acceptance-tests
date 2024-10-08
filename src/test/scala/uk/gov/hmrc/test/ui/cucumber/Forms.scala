@@ -24,7 +24,7 @@ object Forms {
   val region       = "North"
   val postcode     = "NE13 2XH"
 
-  def addressNonUK(): Unit = {
+  def addressNonUK() = {
     Input.sendKeysById("addressLine1", addressLine1)
     Input.sendKeysById("addressLine2", addressLine2)
     Input.sendKeysById("addressLine3", city)
@@ -33,7 +33,7 @@ object Forms {
     Forms.countryAutoSelect("country", "France")
   }
 
-  def countryAutoSelect(id: String, countryName: String): Unit = {
+  def countryAutoSelect(id: String, countryName: String) = {
     Input.clickById(id)
     Input.sendKeysById(id, countryName)
     Input.clickById(id + "__option--0")

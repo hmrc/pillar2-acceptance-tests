@@ -28,6 +28,6 @@ object NFMTelephonePage extends PageObject {
   val errorMessage = ".govuk-error-message"
 
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 }

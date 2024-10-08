@@ -29,6 +29,6 @@ object SecondContactDetailsDisplayPage extends PageObject {
   val contactDetails = ".govuk-list"
 
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 }

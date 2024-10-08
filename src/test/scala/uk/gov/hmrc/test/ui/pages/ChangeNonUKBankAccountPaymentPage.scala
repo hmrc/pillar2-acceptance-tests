@@ -46,7 +46,7 @@ object ChangeNonUKBankAccountPaymentPage extends PageObject {
   val errorBicOrSwiftCodeMessage    = "#bic-error"
   val errorIbanMessage              = "#iban-error"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 }
 
 

@@ -29,7 +29,7 @@ object BTAPillar2IDCheckPage extends PageObject {
   val errorMessage    = ".govuk-error-message"
   val continue        = ".govuk-button"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 }
 

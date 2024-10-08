@@ -33,6 +33,6 @@ object UPEPage extends PageObject {
   val betatag          = "/html/body/header/div[2]/div/p/strong"
   val sendyourfeedback = ".govuk-heading-xl"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 
 }

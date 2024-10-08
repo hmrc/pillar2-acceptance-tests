@@ -15,6 +15,8 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
+
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMExistingMemberKBPage extends PageObject {

@@ -25,6 +25,6 @@ object ContactDetailsInputTelephonePage extends PageObject {
   val contactTelephone = "#value"
   val backLink = ".govuk-back-link"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 }

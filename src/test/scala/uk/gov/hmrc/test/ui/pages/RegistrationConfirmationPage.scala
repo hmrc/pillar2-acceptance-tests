@@ -29,6 +29,6 @@ object RegistrationConfirmationPage extends PageObject{
   val surveylink        = "a[href='/report-pillar2-top-up-taxes/under-construction']"
   val printthispage     = "#print-this-page"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue() = findByCss(continue).click()
 
 }

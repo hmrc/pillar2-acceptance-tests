@@ -19,7 +19,6 @@ package uk.gov.hmrc.test.ui.cucumber
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, WebDriverWait}
 import org.openqa.selenium.{By, WebDriver, WebElement}
 import uk.gov.hmrc.test.ui.pages.BasePage
-
 import java.time.Duration
 
 object Wait extends BasePage {

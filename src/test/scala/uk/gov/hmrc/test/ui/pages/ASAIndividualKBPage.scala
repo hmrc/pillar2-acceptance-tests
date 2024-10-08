@@ -26,7 +26,7 @@ object ASAIndividualKBPage extends PageObject {
   val startAgain        = ".govuk-button"
   val backLink        = ".govuk-back-link"
 
-  def clickStartAgain(): Unit = findByCss(startAgain).click()
+  def clickStartAgain() = findByCss(startAgain).click()
 
 
 }

@@ -15,7 +15,10 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
+
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
 object RegistrationProcessingPage extends PageObject{
   val url: String       = s"$rootUrl"+"review-submit/processing-registration"

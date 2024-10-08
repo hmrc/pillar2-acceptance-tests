@@ -28,5 +28,5 @@ object ManageAccountPeriodPage extends PageObject {
   val caption            = ".govuk-caption-l"
   val continue           = ".govuk-button"
 
-  def clickContinue(): Unit    = findByCss(continue).click()
+  def clickContinue()    = findByCss(continue).click()
 }

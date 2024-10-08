@@ -39,6 +39,6 @@ object ChangeUKBankAccountPaymentPage extends PageObject {
   val errorUKBankNameLink           = "[href='#bankName']"
   val errorUKBankNameMessage        = "#bankName-error"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 }
 

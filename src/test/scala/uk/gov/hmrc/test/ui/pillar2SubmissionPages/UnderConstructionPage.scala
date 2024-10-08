@@ -23,6 +23,6 @@ object UnderConstructionPage extends PageObject {
   val url: String      = s"$p2SubRootUrl"+"under-construction"
   val continue         = "#submit"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue()  = findByCss(continue).click()
 
 }
