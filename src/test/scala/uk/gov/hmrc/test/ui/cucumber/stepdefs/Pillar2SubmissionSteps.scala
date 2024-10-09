@@ -19,6 +19,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationToPage
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
+import uk.gov.hmrc.test.ui.pages.TaskListPage
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
 class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
@@ -86,5 +87,12 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
     }
     P2SubBtnStartPage.clickContinue()
   }
+
+  And("""^I should see account period summary$""") { () =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForElementToPresentByCssSelector(P2BTNReturnSubmissionKBPage.summaryList)
+    assert(driver.findElement(By.cssSelector(P2BTNReturnSubmissionKBPage.summaryList)).isDisplayed)
+  }
+
 }
 
