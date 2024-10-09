@@ -19,14 +19,17 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubAgentAffinityKBPage extends PageObject {
-  val url: String                 = s"$p2SubRootUrl"
+object P2SubAccountsSummaryPage extends PageObject {
+  val url: String        = s"$p2SubRootUrl"+"manage-account/account-details/summary"
 
-  val header: String  = "h1.govuk-heading-l"
-  val startAgain        = ".govuk-button"
-  val backLink        = ".govuk-back-link"
+  val caption            = ".govuk-caption-l"
+  val continue           = ".govuk-button"
+  val header: String     = "h1.govuk-heading-l"
+  val keyList            = ".govuk-summary-list__key"
+  val valueList          = ".govuk-summary-list__value"
+  val actionsList        = ".govuk-summary-list__actions"
+  val rowNumber          = "govuk-summary-list__row"
 
-  def clickStartAgain() = findByCss(startAgain).click()
-
+  def clickContinue()    = findByCss(continue).click()
 
 }

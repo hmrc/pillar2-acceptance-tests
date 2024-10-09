@@ -21,7 +21,7 @@ import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.{AccountsSummaryPage,P2SubBtnAccountingPage, P2SubBtnAnnualRevenuePage, P2SubBtnDomesticOrMnePage, P2SubBtnFutureAnnualRevenuePage, P2SubBtnStartPage, P2UkTaxReturnPage}
+import uk.gov.hmrc.test.ui.pages.{AccountsSummaryPage, P2SubAccountsSummaryPage}
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
 trait Pillar2SubmissionPage
@@ -44,8 +44,12 @@ trait Pillar2SubmissionPage
       case "BTN Annual Revenue Page"               => P2SubBtnAnnualRevenuePage
       case "BTN Future Annual Revenue Page"        => P2SubBtnFutureAnnualRevenuePage
       case "BTN AGD KB Page"                       => P2SubBtnAgdKBPage
-      case "accounts summary page"                 => AccountsSummaryPage
+      case "accounts summary page"                 => P2SubAccountsSummaryPage
       case "UK Tax Return Page"                    => P2UkTaxReturnPage
+      case "P2 Submission Agent affinity KB page" => P2SubAgentAffinityKBPage
+      case "P2 Submission Assistant role KB page" => P2SubAssistantRoleKBPage
+      case "P2 Submission Individual affinity KB page"=> P2SubIndividualAffinityKBPage
+      case "P2 Submission Set Up Page"            => P2SubmissionSetUpPage
     }
   }
 }

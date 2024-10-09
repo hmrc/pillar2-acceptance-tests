@@ -99,13 +99,10 @@ trait CommonFunctions
       case "NFM registration not called error page" => NFMGRSRegistrationNotCalledErrorPage
       case "accounts summary page"                => AccountsSummaryPage
       case "Assistant role KB page"               => AssistantRoleKBPage
-      case "P2 Submission Assistant role KB page" => P2SubAssistantRoleKBPage
       case "Agent affinity KB page"               => AgentAffinityKBPage
-      case "P2 Submission Agent affinity KB page" => P2SubAgentAffinityKBPage
       case "agent services account page"          => AgentServicesAccountPage
       case "Agent services account page2"         => AgentServicesAccountPage2
       case "Individual affinity KB page"          => IndividualAffinityKBPage
-      case "P2 Submission Individual affinity KB page"=> P2SubIndividualAffinityKBPage
       case "Registration return error page"       => RegistrationReturnErrorPage
       case "contact details summary page"         => ContactDetailsSummaryPage
       case "error place holder page"              => ErrorPlaceHolderPage
@@ -126,7 +123,6 @@ trait CommonFunctions
       case "Incomplete Data Submission Error Page"=> IncompleteDataSubmissionErrorPage
       case "RFM CYA Page"                         => RFMCYAPage
       case "RFM Corp Position Page"               => RFMCorpPositionPage
-      case "P2 Submission Set Up Page"            => P2SubmissionSetUpPage
       case "New NFM guidance page"                => NewNFMGuidancePage
       case "RFM registered in UK page"            => RFMRegisteredInUKPage
       case "RFM Contact Guidance page"            => RFMContactGuidancePage

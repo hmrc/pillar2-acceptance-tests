@@ -23,7 +23,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     When I click amend your group’s details link
-    Then I should be navigated to accounts summary page of Pillar2 Submission
+    Then I should be on accounts summary page
     And I click the browser back button
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     And I click the browser back button
@@ -75,7 +75,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     When I click amend your group’s details link
-    Then I should be navigated to accounts summary page of Pillar2 Submission
+    Then I should be on accounts summary page
     And I click the browser back button
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     And I click the browser back button
