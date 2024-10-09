@@ -27,5 +27,5 @@ object ContactDetailsInputNamePage extends PageObject {
   val continue           = ".govuk-button"
   val contactName        = "#value"
 
-  def clickContinue()    = findByCss(continue).click()
+  def clickContinue(): Unit    = findByCss(continue).click()
 }

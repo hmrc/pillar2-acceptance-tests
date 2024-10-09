@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._

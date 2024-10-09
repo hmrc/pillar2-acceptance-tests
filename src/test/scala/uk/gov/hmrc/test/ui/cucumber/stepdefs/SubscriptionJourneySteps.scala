@@ -20,7 +20,6 @@ import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{getAttributeOfId, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages.RegistrationProcessingPage.rootUrl
 import uk.gov.hmrc.test.ui.pages._
 
 import java.time.LocalDate

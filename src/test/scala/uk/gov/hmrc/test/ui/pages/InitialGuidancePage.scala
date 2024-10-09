@@ -27,7 +27,7 @@ object InitialGuidancePage extends PageObject {
   val continue        = ".govuk-button"
   val backLink        = ".govuk-back-link"
 
-  def clickContinue() = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 
 }

@@ -23,6 +23,6 @@ object ContactDetailsChangeTelephonePage extends PageObject {
   val url: String = s"$rootUrl" + "contact-details/change-telephone"
   val continue = "#submit"
 
-  def clickContinue() = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

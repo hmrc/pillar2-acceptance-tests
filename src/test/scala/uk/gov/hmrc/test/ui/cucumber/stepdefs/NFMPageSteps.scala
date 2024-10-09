@@ -17,10 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 
-import org.openqa.selenium.{By, WebElement}
 import org.openqa.selenium.support.ui.Select
-import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
+import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
+import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
 import uk.gov.hmrc.test.ui.pages._
 
 
