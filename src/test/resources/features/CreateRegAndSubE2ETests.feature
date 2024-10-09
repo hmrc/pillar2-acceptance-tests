@@ -563,7 +563,6 @@ Feature: User registration and subscription e2e journey
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
-
   Scenario: 8 - Create a new registration & subscription with UPE GRS flow and NFM Entity type not listed
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page
