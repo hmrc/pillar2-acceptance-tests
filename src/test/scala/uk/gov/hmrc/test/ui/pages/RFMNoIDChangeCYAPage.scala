@@ -35,6 +35,6 @@ object RFMNoIDChangeCYAPage extends PageObject{
   val changeName               = "a[href*='/change-input-name']"
   val changeAddress            = "a[href*='/change-input-address']"
 
-  def clickContinue()       = findByCss(continue).click()
+  def clickContinue(): Unit       = findByCss(continue).click()
 
 }

@@ -25,6 +25,6 @@ object RFMContactAddressPage extends PageObject {
   val country = "#countryCode"
   val backLink = ".govuk-back-link"
 
-  def clickContinue() = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

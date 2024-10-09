@@ -27,6 +27,6 @@ object DashboardPage extends PageObject {
   val userDetails        = "p.govuk-body"
   val inactiveStatus     =".govuk-notification-banner__heading"
 
-  def clickContinue()    = findByCss(continue).click()
+  def clickContinue(): Unit    = findByCss(continue).click()
 
 }

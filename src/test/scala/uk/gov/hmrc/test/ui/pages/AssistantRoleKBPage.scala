@@ -26,7 +26,7 @@ object AssistantRoleKBPage extends PageObject {
   val startAgain        = ".govuk-button"
   val backLink        = ".govuk-back-link"
 
-  def clickStartAgain() = findByCss(startAgain).click()
+  def clickStartAgain(): Unit = findByCss(startAgain).click()
 
 
 }

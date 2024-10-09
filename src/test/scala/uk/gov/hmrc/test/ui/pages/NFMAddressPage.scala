@@ -39,6 +39,6 @@ object NFMAddressPage extends PageObject {
   val countryErrorMessage = "#countryCode-error"
 
 
-  def clickContinue() = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

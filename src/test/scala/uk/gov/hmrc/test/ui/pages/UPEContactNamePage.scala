@@ -31,5 +31,5 @@ object UPEContactNamePage extends PageObject {
   val backLink           = ".govuk-back-link"
   val errorMessage       = "#value-error"
 
-  def clickContinue()    = findByCss(continue).click()
+  def clickContinue(): Unit    = findByCss(continue).click()
 }

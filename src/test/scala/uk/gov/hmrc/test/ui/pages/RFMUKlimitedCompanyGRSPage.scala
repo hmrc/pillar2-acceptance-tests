@@ -27,6 +27,6 @@ object RFMUKlimitedCompanyGRSPage extends PageObject {
   val saveAndContinue  = ".govuk-button"
   val backLink         = ".govuk-back-link"
 
-  def clickContinue()  = findByCss(saveAndContinue).click()
+  def clickContinue(): Unit  = findByCss(saveAndContinue).click()
 
 }

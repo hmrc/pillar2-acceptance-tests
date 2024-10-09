@@ -28,6 +28,6 @@ object RegistrationReturnErrorPage extends PageObject{
   val pageHeader     = "a[href='/report-pillar2-top-up-taxes']"
   val surveylink     = "a[href='/report-pillar2-top-up-taxes/under-construction']"
 
-  def clickContinue() = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

@@ -26,6 +26,6 @@ object RegistrationDuplicationKBPage extends PageObject{
   val header2           = "h2.govuk-heading-m"
   val pageHeader        = "a[href='/report-pillar2-top-up-taxes']"
 
-  def clickContinue() = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

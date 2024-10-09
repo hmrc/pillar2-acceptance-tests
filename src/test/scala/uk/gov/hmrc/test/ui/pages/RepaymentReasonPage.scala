@@ -30,6 +30,6 @@ object RepaymentReasonPage extends PageObject {
   val reasonTextField  = "#value"
   val hintText         = ".govuk-hint"
   val charLimit        = ".govuk-character-count__status"
-  def clickContinue()  = findByCss(saveAndContinue).click()
+  def clickContinue(): Unit  = findByCss(saveAndContinue).click()
 
 }
