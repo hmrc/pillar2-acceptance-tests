@@ -14,11 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubBtnFutureAnnualRevenuePage extends PageObject {
-  val url: String                 = s"$p2SubRootUrl"+"below-threshold-notification/future-annual-revenues"
+object P2SubAccountsSummaryPage extends PageObject {
+  val url: String        = s"$p2SubRootUrl"+"manage-account/account-details/summary"
+
+  val caption            = ".govuk-caption-l"
+  val continue           = ".govuk-button"
+  val header: String     = "h1.govuk-heading-l"
+  val keyList            = ".govuk-summary-list__key"
+  val valueList          = ".govuk-summary-list__value"
+  val actionsList        = ".govuk-summary-list__actions"
+  val rowNumber          = "govuk-summary-list__row"
+
+  def clickContinue()    = findByCss(continue).click()
 
 }

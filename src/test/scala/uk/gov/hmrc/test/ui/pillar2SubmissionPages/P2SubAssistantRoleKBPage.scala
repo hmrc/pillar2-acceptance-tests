@@ -14,14 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubBtnStartPage extends PageObject {
-  val url: String                 = s"$p2SubRootUrl"+"below-threshold-notification/start"
-  val continue                 = "button.govuk-button"
+object P2SubAssistantRoleKBPage extends PageObject {
+  val url: String                 = s"$p2SubRootUrl"
 
-  def clickContinue()  = findByCss(continue).click()
+  val header: String  = "h1.govuk-heading-l"
+  val startAgain        = ".govuk-button"
+  val backLink        = ".govuk-back-link"
+
+  def clickStartAgain() = findByCss(startAgain).click()
+
+
 }

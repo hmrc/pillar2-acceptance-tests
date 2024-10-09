@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubAgentAffinityKBPage extends PageObject {
+object P2SubIndividualAffinityKBPage extends PageObject {
   val url: String                 = s"$p2SubRootUrl"
 
   val header: String  = "h1.govuk-heading-l"

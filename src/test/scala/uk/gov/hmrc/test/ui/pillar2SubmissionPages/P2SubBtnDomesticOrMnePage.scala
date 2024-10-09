@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2UkTaxReturnPage extends  PageObject {
-  val url: String = s"$p2SubRootUrl"+"uk-tax-return"
+object P2SubBtnDomesticOrMnePage extends PageObject {
+  val url: String                 = s"$p2SubRootUrl"+"below-threshold-notification/domestic-or-multinational"
+
 }

@@ -10,18 +10,18 @@ Feature: Pillar2 submission set up page
   @p2zap_p2accessibility
   Scenario: 2 - User logins as organisation user and standard role
     Given Organisation Assistant User logs in to subscribe for Pillar2 Submission
-    Then I should be on P2 Submission Assistant role KB page
+    Then I should be navigated to P2 Submission Assistant role KB page of Pillar2 Submission
 
   @p2zap_p2accessibility
   Scenario: 3 - User logins as Agent
     Given Agent User logs in to subscribe for Pillar2 Submission
-    Then I should be on P2 Submission Agent affinity KB page
+    Then I should be navigated to P2 Submission Agent affinity KB page of Pillar2 Submission
     When I click sign in via agent services link
     Then I should navigate to agent services account page
 
   @p2zap_p2accessibility
   Scenario: 4 - User logins as Individual User
     Given Individual User logs in to subscribe for Pillar2 Submission
-    Then I should be on P2 Submission Individual affinity KB page
+    Then I should be navigated to P2 Submission Individual affinity KB page of Pillar2 Submission
     When I click sign in to Government Gateway with an organisation account. link
     Then I should navigate to auth-login page
