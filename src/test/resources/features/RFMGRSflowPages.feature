@@ -68,11 +68,11 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     When I provide RFM contact number as 01632960001
     And I select option No and continue to next
     When I enter Address as:
-      | KEY          | VALUE          |
+      | KEY          | VALUE              |
       | addressLine1 | Address Line 1 CYA |
-      | addressLine3 | City CYA          |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | Australia |
+      | addressLine3 | City CYA           |
+      | postalCode   | EH5 5WY            |
+      | countryCode  | Australia          |
     Then I should navigate to RFM Final Review Page
     When  I click change link for RFM Change Second Contact Preference
     And I select option Yes and continue to next
