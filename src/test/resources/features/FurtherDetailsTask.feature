@@ -47,7 +47,7 @@ Feature: Further Details Task page validation
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 30    |
-      | startDate.month | 12     |
+      | startDate.month | 12    |
       | startDate.year  | 2023  |
     Then I should see error message Start date must be on or after 31 December 2023 on the Group Accounting Period Start Date Page
     When I enter account period as:
@@ -61,11 +61,11 @@ Feature: Further Details Task page validation
     Then I should see error message End date must be after the start date on the Group Accounting Period End Date Page
     When I enter account period as:
       | KEY             | VALUE |
-      | startDate.day   | 1    |
-      | startDate.month | 15     |
+      | startDate.day   | 1     |
+      | startDate.month | 15    |
       | startDate.year  | 2024  |
       | endDate.day     | 12    |
-      | endDate.month   | 20     |
+      | endDate.month   | 20    |
       | endDate.year    | 2024  |
     Then I should see error message Start date must be a real date on the Group Accounting Period Start Date Page
     And I should see error message End date must be a real date on the Group Accounting Period End Date Page

@@ -25,9 +25,9 @@ Feature: NFM NO ID journey
     And The Heading should be What is the registered office address of Test CYA?
     And The hint text should be Enter text and then choose from the list.
     When I enter Address as:
-      | KEY          | VALUE              |
-      | addressLine1 | Address Line 1 CYA |
-      | addressLine3 | City CYA           |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1 CYA   |
+      | addressLine3 | City CYA             |
       | countryCode  | United Arab Emirates |
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
@@ -53,15 +53,15 @@ Feature: NFM NO ID journey
     And The caption must be Group details
     And The Heading should be Check your answers for filing member details
     And I should see details as below:
-      | KEY                          | VALUE              |
-      | Name                         | Test CYA           |
-      | Address                      | Address Line 1 CYA |
-      | Address                      | City CYA           |
+      | KEY                          | VALUE                |
+      | Name                         | Test CYA             |
+      | Address                      | Address Line 1 CYA   |
+      | Address                      | City CYA             |
       | Address                      | United Arab Emirates |
-      | Contact name                 | Contact CYA        |
-      | Email address                | testcya@email.com  |
-      | Can we contact by telephone? | Yes                |
-      | Telephone number             | 1234569            |
+      | Contact name                 | Contact CYA          |
+      | Email address                | testcya@email.com    |
+      | Can we contact by telephone? | Yes                  |
+      | Telephone number             | 1234569              |
     When I select back link
     Then I should navigate to input nfm telephone page
     When I click on Continue button

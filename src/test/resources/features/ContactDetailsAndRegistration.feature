@@ -11,10 +11,10 @@ Feature: Contact details for the filing member
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
       | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE & Test
     When I enter UPE Email address as test&upe@email.com
@@ -164,7 +164,7 @@ Feature: Contact details for the filing member
       | Address                         | Address Line 1           |
       | Address                         | City                     |
       | Address                         | EH5 5WY                  |
-      | Address                         | United Kingdom     |
+      | Address                         | United Kingdom           |
     When I click on change link for Contact Name
     And I enter Contact Name as Contact $ Name & Change
     Then I should navigate to Contact details Check answers page
@@ -254,11 +254,11 @@ Feature: Contact details for the filing member
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | United Arab Emirates  |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE & Test
     When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
@@ -269,11 +269,11 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     When I enter NFM name as Test
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | United Arab Emirates  |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I enter NFM Contact name as Contact NFM Test
     When I enter NFM Contact Email as testNFM@email.com
     When I select option Yes and continue to next
@@ -565,11 +565,11 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     When I enter NFM name as NFM Test KB
     When I enter Address as:
-      | KEY          | VALUE              |
-      | addressLine1 | Address Line 1 CYA |
-      | addressLine3 | City CYA           |
-      | postalCode   | EH5 5WY            |
-      | countryCode  | United Arab Emirates|
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1 CYA   |
+      | addressLine3 | City CYA             |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I click on Continue button
     When I enter NFM Contact name as Contact CYA
     When I enter NFM Contact Email as testcya@email.com

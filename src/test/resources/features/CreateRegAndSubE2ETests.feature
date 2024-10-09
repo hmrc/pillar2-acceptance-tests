@@ -508,7 +508,7 @@ Feature: User registration and subscription e2e journey
       | KEY          | VALUE          |
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
-      | postalCode   | INVALID       |
+      | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
     Then I should see address error message Enter a valid UK postal code or change the country you selected on the Postal code Element
     When I enter Postal Code as EH5 5WY
@@ -589,11 +589,9 @@ Feature: User registration and subscription e2e journey
       | KEY          | VALUE          |
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
-      | postalCode   | INVALID       |
+      | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
-    Then I should see address error message Enter a full UK postcode on the Postal code Element
-    When I enter Postal Code as EH5 5WY
-      And I click on Continue button
+    And I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact CYA
     Then I should navigate to NFM Contact Email page

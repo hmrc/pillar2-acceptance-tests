@@ -20,11 +20,11 @@ Feature: UPE NO ID journey
     And The Heading should be What is the registered office address of Test UPE?
     And The hint text should be Enter text and then choose from the list.
     When I enter Address as:
-      | KEY          | VALUE              |
-      | addressLine1 | Address Line 1 UPE |
-      | addressLine3 | City UPE           |
-      | postalCode   | Invalid            |
-      | countryCode  | United Arab Emirates  |
+      | KEY          | VALUE                  |
+      | addressLine1 | Address Line 1 UPE     |
+      | addressLine3 | City UPE               |
+      | postalCode   | Invalid                |
+      | countryCode  | United Arab Emirates   |
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And The caption must be Group details
@@ -125,10 +125,10 @@ Feature: UPE NO ID journey
     And I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
     When I enter Address as:
-      | KEY          | VALUE               |
-      | addressLine1 | Test Address Line 1 |
-      | addressLine3 | Test City           |
-      | postalCode   | E H 5 5 W Y         |
+      | KEY          | VALUE                |
+      | addressLine1 | Test Address Line 1  |
+      | addressLine3 | Test City            |
+      | postalCode   | E H 5 5 W Y          |
       | countryCode  | United Arab Emirates |
     When I click on Continue button
     When I enter UPE Person/Team name as UPE Contact Name
@@ -262,10 +262,10 @@ Feature: UPE NO ID journey
     When I select option No and continue to next
     And I enter UPE name as Test UPE
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
       | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE Contact Name
     When I enter UPE Email address as testteam@email.com
