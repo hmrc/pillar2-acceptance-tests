@@ -49,6 +49,7 @@ trait Pillar2SubmissionPage
       case "P2 Submission Assistant role KB page" => P2SubAssistantRoleKBPage
       case "P2 Submission Individual affinity KB page"=> P2SubIndividualAffinityKBPage
       case "P2 Submission Set Up Page"            => P2SubmissionSetUpPage
+      case "BTN Return Submission KB Page"         => P2BTNReturnSubmissionKBPage
     }
   }
 }
