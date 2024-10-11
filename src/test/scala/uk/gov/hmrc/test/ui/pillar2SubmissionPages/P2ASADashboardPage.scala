@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.pillar2SubmissionPages.ASAPillar2InputPage.p2SubRootUrl
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags="@p2tests and not @ignore"
-)
-class Runner {}
+object P2ASADashboardPage extends PageObject {
+  val url: String      = s"$p2SubRootUrl"+"pillar2-top-up-tax-home"
 
+
+  val ASALink   ="a[href*='/asa/home']"
+  val inactiveStatus   =".govuk-notification-banner__heading"
+
+
+}

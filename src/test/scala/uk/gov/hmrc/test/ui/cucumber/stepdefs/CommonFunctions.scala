@@ -154,10 +154,10 @@ trait CommonFunctions
       case "ASA No record Match Error Page"       => ASANoMatchErrorPage
       case "ASA Confirmation Page"                => ASAConfirmationPage
       case "ASA Dashboard page"                   => ASADashboardPage
-      case  "ASA Home Page"                       => ASAHomePage
-      case  "RFM No Return Back Error Page"       => RFMNoReturnBackErrorPage
-      case  "ASA Not Authorised page"             => ASANotAuthorisedPage
-      case  "RFM Confirmation Page"               => RFMConfirmationPage
+      case "ASA Home Page"                        => ASAHomePage
+      case "RFM No Return Back Error Page"        => RFMNoReturnBackErrorPage
+      case "ASA Not Authorised page"              => ASANotAuthorisedPage
+      case "RFM Confirmation Page"                => RFMConfirmationPage
       case "Amend API error Page for RFM"         => AmendAPIerrorPage_RFM
       case "ASA Individual KB Page"               => ASAIndividualKBPage
       case "ASA Organisation KB Page"             => ASAOrganisationKBPage
