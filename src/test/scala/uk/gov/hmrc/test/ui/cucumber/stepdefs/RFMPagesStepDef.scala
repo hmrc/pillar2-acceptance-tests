@@ -229,10 +229,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
         Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
-
-
-
-
     }
   }
 

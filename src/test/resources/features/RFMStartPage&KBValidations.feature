@@ -84,7 +84,7 @@ Feature: RFM Start page
     When I click the browser back button
     And I click Sign out link
 
-  @batch2 @tests1
+  @batch2
   Scenario: 6 - Verify RFM start page and error validations on Enter pillar2 ID and Registration date page
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
