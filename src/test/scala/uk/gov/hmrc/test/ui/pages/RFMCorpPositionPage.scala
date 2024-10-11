@@ -35,6 +35,6 @@ object RFMCorpPositionPage extends PageObject {
   val backLink              = ".govuk-back-link"
   val errorMessage          = ".govuk-error-message"
 
-  def clickContinue()       = findByCss(continue).click()
+  def clickContinue(): Unit       = findByCss(continue).click()
 
 }

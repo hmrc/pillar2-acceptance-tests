@@ -30,6 +30,6 @@ object AgentAccountSummaryPage extends PageObject {
   val actionsList        = ".govuk-summary-list__actions"
   val rowNumber          = "govuk-summary-list__row"
 
-  def clickContinue()    = findByCss(continue).click()
+  def clickContinue(): Unit    = findByCss(continue).click()
 
 }

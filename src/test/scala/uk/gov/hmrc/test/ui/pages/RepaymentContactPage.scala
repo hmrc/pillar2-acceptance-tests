@@ -29,7 +29,7 @@ object RepaymentContactPage extends PageObject {
   val contactErrorMessage     = "#contactName-error"
   val continue                = ".govuk-button"
 
-  def clickContinue()  = findByCss(continue).click()
+  def clickContinue(): Unit  = findByCss(continue).click()
 }
 
 

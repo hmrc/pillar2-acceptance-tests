@@ -38,6 +38,6 @@ object RFMNewNFMContactAddressInputPage extends PageObject {
   val postcodeErrorMessage = "#postalCode-error"
   val countryErrorMessage = "#countryCode-error"
 
-  def clickContinue() = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }
