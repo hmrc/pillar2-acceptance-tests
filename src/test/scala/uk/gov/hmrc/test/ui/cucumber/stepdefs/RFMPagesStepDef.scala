@@ -230,6 +230,9 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
         Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
 
+
+
+
     }
   }
 

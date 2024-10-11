@@ -84,7 +84,7 @@ Feature: RFM Start page
     When I click the browser back button
     And I click Sign out link
 
-  @batch2
+  @batch2 @tests1
   Scenario: 6 - Verify RFM start page and error validations on Enter pillar2 ID and Registration date page
     Given I clear the cache
     Given Organisation User logs in as upe for Pillar2
@@ -178,7 +178,7 @@ Feature: RFM Start page
     When I refresh the page
     When Registration Day is entered as 10
     When Registration Month is entered as 10
-    And Registration Year is entered as 2024
+    And Registration Year is entered as 2025
     And I click on Continue button
     Then I should see an error message Registration date must be in the past on the RFM Registration Date Page
     When I refresh the page
