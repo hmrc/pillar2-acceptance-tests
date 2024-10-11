@@ -178,7 +178,7 @@ Feature: RFM Start page
     When I refresh the page
     When Registration Day is entered as 10
     When Registration Month is entered as 10
-    And Registration Year is entered as 2024
+    And Registration Year is entered as 2025
     And I click on Continue button
     Then I should see an error message Registration date must be in the past on the RFM Registration Date Page
     When I refresh the page
