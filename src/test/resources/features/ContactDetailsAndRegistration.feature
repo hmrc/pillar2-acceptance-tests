@@ -4,18 +4,18 @@ Feature: Contact details for the filing member
   I want to enter contact details and navigate to dashboard page
 
   @batch1
-  Scenario: 1 - Create a new subscription with UPE GRS Flow and NFM No Id flow to validate Contact Details
+  Scenario: 1 - Create a new subscription with UPE NoID Flow and NFM No Id flow to validate Contact Details
     Given Organisation User logs in as upe with credId ContactDetails for Pillar2
     Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE & Test
     When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
@@ -200,8 +200,7 @@ Feature: Contact details for the filing member
       | Name                                          | Test                           |
       | Address                                       | Address Line 1                 |
       | Address                                       | City                           |
-      | Address                                       | EH5 5WY                        |
-      | Address                                       | United Kingdom                 |
+      | Address                                       | United Arab Emirates           |
       | Contact name                                  | UPE & Test                     |
       | Email address                                 | test&upe@email.com             |
       | Can we contact by telephone?                  | Yes                            |
@@ -255,11 +254,11 @@ Feature: Contact details for the filing member
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE & Test
     When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
@@ -270,11 +269,11 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     When I enter NFM name as Test
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I enter NFM Contact name as Contact NFM Test
     When I enter NFM Contact Email as testNFM@email.com
     When I select option Yes and continue to next
@@ -566,11 +565,11 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     When I enter NFM name as NFM Test KB
     When I enter Address as:
-      | KEY          | VALUE              |
-      | addressLine1 | Address Line 1 CYA |
-      | addressLine3 | City CYA           |
-      | postalCode   | EH5 5WY            |
-      | countryCode  | United Kingdom     |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1 CYA   |
+      | addressLine3 | City CYA             |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I click on Continue button
     When I enter NFM Contact name as Contact CYA
     When I enter NFM Contact Email as testcya@email.com
