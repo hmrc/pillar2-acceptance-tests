@@ -245,6 +245,16 @@ Feature: Dashboard Page
     Then I should be on Transaction History Error Page
     When I select back link
     Then I should be on Dashboard page
+    And I click Sign out link
+    Then Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR6666666666 for Pillar2 service
+    And I should be on Dashboard page
+    When I click View your transaction history link
+    Then I should be on Transaction History Page
+    And I click Sign out link
+    Then Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5555551111 for Pillar2 service
+    And I should be on Dashboard page
+    When I click View your transaction history link
+    Then I should be on Transaction History Page
 
   @batch2
   Scenario Outline: 7 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages
