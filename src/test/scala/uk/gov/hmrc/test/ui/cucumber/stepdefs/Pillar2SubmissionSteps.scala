@@ -17,9 +17,9 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationToPage
-import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.TaskListPage
+import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, TaskListPage}
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
 class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
@@ -49,6 +49,7 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
     Wait.waitForElementToClicktagName("h1")
     assertNavigationToPage(p2SubPageMatch(page))
   }
+
 
   Given("""^(.*) logs in to register for Pillar2 Submission Agent service$""") { name: String =>
     name match {
@@ -92,6 +93,13 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
     Wait.waitForTagNameToBeRefreshed("h1")
     Wait.waitForElementToPresentByCssSelector(P2BTNReturnSubmissionKBPage.summaryList)
     assert(driver.findElement(By.cssSelector(P2BTNReturnSubmissionKBPage.summaryList)).isDisplayed)
+  }
+
+  And("""^I navigate back to BTN Return Submission KB Page$""") { () =>
+    Nav.browserBack()
+    for (i <- 1 to 3) {
+      clickByCss(P2SubBtnAgdKBPage.backLink)
+    }
   }
 
 }
