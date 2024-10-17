@@ -29,6 +29,6 @@ object RepaymentMethodPage extends PageObject {
   val errorLink        = "[href*='#value_0']"
   val textField        = "#value"
 
-  def clickContinue()  = findByCss(saveAndContinue).click()
+  def clickContinue(): Unit  = findByCss(saveAndContinue).click()
 
 }

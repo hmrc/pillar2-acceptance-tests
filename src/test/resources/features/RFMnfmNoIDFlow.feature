@@ -45,12 +45,11 @@ Feature: RFM CYA - NFM No ID flow
     When I refresh the page
     When I provide RFM New NFM Name as Test CYA
     Then I should navigate to RFM New NFM Contact Address Page
-    And I enter Country as United Kingdom
+    And I enter Country as United Arab Emirates
     And I click on Country selected
     And I click on Continue button
     Then I should see address error message Enter the first line of the address on the Address Line Element
     Then I should see address error message Enter the town or city on the City Element
-    Then I should see address error message Enter a valid UK postcode or change the country you selected on the Postal code Element
     When I refresh the page
     And I enter Address Line 1 as enter long first line of address with more than 35 characters
     And I enter Address Line 2 as enter long second line of address with more than 35 characters

@@ -18,10 +18,11 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getAttributeOfId, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
+import java.time.LocalDate
 
 class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
 
@@ -229,8 +230,14 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
         Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
-
     }
+  }
+
+  When("""I enter future date""") { () =>
+    val futureDate: LocalDate = LocalDate.now().plusDays(1)
+    Input.sendKeysById(RFMRegistrationDatePage.regDay, futureDate.getDayOfMonth.toString)
+    Input.sendKeysById(RFMRegistrationDatePage.regMonth, futureDate.getMonthValue.toString)
+    Input.sendKeysById(RFMRegistrationDatePage.regYear, futureDate.getYear.toString)
   }
 
   When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) with rfm URL to Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String) =>

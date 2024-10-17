@@ -11,11 +11,11 @@ Feature: Create a new registration and subscription
     When I select option No and continue to next
     And I enter UPE name as XMPLR0009999999
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE Contact Name
     When I enter UPE Email address as testteam@email.com
     When I select option No and continue to next
@@ -126,11 +126,11 @@ Feature: Create a new registration and subscription
     Then I should navigate to input-upe-name page
     And I enter UPE name as regNoIDInvalidRequest
     When I enter Address as:
-      | KEY          | VALUE          |
-      | addressLine1 | Address Line 1 |
-      | addressLine3 | City           |
-      | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE Contact Name
     When I enter UPE Email address as testteam@email.com
     When I select option No and continue to next
