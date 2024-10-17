@@ -22,5 +22,4 @@ object P2HomePage extends PageObject {
   val url: String       = s"$p2SubRootUrl"
   val ASALink           ="a[href*='/asa/home']"
   val inactiveStatus    =".govuk-notification-banner__heading"
-
 }
