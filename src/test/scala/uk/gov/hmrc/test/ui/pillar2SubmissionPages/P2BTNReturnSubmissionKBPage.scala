@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubBtnAgdKBPage extends PageObject {
-  val url: String       = s"$p2SubRootUrl"+"below-threshold-notification/amend-group-details"
-  val backLink          = ".govuk-back-link"
+object P2BTNReturnSubmissionKBPage extends  PageObject {
+  val url: String    = s"$p2SubRootUrl"+"below-threshold-notification/return-submitted"
+  val summaryList    = ".govuk-summary-list";
 }

@@ -29,26 +29,30 @@ trait Pillar2SubmissionPage
   def p2SubPageMatch(page: String): PageObject = {
     page match {
 
-      case "Under Construction Page"               => UnderConstructionPage
-      case "ASA Pillar2 Input Page"                => ASAPillar2InputPage
-      case "ASA No record Match Error Page"        => ASANoMatchErrorPage
-      case "ASA Confirmation Page"                 => ASAConfirmationPage
-      case "ASA Home Page"                         => ASAHomePage
-      case "ASA Not Authorised page"               => ASANotAuthorisedPage
-      case "ASA Individual KB Page"                => ASAIndividualKBPage
-      case "ASA Organisation KB Page"              => ASAOrganisationKBPage
-      case "BTN Start Page"                        => P2SubBtnStartPage
-      case "BTN Accounting Period Page"            => P2SubBtnAccountingPage
-      case "BTN Domestic or MNE Page"              => P2SubBtnDomesticOrMnePage
-      case "BTN Annual Revenue Page"               => P2SubBtnAnnualRevenuePage
-      case "BTN Future Annual Revenue Page"        => P2SubBtnFutureAnnualRevenuePage
-      case "BTN AGD KB Page"                       => P2SubBtnAgdKBPage
-      case "accounts summary page"                 => P2SubAccountsSummaryPage
-      case "UK Tax Return Page"                    => P2UkTaxReturnPage
-      case "P2 Submission Agent affinity KB page" => P2SubAgentAffinityKBPage
-      case "P2 Submission Assistant role KB page" => P2SubAssistantRoleKBPage
-      case "P2 Submission Individual affinity KB page"=> P2SubIndividualAffinityKBPage
-      case "P2 Submission Set Up Page"            => P2SubmissionSetUpPage
+      case "Under Construction Page"                   => UnderConstructionPage
+      case "ASA Pillar2 Input Page"                    => ASAPillar2InputPage
+      case "ASA No record Match Error Page"            => ASANoMatchErrorPage
+      case "ASA Confirmation Page"                     => ASAConfirmationPage
+      case "ASA Home Page"                             => ASAHomePage
+      case "ASA Not Authorised page"                   => ASANotAuthorisedPage
+      case "ASA Individual KB Page"                    => ASAIndividualKBPage
+      case "ASA Organisation KB Page"                  => ASAOrganisationKBPage
+      case "BTN Start Page"                            => P2SubBtnStartPage
+      case "BTN Accounting Period Page"                => P2SubBtnAccountingPage
+      case "BTN Domestic or MNE Page"                  => P2SubBtnDomesticOrMnePage
+      case "BTN Annual Revenue Page"                   => P2SubBtnAnnualRevenuePage
+      case "BTN Future Annual Revenue Page"            => P2SubBtnFutureAnnualRevenuePage
+      case "BTN AGD KB Page"                           => P2SubBtnAgdKBPage
+      case "accounts summary page"                     => P2SubAccountsSummaryPage
+      case "UK Tax Return Page"                        => P2UkTaxReturnPage
+      case "P2 Submission Agent affinity KB page"      => P2SubAgentAffinityKBPage
+      case "P2 Submission Assistant role KB page"      => P2SubAssistantRoleKBPage
+      case "P2 Submission Individual affinity KB page" => P2SubIndividualAffinityKBPage
+      case "P2 Submission Set Up Page"                 => P2SubmissionSetUpPage
+      case "BTN Return Submission KB Page"             => P2BTNReturnSubmissionKBPage
+      case "P2 ASA Dashboard page"                     => P2ASADashboardPage
+      case "P2 ASA Home Page"                          => P2ASAHomePage
+      case "P2 Home page"                              => P2HomePage
     }
   }
 }
