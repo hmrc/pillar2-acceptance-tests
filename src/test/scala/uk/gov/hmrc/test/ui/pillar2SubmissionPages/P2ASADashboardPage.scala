@@ -20,11 +20,8 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages.ASAPillar2InputPage.p2SubRootUrl
 
 object P2ASADashboardPage extends PageObject {
-  val url: String      = s"$p2SubRootUrl"+"pillar2-top-up-tax-home"
-
-
-  val ASALink   ="a[href*='/asa/home']"
-  val inactiveStatus   =".govuk-notification-banner__heading"
-
+  val url: String       = s"$p2SubRootUrl" + "pillar2-top-up-tax-home"
+  val ASALink           = "a[href*='/asa/home']"
+  val inactiveStatus    = ".govuk-notification-banner__heading"
 
 }
