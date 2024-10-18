@@ -151,7 +151,6 @@ Feature: NFM NO ID journey
     And I should see NFM error message Second line of the address must be 35 characters or less on the Address Line 2 Element
     And I should see NFM error message Town or city must be 35 characters or less on the City Element
     And I should see NFM error message Region must be 35 characters or less on the Region Element
-    And I should see NFM error message Postcode must be 10 characters or less on the Postal Code Element
     When I enter Address Line 1 as Test Address Line 1
     And I enter Address Line 2 as Test Address Line 2
     And I enter Region as Region

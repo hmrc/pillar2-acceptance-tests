@@ -94,16 +94,6 @@ class NFMPageSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.regionErrorMessage)
         getTextOf(By cssSelector (NFMAddressPage.regionErrorMessage)) should include(error)
 
-      case "Postal Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.postcodeErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.postcodeErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.postcodeErrorMessage)
-        getTextOf(By cssSelector (NFMAddressPage.postcodeErrorMessage)) should include(error)
-
       case "Country" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)

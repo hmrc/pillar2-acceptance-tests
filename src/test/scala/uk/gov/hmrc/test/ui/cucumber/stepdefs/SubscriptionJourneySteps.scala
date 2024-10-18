@@ -132,16 +132,6 @@ class SubscriptionJourneySteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.regionErrorMessage)
         getTextOf(By cssSelector (ContactAddressInputPage.regionErrorMessage)) should include(error)
 
-      case "Postal Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.postcodeErrorLink)
-        getTextOf(By cssSelector (ContactAddressInputPage.postcodeErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.postcodeErrorMessage)
-        getTextOf(By cssSelector (ContactAddressInputPage.postcodeErrorMessage)) should include(error)
-
       case "Country" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(ContactAddressInputPage.errorSummary)

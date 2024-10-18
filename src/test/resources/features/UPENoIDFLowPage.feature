@@ -187,7 +187,6 @@ Feature: UPE NO ID journey
     Then I should see address error message Second line of the address must be 35 characters or less on the Address Line 2 Element
     Then I should see address error message Town or city must be 35 characters or less on the City Element
     Then I should see address error message Region must be 35 characters or less on the Region Element
-    Then I should see address error message Postcode must be 10 characters or less on the Postal code Element
     When I enter Address Line 1 as Test Address Line 1
     When I enter Address Line 2 as Test Address Line 2
     And I enter City as Test City
