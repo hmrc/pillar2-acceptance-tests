@@ -18,10 +18,9 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-
 object ASAHomePage extends PageObject {
-  val url: String      = s"$rootUrl" + "asa/home"
-  val status          = ".hmrc-status-tag"
-  val pageHeader      = "a[href='/report-pillar2-top-up-taxes']"
+  val url: String = s"$rootUrl" + "asa/home"
+  val status = ".hmrc-status-tag"
+  val pageHeader = "a[href='/report-pillar2-top-up-taxes']"
 
 }

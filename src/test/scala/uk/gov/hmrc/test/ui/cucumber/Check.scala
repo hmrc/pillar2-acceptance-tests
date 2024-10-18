@@ -24,18 +24,24 @@ object Check extends BasePage {
 
   val url = ""
 
-  def checkH1(h1: String): Assertion = Find.findByTagName("h1").getText should include(h1)
+  def checkH1(h1: String): Assertion =
+    Find.findByTagName("h1").getText should include(h1)
 
   def checkID(id: String): Boolean = Find.findById(id).isDisplayed
 
-  def checkUrlContains(url: String): Assertion = Find.findURL() should include(url)
+  def checkUrlContains(url: String): Assertion =
+    Find.findURL() should include(url)
 
-  def checkIDContains(id: String, text: String): Assertion = Find.findById(id).getText should include(text)
+  def checkIDContains(id: String, text: String): Assertion =
+    Find.findById(id).getText should include(text)
 
-  def checkBodyText(t: String): Assertion = Find.findByTagName("body").getText should include(t)
+  def checkBodyText(t: String): Assertion =
+    Find.findByTagName("body").getText should include(t)
 
   def checkSubHeading(p: String): Assertion =
-    Find.findByCss("#main-content > div > div > p:nth-child(2)").getText should include(p)
+    Find
+      .findByCss("#main-content > div > div > p:nth-child(2)")
+      .getText should include(p)
 
   def assertNavigationToPage(page: PageObject): Boolean =
     Wait.waitForUrlToBeVisible(page.url)
@@ -51,17 +57,19 @@ object Check extends BasePage {
   def checkAnswerSelection(option: String): Boolean = {
     option match {
       case "Yes" => Find.findByCss("#value_0").isSelected
-      case "No" => Find.findByCss("#value_1").isSelected
+      case "No"  => Find.findByCss("#value_1").isSelected
     }
   }
 
   def checkOptionSelected(option: String): Boolean = {
     option match {
       case "UK limited company" => Find.findByCss("#value_0").isSelected
-      case "Limited liability partnership" => Find.findByCss("#value_1").isSelected
-      case "In the UK and outside the UK" => Find.findByCss("#value_0").isSelected
+      case "Limited liability partnership" =>
+        Find.findByCss("#value_1").isSelected
+      case "In the UK and outside the UK" =>
+        Find.findByCss("#value_0").isSelected
       case "Only in the UK" => Find.findByCss("#value_1").isSelected
-      case "UPE" => Find.findByCss("#value_0").isSelected
+      case "UPE"            => Find.findByCss("#value_0").isSelected
     }
   }
 }

@@ -20,10 +20,11 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object CorporationTaxUTRPage extends PageObject {
-  val url: String      ="https://www.tax.service.gov.uk/ask-for-copy-of-your-corporation-tax-utr"
-  val continue         ="#submit"
-  val element          =".start-now"
+  val url: String =
+    "https://www.tax.service.gov.uk/ask-for-copy-of-your-corporation-tax-utr"
+  val continue = "#submit"
+  val element = ".start-now"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

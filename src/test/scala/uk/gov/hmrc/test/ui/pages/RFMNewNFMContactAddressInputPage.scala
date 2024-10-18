@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMNewNFMContactAddressInputPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/business-matching/filing-member/no-id/input-address"
+  val url: String =
+    s"$rootUrl" + "replace-filing-member/business-matching/filing-member/no-id/input-address"
   val continue = ".govuk-button"
   val errorSummary = ".govuk-error-summary__list"
   val addressLine1ErrorLink = "[href='#addressLine1']"

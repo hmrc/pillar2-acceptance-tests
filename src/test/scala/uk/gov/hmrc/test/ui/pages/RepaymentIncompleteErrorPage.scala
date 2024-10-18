@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object RepaymentIncompleteErrorPage extends PageObject{
+object RepaymentIncompleteErrorPage extends PageObject {
 
-  val url: String       = s"$rootUrl" + "repayment/error/incomplete-refund-request"
+  val url: String = s"$rootUrl" + "repayment/error/incomplete-refund-request"
 
 }

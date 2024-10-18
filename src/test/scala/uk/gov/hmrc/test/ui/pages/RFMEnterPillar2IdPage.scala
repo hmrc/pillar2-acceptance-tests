@@ -19,15 +19,16 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMEnterPillar2IdPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
+  val url: String =
+    s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
 
-  val caption               = ".govuk-caption-l"
-  val continue              = ".govuk-button"
-  val header: String        = "h1.govuk-label-wrapper"
-  val hintText              = "value-hint"
-  val pillar2topuptaxid     = "#value"
-  val errorMessage          = ".govuk-error-message"
-  val errorLink             = "[href*='#value']"
-  val errorSummary          = ".govuk-error-summary__list"
+  val caption = ".govuk-caption-l"
+  val continue = ".govuk-button"
+  val header: String = "h1.govuk-label-wrapper"
+  val hintText = "value-hint"
+  val pillar2topuptaxid = "#value"
+  val errorMessage = ".govuk-error-message"
+  val errorLink = "[href*='#value']"
+  val errorSummary = ".govuk-error-summary__list"
 
 }

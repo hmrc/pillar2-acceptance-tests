@@ -28,7 +28,6 @@ object SecondContactDetailsDisplayPage extends PageObject {
   val errorMessage = ".govuk-error-message"
   val contactDetails = ".govuk-list"
 
-
   def clickContinue(): Unit = findByCss(continue).click()
 
 }

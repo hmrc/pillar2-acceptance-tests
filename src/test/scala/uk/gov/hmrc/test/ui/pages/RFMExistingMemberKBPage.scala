@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMExistingMemberKBPage extends PageObject {
-  val url: String     = s"$rootUrl"+"replace-filing-member/error/existing-member"
+  val url: String = s"$rootUrl" + "replace-filing-member/error/existing-member"
 
-  val header: String  = "h1.govuk-heading-l"
-  val backLink        = ".govuk-back-link"
+  val header: String = "h1.govuk-heading-l"
+  val backLink = ".govuk-back-link"
 
 }

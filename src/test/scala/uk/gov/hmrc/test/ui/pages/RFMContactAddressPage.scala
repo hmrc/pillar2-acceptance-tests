@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMContactAddressPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/contact-details/address/input"
+  val url: String =
+    s"$rootUrl" + "replace-filing-member/contact-details/address/input"
   val continue = ".govuk-button"
   val country = "#countryCode"
   val backLink = ".govuk-back-link"

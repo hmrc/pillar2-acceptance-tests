@@ -18,11 +18,10 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-
 object ErrorPlaceHolderPage extends PageObject {
-  val url: String        = s"$rootUrl"+"error/restart-error"
-  val content            = "main#main-content"
-  val header: String     = "h1.govuk-heading-xl"
-  val backLink           = ".govuk-back-link"
-  val startOverCTA       = ".govuk-button"
+  val url: String = s"$rootUrl" + "error/restart-error"
+  val content = "main#main-content"
+  val header: String = "h1.govuk-heading-xl"
+  val backLink = ".govuk-back-link"
+  val startOverCTA = ".govuk-button"
 }

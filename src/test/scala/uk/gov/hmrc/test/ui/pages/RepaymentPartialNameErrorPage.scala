@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object RepaymentPartialNameErrorPage extends PageObject{
+object RepaymentPartialNameErrorPage extends PageObject {
 
-  val url: String       = s"$rootUrl" + "repayment/error/partial-name"
+  val url: String = s"$rootUrl" + "repayment/error/partial-name"
 
 }

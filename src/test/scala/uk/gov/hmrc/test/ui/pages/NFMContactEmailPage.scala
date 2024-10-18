@@ -20,15 +20,16 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMContactEmailPage extends PageObject {
-  val url: String = s"$rootUrl" + "business-matching/filing-member/no-id/input-email"
-  val caption          = ".govuk-caption-l"
-  val form             = ".govuk-form-group"
-  val contactEmail     = "[type='email']"
-  val continue         = ".govuk-button"
-  val errorSummary     = ".govuk-error-summary__list"
-  val errorLink        = "[href='#emailAddress']"
-  val backLink         = ".govuk-back-link"
-  val errorMessage     = ".govuk-error-message"
+  val url: String =
+    s"$rootUrl" + "business-matching/filing-member/no-id/input-email"
+  val caption = ".govuk-caption-l"
+  val form = ".govuk-form-group"
+  val contactEmail = "[type='email']"
+  val continue = ".govuk-button"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLink = "[href='#emailAddress']"
+  val backLink = ".govuk-back-link"
+  val errorMessage = ".govuk-error-message"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

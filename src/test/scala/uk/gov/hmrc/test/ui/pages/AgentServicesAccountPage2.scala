@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentServicesAccountPage2 extends PageObject {
-  val url: String     = "https://www.gov.uk/guidance/how-to-use-the-online-agent-authorisation-to-get-authorised-as-a-tax-agent"
+  val url: String =
+    "https://www.gov.uk/guidance/how-to-use-the-online-agent-authorisation-to-get-authorised-as-a-tax-agent"
 
 }
