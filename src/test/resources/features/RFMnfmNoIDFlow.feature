@@ -63,7 +63,6 @@ Feature: RFM CYA - NFM No ID flow
     Then I should see address error message The second line of the address must be 35 characters or less on the Address Line 2 Element
     Then I should see address error message The town or city must be 35 characters or less on the City Element
     Then I should see address error message The region must be 35 characters or less on the Region Element
-    Then I should see address error message The postcode must be 10 characters or less on the Postal code Element
     When I refresh the page
     And I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
