@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object MTGuidancePage extends PageObject {
-  val url: String        = s"$rootUrl"+"eligibility/kb-mne-ineligible"
-  val header: String     = "h1.govuk-heading-l"
-  val backLink           = ".govuk-back-link"
+  val url: String = s"$rootUrl" + "eligibility/kb-mne-ineligible"
+  val header: String = "h1.govuk-heading-l"
+  val backLink = ".govuk-back-link"
 
 }

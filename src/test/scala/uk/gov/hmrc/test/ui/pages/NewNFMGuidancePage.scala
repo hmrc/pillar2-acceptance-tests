@@ -20,14 +20,14 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NewNFMGuidancePage extends PageObject {
-  val url: String     = s"$rootUrl"+"replace-filing-member/business-matching/content"
+  val url: String =
+    s"$rootUrl" + "replace-filing-member/business-matching/content"
 
-  val caption         = ".govuk-caption-l"
-  val header: String  = "h1.govuk-heading-l"
-  val continue        = ".govuk-button"
-  val backLink        = ".govuk-back-link"
+  val caption = ".govuk-caption-l"
+  val header: String = "h1.govuk-heading-l"
+  val continue = ".govuk-button"
+  val backLink = ".govuk-back-link"
 
   def clickContinue(): Unit = findByCss(continue).click()
-
 
 }

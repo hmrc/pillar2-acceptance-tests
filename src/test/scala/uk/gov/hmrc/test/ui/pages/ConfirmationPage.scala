@@ -18,11 +18,10 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-
 object ConfirmationPage extends PageObject {
-  val url: String     = s"$rootUrl"+"eligibility/confirmation"
-  val insetText       =".govuk-inset-text"
-  val caption         = "Check if your group is liable"
-  val firstHeading    = ".govuk-panel +.govuk-heading-m"
-  val secondHeading   = ".govuk-body + .govuk-heading-m"
+  val url: String = s"$rootUrl" + "eligibility/confirmation"
+  val insetText = ".govuk-inset-text"
+  val caption = "Check if your group is liable"
+  val firstHeading = ".govuk-panel +.govuk-heading-m"
+  val secondHeading = ".govuk-body + .govuk-heading-m"
 }

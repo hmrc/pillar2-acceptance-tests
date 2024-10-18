@@ -20,15 +20,15 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentRepaymentMethodPage extends PageObject {
-  val url: String      = s"$rootUrl"+"repayment/method"
+  val url: String = s"$rootUrl" + "repayment/method"
 
-  val header           = ".govuk-caption-l"
-  val saveAndContinue  = ".govuk-button"
-  val backLink         = ".govuk-back-link"
-  val errorMessage     = ".govuk-error-message"
-  val errorLink        = "[href*='#value_0']"
-  val textField        = "#value"
+  val header = ".govuk-caption-l"
+  val saveAndContinue = ".govuk-button"
+  val backLink = ".govuk-back-link"
+  val errorMessage = ".govuk-error-message"
+  val errorLink = "[href*='#value_0']"
+  val textField = "#value"
 
-  def clickContinue(): Unit  = findByCss(saveAndContinue).click()
+  def clickContinue(): Unit = findByCss(saveAndContinue).click()
 
 }

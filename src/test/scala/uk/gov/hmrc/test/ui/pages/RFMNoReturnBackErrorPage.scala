@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMNoReturnBackErrorPage extends PageObject {
 
-  val url: String        = s"$rootUrl"+"replace-filing-member/error/cannot-return"
+  val url: String = s"$rootUrl" + "replace-filing-member/error/cannot-return"
 }

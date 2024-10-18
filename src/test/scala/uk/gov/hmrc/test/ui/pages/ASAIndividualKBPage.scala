@@ -20,13 +20,12 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ASAIndividualKBPage extends PageObject {
-  val url: String     = s"$rootUrl"+"asa/error/individual"
+  val url: String = s"$rootUrl" + "asa/error/individual"
 
-  val header: String  = "h1.govuk-heading-l"
-  val startAgain        = ".govuk-button"
-  val backLink        = ".govuk-back-link"
+  val header: String = "h1.govuk-heading-l"
+  val startAgain = ".govuk-button"
+  val backLink = ".govuk-back-link"
 
   def clickStartAgain(): Unit = findByCss(startAgain).click()
-
 
 }

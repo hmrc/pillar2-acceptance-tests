@@ -20,12 +20,10 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object BTARegisterGuidancePage extends PageObject {
 
-  val url: String     = s"$rootUrl" + "bta/register"
-  val header: String  = "h1.govuk-heading-l"
-  val backLink        = ".govuk-back-link"
-  val registerLink    = ".govuk-link--no-visited-state"
-  val returnToBTA     = "[href*='business-account']"
+  val url: String = s"$rootUrl" + "bta/register"
+  val header: String = "h1.govuk-heading-l"
+  val backLink = ".govuk-back-link"
+  val registerLink = ".govuk-link--no-visited-state"
+  val returnToBTA = "[href*='business-account']"
 
 }
-
-

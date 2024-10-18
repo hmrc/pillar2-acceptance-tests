@@ -20,19 +20,20 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UPEPage extends PageObject {
-  val url: String      = s"$rootUrl"+"business-matching/ultimate-parent/registered-in-uk"
+  val url: String =
+    s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
 
-  val caption          = ".govuk-caption-l"
-  val eqForm           = ".govuk-form-group"
-  val eq               = ".govuk-form-group .govuk-fieldset"
-  val continue         = "#submit"
-  val errorSummary     = ".govuk-error-summary__list"
-  val errorLink        = "[href*='#value']"
-  val backLink         = ".govuk-back-link"
-  val errorMessage     = ".govuk-error-message"
-  val betatag          = "/html/body/header/div[2]/div/p/strong"
+  val caption = ".govuk-caption-l"
+  val eqForm = ".govuk-form-group"
+  val eq = ".govuk-form-group .govuk-fieldset"
+  val continue = "#submit"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLink = "[href*='#value']"
+  val backLink = ".govuk-back-link"
+  val errorMessage = ".govuk-error-message"
+  val betatag = "/html/body/header/div[2]/div/p/strong"
   val sendyourfeedback = ".govuk-heading-xl"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

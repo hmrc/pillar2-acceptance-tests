@@ -21,32 +21,30 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ChangeNonUKBankAccountPaymentPage extends PageObject {
 
-  val url: String             = s"$rootUrl" + "repayment/change-non-uk-details"
-  val header: String          = "h1.govuk-heading-l"
-  val backLink                = ".govuk-back-link"
-  val tableCaption            = ".govuk-table__caption"
-  val warningMessage          = ".govuk-warning-text__text"
-  val tableHeader             = ".govuk-table__header"
-  val tableCell               = ".govuk-table__cell"
-  val errorMessage            = ".govuk-error-message"
-  val errorSummary            = ".govuk-error-summary__list"
-  val bankNameField           = "#bankName"
-  val accountNameField        = "#nameOnBankAccount"
-  val swiftCodeField          = "#bic"
-  val IbanField               = "#iban"
-  val continue                = ".govuk-button"
+  val url: String = s"$rootUrl" + "repayment/change-non-uk-details"
+  val header: String = "h1.govuk-heading-l"
+  val backLink = ".govuk-back-link"
+  val tableCaption = ".govuk-table__caption"
+  val warningMessage = ".govuk-warning-text__text"
+  val tableHeader = ".govuk-table__header"
+  val tableCell = ".govuk-table__cell"
+  val errorMessage = ".govuk-error-message"
+  val errorSummary = ".govuk-error-summary__list"
+  val bankNameField = "#bankName"
+  val accountNameField = "#nameOnBankAccount"
+  val swiftCodeField = "#bic"
+  val IbanField = "#iban"
+  val continue = ".govuk-button"
 
-  val errorBankNameLink       = "[href='#bankName']"
-  val errorAccountNameLink    = "[href='#nameOnBankAccount']"
-  val errorSwiftCodeLink      = "[href='#bic']"
-  val errorIbanLink           = "[href='#iban']"
+  val errorBankNameLink = "[href='#bankName']"
+  val errorAccountNameLink = "[href='#nameOnBankAccount']"
+  val errorSwiftCodeLink = "[href='#bic']"
+  val errorIbanLink = "[href='#iban']"
 
-  val errorBankNameMessage          = "#bankName-error"
-  val errorAccountNameMessage       = "#nameOnBankAccount-error"
-  val errorBicOrSwiftCodeMessage    = "#bic-error"
-  val errorIbanMessage              = "#iban-error"
+  val errorBankNameMessage = "#bankName-error"
+  val errorAccountNameMessage = "#nameOnBankAccount-error"
+  val errorBicOrSwiftCodeMessage = "#bic-error"
+  val errorIbanMessage = "#iban-error"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 }
-
-

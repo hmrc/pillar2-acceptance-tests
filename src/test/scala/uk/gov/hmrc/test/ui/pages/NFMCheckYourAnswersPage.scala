@@ -18,18 +18,18 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-
 object NFMCheckYourAnswersPage extends PageObject {
-  val url: String             = s"$rootUrl" + "business-matching/filing-member/no-id/check-answers"
-  val header: String          = "h1.govuk-heading-l"
-  val keyList                 = ".govuk-summary-list__key"
-  val valueList               = ".govuk-summary-list__value"
-  val actionsList             = ".govuk-summary-list__actions"
-  val rowNumber               = "govuk-summary-list__row"
-  val changeName              = "a[href*='/change-input-name']"
-  val changeAddress           = "a[href*='/change-input-address']"
-  val changeContactname       = "a[href*='/change-input-business-name']"
-  val changeEmailaddress      = "a[href*='/change-input-email']"
-  val changeTelephonecontact  = "a[href*='/change-telephone']"
-  val changeTelephonenumber  = "a[href*='/change-input-telephone']"
+  val url: String =
+    s"$rootUrl" + "business-matching/filing-member/no-id/check-answers"
+  val header: String = "h1.govuk-heading-l"
+  val keyList = ".govuk-summary-list__key"
+  val valueList = ".govuk-summary-list__value"
+  val actionsList = ".govuk-summary-list__actions"
+  val rowNumber = "govuk-summary-list__row"
+  val changeName = "a[href*='/change-input-name']"
+  val changeAddress = "a[href*='/change-input-address']"
+  val changeContactname = "a[href*='/change-input-business-name']"
+  val changeEmailaddress = "a[href*='/change-input-email']"
+  val changeTelephonecontact = "a[href*='/change-telephone']"
+  val changeTelephonenumber = "a[href*='/change-input-telephone']"
 }

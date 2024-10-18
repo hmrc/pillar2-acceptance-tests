@@ -25,12 +25,14 @@ object Nav extends BasePage {
   def navigateTo(url: String): Unit =
     driver.navigate.to(url)
 
-  def browserBack() : Unit = {
+  def browserBack(): Unit = {
     driver.navigate().back()
   }
 
-   def clearCollections(): Unit = {
-    navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/clear-all")
+  def clearCollections(): Unit = {
+    navigateTo(
+      "http://localhost:10050/report-pillar2-top-up-taxes/test-only/clear-all"
+    )
   }
 
   def isVisible(by: By): Boolean =

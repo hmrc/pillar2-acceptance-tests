@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object RepaymentBankDetailsErrorPage extends PageObject{
+object RepaymentBankDetailsErrorPage extends PageObject {
 
-  val url: String       = s"$rootUrl" + "repayment/error/bank-details"
+  val url: String = s"$rootUrl" + "repayment/error/bank-details"
 
 }

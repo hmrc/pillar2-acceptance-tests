@@ -20,5 +20,4 @@ import io.cucumber.scala.{EN, ScalaDsl}
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 
-
-  trait BaseStepDef extends ScalaDsl with EN with Eventually with Matchers
+trait BaseStepDef extends ScalaDsl with EN with Eventually with Matchers

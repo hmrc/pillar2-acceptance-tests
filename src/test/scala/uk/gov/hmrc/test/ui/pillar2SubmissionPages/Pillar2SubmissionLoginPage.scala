@@ -23,20 +23,24 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Pillar2SubmissionLoginPage extends BasePage with PageObject {
 
-  val url: String                          = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val submissionFrontEndUrl: String        = TestConfiguration.url("pillar2-submission-frontend")
-  val redirectUrlField: String             = "redirectionUrl"
-  val redirectionUrlField: String          = "#redirectionUrl"
-  val credIdField: String                  = "authorityId"
-  val submissionFrontEndASAUrl: String     = s"$p2SubRootUrl"+"asa/input-pillar-2-id"
-  val enrolmentKeyField: String            = "enrolment[0].name"
-  val identifierNameField: String          = "enrolment[0].taxIdentifier[0].name"
-  val identifierValueField: String         = "enrolment[0].taxIdentifier[0].value"
-  val delegatedEnrolmentKeyField: String   = "delegatedEnrolment[0].key"
-  val delegatedIdentifierNameField: String  = "delegatedEnrolment[0].taxIdentifier[0].name"
-  val delegatedIdentifierValueField: String = "delegatedEnrolment[0].taxIdentifier[0].value"
-  val delegatedAuthRuleField: String       = "delegatedEnrolment[0].delegatedAuthRule"
-  val addDelegatedEnrolmentCTA: String     = "[onclick='addDelegatedEnrolment()']"
+  val url: String = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  val submissionFrontEndUrl: String =
+    TestConfiguration.url("pillar2-submission-frontend")
+  val redirectUrlField: String = "redirectionUrl"
+  val redirectionUrlField: String = "#redirectionUrl"
+  val credIdField: String = "authorityId"
+  val submissionFrontEndASAUrl: String =
+    s"$p2SubRootUrl" + "asa/input-pillar-2-id"
+  val enrolmentKeyField: String = "enrolment[0].name"
+  val identifierNameField: String = "enrolment[0].taxIdentifier[0].name"
+  val identifierValueField: String = "enrolment[0].taxIdentifier[0].value"
+  val delegatedEnrolmentKeyField: String = "delegatedEnrolment[0].key"
+  val delegatedIdentifierNameField: String =
+    "delegatedEnrolment[0].taxIdentifier[0].name"
+  val delegatedIdentifierValueField: String =
+    "delegatedEnrolment[0].taxIdentifier[0].value"
+  val delegatedAuthRuleField: String = "delegatedEnrolment[0].delegatedAuthRule"
+  val addDelegatedEnrolmentCTA: String = "[onclick='addDelegatedEnrolment()']"
 
   def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
@@ -74,7 +78,11 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def p2SubAgentLoginWithExistingEntity(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
+  def p2SubAgentLoginWithExistingEntity(
+      enrolmentKey: String,
+      identifierName: String,
+      identifierValue: String
+  ): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(submissionFrontEndASAUrl, redirectUrlField)
     Input.sendKeysByName(enrolmentKey, enrolmentKeyField)
@@ -83,7 +91,12 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
     selectAffinityGroupAgent()
   }
 
-  def p2SubAddDelegatedEnrolment(enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String): Unit = {
+  def p2SubAddDelegatedEnrolment(
+      enrolmentkey: String,
+      identifiername: String,
+      identifiervalue: String,
+      authRule: String
+  ): Unit = {
     clickAddDelegatedEnrolmentCTA()
     Input.sendKeysByName(enrolmentkey, delegatedEnrolmentKeyField)
     Input.sendKeysByName(identifiername, delegatedIdentifierNameField)
@@ -114,7 +127,6 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-
   private def selectAffinityGroupOrg() =
     new Select(findAffinityGroup()).selectByVisibleText("Organisation")
 
@@ -133,6 +145,7 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
 
   def clickSubmitButton(): Unit = Find.findById("submit").click()
 
-  def clickAddDelegatedEnrolmentCTA(): Unit = Find.findByCss(addDelegatedEnrolmentCTA).click()
+  def clickAddDelegatedEnrolmentCTA(): Unit =
+    Find.findByCss(addDelegatedEnrolmentCTA).click()
 
 }

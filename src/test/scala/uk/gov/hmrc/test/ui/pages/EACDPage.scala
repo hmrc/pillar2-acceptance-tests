@@ -21,13 +21,11 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object EACDPage extends PageObject {
 
-  val url: String     = s"$rootUrl" + "bta/eacd"
-  val header: String  = "h1.govuk-heading-l"
-  val backLink        = ".govuk-back-link"
-  val continue           = ".govuk-button"
+  val url: String = s"$rootUrl" + "bta/eacd"
+  val header: String = "h1.govuk-heading-l"
+  val backLink = ".govuk-back-link"
+  val continue = ".govuk-button"
 
-  def clickContinue(): Unit    = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }
-
-

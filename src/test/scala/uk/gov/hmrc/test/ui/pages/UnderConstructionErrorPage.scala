@@ -20,10 +20,10 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UnderConstructionErrorPage extends PageObject {
-  val url: String      = s"$rootUrl"+"under-construction-error"
-  val continue         = "#submit"
-  val backLink         = ".govuk-back-link"
+  val url: String = s"$rootUrl" + "under-construction-error"
+  val continue = "#submit"
+  val backLink = ".govuk-back-link"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

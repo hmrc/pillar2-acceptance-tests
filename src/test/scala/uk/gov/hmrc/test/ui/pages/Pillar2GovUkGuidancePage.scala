@@ -18,8 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-
 object Pillar2GovUkGuidancePage extends PageObject {
-  val url: String     = "https://www.gov.uk/guidance/report-pillar-2-top-up-taxes"
+  val url: String = "https://www.gov.uk/guidance/report-pillar-2-top-up-taxes"
 
 }

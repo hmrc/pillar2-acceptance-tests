@@ -25,7 +25,5 @@ object RepaymentTelephonePage extends PageObject {
   val continue = "#submit"
   val telephoneNumber = "#value"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 }
-
-

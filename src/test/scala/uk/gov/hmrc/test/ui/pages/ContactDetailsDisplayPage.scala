@@ -29,7 +29,6 @@ object ContactDetailsDisplayPage extends PageObject {
   val contactDetails = ".govuk-list"
   val valueList = ".govuk-summary-list__value"
 
-
   def clickContinue(): Unit = findByCss(continue).click()
 
 }

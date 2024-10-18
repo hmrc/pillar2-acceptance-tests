@@ -16,16 +16,13 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
 import uk.gov.hmrc.test.ui.pages._
 
-
 class NFMPageSteps extends CommonFunctions {
-
 
   And("""^I select country as (.*)$""") { (country: String) =>
     country match {
@@ -36,164 +33,245 @@ class NFMPageSteps extends CommonFunctions {
         selectCountryIndia()
     }
   }
-  def selectCountryIndia(): Unit =new Select(findCountry()).selectByVisibleText("India")
+  def selectCountryIndia(): Unit =
+    new Select(findCountry()).selectByVisibleText("India")
 
-  def selectCountryUK(): Unit =new Select(findCountry()).selectByVisibleText("United Kingdom")
+  def selectCountryUK(): Unit =
+    new Select(findCountry()).selectByVisibleText("United Kingdom")
 
-  def findCountry(): WebElement =Find.findByName("countryCode")
+  def findCountry(): WebElement = Find.findByName("countryCode")
 
-  And("""^I should see NFM error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
-    page match {
-      case "Input NFM Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorSummary)
+  And("""^I should see NFM error message (.*) on the (.*) Element$""") {
+    (error: String, page: String) =>
+      page match {
+        case "Input NFM Name" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorLink)
-        getTextOf(By cssSelector (NFMNamePage.errorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorLink)
+          getTextOf(By cssSelector (NFMNamePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorMessage)
-        getTextOf(By cssSelector (NFMNamePage.errorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(NFMNamePage.errorMessage)
+          getTextOf(By cssSelector (NFMNamePage.errorMessage)) should include(
+            error
+          )
 
-      case "Address Line 1" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
+        case "Address Line 1" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.addressLine1ErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.addressLine1ErrorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.addressLine1ErrorLink
+          )
+          getTextOf(
+            By cssSelector (NFMAddressPage.addressLine1ErrorLink)
+          ) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.addressLine1ErrorMessage)
-        getTextOf(By cssSelector  (NFMAddressPage.addressLine1ErrorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.addressLine1ErrorMessage
+          )
+          getTextOf(
+            By cssSelector (NFMAddressPage.addressLine1ErrorMessage)
+          ) should include(error)
 
-      case "Address Line 2" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
+        case "Address Line 2" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.addressLine2ErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.addressLine2ErrorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.addressLine2ErrorLink
+          )
+          getTextOf(
+            By cssSelector (NFMAddressPage.addressLine2ErrorLink)
+          ) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.addressLine2ErrorMessage)
-        getTextOf(By cssSelector (NFMAddressPage.addressLine2ErrorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.addressLine2ErrorMessage
+          )
+          getTextOf(
+            By cssSelector (NFMAddressPage.addressLine2ErrorMessage)
+          ) should include(error)
 
-      case "City" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
+        case "City" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.cityErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.cityErrorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.cityErrorLink
+          )
+          getTextOf(By cssSelector (NFMAddressPage.cityErrorLink)) should be(
+            error
+          )
 
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorMessage)
-        getTextOf(By cssSelector  (NFMAddressPage.cityErrorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(
+            UPEAddressPage.cityErrorMessage
+          )
+          getTextOf(
+            By cssSelector (NFMAddressPage.cityErrorMessage)
+          ) should include(error)
 
-      case "Region" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
+        case "Region" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.regionErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.regionErrorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.regionErrorLink
+          )
+          getTextOf(By cssSelector (NFMAddressPage.regionErrorLink)) should be(
+            error
+          )
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.regionErrorMessage)
-        getTextOf(By cssSelector (NFMAddressPage.regionErrorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.regionErrorMessage
+          )
+          getTextOf(
+            By cssSelector (NFMAddressPage.regionErrorMessage)
+          ) should include(error)
 
-      case "Country" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
+        case "Country" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(NFMAddressPage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.countryErrorLink)
-        getTextOf(By cssSelector (NFMAddressPage.countryErrorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.countryErrorLink
+          )
+          getTextOf(By cssSelector (NFMAddressPage.countryErrorLink)) should be(
+            error
+          )
 
-        Wait.waitForElementToPresentByCssSelector(NFMAddressPage.countryErrorMessage)
-        getTextOf(By cssSelector  (NFMAddressPage.countryErrorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMAddressPage.countryErrorMessage
+          )
+          getTextOf(
+            By cssSelector (NFMAddressPage.countryErrorMessage)
+          ) should include(error)
 
-      case "Input NFM Contact Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.errorSummary)
+        case "Input NFM Contact Name" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(
+            NFMContactNamePage.errorSummary
+          )
 
-        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.errorLink)
-        getTextOf(By cssSelector (NFMContactNamePage.errorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMContactNamePage.errorLink
+          )
+          getTextOf(By cssSelector (NFMContactNamePage.errorLink)) should be(
+            error
+          )
 
-        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.errorMessage)
-        getTextOf(By cssSelector (NFMContactNamePage.errorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMContactNamePage.errorMessage
+          )
+          getTextOf(
+            By cssSelector (NFMContactNamePage.errorMessage)
+          ) should include(error)
 
-      case "Input NFM Contact Email" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorSummary)
+        case "Input NFM Contact Email" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(
+            NFMContactEmailPage.errorSummary
+          )
 
-        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorLink)
-        getTextOf(By cssSelector (NFMContactEmailPage.errorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMContactEmailPage.errorLink
+          )
+          getTextOf(By cssSelector (NFMContactEmailPage.errorLink)) should be(
+            error
+          )
 
-        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorMessage)
-        getTextOf(By cssSelector (NFMContactEmailPage.errorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMContactEmailPage.errorMessage
+          )
+          getTextOf(
+            By cssSelector (NFMContactEmailPage.errorMessage)
+          ) should include(error)
 
-      case "NFM registration page" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorSummary)
+        case "NFM registration page" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(
+            NFMRegistrationPage.errorSummary
+          )
 
-        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorLink)
-        getTextOf(By cssSelector (NFMRegistrationPage.errorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMRegistrationPage.errorLink
+          )
+          getTextOf(By cssSelector (NFMRegistrationPage.errorLink)) should be(
+            error
+          )
 
-        Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorMessage)
-        getTextOf(By cssSelector (NFMRegistrationPage.errorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(
+            NFMRegistrationPage.errorMessage
+          )
+          getTextOf(
+            By cssSelector (NFMRegistrationPage.errorMessage)
+          ) should include(error)
 
-      case "NFM details page" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorSummary)
+        case "NFM details page" =>
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorLink)
-        getTextOf(By cssSelector (NFMDetailsPage.errorLink)) should be(error)
+          Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorLink)
+          getTextOf(By cssSelector (NFMDetailsPage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorMessage)
-        getTextOf(By cssSelector (NFMDetailsPage.errorMessage)) should include(error)
+          Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorMessage)
+          getTextOf(
+            By cssSelector (NFMDetailsPage.errorMessage)
+          ) should include(error)
 
-    }
+      }
   }
 
   Given("""^(.*) logs in NFM name page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMName(name)
-      case _ => AuthLoginPage.loginToNFMName(name)
+      case _                   => AuthLoginPage.loginToNFMName(name)
     }
   }
 
   Given("""^(.*) logs in NFM address page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMAddress(name)
-      case _ => AuthLoginPage.loginToNFMAddress(name)
+      case _                   => AuthLoginPage.loginToNFMAddress(name)
     }
   }
 
-  Given("""^(.*) logs in NFM Contact Name page for Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMContactName(name)
-      case _ => AuthLoginPage.loginToNFMContactName(name)
-    }
+  Given("""^(.*) logs in NFM Contact Name page for Pillar2$""") {
+    name: String =>
+      name match {
+        case "Organisation User" => AuthLoginPage.loginToNFMContactName(name)
+        case _                   => AuthLoginPage.loginToNFMContactName(name)
+      }
   }
 
-  Given("""^(.*) logs in NFM Contact Email page for Pillar2$""") { name: String =>
-    name match {
-     case "Organisation User" => AuthLoginPage.loginToNFMContactEmail(name)
-     case _ => AuthLoginPage.loginToNFMContactEmail(name)
-    }
+  Given("""^(.*) logs in NFM Contact Email page for Pillar2$""") {
+    name: String =>
+      name match {
+        case "Organisation User" => AuthLoginPage.loginToNFMContactEmail(name)
+        case _                   => AuthLoginPage.loginToNFMContactEmail(name)
+      }
   }
 
   Given("""^(.*) logs in NFM Telephone page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMTelephone(name)
-      case _ => AuthLoginPage.loginToNFMTelephone(name)
+      case _                   => AuthLoginPage.loginToNFMTelephone(name)
     }
   }
 
-  Given("""^(.*) logs in Further details group status page for Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToFDGroupStatus(name)
-      case _ => AuthLoginPage.loginToFDGroupStatus(name)
-    }
+  Given("""^(.*) logs in Further details group status page for Pillar2$""") {
+    name: String =>
+      name match {
+        case "Organisation User" => AuthLoginPage.loginToFDGroupStatus(name)
+        case _                   => AuthLoginPage.loginToFDGroupStatus(name)
+      }
   }
 
-  Given("""^(.*) logs in NFM Telephone input page for Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMTelephoneInput(name)
-      case _ => AuthLoginPage.loginToNFMTelephoneInput(name)
-    }
+  Given("""^(.*) logs in NFM Telephone input page for Pillar2$""") {
+    name: String =>
+      name match {
+        case "Organisation User" => AuthLoginPage.loginToNFMTelephoneInput(name)
+        case _                   => AuthLoginPage.loginToNFMTelephoneInput(name)
+      }
   }
 
 }

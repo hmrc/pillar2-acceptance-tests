@@ -18,7 +18,10 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
+import uk.gov.hmrc.test.ui.cucumber.Check.{
+  assertNavigationToPage,
+  assertNavigationUrl
+}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.pages._
@@ -27,10 +30,10 @@ class EligibilityQuestionSteps extends CommonFunctions {
 
   And("""^I choose (.*) and continue$""") { (option: String) =>
     option match {
-      case "Yes" => Input.clickById("value_0")
-      case "No" => Input.clickById("value_1")
+      case "Yes"                 => Input.clickById("value_0")
+      case "No"                  => Input.clickById("value_1")
       case "Eligibility Yes NFM" => Input.clickById("registeringNfmGroup_0")
-      case "Eligibility No NFM" => Input.clickById("registeringNfmGroup_1")
+      case "Eligibility No NFM"  => Input.clickById("registeringNfmGroup_1")
     }
     BusinessActivityEQPage.clickContinue()
   }
@@ -42,12 +45,16 @@ class EligibilityQuestionSteps extends CommonFunctions {
 
   Then("""^The caption should be (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.caption)
-    assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).equals(caption))
+    assert(
+      getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).equals(caption)
+    )
   }
 
   Then("""^The caption is (.*)$""") { caption: String =>
     Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.caption)
-    assert(getTextOf(By.cssSelector(NFMRegistrationPage.caption)).contains(caption))
+    assert(
+      getTextOf(By.cssSelector(NFMRegistrationPage.caption)).contains(caption)
+    )
   }
 
   Then("""^I should navigate to (.*)""") { (page: String) =>
@@ -71,14 +78,20 @@ class EligibilityQuestionSteps extends CommonFunctions {
   }
   Then("""^The inset text should be (.*)$""") { insetText: String =>
     Wait.waitForElementToPresentByCssSelector(ConfirmationPage.insetText)
-    assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).equals(insetText))
+    assert(
+      getTextOf(By.cssSelector(ConfirmationPage.insetText)).equals(insetText)
+    )
   }
 
   Then("""^I should be redirect to (.*)""") { (page: String) =>
     assertNavigationUrl(pageMatch(page))
-    Wait.waitForElementToPresentByCssSelector(RegistrationProcessingPage.loadingSpinner)
+    Wait.waitForElementToPresentByCssSelector(
+      RegistrationProcessingPage.loadingSpinner
+    )
     Wait.waitForElementToClicktagName("h1")
-    Wait.waitForCSSElementNotToPresent(RegistrationProcessingPage.loadingSpinner)
+    Wait.waitForCSSElementNotToPresent(
+      RegistrationProcessingPage.loadingSpinner
+    )
   }
 
 }

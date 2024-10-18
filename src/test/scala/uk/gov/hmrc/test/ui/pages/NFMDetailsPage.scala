@@ -20,17 +20,18 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMDetailsPage extends PageObject {
-  val url: String      = s"$rootUrl"+"business-matching/filing-member/registered-in-uk"
+  val url: String =
+    s"$rootUrl" + "business-matching/filing-member/registered-in-uk"
 
-  val caption          = ".govuk-caption-l"
-  val eqForm           = "form[action*='registered-in-uk']"
-  val eq               = "form[action*='registered-in-uk'] .govuk-fieldset"
-  val continue         = "form[action*='registered-in-uk'] button"
-  val errorSummary     = ".govuk-error-summary__list"
-  val errorLink        = "[href='#value_0']"
-  val backLink         = ".govuk-back-link"
-  val errorMessage     = ".govuk-error-message"
+  val caption = ".govuk-caption-l"
+  val eqForm = "form[action*='registered-in-uk']"
+  val eq = "form[action*='registered-in-uk'] .govuk-fieldset"
+  val continue = "form[action*='registered-in-uk'] button"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLink = "[href='#value_0']"
+  val backLink = ".govuk-back-link"
+  val errorMessage = ".govuk-error-message"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

@@ -21,12 +21,13 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMLLPGRSPage extends PageObject {
 
-  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=limitedLiabilityPartnership"
+  val url: String =
+    s"$rootUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=limitedLiabilityPartnership"
 
-  val header           = ".govuk-caption-l"
-  val saveAndContinue  = ".govuk-button"
-  val backLink         = ".govuk-back-link"
+  val header = ".govuk-caption-l"
+  val saveAndContinue = ".govuk-button"
+  val backLink = ".govuk-back-link"
 
-  def clickContinue(): Unit  = findByCss(saveAndContinue).click()
+  def clickContinue(): Unit = findByCss(saveAndContinue).click()
 
 }

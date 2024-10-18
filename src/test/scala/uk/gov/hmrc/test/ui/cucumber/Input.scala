@@ -43,7 +43,7 @@ object Input extends BasePage {
 
   def iterator(f: (String, String) => Any)(data: DataTable): Unit = {
     val row = data.asMaps(classOf[String], classOf[String]).iterator()
-    while(row.hasNext) {
+    while (row.hasNext) {
       val map = row.next()
       f(map.get("KEY"), map.get("VALUE"))
     }
@@ -83,8 +83,13 @@ object Input extends BasePage {
     }
   }
 
-  def takeScreenshot(scenarioName: String, s: String, dr: TakesScreenshot): Unit = {
-    val name = scenarioName + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
+  def takeScreenshot(
+      scenarioName: String,
+      s: String,
+      dr: TakesScreenshot
+  ): Unit = {
+    val name =
+      scenarioName + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
     if (!new java.io.File(s"./target/test-reports/$name$s.png").exists) {
       val scr = dr.getScreenshotAs(OutputType.FILE)
       FileHandler.copy(scr, new File(s"./target/test-reports/$name$s.png"))
@@ -93,11 +98,10 @@ object Input extends BasePage {
     }
   }
 
-
   def getTextOf(by: By): String =
     driver.findElement(by).getText
 
-  def getAttributeOf(locator: String,attributeName: String): String =
+  def getAttributeOf(locator: String, attributeName: String): String =
     driver.findElement(By.cssSelector(locator)).getAttribute(attributeName)
 
   def getAttributeOfId(locator: String, attributeName: String): String =

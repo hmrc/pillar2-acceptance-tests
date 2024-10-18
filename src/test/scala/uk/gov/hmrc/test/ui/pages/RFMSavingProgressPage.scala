@@ -20,10 +20,11 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMSavingProgressPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/security/saving-progress"
+  val url: String =
+    s"$rootUrl" + "replace-filing-member/security/saving-progress"
 
-  val caption               = ".govuk-caption-l"
-  val continue              = ".govuk-button"
-  def clickContinue(): Unit       = findByCss(continue).click()
+  val caption = ".govuk-caption-l"
+  val continue = ".govuk-button"
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object TransactionHistoryEmptyPage extends PageObject{
+object TransactionHistoryEmptyPage extends PageObject {
 
-  val url: String       = s"$rootUrl" + "payment/history-empty"
+  val url: String = s"$rootUrl" + "payment/history-empty"
 
 }

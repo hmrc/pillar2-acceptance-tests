@@ -20,16 +20,16 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AccountsSummaryPage extends PageObject {
-  val url: String        = s"$rootUrl"+"manage-account/account-details/summary"
+  val url: String = s"$rootUrl" + "manage-account/account-details/summary"
 
-  val caption            = ".govuk-caption-l"
-  val continue           = ".govuk-button"
-  val header: String     = "h1.govuk-heading-l"
-  val keyList            = ".govuk-summary-list__key"
-  val valueList          = ".govuk-summary-list__value"
-  val actionsList        = ".govuk-summary-list__actions"
-  val rowNumber          = "govuk-summary-list__row"
+  val caption = ".govuk-caption-l"
+  val continue = ".govuk-button"
+  val header: String = "h1.govuk-heading-l"
+  val keyList = ".govuk-summary-list__key"
+  val valueList = ".govuk-summary-list__value"
+  val actionsList = ".govuk-summary-list__actions"
+  val rowNumber = "govuk-summary-list__row"
 
-  def clickContinue(): Unit    = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }
