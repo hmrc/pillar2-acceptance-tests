@@ -28,9 +28,9 @@ class StepDef extends BaseStepDef with BrowserDriver {
   Given("""^(.*) logs in to register for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginWithUser(name)
-      case "Individual User" => AuthLoginPage.loginAsInd(name)
-      case "Agent User" => AuthLoginPage.loginAsAgent(name)
-      case "Assistant User" => AuthLoginPage.loginAssistant(name)
+      case "Individual User"   => AuthLoginPage.loginAsInd(name)
+      case "Agent User"        => AuthLoginPage.loginAsAgent(name)
+      case "Assistant User"    => AuthLoginPage.loginAssistant(name)
 
     }
   }
@@ -38,8 +38,8 @@ class StepDef extends BaseStepDef with BrowserDriver {
   Given("""^(.*) logs in to register for Pillar2 Agent service$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginAsOrgToASA(name)
-      case "Individual User" => AuthLoginPage.loginAsIndToASA(name)
-      case "Assistant User" => AuthLoginPage.loginAsAssistantToASA(name)
+      case "Individual User"   => AuthLoginPage.loginAsIndToASA(name)
+      case "Assistant User"    => AuthLoginPage.loginAsAssistantToASA(name)
 
     }
   }
@@ -47,83 +47,83 @@ class StepDef extends BaseStepDef with BrowserDriver {
   Given("""^(.*) logs in to subscribe for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
-      case _ => AuthLoginPage.loginToSubscribe(name)
+      case _                   => AuthLoginPage.loginToSubscribe(name)
     }
   }
 
   Given("""^(.*) logs in with BTA for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginUsingBta(name)
-      case _ => AuthLoginPage.loginToSubscribe(name)
+      case _                   => AuthLoginPage.loginToSubscribe(name)
     }
   }
 
   Given("""^(.*) logs in as upe for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPE(name)
-      case _ => AuthLoginPage.loginToUPE(name)
+      case _                   => AuthLoginPage.loginToUPE(name)
     }
   }
 
   Given("""^(.*) logs in as upe with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name, credId)
-      case _ => AuthLoginPage.loginToUPEWithCredID(name, credId)
+      case _                   => AuthLoginPage.loginToUPEWithCredID(name, credId)
     }
   }
 
   Given("""^(.*) logs in with credId (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginAsUserWithCredId(name, credId)
-      case _ => AuthLoginPage.loginAsUserWithCredId(name, credId)
+      case _                   => AuthLoginPage.loginAsUserWithCredId(name, credId)
     }
   }
   Given("""^(.*) logs in to upe org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToOrgWithCredID(name, credId)
-      case _ => AuthLoginPage.loginToOrgWithCredID(name, credId)
+      case _                   => AuthLoginPage.loginToOrgWithCredID(name, credId)
     }
   }
 
   Given("""^(.*) logs in to nfm org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
-      case _ => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
+      case _                   => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
     }
 
   }
   Given("""^(.*) logs in to upe registered in UK page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToRegWithCredID(name, credId)
-      case _ => AuthLoginPage.loginToRegWithCredID(name, credId)
+      case _                   => AuthLoginPage.loginToRegWithCredID(name, credId)
     }
   }
   Given("""^(.*) logs in to upe name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
-      case _ => AuthLoginPage.loginToUPEName(name, credId)
+      case _                   => AuthLoginPage.loginToUPEName(name, credId)
     }
   }
   Given("""^(.*) logs in to nfm name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
-      case _ => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
+      case _                   => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
     }
   }
 
   Given("""^Organisation User navigates to (.*) check your answer page with credId (.*)$""") { (name: String, credId: String) =>
     name match {
-      case "UPE" => AuthLoginPage.loginToCA(name, credId)
-      case "NFM" => AuthLoginPage.loginToNFMCA(name, credId)
-      case "FD" => AuthLoginPage.loginToFDCA(name, credId)
-      case "Contact Details" => AuthLoginPage.loginToCDCA(name, credId)
+      case "UPE"                      => AuthLoginPage.loginToCA(name, credId)
+      case "NFM"                      => AuthLoginPage.loginToNFMCA(name, credId)
+      case "FD"                       => AuthLoginPage.loginToFDCA(name, credId)
+      case "Contact Details"          => AuthLoginPage.loginToCDCA(name, credId)
       case "Final Check Your Answers" => AuthLoginPage.loginToFinalCA(name, credId)
     }
   }
 
   When("""^Organisation User logs in to (.*) page with credId (.*)$""") { (name: String, credId: String) =>
     name match {
-      case "NFM email" => AuthLoginPage.loginToNFMEmail(name, credId)
+      case "NFM email"   => AuthLoginPage.loginToNFMEmail(name, credId)
       case "NFM address" => AuthLoginPage.loginToNFMInputAddress(name, credId)
     }
   }
@@ -500,7 +500,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
   And("""^I select option (.*) and continue to next$""") { (option: String) =>
     option match {
       case "Yes" => Input.clickById("value_0")
-      case "No" => Input.clickById("value_1")
+      case "No"  => Input.clickById("value_1")
     }
     InitialGuidancePage.clickContinue()
   }
@@ -508,7 +508,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
   And("""^I select (.*) option and continue to next$""") { (option: String) =>
     option match {
       case "Yes" => Input.clickById("nominateFilingMember_0")
-      case "No" => Input.clickById("nominateFilingMember_1")
+      case "No"  => Input.clickById("nominateFilingMember_1")
     }
     InitialGuidancePage.clickContinue()
   }
@@ -550,15 +550,17 @@ class StepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
-  When("""^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") { (userType: String, enrolmentkey: String, identifiername: String, identifiervalue: String) =>
-    userType match {
-      case "Organisation" => AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
-      case "Agent" => AuthLoginPage.agentLoginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
-    }
+  When("""^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") {
+    (userType: String, enrolmentkey: String, identifiername: String, identifiervalue: String) =>
+      userType match {
+        case "Organisation" => AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+        case "Agent"        => AuthLoginPage.agentLoginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+      }
   }
 
-  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 service$""") { (enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String) =>
-    AuthLoginPage.addDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue, authRule)
+  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 service$""") {
+    (enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String) =>
+      AuthLoginPage.addDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue, authRule)
   }
 
   When("""^I refresh the page$""") { () =>
@@ -651,7 +653,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
   Then("""^I should see (.*) CTA$""") { (pageNumber: String) =>
     pageNumber match {
       case "Next" =>
-        assert (driver.findElement (By.cssSelector (TransactionHistoryPage.nextPageCTA) ).isDisplayed)
+        assert(driver.findElement(By.cssSelector(TransactionHistoryPage.nextPageCTA)).isDisplayed)
       case "Previous" =>
         assert(driver.findElement(By.cssSelector(TransactionHistorySecondPage.previousPageCTA)).isDisplayed)
     }

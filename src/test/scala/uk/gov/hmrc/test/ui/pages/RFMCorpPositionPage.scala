@@ -20,21 +20,21 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMCorpPositionPage extends PageObject {
-  val url: String           = s"$rootUrl"+"replace-filing-member/corporate-position"
+  val url: String = s"$rootUrl" + "replace-filing-member/corporate-position"
 
-  val caption               = ".govuk-caption-l"
-  val continue              = ".govuk-button"
-  val header: String        = "h1.govuk-fieldset__heading"
-  val hintText              = ".govuk-hint"
+  val caption        = ".govuk-caption-l"
+  val continue       = ".govuk-button"
+  val header: String = "h1.govuk-fieldset__heading"
+  val hintText       = ".govuk-hint"
 
-  val confirmCheckBox       = ".govuk-checkboxes__input"
-  val serviceStartPageLink  = ".govuk-link--no-visited-state"
+  val confirmCheckBox      = ".govuk-checkboxes__input"
+  val serviceStartPageLink = ".govuk-link--no-visited-state"
 
-  val errorSummary          = ".govuk-error-summary__list"
-  val errorLink             = "[href*='#value_0']"
-  val backLink              = ".govuk-back-link"
-  val errorMessage          = ".govuk-error-message"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLink    = "[href*='#value_0']"
+  val backLink     = ".govuk-back-link"
+  val errorMessage = ".govuk-error-message"
 
-  def clickContinue(): Unit       = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

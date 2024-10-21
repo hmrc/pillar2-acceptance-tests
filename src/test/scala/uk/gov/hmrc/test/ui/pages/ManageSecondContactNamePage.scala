@@ -19,13 +19,12 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-
 object ManageSecondContactNamePage extends PageObject {
-  val url: String        = s"$rootUrl"+"manage-account/contact-details/change-second-input-name"
+  val url: String = s"$rootUrl" + "manage-account/contact-details/change-second-input-name"
 
-  val caption            = ".govuk-caption-l"
-  val continue           = ".govuk-button"
-  val contactName        = "#value"
+  val caption     = ".govuk-caption-l"
+  val continue    = ".govuk-button"
+  val contactName = "#value"
 
-  def clickContinue(): Unit    = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 }

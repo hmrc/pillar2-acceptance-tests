@@ -18,6 +18,6 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2UkTaxReturnPage extends  PageObject {
-  val url: String = s"$p2SubRootUrl"+"uk-tax-return"
+object P2UkTaxReturnPage extends PageObject {
+  val url: String = s"$p2SubRootUrl" + "uk-tax-return"
 }

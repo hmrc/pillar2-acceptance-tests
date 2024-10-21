@@ -21,13 +21,10 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentTelephoneInputPage extends PageObject {
 
-  val url: String = s"$rootUrl" + "repayment/contact-details/input-telephone"
-  val continue = ".govuk-button"
+  val url: String      = s"$rootUrl" + "repayment/contact-details/input-telephone"
+  val continue         = ".govuk-button"
   val contactTelephone = "#telephoneNumber"
-  val backLink = ".govuk-back-link"
+  val backLink         = ".govuk-back-link"
 
-
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 }
-
-

@@ -28,4 +28,3 @@ import org.junit.runner.RunWith
   tags="@tests and not @ignore"
 )
 class Runner {}
-

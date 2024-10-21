@@ -70,7 +70,6 @@ class UPEPageSteps extends CommonFunctions {
         Input.sendKeysById(UPEContactNamePage.contactName, name)
         clickByCss(InputUPENamePage.continue)
 
-
       case "UPE Email address" =>
         Wait.waitForElementToPresentById(UPEContactEmailPage.emailField)
         Input.sendKeysById(UPEContactEmailPage.emailField, name)
@@ -275,7 +274,7 @@ class UPEPageSteps extends CommonFunctions {
 
   And("""^I select option (.*) and continue to GRS page$""") { (option: String) =>
     option match {
-      case "UK limited company" => Input.clickById("value_0")
+      case "UK limited company"            => Input.clickById("value_0")
       case "Limited liability partnership" => Input.clickById("value_1")
     }
     UPEEntityTypePage.clickContinue()
@@ -291,29 +290,35 @@ class UPEPageSteps extends CommonFunctions {
   And("""^I select option (.*) in further details group status page$""") { (option: String) =>
     option match {
       case "In the UK and outside the UK" => Input.clickById("value_1")
-      case "Only in the UK" => Input.clickById("value_0")
+      case "Only in the UK"               => Input.clickById("value_0")
     }
     UPEEntityTypePage.clickContinue()
   }
 
   And("""^I registered successfully with (.*)""") { (option: String) =>
     option match {
-      case "BV disabled" => Wait.waitForElement("registrationSuccessBvDisabled")
+      case "BV disabled" =>
+        Wait.waitForElement("registrationSuccessBvDisabled")
         Input.clickById("registrationSuccessBvDisabled")
-      case "BV enabled" => Wait.waitForElement("registrationSuccessBvEnabled")
+      case "BV enabled" =>
+        Wait.waitForElement("registrationSuccessBvEnabled")
         Input.clickById("registrationSuccessBvEnabled")
     }
   }
 
   And("""^registration is unsuccessful with (.*) error""") { (error: String) =>
     error match {
-      case "party type mismatch" => Wait.waitForElement("registrationFailedPartyTypeMismatch")
+      case "party type mismatch" =>
+        Wait.waitForElement("registrationFailedPartyTypeMismatch")
         Input.clickById("registrationFailedPartyTypeMismatch")
-      case "generic error" => Wait.waitForElement("registrationFailedGeneric")
+      case "generic error" =>
+        Wait.waitForElement("registrationFailedGeneric")
         Input.clickById("registrationFailedGeneric")
-      case "identifiers not match" => Wait.waitForElement("registrationFailedGeneric")
+      case "identifiers not match" =>
+        Wait.waitForElement("registrationFailedGeneric")
         Input.clickById("registrationNotCalledIdentifierMismatch")
-      case "BV failed" => Wait.waitForElement("registrationFailedGeneric")
+      case "BV failed" =>
+        Wait.waitForElement("registrationFailedGeneric")
         Input.clickById("registrationNotCalledBvFailed")
     }
   }

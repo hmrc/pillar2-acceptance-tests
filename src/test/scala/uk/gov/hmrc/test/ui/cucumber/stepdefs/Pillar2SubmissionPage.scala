@@ -24,7 +24,7 @@ import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
 trait Pillar2SubmissionPage
-  extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
+    extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
   def p2SubPageMatch(page: String): PageObject = {
     page match {

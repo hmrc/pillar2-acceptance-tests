@@ -21,12 +21,12 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object RFMContactNumberPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/contact-details/telephone"
 
-  val caption               = ".govuk-caption-l"
-  val continue              = ".govuk-button"
-  val header: String        = "h1.govuk-heading-l"
+  val caption        = ".govuk-caption-l"
+  val continue       = ".govuk-button"
+  val header: String = "h1.govuk-heading-l"
 
-  val errorMessage          = ".govuk-error-message"
-  val errorLink             = "[href='#value_0']"
-  val errorSummary          = ".govuk-error-summary__list"
+  val errorMessage = ".govuk-error-message"
+  val errorLink    = "[href='#value_0']"
+  val errorSummary = ".govuk-error-summary__list"
 
 }

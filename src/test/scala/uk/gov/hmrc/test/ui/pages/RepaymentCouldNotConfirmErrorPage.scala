@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object RepaymentCouldNotConfirmErrorPage extends PageObject{
+object RepaymentCouldNotConfirmErrorPage extends PageObject {
 
-  val url: String       = s"$rootUrl" + "repayment/error/could-not-confirm"
+  val url: String = s"$rootUrl" + "repayment/error/could-not-confirm"
 
 }

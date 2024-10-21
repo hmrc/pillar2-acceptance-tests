@@ -20,11 +20,11 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
-object RegistrationDuplicationKBPage extends PageObject{
-  val url: String       = s"$rootUrl"+"review-submit/error/duplicate-details"
-  val header: String    = "h1.govuk-panel__title"
-  val header2           = "h2.govuk-heading-m"
-  val pageHeader        = "a[href='/report-pillar2-top-up-taxes']"
+object RegistrationDuplicationKBPage extends PageObject {
+  val url: String    = s"$rootUrl" + "review-submit/error/duplicate-details"
+  val header: String = "h1.govuk-panel__title"
+  val header2        = "h2.govuk-heading-m"
+  val pageHeader     = "a[href='/report-pillar2-top-up-taxes']"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

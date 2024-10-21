@@ -143,7 +143,7 @@ class TaskListPageSteps extends CommonFunctions {
     }
   }
 
-  Then("""^I navigate to Telephone Question Page from Initial guidance Page""") {() =>
+  Then("""^I navigate to Telephone Question Page from Initial guidance Page""") { () =>
     for (i <- 1 to 6) {
       InitialGuidancePage.clickContinue()
     }

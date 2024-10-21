@@ -23,20 +23,20 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Pillar2SubmissionLoginPage extends BasePage with PageObject {
 
-  val url: String                          = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val submissionFrontEndUrl: String        = TestConfiguration.url("pillar2-submission-frontend")
-  val redirectUrlField: String             = "redirectionUrl"
-  val redirectionUrlField: String          = "#redirectionUrl"
-  val credIdField: String                  = "authorityId"
-  val submissionFrontEndASAUrl: String     = s"$p2SubRootUrl"+"asa/input-pillar-2-id"
-  val enrolmentKeyField: String            = "enrolment[0].name"
-  val identifierNameField: String          = "enrolment[0].taxIdentifier[0].name"
-  val identifierValueField: String         = "enrolment[0].taxIdentifier[0].value"
-  val delegatedEnrolmentKeyField: String   = "delegatedEnrolment[0].key"
+  val url: String                           = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  val submissionFrontEndUrl: String         = TestConfiguration.url("pillar2-submission-frontend")
+  val redirectUrlField: String              = "redirectionUrl"
+  val redirectionUrlField: String           = "#redirectionUrl"
+  val credIdField: String                   = "authorityId"
+  val submissionFrontEndASAUrl: String      = s"$p2SubRootUrl" + "asa/input-pillar-2-id"
+  val enrolmentKeyField: String             = "enrolment[0].name"
+  val identifierNameField: String           = "enrolment[0].taxIdentifier[0].name"
+  val identifierValueField: String          = "enrolment[0].taxIdentifier[0].value"
+  val delegatedEnrolmentKeyField: String    = "delegatedEnrolment[0].key"
   val delegatedIdentifierNameField: String  = "delegatedEnrolment[0].taxIdentifier[0].name"
   val delegatedIdentifierValueField: String = "delegatedEnrolment[0].taxIdentifier[0].value"
-  val delegatedAuthRuleField: String       = "delegatedEnrolment[0].delegatedAuthRule"
-  val addDelegatedEnrolmentCTA: String     = "[onclick='addDelegatedEnrolment()']"
+  val delegatedAuthRuleField: String        = "delegatedEnrolment[0].delegatedAuthRule"
+  val addDelegatedEnrolmentCTA: String      = "[onclick='addDelegatedEnrolment()']"
 
   def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
@@ -113,7 +113,6 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
     selectCredRoleAssistant()
     clickSubmitButton()
   }
-
 
   private def selectAffinityGroupOrg() =
     new Select(findAffinityGroup()).selectByVisibleText("Organisation")

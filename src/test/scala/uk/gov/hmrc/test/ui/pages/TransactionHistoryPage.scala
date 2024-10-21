@@ -19,10 +19,10 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object TransactionHistoryPage extends PageObject{
+object TransactionHistoryPage extends PageObject {
 
-  val url: String       = s"$rootUrl" + "payment/history"
-  val nextPageCTA       = "[rel='next']"
+  val url: String = s"$rootUrl" + "payment/history"
+  val nextPageCTA = "[rel='next']"
 
-  def clickNext(): Unit       = findByCss(nextPageCTA).click()
+  def clickNext(): Unit = findByCss(nextPageCTA).click()
 }

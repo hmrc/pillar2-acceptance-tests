@@ -24,7 +24,6 @@ import uk.gov.hmrc.test.ui.pages._
 
 class PaymentSteps extends CommonFunctions {
 
-
   And("""^I should see the heading (\d+) on Dashboard page as (.*)""") { (headingNumber: Int, heading: String) =>
     assert(driver.findElements(By.cssSelector(DashboardPage.sectionHeading)).get(headingNumber - 1).getText.contains(heading))
   }
@@ -32,7 +31,7 @@ class PaymentSteps extends CommonFunctions {
   Given("""^(.*) logs in Dashboard page for Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToDashboard(name)
-      case _ => AuthLoginPage.loginToDashboard(name)
+      case _                   => AuthLoginPage.loginToDashboard(name)
     }
   }
 
@@ -43,20 +42,20 @@ class PaymentSteps extends CommonFunctions {
   }
 
   Then("""^I should be navigated to new tab$""") { () =>
-    val handles = driver.getWindowHandles.toArray().toSeq
+    val handles   = driver.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
     driver.switchTo().window(newWindow)
   }
 
   Then("""^I should navigate back to main tab""") { () =>
-    val handles = driver.getWindowHandles.toArray().toSeq
+    val handles    = driver.getWindowHandles.toArray().toSeq
     val mainWindow = handles.head.toString
     driver.switchTo().window(mainWindow)
   }
 
   Then("""I should be redirected to search register page in a new tab""") { () =>
-    val handles = driver.getWindowHandles.toArray().toSeq
-    val newWindow = handles(1).toString
+    val handles    = driver.getWindowHandles.toArray().toSeq
+    val newWindow  = handles(1).toString
     val mainWindow = handles.head.toString
     driver.switchTo().window(newWindow)
     Wait.waitForElementToPresentByCssSelector(SearchRegisterPage.element)
@@ -66,8 +65,8 @@ class PaymentSteps extends CommonFunctions {
   }
 
   Then("""I should be redirected to guidance page in a new tab""") { () =>
-    val handles = driver.getWindowHandles.toArray().toSeq
-    val newWindow = handles(1).toString
+    val handles    = driver.getWindowHandles.toArray().toSeq
+    val newWindow  = handles(1).toString
     val mainWindow = handles.head.toString
     driver.switchTo().window(newWindow)
     Wait.waitForElementToPresentByCssSelector(GUKGuidancePage3.header)
@@ -114,7 +113,7 @@ class PaymentSteps extends CommonFunctions {
 
   When("""^I click on toggle link (.*)$""") { (option: String) =>
     option match {
-      case "How long it takes" => Input.clickByXpath(MakePaymentPage.firstToggleLink)
+      case "How long it takes"                  => Input.clickByXpath(MakePaymentPage.firstToggleLink)
       case "Make a payment from outside the UK" => Input.clickByXpath(MakePaymentPage.secondToggleLink)
     }
   }
@@ -126,7 +125,7 @@ class PaymentSteps extends CommonFunctions {
 
   And("""^I select repayment method as (.*)$""") { (option: String) =>
     option match {
-      case "UK bank account" => Input.clickById("value_0")
+      case "UK bank account"     => Input.clickById("value_0")
       case "Non-UK bank account" => Input.clickById("value_1")
     }
     UPEEntityTypePage.clickContinue()
@@ -139,7 +138,6 @@ class PaymentSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.bankNameField)
         Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.bankNameField)
 
-
       case "Account Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.accountNameField)
@@ -149,7 +147,6 @@ class PaymentSteps extends CommonFunctions {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.swiftCodeField)
         Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.swiftCodeField)
-
 
       case "Iban" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -242,7 +239,6 @@ class PaymentSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
         getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
 
-
       case "UK Account Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
@@ -310,7 +306,7 @@ class PaymentSteps extends CommonFunctions {
 
   And("""^I should see the repayment method (.*) remain selected$""") { (accountType: String) =>
     accountType match {
-      case "UK bank account" => Find.findByCss("#value_0").isSelected
+      case "UK bank account"     => Find.findByCss("#value_0").isSelected
       case "Non-UK bank account" => Find.findByCss("#value_1").isSelected
     }
   }
@@ -370,7 +366,7 @@ class PaymentSteps extends CommonFunctions {
   And("""^I select option (.*) on partial name error page$""") { (option: String) =>
     option match {
       case "Yes" => Input.clickById("confirmRepaymentAccountName_0")
-      case "No" => Input.clickById("confirmRepaymentAccountName_1")
+      case "No"  => Input.clickById("confirmRepaymentAccountName_1")
     }
     UKBankAccountPaymentPage.clickContinue()
   }

@@ -18,10 +18,9 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-
 object NFMGuidancePage extends PageObject {
-  val url: String        = s"$rootUrl"+"eligibility/service-not-suitable/not-upe-or-nfm"
-  val header: String     = "h1.govuk-heading-l"
-  val backLink           = ".govuk-back-link"
+  val url: String    = s"$rootUrl" + "eligibility/service-not-suitable/not-upe-or-nfm"
+  val header: String = "h1.govuk-heading-l"
+  val backLink       = ".govuk-back-link"
 
 }
