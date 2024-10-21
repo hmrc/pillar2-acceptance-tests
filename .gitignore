@@ -1,5 +1,6 @@
 .*
 !.scalafmt.conf
+!.scalafix.conf
 !.gitignore
 
 .cache
