@@ -21,5 +21,5 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object P2SubBtnAgdKBPage extends PageObject {
   val url: String =
     s"$p2SubRootUrl" + "below-threshold-notification/amend-group-details"
-  val backLink = ".govuk-back-link"
+  val backLink    = ".govuk-back-link"
 }

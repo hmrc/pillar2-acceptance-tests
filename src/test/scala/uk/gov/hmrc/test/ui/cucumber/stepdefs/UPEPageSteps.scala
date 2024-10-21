@@ -284,34 +284,34 @@ class UPEPageSteps extends CommonFunctions {
   And("""^I should see the (.*) field is pre-populated with (.*)$""") {
     (field: String, name: String) =>
       field match {
-        case "UPE name" =>
+        case "UPE name"             =>
           assert(
             getAttributeOf(InputUPENamePage.nameField, "value").equals(name)
           )
-        case "NFM name" =>
+        case "NFM name"             =>
           assert(
             getAttributeOf(InputUPENamePage.nameField, "value").equals(name)
           )
-        case "Address Line 1" =>
+        case "Address Line 1"       =>
           assert(
             getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name)
           )
-        case "Address Line 2" =>
+        case "Address Line 2"       =>
           assert(
             getAttributeOf(UPEAddressPage.addressLine2, "value").equals(name)
           )
-        case "City" =>
+        case "City"                 =>
           assert(
             getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name)
           )
-        case "Region" =>
+        case "Region"               =>
           assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
           UPEEntityTypePage.clickContinue()
-        case "Postal Code" =>
+        case "Postal Code"          =>
           assert(
             getAttributeOf(UPEAddressPage.postalCode, "value").equals(name)
           )
-        case "Country" =>
+        case "Country"              =>
           assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
         case "UPE Person/Team name" =>
           assert(
@@ -319,22 +319,22 @@ class UPEPageSteps extends CommonFunctions {
               name
             )
           )
-        case "UPE Email address" =>
+        case "UPE Email address"    =>
           assert(
             getAttributeOfId(UPEContactEmailPage.emailField, "value").equals(
               name
             )
           )
-        case "Telephone number" =>
+        case "Telephone number"     =>
           assert(
             getAttributeOf(InputUPETelephonePage.telephoneNumber, "value")
               .equals(name)
           )
-        case "NFM Contact name" =>
+        case "NFM Contact name"     =>
           assert(
             getAttributeOf(NFMContactNamePage.contactName, "value").equals(name)
           )
-        case "NFM Contact Email" =>
+        case "NFM Contact Email"    =>
           assert(
             getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(
               name
@@ -345,24 +345,24 @@ class UPEPageSteps extends CommonFunctions {
             getAttributeOf(InputNFMTelephonePage.telephoneNumber, "value")
               .equals(name)
           )
-        case "Contact Name" =>
+        case "Contact Name"         =>
           assert(
             getAttributeOf(ContactDetailsInputNamePage.contactName, "value")
               .equals(name)
           )
-        case "Contact Email" =>
+        case "Contact Email"        =>
           assert(
             getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value")
               .equals(name)
           )
-        case "Contact Telephone" =>
+        case "Contact Telephone"    =>
           assert(
             getAttributeOf(
               ContactDetailsInputTelephonePage.contactTelephone,
               "value"
             ).equals(name)
           )
-        case "Second Contact Name" =>
+        case "Second Contact Name"  =>
           assert(
             getAttributeOf(SecondContactNamePage.contactName, "value").equals(
               name
@@ -379,19 +379,19 @@ class UPEPageSteps extends CommonFunctions {
             getAttributeOf(SecondContactInputPage.contactTelephone, "value")
               .equals(name)
           )
-        case "Redirect URL" =>
+        case "Redirect URL"         =>
           assert(
             getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(
               name
             )
           )
-        case "PLRID" =>
+        case "PLRID"                =>
           assert(
             getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(
               name
             )
           )
-        case "UK Bank Name" =>
+        case "UK Bank Name"         =>
           assert(
             getAttributeOf(UKBankAccountPaymentPage.UKbankName, "value").equals(
               name
@@ -443,7 +443,7 @@ class UPEPageSteps extends CommonFunctions {
       case "BV disabled" =>
         Wait.waitForElement("registrationSuccessBvDisabled")
         Input.clickById("registrationSuccessBvDisabled")
-      case "BV enabled" =>
+      case "BV enabled"  =>
         Wait.waitForElement("registrationSuccessBvEnabled")
         Input.clickById("registrationSuccessBvEnabled")
     }
@@ -451,16 +451,16 @@ class UPEPageSteps extends CommonFunctions {
 
   And("""^registration is unsuccessful with (.*) error""") { (error: String) =>
     error match {
-      case "party type mismatch" =>
+      case "party type mismatch"   =>
         Wait.waitForElement("registrationFailedPartyTypeMismatch")
         Input.clickById("registrationFailedPartyTypeMismatch")
-      case "generic error" =>
+      case "generic error"         =>
         Wait.waitForElement("registrationFailedGeneric")
         Input.clickById("registrationFailedGeneric")
       case "identifiers not match" =>
         Wait.waitForElement("registrationFailedGeneric")
         Input.clickById("registrationNotCalledIdentifierMismatch")
-      case "BV failed" =>
+      case "BV failed"             =>
         Wait.waitForElement("registrationFailedGeneric")
         Input.clickById("registrationNotCalledBvFailed")
     }

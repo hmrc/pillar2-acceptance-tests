@@ -22,48 +22,48 @@ import uk.gov.hmrc.test.ui.cucumber._
 
 object AuthLoginPage extends BasePage with PageObject {
   val url: String = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val frontEndUrl: String = TestConfiguration.url("pillar2-frontend")
-  val incorrectUrl: String =
+  val frontEndUrl: String           = TestConfiguration.url("pillar2-frontend")
+  val incorrectUrl: String          =
     TestConfiguration.url("pillar2-frontend") + "randomUrl"
   val submissionFrontEndUrl: String =
     TestConfiguration.url("pillar2-submission-frontend")
-  val frontEndSubscribeUrl: String =
+  val frontEndSubscribeUrl: String  =
     s"$rootUrl" + "check-progress/register-your-group"
-  val frontEndBtaUrl: String = s"$rootUrl" + "bta/pillar2-id"
-  val frontEndUPEUrl: String =
+  val frontEndBtaUrl: String        = s"$rootUrl" + "bta/pillar2-id"
+  val frontEndUPEUrl: String        =
     s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
   val frontEndUPEOrgTypeUrl: String =
     s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
-  val redirectUrlField: String    = "redirectionUrl"
-  val redirectionUrlField: String = "#redirectionUrl"
-  val credIdField: String         = "authorityId"
-  val frontEndNameUrl: String =
+  val redirectUrlField: String      = "redirectionUrl"
+  val redirectionUrlField: String   = "#redirectionUrl"
+  val credIdField: String           = "authorityId"
+  val frontEndNameUrl: String       =
     s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-name"
-  val frontEndCAUrl: String =
+  val frontEndCAUrl: String         =
     s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
   val frontEndUPERegTypeUrl: String =
     s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
-  val frontEndNFMNameUrl: String =
+  val frontEndNFMNameUrl: String    =
     s"$rootUrl" + "business-matching/filing-member/no-id/input-name"
   val frontEndNFMOrgTypeUrl: String =
     s"$rootUrl" + "business-matching/filing-member/uk-based/entity-type"
   val frontEndNFMAddressUrl: String =
     s"$rootUrl" + "business-matching/filing-member/no-id/input-address "
-  val frontEndNFMContactNameUrl: String =
+  val frontEndNFMContactNameUrl: String    =
     s"$rootUrl" + "business-matching/filing-member/no-id/input-business-name"
-  val frontEndNFMContactEmailUrl: String =
+  val frontEndNFMContactEmailUrl: String   =
     s"$rootUrl" + "business-matching/filing-member/no-id/input-email"
-  val frontEndNFMTelephoneUrl: String =
+  val frontEndNFMTelephoneUrl: String      =
     s"$rootUrl" + "business-matching/filing-member/no-id/telephone"
   val frontEndNFMTelephoneInputUrl: String =
     s"$rootUrl" + "business-matching/filing-member/no-id/input-telephone"
-  val frontEndFDGroupStatusUrl: String =
+  val frontEndFDGroupStatusUrl: String     =
     s"$rootUrl" + "further-details/group-status"
-  val frontEndFDAccountPeriod: String =
+  val frontEndFDAccountPeriod: String      =
     s"$rootUrl" + "further-details/accounting-period"
-  val frontEndCDAddressUrl: String =
+  val frontEndCDAddressUrl: String         =
     s"$rootUrl" + "contact-details/address/input"
-  val frontEndNFMCAUrl: String =
+  val frontEndNFMCAUrl: String             =
     s"$rootUrl" + "business-matching/filing-member/no-id/check-answers"
   val frontEndFDCAUrl: String = s"$rootUrl" + "further-details/check-answers"
   val frontEndCDCAUrl: String = s"$rootUrl" + "contact-details/check-answers"
@@ -72,11 +72,11 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndSubUrl: String       = s"$rootUrl" + "review-submit/confirmation"
   val frontEndDashboardUrl: String = s"$rootUrl" + "pillar2-top-up-tax-home"
   val frontEndASAUrl: String       = s"$rootUrl" + "asa/input-pillar-2-id"
-  val rfmUrl: String =
+  val rfmUrl: String               =
     s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
-  val enrolmentKeyField: String             = "enrolment[0].name"
-  val identifierNameField: String           = "input-0-0-name"
-  val identifierValueField: String          = "input-0-0-value"
+  val enrolmentKeyField: String    = "enrolment[0].name"
+  val identifierNameField: String  = "input-0-0-name"
+  val identifierValueField: String = "input-0-0-value"
   val delegatedEnrolmentKeyField: String    = "delegatedEnrolment[0].key"
   val delegatedIdentifierNameField: String  = "input-delegated-0-0-name"
   val delegatedIdentifierValueField: String = "input-delegated-0-0-value"
@@ -113,7 +113,7 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def loginToOrgWithCredID(name: String, credId: String): Unit = {
+  def loginToOrgWithCredID(name: String, credId: String): Unit    = {
     Nav.navigateTo(url)
     Input.sendKeysById(credIdField, credId)
     Input.sendKeysByName(frontEndUPEOrgTypeUrl, redirectUrlField)
@@ -127,14 +127,14 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
-  def loginToRegWithCredID(name: String, credId: String): Unit = {
+  def loginToRegWithCredID(name: String, credId: String): Unit    = {
     Nav.navigateTo(url)
     Input.sendKeysById(credIdField, credId)
     Input.sendKeysByName(frontEndUPERegTypeUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
-  def loginToSubscribe(name: String): Unit = {
+  def loginToSubscribe(name: String): Unit                        = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndSubscribeUrl, redirectUrlField)
     selectAffinityGroupOrg()
@@ -319,7 +319,7 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def loginToNFMContactEmail(name: String): Unit = {
+  def loginToNFMContactEmail(name: String): Unit          = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMContactEmailUrl, redirectUrlField)
     selectAffinityGroupOrg()
@@ -332,13 +332,13 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
-  def loginToNFMTelephone(name: String): Unit = {
+  def loginToNFMTelephone(name: String): Unit             = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMTelephoneUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
-  def loginToNFMTelephoneInput(name: String): Unit = {
+  def loginToNFMTelephoneInput(name: String): Unit        = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMTelephoneInputUrl, redirectUrlField)
     selectAffinityGroupOrg()

@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMContactNamePage extends PageObject {
-  val url: String =
+  val url: String  =
     s"$rootUrl" + "business-matching/filing-member/no-id/input-business-name"
   val caption      = ".govuk-caption-l"
   val form         = ".govuk-form-group"

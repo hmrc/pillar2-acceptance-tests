@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMGRSRegistrationNotCalledErrorPage extends PageObject {
-  val url: String =
+  val url: String    =
     s"$rootUrl" + "business-matching/filing-member/uk-based/error/unable-to-confirm-details"
   val content        = "#main-content"
   val header: String = "h1.govuk-heading-l"

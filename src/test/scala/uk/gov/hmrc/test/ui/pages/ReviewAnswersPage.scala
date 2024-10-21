@@ -31,7 +31,7 @@ object ReviewAnswersPage extends PageObject {
   // UPE Section
   val changeUPEName    = "a[href*='ultimate-parent/no-id/change-input-name']"
   val changeUPEAddress = "a[href*='ultimate-parent/no-id/change-input-address']"
-  val changeUPEBName =
+  val changeUPEBName   =
     "a[href*='ultimate-parent/no-id/change-input-business-name']"
   val changeEmail      = "a[href*='ultimate-parent/no-id/change-input-email']"
   val changeUPEContact = "a[href*='/change-telephone']"

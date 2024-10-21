@@ -66,7 +66,7 @@ object Check extends BasePage {
       case "UK limited company" => Find.findByCss("#value_0").isSelected
       case "Limited liability partnership" =>
         Find.findByCss("#value_1").isSelected
-      case "In the UK and outside the UK" =>
+      case "In the UK and outside the UK"  =>
         Find.findByCss("#value_0").isSelected
       case "Only in the UK" => Find.findByCss("#value_1").isSelected
       case "UPE"            => Find.findByCss("#value_0").isSelected

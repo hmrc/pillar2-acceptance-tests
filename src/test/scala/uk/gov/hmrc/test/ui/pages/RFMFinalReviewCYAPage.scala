@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMFinalReviewCYAPage extends PageObject {
-  val url: String =
+  val url: String                   =
     s"$rootUrl" + "replace-filing-member/review-submit/check-answers"
   val header: String                = "h1.govuk-heading-l"
   val keyList                       = ".govuk-summary-list__key"

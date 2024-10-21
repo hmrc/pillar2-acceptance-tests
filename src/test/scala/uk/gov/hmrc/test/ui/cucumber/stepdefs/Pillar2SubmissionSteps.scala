@@ -26,13 +26,13 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
   Given("""^(.*) logs in to subscribe for Pillar2 Submission$""") {
     name: String =>
       name match {
-        case "Organisation User" =>
+        case "Organisation User"           =>
           Pillar2SubmissionLoginPage.loginToP2SubmissionWithUser(name)
         case "Organisation Assistant User" =>
           Pillar2SubmissionLoginPage.loginToP2SubmissionWithAssistantUser(name)
-        case "Agent User" =>
+        case "Agent User"                  =>
           Pillar2SubmissionLoginPage.loginToP2SubmissionWithAgentUser(name)
-        case "Individual User" =>
+        case "Individual User"             =>
           Pillar2SubmissionLoginPage.loginToP2SubmissionWithIndividualUser(name)
         case _ => Pillar2SubmissionLoginPage.loginToSubscribe(name)
       }
@@ -85,9 +85,9 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
       name match {
         case "Organisation User" =>
           Pillar2SubmissionLoginPage.loginAsOrgToASA(name)
-        case "Individual User" =>
+        case "Individual User"   =>
           Pillar2SubmissionLoginPage.loginAsIndToASA(name)
-        case "Assistant User" =>
+        case "Assistant User"    =>
           Pillar2SubmissionLoginPage.loginAsAssistantToASA(name)
 
       }

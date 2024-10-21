@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object GGRGuidancePage extends PageObject {
-  val url: String =
+  val url: String    =
     s"$rootUrl" + "eligibility/service-not-suitable/under-750-million"
   val header: String = "h1.govuk-heading-l"
   val backLink       = ".govuk-back-link"

@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UPECheckYourAnswersPage extends PageObject {
-  val url: String =
+  val url: String            =
     s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
   val header: String         = "h1.govuk-heading-l"
   val keyList                = ".govuk-summary-list__key"

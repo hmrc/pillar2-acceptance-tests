@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object GUKGuidancePage2 extends PageObject {
-  val url: String =
+  val url: String    =
     "https://www.gov.uk/government/publications/introduction-of-the-new-multinational-top-up-tax"
   val header: String = "h1.govuk-heading-xl"
 }

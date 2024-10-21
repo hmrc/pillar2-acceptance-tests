@@ -176,7 +176,7 @@ class PaymentSteps extends CommonFunctions {
 
   When("""^I click on toggle link (.*)$""") { (option: String) =>
     option match {
-      case "How long it takes" =>
+      case "How long it takes"                  =>
         Input.clickByXpath(MakePaymentPage.firstToggleLink)
       case "Make a payment from outside the UK" =>
         Input.clickByXpath(MakePaymentPage.secondToggleLink)
@@ -504,31 +504,31 @@ class PaymentSteps extends CommonFunctions {
 
   When("""^I click change link for Repayment (.*)""") { (link: String) =>
     link match {
-      case "Amount" =>
+      case "Amount"                   =>
         clickByCss(RepaymentCYAPage.changeRefundAmount)
-      case "Reason" =>
+      case "Reason"                   =>
         clickByCss(RepaymentCYAPage.changeRefundReason)
-      case "Method Page" =>
+      case "Method Page"              =>
         clickByCss(RepaymentCYAPage.changeRepaymentMethod)
-      case "Bank Name" =>
+      case "Bank Name"                =>
         clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
-      case "Account Name" =>
+      case "Account Name"             =>
         clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
-      case "Account SWIFT" =>
+      case "Account SWIFT"            =>
         clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
-      case "Account IBAN" =>
+      case "Account IBAN"             =>
         clickByCss(RepaymentCYAPage.changeNonUKBankDetails)
-      case "Contact Name" =>
+      case "Contact Name"             =>
         clickByCss(RepaymentCYAPage.changeContactName)
-      case "Contact Email" =>
+      case "Contact Email"            =>
         clickByCss(RepaymentCYAPage.changeContactEmail)
-      case "Contact Telephone" =>
+      case "Contact Telephone"        =>
         clickByCss(RepaymentCYAPage.changeTelephone)
       case "Contact Telephone Number" =>
         clickByCss(RepaymentCYAPage.changeTelephoneNumber)
-      case "UK Bank Name" =>
+      case "UK Bank Name"             =>
         clickByCss(RepaymentCYAPage.changeUKBankDetails)
-      case "UK Bank Method" =>
+      case "UK Bank Method"           =>
         clickByCss(RepaymentCYAPage.changeBankAccountType)
     }
   }
@@ -549,7 +549,7 @@ class PaymentSteps extends CommonFunctions {
     page match {
       case "Non UK" =>
         Nav.navigateTo(NonUKBankAccountPaymentPage.url)
-      case "UK" =>
+      case "UK"     =>
         Nav.navigateTo((UKBankAccountPaymentPage.url))
     }
   }

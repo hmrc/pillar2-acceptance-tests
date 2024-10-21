@@ -149,7 +149,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   Then("""^I navigate to (.*) page$""") { page: String =>
     page match {
-      case "start" =>
+      case "start"      =>
         Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes")
       case "individual" =>
         Nav.navigateTo(
@@ -234,21 +234,21 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   Given("""^I am on (.*) Page$""") { page: String =>
     page match {
-      case "UPE EQ" =>
+      case "UPE EQ"                            =>
         navigateTo(UPEEQPage.url)
         Wait.waitForElementToPresentByCssSelector(UPEEQPage.eqForm)
         isVisible(By.cssSelector(UPEEQPage.eq)) shouldBe true
-      case "Business activity EQ" =>
+      case "Business activity EQ"              =>
         navigateTo(BusinessActivityEQPage.url)
         Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
         isVisible(By.cssSelector(BusinessActivityEQPage.eq)) shouldBe true
-      case "Global gross revenue" =>
+      case "Global gross revenue"              =>
         navigateTo(GlobalGrossRevenueEQPage.url)
         Wait.waitForElementToPresentByCssSelector(
           GlobalGrossRevenueEQPage.eqForm
         )
         isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
-      case "NFM registration failed error" =>
+      case "NFM registration failed error"     =>
         navigateTo(NFMGRSRegistrationFailedErrorPage.url)
         Wait.waitForElementToPresentByCssSelector(
           NFMGRSRegistrationFailedErrorPage.content
@@ -264,7 +264,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
         isVisible(
           By.cssSelector(NFMGRSRegistrationNotCalledErrorPage.header)
         ) shouldBe true
-      case "UPE registration failed error" =>
+      case "UPE registration failed error"     =>
         navigateTo(UPEGRSRegistrationFailedErrorPage.url)
         Wait.waitForElementToPresentByCssSelector(
           UPEGRSRegistrationFailedErrorPage.content
@@ -839,7 +839,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
             identifiername,
             identifiervalue
           )
-        case "Agent" =>
+        case "Agent"        =>
           AuthLoginPage.agentLoginWithExistingEntity(
             enrolmentkey,
             identifiername,
@@ -875,7 +875,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   Then("""^I can see (.*) link$""") { (linkText: String) =>
     linkText match {
-      case "Print this page" =>
+      case "Print this page"        =>
         Wait.waitForElementToPresentByCssSelector(
           RegistrationConfirmationPage.printthispage
         )
@@ -895,7 +895,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
             .getText
             .contains(linkText)
         )
-      case "Sign out" =>
+      case "Sign out"               =>
         Wait.waitForElementToPresentByCssSelector(
           RepaymentConfirmationPage.signOut
         )
@@ -927,51 +927,51 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   Given("""^I access the (.*) page$""") { (page: String) =>
     page match {
-      case "contact details summary" =>
+      case "contact details summary"    =>
         Nav.navigateTo(ContactDetailsSummaryPage.url)
-      case "account summary" =>
+      case "account summary"            =>
         Nav.navigateTo(AccountsSummaryPage.url)
-      case "MakePayment" =>
+      case "MakePayment"                =>
         Nav.navigateTo(MakePaymentPage.url)
-      case "repayment guidance" =>
+      case "repayment guidance"         =>
         Nav.navigateTo(RepaymentGuidancePage.url)
-      case "repayment amount" =>
+      case "repayment amount"           =>
         Nav.navigateTo(RepaymentAmountPage.url)
-      case "repayment reason" =>
+      case "repayment reason"           =>
         Nav.navigateTo(RepaymentReasonPage.url)
-      case "repayment method" =>
+      case "repayment method"           =>
         Nav.navigateTo(RepaymentMethodPage.url)
-      case "uk bank account" =>
+      case "uk bank account"            =>
         Nav.navigateTo(UKBankAccountPaymentPage.url)
-      case "non-uk bank account" =>
+      case "non-uk bank account"        =>
         Nav.navigateTo(NonUKBankAccountPaymentPage.url)
-      case "repayment contact name" =>
+      case "repayment contact name"     =>
         Nav.navigateTo(RepaymentContactPage.url)
-      case "repayment contact email" =>
+      case "repayment contact email"    =>
         Nav.navigateTo(RepaymentContactEmailPage.url)
-      case "repayment telephone" =>
+      case "repayment telephone"        =>
         Nav.navigateTo(RepaymentTelephonePage.url)
-      case "repayment telephone input" =>
+      case "repayment telephone input"  =>
         Nav.navigateTo(RepaymentTelephoneInputPage.url)
-      case "repayment CYA" =>
+      case "repayment CYA"              =>
         Nav.navigateTo(RepaymentCYAPage.url)
-      case "manage contact name" =>
+      case "manage contact name"        =>
         Nav.navigateTo(ManageContactNamePage.url)
       case "manage second contact name" =>
         Nav.navigateTo(ManageSecondContactNamePage.url)
-      case "manage contact address" =>
+      case "manage contact address"     =>
         Nav.navigateTo(ManageContactAddressPage.url)
-      case "manage group status" =>
+      case "manage group status"        =>
         Nav.navigateTo(ManageGroupStatusPage.url)
-      case "manage accounting period" =>
+      case "manage accounting period"   =>
         Nav.navigateTo(ManageAccountPeriodPage.url)
-      case "repayment change amount" =>
+      case "repayment change amount"    =>
         Nav.navigateTo(RepaymentChangeAmountPage.url)
-      case "repayment change method" =>
+      case "repayment change method"    =>
         Nav.navigateTo(RepaymentChangeMethodPage.url)
-      case "repayment change name" =>
+      case "repayment change name"      =>
         Nav.navigateTo(RepaymentChangeNamePage.url)
-      case "transaction history" =>
+      case "transaction history"        =>
         Nav.navigateTo(TransactionHistoryPage.url)
 
     }
@@ -983,7 +983,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   Then("""^I should see (.*) CTA$""") { (pageNumber: String) =>
     pageNumber match {
-      case "Next" =>
+      case "Next"     =>
         assert(
           driver
             .findElement(By.cssSelector(TransactionHistoryPage.nextPageCTA))
@@ -1002,7 +1002,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   When("""^I click (.*) CTA$""") { (pageNumber: String) =>
     pageNumber match {
-      case "Next" =>
+      case "Next"     =>
         TransactionHistoryPage.clickNext()
       case "Previous" =>
         TransactionHistorySecondPage.clickPrevious()

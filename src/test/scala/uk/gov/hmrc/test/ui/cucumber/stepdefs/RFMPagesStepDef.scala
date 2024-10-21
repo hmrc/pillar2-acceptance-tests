@@ -409,25 +409,25 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
 
   And("""^I click change link for RFM (.*)""") { (link: String) =>
     link match {
-      case "Pillar 2 top-up taxes ID" =>
+      case "Pillar 2 top-up taxes ID"              =>
         clickByCss(RFMCYAPage.changePID)
-      case "Registration date" =>
+      case "Registration date"                     =>
         clickByCss(RFMCYAPage.changeRegistrationDate)
-      case "New NFM Name" =>
+      case "New NFM Name"                          =>
         clickByCss(RFMNoIDCYAPage.changeName)
-      case "Corporate Position" =>
+      case "Corporate Position"                    =>
         clickByCss(RFMFinalReviewCYAPage.changeCorporatePosition)
-      case "Company" =>
+      case "Company"                               =>
         clickByCss(RFMFinalReviewCYAPage.changeCompany)
-      case "Input Name" =>
+      case "Input Name"                            =>
         clickByCss(RFMFinalReviewCYAPage.changeInputName)
-      case "Input Address" =>
+      case "Input Address"                         =>
         clickByCss(RFMFinalReviewCYAPage.changeInputAddress)
       case "New RFM CYA Change Contact preference" =>
         clickByCss(RFMFinalReviewCYAPage.changeTelephonecontact)
-      case "Change Second Contact Preference" =>
+      case "Change Second Contact Preference"      =>
         clickByCss(RFMFinalReviewCYAPage.changeSecondContactPreference)
-      case "Change Address" =>
+      case "Change Address"                        =>
         clickByCss(RFMFinalReviewCYAPage.changeAddress)
     }
   }

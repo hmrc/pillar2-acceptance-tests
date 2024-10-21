@@ -224,7 +224,7 @@ class SubscriptionJourneySteps extends CommonFunctions {
       page match {
         case "registration submit" =>
           Check.checkUrlContains(url = "/review-submit/confirmation")
-        case "bookmark error" =>
+        case "bookmark error"      =>
           Check.checkUrlContains(url = "/errors/task-not-yet-started")
       }
   }

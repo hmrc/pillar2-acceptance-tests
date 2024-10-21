@@ -68,9 +68,9 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
     detailsData.forEach { row =>
       val key           = row.get("KEY")
       val expectedValue = row.get("VALUE")
-      val labelElement =
+      val labelElement  =
         driver.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
-      val valueElement =
+      val valueElement  =
         labelElement.findElement(By.xpath("following-sibling::dd[1]"))
       if (key == "Address") {
         val actualValueLines = valueElement.getText.split("\n").map(_.trim)
@@ -85,60 +85,60 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
 
   And("""^I click on change hyperlink next to the (.*)""") { (link: String) =>
     link match {
-      case "UPE Name" =>
+      case "UPE Name"              =>
         clickByCss(UPECheckYourAnswersPage.changeName)
-      case "UPE Address" =>
+      case "UPE Address"           =>
         clickByCss(UPECheckYourAnswersPage.changeAddress)
-      case "UPE Contact Name" =>
+      case "UPE Contact Name"      =>
         clickByCss(UPECheckYourAnswersPage.changeContactname)
-      case "UPE Email Address" =>
+      case "UPE Email Address"     =>
         clickByCss(UPECheckYourAnswersPage.changeEmailaddress)
       case "UPE Telephone Contact" =>
         clickByCss(UPECheckYourAnswersPage.changeTelephonecontact)
-      case "UPE Telephone Number" =>
+      case "UPE Telephone Number"  =>
         clickByCss(UPECheckYourAnswersPage.changeTelephonenumber)
-      case "NFM Name" =>
+      case "NFM Name"              =>
         clickByCss(NFMCheckYourAnswersPage.changeName)
-      case "NFM Address" =>
+      case "NFM Address"           =>
         clickByCss(NFMCheckYourAnswersPage.changeAddress)
-      case "NFM Contact Name" =>
+      case "NFM Contact Name"      =>
         clickByCss(NFMCheckYourAnswersPage.changeContactname)
-      case "NFM Email Address" =>
+      case "NFM Email Address"     =>
         clickByCss(NFMCheckYourAnswersPage.changeEmailaddress)
       case "NFM Telephone Contact" =>
         clickByCss(NFMCheckYourAnswersPage.changeTelephonecontact)
-      case "NFM Telephone Number" =>
+      case "NFM Telephone Number"  =>
         clickByCss(NFMCheckYourAnswersPage.changeTelephonenumber)
-      case "FD Group Status" =>
+      case "FD Group Status"       =>
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
-      case "Accounting Period" =>
+      case "Accounting Period"     =>
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeAccountingPeriod)
     }
   }
 
   And("""^I click on change link for (.*)""") { (link: String) =>
     link match {
-      case "Contact Name" =>
+      case "Contact Name"                    =>
         clickByCss(ContactDetailsCheckAnswersPage.changeName)
-      case "Email address" =>
+      case "Email address"                   =>
         clickByCss(ContactDetailsCheckAnswersPage.changeEmail)
-      case "Telephone number" =>
+      case "Telephone number"                =>
         clickByCss(ContactDetailsCheckAnswersPage.changeContactNumber)
-      case "Do you have a second contact?" =>
+      case "Do you have a second contact?"   =>
         clickByCss(ContactDetailsCheckAnswersPage.secondContact)
-      case "Second Contact Name" =>
+      case "Second Contact Name"             =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondName)
-      case "Second Contact Email" =>
+      case "Second Contact Email"            =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
       case "Second Contact Telephone number" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
-      case "Address" =>
+      case "Address"                         =>
         clickByCss(ContactDetailsSummaryPage.changeAddress)
-      case "Dashboard Address" =>
+      case "Dashboard Address"               =>
         clickByCss(ContactDetailsSummaryPage.dashboardAddressChange)
-      case "Primary Contact" =>
+      case "Primary Contact"                 =>
         clickByCss(ReviewAnswersPage.changeUPEContact)
-      case _ =>
+      case _                                 =>
         clickByCss(ContactDetailsCheckAnswersPage.changeName)
     }
   }
