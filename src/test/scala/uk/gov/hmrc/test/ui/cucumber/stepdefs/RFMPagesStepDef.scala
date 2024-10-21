@@ -29,23 +29,22 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   Given("""^(.*) logs in with rfm URL to Pillar2$""") { name: String =>
     name match {
       case "Organisation User" => AuthLoginPage.loginWithUserToRFM(name)
-      case "Individual User" => AuthLoginPage.loginAsIndToRFM(name)
-      case "Agent User" => AuthLoginPage.loginAsAgentToRFM(name)
-      case "Assistant User" => AuthLoginPage.loginAssistantToRFM(name)
+      case "Individual User"   => AuthLoginPage.loginAsIndToRFM(name)
+      case "Agent User"        => AuthLoginPage.loginAsAgentToRFM(name)
+      case "Assistant User"    => AuthLoginPage.loginAssistantToRFM(name)
 
     }
   }
 
   Given("""^I access RFM (.*) page$""") { (name: String) =>
     name match {
-      case "start" => Nav.navigateTo(RFMStartPage.url)
+      case "start"              => Nav.navigateTo(RFMStartPage.url)
       case "corporate position" => Nav.navigateTo(RFMCorpPositionPage.url)
-      case "New NFM guidance" => Nav.navigateTo(NewNFMGuidancePage.url)
-      case "Contact Guidance" => Nav.navigateTo(RFMContactGuidancePage.url)
-      case "CYA NFM" => Nav.navigateTo(RFMNewNFMContactNamePage.url)
-      case "Saving Progress" => Nav.navigateTo(RFMSavingProgressPage.url)
-      case "contact email" => Nav.navigateTo(RFMContactEmailPage.url)
-
+      case "New NFM guidance"   => Nav.navigateTo(NewNFMGuidancePage.url)
+      case "Contact Guidance"   => Nav.navigateTo(RFMContactGuidancePage.url)
+      case "CYA NFM"            => Nav.navigateTo(RFMNewNFMContactNamePage.url)
+      case "Saving Progress"    => Nav.navigateTo(RFMSavingProgressPage.url)
+      case "contact email"      => Nav.navigateTo(RFMContactEmailPage.url)
 
     }
   }
@@ -240,9 +239,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     Input.sendKeysById(RFMRegistrationDatePage.regYear, futureDate.getYear.toString)
   }
 
-  When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) with rfm URL to Pillar2 service$""") { (enrolmentkey: String, identifiername:String, identifiervalue:String) =>
-    AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
-    AuthLoginPage.loginWithExistingEntityWithRFM(enrolmentkey, identifiername, identifiervalue)
+  When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) with rfm URL to Pillar2 service$""") {
+    (enrolmentkey: String, identifiername: String, identifiervalue: String) =>
+      AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+      AuthLoginPage.loginWithExistingEntityWithRFM(enrolmentkey, identifiername, identifiervalue)
   }
 
   And("""^I should see 4 sections on RFM start page""") { () =>
@@ -295,19 +295,19 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   Given("""^(.*) logs in to RFM with credId (.*) for Pillar2""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
-      case _ =>  AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
+      case _                   => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
     }
   }
 
   And("""^I should see RFM (.*) field as blank$""") { (value: String) =>
     value match {
       case "Pillar2 Id" =>
-      Wait.waitForTagNameToBeRefreshed("h1")
-      assert(driver.findElement(By.cssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)).getAttribute("value").isEmpty())
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElement(By.cssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)).getAttribute("value").isEmpty())
 
       case "Registration Day" =>
-      Wait.waitForTagNameToBeRefreshed("h1")
-      assert(driver.findElement(By.id(RFMRegistrationDatePage.regDay)).getAttribute("value").isEmpty())
+        Wait.waitForTagNameToBeRefreshed("h1")
+        assert(driver.findElement(By.id(RFMRegistrationDatePage.regDay)).getAttribute("value").isEmpty())
 
       case "Registration Month" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -330,7 +330,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
   }
 
   And("""^I continue to RFM contact name Page""") { () =>
-    for(i <- 0 to 2) {
+    for (i <- 0 to 2) {
       InitialGuidancePage.clickContinue()
     }
   }

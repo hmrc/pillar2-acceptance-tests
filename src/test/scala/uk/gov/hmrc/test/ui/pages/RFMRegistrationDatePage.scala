@@ -21,16 +21,16 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object RFMRegistrationDatePage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/security/registration-date"
 
-  val caption               = ".govuk-caption-l"
-  val continue              = ".govuk-button"
-  val header: String        = "h1.govuk-heading-l"
-  val hintText              = ".govuk-hint"
-  val regDay                = "rfmRegistrationDate.day"
-  val regMonth              = "rfmRegistrationDate.month"
-  val regYear               = "rfmRegistrationDate.year"
+  val caption        = ".govuk-caption-l"
+  val continue       = ".govuk-button"
+  val header: String = "h1.govuk-heading-l"
+  val hintText       = ".govuk-hint"
+  val regDay         = "rfmRegistrationDate.day"
+  val regMonth       = "rfmRegistrationDate.month"
+  val regYear        = "rfmRegistrationDate.year"
 
-  val errorMessage          = ".govuk-error-message"
-  val errorLink             = "[href='#rfmRegistrationDate']"
-  val errorSummary          = ".govuk-error-summary__list"
+  val errorMessage = ".govuk-error-message"
+  val errorLink    = "[href='#rfmRegistrationDate']"
+  val errorSummary = ".govuk-error-summary__list"
 
 }

@@ -468,10 +468,10 @@ Feature: Contact details for the filing member
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I should see details as below:
-      | KEY                                | VALUE                     |
-      | Company                            | Test Example Company Name |
-      | Company Registration Number        | 76543210                  |
-      | Unique Taxpayer Reference          | 1234567890                |
+      | KEY                         | VALUE                     |
+      | Company                     | Test Example Company Name |
+      | Company Registration Number | 76543210                  |
+      | Unique Taxpayer Reference   | 1234567890                |
     And I should see row 4 key Is there a nominated filing member
     And I should see row 5 key Company
     And I should see row 6 key Company Registration Number

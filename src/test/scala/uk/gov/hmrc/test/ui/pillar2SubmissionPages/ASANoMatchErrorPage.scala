@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ASANoMatchErrorPage extends PageObject {
-  val url: String        = s"$p2SubRootUrl"+"asa/error/no-match"
+  val url: String = s"$p2SubRootUrl" + "asa/error/no-match"
 
-  val header: String     = ".govuk-heading-l"
+  val header: String = ".govuk-heading-l"
 
 }

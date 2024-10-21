@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object RepaymentReturnErrorPage extends PageObject{
+object RepaymentReturnErrorPage extends PageObject {
 
-  val url: String       = s"$rootUrl" + "repayment/error/return"
-  val header: String    = "h1.govuk-panel__title"
+  val url: String    = s"$rootUrl" + "repayment/error/return"
+  val header: String = "h1.govuk-panel__title"
 
 }

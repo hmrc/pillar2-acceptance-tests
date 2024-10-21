@@ -24,25 +24,26 @@ import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
 class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
 
-
   Given("""^(.*) logs in to subscribe for Pillar2 Submission$""") { name: String =>
     name match {
-      case "Organisation User" => Pillar2SubmissionLoginPage.loginToP2SubmissionWithUser(name)
+      case "Organisation User"           => Pillar2SubmissionLoginPage.loginToP2SubmissionWithUser(name)
       case "Organisation Assistant User" => Pillar2SubmissionLoginPage.loginToP2SubmissionWithAssistantUser(name)
-      case "Agent User" => Pillar2SubmissionLoginPage.loginToP2SubmissionWithAgentUser(name)
-      case "Individual User" => Pillar2SubmissionLoginPage.loginToP2SubmissionWithIndividualUser(name)
-      case _ => Pillar2SubmissionLoginPage.loginToSubscribe(name)
+      case "Agent User"                  => Pillar2SubmissionLoginPage.loginToP2SubmissionWithAgentUser(name)
+      case "Individual User"             => Pillar2SubmissionLoginPage.loginToP2SubmissionWithIndividualUser(name)
+      case _                             => Pillar2SubmissionLoginPage.loginToSubscribe(name)
     }
   }
 
-  When("""^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 submission service$""") { (userType: String, enrolmentkey: String, identifiername: String, identifiervalue: String) =>
-    userType match {
-      case "Agent" => Pillar2SubmissionLoginPage.p2SubAgentLoginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+  When("""^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 submission service$""") {
+    (userType: String, enrolmentkey: String, identifiername: String, identifiervalue: String) =>
+      userType match {
+        case "Agent" => Pillar2SubmissionLoginPage.p2SubAgentLoginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
 
-    }
+      }
   }
-  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 submission service$""") { (enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String) =>
-    Pillar2SubmissionLoginPage.p2SubAddDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue, authRule)
+  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 submission service$""") {
+    (enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String) =>
+      Pillar2SubmissionLoginPage.p2SubAddDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue, authRule)
   }
 
   Then("""^I should be navigated to (.*) of Pillar2 Submission""") { (page: String) =>
@@ -50,12 +51,11 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
     assertNavigationToPage(p2SubPageMatch(page))
   }
 
-
   Given("""^(.*) logs in to register for Pillar2 Submission Agent service$""") { name: String =>
     name match {
       case "Organisation User" => Pillar2SubmissionLoginPage.loginAsOrgToASA(name)
-      case "Individual User" => Pillar2SubmissionLoginPage.loginAsIndToASA(name)
-      case "Assistant User" => Pillar2SubmissionLoginPage.loginAsAssistantToASA(name)
+      case "Individual User"   => Pillar2SubmissionLoginPage.loginAsIndToASA(name)
+      case "Assistant User"    => Pillar2SubmissionLoginPage.loginAsAssistantToASA(name)
 
     }
   }
@@ -77,14 +77,14 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
   Given("""^I access submission BTN (.*) page$""") { (name: String) =>
     name match {
       case "start" => Nav.navigateTo(P2SubBtnStartPage.url)
-      case "UKTR"=> Nav.navigateTo(P2UkTaxReturnPage.url)
+      case "UKTR"  => Nav.navigateTo(P2UkTaxReturnPage.url)
     }
   }
 
   And("""^I select option (.*) and continue on Pillar2 submission$""") { (option: String) =>
     option match {
       case "Yes" => Input.clickByCss("#value")
-      case "No" => Input.clickByCss("#value-no")
+      case "No"  => Input.clickByCss("#value-no")
     }
     P2SubBtnStartPage.clickContinue()
   }
@@ -103,4 +103,3 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
   }
 
 }
-

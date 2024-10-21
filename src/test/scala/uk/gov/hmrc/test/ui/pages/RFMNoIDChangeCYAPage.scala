@@ -16,25 +16,24 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object RFMNoIDChangeCYAPage extends PageObject{
+object RFMNoIDChangeCYAPage extends PageObject {
 
-  val url: String           = s"$rootUrl"+"replace-filing-member/business-matching/filing-member/no-id/check-answers"
+  val url: String = s"$rootUrl" + "replace-filing-member/business-matching/filing-member/no-id/check-answers"
 
-  val caption                 = ".govuk-caption-l"
-  val continue                = ".govuk-button"
-  val header: String          = "h1.govuk-heading-l"
+  val caption        = ".govuk-caption-l"
+  val continue       = ".govuk-button"
+  val header: String = "h1.govuk-heading-l"
 
-  val keyList                 = ".govuk-summary-list__key"
-  val valueList               = ".govuk-summary-list__value"
-  val actionsList             = ".govuk-summary-list__actions"
-  val rowNumber               = "govuk-summary-list__row"
-  val changeName               = "a[href*='/change-input-name']"
-  val changeAddress            = "a[href*='/change-input-address']"
+  val keyList       = ".govuk-summary-list__key"
+  val valueList     = ".govuk-summary-list__value"
+  val actionsList   = ".govuk-summary-list__actions"
+  val rowNumber     = "govuk-summary-list__row"
+  val changeName    = "a[href*='/change-input-name']"
+  val changeAddress = "a[href*='/change-input-address']"
 
-  def clickContinue(): Unit       = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

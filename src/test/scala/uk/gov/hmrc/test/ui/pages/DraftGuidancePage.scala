@@ -20,10 +20,10 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object DraftGuidancePage extends PageObject {
-  val url: String      = "https://www.gov.uk/government/consultations/draft-guidance-multinational-top-up-tax-and-domestic-top-up-tax"
-  val continue         = "#submit"
-  val element          =".govuk-grid-column-two-thirds"
+  val url: String = "https://www.gov.uk/government/consultations/draft-guidance-multinational-top-up-tax-and-domestic-top-up-tax"
+  val continue    = "#submit"
+  val element     = ".govuk-grid-column-two-thirds"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

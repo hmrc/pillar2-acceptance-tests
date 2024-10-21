@@ -20,13 +20,13 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMUKCompanyGRSPage extends PageObject {
-  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode/fm&entityType=ukLimitedCompany"
+  val url: String = s"$rootUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/fm&entityType=ukLimitedCompany"
 
-  val header           = ".govuk-caption-l"
-  val saveAndContinue  = ".govuk-button"
-  val backLink         = ".govuk-back-link"
-  val errorMessage     = ".govuk-error-message"
+  val header          = ".govuk-caption-l"
+  val saveAndContinue = ".govuk-button"
+  val backLink        = ".govuk-back-link"
+  val errorMessage    = ".govuk-error-message"
 
-  def clickContinue(): Unit  = findByCss(saveAndContinue).click()
+  def clickContinue(): Unit = findByCss(saveAndContinue).click()
 
 }

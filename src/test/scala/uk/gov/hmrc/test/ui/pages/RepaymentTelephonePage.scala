@@ -21,11 +21,9 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentTelephonePage extends PageObject {
 
-  val url: String = s"$rootUrl" + "repayment/contact-details/telephone"
-  val continue = "#submit"
+  val url: String     = s"$rootUrl" + "repayment/contact-details/telephone"
+  val continue        = "#submit"
   val telephoneNumber = "#value"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 }
-
-

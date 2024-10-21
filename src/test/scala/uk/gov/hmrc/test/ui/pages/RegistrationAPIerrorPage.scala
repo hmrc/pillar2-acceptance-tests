@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object RegistrationAPIerrorPage extends PageObject{
+object RegistrationAPIerrorPage extends PageObject {
 
-  val url: String       = s"$rootUrl" + "errors/eis"
-  val header            = ".govuk-heading-xl"
+  val url: String = s"$rootUrl" + "errors/eis"
+  val header      = ".govuk-heading-xl"
 }

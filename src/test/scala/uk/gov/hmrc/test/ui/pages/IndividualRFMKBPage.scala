@@ -19,10 +19,9 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object IndividualRFMKBPage extends PageObject {
-  val url: String     = s"$rootUrl"+"replace-filing-member/error/individual"
+  val url: String = s"$rootUrl" + "replace-filing-member/error/individual"
 
-  val header: String  = "h1.govuk-heading-l"
-  val backLink        = ".govuk-back-link"
-
+  val header: String = "h1.govuk-heading-l"
+  val backLink       = ".govuk-back-link"
 
 }

@@ -20,10 +20,10 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object SearchRegisterPage extends PageObject {
-  val url: String      ="https://find-and-update.company-information.service.gov.uk/"
-  val continue         ="#submit"
-  val element          =".search-bar-active"
+  val url: String = "https://find-and-update.company-information.service.gov.uk/"
+  val continue    = "#submit"
+  val element     = ".search-bar-active"
 
-  def clickContinue(): Unit  = findByCss(continue).click()
+  def clickContinue(): Unit = findByCss(continue).click()
 
 }

@@ -25,7 +25,6 @@ import uk.gov.hmrc.test.ui.pages._
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-
 class SubscriptionJourneySteps extends CommonFunctions {
 
   And("""^I enter account period as:$""") { (accountPeriod: DataTable) =>
@@ -33,7 +32,6 @@ class SubscriptionJourneySteps extends CommonFunctions {
     Input.enterData(accountPeriod)
     UPEEntityTypePage.clickContinue()
   }
-
 
   And("""^Accounting Period (.*) is entered as (.*)$""") { (field: String, name: String) =>
     field match {
@@ -151,7 +149,7 @@ class SubscriptionJourneySteps extends CommonFunctions {
   And("""^Url for (.*) page should be ending with (.*)$""") { (page: String, url: String) =>
     page match {
       case "registration submit" => Check.checkUrlContains(url = "/review-submit/confirmation")
-      case "bookmark error" => Check.checkUrlContains(url = "/errors/task-not-yet-started")
+      case "bookmark error"      => Check.checkUrlContains(url = "/errors/task-not-yet-started")
     }
   }
 
@@ -176,4 +174,3 @@ class SubscriptionJourneySteps extends CommonFunctions {
   }
 
 }
-

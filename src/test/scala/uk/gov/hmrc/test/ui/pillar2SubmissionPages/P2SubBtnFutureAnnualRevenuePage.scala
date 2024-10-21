@@ -19,6 +19,6 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2SubBtnFutureAnnualRevenuePage extends PageObject {
-  val url: String                 = s"$p2SubRootUrl"+"below-threshold-notification/future-annual-revenues"
+  val url: String = s"$p2SubRootUrl" + "below-threshold-notification/future-annual-revenues"
 
 }

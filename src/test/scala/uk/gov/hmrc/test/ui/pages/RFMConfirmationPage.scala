@@ -21,11 +21,11 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
 object RFMConfirmationPage extends PageObject {
-  val url: String       = s"$rootUrl"+"replace-filing-member/review-submit/confirmation"
-  val header: String    = "h1.govuk-panel__title"
-  val registrationID    = "div+.govuk-body"
-  val header2           = "h2.govuk-heading-m"
-  val printthispage     = "#print-this-page"
+  val url: String    = s"$rootUrl" + "replace-filing-member/review-submit/confirmation"
+  val header: String = "h1.govuk-panel__title"
+  val registrationID = "div+.govuk-body"
+  val header2        = "h2.govuk-heading-m"
+  val printthispage  = "#print-this-page"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

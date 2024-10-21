@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2SubmissionSetUpPage extends PageObject {
 
-  val url: String                 = s"$p2SubRootUrl"
-  val header: String              = "h1.govuk-heading-l"
+  val url: String    = s"$p2SubRootUrl"
+  val header: String = "h1.govuk-heading-l"
 
 }

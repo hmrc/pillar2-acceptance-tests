@@ -20,13 +20,12 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentAffinityKBPage extends PageObject {
-  val url: String     = s"$p2SubRootUrl"+"unauthorised/agent"
+  val url: String = s"$p2SubRootUrl" + "unauthorised/agent"
 
-  val header: String  = "h1.govuk-heading-l"
-  val startAgain        = ".govuk-button"
-  val backLink        = ".govuk-back-link"
+  val header: String = "h1.govuk-heading-l"
+  val startAgain     = ".govuk-button"
+  val backLink       = ".govuk-back-link"
 
   def clickStartAgain(): Unit = findByCss(startAgain).click()
-
 
 }
