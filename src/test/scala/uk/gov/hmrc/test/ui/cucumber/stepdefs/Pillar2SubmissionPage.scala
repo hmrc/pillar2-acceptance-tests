@@ -42,6 +42,7 @@ trait Pillar2SubmissionPage
       case "BTN Domestic or MNE Page"                  => P2SubBtnDomesticOrMnePage
       case "BTN Annual Revenue Page"                   => P2SubBtnAnnualRevenuePage
       case "BTN Future Annual Revenue Page"            => P2SubBtnFutureAnnualRevenuePage
+      case "BTN Nil Return Page"                       => P2SubBtnNilReturnPage
       case "BTN AGD KB Page"                           => P2SubBtnAgdKBPage
       case "accounts summary page"                     => P2SubAccountsSummaryPage
       case "UK Tax Return Page"                        => P2UkTaxReturnPage
