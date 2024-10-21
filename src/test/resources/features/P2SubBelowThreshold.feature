@@ -3,6 +3,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
   As an authenticated user
   I should be able to complete below threshold notification journey
 
+  @p2tests1
   Scenario: 1 - Org User navigates to below threshold notification pages
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
@@ -41,12 +42,11 @@ Feature: Pillar2 submission Below threshold  notification user journey
 
     Then I should be navigated to BTN Nil Return Page of Pillar2 Submission
     When I click Find out more about submitting a late or new UK Tax Return link
-    Then I should be on UK Tax Return Page
+    Then I should be navigated to UK Tax Return Page of Pillar2 Submission
     When I select back link
-    Then I should be on BTN Nil Return Page
+    Then I should be navigated to BTN Nil Return Page of Pillar2 Submission
     When I select back link
-
-#    And I click the browser back button
+    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to Under Construction Page of Pillar2 Submission
     When I access submission BTN UKTR page
