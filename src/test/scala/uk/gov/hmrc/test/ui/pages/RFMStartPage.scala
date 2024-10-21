@@ -22,15 +22,15 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object RFMStartPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/start"
 
-  val caption = ".govuk-caption-l"
-  val continue = ".govuk-button"
-  val header: String = "h1.govuk-heading-l"
+  val caption              = ".govuk-caption-l"
+  val continue             = ".govuk-button"
+  val header: String       = "h1.govuk-heading-l"
   val serviceStartPageLink = ".govuk-link--no-visited-state"
-  val sections = ".govuk-heading-m"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href*='#confirmation']"
-  val backLink = ".govuk-back-link"
-  val errorMessage = ".govuk-error-message"
+  val sections             = ".govuk-heading-m"
+  val errorSummary         = ".govuk-error-summary__list"
+  val errorLink            = "[href*='#confirmation']"
+  val backLink             = ".govuk-back-link"
+  val errorMessage         = ".govuk-error-message"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

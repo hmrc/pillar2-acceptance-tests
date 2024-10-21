@@ -23,6 +23,6 @@ object AssistantUserRFMKBPage extends PageObject {
     s"$rootUrl" + "replace-filing-member/error/standard-organisation"
 
   val header: String = "h1.govuk-heading-l"
-  val backLink = ".govuk-back-link"
+  val backLink       = ".govuk-back-link"
 
 }

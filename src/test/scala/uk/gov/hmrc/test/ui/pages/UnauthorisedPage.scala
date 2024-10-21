@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UnauthorisedPage extends PageObject {
 
-  val url: String = s"$rootUrl" + "unauthorised"
+  val url: String    = s"$rootUrl" + "unauthorised"
   val header: String = "h1.govuk-heading-xl"
 
 }

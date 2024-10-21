@@ -20,10 +20,10 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentNonUKPaymentPage extends PageObject {
 
-  val url: String = s"$rootUrl" + "repayment/non-uk-details"
+  val url: String    = s"$rootUrl" + "repayment/non-uk-details"
   val header: String = "h1.govuk-heading-l"
-  val backLink = ".govuk-back-link"
-  val tableCaption = ".govuk-table__caption"
+  val backLink       = ".govuk-back-link"
+  val tableCaption   = ".govuk-table__caption"
   val warningMessage = ".govuk-warning-text__text"
 
 }

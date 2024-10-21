@@ -22,6 +22,6 @@ object BAGuidancePage extends PageObject {
   val url: String =
     s"$rootUrl" + "eligibility/service-not-suitable/not-active-in-uk"
   val header: String = "h1.govuk-heading-l"
-  val backLink = ".govuk-back-link"
+  val backLink       = ".govuk-back-link"
 
 }

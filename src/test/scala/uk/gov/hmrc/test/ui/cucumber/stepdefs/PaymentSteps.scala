@@ -57,21 +57,21 @@ class PaymentSteps extends CommonFunctions {
   }
 
   Then("""^I should be navigated to new tab$""") { () =>
-    val handles = driver.getWindowHandles.toArray().toSeq
+    val handles   = driver.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
     driver.switchTo().window(newWindow)
   }
 
   Then("""^I should navigate back to main tab""") { () =>
-    val handles = driver.getWindowHandles.toArray().toSeq
+    val handles    = driver.getWindowHandles.toArray().toSeq
     val mainWindow = handles.head.toString
     driver.switchTo().window(mainWindow)
   }
 
   Then("""I should be redirected to search register page in a new tab""") {
     () =>
-      val handles = driver.getWindowHandles.toArray().toSeq
-      val newWindow = handles(1).toString
+      val handles    = driver.getWindowHandles.toArray().toSeq
+      val newWindow  = handles(1).toString
       val mainWindow = handles.head.toString
       driver.switchTo().window(newWindow)
       Wait.waitForElementToPresentByCssSelector(SearchRegisterPage.element)
@@ -85,8 +85,8 @@ class PaymentSteps extends CommonFunctions {
   }
 
   Then("""I should be redirected to guidance page in a new tab""") { () =>
-    val handles = driver.getWindowHandles.toArray().toSeq
-    val newWindow = handles(1).toString
+    val handles    = driver.getWindowHandles.toArray().toSeq
+    val newWindow  = handles(1).toString
     val mainWindow = handles.head.toString
     driver.switchTo().window(newWindow)
     Wait.waitForElementToPresentByCssSelector(GUKGuidancePage3.header)

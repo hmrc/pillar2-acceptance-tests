@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ContactDetailsChangeTelephonePage extends PageObject {
   val url: String = s"$rootUrl" + "contact-details/change-telephone"
-  val continue = "#submit"
+  val continue    = "#submit"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

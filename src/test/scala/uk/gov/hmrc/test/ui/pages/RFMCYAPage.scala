@@ -21,15 +21,15 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object RFMCYAPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/security/check-answers"
 
-  val caption = ".govuk-caption-l"
-  val continue = ".govuk-button"
+  val caption        = ".govuk-caption-l"
+  val continue       = ".govuk-button"
   val header: String = "h1.govuk-heading-l"
 
-  val keyList = ".govuk-summary-list__key"
-  val valueList = ".govuk-summary-list__value"
-  val actionsList = ".govuk-summary-list__actions"
-  val rowNumber = "govuk-summary-list__row"
-  val changePID = "a[href*='/change-enter-pillar-2-id']"
+  val keyList                = ".govuk-summary-list__key"
+  val valueList              = ".govuk-summary-list__value"
+  val actionsList            = ".govuk-summary-list__actions"
+  val rowNumber              = "govuk-summary-list__row"
+  val changePID              = "a[href*='/change-enter-pillar-2-id']"
   val changeRegistrationDate = "a[href*='/change-registration-date']"
 
 }

@@ -21,6 +21,6 @@ object RFMExistingMemberKBPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/error/existing-member"
 
   val header: String = "h1.govuk-heading-l"
-  val backLink = ".govuk-back-link"
+  val backLink       = ".govuk-back-link"
 
 }

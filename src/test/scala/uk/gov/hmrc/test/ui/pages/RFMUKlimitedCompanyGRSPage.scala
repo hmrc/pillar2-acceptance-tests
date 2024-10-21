@@ -24,9 +24,9 @@ object RFMUKlimitedCompanyGRSPage extends PageObject {
   val url: String =
     s"$rootUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=ukLimitedCompany"
 
-  val header = ".govuk-caption-l"
+  val header          = ".govuk-caption-l"
   val saveAndContinue = ".govuk-button"
-  val backLink = ".govuk-back-link"
+  val backLink        = ".govuk-back-link"
 
   def clickContinue(): Unit = findByCss(saveAndContinue).click()
 

@@ -21,9 +21,9 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentGuidancePage extends PageObject {
 
-  val url: String = s"$rootUrl" + "repayment/before-you-start"
+  val url: String    = s"$rootUrl" + "repayment/before-you-start"
   val header: String = "h1.govuk-heading-l"
-  val backLink = ".govuk-back-link"
+  val backLink       = ".govuk-back-link"
 
   val continue = ".govuk-button"
 

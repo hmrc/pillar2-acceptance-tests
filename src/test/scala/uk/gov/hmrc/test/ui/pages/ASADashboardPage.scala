@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object ASADashboardPage extends PageObject {
   val url: String = s"$rootUrl" + "pillar2-top-up-tax-home"
 
-  val ASALink = "a[href*='/asa/home']"
+  val ASALink        = "a[href*='/asa/home']"
   val inactiveStatus = ".govuk-notification-banner__heading"
 
 }

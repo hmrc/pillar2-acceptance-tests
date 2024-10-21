@@ -20,10 +20,10 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ASAConfirmationPage extends PageObject {
-  val url: String = s"$rootUrl" + "asa/confirm"
-  val continue = ".govuk-button"
+  val url: String    = s"$rootUrl" + "asa/confirm"
+  val continue       = ".govuk-button"
   val header: String = ".govuk-heading-l"
-  val backLink = ".govuk-back-link"
+  val backLink       = ".govuk-back-link"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

@@ -23,7 +23,7 @@ object ManageAccountPeriodPage extends PageObject {
   val url: String =
     s"$rootUrl" + "manage-account/further-details/change-accounting-period"
 
-  val caption = ".govuk-caption-l"
+  val caption  = ".govuk-caption-l"
   val continue = ".govuk-button"
 
   def clickContinue(): Unit = findByCss(continue).click()

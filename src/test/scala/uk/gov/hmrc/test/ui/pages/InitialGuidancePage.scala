@@ -22,10 +22,10 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object InitialGuidancePage extends PageObject {
   val url: String = s"$rootUrl" + "business-matching/match-hmrc-records"
 
-  val caption = ".govuk-caption-l"
+  val caption        = ".govuk-caption-l"
   val header: String = "h1.govuk-heading-l"
-  val continue = ".govuk-button"
-  val backLink = ".govuk-back-link"
+  val continue       = ".govuk-button"
+  val backLink       = ".govuk-back-link"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

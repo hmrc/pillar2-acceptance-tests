@@ -66,7 +66,7 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
   And("""^I should see details as below:$""") { (details: DataTable) =>
     val detailsData = details.asMaps(classOf[String], classOf[String])
     detailsData.forEach { row =>
-      val key = row.get("KEY")
+      val key           = row.get("KEY")
       val expectedValue = row.get("VALUE")
       val labelElement =
         driver.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))

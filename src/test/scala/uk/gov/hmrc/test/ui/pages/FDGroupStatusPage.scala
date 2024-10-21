@@ -22,15 +22,15 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object FDGroupStatusPage extends PageObject {
   val url: String = s"$rootUrl" + "further-details/group-status"
 
-  val caption = ".govuk-caption-l"
-  val eqForm = ".govuk-form-group"
-  val eq = ".govuk-form-group .govuk-fieldset"
-  val continue = "#submit"
+  val caption      = ".govuk-caption-l"
+  val eqForm       = ".govuk-form-group"
+  val eq           = ".govuk-form-group .govuk-fieldset"
+  val continue     = "#submit"
   val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href*='#value']"
-  val backLink = ".govuk-back-link"
+  val errorLink    = "[href*='#value']"
+  val backLink     = ".govuk-back-link"
   val errorMessage = ".govuk-error-message"
-  val fieldHeader = ".govuk-fieldset__heading"
+  val fieldHeader  = ".govuk-fieldset__heading"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

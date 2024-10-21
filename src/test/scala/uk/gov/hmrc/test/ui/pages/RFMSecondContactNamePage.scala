@@ -22,14 +22,14 @@ object RFMSecondContactNamePage extends PageObject {
   val url: String =
     s"$rootUrl" + "replace-filing-member/contact-details/second-input-name"
 
-  val caption = ".govuk-caption-l"
-  val continue = ".govuk-button"
+  val caption        = ".govuk-caption-l"
+  val continue       = ".govuk-button"
   val header: String = "h1.govuk-heading-l"
-  val hintText = ".govuk-hint"
+  val hintText       = ".govuk-hint"
 
   val errorMessage = ".govuk-error-message"
-  val errorLink = "[href*='#value']"
+  val errorLink    = "[href*='#value']"
   val errorSummary = ".govuk-error-summary__list"
-  val nameField = "#value"
+  val nameField    = "#value"
 
 }

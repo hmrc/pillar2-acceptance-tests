@@ -23,8 +23,8 @@ object ManageSecondContactNamePage extends PageObject {
   val url: String =
     s"$rootUrl" + "manage-account/contact-details/change-second-input-name"
 
-  val caption = ".govuk-caption-l"
-  val continue = ".govuk-button"
+  val caption     = ".govuk-caption-l"
+  val continue    = ".govuk-button"
   val contactName = "#value"
 
   def clickContinue(): Unit = findByCss(continue).click()

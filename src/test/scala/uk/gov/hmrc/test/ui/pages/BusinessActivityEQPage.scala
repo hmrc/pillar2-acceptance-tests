@@ -22,13 +22,13 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object BusinessActivityEQPage extends PageObject {
   val url: String = s"$rootUrl" + "eligibility/activities-within-the-uk"
 
-  val caption = ".govuk-caption-l"
-  val eqForm = "form[action*='eligibility']"
-  val eq = "form[action*='eligibility'] .govuk-fieldset"
-  val continue = "form[action*='eligibility'] button"
+  val caption      = ".govuk-caption-l"
+  val eqForm       = "form[action*='eligibility']"
+  val eq           = "form[action*='eligibility'] .govuk-fieldset"
+  val continue     = "form[action*='eligibility'] button"
   val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href='#value_0']"
-  val backLink = ".govuk-back-link"
+  val errorLink    = "[href='#value_0']"
+  val backLink     = ".govuk-back-link"
   val errorMessage = ".govuk-error-message"
 
   def clickContinue(): Unit = findByCss(continue).click()

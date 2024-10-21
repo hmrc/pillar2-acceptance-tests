@@ -22,8 +22,8 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object ContactDetailsInputNamePage extends PageObject {
   val url: String = s"$rootUrl" + "contact-details/input-name"
 
-  val caption = ".govuk-caption-l"
-  val continue = ".govuk-button"
+  val caption     = ".govuk-caption-l"
+  val continue    = ".govuk-button"
   val contactName = "#value"
 
   def clickContinue(): Unit = findByCss(continue).click()

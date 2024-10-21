@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ASANotAuthorisedPage extends PageObject {
-  val url: String = s"$rootUrl" + "asa/error/not-authorised"
+  val url: String    = s"$rootUrl" + "asa/error/not-authorised"
   val header: String = ".govuk-heading-l"
 
 }

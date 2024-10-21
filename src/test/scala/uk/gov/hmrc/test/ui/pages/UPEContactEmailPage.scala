@@ -23,12 +23,12 @@ object UPEContactEmailPage extends PageObject {
   val url: String =
     s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-email"
 
-  val caption = ".govuk-caption-l"
-  val continue = ".govuk-button"
-  val emailField = "emailAddress"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href='#emailAddress']"
-  val backLink = ".govuk-back-link"
-  val errorMessage = "#emailAddress-error"
+  val caption               = ".govuk-caption-l"
+  val continue              = ".govuk-button"
+  val emailField            = "emailAddress"
+  val errorSummary          = ".govuk-error-summary__list"
+  val errorLink             = "[href='#emailAddress']"
+  val backLink              = ".govuk-back-link"
+  val errorMessage          = "#emailAddress-error"
   def clickContinue(): Unit = findByCss(continue).click()
 }

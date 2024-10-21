@@ -22,13 +22,13 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object NFMEQPage extends PageObject {
   val url: String = s"$rootUrl" + "eligibility/nfm"
 
-  val caption = ".govuk-caption-l"
-  val eqForm = ".govuk-grid-column-two-thirds"
-  val eq = "form[action='/nfms-answer'] .govuk-fieldset"
-  val continue = "form[action='/nfms-answer'] button"
+  val caption      = ".govuk-caption-l"
+  val eqForm       = ".govuk-grid-column-two-thirds"
+  val eq           = "form[action='/nfms-answer'] .govuk-fieldset"
+  val continue     = "form[action='/nfms-answer'] button"
   val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href='#value_0']"
-  val backLink = ".govuk-back-link"
+  val errorLink    = "[href='#value_0']"
+  val backLink     = ".govuk-back-link"
   val errorMessage = ".govuk-error-message"
 
   def clickContinue(): Unit = findByCss(continue).click()

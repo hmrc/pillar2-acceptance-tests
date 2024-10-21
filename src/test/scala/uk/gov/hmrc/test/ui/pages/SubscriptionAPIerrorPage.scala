@@ -21,5 +21,5 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object SubscriptionAPIerrorPage extends PageObject {
 
   val url: String = s"$rootUrl" + "error/view"
-  val header = ".govuk-heading-xl"
+  val header      = ".govuk-heading-xl"
 }

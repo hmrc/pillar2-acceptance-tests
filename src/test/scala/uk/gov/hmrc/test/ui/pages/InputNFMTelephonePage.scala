@@ -22,12 +22,12 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object InputNFMTelephonePage extends PageObject {
   val url: String =
     s"$rootUrl" + "business-matching/filing-member/no-id/input-telephone"
-  val continue = "#submit"
+  val continue        = "#submit"
   val telephoneNumber = "#value"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href*='#value']"
-  val backLink = ".govuk-back-link"
-  val errorMessage = ".govuk-error-message"
+  val errorSummary    = ".govuk-error-summary__list"
+  val errorLink       = "[href*='#value']"
+  val backLink        = ".govuk-back-link"
+  val errorMessage    = ".govuk-error-message"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

@@ -23,7 +23,7 @@ object RFMContactAddressPage extends PageObject {
   val url: String =
     s"$rootUrl" + "replace-filing-member/contact-details/address/input"
   val continue = ".govuk-button"
-  val country = "#countryCode"
+  val country  = "#countryCode"
   val backLink = ".govuk-back-link"
 
   def clickContinue(): Unit = findByCss(continue).click()

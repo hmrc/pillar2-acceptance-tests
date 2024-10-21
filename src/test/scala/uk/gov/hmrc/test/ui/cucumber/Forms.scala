@@ -20,9 +20,9 @@ object Forms {
 
   val addressLine1 = "17 Beechfield Manor"
   val addressLine2 = "Aghalee"
-  val city = "Paris"
-  val region = "North"
-  val postcode = "NE13 2XH"
+  val city         = "Paris"
+  val region       = "North"
+  val postcode     = "NE13 2XH"
 
   def addressNonUK(): Unit = {
     Input.sendKeysById("addressLine1", addressLine1)

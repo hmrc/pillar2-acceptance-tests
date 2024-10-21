@@ -21,11 +21,11 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
 object RegistrationReturnErrorPage extends PageObject {
-  val url: String = s"$rootUrl" + "errors/return"
+  val url: String    = s"$rootUrl" + "errors/return"
   val header: String = "h1.govuk-panel__title"
   val registrationID = ".govuk-panel__body"
-  val header2 = "h2.govuk-heading-m"
-  val pageHeader = "a[href='/report-pillar2-top-up-taxes']"
+  val header2        = "h2.govuk-heading-m"
+  val pageHeader     = "a[href='/report-pillar2-top-up-taxes']"
   val surveylink = "a[href='/report-pillar2-top-up-taxes/under-construction']"
 
   def clickContinue(): Unit = findByCss(continue).click()

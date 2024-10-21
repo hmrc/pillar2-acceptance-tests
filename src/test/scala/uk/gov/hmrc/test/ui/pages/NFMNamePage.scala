@@ -23,13 +23,13 @@ object NFMNamePage extends PageObject {
   val url: String =
     s"$rootUrl" + "business-matching/filing-member/no-id/input-name"
 
-  val caption = ".govuk-caption-l"
-  val form = ".govuk-form-group"
-  val nameField = "#value"
-  val continue = ".govuk-button"
+  val caption      = ".govuk-caption-l"
+  val form         = ".govuk-form-group"
+  val nameField    = "#value"
+  val continue     = ".govuk-button"
   val errorSummary = ".govuk-error-summary__list"
-  val errorLink = "[href='#value']"
-  val backLink = ".govuk-back-link"
+  val errorLink    = "[href='#value']"
+  val backLink     = ".govuk-back-link"
   val errorMessage = ".govuk-error-message"
 
   def clickContinue(): Unit = findByCss(continue).click()

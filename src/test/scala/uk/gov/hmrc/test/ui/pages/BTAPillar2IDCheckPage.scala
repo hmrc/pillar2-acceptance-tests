@@ -21,13 +21,13 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object BTAPillar2IDCheckPage extends PageObject {
 
-  val url: String = s"$rootUrl" + "bta/pillar2-id"
+  val url: String    = s"$rootUrl" + "bta/pillar2-id"
   val header: String = "h1.govuk-fieldset__heading"
-  val backLink = ".govuk-back-link"
-  val hintText = ".govuk-hint"
-  val errorLink = "[href='#value_0']"
-  val errorMessage = ".govuk-error-message"
-  val continue = ".govuk-button"
+  val backLink       = ".govuk-back-link"
+  val hintText       = ".govuk-hint"
+  val errorLink      = "[href='#value_0']"
+  val errorMessage   = ".govuk-error-message"
+  val continue       = ".govuk-button"
 
   def clickContinue(): Unit = findByCss(continue).click()
 

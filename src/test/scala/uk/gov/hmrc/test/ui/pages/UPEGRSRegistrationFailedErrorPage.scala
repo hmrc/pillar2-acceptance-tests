@@ -21,8 +21,8 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object UPEGRSRegistrationFailedErrorPage extends PageObject {
   val url: String =
     s"$rootUrl" + "business-matching/ultimate-parent/uk-based/error/mismatching-details"
-  val content = "#main-content"
+  val content        = "#main-content"
   val header: String = "h1.govuk-heading-l"
-  val backLink = ".govuk-back-link"
-  val secondHeader = ".govuk-heading-m"
+  val backLink       = ".govuk-back-link"
+  val secondHeader   = ".govuk-heading-m"
 }

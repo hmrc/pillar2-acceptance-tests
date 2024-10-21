@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object TransactionHistorySecondPage extends PageObject {
 
-  val url: String = s"$rootUrl" + "payment/history?page=2"
+  val url: String     = s"$rootUrl" + "payment/history?page=2"
   val previousPageCTA = "[rel='prev']"
 
   def clickPrevious(): Unit = findByCss(previousPageCTA).click()

@@ -34,9 +34,9 @@ object AuthLoginPage extends BasePage with PageObject {
     s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
   val frontEndUPEOrgTypeUrl: String =
     s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
-  val redirectUrlField: String = "redirectionUrl"
+  val redirectUrlField: String    = "redirectionUrl"
   val redirectionUrlField: String = "#redirectionUrl"
-  val credIdField: String = "authorityId"
+  val credIdField: String         = "authorityId"
   val frontEndNameUrl: String =
     s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-name"
   val frontEndCAUrl: String =
@@ -69,16 +69,16 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndCDCAUrl: String = s"$rootUrl" + "contact-details/check-answers"
   val frontEndFinalReviewCAUrl: String =
     s"$rootUrl" + "review-submit/check-answers"
-  val frontEndSubUrl: String = s"$rootUrl" + "review-submit/confirmation"
+  val frontEndSubUrl: String       = s"$rootUrl" + "review-submit/confirmation"
   val frontEndDashboardUrl: String = s"$rootUrl" + "pillar2-top-up-tax-home"
-  val frontEndASAUrl: String = s"$rootUrl" + "asa/input-pillar-2-id"
+  val frontEndASAUrl: String       = s"$rootUrl" + "asa/input-pillar-2-id"
   val rfmUrl: String =
     s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
-  val enrolmentKeyField: String = "enrolment[0].name"
-  val identifierNameField: String = "input-0-0-name"
-  val identifierValueField: String = "input-0-0-value"
-  val delegatedEnrolmentKeyField: String = "delegatedEnrolment[0].key"
-  val delegatedIdentifierNameField: String = "input-delegated-0-0-name"
+  val enrolmentKeyField: String             = "enrolment[0].name"
+  val identifierNameField: String           = "input-0-0-name"
+  val identifierValueField: String          = "input-0-0-value"
+  val delegatedEnrolmentKeyField: String    = "delegatedEnrolment[0].key"
+  val delegatedIdentifierNameField: String  = "input-delegated-0-0-name"
   val delegatedIdentifierValueField: String = "input-delegated-0-0-value"
   val delegatedAuthRuleField: String = "delegatedEnrolment[0].delegatedAuthRule"
   val addDelegatedEnrolmentCTA: String = "[onclick='addDelegatedEnrolment()']"

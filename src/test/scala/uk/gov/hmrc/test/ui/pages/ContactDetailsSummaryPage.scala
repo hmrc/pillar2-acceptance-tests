@@ -20,27 +20,27 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ContactDetailsSummaryPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/contact-details/summary"
+  val url: String    = s"$rootUrl" + "manage-account/contact-details/summary"
   val header: String = "h1.govuk-heading-l"
-  val section = ".govuk-heading-m"
-  val keyList = ".govuk-summary-list__key"
-  val valueList = ".govuk-summary-list__value"
-  val actionsList = ".govuk-summary-list__actions"
-  val rowNumber = "govuk-summary-list__row"
-  val continue = "#continue"
+  val section        = ".govuk-heading-m"
+  val keyList        = ".govuk-summary-list__key"
+  val valueList      = ".govuk-summary-list__value"
+  val actionsList    = ".govuk-summary-list__actions"
+  val rowNumber      = "govuk-summary-list__row"
+  val continue       = "#continue"
 
-  val changeName = "a[href*='/change-input-name']"
-  val changeEmail = "a[href*='/change-input-email']"
-  val changeContact = "a[href*='/change-telephone']"
+  val changeName          = "a[href*='/change-input-name']"
+  val changeEmail         = "a[href*='/change-input-email']"
+  val changeContact       = "a[href*='/change-telephone']"
   val changeContactNumber = "a[href*='/change-input-telephone']"
 
-  val secondContact = "a[href*='/change-second-contact']"
-  val changeSecondName = "a[href*='/change-second-input-name']"
-  val changeSecondEmail = "a[href*='/change-second-input-email']"
-  val secondTelephone = "a[href*='/change-second-telephone']"
+  val secondContact         = "a[href*='/change-second-contact']"
+  val changeSecondName      = "a[href*='/change-second-input-name']"
+  val changeSecondEmail     = "a[href*='/change-second-input-email']"
+  val secondTelephone       = "a[href*='/change-second-telephone']"
   val changeSecondTelephone = "a[href*='/change-second-input-telephone']"
 
-  val changeAddress = "a[href*='/change-input-address']"
+  val changeAddress          = "a[href*='/change-input-address']"
   val dashboardAddressChange = "a[href*='address/change-input']"
 
   def saveAndContinue(): Unit = findByCss(continue).click()

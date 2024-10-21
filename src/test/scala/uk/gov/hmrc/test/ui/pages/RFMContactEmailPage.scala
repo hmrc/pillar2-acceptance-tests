@@ -22,14 +22,14 @@ object RFMContactEmailPage extends PageObject {
   val url: String =
     s"$rootUrl" + "replace-filing-member/contact-details/input-email"
 
-  val caption = ".govuk-caption-l"
-  val continue = ".govuk-button"
+  val caption        = ".govuk-caption-l"
+  val continue       = ".govuk-button"
   val header: String = "h1.govuk-heading-l"
-  val hintText = ".govuk-hint"
+  val hintText       = ".govuk-hint"
 
   val errorMessage = ".govuk-error-message"
-  val errorLink = "[href*='#emailAddress']"
+  val errorLink    = "[href*='#emailAddress']"
   val errorSummary = ".govuk-error-summary__list"
-  val emailField = "#emailAddress"
+  val emailField   = "#emailAddress"
 
 }
