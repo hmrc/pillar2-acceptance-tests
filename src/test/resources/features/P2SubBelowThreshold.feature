@@ -31,7 +31,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
     Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    When I click Find out more about submitting a UKTR. link
+    When I click Find out more about submitting a UKTR link
     Then I should be navigated to UK Tax Return Page of Pillar2 Submission
     When I select back link
     Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
@@ -40,7 +40,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
     When I select back link
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to Under Construction Page of Pillar2 Submission
+    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
     And I click the browser back button
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
@@ -95,7 +95,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
     Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    When I click Find out more about submitting a UKTR. link
+    When I click Find out more about submitting a UKTR link
     Then I should be navigated to UK Tax Return Page of Pillar2 Submission
     When I select back link
     Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
@@ -104,7 +104,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
     When I select back link
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to Under Construction Page of Pillar2 Submission
+    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
     And I click the browser back button
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
