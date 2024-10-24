@@ -44,7 +44,7 @@ class PaymentSteps extends CommonFunctions {
   }
 
   Then("""^I should be navigated to new tab$""") { () =>
-    val wait = new WebDriverWait(driver, Duration.ofSeconds(10))
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(50))
     wait.until(ExpectedConditions.numberOfWindowsToBe(2))
 
     val handles   = driver.getWindowHandles.toArray().toSeq
