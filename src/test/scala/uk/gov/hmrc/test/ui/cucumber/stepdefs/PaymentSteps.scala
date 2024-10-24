@@ -50,8 +50,16 @@ class PaymentSteps extends CommonFunctions {
     val handles   = driver.getWindowHandles.toArray().toSeq
     println(s"Number of tabs opened: ${handles.size}")
 
-    val newWindow = handles(1).toString
+    val originalWindow = driver.getWindowHandle
+    driver.switchTo().window(originalWindow)
+    val mainTabTitle = driver.getTitle
+    println(s"Main tab title: $mainTabTitle")
+
+    val newWindow = handles.filterNot(_ == originalWindow).head.toString
     driver.switchTo().window(newWindow)
+
+    val newTabTitle = driver.getTitle
+    println(s"New tab title: $newTabTitle")
   }
 
   Then("""^I should navigate back to main tab""") { () =>
