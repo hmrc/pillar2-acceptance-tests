@@ -78,7 +78,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should navigate to Task list page
     And The Task Edit filing member details status should be Completed
 
-  @batch2 @tests11
+  @batch2 @batch22
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
     Given Organisation User logs in as upe for Pillar2
     Then I should be on UPE business page

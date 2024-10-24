@@ -18,9 +18,11 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.pages._
+import java.time.Duration
 
 class PaymentSteps extends CommonFunctions {
 
@@ -42,7 +44,12 @@ class PaymentSteps extends CommonFunctions {
   }
 
   Then("""^I should be navigated to new tab$""") { () =>
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(10))
+    wait.until(ExpectedConditions.numberOfWindowsToBe(2))
+
     val handles   = driver.getWindowHandles.toArray().toSeq
+    println(s"Number of tabs opened: ${handles.size}")
+
     val newWindow = handles(1).toString
     driver.switchTo().window(newWindow)
   }
