@@ -54,6 +54,7 @@ trait Pillar2SubmissionPage
       case "P2 ASA Dashboard page"                     => P2ASADashboardPage
       case "P2 ASA Home Page"                          => P2ASAHomePage
       case "P2 Home page"                              => P2HomePage
+      case "BTN Threshold Met KB Page"                 => P2SubBtnThresholdMetKBPage
     }
   }
 }
