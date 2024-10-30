@@ -171,3 +171,231 @@ Feature: Dashboard Page
       | manage contact address     | Manage contact address Page           |
       | manage group status        | Manage group status Page              |
       | manage accounting period   | Manage accounting period Page         |
+
+  Scenario: 5 - Organisation User navigates to repayment journey pages for Non-UK bank account
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    Then I should navigate to Reason For Refund Page
+    When I provide value for Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should navigate to Repayment Method Page
+    When I select repayment method as Non-UK bank account
+    Then I should be on Non UK Bank Account Payment Page
+    When I enter Non UK Bank Account details as:
+      | KEY               | VALUE                  |
+      | bankName          | HSBC                   |
+      | nameOnBankAccount | Test Name              |
+      | bic               | HBUKGB4B               |
+      | iban              | GB29NWBK60161331926819 |
+    And I provide Repayment contact name as Repayment Contact Name
+    When I provide Repayment contact email as repayment@email.com
+    When I select option Yes and continue to next
+    When I provide Repayment contact telephone as 789765423
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Amount
+    When I provide Refund Amount as 1000.00
+    When  I click change link for Repayment Reason
+    And I provide Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Bank Name
+    When I enter Non UK Bank Account details as:
+      | KEY               | VALUE                  |
+      | bankName          | HSBC2                  |
+      | nameOnBankAccount | Test Name2             |
+      | bic               | HBUKGB4C               |
+      | iban              | GB29NWBK60161331926820 |
+    When  I click change link for Repayment Contact Name
+    And I provide Repayment contact name as Repayment Contact Name
+    When  I click change link for Repayment Contact Email
+    When I provide Repayment contact email as repayment@email.com
+    When  I click change link for Repayment Contact Telephone
+    When I select option No and continue to next
+    Then I should be on Repayment CYA Page
+    And I should see details as below:
+      | KEY                                              | VALUE                         |
+      | Refund amount                                    | £1000                         |
+      | Reason for refund request                        | Test Reason                   |
+      | What type of account will the refund be sent to? | Non-UK bank account           |
+      | Name of the bank                                 | HSBC2                         |
+      | Name on account                                  | Test Name2                    |
+      | BIC or SWIFT code                                | HBUKGB4C                      |
+      | IBAN                                             | GB29NWBK60161331926820        |
+      | Contact name                                     | Repayment Contact Name        |
+      | Email address                                    | repayment@email.com           |
+      | Can we contact by telephone?                     | No                            |
+    And I can see Print this page link
+    And I click on Continue button
+    Then I should be redirect to Repayment processing page
+    And I should be on Repayment Confirmation Page
+    And I can see Print this page link
+
+  Scenario: 6 - Organisation User navigates to repayment journey pages for UK bank account
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    Then I should navigate to Reason For Refund Page
+    When I provide value for Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should navigate to Repayment Method Page
+    And I select repayment method as UK bank account
+    And I click on Continue button
+    Then I should navigate to UK Bank Account Payment Page
+   When I enter UK Bank Account details as:
+     | KEY               | VALUE              |
+     | bankName          | Natwest            |
+     | accountHolderName | Epic Adventure Inc |
+     | sortCode          | 206705             |
+     | accountNumber     | 86473611           |
+   Then I should be on Repayment Contact Page
+   And I provide Repayment contact name as Repayment Contact Name
+   When I provide Repayment contact email as repayment@email.com
+   And I select option Yes and continue to next
+   And I provide Repayment contact telephone as 789765423
+   Then I should be on Repayment CYA Page
+   And I should see details as below:
+     | KEY                                              | VALUE                  |
+     | Refund amount                                    | £100                   |
+     | Reason for refund request                        | Test Reason            |
+     | What type of account will the refund be sent to? | UK bank account        |
+     | Name of the bank                                 | Natwest                |
+     | Name on account                                  | Epic Adventure Inc     |
+     | Sort code                                        | 206705                 |
+     | Account number                                   | 86473611               |
+     | Contact name                                     | Repayment Contact Name |
+     | Email address                                    | repayment@email.com       |
+     | Can we contact by telephone?                     | Yes                     |
+   And I can see Print this page link
+   And I click on Continue button
+   Then I should be redirect to Repayment processing page
+   And I should be on Repayment Confirmation Page
+   And I can see Print this page link
+
+  Scenario: 7 - Agent User navigates to repayment journey pages for UK bank account
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    When I click on Continue button
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Agent Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Agent Repayment Amount Page
+    When I provide Refund Amount as 999.99
+    And I click on Continue button
+    Then I should navigate to Agent Repayment Reason Page
+    When I provide value for Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should navigate to Agent Repayment Method Page
+    And I select repayment method as UK bank account
+    Then I should be on UK Bank Account Payment Page
+    When I enter UK Bank Account details as:
+      | KEY               | VALUE              |
+      | bankName          | Natwest            |
+      | accountHolderName | Epic Adventure Inc |
+      | sortCode          | 206705             |
+      | accountNumber     | 86473611           |
+    Then I should be on Repayment Contact Page
+    And I provide Repayment contact name as Repayment Contact Name
+    When I provide Repayment contact email as repayment@email.com
+    When I select option Yes and continue to next
+    When I provide Repayment contact telephone as 789765423
+    Then I should be on Repayment CYA Page
+    And I should see details as below:
+      | KEY                                              | VALUE                  |
+      | Refund amount                                    | £999.99                 |
+      | Reason for refund request                        | Test Reason            |
+      | What type of account will the refund be sent to? | UK bank account        |
+      | Name of the bank                                 | Natwest                |
+      | Name on account                                  | Epic Adventure Inc     |
+      | Sort code                                        | 206705                 |
+      | Account number                                   | 86473611               |
+      | Contact name                                     | Repayment Contact Name |
+      | Email address                                    | repayment@email.com       |
+      | Can we contact by telephone?                     | Yes                     |
+    And I can see Print this page link
+    And I click on Continue button
+    Then I should be redirect to Repayment processing page
+    And I should be on Repayment Confirmation Page
+    And I can see Print this page link
+
+  Scenario: 8 - Agent User navigates to repayment journey pages for Non-UK bank account
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    When I click on Continue button
+    Then I should be on Dashboard page
+    When I click Request a refund link
+    Then I should navigate to Repayment Guidance Page
+    When I click on Continue button
+    Then I should navigate to Repayment Amount Page
+    When I provide Refund Amount as 100.00
+    Then I should navigate to Reason For Refund Page
+    When I provide value for Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should navigate to Repayment Method Page
+    When I select repayment method as Non-UK bank account
+    Then I should be on Non UK Bank Account Payment Page
+    When I enter Non UK Bank Account details as:
+      | KEY               | VALUE                  |
+      | bankName          | HSBC                   |
+      | nameOnBankAccount | Test Name              |
+      | bic               | HBUKGB4B               |
+      | iban              | GB29NWBK60161331926819 |
+    And I provide Repayment contact name as Repayment Contact Name
+    When I provide Repayment contact email as repayment@email.com
+    When I select option Yes and continue to next
+    When I provide Repayment contact telephone as 789765423
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Amount
+    When I provide Refund Amount as 1000.00
+    When  I click change link for Repayment Reason
+    And I provide Refund Reason as Test Reason
+    And I click on Continue button
+    Then I should be on Repayment CYA Page
+    When  I click change link for Repayment Bank Name
+    When I enter Non UK Bank Account details as:
+      | KEY               | VALUE                  |
+      | bankName          | HSBC2                  |
+      | nameOnBankAccount | Test Name2             |
+      | bic               | HBUKGB4C               |
+      | iban              | GB29NWBK60161331926820 |
+    When  I click change link for Repayment Contact Name
+    And I provide Repayment contact name as Repayment Contact Name change
+    When  I click change link for Repayment Contact Email
+    When I provide Repayment contact email as email@change.com
+    When  I click change link for Repayment Contact Telephone
+    When I select option No and continue to next
+    Then I should be on Repayment CYA Page
+    And I should see details as below:
+      | KEY                                              | VALUE                         |
+      | Refund amount                                    | £1000                         |
+      | Reason for refund request                        | Test Reason                   |
+      | What type of account will the refund be sent to? | Non-UK bank account           |
+      | Name of the bank                                 | HSBC2                         |
+      | Name on account                                  | Test Name2                    |
+      | BIC or SWIFT code                                | HBUKGB4C                      |
+      | IBAN                                             | GB29NWBK60161331926820        |
+      | Contact name                                     | Repayment Contact Name change |
+      | Email address                                    | email@change.com              |
+      | Can we contact by telephone?                     | No                            |
+    And I can see Print this page link
+    And I click on Continue button
+    Then I should be redirect to Repayment processing page
+    And I should be on Repayment Confirmation Page
+    And I can see Print this page link
