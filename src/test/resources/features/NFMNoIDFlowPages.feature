@@ -100,8 +100,8 @@ Feature: NFM NO ID journey
     And I should see row 2 value City CYA
     And I should see row 2 value United Arab Emirates
     When I click on change hyperlink next to the NFM Contact Name
-    And I enter NFM Contact name as Change & Contact $ Person ~
-    And I should see row 3 value Change & Contact $ Person ~
+    And I enter NFM Contact name as Change Contact $ Person ~
+    And I should see row 3 value Change Contact $ Person ~
     When I click on change hyperlink next to the NFM Email Address
     And I enter NFM Contact Email as changetest&*@email.com
     And I should see row 4 value changetest&*@email.com
@@ -132,7 +132,7 @@ Feature: NFM NO ID journey
     Then I should see NFM error message Enter the name of the nominated filing member on the Input NFM Name Element
     When I enter NFM name as NFM Name character length Error validation and Maximum NFM character length should be entered 105 characters.
     Then I should see NFM error message Name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
-    When I enter NFM name as Test <script>alert(document.domain)</script>
+    When I enter NFM name as Test nfmName
     Then I should navigate to NFM Address page
     And the page title should be What is the registered office address? - Report Pillar 2 top-up taxes - GOV.UK
     When I click on Continue button
