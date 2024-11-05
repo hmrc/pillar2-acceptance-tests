@@ -240,7 +240,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to Under Construction Page of Pillar2 Submission
 
-    @tests1
   Scenario: 7 - Org User navigates to below threshold notification CYA page and change pages
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR1000000000 for Pillar2 service
     Then I should be on Dashboard page
@@ -273,7 +272,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to Under Construction Page of Pillar2 Submission
 
-      @tests1
   Scenario: 8 - Org User navigates to below threshold notification CYA page and change pages with KB pages
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR1000000000 for Pillar2 service
     Then I should be on Dashboard page
