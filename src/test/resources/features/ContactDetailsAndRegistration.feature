@@ -151,20 +151,20 @@ Feature: Contact details for the filing member
     And The caption must be Contact details
     And The Heading should be Check your answers for contact details
     And I should see details as below:
-      | KEY                             | VALUE                    |
-      | Contact name                    | Contact Name Test        |
-      | Email address                   | testContact@email.com    |
-      | Can we contact by telephone?    | Yes                      |
-      | Telephone number                | 1234554                  |
-      | Do you have a second contact?   | Yes                      |
-      | Second contact name             | Second Contact Name Test |
-      | Second contact email address    | secondContact@email.com  |
-      | Can we contact by telephone?    | Yes                      |
-      | Second contact telephone number | 1234554                  |
-      | Address                         | Address Line 1           |
-      | Address                         | City                     |
-      | Address                         | EH5 5WY                  |
-      | Address                         | United Kingdom           |
+      | KEY                                                 |  VALUE                    |
+      | Contact name                                        | Contact Name Test        |
+      | Email address                                       | testContact@email.com    |
+      | Can we contact the primary contact by telephone?    | Yes                      |
+      | Telephone number                                    | 1234554                  |
+      | Do you have a secondary contact?                    | Yes                      |
+      | Secondary contact name                              | Second Contact Name Test |
+      | Second contact email address                        | secondContact@email.com  |
+      | Can we contact the secondary contact by telephone?  | Yes                      |
+      | Second contact telephone number                     | 1234554                  |
+      | Address                                             | Address Line 1           |
+      | Address                                             | City                     |
+      | Address                                             | EH5 5WY                  |
+      | Address                                             | United Kingdom           |
     When I click on change link for Contact Name
     And I enter Contact Name as Contact $ Name Change
     Then I should navigate to Contact details Check answers page
@@ -183,15 +183,15 @@ Feature: Contact details for the filing member
     And I enter Address Line 1 as Address Change
     And I click on Continue button
     Then I should see details as below:
-      | KEY                             | VALUE                          |
-      | Contact name                    | Contact $ Name Change        |
-      | Email address                   | email&change@test.com          |
-      | Telephone number                | 1234555                        |
-      | Second contact name             | Second Contact Name Change   |
-      | Second contact email address    | secondContact&change@email.com |
-      | Can we contact by telephone?    | Yes                            |
-      | Second contact telephone number | 71235643                       |
-      | Address                         | Address Change                 |
+      | KEY                                               | VALUE                          |
+      | Contact name                                      | Contact $ Name Change        |
+      | Email address                                     | email&change@test.com          |
+      | Telephone number                                  | 1234555                        |
+      | Secondary contact name                            | Second Contact Name Change   |
+      | Second contact email address                      | secondContact&change@email.com |
+      | Can we contact the secondary contact by telephone?| Yes                            |
+      | Second contact telephone number                   | 71235643                       |
+      | Address                                           | Address Change                 |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
@@ -201,7 +201,7 @@ Feature: Contact details for the filing member
       | Address                                       | Address Line 1                 |
       | Address                                       | City                           |
       | Address                                       | United Arab Emirates           |
-      | Contact name                                  | UPE Test                     |
+      | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
       | Can we contact by telephone?                  | Yes                            |
       | Telephone number                              | 123456                         |
@@ -209,15 +209,15 @@ Feature: Contact details for the filing member
       | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |
       | End date                                      | 15 January 2025                |
-      | Do you have a second contact?                 | Yes                            |
-      | Second contact name                           | Second Contact Name Change   |
+      | Do you have a secondary contact?              | Yes                            |
+      | Secondary contact name                        | Second Contact Name Change     |
       | Second contact email address                  | secondContact&change@email.com |
       | Second contact telephone number               | 71235643                       |
     And I should see row 12 with key Contact name and value Contact $ Name Change
     And I should see row 13 with key Email address and value email&change@test.com
-    And I should see row 14 with key Can we contact by telephone? and value Yes
+    And I should see row 14 with key Can we contact the primary contact by telephone? and value Yes
     And I should see row 15 with key Telephone number and value 1234555
-    And I should see row 19 with key Can we contact by telephone? and value Yes
+    And I should see row 19 with key Can we contact the secondary contact by telephone? and value Yes
     And I should see row 21 with key Address and value Address Change
     When I click Report Pillar 2 top-up taxes link
     Then I should navigate to Task list page
@@ -232,9 +232,9 @@ Feature: Contact details for the filing member
     When I click on Continue button
     Then I should be on Contact details Check answers page
     And I should see details as below:
-      | KEY                           | VALUE          |
-      | Do you have a second contact? | No             |
-      | Address                       | Address Change |
+      | KEY                               | VALUE          |
+      | Do you have a secondary contact?  | No             |
+      | Address                           | Address Change |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
@@ -462,7 +462,7 @@ Feature: Contact details for the filing member
       | postalCode   | EH5 5WY                |
       | countryCode  | United Kingdom         |
     Then I should navigate to Contact details Check answers page
-    And I should see row 5 key Do you have a second contact?
+    And I should see row 5 key Do you have a secondary contact?
     And I should see row 5 value No
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -480,7 +480,7 @@ Feature: Contact details for the filing member
     And I should see row 5 value Test Example Company Name
     And I should see row 6 value 76543210
     And I should see row 7 value 1234567890
-    And I should see row 16 key Do you have a second contact?
+    And I should see row 16 key Do you have a secondary contact?
     And I should see row 16 value No
     And I click on Save&Continue button
     Then I should navigate to Registration Duplication KB Page
@@ -546,7 +546,7 @@ Feature: Contact details for the filing member
       | postalCode   | EH5 5WY                |
       | countryCode  | United Kingdom         |
     Then I should navigate to Contact details Check answers page
-    And I should see row 5 key Do you have a second contact?
+    And I should see row 5 key Do you have a secondary contact?
     And I should see row 5 value No
     And I click on Continue button
     When I click Check your answers before submitting your registration link
