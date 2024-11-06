@@ -22,6 +22,7 @@ import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2ConfirmationPage
 
 class StepDef extends BaseStepDef with BrowserDriver {
 
@@ -576,6 +577,9 @@ class StepDef extends BaseStepDef with BrowserDriver {
       case "Print this page" =>
         Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
         assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
+      case "Download as PDF" =>
+        Wait.waitForElementToPresentByCssSelector(P2ConfirmationPage.downloadAsPDF)
+        assert(driver.findElement(By.cssSelector(P2ConfirmationPage.downloadAsPDF)).getText.contains(linkText))
       case "Agent Services Account" =>
         Wait.waitForElementToPresentByCssSelector(ASADashboardPage.ASALink)
         assert(driver.findElement(By.cssSelector(ASADashboardPage.ASALink)).getText.contains(linkText))
