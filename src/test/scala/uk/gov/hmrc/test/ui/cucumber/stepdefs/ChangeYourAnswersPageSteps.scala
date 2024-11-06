@@ -21,6 +21,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
 import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pillar2SubmissionPages.{P2SubBtnChangeAnnualRevenuePage, P2SubBtnChangeDomesticOrMnePage, P2SubBtnChangeFutureAnnualRevenuePage}
 
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
@@ -86,6 +87,12 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
       case "Accounting Period" =>
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeAccountingPeriod)
+      case "Domestic or Mne" =>
+        clickByCss(P2SubBtnChangeDomesticOrMnePage.changeDomesticOrMne)
+      case "Annual Revenue" =>
+        clickByCss(P2SubBtnChangeAnnualRevenuePage.changeAnnualRevenue)
+      case "Future Annual Revenue" =>
+        clickByCss(P2SubBtnChangeFutureAnnualRevenuePage.changeFutureAnnualRevenue)
     }
   }
 
