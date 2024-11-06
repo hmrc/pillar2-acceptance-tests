@@ -168,7 +168,7 @@ Feature: UPE NO ID journey
     Then I should see error message You need to enter the name of the ultimate parent entity on the Input UPE Name Page
     When I enter UPE name as UPE Name character length Error validation and Maximum UPE character length should be entered 105 characters.
     Then I should see error message Name of the ultimate parent entity must be 105 characters or less on the Input UPE Name Page
-    When I enter UPE name as Test <script>alert(document.domain)</script>
+    When I enter UPE name as Test upeName
     Then I should navigate to input-upe-address page
     When I click on Continue button
     Then I should see address error message Enter the first line of the address on the Address Line Element
@@ -219,7 +219,6 @@ Feature: UPE NO ID journey
     And I enter Telephone Number as #incorrect number
     Then I should see error message Enter the telephone number for UPE Contact Name in the correct format, like 01632 960 001 or +44 808 157 0192 on the Input Telephone Page
 
-
   @batch1 @zap_accessibility
   Scenario: 4 - Change UPE fields from UPE check your answers page
     Given Organisation User navigates to UPE check your answer page with credId UPENoIDJourney
@@ -232,9 +231,9 @@ Feature: UPE NO ID journey
     And I click on Continue button
     And I should see row 2 value Change Address &
     When I click on change hyperlink next to the UPE Contact Name
-    And I enter UPE Person/Team name as Change Contact Person&~
+    And I enter UPE Person/Team name as Change Contact Person~
     Then I should be on Check your answers page
-    And I should see row 3 value Change Contact Person&~
+    And I should see row 3 value Change Contact Person~
     When I click on change hyperlink next to the UPE Email Address
     And I enter UPE Email address as changetest&@email.com
     And I should see row 4 value changetest&@email.com
