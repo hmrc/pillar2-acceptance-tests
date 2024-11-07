@@ -102,7 +102,7 @@ Feature: Agent user journeys
     Then I should navigate to ASA Dashboard page
     And I should be on Dashboard page
     When I click View your client’s transaction history link
-    Then I should be on Trans action History Empty Page
+    Then I should be on Transaction History Empty Page
     When I select back link
     Then I should be on ASA Dashboard page
     And I click Sign out link

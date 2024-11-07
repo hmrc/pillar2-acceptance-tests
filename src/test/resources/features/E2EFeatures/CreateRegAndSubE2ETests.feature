@@ -23,7 +23,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to NFM UKCompany GRS page
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and outside the UK in further details group status page
@@ -37,7 +37,6 @@ Feature: User registration and subscription e2e journey
       | endDate.day     | 15    |
       | endDate.month   | 1     |
       | endDate.year    | 2025  |
-    And I click on Continue button
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
@@ -82,13 +81,35 @@ Feature: User registration and subscription e2e journey
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
-    When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
     And I click on Save&Continue button
-    Then I should navigate to Registration confirmation page
+    Then I should navigate to Registration Duplication KB Page
+    When I select Yes option and continue to next
+    Then I should navigate to NFM details page
+    When I select option No and continue to next
+    When I enter NFM name as NFM Test KB
+    When I enter Address as:
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1 CYA   |
+      | addressLine3 | City CYA             |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
+    When I click on Continue button
+    When I enter NFM Contact name as Contact CYA
+    When I enter NFM Contact Email as testcya@email.com
+    Then I should navigate to NFM Telephone page
+    When I select option No and continue to next
+    Then I should navigate to NFM Check your answers page
+    When I click on Continue button
+    Then I should be on Task list page
+    When I click Check your answers before submitting your registration link
+    Then I should navigate to Review answers page
+    And I click on Save&Continue button
+    Then I should be redirect to Registration processing page
+    And I should navigate to Registration confirmation page
     And I click report and manage your Pillar 2 top-up taxes link
     And I should be on Dashboard page
 
@@ -105,7 +126,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and outside the UK in further details group status page
@@ -119,7 +140,6 @@ Feature: User registration and subscription e2e journey
       | endDate.day     | 15    |
       | endDate.month   | 1     |
       | endDate.year    | 2025  |
-    And I click on Continue button
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
@@ -164,7 +184,6 @@ Feature: User registration and subscription e2e journey
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
-    When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -195,7 +214,7 @@ Feature: User registration and subscription e2e journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | Angola         |
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact CYA
@@ -207,11 +226,10 @@ Feature: User registration and subscription e2e journey
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
     When I enter NFM Telephone Number as 1234569
-    And I click on Continue button
     Then I should navigate to NFM Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and outside the UK in further details group status page
@@ -225,7 +243,6 @@ Feature: User registration and subscription e2e journey
       | endDate.day     | 15    |
       | endDate.month   | 1     |
       | endDate.year    | 2025  |
-    And I click on Continue button
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
@@ -242,7 +259,6 @@ Feature: User registration and subscription e2e journey
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
-    When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -264,7 +280,7 @@ Feature: User registration and subscription e2e journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | Angola         |
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as UPE Contact Name
@@ -289,7 +305,7 @@ Feature: User registration and subscription e2e journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | Angola         |
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact CYA
@@ -301,11 +317,10 @@ Feature: User registration and subscription e2e journey
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
     When I enter NFM Telephone Number as 1234569
-    And I click on Continue button
     Then I should navigate to NFM Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and outside the UK in further details group status page
@@ -319,7 +334,6 @@ Feature: User registration and subscription e2e journey
       | endDate.day     | 15    |
       | endDate.month   | 1     |
       | endDate.year    | 2025  |
-    And I click on Continue button
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
@@ -336,7 +350,6 @@ Feature: User registration and subscription e2e journey
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
-    When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -358,7 +371,7 @@ Feature: User registration and subscription e2e journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | Angola         |
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as UPE Contact Name
@@ -375,7 +388,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to NFM registration page
     When I select No option and continue to next
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and outside the UK in further details group status page
@@ -389,7 +402,6 @@ Feature: User registration and subscription e2e journey
       | endDate.day     | 15    |
       | endDate.month   | 1     |
       | endDate.year    | 2025  |
-    And I click on Continue button
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
@@ -405,8 +417,7 @@ Feature: User registration and subscription e2e journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
-    When I click on Continue button
+      | countryCode  | Angola         |
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -428,7 +439,7 @@ Feature: User registration and subscription e2e journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | Angola         |
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as Contact UPE
@@ -440,7 +451,6 @@ Feature: User registration and subscription e2e journey
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
     And I enter Telephone Number as 1234569
-    And I click on Continue button
     Then I should be on Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
@@ -454,7 +464,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to NFM UKCompany GRS page
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit filing member’s details status should be Completed
+    And The Task Edit filing member details status should be Completed
     When I click Add further group details link
     Then I should navigate to MNE or domestic page
     When I select option In the UK and outside the UK in further details group status page
@@ -468,7 +478,6 @@ Feature: User registration and subscription e2e journey
       | endDate.day     | 15    |
       | endDate.month   | 1     |
       | endDate.year    | 2025  |
-    And I click on Continue button
     Then I should navigate to FD check your answers page
     And I click on Continue button
     Then I should navigate to Task list page
@@ -485,7 +494,6 @@ Feature: User registration and subscription e2e journey
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
       | countryCode  | United Kingdom |
-    When I click on Continue button
     Then I should navigate to Contact details Check answers page
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -508,7 +516,7 @@ Feature: User registration and subscription e2e journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | Angola         |
     Then I should navigate to UPE Contact person/team Name page
     When I enter UPE Person/Team name as UPE Contact Name
     Then I should navigate to UPE Contact Email page
@@ -585,7 +593,7 @@ Feature: User registration and subscription e2e journey
       | addressLine1 | Address Line 1 |
       | addressLine3 | City           |
       | postalCode   | EH5 5WY        |
-      | countryCode  | United Kingdom |
+      | countryCode  | Angola         |
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact CYA
     Then I should navigate to NFM Contact Email page
