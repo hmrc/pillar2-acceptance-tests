@@ -40,8 +40,12 @@ trait Pillar2SubmissionPage
       case "BTN Start Page"                            => P2SubBtnStartPage
       case "BTN Accounting Period Page"                => P2SubBtnAccountingPage
       case "BTN Domestic or MNE Page"                  => P2SubBtnDomesticOrMnePage
+      case "BTN Change Domestic or MNE Page"           => P2SubBtnChangeDomesticOrMnePage
       case "BTN Annual Revenue Page"                   => P2SubBtnAnnualRevenuePage
+      case "BTN Change Annual Revenue Page"            => P2SubBtnChangeAnnualRevenuePage
       case "BTN Future Annual Revenue Page"            => P2SubBtnFutureAnnualRevenuePage
+      case "BTN Change Future Annual Revenue Page"     => P2SubBtnChangeFutureAnnualRevenuePage
+      case "BTN CYA Submit Page"                       => P2CYASubmitPage
       case "BTN Nil Return Page"                       => P2SubBtnNilReturnPage
       case "BTN AGD KB Page"                           => P2SubBtnAgdKBPage
       case "accounts summary page"                     => P2SubAccountsSummaryPage

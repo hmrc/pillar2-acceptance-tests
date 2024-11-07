@@ -113,26 +113,26 @@ Feature: Dashboard Page
     Then I should navigate to contact details summary page
     And the page title should be Contact details - Report Pillar 2 top-up taxes - GOV.UK
     And The Heading should be Contact details
-    And I should see sub section 1 as First contact
-    And I should see sub section 2 as Second contact
+    And I should see sub section 1 as Primary contact
+    And I should see sub section 2 as Secondary contact
     And I should see sub section 3 as Contact address
     And I should see details as below:
-      | KEY                             | VALUE                   |
-      | Contact name                    | Fred Flintstone         |
-      | Email address                   | fred.flintstone@aol.com |
-      | Can we contact by telephone?    | Yes                     |
-      | Telephone number                | 0115 9700 700           |
-      | Do you have a second contact?   | Yes                     |
-      | Second contact name             | Donald Trump            |
-      | Second contact email address    | donald.trump@potus.com  |
-      | Can we contact by telephone?    | Yes                     |
-      | Second contact telephone number | 0115 9700 701           |
-      | Address                         | 1 High Street           |
-      | Address                         | Egham                   |
-      | Address                         | Wycombe                 |
-      | Address                         | Surrey                  |
-      | Address                         | HP13 6TT                |
-      | Address                         | United Kingdom          |
+      | KEY                                                 | VALUE                   |
+      | Contact name                                        | Fred Flintstone         |
+      | Email address                                       | fred.flintstone@aol.com |
+      | Can we contact the primary contact by telephone?    | Yes                     |
+      | Telephone number                                    | 0115 9700 700           |
+      | Do you have a secondary contact?                    | Yes                     |
+      | Secondary contact name                              | Donald Trump            |
+      | Second contact email address                        | donald.trump@potus.com  |
+      | Can we contact the secondary contact by telephone?  | Yes                     |
+      | Second contact telephone number                     | 0115 9700 701           |
+      | Address                                             | 1 High Street           |
+      | Address                                             | Egham                   |
+      | Address                                             | Wycombe                 |
+      | Address                                             | Surrey                  |
+      | Address                                             | HP13 6TT                |
+      | Address                                             | United Kingdom          |
     When I click on change link for Contact Name
     When I enter Contact Name as Contact Name Test #
     Then I should navigate to contact details summary page
@@ -158,22 +158,22 @@ Feature: Dashboard Page
     And I click on Continue button
     Then I should navigate to contact details summary page
     And I should see details as below:
-      | KEY                             | VALUE                      |
-      | Contact name                    | Contact Name Test #        |
-      | Email address                   | contact*@email.com         |
-      | Can we contact by telephone?    | Yes                        |
-      | Telephone number                | 123456789                  |
-      | Do you have a second contact?   | Yes                        |
-      | Second contact name             | Second Contact £ Name Test |
-      | Second contact email address    | second&Contact@email.com   |
-      | Can we contact by telephone?    | Yes                        |
-      | Second contact telephone number | 1234554878                 |
-      | Address                         | Test Address Line 1        |
-      | Address                         | Test Address Line 2        |
-      | Address                         | Test City                  |
-      | Address                         | Test Region                |
-      | Address                         | EH5 5WY                    |
-      | Address                         | United Kingdom             |
+      | KEY                                               | VALUE                      |
+      | Contact name                                      | Contact Name Test #        |
+      | Email address                                     | contact*@email.com         |
+      | Can we contact the primary contact by telephone?  | Yes                        |
+      | Telephone number                                  | 123456789                  |
+      | Do you have a secondary contact?                  | Yes                        |
+      | Secondary contact name                            | Second Contact £ Name Test |
+      | Second contact email address                      | second&Contact@email.com   |
+      | Can we contact the secondary contact by telephone?| Yes                        |
+      | Second contact telephone number                   | 1234554878                 |
+      | Address                                           | Test Address Line 1        |
+      | Address                                           | Test Address Line 2        |
+      | Address                                           | Test City                  |
+      | Address                                           | Test Region                |
+      | Address                                           | EH5 5WY                    |
+      | Address                                           | United Kingdom             |
     When I click on Continue button
     Then I should be on Dashboard page
 
