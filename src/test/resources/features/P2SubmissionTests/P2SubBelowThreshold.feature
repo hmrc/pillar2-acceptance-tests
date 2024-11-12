@@ -162,7 +162,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I am on feedback survey page
     When I click on Continue button
 
-
   Scenario: 5 - Agent User navigates to below threshold notification CYA page and change pages
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
@@ -199,7 +198,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
-    Then I should be navigated to Under Construction Page of Pillar2 Submission
+    Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
 
   Scenario: 6 - Agent User navigates to below threshold notification CYA page and change pages with KB pages
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -238,7 +237,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
-    Then I should be navigated to Under Construction Page of Pillar2 Submission
+    Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
 
   Scenario: 7 - Org User navigates to below threshold notification CYA page and change pages
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR1000000000 for Pillar2 service
@@ -270,7 +269,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
-    Then I should be navigated to Under Construction Page of Pillar2 Submission
+    Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
 
   Scenario: 8 - Org User navigates to below threshold notification CYA page and change pages with KB pages
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR1000000000 for Pillar2 service
@@ -303,4 +302,12 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
-    Then I should be navigated to Under Construction Page of Pillar2 Submission
+    Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
+    And I can see Print this page link
+    And I can see Download as PDF link
+    When I click find out more about submitting a UKTR link
+    Then I should be navigated to UK Tax Return Page of Pillar2 Submission
+    When I select back link
+    Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
+    When I click View account homepage link
+    Then I should be on Dashboard page
