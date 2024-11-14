@@ -1,0 +1,207 @@
+{
+  "name": "pillar2-api-collection",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "HMRC Pillar 2",
+      "items": []
+    },
+    {
+      "type": "http",
+      "name": "Liability",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:10052/pillar2/liability/XTC01234123412",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer valid_token",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"accountingPeriodFrom\": \"2024-08-14\",\n  \"accountingPeriodTo\": \"2024-12-14\",\n  \"qualifyingGroup\": true,\n  \"obligationDTT\": true,\n  \"obligationMTT\": true,\n  \"electionUKGAAP\": \"true\",\n  \"liabilities\": {\n\n    \"liableEntities\": [\n      {\n        \"ukChargeableEntityName\": \"Newco PLC\",\n        \"idType\": \"CRN\",\n        \"idValue\": \"12345678\",\n        \"amountOwedDTT\": 5000,\n        \"electedDTT\": true,\n        \"amountOwedIIR\": 3400,\n        \"amountOwedUTPR\": 6000.5,\n        \"electedUTPR\": true\n      }\n    ]\n  }\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Liability - Nil Return",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:10052/pillar2/liability/XTC01234123412",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer valid_token",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"accountingPeriodFrom\": \"2024-08-14\",\n  \"accountingPeriodTo\": \"2024-09-14\",\n  \"qualifyingGroup\": true,\n  \"obligationDTT\": true,\n  \"obligationMTT\": true,\n  \"electionUKGAAP\": true,\n  \"liabilities\": {\n    \"returnType\": \"NIL_RETURN\"\n  }\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Submit UKTR Nil Return",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:10054/RESTAdapter/PLR/UKTaxReturn",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "correlationid",
+            "value": "f0bd1f32-de51-45cc-9b18-0520d6e3ab1a",
+            "enabled": true
+          },
+          {
+            "name": "X-Originating-System",
+            "value": "MDTP",
+            "enabled": true
+          },
+          {
+            "name": "X-Pillar2-Id",
+            "value": "XMPLR0000000012",
+            "enabled": true
+          },
+          {
+            "name": "X-Receipt-Date",
+            "value": "2024-01-01T01:01:01Z",
+            "enabled": true
+          },
+          {
+            "name": "X-Transmitting-System",
+            "value": "HIP",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"accountingPeriodFrom\": \"2024-08-14\",\n  \"accountingPeriodTo\": \"2024-09-14\",\n  \"qualifyingGroup\": true,\n  \"obligationDTT\": true,\n  \"obligationMTT\": true,\n  \"electionUKGAAP\": true,\n  \"liabilities\": {\n    \"returnType\": \"NIL_RETURN\" \n  }\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Submit UKTR",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:10054/RESTAdapter/PLR/UKTaxReturn",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "correlationid",
+            "value": "f0bd1f32-de51-45cc-9b18-0520d6e3ab1a",
+            "enabled": true
+          },
+          {
+            "name": "X-Originating-System",
+            "value": "MDTP",
+            "enabled": true
+          },
+          {
+            "name": "X-Pillar2-Id",
+            "value": "XMPLR0000000012",
+            "enabled": true
+          },
+          {
+            "name": "X-Receipt-Date",
+            "value": "2024-01-01T01:01:01Z",
+            "enabled": true
+          },
+          {
+            "name": "X-Transmitting-System",
+            "value": "HIP",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"accountingPeriodFrom\": \"2024-08-14\",\n  \"accountingPeriodTo\": \"2024-12-14\",\n  \"qualifyingGroup\": true,\n  \"obligationDTT\": true,\n  \"obligationMTT\": true,\n  \"electionUKGAAP\": true,\n  \"liabilities\": {\n    \"electionDTTSingleMember\": false,\n    \"electionUTPRSingleMember\": false,\n    \"numberSubGroupDTT\": 4,\n    \"numberSubGroupUTPR\": 5,\n    \"totalLiability\": 10000.99,\n    \"totalLiabilityDTT\": 5000.99,\n    \"totalLiabilityIIR\": 4000,\n    \"totalLiabilityUTPR\": 10000.99,\n    \"liableEntities\": [\n      {\n        \"ukChargeableEntityName\": \"Newco PLC\",\n        \"idType\": \"CRN\",\n        \"idValue\": \"12345678\",\n        \"amountOwedDTT\": 5000,\n        \"amountOwedIIR\": 3400,\n        \"amountOwedUTPR\": 6000.5\n      }\n    ]\n  }\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Subscription",
+      "seq": 6,
+      "request": {
+        "url": "http://localhost:10052/pillar2/subscription/XE0000123456789",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "xyz123"
+          }
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "pillar2-api-collection",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
