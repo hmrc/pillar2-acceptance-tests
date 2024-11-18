@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pillar2SubmissionPages
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-object P2BTNReturnSubmissionKBPage extends PageObject {
-  //val url: String = s"$p2SubRootUrl" + "below-threshold-notification/return-submitted"
-  val url: String = s"$p2SubRootUrl" + "below-threshold-notification/accounting-period"
-  val summaryList = ".govuk-summary-list";
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("ui-tests/src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
+  tags = "@tests and not @ignore"
+)
+class Runner {}

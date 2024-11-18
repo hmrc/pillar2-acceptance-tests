@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,8 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2ConfirmationPage extends PageObject {
-  val url: String = s"$p2SubRootUrl" + "below-threshold-notification/confirmation"
-
-  val downloadAsPDF  = "#download"
-
+object P2BTNReturnSubmissionKBPage extends PageObject {
+  // val url: String = s"$p2SubRootUrl" + "below-threshold-notification/return-submitted"
+  val url: String = s"$p2SubRootUrl" + "below-threshold-notification/accounting-period"
+  val summaryList = ".govuk-summary-list";
 }

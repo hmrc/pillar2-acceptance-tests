@@ -19,7 +19,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationToPage
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.{BusinessActivityEQPage, TaskListPage}
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
 class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
