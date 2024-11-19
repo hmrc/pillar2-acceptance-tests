@@ -27,9 +27,9 @@ import java.io.File
 object Hooks extends ScalaDsl with EN with Browser {
 
   BeforeAll {
-    startBrowser()
-    Driver.instance.manage().deleteAllCookies()
-    Nav.clearCollections()
+//    startBrowser()
+//    Driver.instance.manage().deleteAllCookies()
+//    Nav.clearCollections()
   }
 
   After { scenario: Scenario =>
