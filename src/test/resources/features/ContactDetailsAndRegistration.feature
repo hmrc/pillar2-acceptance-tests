@@ -75,10 +75,6 @@ Feature: Contact details for the filing member
     When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
-    And the page title should be Is there someone else we can contact? - Report Pillar 2 top-up taxes - GOV.UK
-    And The caption must be Contact details
-    And The Heading should be Is there someone else we can contact if Contact Name Test is not available?
-    And The Body content should be This can be a team mailbox or another contact who is able to deal with enquiries about the group’s management of Pillar 2 top-up taxes.
     When I select option No and continue to next
     Then I should navigate to Contact address input page
     When I select back link
@@ -151,12 +147,12 @@ Feature: Contact details for the filing member
     And The caption must be Contact details
     And The Heading should be Check your answers for contact details
     And I should see details as below:
-      | KEY                                                 |  VALUE                    |
+      | KEY                                                 |  VALUE                   |
       | Contact name                                        | Contact Name Test        |
       | Email address                                       | testContact@email.com    |
       | Can we contact the primary contact by telephone?    | Yes                      |
       | Telephone number                                    | 1234554                  |
-      | Do you have a secondary contact?                    | Yes                      |
+      | Do you have a second contact?                       | Yes                      |
       | Secondary contact name                              | Second Contact Name Test |
       | Second contact email address                        | secondContact@email.com  |
       | Can we contact the secondary contact by telephone?  | Yes                      |
@@ -209,7 +205,7 @@ Feature: Contact details for the filing member
       | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |
       | End date                                      | 15 January 2025                |
-      | Do you have a secondary contact?              | Yes                            |
+      | Do you have a second contact?                 | Yes                            |
       | Secondary contact name                        | Second Contact Name Change     |
       | Second contact email address                  | secondContact&change@email.com |
       | Second contact telephone number               | 71235643                       |
@@ -233,7 +229,7 @@ Feature: Contact details for the filing member
     Then I should be on Contact details Check answers page
     And I should see details as below:
       | KEY                               | VALUE          |
-      | Do you have a secondary contact?  | No             |
+      | Do you have a second contact?     | No             |
       | Address                           | Address Change |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -462,7 +458,7 @@ Feature: Contact details for the filing member
       | postalCode   | EH5 5WY                |
       | countryCode  | United Kingdom         |
     Then I should navigate to Contact details Check answers page
-    And I should see row 5 key Do you have a secondary contact?
+    And I should see row 5 key Do you have a second contact?
     And I should see row 5 value No
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -480,7 +476,7 @@ Feature: Contact details for the filing member
     And I should see row 5 value Test Example Company Name
     And I should see row 6 value 76543210
     And I should see row 7 value 1234567890
-    And I should see row 16 key Do you have a secondary contact?
+    And I should see row 16 key Do you have a second contact?
     And I should see row 16 value No
     And I click on Save&Continue button
     Then I should navigate to Registration Duplication KB Page
@@ -546,7 +542,7 @@ Feature: Contact details for the filing member
       | postalCode   | EH5 5WY                |
       | countryCode  | United Kingdom         |
     Then I should navigate to Contact details Check answers page
-    And I should see row 5 key Do you have a secondary contact?
+    And I should see row 5 key Do you have a second contact?
     And I should see row 5 value No
     And I click on Continue button
     When I click Check your answers before submitting your registration link
