@@ -122,7 +122,7 @@ Feature: Dashboard Page
       | Email address                                       | fred.flintstone@aol.com |
       | Can we contact the primary contact by telephone?    | Yes                     |
       | Telephone number                                    | 0115 9700 700           |
-      | Do you have a secondary contact?                    | Yes                     |
+      | Do you have a second contact?                       | Yes                     |
       | Secondary contact name                              | Donald Trump            |
       | Second contact email address                        | donald.trump@potus.com  |
       | Can we contact the secondary contact by telephone?  | Yes                     |
@@ -163,7 +163,7 @@ Feature: Dashboard Page
       | Email address                                     | contact*@email.com         |
       | Can we contact the primary contact by telephone?  | Yes                        |
       | Telephone number                                  | 123456789                  |
-      | Do you have a secondary contact?                  | Yes                        |
+      | Do you have a second contact?                     | Yes                        |
       | Secondary contact name                            | Second Contact £ Name Test |
       | Second contact email address                      | second&Contact@email.com   |
       | Can we contact the secondary contact by telephone?| Yes                        |
