@@ -14,16 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.cucumber.utils.Json
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import java.time.LocalDate
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@apiTests and not @ignore"
-)
-class APIRunner {}
+trait DateTimeSupport {
+
+  implicit val localDateOrdering: Ordering[LocalDate] = Ordering.by(_.toEpochDay)
+
+  def dateMidwayBetween(from: LocalDate, to: LocalDate): LocalDate =
+    LocalDate.ofEpochDay((0.5 * from.toEpochDay + 0.5 * to.toEpochDay).toInt)
+
+}
+
+object DateTimeSupport extends DateTimeSupport
+
