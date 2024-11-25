@@ -30,7 +30,7 @@ object RFMRegistrationDatePage extends PageObject {
   val regYear        = "rfmRegistrationDate.year"
 
   val errorMessage = ".govuk-error-message"
-  val errorLink    = "[href='#rfmRegistrationDate']"
+  val errorLink    = "[href*='#rfmRegistrationDate']"
   val errorSummary = ".govuk-error-summary__list"
 
 }
