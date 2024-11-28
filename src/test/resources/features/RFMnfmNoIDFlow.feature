@@ -126,11 +126,11 @@ Feature: RFM CYA - NFM No ID flow
     When I provide RFM New NFM Name as Test CYA
     Then I should navigate to RFM New NFM Contact Address Page
     When I enter Address as:
-      | KEY          | VALUE              |
-      | addressLine1 | Address Line 1 CYA |
-      | addressLine3 | City CYA           |
-      | postalCode   | EH5 5WY            |
-      | countryCode  | Australia          |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1 & CYA |
+      | addressLine3 | City CYA             |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | Australia            |
     Then I should be on RFM No ID CYA Page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
@@ -142,7 +142,7 @@ Feature: RFM CYA - NFM No ID flow
       | KEY                                         | VALUE                       |
       | Position in the group’s corporate structure | New nominated filing member |
       | Name                                        | Test CYA                    |
-      | Address                                     | Address Line 1 CYA          |
+      | Address                                     | Address Line 1 & CYA        |
       | Address                                     | City CYA                    |
       | Address                                     | EH55WY                      |
       | Address                                     | Australia                   |
