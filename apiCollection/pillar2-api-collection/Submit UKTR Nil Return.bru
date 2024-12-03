@@ -1,0 +1,33 @@
+meta {
+  name: Submit UKTR Nil Return
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:10054/RESTAdapter/PLR/UKTaxReturn
+  body: json
+  auth: none
+}
+
+headers {
+  correlationid: f0bd1f32-de51-45cc-9b18-0520d6e3ab1a
+  X-Originating-System: MDTP
+  X-Pillar2-Id: XMPLR0000000012
+  X-Receipt-Date: 2024-01-01T01:01:01Z
+  X-Transmitting-System: HIP
+}
+
+body:json {
+  {
+    "accountingPeriodFrom": "2024-08-14",
+    "accountingPeriodTo": "2024-09-14",
+    "qualifyingGroup": true,
+    "obligationDTT": true,
+    "obligationMTT": true,
+    "electionUKGAAP": true,
+    "liabilities": {
+      "returnType": "NIL_RETURN" 
+    }
+  }
+}

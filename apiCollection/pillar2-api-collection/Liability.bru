@@ -1,0 +1,41 @@
+meta {
+  name: Liability
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:10052/pillar2/liability/XTC01234123412
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer valid_token
+}
+
+body:json {
+  {
+    "accountingPeriodFrom": "2024-08-14",
+    "accountingPeriodTo": "2024-12-14",
+    "qualifyingGroup": true,
+    "obligationDTT": true,
+    "obligationMTT": true,
+    "electionUKGAAP": "true",
+    "liabilities": {
+  
+      "liableEntities": [
+        {
+          "ukChargeableEntityName": "Newco PLC",
+          "idType": "CRN",
+          "idValue": "12345678",
+          "amountOwedDTT": 5000,
+          "electedDTT": true,
+          "amountOwedIIR": 3400,
+          "amountOwedUTPR": 6000.5,
+          "electedUTPR": true
+        }
+      ]
+    }
+  }
+}

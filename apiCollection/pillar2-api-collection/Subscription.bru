@@ -1,0 +1,15 @@
+meta {
+  name: Subscription
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:10052/pillar2/subscription/XE0000123456789
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: xyz123
+}
