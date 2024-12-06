@@ -1,0 +1,45 @@
+meta {
+  name: bearerTokenWithEnrolment
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8585/government-gateway/session/login
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "confidenceLevel": 50,
+    "email": "user@test.com",
+    "credentialRole": "User",
+    "affinityGroup": "Organisation",
+    "credentialStrength": "strong",
+    "credId": "453234543adr54hy9",
+    "enrolments": [
+      {
+        "key": "HMRC-PILLAR2-ORG",
+        "identifiers": [
+          {
+            "key": "PLRID",
+            "value": "XMPLR0012345674"
+          }
+        ],
+        "state": "Activated"
+      }
+    ]
+  }
+}
+
+script:post-response {
+  let token = res.getHeader('authorization')
+  let trimToken = token.split(",").find(str => str.startsWith('Bearer'));
+  bru.setVar("bearerToken",trimToken)
+  
+}
