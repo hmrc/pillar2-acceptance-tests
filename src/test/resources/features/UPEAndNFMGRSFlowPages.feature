@@ -101,18 +101,18 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select back link
     Then I should be on UPE registration failed error page
-    #When I click searching Companies House for the company registration number and registered office address (opens in a new tab) link #To be fixed as part of PIL-872
-    #Then I should be navigated to new tab
-    #And  I should navigate to search register page
-    #Then I close new tab
-    #And I should navigate back to main tab
-    #Then I should be on UPE registration failed error page
-    #When I click asking for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab) link
-    #Then I should be navigated to new tab
-    #And  I should be on Corporation Tax UTR page
-    #Then I close new tab
-    #And I should navigate back to main tab
-    #Then I should be on UPE registration failed error page
+    When I click search Companies House for the company registration number and registered office address (opens in a new tab) link
+    Then I should be navigated to new tab
+    And  I should navigate to search register page
+    Then I close new tab
+    And I should navigate back to main tab
+    Then I should be on UPE registration failed error page
+    When I click ask for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab) link
+    Then I should be navigated to new tab
+    And  I should be on Corporation Tax UTR page
+    Then I close new tab
+    And I should navigate back to main tab
+    Then I should be on UPE registration failed error page
     When I click the browser back button
     When I registered successfully with BV enabled
     And I click on Save&Continue button
@@ -139,14 +139,14 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on NFM entity type page
     When I select back link
     Then I should be on NFM registration failed error page
-    #When I click searching Companies House for the company registration number and registered office address (opens in a new tab) link
-    #Then I should be redirected to search register page in a new tab
-    #When I click asking for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab) link
-    #Then I should be navigated to new tab
-    #And  I should be on Corporation Tax UTR page
-    #Then I close new tab
-    #And I should navigate back to main tab
-    #Then I should be on NFM registration failed error page
+    When I click search Companies House for the company registration number and registered office address (opens in a new tab) link
+    Then I should be redirected to search register page in a new tab
+    When I click ask for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab) link
+    Then I should be navigated to new tab
+    And  I should be on Corporation Tax UTR page
+    Then I close new tab
+    And I should navigate back to main tab
+    Then I should be on NFM registration failed error page
 
   @batch2
   Scenario: 5 - User registration as UkLimitedCompany failed with generic error
