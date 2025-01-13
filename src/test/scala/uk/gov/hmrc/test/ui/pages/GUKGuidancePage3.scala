@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object GUKGuidancePage3 extends PageObject {
   val url: String    = "https://www.gov.uk/guidance/report-pillar-2-top-up-taxes"
-  val header: String = "h1.govuk-heading-xl"
+  val header: String = "h1.govuk-heading-l"
 }
