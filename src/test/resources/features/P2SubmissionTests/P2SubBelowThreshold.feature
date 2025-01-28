@@ -312,7 +312,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click View account homepage link
     Then I should be on Dashboard page
 
-  Scenario: 9 - Org User navigates to KB pages, if click browser back after successful submission
+  Scenario: 9 - Org User navigates to KB page, if user click browser back after successful BTN submission
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR1000000000 for Pillar2 service
     Then I should be on Dashboard page
     And I access submission BTN start page
