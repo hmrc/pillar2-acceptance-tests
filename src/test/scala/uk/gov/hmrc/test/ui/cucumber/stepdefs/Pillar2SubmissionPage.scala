@@ -60,6 +60,7 @@ trait Pillar2SubmissionPage
       case "P2 Home page"                              => P2HomePage
       case "BTN Threshold Met KB Page"                 => P2SubBtnThresholdMetKBPage
       case "BTN Confirmation Page"                     => P2ConfirmationPage
+      case "BTN Cannot Return Page"                    => P2SubBTNCannotReturnPage
     }
   }
 }
