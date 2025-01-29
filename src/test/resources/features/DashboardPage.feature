@@ -96,7 +96,8 @@ Feature: Dashboard Page
     And I should see row 3 value 5 May 2025
     And I should see row 4 value 5 June 2026
     And I click on Continue button
-    Then I should be on Dashboard page
+    Then I should be redirect to Manage Account processing Page
+    And I should be on Dashboard page
 
   @zap_accessibility @batch1
   Scenario: 3 - User navigates to amend contact details page and validates the data
