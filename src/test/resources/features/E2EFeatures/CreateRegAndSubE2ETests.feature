@@ -5,7 +5,7 @@ Feature: User registration and subscription e2e journey
   So that I can access my dashboard
 
   Scenario: 1 - Create a new registration & subscription with UPE GRS Flow and NFM GRS flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -114,7 +114,7 @@ Feature: User registration and subscription e2e journey
     And I should be on Dashboard page
 
   Scenario: 2 - Create a new registration & subscription with UPE GRS Flow and No NFM flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -194,7 +194,7 @@ Feature: User registration and subscription e2e journey
     And I should be on Dashboard page
 
   Scenario: 3 - Create a new registration & subscription with UPE GRS Flow and NFM No ID flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -269,7 +269,7 @@ Feature: User registration and subscription e2e journey
     And I should be on Dashboard page
 
   Scenario: 4 - Create a new registration & subscription with UPE No ID Flow and NFM No ID flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
@@ -360,7 +360,7 @@ Feature: User registration and subscription e2e journey
     And I should be on Dashboard page
 
   Scenario: 5 - Create a new registration & subscription with UPE No ID Flow and No NFM flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
@@ -428,7 +428,7 @@ Feature: User registration and subscription e2e journey
     And I should be on Dashboard page
 
   Scenario: 6 - Create a new registration & subscription with UPE No ID Flow and NFM GRS flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
@@ -504,7 +504,7 @@ Feature: User registration and subscription e2e journey
     And I should be on Dashboard page
 
   Scenario: 7 - Create a new registration & subscription with UPE Entity type not listed and NFM GRS flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -572,7 +572,7 @@ Feature: User registration and subscription e2e journey
     And I should navigate to Registration confirmation page
 
   Scenario: 8 - Create a new registration & subscription with UPE GRS flow and NFM Entity type not listed
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page

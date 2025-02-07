@@ -56,7 +56,7 @@ Feature: Create a new registration and subscription
 
   @zap_accessibility @batch2
   Scenario: 2 - User redirected to a placeholder error page, for an incomplete data submission during registration
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     When I select option UK limited company and continue to GRS page
@@ -176,7 +176,7 @@ Feature: Create a new registration and subscription
 
   @batch2
   Scenario: 4 - Verify the link on page can't be found page
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access random page
     And The Heading should be This page can’t be found
     And The Body content should be Please check that you have entered the correct web address.

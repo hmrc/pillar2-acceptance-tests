@@ -114,7 +114,7 @@ Feature: NFM NO ID journey
 
   @zap_accessibility @batch2
   Scenario: 3 - Validate different error messages for NFM no ID journey pages
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I select option Yes and continue to next
     And I select option UK limited company and continue to GRS page
     And I registered successfully with BV enabled

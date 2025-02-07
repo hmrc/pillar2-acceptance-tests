@@ -6,7 +6,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @zap_accessibility @batch1
   Scenario: 1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
@@ -21,7 +21,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @zap_accessibility @batch1
   Scenario: 2 - User registered as UkLimitedCompany successfully with BV enabled
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -53,7 +53,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch1
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -80,7 +80,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch2
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -150,7 +150,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch2
   Scenario: 5 - User registration as UkLimitedCompany failed with generic error
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     And The caption must be Group details
     And The Heading should be Is the ultimate parent entity registered in the UK?
@@ -182,7 +182,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch2
   Scenario: 6 - User registration as UkLimitedCompany failed with identifiers do not match error
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -227,7 +227,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch2
   Scenario: 7 - User registration as UkLimitedCompany failed with BV failed error
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -256,7 +256,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch1
   Scenario: 8 - User registered as LimitedLiabilityPartnership successfully with BV enabled
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -285,7 +285,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch1
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -313,7 +313,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch2
   Scenario: 10 - User registration with LLP with different errors
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -365,7 +365,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @batch1
   Scenario: 11 - User can navigate to Entity type not listed hyperlink on NFM Org type page
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
@@ -387,7 +387,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
 
   @zap_accessibility @batch2
   Scenario: 12 - UPE User error pages - ZAP-Accessibility Test
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I am on UPE registration failed error Page
     And I am on UPE registration not called error Page
     And I am on NFM registration failed error Page
