@@ -6,7 +6,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
 
   @batch3
   Scenario: 1 - Verify RFM GRS journey when New NFM is based in UK - UK limited company
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
@@ -41,7 +41,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
 
   @batch3
   Scenario: 2 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
@@ -108,7 +108,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
 
   @batch2
   Scenario: 3 - User registration as Limited liability partnership failed with party type mismatch error
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
@@ -136,7 +136,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
 
   @batch2
   Scenario: 4 - User registration as UK limited company failed with identifiers mismatch error and entity type page validation
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789

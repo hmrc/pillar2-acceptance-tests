@@ -59,11 +59,12 @@ class StepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
-  Given("""^(.*) logs in as upe for Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToUPE(name)
-      case _                   => AuthLoginPage.loginToUPE(name)
-    }
+  Given("""^.* logs in without Pillar2 enrolment$""") {
+        AuthLoginPage.loginToUPE()
+  }
+
+  Given("""^.* logs in and navigates to RFM start page without Pillar2 enrolment with groupId (.*)$""") {groupId:String =>
+    AuthLoginPage.loginToRFMWithGroupId(groupId)
   }
 
   Given("""^(.*) logs in as upe with credId (.*) for Pillar2$""") { (name: String, credId: String) =>

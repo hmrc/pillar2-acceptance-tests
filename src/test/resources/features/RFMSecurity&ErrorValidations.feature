@@ -42,7 +42,7 @@ Feature: RFM check your answers page
 
   @batch2
   Scenario: 2 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0012345111
@@ -85,7 +85,7 @@ Feature: RFM check your answers page
 
   @batch2
   Scenario: 3 - Verify Incomplete data error
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789

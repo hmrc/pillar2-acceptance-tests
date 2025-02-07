@@ -4,7 +4,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS and NO 
   I want to determine that in RFM journey, UPE or New NFM journey is based in UK for LLP and Limited company
 
   Scenario: 1 - Verify that New NFM can replace existing FM through GRS registration flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
@@ -43,7 +43,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS and NO 
     And I should navigate to RFM Confirmation Page
 
   Scenario: 2 - Verify that New NFM can replace existing FM through NO ID registration flow
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
@@ -85,7 +85,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS and NO 
     And I can see Print this page link
 
   Scenario: 3 - Verify that UPE can replace existing FM on the Pillar 2 account
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789

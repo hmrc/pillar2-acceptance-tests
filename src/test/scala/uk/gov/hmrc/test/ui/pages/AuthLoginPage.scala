@@ -32,6 +32,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val redirectUrlField: String              = "redirectionUrl"
   val redirectionUrlField: String           = "#redirectionUrl"
   val credIdField: String                   = "authorityId"
+  val groupIdField:String = "groupIdentifier"
   val frontEndNameUrl: String               = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-name"
   val frontEndCAUrl: String                 = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
   val frontEndUPERegTypeUrl: String         = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
@@ -127,10 +128,18 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def loginToUPE(name: String): Unit = {
+  def loginToUPE(): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndUPEUrl, redirectUrlField)
     selectAffinityGroupOrg()
+    clickSubmitButton()
+  }
+
+  def loginToRFMWithGroupId(groupId:String): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(rfmUrl, redirectUrlField)
+    selectAffinityGroupOrg()
+    Input.sendKeysById(groupIdField, groupId)
     clickSubmitButton()
   }
 

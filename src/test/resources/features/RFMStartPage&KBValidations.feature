@@ -68,14 +68,14 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility @batch3
+#    Add groupId to user to match stub
+  @zap_accessibility @batch3 @solo
   Scenario: 5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page
     Given I clear the cache
-    Given Organisation User logs in as upe for Pillar2
-    And I access RFM start page
+    Given Organisation User logs in and navigates to RFM start page without Pillar2 enrolment with groupId 879D6270-E9C2-4092-AC91-21C61B69D1E7
     And I click on Continue button
     Then I should be on RFM enter pillar2 id page
-    When I provide RFM pillar2 id as XEPLR0444444400
+    When I provide RFM pillar2 id as XMPLR0123456789
     Then I should be on RFM Existing Member KB Page
     When I select back link
     Then I should be on RFM enter pillar2 id page
@@ -87,7 +87,7 @@ Feature: RFM Start page
   @batch2
   Scenario: 6 - Verify RFM start page and error validations on Enter pillar2 ID and Registration date page
     Given I clear the cache
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
     And I click on Continue button
     Then I should be on RFM enter pillar2 id page

@@ -245,7 +245,7 @@ Feature: Contact details for the filing member
   @zap_accessibility @batch2
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
     When I enter UPE name as Test
@@ -419,7 +419,7 @@ Feature: Contact details for the filing member
 
   @batch1
   Scenario: 4 - Validate subscription journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
@@ -503,7 +503,7 @@ Feature: Contact details for the filing member
 
   @batch1
   Scenario: 5 - Validate Yes journey from knock back page for duplicate details on registration for UPE and NFM GRS flows
-    Given Organisation User logs in as upe for Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
