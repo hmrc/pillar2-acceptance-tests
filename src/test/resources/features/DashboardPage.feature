@@ -176,7 +176,8 @@ Feature: Dashboard Page
       | Address                                           | EH5 5WY                    |
       | Address                                           | United Kingdom             |
     When I click on Continue button
-    Then I should be on Dashboard page
+    Then I should be redirect to Manage Contact processing Page
+    And I should be on Dashboard page
 
   @zap_accessibility @batch2
   Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to view subscription API
