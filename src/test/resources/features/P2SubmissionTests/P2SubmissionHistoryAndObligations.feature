@@ -1,9 +1,9 @@
 @p2tests @p2zap_p2accessibility
-Feature: Pillar2 Due Overdue And Submission History User Journey
+Feature: Pillar2 Due & Overdue returns And Submission History User Journey
   As an authenticated user
-  I should be able to view due overdue and submission history page
+  I should be able to view Due & Overdue returns and Submission History page
 
-  Scenario: 1 - Org User navigates to due and overdue returns and Submission History pages for multiple accounting period
+  Scenario: 1 - Org User navigates to Due & Overdue returns and Submission History for multiple accounting period
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR1111111111 for Pillar2 service
     Then I should be on Dashboard page
     And I access submission BTN start page
@@ -25,7 +25,7 @@ Feature: Pillar2 Due Overdue And Submission History User Journey
     When I click submission history link
     Then I verify page "No submissions made.","Submission History"
 
-  Scenario: 2 - Org User navigates to due and overdue returns and Submission History pages for no accounting period
+  Scenario: 2 - Org User navigates to Due & Overdue returns and Submission History pages for no accounting period
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR2222222222 for Pillar2 service
     Then I should be on Dashboard page
     And I access submission BTN start page
@@ -34,7 +34,7 @@ Feature: Pillar2 Due Overdue And Submission History User Journey
     When I click submission history link
     Then I verify page "No submissions made.","Submission History"
 
-  Scenario: 3 - Org User navigates to due and overdue returns and Submission History pages for single accounting period
+  Scenario: 3 - Org User navigates to due & Due & Overdue returns and Submission History pages for single accounting period
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR3333333333 for Pillar2 service
     Then I should be on Dashboard page
     And I access submission BTN start page
@@ -47,7 +47,7 @@ Feature: Pillar2 Due Overdue And Submission History User Journey
     When I click submission history link
     Then I verify page "No submissions made.","Submission History"
 
-  Scenario: 4 - Org User navigates to due and overdue returns and Submission History pages for all fulfilled submissions
+  Scenario: 4 - Org User navigates to Due & Overdue returns and Submission History pages for all fulfilled submissions
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4444444444 for Pillar2 service
     Then I should be on Dashboard page
     And I access submission BTN start page
@@ -61,7 +61,7 @@ Feature: Pillar2 Due Overdue And Submission History User Journey
       | Type of return  | UK Tax Return |
       | Submission date | 10 March 2025 |
 
-  Scenario: 5 - Org User navigates to due and overdue returns and Submission History pages for some fulfilled submissions
+  Scenario: 5 - Org User navigates to Due & Overdue returns and Submission History pages for some fulfilled submissions
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5555555555 for Pillar2 service
     Then I should be on Dashboard page
     And I access submission BTN start page
