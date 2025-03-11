@@ -1,4 +1,4 @@
-@p2tests @p2zap_p2accessibility @tests
+@p2tests @p2zap_p2accessibility
 Feature: Pillar2 Due Overdue And Submission History User Journey
   As an authenticated user
   I should be able to view due overdue and submission history page
