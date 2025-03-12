@@ -3,6 +3,8 @@ val scalafixSettings = Seq(
   semanticdbVersion := scalafixSemanticdb.revision // "4.4.0"
 )
 
+ThisBuild / javacOptions ++= Seq("--release", "21")
+
 lazy val testSuite = (project in file("."))
   .disablePlugins(
     JUnitXmlReportPlugin
