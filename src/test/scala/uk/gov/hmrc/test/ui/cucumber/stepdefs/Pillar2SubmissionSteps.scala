@@ -21,6 +21,7 @@ import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationToPage
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
+import uk.gov.hmrc.test.ui.pages.TaskListPage
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
 import java.time.LocalDate
@@ -89,6 +90,21 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
   And("""^I go to (.*) page$""") { (page: String) =>
     page match {
       case "due overdue" => Nav.navigateTo(P2DueOverduePage.url)
+    }
+  }
+
+  And("""I should see {int} accounting periods on Due Overdue Page""") { (accountingPeriods: Int) =>
+    assert(driver.findElements(By.cssSelector(P2DueOverduePage.accountPeriodSections)).size() == accountingPeriods)
+  }
+
+  And("""I should see {int} accounting periods on Sub History Page""") { (accountingPeriods: Int) =>
+    assert(driver.findElements(By.cssSelector(P2SubmissionHistoryPage.accountingPeriods)).size() == accountingPeriods)
+  }
+
+  And("""I should see {int} section with status {string}""") { (count: Int, dueType: String) =>
+    dueType match {
+      case "Due" => assert(driver.findElements(By.cssSelector(P2DueOverduePage.dueSection)).size() == count)
+      case "Overdue" => assert(driver.findElements(By.cssSelector(P2DueOverduePage.overDueSection)).size() == count)
     }
   }
 
