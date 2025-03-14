@@ -1,4 +1,4 @@
-@p2tests @p2zap_p2accessibility @tests
+@p2tests @p2zap_p2accessibility
 Feature: Pillar2 Submission History Agent User Journey
   As an authenticated Agent user
   I should be able to view Submission History page
