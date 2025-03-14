@@ -30,8 +30,7 @@ Feature: Dashboard Page
     When I click Make a payment link
     Then I should navigate to Make a payment page
     And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 top-up tax payments.
-    And The Body content should be Submit your return before making a payment. Your payment is due on the same date as your return.
-    And The Body content should be You can read the guidance to find the methods you can use to make a payment.
+    And The Body content should be You can use the 'Pay Now' button to pay online, or read more about other payment methods. (opens in a new tab)
     When I click Report Pillar 2 top-up taxes link
     Then I should be on Dashboard page
     When I click Make a payment link
@@ -118,22 +117,22 @@ Feature: Dashboard Page
     And I should see sub section 2 as Secondary contact
     And I should see sub section 3 as Contact address
     And I should see details as below:
-      | KEY                                                 | VALUE                   |
-      | Contact name                                        | Fred Flintstone         |
-      | Email address                                       | fred.flintstone@aol.com |
-      | Can we contact the primary contact by telephone?    | Yes                     |
-      | Telephone number                                    | 0115 9700 700           |
-      | Do you have a second contact?                       | Yes                     |
-      | Secondary contact name                              | Donald Trump            |
-      | Second contact email address                        | donald.trump@potus.com  |
-      | Can we contact the secondary contact by telephone?  | Yes                     |
-      | Second contact telephone number                     | 0115 9700 701           |
-      | Address                                             | 1 High Street           |
-      | Address                                             | Egham                   |
-      | Address                                             | Wycombe                 |
-      | Address                                             | Surrey                  |
-      | Address                                             | HP13 6TT                |
-      | Address                                             | United Kingdom          |
+      | KEY                                                | VALUE                   |
+      | Contact name                                       | Fred Flintstone         |
+      | Email address                                      | fred.flintstone@aol.com |
+      | Can we contact the primary contact by telephone?   | Yes                     |
+      | Telephone number                                   | 0115 9700 700           |
+      | Do you have a second contact?                      | Yes                     |
+      | Secondary contact name                             | Donald Trump            |
+      | Second contact email address                       | donald.trump@potus.com  |
+      | Can we contact the secondary contact by telephone? | Yes                     |
+      | Second contact telephone number                    | 0115 9700 701           |
+      | Address                                            | 1 High Street           |
+      | Address                                            | Egham                   |
+      | Address                                            | Wycombe                 |
+      | Address                                            | Surrey                  |
+      | Address                                            | HP13 6TT                |
+      | Address                                            | United Kingdom          |
     When I click on change link for Contact Name
     When I enter Contact Name as Contact Name Test #
     Then I should navigate to contact details summary page
@@ -159,22 +158,22 @@ Feature: Dashboard Page
     And I click on Continue button
     Then I should navigate to contact details summary page
     And I should see details as below:
-      | KEY                                               | VALUE                      |
-      | Contact name                                      | Contact Name Test #        |
-      | Email address                                     | contact*@email.com         |
-      | Can we contact the primary contact by telephone?  | Yes                        |
-      | Telephone number                                  | 123456789                  |
-      | Do you have a second contact?                     | Yes                        |
-      | Secondary contact name                            | Second Contact £ Name Test |
-      | Second contact email address                      | second&Contact@email.com   |
-      | Can we contact the secondary contact by telephone?| Yes                        |
-      | Second contact telephone number                   | 1234554878                 |
-      | Address                                           | Test Address Line 1        |
-      | Address                                           | Test Address Line 2        |
-      | Address                                           | Test City                  |
-      | Address                                           | Test Region                |
-      | Address                                           | EH5 5WY                    |
-      | Address                                           | United Kingdom             |
+      | KEY                                                | VALUE                      |
+      | Contact name                                       | Contact Name Test #        |
+      | Email address                                      | contact*@email.com         |
+      | Can we contact the primary contact by telephone?   | Yes                        |
+      | Telephone number                                   | 123456789                  |
+      | Do you have a second contact?                      | Yes                        |
+      | Secondary contact name                             | Second Contact £ Name Test |
+      | Second contact email address                       | second&Contact@email.com   |
+      | Can we contact the secondary contact by telephone? | Yes                        |
+      | Second contact telephone number                    | 1234554878                 |
+      | Address                                            | Test Address Line 1        |
+      | Address                                            | Test Address Line 2        |
+      | Address                                            | Test City                  |
+      | Address                                            | Test Region                |
+      | Address                                            | EH5 5WY                    |
+      | Address                                            | United Kingdom             |
     When I click on Continue button
     Then I should be redirect to Manage Contact processing Page
     And I should be on Dashboard page
@@ -295,3 +294,47 @@ Feature: Dashboard Page
       | manage contact address     | Manage contact address Page           |
       | manage group status        | Manage group status Page              |
       | manage accounting period   | Manage accounting period Page         |
+
+  @batch3
+  Scenario: 8 - Make successful payment as Organisation user
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Make a payment link
+    Then I should navigate to Make a payment page
+    When I click on Continue button
+    Then I make successful payment
+    And I should navigate to Transaction History Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+
+
+  @batch3
+  Scenario: 9 - Make successful payment as Agent
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XMPLR0012345674
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    And I can see Agent Services Account link
+    When I click Make a payment link
+    Then I should navigate to Make a payment page
+    When I click on Continue button
+    Then I make successful payment
+    And I should navigate to Transaction History Page
+    When I click Report Pillar 2 top-up taxes link
+    Then I should be on Dashboard page
+
+  @batch3
+  Scenario: 10 - Back journey from Get ready to approve your payment page
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+    Then I should be on Dashboard page
+    When I click Make a payment link
+    Then I should navigate to Make a payment page
+    When I click on Continue button
+    And I go till Get ready to approve your payment page
+    Then I should be able to navigate back to make a payment page
+    Then I should navigate to Make a payment page
+

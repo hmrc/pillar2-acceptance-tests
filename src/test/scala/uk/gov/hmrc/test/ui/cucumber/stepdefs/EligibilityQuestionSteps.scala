@@ -36,7 +36,7 @@ class EligibilityQuestionSteps extends CommonFunctions {
   }
 
   And("""^I select back link$""") { () =>
-    Wait.waitForElementToClicktagName("h1")
+    Wait.waitForElementToClickTagName("h1")
     clickByCss(BusinessActivityEQPage.backLink)
   }
 
@@ -51,7 +51,7 @@ class EligibilityQuestionSteps extends CommonFunctions {
   }
 
   Then("""^I should navigate to (.*)""") { (page: String) =>
-    Wait.waitForElementToClicktagName("h1")
+    Wait.waitForElementToClickTagName("h1")
     assertNavigationToPage(pageMatch(page))
   }
 
@@ -62,13 +62,14 @@ class EligibilityQuestionSteps extends CommonFunctions {
   }
 
   Then("""^I should be on (.*)""") { (page: String) =>
-    Wait.waitForElementToClicktagName("h1")
+    Wait.waitForElementToClickTagName("h1")
     assertNavigationUrl(pageMatch(page))
   }
 
   And("""^I continue|I continue without selecting an option$""") { () =>
     BusinessActivityEQPage.clickContinue()
   }
+
   Then("""^The inset text should be (.*)$""") { insetText: String =>
     Wait.waitForElementToPresentByCssSelector(ConfirmationPage.insetText)
     assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).equals(insetText))
@@ -77,8 +78,7 @@ class EligibilityQuestionSteps extends CommonFunctions {
   Then("""^I should be redirect to (.*)""") { (page: String) =>
     assertNavigationUrl(pageMatch(page))
     Wait.waitForElementToPresentByCssSelector(RegistrationProcessingPage.loadingSpinner)
-    Wait.waitForElementToClicktagName("h1")
+    Wait.waitForElementToClickTagName("h1")
     Wait.waitForCSSElementNotToPresent(RegistrationProcessingPage.loadingSpinner)
   }
-
 }

@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object MakePaymentPage extends PageObject {
@@ -30,4 +31,7 @@ object MakePaymentPage extends PageObject {
   val tableCell        = ".govuk-summary-list__value"
   val firstToggleLink  = "//span[normalize-space()='How long it takes']"
   val secondToggleLink = "//span[normalize-space()='Make a payment from outside the UK']"
+  val payNowButton     = ".govuk-button"
+
+  def clickPayNowButton(): Unit = findByCss(payNowButton).click()
 }
