@@ -89,7 +89,8 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
 
   And("""^I go to (.*) page$""") { (page: String) =>
     page match {
-      case "due overdue" => Nav.navigateTo(P2DueOverduePage.url)
+      case "due overdue"        => Nav.navigateTo(P2DueOverduePage.url)
+      case "submission history" => Nav.navigateTo(P2SubmissionHistoryPage.url)
     }
   }
 
@@ -131,9 +132,9 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
     }
   }
 
-  Then("""accounting period should match (.*)$""") { (accountingperiod: String) =>
+  Then("""accounting period should match (.*)$""") { (accountingPeriod: String) =>
     Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.singleaccountingperiodSubHis)
-    getTextOf(By cssSelector P2SubmissionHistoryPage.singleaccountingperiodSubHis) should be(accountingperiod)
+    getTextOf(By cssSelector P2SubmissionHistoryPage.singleaccountingperiodSubHis) should be(accountingPeriod)
   }
 
   Then("""Type of return should match (.*)$""") { (typeOfReturn: String) =>
@@ -141,12 +142,12 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
     getTextOf(By cssSelector P2SubmissionHistoryPage.typeofReturnSubHis) should be(typeOfReturn)
   }
 
-  Then("""I verify page {string},{string}""") { (expectedmessage: String, page: String) =>
+  Then("""I verify page {string},{string}""") { (expectedMessage: String, page: String) =>
     val actualMessage = page match {
       case "Submission History" => driver.findElement(By.xpath(P2SubmissionHistoryPage.actualMessage))
       case "Due Overdue"        => driver.findElement(By.xpath(P2DueOverduePage.actualMessage))
     }
-    Assert.assertEquals("Text should match the expected message.", expectedmessage, actualMessage.getText)
+    Assert.assertEquals("Text should match the expected message.", expectedMessage, actualMessage.getText)
   }
 
   And("""^I select option (.*) and continue on Pillar2 submission$""") { (option: String) =>
