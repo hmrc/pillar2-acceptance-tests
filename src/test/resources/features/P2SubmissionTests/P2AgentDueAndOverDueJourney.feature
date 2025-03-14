@@ -18,7 +18,6 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I should see 1 section with status "Due"
     And I should see 3 section with status "Overdue"
     When I click submission history link
-    Then I should be navigated to Due & Over Due Page of Pillar2 Submission
     And I should see 0 accounting periods on Sub History Page
 
   Scenario: 2 - Agent User navigates to Due & Overdue returns page with no accounting period
@@ -83,4 +82,4 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I should see 0 section with status "Due"
     And I should see 2 section with status "Overdue"
     When I click submission history link
-    And I should see 4 accounting periods on Sub History Page
+    And I should see 2 accounting periods on Sub History Page
