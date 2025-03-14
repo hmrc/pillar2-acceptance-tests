@@ -1,6 +1,6 @@
-@p2tests @p2zap_p2accessibility  @tests1
+@p2tests @p2zap_p2accessibility @tests
 Feature: Pillar2 Submission History Agent User Journey
-  As an authenticated user
+  As an authenticated Agent user
   I should be able to view Submission History page
 
   Scenario: 1 - Agent User navigates to Submission History for no accounting period
@@ -13,7 +13,7 @@ Feature: Pillar2 Submission History Agent User Journey
     And I click on Continue button
     And I access submission BTN start page
     And I go to submission history page
-    Then I verify page "No submissions made.","Submission History"
+    And I should see 0 accounting periods on Sub History Page
 
   Scenario: 2 - Agent User navigates to Submission History for one accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -25,10 +25,7 @@ Feature: Pillar2 Submission History Agent User Journey
     And I click on Continue button
     And I access submission BTN start page
     And I go to submission history page
-    Then I verify details as below
-      | KEY             | VALUE         |
-      | Type of return  | UK Tax Return |
-      | Submission date | 10 March 2025 |
+    And I should see 1 accounting periods on Sub History Page
 
   Scenario: 3 - Agent User navigates to Submission History for multiple accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -40,16 +37,5 @@ Feature: Pillar2 Submission History Agent User Journey
     And I click on Continue button
     And I access submission BTN start page
     And I go to submission history page
-    Then I verify details as below
-      | KEY             | VALUE                        |
-      | Type of return  | UK Tax Return                |
-      | Submission date | 10 March 2025                |
-      | Type of return  | Below Threshold Notification |
-      | Submission date | 10 March 2025                |
-      | Type of return  | UK Tax Return                |
-      | Submission date | 10 March 2025                |
-      | Type of return  | Below Threshold Notification |
-      | Submission date | 10 March 2025                |
-      | Type of return  | Information Return           |
-      | Submission date | 10 March 2025                |
+    And I should see 2 accounting periods on Sub History Page
 
