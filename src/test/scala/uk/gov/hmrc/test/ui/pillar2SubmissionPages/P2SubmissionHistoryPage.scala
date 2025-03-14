@@ -23,4 +23,5 @@ object P2SubmissionHistoryPage extends PageObject {
   val singleaccountingperiodSubHis = ".govuk-table__caption"
   val typeofReturnSubHis           = ".govuk-table__cell"
   val actualMessage                = "//p[contains(text(), 'No submissions made.')]"
+  val accountingPeriods            = ".table-scroll-wrapper .govuk-table"
 }

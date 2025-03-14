@@ -63,6 +63,7 @@ trait Pillar2SubmissionPage
       case "BTN Confirmation Page"                     => P2ConfirmationPage
       case "BTN Cannot Return Page"                    => P2SubBTNCannotReturnPage
       case "BTN Problem with service Page"             => P2SubBTNProblemWithServicePage
+      case "Due & Over Due Page"                       => P2DueOverduePage
     }
   }
 }
