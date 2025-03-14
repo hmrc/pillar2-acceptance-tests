@@ -20,7 +20,9 @@ import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
+import uk.gov.hmrc.test.ui.pages.OnlinePaymentPages.enterEmailAndClickContinueOnEmailPage
 import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnAgdKBPage
 
 class PaymentSteps extends CommonFunctions {
 
@@ -376,6 +378,7 @@ class PaymentSteps extends CommonFunctions {
       UKBankAccountPaymentPage.clickContinue()
     }
   }
+
   And("""^I enter UK Bank Account details as:$""") { (details: DataTable) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
@@ -386,5 +389,34 @@ class PaymentSteps extends CommonFunctions {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()
+  }
+
+  Then("""I make successful payment""") { () =>
+    OnlinePaymentPages.enterAmountAncClickContinueOnEnterPaymentAmountPage()
+    OnlinePaymentPages.clickContinueOnChooseOpenBankingOrBacsPage()
+    OnlinePaymentPages.enterBankNameAndClickContinueOnChooseBankPage()
+    OnlinePaymentPages.enterEmailAndClickContinueOnEmailPage()
+    OnlinePaymentPages.clickContinueOnCheckYourDetailsPage()
+    OnlinePaymentPages.clickContinueOnGetReadyApproveThisPaymentPage()
+    OnlinePaymentPages.selectBankLoginOptionAndClickContinue()
+    OnlinePaymentPages.clickSubmitOnStubBankPaymentPage()
+    OnlinePaymentPages.verifyPaymentAndClickHmrcOnlineAccountLinkOnPaymentCompletePage()
+
+  }
+  Then("""I go till Get ready to approve your payment page""") { () =>
+    OnlinePaymentPages.enterAmountAncClickContinueOnEnterPaymentAmountPage()
+    OnlinePaymentPages.clickContinueOnChooseOpenBankingOrBacsPage()
+    OnlinePaymentPages.enterBankNameAndClickContinueOnChooseBankPage()
+    OnlinePaymentPages.enterEmailAndClickContinueOnEmailPage()
+    OnlinePaymentPages.clickContinueOnCheckYourDetailsPage()
+
+  }
+
+  Then("""I should be able to navigate back to make a payment page""") { () =>
+    Nav.browserBack()
+    for (i <- 1 to 7) {
+      clickByCss(P2SubBtnAgdKBPage.backLink)
+    }
+    println("Test")
   }
 }

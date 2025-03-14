@@ -491,7 +491,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   Then("""^the page title should be (.*)$""") { pageTitle: String =>
-    Wait.waitForElementToClicktagName("h1")
+    Wait.waitForElementToClickTagName("h1")
     assert(driver.getTitle.contains(pageTitle))
   }
 

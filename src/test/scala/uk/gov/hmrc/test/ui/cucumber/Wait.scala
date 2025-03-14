@@ -34,11 +34,13 @@ object Wait extends BasePage {
 
   def waitForElements(h1: String): WebElement = waitForElement(By.tagName(h1))
 
+  def waitForElementByXpathContainsText(xpath: String): WebElement=waitForElement(By.xpath(xpath))
+
   private def waitForElement(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
   def secondsWait(secs: Int): Unit = Thread.sleep(secs.*(1000))
 
-  def waitForElementToClicktagName(tagName: String): WebElement = {
+  def waitForElementToClickTagName(tagName: String): WebElement = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10))
     driverWait.until(ExpectedConditions.elementToBeClickable(By.tagName(tagName)))
   }

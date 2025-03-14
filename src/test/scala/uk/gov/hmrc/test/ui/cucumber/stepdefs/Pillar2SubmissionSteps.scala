@@ -52,7 +52,7 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
   }
 
   Then("""^I should be navigated to (.*) of Pillar2 Submission""") { (page: String) =>
-    Wait.waitForElementToClicktagName("h1")
+    Wait.waitForElementToClickTagName("h1")
     assertNavigationToPage(p2SubPageMatch(page))
   }
 
