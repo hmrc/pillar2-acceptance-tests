@@ -1,4 +1,4 @@
-@p2tests1 @p2zap_p2accessibility
+@p2tests @p2zap_p2accessibility
 Feature: Pillar2 Due & Overdue returns for Agent User Journey
   As an authenticated Agent user
   I should be able to view Due & Overdue returns Page
