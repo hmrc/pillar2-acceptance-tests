@@ -1,5 +1,6 @@
 @p2tests @p2zap_p2accessibility
 Feature: Pillar2 Due & Overdue returns for Agent User Journey
+
   As an authenticated Agent user
   I should be able to view Due & Overdue returns Page
 
@@ -13,7 +14,8 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
     And I access submission BTN start page
-    And I go to due overdue page
+    When I go to due overdue page
+    Then I should be navigated to Due & Over Due Page of Pillar2 Submission
     And I should see 4 accounting periods on Due Overdue Page
     And I should see 1 section with status "Due"
     And I should see 3 section with status "Overdue"
