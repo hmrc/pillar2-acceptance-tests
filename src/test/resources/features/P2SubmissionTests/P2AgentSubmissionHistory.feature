@@ -15,7 +15,7 @@ Feature: Pillar2 Submission History Agent User Journey
     And I go to submission history page
     And I should see 0 accounting periods on Sub History Page
 
-  Scenario: 2 - Agent User navigates to Submission History for one accounting period
+  Scenario: 2 -  Agent User navigates to Submission History for one accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR3333333333 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
@@ -25,7 +25,7 @@ Feature: Pillar2 Submission History Agent User Journey
     And I click on Continue button
     And I access submission BTN start page
     And I go to submission history page
-    And I should see 0 accounting periods on Sub History Page
+    And I should see 1 accounting periods on Sub History Page
 
   Scenario: 3 - Agent User navigates to Submission History for multiple accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service

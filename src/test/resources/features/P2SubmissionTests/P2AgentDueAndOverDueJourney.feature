@@ -37,7 +37,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     When I click submission history link
     And I should see 0 accounting periods on Sub History Page
 
-  Scenario: 3 - Agent User navigates to Due & Overdue returns page with single accounting period
+  Scenario: 3 -  Agent User navigates to Due & Overdue returns page with single accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR3333333333 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
@@ -52,7 +52,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I should see 0 section with status "Due"
     And I should see 1 section with status "Overdue"
     When I click submission history link
-    And I should see 0 accounting periods on Sub History Page
+    And I should see 1 accounting periods on Sub History Page
 
   Scenario: 4 - Agent User navigates to Due & Overdue returns page with all fulfilled submissions
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
