@@ -26,4 +26,5 @@ object P2DueOverduePage extends PageObject {
   val accountPeriodSections = ".govuk-grid-column-full"
   val dueSection            = ".govuk-tag--blue"
   val overDueSection        = ".govuk-tag--red"
+  val dueOverDueSection     = ".govuk-grid-row"
 }
