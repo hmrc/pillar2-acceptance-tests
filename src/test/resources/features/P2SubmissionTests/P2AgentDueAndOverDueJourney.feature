@@ -21,6 +21,8 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I should see 3 section with status "Overdue"
     When I click submission history link
     And I should see 0 accounting periods on Sub History Page
+    When I click due and overdue returns link
+    Then I should be navigated to Due & Over Due Page of Pillar2 Submission
 
   Scenario: 2 - Agent User navigates to Due & Overdue returns page with no accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
