@@ -95,6 +95,7 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
   }
 
   And("""I should see {int} accounting periods on Due Overdue Page""") { (accountingPeriods: Int) =>
+    Wait.waitForElementToPresentByCssSelector(P2DueOverduePage.dueOverDueSection)
     assert(driver.findElements(By.cssSelector(P2DueOverduePage.accountPeriodSections)).size() == accountingPeriods)
   }
 
