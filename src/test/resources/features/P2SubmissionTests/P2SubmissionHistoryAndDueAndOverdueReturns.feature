@@ -13,6 +13,8 @@ Feature: Pillar2 Due & Overdue returns And Submission History User Journey
     And I should see 3 section with status "Overdue"
     When I click submission history link
     And I should see 0 accounting periods on Sub History Page
+    When I click due and overdue returns link
+    Then I should be navigated to Due & Over Due Page of Pillar2 Submission
 
   Scenario: 2 - Org User navigates to Due & Overdue returns and Submission History pages for no accounting period
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR2222222222 for Pillar2 service
