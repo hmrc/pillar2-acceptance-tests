@@ -40,7 +40,7 @@ Feature: Pillar2 submission Agent User Journey
     And I click on Continue button
     Then I should be navigated to Under Construction Page of Pillar2 Submission
 
-  Scenario: 2 -
+  Scenario: 2 - Verify Agent service account user unauthorised pages
     Given Individual User logs in to register for Pillar2 Submission Agent service
     Then I should be navigated to ASA Individual KB Page of Pillar2 Submission
     When I click sign in via agent services link
