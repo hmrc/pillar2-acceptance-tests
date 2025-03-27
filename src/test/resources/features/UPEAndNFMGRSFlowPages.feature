@@ -9,7 +9,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
+    And The Heading should be Is the Ultimate Parent Entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
     And The caption must be Group details
@@ -32,7 +32,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Edit Ultimate Parent Entity details status should be Completed
     And The Task Add filing member details status should be Not started
     When I click Add filing member details link
     Then I should navigate to NFM registration page
@@ -49,7 +49,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Edit Ultimate Parent Entity details status should be Completed
 
   @batch1
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
@@ -153,7 +153,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     And The caption must be Group details
-    And The Heading should be Is the ultimate parent entity registered in the UK?
+    And The Heading should be Is the Ultimate Parent Entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
     And The caption must be Group details
@@ -267,7 +267,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Edit Ultimate Parent Entity details status should be Completed
     When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
@@ -281,7 +281,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Edit Ultimate Parent Entity details status should be Completed
 
   @batch1
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
@@ -295,7 +295,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Edit Ultimate Parent Entity details status should be Completed
     When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
@@ -309,7 +309,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Edit Ultimate Parent Entity details status should be Completed
 
   @batch2
   Scenario: 10 - User registration with LLP with different errors
@@ -375,7 +375,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
-    And The Task Edit ultimate parent entity details status should be Completed
+    And The Task Edit Ultimate Parent Entity details status should be Completed
     When I click Add filing member details link
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next

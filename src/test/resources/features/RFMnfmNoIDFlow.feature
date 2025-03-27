@@ -8,12 +8,12 @@ Feature: RFM CYA - NFM No ID flow
     Given Organisation User logs in with rfm URL to Pillar2
     And I access RFM start page
     And The caption must be Replace filing member
-    And The Heading should be Replace the filing member for a Pillar 2 top-up taxes account
+    And The Heading should be Replace the filing member for a Pillar 2 Top-up Taxes account
     And I should see 4 sections on RFM start page
     And I should see the section 1 as Tell HMRC when you have replaced your filing member
     And I should see the section 3 as Obligations as the filing member
     And I should see the section 4 as What you will need
-    And I should see register to report Pillar 2 top-up taxes link
+    And I should see register to report Pillar 2 Top-up Taxes link
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
@@ -27,7 +27,7 @@ Feature: RFM CYA - NFM No ID flow
     When I click on Continue button
     Then I should be on RFM Corp Position Page
     And I click on Continue button
-    Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
+    Then I should see an error message Select if you are the Ultimate Parent Entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
     Then I should be on New NFM guidance page
     And The caption must be Group details
@@ -117,7 +117,7 @@ Feature: RFM CYA - NFM No ID flow
       | countryCode  | United Kingdom     |
     Then I should navigate to RFM Final Review Page
     And I should see row 1 key Position in the group’s corporate structure
-    And I should see row 1 value Ultimate parent entity (UPE)
+    And I should see row 1 value Ultimate Parent Entity (UPE)
     When I click change link for RFM Corporate Position
     When I select corp position as NFM
     And I click on Continue button
@@ -161,11 +161,11 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Continue button
     Then I should be redirect to RFM processing page
     And I should be on RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I should see report and manage your group's Pillar 2 Top-up Taxes link
     And I can see Print this page link
     When I click the browser back button
     Then I should navigate to RFM No Return Back Error Page
-    And I click report and manage your Pillar 2 top-up taxes link
+    And I click report and manage your Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
   @batch2 @PIL-991
@@ -280,7 +280,7 @@ Feature: RFM CYA - NFM No ID flow
       | Address | EH75WK                |
     When I click change link for RFM Corporate Position
     When I select corp position as UPE
-    And I should see row 1 value Ultimate parent entity (UPE)
+    And I should see row 1 value Ultimate Parent Entity (UPE)
     When I click change link for RFM Corporate Position
     When I select corp position as NFM
     And I click on Continue button
@@ -347,11 +347,11 @@ Feature: RFM CYA - NFM No ID flow
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
     Then I should be redirect to RFM processing page
-    And I should see Report Pillar 2 top-up taxes text is not clickable
+    And I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I should be on RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I should see report and manage your group's Pillar 2 Top-up Taxes link
     And I can see Print this page link
-    When I click report and manage your group's Pillar 2 top-up taxes link
+    When I click report and manage your group's Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
   @batch3
@@ -390,19 +390,19 @@ Feature: RFM CYA - NFM No ID flow
       | addressLine3 | City CYA           |
       | postalCode   | EH5 5WY            |
       | countryCode  | Australia          |
-    And I should see the row 1 value Ultimate parent entity (UPE)
+    And I should see the row 1 value Ultimate Parent Entity (UPE)
     When I click on change link for Contact Name
     When I enter Contact Name as 400
     And I click on Continue button
     Then I should be redirect to RFM processing page
     And I should be on Amend API error Page for RFM
-    When I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
+    When I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should navigate to RFM Final Review Page
     When I click on change link for Contact Name
     When I enter Contact Name as test name
     And I click on Continue button
     And I should navigate to RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I should see report and manage your group's Pillar 2 Top-up Taxes link
     And I can see Print this page link
-    When I click report and manage your group's Pillar 2 top-up taxes link
+    When I click report and manage your group's Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page

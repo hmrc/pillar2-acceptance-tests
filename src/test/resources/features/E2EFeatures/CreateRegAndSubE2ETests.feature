@@ -110,7 +110,7 @@ Feature: User registration and subscription e2e journey
     And I click on Save&Continue button
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
-    And I click report and manage your Pillar 2 top-up taxes link
+    And I click report and manage your Pillar 2 Top-up Taxes link
     And I should be on Dashboard page
 
   Scenario: 2 - Create a new registration & subscription with UPE GRS Flow and No NFM flow
@@ -190,7 +190,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
-    And I click report and manage your Pillar 2 top-up taxes link
+    And I click report and manage your Pillar 2 Top-up Taxes link
     And I should be on Dashboard page
 
   Scenario: 3 - Create a new registration & subscription with UPE GRS Flow and NFM No ID flow
@@ -265,7 +265,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
-    And I click report and manage your Pillar 2 top-up taxes link
+    And I click report and manage your Pillar 2 Top-up Taxes link
     And I should be on Dashboard page
 
   Scenario: 4 - Create a new registration & subscription with UPE No ID Flow and NFM No ID flow
@@ -356,7 +356,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
-    And I click report and manage your Pillar 2 top-up taxes link
+    And I click report and manage your Pillar 2 Top-up Taxes link
     And I should be on Dashboard page
 
   Scenario: 5 - Create a new registration & subscription with UPE No ID Flow and No NFM flow
@@ -424,7 +424,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
-    And I click report and manage your Pillar 2 top-up taxes link
+    And I click report and manage your Pillar 2 Top-up Taxes link
     And I should be on Dashboard page
 
   Scenario: 6 - Create a new registration & subscription with UPE No ID Flow and NFM GRS flow
@@ -500,7 +500,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
-    And I click report and manage your Pillar 2 top-up taxes link
+    And I click report and manage your Pillar 2 Top-up Taxes link
     And I should be on Dashboard page
 
   Scenario: 7 - Create a new registration & subscription with UPE Entity type not listed and NFM GRS flow

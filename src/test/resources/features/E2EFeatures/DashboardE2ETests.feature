@@ -9,7 +9,7 @@ Feature: Dashboard Page
     And I should see User details in dashboard page
     When I click Make a payment link
     Then I should navigate to Make a payment page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I should see User details in dashboard page
     When I click View and amend group details link

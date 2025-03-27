@@ -3,7 +3,7 @@ Feature: Further Details Task page validation
   As a MNE user
   I should be taken to all the Further detail pages
 
-  @zap_accessibility @batch1
+  @zap_accessibility @batch1 @tests1
   Scenario: 1 - User navigates to check your answer page answering all the questions of Further Details Page
     Given Organisation User logs in as upe with credId FDTask for Pillar2
     When I select option Yes and continue to next
@@ -17,8 +17,8 @@ Feature: Further Details Task page validation
     And The caption must be Group details
     And The Heading should be Entity locations
     And The Body content should be You must consider the locations of all the entities within your group.
-    And The Body content should be The entity locations determine which Pillar 2 top-up tax your group needs to report for.
-    And The Body content should be There are two Pillar 2 top-up taxes in the UK:
+    And The Body content should be The entity locations determine which Pillar 2 Top-up Taxes your group needs to report for.
+    And The Body content should be There are two Pillar 2 Top-up Taxes in the UK:
     And The Body content should be Multinational Top-up Tax
     And The Body content should be Domestic Top-up Tax
     And The Body content should be Groups with entities that are located only in the UK will register to report for Domestic Top-up Tax.
@@ -40,7 +40,7 @@ Feature: Further Details Task page validation
     Then I should navigate to Group accounting period page
     And The caption must be Group details
     And The Heading should be When did the group’s first accounting period start and end after 31 December 2023?
-    And The Body content should be This is the first accounting period the group uses for their consolidated financial statements, following the implementation of Pillar 2 top-up taxes in the UK, on or after 31 December 2023.
+    And The Body content should be This is the first accounting period the group uses for their consolidated financial statements, following the implementation of Pillar 2 Top-up Taxes in the UK, on or after 31 December 2023.
     And I click on Continue button
     Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
     Then I should see error message Enter the end date of the group’s accounting period on the Group Accounting Period End Date Page
@@ -113,7 +113,7 @@ Feature: Further Details Task page validation
     Then I should navigate to MNE or domestic page
 
   @batch1
-  Scenario: 2 - Change all the details from Furthers details check your answers page
+  Scenario: 2 -
     Given Organisation User navigates to FD check your answer page with credId FDTask
     Then I should be on FD check your answers page
     When I click on change hyperlink next to the FD Group Status

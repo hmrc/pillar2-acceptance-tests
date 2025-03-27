@@ -1,5 +1,5 @@
 @e2e
-Feature: RFM ultimate parent entity and New nominated Filling Member GRS and NO ID journeys
+Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS and NO ID journeys
   As a MNE user
   I want to determine that in RFM journey, UPE or New NFM journey is based in UK for LLP and Limited company
 
@@ -79,9 +79,9 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS and NO 
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
     Then I should be redirect to RFM processing page
-    And I should see Report Pillar 2 top-up taxes text is not clickable
+    And I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I should be on RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I should see report and manage your group's Pillar 2 Top-up Taxes link
     And I can see Print this page link
 
   Scenario: 3 - Verify that UPE can replace existing FM on the Pillar 2 account
@@ -113,19 +113,19 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS and NO 
       | addressLine3 | City CYA           |
       | postalCode   | EH5 5WY            |
       | countryCode  | Australia          |
-    And I should see the row 1 value Ultimate parent entity (UPE)
+    And I should see the row 1 value Ultimate Parent Entity (UPE)
     When I click on change link for Contact Name
     When I enter Contact Name as 400
     And I click on Continue button
     Then I should be redirect to RFM processing page
     And I should be on Amend API error Page for RFM
-    When I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
+    When I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should navigate to RFM Final Review Page
     When I click on change link for Contact Name
     And I enter Contact Name as test name
     And I click on Continue button
     And I should navigate to RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I should see report and manage your group's Pillar 2 Top-up Taxes link
     And I can see Print this page link
 
   Scenario: 4 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey
@@ -186,7 +186,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS and NO 
     And I click on Continue button
     Then I should be redirect to RFM processing page
     And I should be on RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 top-up taxes link
+    And I should see report and manage your group's Pillar 2 Top-up Taxes link
     And I can see Print this page link
     When I click the browser back button
     Then I should navigate to RFM No Return Back Error Page

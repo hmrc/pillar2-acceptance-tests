@@ -142,7 +142,7 @@ class SubscriptionJourneySteps extends CommonFunctions {
     }
   }
 
-  Then("""^The Header should be Report Pillar 2 top-up taxes$""") { () =>
+  Then("""^The Header should be Report Pillar 2 Top-up Taxes$""") { () =>
     Check.checkH1("Registration complete")
   }
 

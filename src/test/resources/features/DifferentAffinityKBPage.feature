@@ -8,7 +8,7 @@ Feature: Failure scenarios with different Affinity groups
     And The Heading should be Sorry, you’re unable to use this service
     And The Body content should be You’ve signed in with a standard organisation account.
     And The Body content should be Only Government Gateway accounts with an administrator role can register to use this service.
-    And The Body content should be You need to find someone with an administrator’s Government Gateway user ID who can register and then give you authority to report and manage pillar 2 top-up taxes.
+    And The Body content should be You need to find someone with an administrator’s Government Gateway user ID who can register and then give you authority to report and manage Pillar 2 Top-up Taxes.
     When I click Find out more about who can use this service link
     Then I should navigate to guidance page
     When I click the browser back button
@@ -21,8 +21,8 @@ Feature: Failure scenarios with different Affinity groups
     Then I should be on Agent affinity KB page
     And The Heading should be Sorry, you’re unable to use this service
     And The Body content should be You’ve signed in using an agent Government Gateway user ID. Only groups can register to use this service.
-    And The Body content should be if you are an agent that has been given authorisation to report Pillar 2 top-up taxes on behalf of a group, you must sign in via agent services
-    And The Body content should be if you need to request authorisation to report Pillar 2 top-up taxes, you must request authorisation via agent services
+    And The Body content should be if you are an agent that has been given authorisation to report Pillar 2 Top-up Taxes on behalf of a group, you must sign in via agent services
+    And The Body content should be if you need to request authorisation to report Pillar 2 Top-up Taxes, you must request authorisation via agent services
     When I click sign in via agent services link
     Then I should navigate to agent services account page
     When I click the browser back button

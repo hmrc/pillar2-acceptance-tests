@@ -46,7 +46,7 @@ Feature: Repayment Journey
     Then I am on feedback survey page
     When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     And I access Non UK payment page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I click Sign out link
     When Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -67,7 +67,7 @@ Feature: Repayment Journey
     And I should see bank account error message Name on the account must be 60 characters or less on the Account Name Element
     And I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
     And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on ASA Dashboard page
 
   @zap_accessibility @batch3
@@ -84,7 +84,7 @@ Feature: Repayment Journey
     Then I should navigate to Repayment Amount Page
     And I click on Continue button
     Then I should navigate to Reason For Refund Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I click the browser back button
     Then I should be on Reason For Refund Page
@@ -162,7 +162,7 @@ Feature: Repayment Journey
     Then I should be redirect to Repayment processing page
     And I should be on Repayment Confirmation Page
     And I can see Print this page link
-    When I click manage your Pillar 2 top-up taxes link
+    When I click manage your Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
   @zap_accessibility @batch3
@@ -182,7 +182,7 @@ Feature: Repayment Journey
     When I provide Refund Amount as 9999.99
     And I click on Continue button
     Then I should navigate to Agent Repayment Reason Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     When I click the browser back button
     Then I should navigate to Agent Repayment Reason Page
@@ -192,7 +192,7 @@ Feature: Repayment Journey
     And I select repayment method as UK bank account
     And I click on Continue button
     Then I should be on UK Bank Account Payment Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     When I click Request a refund link
     Then I should navigate to Agent Repayment Guidance Page
@@ -219,7 +219,7 @@ Feature: Repayment Journey
     Then I should be on Repayment CYA Page
     When I select back link
     Then I should be on Repayment Telephone Input Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     When I click the browser back button
     Then I should be on Repayment Telephone Input Page
@@ -285,10 +285,10 @@ Feature: Repayment Journey
     When I click the browser back button
     Then I should be on Repayment Return Error Page
     And I can see Sign out link
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     When I click the browser back button
-    And I click report and manage your Pillar 2 top-up taxes link
+    And I click report and manage your Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
   @zap_accessibility @batch3
@@ -354,7 +354,7 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should be on Repayment CYA Page
     And I select back link
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     And I click Sign out link
 
@@ -433,7 +433,7 @@ Feature: Repayment Journey
     Then I should be on Repayment CYA Page
     When I click Continue button
     Then I should be on Repayment Incomplete Error Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Dashboard page
     When I click the browser back button
     Then I should be on Repayment Incomplete Error Page
@@ -470,7 +470,7 @@ Feature: Repayment Journey
     Then I should be on Repayment CYA Page
     When I click Continue button
     Then I should be on Repayment Incomplete Error Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     When I click the browser back button
     Then I should be on Repayment Incomplete Error Page
@@ -508,7 +508,7 @@ Feature: Repayment Journey
     Then I should be on Repayment Contact Page
     When I access Repayment contact email page
     Then I should be on Repayment Journey Recovery Error Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Dashboard page
     When I click the browser back button
     Then I should be on Repayment Journey Recovery Error Page
@@ -543,7 +543,7 @@ Feature: Repayment Journey
     Then I should be on Repayment Contact Page
     When I access Repayment contact email page
     Then I should be on Repayment Journey Recovery Error Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     When I click the browser back button
     Then I should be on Repayment Journey Recovery Error Page

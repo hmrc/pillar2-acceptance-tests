@@ -34,14 +34,14 @@ Feature: Bookmark Feature
   Then I should navigate to NFM details page
   When I select option No and continue to next
   Then I should navigate to NFM Name page
-  When I click Report Pillar 2 top-up taxes link
+  When I click Report Pillar 2 Top-up Taxes link
   Then I should navigate to Task list page
   And I click Sign out link
   Then I am on feedback survey page
   When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
   Then I should be on Bookmark page
   Then The Heading should be There has been an error
-  Then I click return to your Pillar 2 top-up taxes registration link
+  Then I click return to your Pillar 2 Top-up Taxes registration link
   Then I should see task list sections
   And The Task Add filing member details status should be In progress
 
@@ -56,11 +56,11 @@ Feature: Bookmark Feature
     Then I am on feedback survey page
     When Organisation User logs in to upe name page with CredID Bookmark2 for Pillar2
     Then I should be on Bookmark page
-    Then I click return to your Pillar 2 top-up taxes registration link
+    Then I click return to your Pillar 2 Top-up Taxes registration link
     Then I should be on Task list page
     And The Task Add ultimate parent’s details status should be In progress
     Then I click Add ultimate parent’s details link
-    And The Heading should be We need to match the details of the ultimate parent entity to HMRC records
+    And The Heading should be We need to match the details of the Ultimate Parent Entity to HMRC records
     Then I should be on Initial guidance Page
     And I click on Continue button
     Then I should see the answer Yes remain selected
@@ -76,11 +76,11 @@ Feature: Bookmark Feature
     Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Task list page
     When Organisation User logs in to nfm name page with CredID Bookmark2 for Pillar2
     Then I should be on Bookmark page
-    Then I click return to your Pillar 2 top-up taxes registration link
+    Then I click return to your Pillar 2 Top-up Taxes registration link
     Then I should be on Task list page
     And The Task Add filing member details status should be In progress
 
@@ -101,7 +101,7 @@ Feature: Bookmark Feature
     When I click on Continue button
     Then I should be on UPE entity type page
     And I should see the option UK limited company remain selected
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Task list page
 
   Scenario: 4 - User completes UPE GRS journey without answering mandatory questions
@@ -112,8 +112,8 @@ Feature: Bookmark Feature
     Then I am on feedback survey page
     When Organisation User logs in to upe org page with CredID Bookmark4 for Pillar2
     Then I should be on Bookmark page
-    And The Body content should be You must return to your Pillar 2 top-up taxes registration and complete the required tasks.
-    Then I click return to your Pillar 2 top-up taxes registration link
+    And The Body content should be You must return to your Pillar 2 Top-up Taxes registration and complete the required tasks.
+    Then I click return to your Pillar 2 Top-up Taxes registration link
     Then I should see task list sections
     And The Task Add ultimate parent’s details status should be Not started
 

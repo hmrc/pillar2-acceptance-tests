@@ -7,18 +7,18 @@ Feature: Dashboard Page
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
-    And The Heading should be Your Pillar 2 top-up taxes account
+    And The Heading should be Your Pillar 2 Top-up Taxes account
     #And The inactive status should be HMRC has received a Below Threshold Notification for this account. Please contact the pillar2mailbox@hmrc.gov.uk if your circumstances change. -- removed from dashboard --
-    When I click Refer to the Pillar 2 top-up taxes manual (opens in new tab) link
+    When I click Refer to the Pillar 2 Top-up Taxes manual (opens in new tab) link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page
     Then I close new tab
     And I should navigate back to main tab
     And I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Group’s Pillar 2 Top-up Taxes ID:
     And I should see user details row 2 key Registration date:
-    And I should see user details row 3 key Ultimate parent entity:
+    And I should see user details row 3 key Ultimate Parent Entity:
     And I should see the heading 1 on Dashboard page as Payments
     And The Body content should be You have no payments due
     And The Body content should be Make a payment
@@ -26,12 +26,12 @@ Feature: Dashboard Page
     And The Body content should be View and amend contact details
     And The Body content should be View and amend group details
     And The Body content should be HMRC are currently delivering this service on a phased approach. We’ll release the tools that you need to submit your returns before the due date for reporting.
-    And The Body content should be Refer to the Pillar 2 top-up taxes manual (opens in new tab) for more details.
+    And The Body content should be Refer to the Pillar 2 Top-up Taxes manual (opens in new tab) for more details.
     When I click Make a payment link
     Then I should navigate to Make a payment page
-    And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 top-up tax payments.
+    And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 Top-up Taxes payments.
     And The Body content should be You can use the 'Pay Now' button to pay online, or read more about other payment methods. (opens in a new tab)
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     When I click Make a payment link
     Then I should navigate to Make a payment page
@@ -45,7 +45,7 @@ Feature: Dashboard Page
     Then I should navigate to accounts summary page
     When I click the browser back button
     Then I should be on Dashboard page
-    When I click Refer to the Pillar 2 top-up taxes manual (opens in new tab) link
+    When I click Refer to the Pillar 2 Top-up Taxes manual (opens in new tab) link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page
     Then I close new tab
@@ -59,9 +59,9 @@ Feature: Dashboard Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Group’s Pillar 2 Top-up Taxes ID:
     And I should see user details row 2 key Registration date:
-    And I should see user details row 3 key Ultimate parent entity:
+    And I should see user details row 3 key Ultimate Parent Entity:
     And I should see user details row 1 value XMPLR0012345676
     And I should see user details row 2 value 31 January 2024
     And I should see user details row 3 value International Organisation Inc.
@@ -69,7 +69,7 @@ Feature: Dashboard Page
     And I should see the heading 2 on Dashboard page as Manage your account
     When I click View and amend group details link
     Then I should navigate to accounts summary page
-    And the page title should be Group details - Report Pillar 2 top-up taxes - GOV.UK
+    And the page title should be Group details - Report Pillar 2 Top-up Taxes - GOV.UK
     And The Heading should be Group details
     And I should see row 1 key Where are the entities in your group located?
     And I should see row 2 key Group’s current consolidated accounting period
@@ -103,15 +103,15 @@ Feature: Dashboard Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Group’s Pillar 2 top-up taxes ID:
+    And I should see user details row 1 key Group’s Pillar 2 Top-up Taxes ID:
     And I should see user details row 2 key Registration date:
-    And I should see user details row 3 key Ultimate parent entity:
+    And I should see user details row 3 key Ultimate Parent Entity:
     And I should see user details row 1 value XMPLR0012345676
     And I should see user details row 2 value 31 January 2024
     And I should see user details row 3 value International Organisation Inc.
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
-    And the page title should be Contact details - Report Pillar 2 top-up taxes - GOV.UK
+    And the page title should be Contact details - Report Pillar 2 Top-up Taxes - GOV.UK
     And The Heading should be Contact details
     And I should see sub section 1 as Primary contact
     And I should see sub section 2 as Secondary contact
@@ -222,7 +222,7 @@ Feature: Dashboard Page
     And I should see Previous CTA
     When I click Previous CTA
     Then I should be on Transaction History Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I click Sign out link
     Then Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4040000000 for Pillar2 service
@@ -233,7 +233,7 @@ Feature: Dashboard Page
     Then I should be on Dashboard page
     When I click View your transaction history link
     Then I should be on Transaction History Empty Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I click Sign out link
     Then Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service
@@ -304,7 +304,7 @@ Feature: Dashboard Page
     When I click on Continue button
     Then I make successful payment
     And I should navigate to Transaction History Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
 
@@ -324,7 +324,7 @@ Feature: Dashboard Page
     When I click on Continue button
     Then I make successful payment
     And I should navigate to Transaction History Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
   @batch3

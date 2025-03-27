@@ -7,7 +7,7 @@ Feature: Agent user journeys
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Home Page
     When I click on Continue button
     Then I should be on ASA Pillar2 Input Page
@@ -18,12 +18,12 @@ Feature: Agent user journeys
     And I provide ASA Pillar2 ID as XEPLR0123456500
     And I click on Continue button
     Then I should navigate to ASA No record Match Error Page
-    When I click Re-enter your client’s Pillar 2 top-up taxes ID to try again link
+    When I click Re-enter your client’s Pillar 2 Top-up Taxes ID to try again link
     Then I should be on ASA Pillar2 Input Page
     When I provide ASA Pillar2 ID as XMPLR0012345674
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
-    When I click Enter a different client’s Pillar 2 top-up taxes ID link
+    When I click Enter a different client’s Pillar 2 Top-up Taxes ID link
     Then I should be on ASA Pillar2 Input Page
     And I should see the PLRID field is pre-populated with XMPLR0012345674
     And I click on Continue button
@@ -31,10 +31,10 @@ Feature: Agent user journeys
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
     And I can see Agent Services Account link
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     When I click Change client link
-    When I click Report Pillar 2 top-up taxes link
+    When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Home Page
 
   Scenario: 2 - Agent user accessing dashboard features after login
