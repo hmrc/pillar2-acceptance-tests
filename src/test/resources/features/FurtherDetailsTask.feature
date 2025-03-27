@@ -17,8 +17,8 @@ Feature: Further Details Task page validation
     And The caption must be Group details
     And The Heading should be Entity locations
     And The Body content should be You must consider the locations of all the entities within your group.
-    And The Body content should be The entity locations determine which Pillar 2 top-up tax your group needs to report for.
-    And The Body content should be There are two Pillar 2 top-up taxes in the UK:
+    And The Body content should be The entity locations determine which Pillar 2 Top-up Taxes your group needs to report for.
+    And The Body content should be There are two Pillar 2 Top-up Taxes in the UK:
     And The Body content should be Multinational Top-up Tax
     And The Body content should be Domestic Top-up Tax
     And The Body content should be Groups with entities that are located only in the UK will register to report for Domestic Top-up Tax.
@@ -40,7 +40,7 @@ Feature: Further Details Task page validation
     Then I should navigate to Group accounting period page
     And The caption must be Group details
     And The Heading should be When did the group’s first accounting period start and end after 31 December 2023?
-    And The Body content should be This is the first accounting period the group uses for their consolidated financial statements, following the implementation of Pillar 2 top-up taxes in the UK, on or after 31 December 2023.
+    And The Body content should be This is the first accounting period the group uses for their consolidated financial statements, following the implementation of Pillar 2 Top-up Taxes in the UK, on or after 31 December 2023.
     And I click on Continue button
     Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
     Then I should see error message Enter the end date of the group’s accounting period on the Group Accounting Period End Date Page

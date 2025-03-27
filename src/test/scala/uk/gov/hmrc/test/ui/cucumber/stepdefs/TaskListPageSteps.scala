@@ -57,12 +57,12 @@ class TaskListPageSteps extends CommonFunctions {
   }
   And("""^The Task (.*) status should be (.*)$""") { (taskName: String, status: String) =>
     taskName match {
-      case "Add ultimate parent entity details" =>
+      case "Add Ultimate Parent Entity details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
 
-      case "Edit ultimate parent entity details" =>
+      case "Edit Ultimate Parent Entity details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))

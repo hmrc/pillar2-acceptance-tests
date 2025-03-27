@@ -92,21 +92,21 @@ Feature: RFM Start page
     And I click on Continue button
     Then I should be on RFM enter pillar2 id page
     And I click on Continue button
-    Then I should see an error message Enter the group’s Pillar 2 top-up taxes ID on the RFM enter pillar2 id Page
+    Then I should see an error message Enter the group’s Pillar 2 Top-up Taxes ID on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as AXMPLR0123456785
     And I click on Continue button
-    Then I should see an error message Pillar 2 top-up taxes ID must be 15 characters on the RFM enter pillar2 id Page
+    Then I should see an error message Pillar 2 Top-up Taxes ID must be 15 characters on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as a0000000909090
     And I click on Continue button
-    Then I should see an error message Pillar 2 top-up taxes ID must be 15 characters on the RFM enter pillar2 id Page
+    Then I should see an error message Pillar 2 Top-up Taxes ID must be 15 characters on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as 0MPLR0123456789
     And I click on Continue button
-    Then I should see an error message Enter the group’s Pillar 2 top-up taxes ID in the correct format on the RFM enter pillar2 id Page
+    Then I should see an error message Enter the group’s Pillar 2 Top-up Taxes ID in the correct format on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as XMplr0123456789
     And I click on Continue button
     Then I should be on RFM Registration Date Page
     And I click on Continue button
-    Then I should see an error message Enter the registration date to the Report Pillar 2 top-up taxes service on the RFM Registration Date Page
+    Then I should see an error message Enter the registration date to the Report Pillar 2 Top-up Taxes service on the RFM Registration Date Page
     When Registration Day is entered as 15
     And I click on Continue button
     Then I should see an error message Registration date must include a month and year on the RFM Registration Date Page

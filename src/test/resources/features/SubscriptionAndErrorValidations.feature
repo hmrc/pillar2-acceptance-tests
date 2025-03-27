@@ -6,7 +6,7 @@ Feature: Create a new registration and subscription
   @zap_accessibility @batch2
   Scenario: 1 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.
     Given Organisation User logs in to subscribe for Pillar2
-    When I click Add ultimate parent entity details link
+    When I click Add Ultimate Parent Entity details link
     When I click on Continue button
     When I select option No and continue to next
     And I enter UPE name as XMPLR0009999999
@@ -50,8 +50,8 @@ Feature: Create a new registration and subscription
     Then I should navigate to Review answers page
     And I click on Save&Continue button
     Then I should navigate to duplicate ack ref error page
-    And The Heading should be Your group has already registered to report Pillar 2 top-up taxes
-    And The Body content should be You can find your group’s Pillar 2 top-up taxes ID within your business tax account.
+    And The Heading should be Your group has already registered to report Pillar 2 Top-up Taxes
+    And The Body content should be You can find your group’s Pillar 2 Top-up Taxes ID within your business tax account.
     And The Body content should be If you need to request access to this account, your administrator can give you access using ‘Manage account’ settings within their business tax account.
 
   @zap_accessibility @batch2
@@ -118,7 +118,7 @@ Feature: Create a new registration and subscription
   Scenario: 3 - User redirected to a placeholder error page, for an invalid request during registration.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    When I click Add ultimate parent entity details link
+    When I click Add Ultimate Parent Entity details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
     Then I should navigate to UPE business page
@@ -180,16 +180,16 @@ Feature: Create a new registration and subscription
     And I access random page
     And The Heading should be This page can’t be found
     And The Body content should be Please check that you have entered the correct web address.
-    And The Body content should be You must return to your Pillar 2 top-up taxes registration and complete the required tasks.
-    Then I click return to your Pillar 2 top-up taxes registration link
+    And The Body content should be You must return to your Pillar 2 Top-up Taxes registration and complete the required tasks.
+    Then I click return to your Pillar 2 Top-up Taxes registration link
     Then I should see task list sections
-    And The Task Add ultimate parent entity details status should be Not started
+    And The Task Add Ultimate Parent Entity details status should be Not started
 
   @ignore @batch2
   Scenario: 5 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.
     Given Organisation User logs in to subscribe for Pillar2
     Then I should be on Task list page
-    When I click Add ultimate parent entity details link
+    When I click Add Ultimate Parent Entity details link
     Then I should navigate to Initial guidance Page
     When I click on Continue button
     Then I should navigate to UPE business page

@@ -134,7 +134,7 @@ Feature: NFM NO ID journey
     Then I should see NFM error message Name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
     When I enter NFM name as Test nfmName
     Then I should navigate to NFM Address page
-    And the page title should be What is the registered office address? - Report Pillar 2 top-up taxes - GOV.UK
+    And the page title should be What is the registered office address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I click on Continue button
     Then I should see NFM error message Enter the first line of the address on the Address Line 1 Element
     And I should see NFM error message Enter the town or city on the City Element
@@ -163,7 +163,7 @@ Feature: NFM NO ID journey
     When I enter NFM Contact name as NFM Contact
     When I click on Continue button
     Then I should navigate to NFM Contact Email page
-    And the page title should be What is the email address? - Report Pillar 2 top-up taxes - GOV.UK
+    And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I click on Continue button
     Then I should see NFM error message Enter the email address for NFM Contact on the Input NFM Contact Email Element
     When I enter NFM Contact Email as incorrect email
@@ -172,12 +172,12 @@ Feature: NFM NO ID journey
     Then I should see NFM error message Email address must be 132 characters or less on the Input NFM Contact Email Element
     And I enter NFM Contact Email as test@email.com
     Then I should navigate to NFM Telephone page
-    And the page title should be Can we contact by telephone? - Report Pillar 2 top-up taxes - GOV.UK
+    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I click on Continue button
     Then I should see error message Select yes if we can contact NFM Contact by telephone on the NFM Telephone Page
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
-    And the page title should be What is the telephone number? - Report Pillar 2 top-up taxes - GOV.UK
+    And the page title should be What is the telephone number? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I click on Continue button
     Then I should see error message Enter the telephone number for NFM Contact on the Input Nfm Telephone Page
     When I enter NFM Telephone Number as 1234567812345678123456780

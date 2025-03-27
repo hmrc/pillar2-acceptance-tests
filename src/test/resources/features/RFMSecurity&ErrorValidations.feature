@@ -14,22 +14,22 @@ Feature: RFM check your answers page
       | rfmRegistrationDate.year  | 2024  |
     And I click on Continue button
     Then I should navigate to RFM journey recovery page
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
-    And I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
+    And I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should be on RFM start page
     And I click on Continue button
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I provide RFM pillar2 id as XEPLR0123456222
     Then I should be on RFM Registration Date Page
     When Registration Day is entered as 27
     And I click on Continue button
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I click on Continue button
     Then I should navigate to RFM No record Match Error Page
     And I select back link
     Then I should be on RFM CYA Page
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
-    When I click change link for RFM Pillar 2 top-up taxes ID
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
+    When I click change link for RFM Pillar 2 Top-up Taxes ID
     And I provide RFM pillar2 id as XEPLR0123456404
     And I click on Continue button
     Then I should navigate to RFM No record Match Error Page
@@ -61,7 +61,7 @@ Feature: RFM check your answers page
     When I select option UK limited company and continue to GRS page
     And I click on Save&Continue button
     Then I should be on RFM Contact Guidance page
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I click on Continue button
     When I provide RFM contact name as 500
     When I provide RFM contact email as rfm@email.com
@@ -74,12 +74,12 @@ Feature: RFM check your answers page
       | postalCode   | EH5 5WY            |
       | countryCode  | Australia          |
     Then I should navigate to RFM Final Review Page
-    And I should see Report Pillar 2 top-up taxes text is not clickable
+    And I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I click on Continue button
     Then I should be redirect to RFM processing page
     And I should navigate to Amend API error Page for RFM
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
-    And I click to replace the filing member for a Pillar 2 top-up taxes account to try again link
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
+    And I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should navigate to RFM Final Review Page
     And I click Sign out link
 
@@ -120,13 +120,13 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     When  I click change link for RFM Change Second Contact Preference
     And I select option Yes and continue to next
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
     When I select back link
     When I select back link
     And I click on Continue button
     Then I should navigate to RFM incomplete task error page
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
-    When I click replace the filing member for a Pillar 2 top-up taxes account to try again link
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
+    When I click replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should be on RFM Final Review Page
 
   @zap_accessibility @batch2
@@ -150,14 +150,14 @@ Feature: RFM check your answers page
     When I click on Continue button
     And I provide RFM contact name as RFM test contact
     When I provide RFM contact email as rfm@email.com
-    Then I should see Report Pillar 2 top-up taxes text is not clickable
+    Then I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I click Sign out link
     And Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2
     Then I access RFM start page
     And I click on Continue button
     Then I should be on RFM enter pillar2 id page
     And The caption must be Replace filing member
-    And The Heading should be Enter the group’s Pillar 2 top-up taxes ID
+    And The Heading should be Enter the group’s Pillar 2 Top-up Taxes ID
     And I should see RFM Pillar2 Id field as blank
     Then I provide RFM pillar2 id as XMPLR0123456789
     Then I should be on RFM Registration Date Page

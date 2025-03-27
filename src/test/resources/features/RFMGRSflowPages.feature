@@ -1,5 +1,5 @@
 @tests
-Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
+Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
   As a MNE user
   I want to determine that in RFM journey, UPE or New NFM journey is based in UK for LLP and Limited company
   So that I can navigate to the correct GRS journey and complete the navigation.
@@ -22,7 +22,7 @@ Feature: RFM ultimate parent entity and New nominated Filling Member GRS journey
     When I click on Continue button
     Then I should be on RFM Corp Position Page
     When I click on Continue button
-    Then I should see an error message Select if you are the ultimate parent entity or a new nominated filing member on the RFM journey error Page
+    Then I should see an error message Select if you are the Ultimate Parent Entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
     Then I should be on New NFM guidance page
     When I click on Continue button

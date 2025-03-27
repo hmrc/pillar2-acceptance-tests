@@ -257,7 +257,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
 
   And("""^I click change link for RFM (.*)""") { (link: String) =>
     link match {
-      case "Pillar 2 top-up taxes ID" =>
+      case "Pillar 2 Top-up Taxes ID" =>
         clickByCss(RFMCYAPage.changePID)
       case "Registration date" =>
         clickByCss(RFMCYAPage.changeRegistrationDate)
