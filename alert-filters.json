@@ -47,6 +47,11 @@
       "reason": "Stub implementation for UPE - outside our control",
       "url": "http://localhost:10050/report-pillar2-top-up-taxes/test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=ukLimitedCompany",
       "ruleId": 90022
+    },
+    {
+      "reason": "Invalid alert for Personally Identifiable Information",
+      "url": "http://localhost:10050/report-pillar2-top-up-taxes/business-matching/filing-member/no-id/input-email",
+      "ruleId": 10062
     }
   ]
 }
