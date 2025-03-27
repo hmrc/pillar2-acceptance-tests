@@ -3,7 +3,7 @@ Feature: Further Details Task page validation
   As a MNE user
   I should be taken to all the Further detail pages
 
-  @zap_accessibility @batch1 @tests1
+  @zap_accessibility @batch1
   Scenario: 1 - User navigates to check your answer page answering all the questions of Further Details Page
     Given Organisation User logs in as upe with credId FDTask for Pillar2
     When I select option Yes and continue to next
@@ -113,7 +113,7 @@ Feature: Further Details Task page validation
     Then I should navigate to MNE or domestic page
 
   @batch1
-  Scenario: 2 -
+  Scenario: 2 - Change all the details from Furthers details check your answers page
     Given Organisation User navigates to FD check your answer page with credId FDTask
     Then I should be on FD check your answers page
     When I click on change hyperlink next to the FD Group Status
