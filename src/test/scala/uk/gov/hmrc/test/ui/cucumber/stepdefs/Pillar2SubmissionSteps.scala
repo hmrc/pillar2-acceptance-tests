@@ -100,6 +100,7 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
   }
 
   And("""I should see {int} accounting periods on Sub History Page""") { (accountingPeriods: Int) =>
+    Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.accountDetails)
     assert(driver.findElements(By.cssSelector(P2SubmissionHistoryPage.accountingPeriods)).size() == accountingPeriods)
   }
 
