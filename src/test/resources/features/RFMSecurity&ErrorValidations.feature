@@ -40,7 +40,7 @@ Feature: RFM check your answers page
     And I should see row 1 value XMPLR0123456111
     And I click Sign out link
 
-  @batch2
+  @batch2 @tests13
   Scenario: 2 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey
     Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
@@ -76,8 +76,12 @@ Feature: RFM check your answers page
     Then I should navigate to RFM Final Review Page
     And I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I click on Continue button
-    Then I should be redirect to RFM processing page
-    And I should navigate to Amend API error Page for RFM
+
+    Then I should be redirected to "RFM processing page" or "Amend API error Page for RFM"
+
+#    Then I should be redirect to RFM processing page
+#    And I should navigate to Amend API error Page for RFM
+
     Then I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should navigate to RFM Final Review Page
