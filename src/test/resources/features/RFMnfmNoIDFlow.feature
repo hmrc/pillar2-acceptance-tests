@@ -354,7 +354,7 @@ Feature: RFM CYA - NFM No ID flow
     When I click report and manage your group's Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
-  @batch3 @tests13
+  @batch3
   Scenario: 6 - Verify that UPE can replace existing FM on the Pillar 2 account
     Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
@@ -394,12 +394,7 @@ Feature: RFM CYA - NFM No ID flow
     When I click on change link for Contact Name
     When I enter Contact Name as 400
     And I click on Continue button
-
     Then I should be redirected to "RFM processing page" or "Amend API error Page for RFM"
-
-#    Then I should be redirect to RFM processing page
-#    And I should be on Amend API error Page for RFM
-#
     When I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should navigate to RFM Final Review Page
     When I click on change link for Contact Name
