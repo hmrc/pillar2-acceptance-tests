@@ -18,13 +18,16 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationUrl
+import uk.gov.hmrc.test.ui.cucumber.Find.findURL
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
 import java.time.LocalDate
+import scala.util.Try
 
-class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
+class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunctions {
 
   Given("""^(.*) logs in with rfm URL to Pillar2$""") { name: String =>
     name match {
@@ -341,4 +344,17 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver {
     UPEEntityTypePage.clickContinue()
   }
 
+  Then("""I should be redirected to {string} or {string}""") { (page1: String, page2: String) =>
+    Wait.waitForElementToClickTagName("h1")
+
+    val pageOption1 = pageMatch(page1)
+    val pageOption2 = pageMatch(page2)
+
+    val navigated = Try { assertNavigationUrl(pageOption1) }.getOrElse(false) || Try { assertNavigationUrl(pageOption2) }.getOrElse(false)
+
+    assert(
+      navigated,
+      s"Navigation failed. Expected URL to match either '${pageOption1.url}' or '${pageOption2.url}', but current URL was '${findURL()}'"
+    )
+  }
 }

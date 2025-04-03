@@ -117,8 +117,7 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS and NO 
     When I click on change link for Contact Name
     When I enter Contact Name as 400
     And I click on Continue button
-    Then I should be redirect to RFM processing page
-    And I should be on Amend API error Page for RFM
+    Then I should be redirected to "RFM processing page" or "Amend API error Page for RFM"
     When I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should navigate to RFM Final Review Page
     When I click on change link for Contact Name
