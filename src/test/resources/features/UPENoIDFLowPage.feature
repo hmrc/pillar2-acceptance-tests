@@ -217,7 +217,7 @@ Feature: UPE NO ID journey
     And I enter Telephone Number as 1234512345123451234512345
     Then I should see error message Telephone number should be 24 characters or less on the Input Telephone Page
     And I enter Telephone Number as #incorrect number
-    Then I should see error message Enter the telephone number for UPE Contact Name in the correct format, like 01632 960 001 or +44 808 157 0192 on the Input Telephone Page
+    Then I should see error message Enter the telephone number for UPE Contact Name in the correct format, for example 01632 960 001 or +44 808 157 0192 on the Input Telephone Page
 
   @batch1 @zap_accessibility
   Scenario: 4 - Change UPE fields from UPE check your answers page

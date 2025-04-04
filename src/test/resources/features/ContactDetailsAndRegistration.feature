@@ -320,7 +320,7 @@ Feature: Contact details for the filing member
     Then I should see error message Enter telephone number for Test ContactName on the Contact details display Page
     When I enter NFM Telephone Number as 12345678@
     When I click on Continue button
-    Then I should see error message Enter the telephone number for Test ContactName in the correct format, like 01632 960 001 or +44 808 157 0192 on the Contact details display Page
+    Then I should see error message Enter the telephone number for Test ContactName in the correct format, for example 01632 960 001 or +44 808 157 0192 on the Contact details display Page
     When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
     Then I should see error message Telephone number must be 24 characters or less on the Contact details display Page
@@ -358,7 +358,7 @@ Feature: Contact details for the filing member
     Then I should see error message Enter the telephone number for Test secondName on the Second Contact details Page
     When I enter NFM Telephone Number as 12345678@
     When I click on Continue button
-    Then I should see error message Enter the telephone number for Test secondName in the correct format, like 01632 960 001 or +44 808 157 0192 on the Second Contact details Page
+    Then I should see error message Enter the telephone number for Test secondName in the correct format, for example 01632 960 001 or +44 808 157 0192 on the Second Contact details Page
     When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
     Then I should see error message Telephone number must be 24 characters or less on the Second Contact details Page
