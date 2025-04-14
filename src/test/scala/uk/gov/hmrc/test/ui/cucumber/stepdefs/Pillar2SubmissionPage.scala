@@ -41,12 +41,7 @@ trait Pillar2SubmissionPage
       case "BTN Accounting Period Page"                => P2SubBtnAccountingPage
       case "BTN Domestic or MNE Page"                  => P2SubBtnDomesticOrMnePage
       case "BTN Change Domestic or MNE Page"           => P2SubBtnChangeDomesticOrMnePage
-      case "BTN Annual Revenue Page"                   => P2SubBtnAnnualRevenuePage
-      case "BTN Change Annual Revenue Page"            => P2SubBtnChangeAnnualRevenuePage
-      case "BTN Future Annual Revenue Page"            => P2SubBtnFutureAnnualRevenuePage
-      case "BTN Change Future Annual Revenue Page"     => P2SubBtnChangeFutureAnnualRevenuePage
       case "BTN CYA Submit Page"                       => P2CYASubmitPage
-      case "BTN Nil Return Page"                       => P2SubBtnNilReturnPage
       case "BTN AGD KB Page"                           => P2SubBtnAgdKBPage
       case "accounts summary page"                     => P2SubAccountsSummaryPage
       case "UK Tax Return Page"                        => P2UkTaxReturnPage
@@ -59,7 +54,6 @@ trait Pillar2SubmissionPage
       case "Dashboard page"                            => P2ASADashboardPage
       case "P2 ASA Home Page"                          => P2ASAHomePage
       case "P2 Home page"                              => P2HomePage
-      case "BTN Threshold Met KB Page"                 => P2SubBtnThresholdMetKBPage
       case "BTN Confirmation Page"                     => P2ConfirmationPage
       case "BTN Cannot Return Page"                    => P2SubBTNCannotReturnPage
       case "BTN Problem with service Page"             => P2SubBTNProblemWithServicePage

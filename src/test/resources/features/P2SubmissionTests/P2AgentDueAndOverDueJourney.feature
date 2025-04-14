@@ -1,4 +1,4 @@
-@p2tests @p2zap_p2accessibility
+@p2tests @p2zap_p2accessibility @tests
 Feature: Pillar2 Due & Overdue returns for Agent User Journey
 
   As an authenticated Agent user

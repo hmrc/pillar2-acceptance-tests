@@ -1,4 +1,4 @@
-@p2tests @p2zap_p2accessibility
+@p2tests @p2zap_p2accessibility @tests
 Feature: Pillar2 submission Below threshold  notification user journey
   As an authenticated user
   I should be able to complete below threshold notification journey
@@ -17,9 +17,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I click the browser back button
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select back link
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     When I click amend your group’s details link
@@ -27,38 +24,12 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I click the browser back button
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     And I click the browser back button
+    Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    When I click Find out more about submitting a UKTR link
-    Then I should be navigated to UK Tax Return Page of Pillar2 Submission
-    When I select back link
-    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    When I select back link
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select back link
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    And I click the browser back button
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Nil Return Page of Pillar2 Submission
-    When I click Find out more about submitting a late or new UK Tax Return link
-    Then I should be navigated to UK Tax Return Page of Pillar2 Submission
-    When I select back link
-    Then I should be navigated to BTN Nil Return Page of Pillar2 Submission
-    When I select back link
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    When I access submission BTN UKTR page
-    And I click ensure your group’s details are updated link
-    Then I should be on accounts summary page
-    And I click the browser back button
-    When I click Choose a supplier to submit your UKTR from this list link
-    Then I should be on guidance page
+    Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
+    When I click on Continue button
+    Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
+    When I click Sign out link
 
   Scenario: 2 - Agent User navigates to below threshold notification pages
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -80,48 +51,12 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I click the browser back button
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select back link
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     When I click amend your group’s details link
     Then I should be on accounts summary page
-    And I click the browser back button
-    Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
-    And I click the browser back button
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    When I click Find out more about submitting a UKTR link
-    Then I should be navigated to UK Tax Return Page of Pillar2 Submission
-    When I select back link
-    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    When I select back link
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select back link
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    And I click the browser back button
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Nil Return Page of Pillar2 Submission
-    When I click Find out more about submitting a late or new UK Tax Return link
-    Then I should be navigated to UK Tax Return Page of Pillar2 Submission
-    When I select back link
-    Then I should be navigated to BTN Nil Return Page of Pillar2 Submission
-    When I select back link
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    When I access submission BTN UKTR page
-    And I click ensure your group’s details are updated link
-    Then I should be on accounts summary page
-    And I click the browser back button
-    When I click Choose a supplier to submit your UKTR from this list link
-    Then I should be on guidance page
+    When I click Sign out link
+    Then I am on feedback survey page
 
   Scenario: 3 - Org User navigates to BTN return submission KB page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR1000000000 for Pillar2 service
@@ -132,10 +67,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I navigate back to BTN Return Submission KB Page
     Then I should be navigated to BTN Return Submission KB Page of Pillar2 Submission
@@ -177,24 +108,8 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on change hyperlink next to the Domestic or Mne
-    When I click on Continue button
-    Then I should be navigated to BTN Change Annual Revenue Page of Pillar2 Submission
-    When I click on Continue button
-    Then I should be navigated to BTN Change Future Annual Revenue Page of Pillar2 Submission
-    When I click on Continue button
-    Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
-    When I click on change hyperlink next to the Annual Revenue
-    When I click on Continue button
-    Then I should be navigated to BTN Change Future Annual Revenue Page of Pillar2 Submission
-    When I click on Continue button
-    Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
-    When I click on change hyperlink next to the Future Annual Revenue
     When I click on Continue button
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
@@ -215,26 +130,12 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on change hyperlink next to the Domestic or Mne
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     And I click the browser back button
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Change Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    And I click the browser back button
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Change Future Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Nil Return Page of Pillar2 Submission
-    And I click the browser back button
-    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
     Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
@@ -248,24 +149,8 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on change hyperlink next to the Domestic or Mne
-    When I click on Continue button
-    Then I should be navigated to BTN Change Annual Revenue Page of Pillar2 Submission
-    When I click on Continue button
-    Then I should be navigated to BTN Change Future Annual Revenue Page of Pillar2 Submission
-    When I click on Continue button
-    Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
-    When I click on change hyperlink next to the Annual Revenue
-    When I click on Continue button
-    Then I should be navigated to BTN Change Future Annual Revenue Page of Pillar2 Submission
-    When I click on Continue button
-    Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
-    When I click on change hyperlink next to the Future Annual Revenue
     When I click on Continue button
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
@@ -280,26 +165,12 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on change hyperlink next to the Domestic or Mne
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
     And I click the browser back button
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Change Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Threshold Met KB Page of Pillar2 Submission
-    And I click the browser back button
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Change Future Annual Revenue Page of Pillar2 Submission
-    When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Nil Return Page of Pillar2 Submission
-    And I click the browser back button
-    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
     Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
@@ -321,10 +192,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
     Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
@@ -344,10 +211,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
     When I click on Continue button
     Then I should be navigated to BTN Problem with service Page of Pillar2 Submission
     When I click Return to your account homepage to submit a Below-Threshold Notification again link
@@ -373,10 +236,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option Yes and continue on Pillar2 submission
-    Then I should be navigated to BTN Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
-    Then I should be navigated to BTN Future Annual Revenue Page of Pillar2 Submission
-    When I select option No and continue on Pillar2 submission
     When I click on Continue button
     Then I should be navigated to BTN Problem with service Page of Pillar2 Submission
     When I click Return to your account homepage to submit a Below-Threshold Notification again link
