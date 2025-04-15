@@ -168,9 +168,7 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
 
   And("""^I navigate back to BTN Return Submission KB Page$""") { () =>
     Nav.browserBack()
-    for (i <- 1 to 3) {
-      clickByCss(P2SubBtnAgdKBPage.backLink)
-    }
+    clickByCss(P2SubBtnAgdKBPage.backLink)
   }
 
 }
