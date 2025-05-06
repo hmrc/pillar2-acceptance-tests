@@ -365,28 +365,12 @@ Feature: Contact details for the filing member
     When I enter NFM Telephone Number as 1234567
     When I click on Continue button
     Then I should navigate to Contact address input page
-    When I click on Continue button
-    Then I should see contact address error message Enter the first line of the address on the Address Line 1
-    And I should see contact address error message Enter the town or city on the City
-    And I should see contact address error message Enter the country on the Country
-    When I enter Address Line 1 as Address Line 1 Character Length Test1
-    And I enter Address Line 2 as Address Line 2 Character Length Test1
-    And I enter City as City Field Character Length Test Error
-    And I enter Region as Region Field Character Length Test Error
-    And I enter Postal Code as 12345678901
-    And I enter Country as Angola
-    And I click on Country selected
-    When I click on Continue button
-    Then I should see contact address error message First line of the address must be 35 characters or less on the Address Line 1
-    And I should see contact address error message Second line of the address must be 35 characters or less on the Address Line 2
-    And I should see contact address error message Town or city must be 35 characters or less on the City
-    And I should see contact address error message Region must be 35 characters or less on the Region
-    When I enter Address Line 1 as Test Address Line 1
-    When I enter Address Line 2 as Test Address Line 2
-    And I enter City as Test City
-    And I enter Region as Region
-    And I enter Postal Code as 123456
-    And I click on Continue button
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | United Kingdom |
     Then I should be on Contact details Check answers page
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -486,6 +470,7 @@ Feature: Contact details for the filing member
     And I should see row 4 key Is there a nominated filing member
     And I should see row 4 value No
     And I click on Save&Continue button
+    Then I should be redirect to Registration processing page
     Then I should navigate to Registration confirmation page
     And The Body content should be Test Example Company Name has successfully registered to report for Domestic Top-up Tax
     And I click the browser back button

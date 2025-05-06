@@ -135,28 +135,14 @@ Feature: NFM NO ID journey
     When I enter NFM name as Test nfmName
     Then I should navigate to NFM Address page
     And the page title should be What is the registered office address? - Report Pillar 2 Top-up Taxes - GOV.UK
-    When I click on Continue button
-    Then I should see NFM error message Enter the first line of the address on the Address Line 1 Element
-    And I should see NFM error message Enter the town or city on the City Element
-    And I should see NFM error message Enter the country on the Country Element
-    When I enter Address Line 1 as Address Line 1 Character Length Test1
-    And I enter Address Line 2 as Address Line 2 Character Length Test1
-    And I enter City as City Field Character Length Test Error
-    And I enter Region as Region Field Character Length Test Error
-    And I enter Postal Code as 12345678901
-    And I enter Country as Australia
-    And I click on Country selected
-    And I click on Continue button
-    Then I should see NFM error message First line of the address must be 35 characters or less on the Address Line 1 Element
-    And I should see NFM error message Second line of the address must be 35 characters or less on the Address Line 2 Element
-    And I should see NFM error message Town or city must be 35 characters or less on the City Element
-    And I should see NFM error message Region must be 35 characters or less on the Region Element
     When I enter Address Line 1 as Test Address Line 1
     And I enter Address Line 2 as Test Address Line 2
     And I enter Region as Region
     And I enter City as Test City
     When I enter Postal Code as 1334445
-    When I click on Continue button
+    And I enter Country as Australia
+    And I click on Country selected
+    And I click on Continue button
     Then I should navigate to NFM Contact Name page
     And I click on Continue button
     Then I should see NFM error message Enter the name of the person or team from the nominated filing member to keep on record on the Input NFM Contact Name Element

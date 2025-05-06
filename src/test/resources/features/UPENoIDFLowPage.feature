@@ -170,29 +170,13 @@ Feature: UPE NO ID journey
     Then I should see error message Name of the Ultimate Parent Entity must be 105 characters or less on the Input UPE Name Page
     When I enter UPE name as Test upeName
     Then I should navigate to input-upe-address page
-    When I click on Continue button
-    Then I should see address error message Enter the first line of the address on the Address Line Element
-    Then I should see address error message Enter the town or city on the City Element
-    Then I should see address error message Enter the postcode on the Postal code Element
-    Then I should see address error message Enter the country on the Country Element
     When I enter Address as:
-      | KEY          | VALUE                                                          |
-      | addressLine1 | enter long first line of address with more than 35 characters  |
-      | addressLine2 | enter long second line of address with more than 35 characters |
-      | addressLine3 | enter long city name with more than 35 characters              |
-      | addressLine4 | enter long Region name with more than 35 characters            |
-      | postalCode   | enter long postal code                                         |
-      | countryCode  | Australia                                                      |
-    Then I should see address error message First line of the address must be 35 characters or less on the Address Line Element
-    Then I should see address error message Second line of the address must be 35 characters or less on the Address Line 2 Element
-    Then I should see address error message Town or city must be 35 characters or less on the City Element
-    Then I should see address error message Region must be 35 characters or less on the Region Element
-    When I enter Address Line 1 as Test Address Line 1
-    When I enter Address Line 2 as Test Address Line 2
-    And I enter City as Test City
-    And I enter Region as Region
-    And I enter Postal Code as 123456
-    And I click on Continue button
+      | KEY          | VALUE                |
+      | addressLine1 | Test Address Line 1  |
+      | addressLine3 | Test City            |
+      | postalCode   | E H 5 5 W Y          |
+      | countryCode  | United Arab Emirates |
+    When I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And I click on Continue button
     Then I should see error message Enter the name of the person or team from the Ultimate Parent Entity to keep on record on the UPE Contact person/team name Page

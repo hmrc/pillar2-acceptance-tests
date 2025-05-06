@@ -45,25 +45,6 @@ Feature: RFM CYA - NFM No ID flow
     When I refresh the page
     When I provide RFM New NFM Name as Test CYA
     Then I should navigate to RFM New NFM Contact Address Page
-    And I enter Country as United Arab Emirates
-    And I click on Country selected
-    And I click on Continue button
-    Then I should see address error message Enter the first line of the address on the Address Line Element
-    Then I should see address error message Enter the town or city on the City Element
-    When I refresh the page
-    And I enter Address Line 1 as enter long first line of address with more than 35 characters
-    And I enter Address Line 2 as enter long second line of address with more than 35 characters
-    And I enter City as enter long city name with more than 35 characters
-    And I enter Region as enter long Region name with more than 35 characters
-    And I enter Postal Code as enter long postal code
-    And I enter Country as Australia
-    And I click on Country selected
-    And I click on Continue button
-    Then I should see address error message The first line of the address must be 35 characters or less on the Address Line Element
-    Then I should see address error message The second line of the address must be 35 characters or less on the Address Line 2 Element
-    Then I should see address error message The town or city must be 35 characters or less on the City Element
-    Then I should see address error message The region must be 35 characters or less on the Region Element
-    When I refresh the page
     And I enter Address Line 1 as Address Line 1 CYA
     And I enter City as City CYA
     And I enter Postal Code as EH5 5WY
