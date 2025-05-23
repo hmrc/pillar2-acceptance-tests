@@ -3,7 +3,7 @@ Feature: Create a new registration and subscription
   As an user
   I want to create a new registration and subscription
 
-  @zap_accessibility @batch2 @tests1
+  @zap_accessibility @batch2
   Scenario: 1 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.
     Given Organisation User logs in to subscribe for Pillar2
     When I click Add Ultimate Parent Entity details link
