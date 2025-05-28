@@ -242,7 +242,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
       | XEPLR4000000000 |
       | XEPLR5000000000 |
 
-  Scenario: 12 - Agent User navigates to below threshold notification pages for multiple accounting period
+  Scenario: 12 - Agent User navigates to BTN multiple accounting period for current accounting period to check amend group details
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999994 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
@@ -271,7 +271,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click Sign out link
     Then I am on feedback survey page
 
-  Scenario: 13 - Agent User navigates to below threshold notification pages for multiple accounting period
+  Scenario: 13 - Agent User navigates to submit BTN multiple accounting period for current accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999994 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
@@ -296,7 +296,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
 
-  Scenario: 14 - Agent User navigates to below threshold notification pages for multiple accounting period
+  Scenario: 14 - Agent User navigates to BTN multiple accounting period for previous accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999994 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
