@@ -58,6 +58,12 @@
       "url": "http://localhost:7802/pay-by-bank/.*",
       "ruleId": 10038,
       "urlIsRegex": "true"
+    },
+    {
+      "reason": "Payment stubs are OPS service - alert out of scope for pillar2 service",
+      "url": "http://localhost:9975/payments-stubs/open-banking/stub-bank/.*",
+      "ruleId": 10020,
+      "urlIsRegex": "true"
     }
   ]
 }
