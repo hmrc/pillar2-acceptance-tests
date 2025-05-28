@@ -52,6 +52,12 @@
       "reason": "Invalid alert for Personally Identifiable Information",
       "url": "http://localhost:10050/report-pillar2-top-up-taxes/business-matching/filing-member/no-id/input-email",
       "ruleId": 10062
+    },
+    {
+      "reason": "Pay by bank paths are OPS service - alert out of scope for pillar2 service",
+      "url": "http://localhost:7802/pay-by-bank/.*",
+      "ruleId": 10038,
+      "urlIsRegex": "true"
     }
   ]
 }
