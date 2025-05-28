@@ -39,6 +39,7 @@ trait Pillar2SubmissionPage
       case "ASA Organisation KB Page"                  => ASAOrganisationKBPage
       case "BTN Start Page"                            => P2SubBtnStartPage
       case "BTN Accounting Period Page"                => P2SubBtnAccountingPage
+      case "BTN Multiple Accounting Period Page"       => P2SubBtnMultipleAccountingPage
       case "BTN Domestic or MNE Page"                  => P2SubBtnDomesticOrMnePage
       case "BTN Change Domestic or MNE Page"           => P2SubBtnChangeDomesticOrMnePage
       case "BTN CYA Submit Page"                       => P2CYASubmitPage

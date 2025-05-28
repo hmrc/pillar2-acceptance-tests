@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2ConfirmationPage
+import uk.gov.hmrc.test.ui.pillar2SubmissionPages.{P2ConfirmationPage, P2SubBtnMultipleAccountingPage}
 
 class StepDef extends BaseStepDef with BrowserDriver {
 
@@ -32,7 +32,6 @@ class StepDef extends BaseStepDef with BrowserDriver {
       case "Individual User"   => AuthLoginPage.loginAsInd(name)
       case "Agent User"        => AuthLoginPage.loginAsAgent(name)
       case "Assistant User"    => AuthLoginPage.loginAssistant(name)
-
     }
   }
 
@@ -177,6 +176,19 @@ class StepDef extends BaseStepDef with BrowserDriver {
   When("""^(I click on Continue button)""") { (negate: String) =>
     InitialGuidancePage.clickContinue()
   }
+
+  When("""I select CurrentAccountingPeriod""") { () =>
+    P2SubBtnMultipleAccountingPage.selectCurrentAccountingPeriod()
+
+  }
+  When("""I select PreviousAccountingPeriodBTNSubmitted""") { () =>
+    P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriodBTNSubmitted()
+  }
+
+  When("""I select PreviousAccountingPeriodUKTRSubmitted""") { () =>
+    P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
+  }
+
 
   When("""^(I click on Country selected)""") { (negate: String) =>
     UPEAddressPage.clickCountrySelected()

@@ -31,8 +31,8 @@ Feature: Pillar2 Due & Overdue returns And Submission History User Journey
     And I access submission BTN start page
     And I go to due overdue page
     And I should see 1 accounting periods on Due Overdue Page
-    And I should see 0 section with status "Due"
-    And I should see 1 section with status "Overdue"
+    And I should see 1 section with status "Due"
+    And I should see 0 section with status "Overdue"
     When I click submission history link
     And I should see 0 accounting periods on Sub History Page
 
