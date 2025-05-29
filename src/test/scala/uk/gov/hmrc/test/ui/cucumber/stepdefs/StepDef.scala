@@ -59,10 +59,10 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   Given("""^.* logs in without Pillar2 enrolment$""") {
-        AuthLoginPage.loginToUPE()
+    AuthLoginPage.loginToUPE()
   }
 
-  Given("""^.* logs in and navigates to RFM start page without Pillar2 enrolment with groupId (.*)$""") {groupId:String =>
+  Given("""^.* logs in and navigates to RFM start page without Pillar2 enrolment with groupId (.*)$""") { groupId: String =>
     AuthLoginPage.loginToRFMWithGroupId(groupId)
   }
 
@@ -179,8 +179,8 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   When("""I select CurrentAccountingPeriod""") { () =>
     P2SubBtnMultipleAccountingPage.selectCurrentAccountingPeriod()
-
   }
+
   When("""I select PreviousAccountingPeriodBTNSubmitted""") { () =>
     P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriodBTNSubmitted()
   }
@@ -188,7 +188,6 @@ class StepDef extends BaseStepDef with BrowserDriver {
   When("""I select PreviousAccountingPeriodUKTRSubmitted""") { () =>
     P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
   }
-
 
   When("""^(I click on Country selected)""") { (negate: String) =>
     UPEAddressPage.clickCountrySelected()
