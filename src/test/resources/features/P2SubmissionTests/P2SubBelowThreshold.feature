@@ -352,26 +352,3 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
     And  I click on Continue button
     Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
