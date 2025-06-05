@@ -189,6 +189,11 @@ class StepDef extends BaseStepDef with BrowserDriver {
     P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
   }
 
+  Then("""I select PreviousAccountingPeriod""") { () =>
+    // Write code here that turns the phrase above into concrete actions
+    P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriod()
+  }
+
   When("""^(I click on Country selected)""") { (negate: String) =>
     UPEAddressPage.clickCountrySelected()
   }

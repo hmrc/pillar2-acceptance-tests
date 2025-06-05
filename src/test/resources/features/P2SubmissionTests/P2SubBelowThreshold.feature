@@ -322,3 +322,33 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I select option Yes and continue on Pillar2 submission
     Then I should be navigated to BTN CYA Submit Page of Pillar2 Submission
     When I click on Continue button
+
+  Scenario: 15- Agent User navigates to BTN Two accounting period for previous and current period.
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999992 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XEPLR9999999992
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to ASA Dashboard page
+    And I access submission BTN start page
+    When I click on Continue button
+    Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
+    And I select back link
+    Then I should be navigated to BTN Start Page of Pillar2 Submission
+    When I click on Continue button
+    Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
+    And I select CurrentAccountingPeriod
+    And  I click on Continue button
+    When I click Select different accounting period link
+    Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
+    And I select PreviousAccountingPeriod
+    When I click on Continue button
+    When I click update the group’s accounting period dates link
+    Then I should be on accounts summary page
+    And I click the browser back button
+    And I select back link
+    Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
+    And  I click on Continue button
+    Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission

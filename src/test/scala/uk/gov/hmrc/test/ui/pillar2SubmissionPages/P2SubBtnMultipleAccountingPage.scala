@@ -22,10 +22,12 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object P2SubBtnMultipleAccountingPage extends PageObject {
   val url: String                           = s"$p2SubRootUrl" + "below-threshold-notification/choose-accounting-period"
   val CurrentAccountingPeriod               = "radio_0"
+  val PreviousAccountingPeriod              = "radio_1"
   val PreviousAccountingPeriodUKTRSubmitted = "radio_2"
   val PreviousAccountingPeriodBTnSubmitted  = "radio_3"
 
   def selectCurrentAccountingPeriod(): Unit               = findById(CurrentAccountingPeriod).click()
+  def selectPreviousAccountingPeriod(): Unit              = findById(PreviousAccountingPeriod).click()
   def selectPreviousAccountingPeriodBTNSubmitted(): Unit  = findById(PreviousAccountingPeriodBTnSubmitted).click()
   def selectPreviousAccountingPeriodUKTRSubmitted(): Unit = findById(PreviousAccountingPeriodUKTRSubmitted).click()
 }
