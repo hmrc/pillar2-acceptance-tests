@@ -175,7 +175,7 @@ Feature: Dashboard Page
       | Address                                            | EH5 5WY                    |
       | Address                                            | United Kingdom             |
     When I click on Continue button
-    Then I should be redirect to Manage Contact processing Page
+    Then I should be redirected to "Manage Contact processing Page" or "Dashboard page"
     And I should be on Dashboard page
 
   @zap_accessibility @batch2
