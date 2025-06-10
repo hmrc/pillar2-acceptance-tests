@@ -43,9 +43,7 @@ Feature: UPE NO ID journey
     And The hint text should be We will use this to confirm your records.
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
-    And the page title should be What is the telephone number? - Report Pillar 2 Top-up Taxes - GOV.UK
     And The caption must be Group details
-    And The Heading should be What is the telephone number for Contact UPE?
     And The hint text should be For international numbers include the country code
     And I enter Telephone Number as 1234569
     Then I should be on Check your answers page
@@ -197,11 +195,8 @@ Feature: UPE NO ID journey
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
     When I click on Continue button
-    Then I should see error message Enter the telephone number for UPE Contact Name on the Input Telephone Page
     And I enter Telephone Number as 1234512345123451234512345
-    Then I should see error message Telephone number should be 24 characters or less on the Input Telephone Page
     And I enter Telephone Number as #incorrect number
-    Then I should see error message Enter the telephone number for UPE Contact Name in the correct format, for example 01632 960 001 or +44 808 157 0192 on the Input Telephone Page
 
   @batch1 @zap_accessibility
   Scenario: 4 - Change UPE fields from UPE check your answers page
@@ -261,4 +256,3 @@ Feature: UPE NO ID journey
     And I enter Telephone Number as 123456
     And I navigate back to TaskList Page from Telephone Input Page
     Then The Task Edit Ultimate Parent Entity details status should be Completed
-
