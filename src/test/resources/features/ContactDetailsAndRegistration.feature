@@ -238,7 +238,6 @@ Feature: Contact details for the filing member
     And I should see row 16 value No
     And I should see row 17 value Address Change
 
-
   @zap_accessibility @batch2
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
