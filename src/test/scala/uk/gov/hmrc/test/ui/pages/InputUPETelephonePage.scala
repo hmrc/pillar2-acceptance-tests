@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object InputUPETelephonePage extends PageObject {
   val url: String     = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-telephone"
   val continue        = "#submit"
-  val telephoneNumber = "#telephoneNumber"
+  val telephoneNumber = "#phoneNumber"
   val errorSummary    = ".govuk-error-summary__list"
   val errorLink       = "[href*='#telephoneNumber']"
   val backLink        = ".govuk-back-link"

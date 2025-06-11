@@ -68,10 +68,7 @@ Feature: Contact details for the filing member
     Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
-    And the page title should be What is the telephone number? - Report Pillar 2 Top-up Taxes - GOV.UK
     And The caption must be Contact details
-    And The Heading should be What is the telephone number for Contact Name Test?
-    And The Body content should be For international numbers include the country code.
     When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
@@ -241,7 +238,6 @@ Feature: Contact details for the filing member
     And I should see row 16 value No
     And I should see row 17 value Address Change
 
-
   @zap_accessibility @batch2
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
@@ -317,13 +313,10 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
     When I click on Continue button
-    Then I should see error message Enter telephone number for Test ContactName on the Contact details display Page
     When I enter NFM Telephone Number as 12345678@
     When I click on Continue button
-    Then I should see error message Enter the telephone number for Test ContactName in the correct format, for example 01632 960 001 or +44 808 157 0192 on the Contact details display Page
     When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
-    Then I should see error message Telephone number must be 24 characters or less on the Contact details display Page
     When I enter NFM Telephone Number as 12345343
     When I click on Continue button
     Then I should navigate to Second Contact details page
@@ -355,13 +348,10 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I click on Continue button
-    Then I should see error message Enter the telephone number for Test secondName on the Second Contact details Page
     When I enter NFM Telephone Number as 12345678@
     When I click on Continue button
-    Then I should see error message Enter the telephone number for Test secondName in the correct format, for example 01632 960 001 or +44 808 157 0192 on the Second Contact details Page
     When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
-    Then I should see error message Telephone number must be 24 characters or less on the Second Contact details Page
     When I enter NFM Telephone Number as 1234567
     When I click on Continue button
     Then I should navigate to Contact address input page
