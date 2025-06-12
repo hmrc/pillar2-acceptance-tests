@@ -29,6 +29,6 @@ object RFMContactInputPage extends PageObject {
   val errorMessage   = ".govuk-error-message"
   val errorLink      = "[href='#telephoneNumber']"
   val errorSummary   = ".govuk-error-summary__list"
-  val telephoneField = "#telephoneNumber"
+  val telephoneField = "#phoneNumber"
 
 }
