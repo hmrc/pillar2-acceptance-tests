@@ -12,14 +12,14 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I select back link
     Then I should be navigated to BTN Start Page of Pillar2 Submission
     When I click on Continue button
-    When I click update your group’s current accounting period link
+    When I click update your group’s accounting period dates link
     Then I should be on accounts summary page
     And I click the browser back button
     When I click on Continue button
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
-    When I click amend your group’s details link
+    When I click Amend group details link
     Then I should be on accounts summary page
     And I click the browser back button
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
@@ -53,7 +53,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
-    When I click amend your group’s details link
+    When I click Amend group details link
     Then I should be on accounts summary page
     When I click Sign out link
     Then I am on feedback survey page
@@ -266,7 +266,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Domestic or MNE Page of Pillar2 Submission
     When I select option No and continue on Pillar2 submission
     Then I should be navigated to BTN AGD KB Page of Pillar2 Submission
-    When I click amend your group’s details link
+    When I click Amend group details link
     Then I should be on accounts summary page
     When I click Sign out link
     Then I am on feedback survey page
