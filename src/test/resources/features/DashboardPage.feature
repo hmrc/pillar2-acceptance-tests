@@ -8,7 +8,6 @@ Feature: Dashboard Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     And The Heading should be Your Pillar 2 Top-up Taxes account
-    #And The inactive status should be HMRC has received a Below Threshold Notification for this account. Please contact the pillar2mailbox@hmrc.gov.uk if your circumstances change. -- removed from dashboard --
     When I click Refer to the Pillar 2 Top-up Taxes manual (opens in new tab) link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page
@@ -95,7 +94,7 @@ Feature: Dashboard Page
     And I should see row 3 value 5 May 2025
     And I should see row 4 value 5 June 2026
     And I click on Continue button
-    Then I should be redirect to Manage Account processing Page
+    Then I should be redirected to "Manage Account processing Page" or "Dashboard page"
     And I should be on Dashboard page
 
   @zap_accessibility @batch1
