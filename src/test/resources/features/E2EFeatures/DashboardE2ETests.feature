@@ -30,6 +30,7 @@ Feature: Dashboard Page
     And I should see row 3 value 5 May 2025
     And I should see row 4 value 5 June 2026
     And I click on Continue button
+    Then I should be redirected to "Manage Account processing Page" or "Dashboard page"
     Then I should be on Dashboard page
 
   Scenario: 2 - User navigates to amend contact details page and validates the data
@@ -80,22 +81,22 @@ Feature: Dashboard Page
     And I click on Continue button
     Then I should navigate to contact details summary page
     And I should see details as below:
-      | KEY                                               | VALUE                      |
-      | Contact name                                      | Contact Name Test #        |
-      | Email address                                     | contact*@email.com         |
-      | Can we contact the primary contact by telephone?  | Yes                        |
-      | Telephone number                                  | 123456789                  |
-      | Do you have a second contact?                     | Yes                        |
-      | Secondary contact name                            | Second Contact £ Name Test |
-      | Second contact email address                      | second&Contact@email.com   |
-      | Can we contact the secondary contact by telephone?| Yes                        |
-      | Second contact telephone number                   | 1234554878                 |
-      | Address                                           | Test Address Line 1        |
-      | Address                                           | Test Address Line 2        |
-      | Address                                           | Test City                  |
-      | Address                                           | Test Region                |
-      | Address                                           | EH5 5WY                    |
-      | Address                                           | United Kingdom             |
+      | KEY                                                | VALUE                      |
+      | Contact name                                       | Contact Name Test #        |
+      | Email address                                      | contact*@email.com         |
+      | Can we contact the primary contact by telephone?   | Yes                        |
+      | Telephone number                                   | 123456789                  |
+      | Do you have a second contact?                      | Yes                        |
+      | Secondary contact name                             | Second Contact £ Name Test |
+      | Second contact email address                       | second&Contact@email.com   |
+      | Can we contact the secondary contact by telephone? | Yes                        |
+      | Second contact telephone number                    | 1234554878                 |
+      | Address                                            | Test Address Line 1        |
+      | Address                                            | Test Address Line 2        |
+      | Address                                            | Test City                  |
+      | Address                                            | Test Region                |
+      | Address                                            | EH5 5WY                    |
+      | Address                                            | United Kingdom             |
     When I click on Continue button
     Then I should be on Dashboard page
 
@@ -181,17 +182,17 @@ Feature: Dashboard Page
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
     And I should see details as below:
-      | KEY                                              | VALUE                         |
-      | Refund amount                                    | £1000                         |
-      | Reason for refund request                        | Test Reason                   |
-      | What type of account will the refund be sent to? | Non-UK bank account           |
-      | Name of the bank                                 | HSBC2                         |
-      | Name on account                                  | Test Name2                    |
-      | BIC or SWIFT code                                | HBUKGB4C                      |
-      | IBAN                                             | GB29NWBK60161331926820        |
-      | Contact name                                     | Repayment Contact Name        |
-      | Email address                                    | repayment@email.com           |
-      | Can we contact by telephone?                     | No                            |
+      | KEY                                              | VALUE                  |
+      | Refund amount                                    | £1000                  |
+      | Reason for refund request                        | Test Reason            |
+      | What type of account will the refund be sent to? | Non-UK bank account    |
+      | Name of the bank                                 | HSBC2                  |
+      | Name on account                                  | Test Name2             |
+      | BIC or SWIFT code                                | HBUKGB4C               |
+      | IBAN                                             | GB29NWBK60161331926820 |
+      | Contact name                                     | Repayment Contact Name |
+      | Email address                                    | repayment@email.com    |
+      | Can we contact by telephone?                     | No                     |
     And I can see Print this page link
     And I click on Continue button
     Then I should be redirect to Repayment processing page
@@ -213,35 +214,35 @@ Feature: Dashboard Page
     And I select repayment method as UK bank account
     And I click on Continue button
     Then I should navigate to UK Bank Account Payment Page
-   When I enter UK Bank Account details as:
-     | KEY               | VALUE              |
-     | bankName          | Natwest            |
-     | accountHolderName | Epic Adventure Inc |
-     | sortCode          | 206705             |
-     | accountNumber     | 86473611           |
-   Then I should be on Repayment Contact Page
-   And I provide Repayment contact name as Repayment Contact Name
-   When I provide Repayment contact email as repayment@email.com
-   And I select option Yes and continue to next
-   And I provide Repayment contact telephone as 789765423
-   Then I should be on Repayment CYA Page
-   And I should see details as below:
-     | KEY                                              | VALUE                  |
-     | Refund amount                                    | £100                   |
-     | Reason for refund request                        | Test Reason            |
-     | What type of account will the refund be sent to? | UK bank account        |
-     | Name of the bank                                 | Natwest                |
-     | Name on account                                  | Epic Adventure Inc     |
-     | Sort code                                        | 206705                 |
-     | Account number                                   | 86473611               |
-     | Contact name                                     | Repayment Contact Name |
-     | Email address                                    | repayment@email.com       |
-     | Can we contact by telephone?                     | Yes                     |
-   And I can see Print this page link
-   And I click on Continue button
-   Then I should be redirect to Repayment processing page
-   And I should be on Repayment Confirmation Page
-   And I can see Print this page link
+    When I enter UK Bank Account details as:
+      | KEY               | VALUE              |
+      | bankName          | Natwest            |
+      | accountHolderName | Epic Adventure Inc |
+      | sortCode          | 206705             |
+      | accountNumber     | 86473611           |
+    Then I should be on Repayment Contact Page
+    And I provide Repayment contact name as Repayment Contact Name
+    When I provide Repayment contact email as repayment@email.com
+    And I select option Yes and continue to next
+    And I provide Repayment contact telephone as 789765423
+    Then I should be on Repayment CYA Page
+    And I should see details as below:
+      | KEY                                              | VALUE                  |
+      | Refund amount                                    | £100                   |
+      | Reason for refund request                        | Test Reason            |
+      | What type of account will the refund be sent to? | UK bank account        |
+      | Name of the bank                                 | Natwest                |
+      | Name on account                                  | Epic Adventure Inc     |
+      | Sort code                                        | 206705                 |
+      | Account number                                   | 86473611               |
+      | Contact name                                     | Repayment Contact Name |
+      | Email address                                    | repayment@email.com    |
+      | Can we contact by telephone?                     | Yes                    |
+    And I can see Print this page link
+    And I click on Continue button
+    Then I should be redirect to Repayment processing page
+    And I should be on Repayment Confirmation Page
+    And I can see Print this page link
 
   Scenario: 6 - Agent User navigates to repayment journey pages for UK bank account
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -278,7 +279,7 @@ Feature: Dashboard Page
     Then I should be on Repayment CYA Page
     And I should see details as below:
       | KEY                                              | VALUE                  |
-      | Refund amount                                    | £999.99                 |
+      | Refund amount                                    | £999.99                |
       | Reason for refund request                        | Test Reason            |
       | What type of account will the refund be sent to? | UK bank account        |
       | Name of the bank                                 | Natwest                |
@@ -286,8 +287,8 @@ Feature: Dashboard Page
       | Sort code                                        | 206705                 |
       | Account number                                   | 86473611               |
       | Contact name                                     | Repayment Contact Name |
-      | Email address                                    | repayment@email.com       |
-      | Can we contact by telephone?                     | Yes                     |
+      | Email address                                    | repayment@email.com    |
+      | Can we contact by telephone?                     | Yes                    |
     And I can see Print this page link
     And I click on Continue button
     Then I should be redirect to Repayment processing page

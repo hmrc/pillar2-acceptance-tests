@@ -74,6 +74,7 @@ Feature: Agent user journeys
     Then I should navigate to Agent Account Summary Page
     And I should see row 4 value 6 December 2025
     And I click on Continue button
+    Then I should be redirected to "Manage Account processing Page" or "ASA Dashboard page"
     Then I should navigate to ASA Dashboard page
 
   @batch1
