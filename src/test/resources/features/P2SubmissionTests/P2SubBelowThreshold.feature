@@ -345,10 +345,7 @@ Feature: Pillar2 submission Below threshold  notification user journey
     Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
     And I select PreviousAccountingPeriod
     When I click on Continue button
-    When I click update the group’s accounting period dates link
-    Then I should be on accounts summary page
-    And I click the browser back button
-    And I select back link
-    Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
+    Then I should be navigated to BTN Accounting Period Page of Pillar2 Submission
     And  I click on Continue button
-    Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
+    And I click the browser back button
+    Then I should be navigated to BTN Accounting Period Page of Pillar2 Submission
