@@ -93,9 +93,9 @@ Feature: NFM NO ID journey
     And I enter NFM name as Name () Change %^
     And I should see row 1 value Name () Change %^
     When I click on change hyperlink next to the NFM Address
-    And I enter Address Line 1 as Change# Address $
+    And I enter Address Line 1 as Change& Address /
     And I click on Continue button
-    And I should see row 2 value Change# Address $
+    And I should see row 2 value Change& Address /
     And I should see row 2 value City CYA
     And I should see row 2 value United Arab Emirates
     When I click on change hyperlink next to the NFM Contact Name
