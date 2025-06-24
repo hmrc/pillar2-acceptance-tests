@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object DashboardPage extends PageObject {
-  val url: String        = s"$rootUrl" + "pillar2-top-up-tax-home"
+  val url: String        = s"$rootUrl" + "home"
   val continue           = "#submit"
   val sectionHeading     = ".govuk-heading-m"
   val userDetailsSection = "h1+p.govuk-body"
