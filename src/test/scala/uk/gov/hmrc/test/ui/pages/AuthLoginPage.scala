@@ -51,7 +51,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndCDCAUrl: String               = s"$rootUrl" + "contact-details/check-answers"
   val frontEndFinalReviewCAUrl: String      = s"$rootUrl" + "review-submit/check-answers"
   val frontEndSubUrl: String                = s"$rootUrl" + "review-submit/confirmation"
-  val frontEndDashboardUrl: String          = s"$rootUrl" + "home"
+  val frontEndDashboardUrl: String          = s"$rootUrl" + "pillar2-top-up-tax-home"
   val frontEndASAUrl: String                = s"$rootUrl" + "asa/input-pillar-2-id"
   val rfmUrl: String                        = s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
   val enrolmentKeyField: String             = "enrolment[0].name"
