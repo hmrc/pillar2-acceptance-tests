@@ -113,6 +113,7 @@ trait CommonFunctions
       case "bta register guidance page"                 => BTARegisterGuidancePage
       case "Subscription API error page"                => SubscriptionAPIerrorPage
       case "Registration API error page"                => RegistrationAPIerrorPage
+      case "Registration In Progress page"              => RegistrationInProgressPage
       case "RFM start page"                             => RFMStartPage
       case "Individual RFM KB Page"                     => IndividualRFMKBPage
       case "Agent RFM KB Page"                          => AgentRFMKBPage
