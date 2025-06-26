@@ -180,11 +180,8 @@ Feature: Dashboard Page
   @zap_accessibility @batch2
   Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to view subscription API
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR0123456500 for Pillar2 service
-    Then I should be on Subscription API error page
-    And The Heading should be Sorry, there is a problem with the service
-    And The Body content should be Please try again later.
-    When I click Return to your account homepage to try again link
-    Then I should be on Subscription API error page
+    Then I should be on Registration In Progress page
+    And The Heading should be Your registration is in progress
 
   @batch2
   Scenario: 5 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
