@@ -308,7 +308,22 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I access submission BTN start page
     When I click on Continue button
     Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
-    And I click on Continue button
+    And I select PreviousAccountingPeriodUKTRSubmitted
+    And  I click on Continue button
+    Then I should be navigated to BTN Accounting Period Page of Pillar2 Submission
+    And I click Return to homepage link
+    Then I should navigate to ASA Dashboard page
+    And I click the browser back button
+    Then I should be navigated to BTN Accounting Period Page of Pillar2 Submission
+    And I select back link
+    Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
+    And I select PreviousAccountingPeriodBTNSubmitted
+    And  I click on Continue button
+    Then I should be navigated to BTN Return Submission KB Page of Pillar2 Submission
+    And I click Return to homepage link
+    Then I should navigate to ASA Dashboard page
+    And I click the browser back button
+    And I select back link
     Then I should be navigated to BTN Multiple Accounting Period Page of Pillar2 Submission
     And I select PreviousAccountingPeriodBTNSubmitted
     And  I click on Continue button
