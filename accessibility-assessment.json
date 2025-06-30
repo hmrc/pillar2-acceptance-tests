@@ -11,6 +11,14 @@
     {
       "path": "/report-pillar2-top-up-taxes/review-submit/processing-registration",
       "reason": "Implementation of spinner page with polling"
+    },
+    {
+      "path": "/report-pillar2-top-up-taxes/manage-account/contact/waiting-room",
+      "reason": "Implementation of spinner page with polling"
+    },
+    {
+      "path": "/report-pillar2-top-up-taxes/manage-account/details/waiting-room",
+      "reason": "Implementation of spinner page with polling"
     }
   ]
 }
