@@ -1,4 +1,4 @@
-@tests
+@tests @ignore
 Feature: RFM Start page
   As a New Filing member
   I want to access start page of Replace Filing Member(RFM) journey

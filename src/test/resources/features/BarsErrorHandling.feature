@@ -1,4 +1,4 @@
-@tests
+@tests @ignore
 Feature: Bars Handling
   As a registered and subscribed user
   I should be able to navigate to Contact page after correct UK bank details

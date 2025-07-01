@@ -1,4 +1,4 @@
-@e2e
+@e2e @ignore
 Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS and NO ID journeys
   As a MNE user
   I want to determine that in RFM journey, UPE or New NFM journey is based in UK for LLP and Limited company

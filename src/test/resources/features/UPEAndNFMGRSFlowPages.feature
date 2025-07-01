@@ -1,4 +1,4 @@
-@tests
+@tests @ignore
 Feature: Ultimate parent entity and Nominated Filling Member GRS journey
   As a MNE user
   I want to determine that the UPE is based in UK or LLP

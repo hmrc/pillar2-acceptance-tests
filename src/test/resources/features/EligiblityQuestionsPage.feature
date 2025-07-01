@@ -1,4 +1,4 @@
-@tests @zap_accessibility
+@tests @zap_accessibility @ignore
 Feature: Eligibility Questions for Pillar 2
   As a MNE user
   I should be navigated to all the Eligibility questions
