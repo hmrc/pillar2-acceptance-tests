@@ -554,3 +554,84 @@ Feature: Contact details for the filing member
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
+  Scenario: 6 - UPE No Id journey navigation to registration in progress page
+    Given Organisation User logs in without Pillar2 enrolment
+    Then I should be on UPE business page
+    When I select option No and continue to next
+    Then I should navigate to input-upe-name page
+    When I enter UPE name as Medium Processing Corp
+    Then I should navigate to input-upe-address page
+    When I enter Address as:
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1 UPE   |
+      | addressLine3 | City UPE             |
+      | postalCode   | Invalid              |
+      | countryCode  | United Arab Emirates |
+    And I click on Continue button
+    Then I should navigate to UPE Contact person/team Name page
+    When I enter UPE Person/Team name as Medium Processing
+    Then I should navigate to UPE Contact Email page
+    When I enter UPE Email address as testcontactupe@email.com
+    Then I should navigate to UPE Telephone page
+    When I select option Yes and continue to next
+    Then I should navigate to input telephone page
+    And I enter Telephone Number as 1234569
+    Then I should be on Check your answers page
+    And I should see details as below:
+      | KEY                          | VALUE                    |
+      | Name                         | Medium Processing Corp   |
+      | Address                      | Address Line 1 UPE       |
+      | Address                      | City UPE                 |
+      | Address                      | INVALID                  |
+      | Address                      | United Arab Emirates     |
+      | Contact name                 | Medium Processing        |
+      | Email address                | testcontactupe@email.com |
+      | Can we contact by telephone? | Yes                      |
+      | Telephone number             | 1234569                  |
+    When I click on Continue button
+    Then I should navigate to Task list page
+    When I click Add filing member details link
+    Then I should navigate to NFM registration page
+    When I select No option and continue to next
+    Then I should navigate to Task list page
+    And The Task Edit filing member details status should be Completed
+    When I click Add further group details link
+    Then I should navigate to MNE or domestic page
+    When I select option In the UK and outside the UK in further details group status page
+    And I click on Continue button
+    Then I should navigate to Group accounting period page
+    When I enter account period as:
+      | KEY             | VALUE |
+      | startDate.day   | 15    |
+      | startDate.month | 1     |
+      | startDate.year  | 2024  |
+      | endDate.day     | 15    |
+      | endDate.month   | 1     |
+      | endDate.year    | 2025  |
+    Then I should navigate to FD check your answers page
+    And I click on Continue button
+    Then I should navigate to Task list page
+    When I click Add contact details link
+    Then I should navigate to Contact details guidance page
+    When I click on Continue button
+    When I select option Yes and continue to next
+    Then I should navigate to Second Contact details page
+    When I select option No and continue to next
+    Then I should navigate to Contact address input page
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | United Kingdom |
+    Then I should navigate to Contact details Check answers page
+    And I click on Continue button
+    When I click Check your answers before submitting your registration link
+    Then I should navigate to Review answers page
+    And I click on Save&Continue button
+    Then I should navigate to Registration confirmation page
+    And I click report and manage your Pillar 2 Top-up Taxes link
+    Then I should be on Registration In Progress page
+    And The Heading should be Your registration is in progress
+    When I refresh the registration in progress page
+    Then I should be on Dashboard page

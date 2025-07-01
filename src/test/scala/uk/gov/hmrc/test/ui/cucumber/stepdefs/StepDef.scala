@@ -582,9 +582,18 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   When("""^I refresh the page$""") { () =>
-    driver.navigate.refresh()
+    driver.navigate().refresh()
   }
 
+  When("""^I refresh the registration in progress page$""") { () =>
+    val count = 5
+    var i     = 0
+    while (i < count) {
+      driver.navigate().refresh()
+      i += 1
+    }
+
+  }
   Given("""^I access random page$""") { () =>
     Nav.navigateTo(AuthLoginPage.incorrectUrl)
   }

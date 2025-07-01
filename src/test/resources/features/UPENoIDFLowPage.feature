@@ -20,11 +20,11 @@ Feature: UPE NO ID journey
     And The Heading should be What is the registered office address of Test UPE?
     And The hint text should be Enter text and then choose from the list.
     When I enter Address as:
-      | KEY          | VALUE                  |
-      | addressLine1 | Address Line 1 UPE     |
-      | addressLine3 | City UPE               |
-      | postalCode   | Invalid                |
-      | countryCode  | United Arab Emirates   |
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1 UPE   |
+      | addressLine3 | City UPE             |
+      | postalCode   | Invalid              |
+      | countryCode  | United Arab Emirates |
     And I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
     And The caption must be Group details

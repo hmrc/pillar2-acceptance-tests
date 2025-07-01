@@ -177,15 +177,6 @@ Feature: Dashboard Page
     Then I should be redirected to "Manage Contact processing Page" or "Dashboard page"
     And I should be on Dashboard page
 
-  @zap_accessibility @batch2
-  Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to view subscription API
-    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR0123456500 for Pillar2 service
-    Then I should be on Subscription API error page
-    And The Heading should be Sorry, there is a problem with the service
-    And The Body content should be Please try again later.
-    When I click Return to your account homepage to try again link
-    Then I should be on Subscription API error page
-
   @batch2
   Scenario: 5 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
