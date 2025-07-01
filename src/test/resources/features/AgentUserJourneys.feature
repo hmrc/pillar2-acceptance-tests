@@ -1,4 +1,4 @@
-@tests @zap_accessibility @ignore
+@tests @zap_accessibility
 Feature: Agent user journeys
   As an Agent
   I should be able to access clients accounts using Pillar2 ID

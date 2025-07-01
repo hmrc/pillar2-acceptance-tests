@@ -554,7 +554,7 @@ Feature: Contact details for the filing member
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
-  Scenario: 9 - UPE No Id journey navigation to registration in progress page
+  Scenario: 6 - UPE No Id journey navigation to registration in progress page
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option No and continue to next

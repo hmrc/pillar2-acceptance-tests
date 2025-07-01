@@ -1,4 +1,4 @@
-@tests @ignore
+@tests
 Feature: Dashboard Page
   As a registered user
   I should be able to navigate to Links on dashboard page

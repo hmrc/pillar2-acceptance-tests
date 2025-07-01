@@ -1,4 +1,4 @@
-@e2e @ignore
+@e2e
 Feature: User registration and subscription e2e journey
   As a MNE user
   I want to create a new registration and subscription

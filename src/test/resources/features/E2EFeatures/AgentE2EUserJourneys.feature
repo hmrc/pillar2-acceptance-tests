@@ -1,4 +1,4 @@
-@e2e @ignore
+@e2e
 Feature: Agent user journeys
   As an Agent
   I should be able to access clients accounts using Pillar2 ID

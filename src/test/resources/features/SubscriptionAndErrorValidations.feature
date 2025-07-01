@@ -1,4 +1,4 @@
-@tests @ignore
+@tests
 Feature: Create a new registration and subscription
   As an user
   I want to create a new registration and subscription

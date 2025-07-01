@@ -1,4 +1,4 @@
-@tests @ignore
+@tests
 Feature: NFM NO ID journey
   As a MNE user
   I would like to enter my details via NFM No ID journey

@@ -1,4 +1,4 @@
-@tests @ignore
+@tests
 Feature: Further Details Task page validation
   As a MNE user
   I should be taken to all the Further detail pages

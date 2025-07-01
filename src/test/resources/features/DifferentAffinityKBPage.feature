@@ -1,4 +1,4 @@
-@tests @batch1 @ignore
+@tests @batch1
 Feature: Failure scenarios with different Affinity groups
   I must be navigated to Error screen for Agent and Individual Affinity group
 

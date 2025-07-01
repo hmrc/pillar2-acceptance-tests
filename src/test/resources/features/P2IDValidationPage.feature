@@ -1,4 +1,4 @@
-@tests @batch3 @ignore
+@tests @batch3
 Feature: BTA user registration for Pillar 2 service
   As a BTA user
   I want to register for Pillar 2 service

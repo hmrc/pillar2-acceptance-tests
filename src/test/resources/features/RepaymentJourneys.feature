@@ -1,4 +1,4 @@
-@tests @ignore
+@tests
 Feature: Repayment Journey
   As a registered and subscribed user
   I should be able to access repayment journey pages
