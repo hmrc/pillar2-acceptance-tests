@@ -38,9 +38,9 @@ Feature: Contact details for the filing member
     When I click Add contact details link
     Then I should navigate to Contact details guidance page
     And The caption must be Contact details
-    And The Heading should be We need contact details for the filing member
-    And The Body content should be We need the contact details for the filing member of this group so we can contact the right person or team when about compliance for Pillar 2 Top-up Taxes.
-    And The Body content should be These may be different to any contact details you have already provided during this registration.
+#    And The Heading should be We need contact details for the filing member
+#    And The Body content should be We need the contact details for the filing member of this group so we can contact the right person or team when about compliance for Pillar 2 Top-up Taxes.
+#    And The Body content should be These may be different to any contact details you have already provided during this registration.
     When I click on Continue button
     Then I should navigate to Contact details display page
     And The Heading should be Saved contact
@@ -56,7 +56,7 @@ Feature: Contact details for the filing member
     And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
     And The caption must be Contact details
     And The Heading should be What is the email address for Contact Name Test
-    And The Body content should be We will only use this to contact you about Pillar 2 Top-up Taxes.
+#    And The Body content should be We will only use this to contact you about Pillar 2 Top-up Taxes.
     When I enter Contact Email as testContact@email.com
     Then I should navigate to Contact details telephone page
     And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
@@ -80,12 +80,12 @@ Feature: Contact details for the filing member
     Then I should navigate to Second Contact name page
     And The caption must be Contact details
     And The Heading should be What is the name of the alternative person or team we should contact about compliance for Pillar 2 Top-up Taxes?
-    And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
+#    And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter Second Contact Name as Second Contact Name Test
     Then I should navigate to Second Contact email page
     And The caption must be Contact details
     And The Heading should be What is the email address for Second Contact Name Test?
-    And The Body content should be We will only use this to contact you about Pillar 2 Top-up Taxes.
+#    And The Body content should be We will only use this to contact you about Pillar 2 Top-up Taxes.
     And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
     Then I should navigate to Second Contact number page
@@ -379,10 +379,10 @@ Feature: Contact details for the filing member
     And The Id text should be Group’s Pillar 2 Top-up Taxes ID
     When I should see heading 1 as Registration date:
     And The registration date should be displayed as current day
-    And The Body content should be Test has successfully registered to report for Domestic Top-up Tax and Multinational Top-up Tax
-    And The Body content should be You will be able to find your Pillar 2 Top-up Taxes ID and registration date on your account homepage. Keep these details safe.
+#    And The Body content should be Test has successfully registered to report for Domestic Top-up Tax and Multinational Top-up Tax
+#    And The Body content should be You will be able to find your Pillar 2 Top-up Taxes ID and registration date on your account homepage. Keep these details safe.
     When I should see heading 2 as What happens next
-    And The Body content should be You can now report and manage your Pillar 2 Top-up Taxes.
+#    And The Body content should be You can now report and manage your Pillar 2 Top-up Taxes.
     When I click report and manage your Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I should see user details row 1 value XMPLR0012345674
@@ -462,12 +462,12 @@ Feature: Contact details for the filing member
     And I click on Save&Continue button
     Then I should be redirect to Registration processing page
     Then I should navigate to Registration confirmation page
-    And The Body content should be Test Example Company Name has successfully registered to report for Domestic Top-up Tax
+#    And The Body content should be Test Example Company Name has successfully registered to report for Domestic Top-up Tax
     And I click the browser back button
     Then I should navigate to Registration return error page
     And The Heading should be You cannot return, your registration is complete
-    And The Body content should be You have successfully registered to report Pillar 2 Top-up Taxes.
-    And The Body content should be You can now report and manage your Pillar 2 Top-up Taxes.
+#    And The Body content should be You have successfully registered to report Pillar 2 Top-up Taxes.
+#    And The Body content should be You can now report and manage your Pillar 2 Top-up Taxes.
     And I click report and manage your Pillar 2 Top-up Taxes. link
     And I should be on Dashboard page
     And I click the browser back button

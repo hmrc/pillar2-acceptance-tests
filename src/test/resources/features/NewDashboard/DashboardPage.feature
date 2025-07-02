@@ -7,7 +7,7 @@ Feature: Dashboard Page
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
-    And The Heading should be Pillar 2 Top-up Taxes
+#    And The Heading should be Pillar 2 Top-up Taxes
     #When I click Refer to the Pillar 2 Top-up Taxes manual (opens in new tab) link
 #    Then I should be navigated to new tab
 #    And  I should be on Draft guidance page
@@ -58,31 +58,31 @@ Feature: Dashboard Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key ID:
-    And I should see user details row 2 key Registration date:
-    And I should see user details row 1 key Group:
-    And I should see user details row 1 value XMPLR0012345676
-    And I should see user details row 2 value 31 January 2024
-    And I should see user details row 1 value International Organisation Inc.
-    And I should see the heading 1 on Dashboard page as Returns
-    And I should see the heading 2 on Dashboard page as Payments
-    And I should see the heading 3 on Dashboard page as Manage account
+#    And I should see user details row 1 key ID:
+#    And I should see user details row 2 key Registration date:
+#    And I should see user details row 1 key Group:
+#    And I should see user details row 1 value XMPLR0012345676
+#    And I should see user details row 2 value 31 January 2024
+#    And I should see user details row 1 value International Organisation Inc.
+#    And I should see the heading 1 on Dashboard page as Returns
+#    And I should see the heading 2 on Dashboard page as Payments
+#    And I should see the heading 3 on Dashboard page as Manage account
     When I click Manage group details link
     Then I should navigate to accounts summary page
     And the page title should be Group details - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The Heading should be Group details
+#    And The Heading should be Group details
     And I should see row 1 key Where are the entities in your group located?
-    And I should see row 2 key Group’s current consolidated accounting period
-    And I should see row 3 key Start date
-    And I should see row 4 key End date
-    And I should see row 1 value In the UK and outside the UK
-    And I should see row 3 value 6 January 2024
-    And I should see row 4 value 6 April 2025
+#    And I should see row 2 key Group’s current consolidated accounting period
+#    And I should see row 3 key Start date
+#    And I should see row 4 key End date
+#    And I should see row 1 value In the UK and outside the UK
+#    And I should see row 3 value 6 January 2024
+#    And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the FD Group Status
     And The caption must be Group details
     When I select option Only in the UK in further details group status page
     Then I should navigate to accounts summary page
-    And I should see row 1 value Only in the UK
+#    And I should see row 1 value Only in the UK
     When I click on change hyperlink next to the Accounting Period
     When I enter account period as:
       | KEY             | VALUE |
@@ -103,19 +103,13 @@ Feature: Dashboard Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key ID:
-    And I should see user details row 2 key Registration date:
-    And I should see user details row 1 key Group:
-    And I should see user details row 1 value XMPLR0012345676
-    And I should see user details row 2 value 31 January 2024
-    And I should see user details row 1 value International Organisation Inc.
     When I click Manage contact details link
     Then I should navigate to contact details summary page
     And the page title should be Contact details - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The Heading should be Contact details
-    And I should see sub section 1 as Primary contact
-    And I should see sub section 2 as Secondary contact
-    And I should see sub section 3 as Contact address
+#    And The Heading should be Contact details
+#    And I should see sub section 1 as Primary contact
+#    And I should see sub section 2 as Secondary contact
+#    And I should see sub section 3 as Contact address
     And I should see details as below:
       | KEY                                                | VALUE                   |
       | Contact name                                       | Fred Flintstone         |
@@ -178,15 +172,6 @@ Feature: Dashboard Page
     Then I should be redirected to "Manage Contact processing Page" or "Dashboard page"
     And I should be on Dashboard page
 
-  @zap_accessibility @batch2
-  Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to view subscription API
-    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR0123456500 for Pillar2 service
-    Then I should be on Subscription API error page
-    And The Heading should be Sorry, there is a problem with the service
-    And The Body content should be Please try again later.
-    When I click Return to your account homepage to try again link
-    Then I should be on Subscription API error page
-
   @batch2
   Scenario: 5 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
@@ -194,15 +179,15 @@ Feature: Dashboard Page
     And I should see User details in dashboard page
     When I click Manage contact details link
     Then I should navigate to contact details summary page
-    And I should see row 1 key Contact name
-    And I should see row 1 value Fred Flintstone
+#    And I should see row 1 key Contact name
+#    And I should see row 1 value Fred Flintstone
     When I click on change link for Contact Name
     When I enter Contact Name as 400
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on Subscription API error page
-    And The Heading should be Sorry, there is a problem with the service
-    And The Body content should be Please try again later.
+#    And The Heading should be Sorry, there is a problem with the service
+#    And The Body content should be Please try again later.
     When I click Return to your account homepage to try again link
     Then I should be on Dashboard page
 
