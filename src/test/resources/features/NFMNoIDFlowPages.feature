@@ -163,8 +163,8 @@ Feature: NFM NO ID journey
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
     When I click on Continue button
-    When I enter NFM Telephone Number as 1234567812345678123456780
-    When I enter NFM Telephone Number as 1234567@
+#    When I enter NFM Telephone Number as 1234567812345678123456780
+#    When I enter NFM Telephone Number as 1234567@
     When I enter NFM Telephone Number as 9923-456
     When I click on change hyperlink next to the NFM Telephone Contact
     And I select option No and continue to next

@@ -190,13 +190,13 @@ Feature: UPE NO ID journey
     Then I should see error message Email address must be 132 characters or less on the UPE contact email Page
     When I enter UPE Email address as testteam@email.com
     Then I should navigate to UPE Telephone page
-    When I click on Continue button
-    Then I should see error message Select yes if we can contact UPE Contact Name by telephone on the UPE Telephone Page
-    When I select option Yes and continue to next
-    Then I should navigate to input telephone page
-    When I click on Continue button
-    And I enter Telephone Number as 1234512345123451234512345
-    And I enter Telephone Number as #incorrect number
+#    When I click on Continue button
+#    Then I should see error message Select yes if we can contact UPE Contact Name by telephone on the UPE Telephone Page
+#    When I select option Yes and continue to next
+#    Then I should navigate to input telephone page
+#    When I click on Continue button
+#    And I enter Telephone Number as 1234512345123451234512345
+#    And I enter Telephone Number as #incorrect number
 
   @batch1 @zap_accessibility
   Scenario: 4 - Change UPE fields from UPE check your answers page

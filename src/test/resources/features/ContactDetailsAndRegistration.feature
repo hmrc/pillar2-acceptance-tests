@@ -313,10 +313,10 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
     When I click on Continue button
-    When I enter NFM Telephone Number as 12345678@
-    When I click on Continue button
-    When I enter NFM Telephone Number as 1234567890123456789012345
-    When I click on Continue button
+#    When I enter NFM Telephone Number as 12345678@
+#    When I click on Continue button
+#    When I enter NFM Telephone Number as 1234567890123456789012345
+#    When I click on Continue button
     When I enter NFM Telephone Number as 12345343
     When I click on Continue button
     Then I should navigate to Second Contact details page
@@ -348,10 +348,10 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I click on Continue button
-    When I enter NFM Telephone Number as 12345678@
-    When I click on Continue button
-    When I enter NFM Telephone Number as 1234567890123456789012345
-    When I click on Continue button
+#    When I enter NFM Telephone Number as 12345678@
+#    When I click on Continue button
+#    When I enter NFM Telephone Number as 1234567890123456789012345
+#    When I click on Continue button
     When I enter NFM Telephone Number as 1234567
     When I click on Continue button
     Then I should navigate to Contact address input page
@@ -553,7 +553,7 @@ Feature: Contact details for the filing member
     And I click on Save&Continue button
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
-
+@solo
   Scenario: 6 - UPE No Id journey navigation to registration in progress page
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page

@@ -23,7 +23,7 @@ object RepaymentTelephoneInputPage extends PageObject {
 
   val url: String      = s"$rootUrl" + "repayment/contact-details/input-telephone"
   val continue         = ".govuk-button"
-  val contactTelephone = "#telephoneNumber"
+  val contactTelephone = "#phoneNumber"
   val backLink         = ".govuk-back-link"
 
   def clickContinue(): Unit = findByCss(continue).click()
