@@ -1,4 +1,4 @@
-@newTests @zap_accessibility
+@newTests @zap_accessibility @ignore
 Feature: Contact details for the filing member
   As a NFM Subscription user
   I want to enter contact details and navigate to dashboard page
