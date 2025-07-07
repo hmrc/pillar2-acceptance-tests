@@ -69,7 +69,7 @@ Feature: RFM Start page
     Then I should be on auth-login page
 
 #    Add groupId to user to match stub
-  @zap_accessibility @batch3 @solo
+  @zap_accessibility @batch3
   Scenario: 5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page
     Given I clear the cache
     Given Organisation User logs in and navigates to RFM start page without Pillar2 enrolment with groupId 879D6270-E9C2-4092-AC91-21C61B69D1E7
