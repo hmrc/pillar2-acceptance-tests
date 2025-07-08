@@ -122,8 +122,6 @@ Feature: Contact details for the filing member
   Scenario: 2 - Check you Answers Page Validations
     Given Organisation User navigates to Contact Details check your answer page with credId ContactDetails
     Then I should be on Contact details Check answers page
-    #And The caption must be Contact details
-    #And The Heading should be Check your answers for contact details
     And I should see details as below:
       | KEY                                            | VALUE                    |
       | Contact name                                   | Contact Name Test        |
