@@ -50,29 +50,16 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
     And The caption must be Contact details
-  #  And The Heading should be Who should we contact about compliance for Pillar 2 Top-up Taxes?
-   # And The Body content should be You can enter a person or team name.
     When I enter Contact Name as Contact Name Test
     Then I should navigate to Contact details input email page
-   # And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
-   # And The caption must be Contact details
- #   And The Heading should be What is the email address for Contact Name Test?
-#    And The Body content should be We'll only use this to contact you about Pillar 2 Top-up Taxes.
     When I enter Contact Email as testContact@email.com
     Then I should navigate to Contact details telephone page
-   # And the page title should be Can we contact by phone? - Report Pillar 2 Top-up Taxes - GOV.UK
-   # And The caption must be Contact details
-   # And The Heading should be Can we contact Contact Name Test by phone?
-    #And The Body content should be We'll only use this to contact you about Pillar 2 Top-up Taxes.
     When I select option No and continue to next
     Then I should navigate to Second Contact details page
     When I select back link
     Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
-   # And The caption must be Contact details
-   # And The Heading should be What is the phone number for Contact Name Test?
-   # And The Body content should be Enter the phone number for Contact Name Test, for example 01632 960 001. For international numbers include the country code, for example +44 808 157 0192 or 0044 808 157 0192.
     When I enter Telephone Number as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
@@ -82,26 +69,14 @@ Feature: Contact details for the filing member
     Then I should navigate to Second Contact details page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
-   # And The caption must be Contact details
-   # And The Heading should be Who should we contact about compliance for Pillar 2 Top-up Taxes?
-    #And The Body content should be You can enter a person or team name.
     When I enter Second Contact Name as Second Contact Name Test
     Then I should navigate to Second Contact email page
-   # And The caption must be Contact details
-   # And The Heading should be What is the email address for Second Contact Name Test?
-    #And The Body content should be We'll only use this to contact you about Pillar 2 Top-up Taxes.
-    #And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
     Then I should navigate to Second Contact number page
-   #And the page title should be Can we contact Second Contact Name Test by phone?
-   # And The Body content should be We'll only use this to contact you about Pillar 2 Top-up Taxes.
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
-    #And The Heading should be What is the phone number for Second Contact Name Test?
     When I enter Second Contact Input as 1234554
     Then I should navigate to Contact address input page
-   # And The caption must be Contact details
-   # And The Heading should be What address do you want to use as the filing member’s contact address?
     When I enter Address as:
       | KEY          | VALUE          |
       | addressLine1 | Address Line 1 |

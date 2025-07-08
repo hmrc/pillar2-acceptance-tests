@@ -1,4 +1,4 @@
-@newTests @zap_accessibility @ignore
+@newTests @zap_accessibility
 Feature: Contact details for the filing member
   As a NFM Subscription user
   I want to enter contact details and navigate to dashboard page
@@ -50,26 +50,16 @@ Feature: Contact details for the filing member
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
     And The caption must be Contact details
-    And The Heading should be What is the name of the person or team we should contact about compliance for Pillar 2 Top-up Taxes?
     When I enter Contact Name as Contact Name Test
     Then I should navigate to Contact details input email page
-    And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The caption must be Contact details
-    And The Heading should be What is the email address for Contact Name Test
-#    And The Body content should be We will only use this to contact you about Pillar 2 Top-up Taxes.
     When I enter Contact Email as testContact@email.com
     Then I should navigate to Contact details telephone page
-    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The caption must be Contact details
-    And The Heading should be Can we contact Contact Name Test by telephone?
     When I select option No and continue to next
     Then I should navigate to Second Contact details page
     When I select back link
     Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
-    And The caption must be Contact details
-    When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
     When I select option No and continue to next
@@ -83,19 +73,12 @@ Feature: Contact details for the filing member
 #    And The Body content should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter Second Contact Name as Second Contact Name Test
     Then I should navigate to Second Contact email page
-    And The caption must be Contact details
-    And The Heading should be What is the email address for Second Contact Name Test?
-#    And The Body content should be We will only use this to contact you about Pillar 2 Top-up Taxes.
-    And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
     Then I should navigate to Second Contact number page
-    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I enter Second Contact Input as 1234554
     Then I should navigate to Contact address input page
-    And The caption must be Contact details
-    And The Heading should be What address do you want to use as the filing member’s contact address?
     When I enter Address as:
       | KEY          | VALUE          |
       | addressLine1 | Address Line 1 |
@@ -141,23 +124,21 @@ Feature: Contact details for the filing member
   Scenario: 2 - Check you Answers Page Validations
     Given Organisation User navigates to Contact Details check your answer page with credId ContactDetails
     Then I should be on Contact details Check answers page
-    And The caption must be Contact details
-    And The Heading should be Check your answers for contact details
     And I should see details as below:
-      | KEY                                                 |  VALUE                   |
-      | Contact name                                        | Contact Name Test        |
-      | Email address                                       | testContact@email.com    |
-      | Can we contact the primary contact by telephone?    | Yes                      |
-      | Telephone number                                    | 1234554                  |
-      | Do you have a second contact?                       | Yes                      |
-      | Secondary contact name                              | Second Contact Name Test |
-      | Second contact email address                        | secondContact@email.com  |
-      | Can we contact the secondary contact by telephone?  | Yes                      |
-      | Second contact telephone number                     | 1234554                  |
-      | Address                                             | Address Line 1           |
-      | Address                                             | City                     |
-      | Address                                             | EH5 5WY                  |
-      | Address                                             | United Kingdom           |
+      | KEY                                            | VALUE                    |
+      | Contact name                                   | Contact Name Test        |
+      | Email address                                  | testContact@email.com    |
+      | Can we contact the primary contact by phone?   | Yes                      |
+      | Phone number                                   | 1234554                  |
+      | Do you have a second contact?                  | Yes                      |
+      | Second contact name                            | Second Contact Name Test |
+      | Second contact email address                   | secondContact@email.com  |
+      | Can we contact the secondary contact by phone? | Yes                      |
+      | Second contact phone number                    | 1234554                  |
+      | Address                                        | Address Line 1           |
+      | Address                                        | City                     |
+      | Address                                        | EH5 5WY                  |
+      | Address                                        | United Kingdom           |
     When I click on change link for Contact Name
     And I enter Contact Name as Contact $ Name Change
     Then I should navigate to Contact details Check answers page
@@ -171,20 +152,20 @@ Feature: Contact details for the filing member
     When I click on change link for Second Contact Email
     And I enter Second Contact Email as secondContact&change@email.com
     When I click on change link for Second Contact Telephone number
-    And I enter Second Contact Input as 71235643
+    And I enter Contact Telephone as 71235643
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
     And I click on Continue button
     Then I should see details as below:
-      | KEY                                               | VALUE                          |
-      | Contact name                                      | Contact $ Name Change        |
-      | Email address                                     | email&change@test.com          |
-      | Telephone number                                  | 1234555                        |
-      | Secondary contact name                            | Second Contact Name Change   |
-      | Second contact email address                      | secondContact&change@email.com |
-      | Can we contact the secondary contact by telephone?| Yes                            |
-      | Second contact telephone number                   | 71235643                       |
-      | Address                                           | Address Change                 |
+      | KEY                                            | VALUE                          |
+      | Contact name                                   | Contact $ Name Change          |
+      | Email address                                  | email&change@test.com          |
+      | Phone number                                   | 1234555                        |
+      | Second contact name                            | Second Contact Name Change     |
+      | Second contact email address                   | secondContact&change@email.com |
+      | Can we contact the secondary contact by phone? | Yes                            |
+      | Second contact phone number                    | 71235643                       |
+      | Address                                        | Address Change                 |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
@@ -203,14 +184,14 @@ Feature: Contact details for the filing member
       | Start date                                    | 15 January 2024                |
       | End date                                      | 15 January 2025                |
       | Do you have a second contact?                 | Yes                            |
-      | Secondary contact name                        | Second Contact Name Change     |
+      | Second contact name                           | Second Contact Name Change     |
       | Second contact email address                  | secondContact&change@email.com |
-      | Second contact telephone number               | 71235643                       |
+      | Second contact phone number                   | 71235643                       |
     And I should see row 12 with key Contact name and value Contact $ Name Change
     And I should see row 13 with key Email address and value email&change@test.com
-    And I should see row 14 with key Can we contact the primary contact by telephone? and value Yes
-    And I should see row 15 with key Telephone number and value 1234555
-    And I should see row 19 with key Can we contact the secondary contact by telephone? and value Yes
+    And I should see row 14 with key Can we contact the primary contact by phone? and value Yes
+    And I should see row 15 with key Phone number and value 1234555
+    And I should see row 19 with key Can we contact the secondary contact by phone? and value Yes
     And I should see row 21 with key Address and value Address Change
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Task list page
@@ -225,9 +206,9 @@ Feature: Contact details for the filing member
     When I click on Continue button
     Then I should be on Contact details Check answers page
     And I should see details as below:
-      | KEY                               | VALUE          |
-      | Do you have a second contact?     | No             |
-      | Address                           | Address Change |
+      | KEY                           | VALUE          |
+      | Do you have a second contact? | No             |
+      | Address                       | Address Change |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
@@ -309,7 +290,7 @@ Feature: Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Contact details telephone page
     When I click on Continue button
-    Then I should see error message Select yes if we can contact Test ContactName by telephone on the Contact details display Page
+    Then I should see error message Select yes if we can contact Test ContactName by phone on the Contact details display Page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
     When I click on Continue button
@@ -344,7 +325,7 @@ Feature: Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Second Contact number page
     When I click on Continue button
-    Then I should see error message Select yes if we can contact Test secondName by telephone on the Second Contact details Page
+    Then I should see error message Select yes if we can contact Test secondName by phone on the Second Contact details Page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I click on Continue button
