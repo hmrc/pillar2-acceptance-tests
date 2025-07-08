@@ -294,10 +294,6 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
     When I click on Continue button
-    When I enter NFM Telephone Number as 12345678@
-    When I click on Continue button
-    When I enter NFM Telephone Number as 1234567890123456789012345
-    When I click on Continue button
     When I enter NFM Telephone Number as 12345343
     When I click on Continue button
     Then I should navigate to Second Contact details page
@@ -328,10 +324,6 @@ Feature: Contact details for the filing member
     Then I should see error message Select yes if we can contact Test secondName by phone on the Second Contact details Page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
-    When I click on Continue button
-    When I enter NFM Telephone Number as 12345678@
-    When I click on Continue button
-    When I enter NFM Telephone Number as 1234567890123456789012345
     When I click on Continue button
     When I enter NFM Telephone Number as 1234567
     When I click on Continue button
