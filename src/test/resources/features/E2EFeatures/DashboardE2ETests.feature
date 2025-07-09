@@ -43,13 +43,13 @@ Feature: Dashboard Page
       | KEY                                                | VALUE                   |
       | Contact name                                       | Fred Flintstone         |
       | Email address                                      | fred.flintstone@aol.com |
-      | Can we contact the primary contact by telephone?   | Yes                     |
+      | Can we contact the primary contact by phone?   | Yes                     |
       | Telephone number                                   | 0115 9700 700           |
       | Do you have a second contact?                      | Yes                     |
       | Secondary contact name                             | Donald Trump            |
       | Second contact email address                       | donald.trump@potus.com  |
-      | Can we contact the secondary contact by telephone? | Yes                     |
-      | Second contact telephone number                    | 0115 9700 701           |
+      | Can we contact the secondary contact by phone? | Yes                     |
+      | Second contact phone number                    | 0115 9700 701           |
       | Address                                            | 1 High Street           |
       | Address                                            | Egham                   |
       | Address                                            | Wycombe                 |
@@ -61,7 +61,7 @@ Feature: Dashboard Page
     Then I should navigate to contact details summary page
     When I click on change link for Email address
     And I enter Contact Email as contact*@email.com
-    And I click on change link for Telephone number
+    And I click on change link for Phone number
     And I enter Contact Telephone as 123456789
     And I click on change link for Do you have a second contact?
     And I select option No and continue to next
@@ -84,13 +84,13 @@ Feature: Dashboard Page
       | KEY                                                | VALUE                      |
       | Contact name                                       | Contact Name Test #        |
       | Email address                                      | contact*@email.com         |
-      | Can we contact the primary contact by telephone?   | Yes                        |
+      | Can we contact the primary contact by phone?   | Yes                        |
       | Telephone number                                   | 123456789                  |
       | Do you have a second contact?                      | Yes                        |
       | Secondary contact name                             | Second Contact £ Name Test |
       | Second contact email address                       | second&Contact@email.com   |
-      | Can we contact the secondary contact by telephone? | Yes                        |
-      | Second contact telephone number                    | 1234554878                 |
+      | Can we contact the secondary contact by phone? | Yes                        |
+      | Second contact phone number                    | 1234554878                 |
       | Address                                            | Test Address Line 1        |
       | Address                                            | Test Address Line 2        |
       | Address                                            | Test City                  |
@@ -192,7 +192,7 @@ Feature: Dashboard Page
       | IBAN                                             | GB29NWBK60161331926820 |
       | Contact name                                     | Repayment Contact Name |
       | Email address                                    | repayment@email.com    |
-      | Can we contact by telephone?                     | No                     |
+      | Can we contact by phone?                     | No                     |
     And I can see Print this page link
     And I click on Continue button
     Then I should be redirect to Repayment processing page
@@ -237,7 +237,7 @@ Feature: Dashboard Page
       | Account number                                   | 86473611               |
       | Contact name                                     | Repayment Contact Name |
       | Email address                                    | repayment@email.com    |
-      | Can we contact by telephone?                     | Yes                    |
+      | Can we contact by phone?                     | Yes                    |
     And I can see Print this page link
     And I click on Continue button
     Then I should be redirect to Repayment processing page
@@ -288,7 +288,7 @@ Feature: Dashboard Page
       | Account number                                   | 86473611               |
       | Contact name                                     | Repayment Contact Name |
       | Email address                                    | repayment@email.com    |
-      | Can we contact by telephone?                     | Yes                    |
+      | Can we contact by phone?                     | Yes                    |
     And I can see Print this page link
     And I click on Continue button
     Then I should be redirect to Repayment processing page
@@ -357,7 +357,7 @@ Feature: Dashboard Page
       | IBAN                                             | GB29NWBK60161331926820        |
       | Contact name                                     | Repayment Contact Name change |
       | Email address                                    | email@change.com              |
-      | Can we contact by telephone?                     | No                            |
+      | Can we contact by phone?                     | No                            |
     And I can see Print this page link
     And I click on Continue button
     Then I should be redirect to Repayment processing page

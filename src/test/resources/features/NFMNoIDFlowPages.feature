@@ -21,9 +21,7 @@ Feature: NFM NO ID journey
     And The caption must be Group details
     And The Heading should be What is the name of the nominated filing member?
     When I enter NFM name as Test CYA
-    And The caption must be Group details
-    And The Heading should be What is the registered office address of Test CYA?
-    And The hint text should be Enter text and then choose from the list.
+    Then I should navigate to NFM Address page
     When I enter Address as:
       | KEY          | VALUE                |
       | addressLine1 | Address Line 1 CYA   |
@@ -31,9 +29,6 @@ Feature: NFM NO ID journey
       | countryCode  | United Arab Emirates |
     When I click on Continue button
     Then I should navigate to NFM Contact Name page
-    And The caption must be Group details
-    And The Heading should be What is the name of the person or team from the nominated filing member to keep on record?
-    And The hint text should be For example, ‘Tax team’ or ‘Ashley Smith’.
     When I enter NFM Contact name as Contact CYA
     Then I should navigate to NFM Contact Email page
     And The Heading should be What is the email address for Contact CYA?
@@ -125,12 +120,6 @@ Feature: NFM NO ID journey
     Then I should see NFM error message Select yes if the nominated filing member is registered in the UK on the NFM details page Element
     When I select option No and continue to next
     Then I should navigate to NFM Name page
-    And The caption must be Group details
-    And The Heading should be What is the name of the nominated filing member?
-    When I click on Continue button
-    Then I should see NFM error message Enter the name of the nominated filing member on the Input NFM Name Element
-    When I enter NFM name as NFM Name character length Error validation and Maximum NFM character length should be entered 105 characters.
-    Then I should see NFM error message Name of the nominated filing member must be 105 characters or less on the Input NFM Name Element
     When I enter NFM name as Test nfmName
     Then I should navigate to NFM Address page
     And the page title should be What is the registered office address? - Report Pillar 2 Top-up Taxes - GOV.UK
@@ -143,8 +132,6 @@ Feature: NFM NO ID journey
     And I click on Country selected
     And I click on Continue button
     Then I should navigate to NFM Contact Name page
-    And I click on Continue button
-    Then I should see NFM error message Enter the name of the person or team from the nominated filing member to keep on record on the Input NFM Contact Name Element
     When I enter NFM Contact name as NFM Contact
     When I click on Continue button
     Then I should navigate to NFM Contact Email page

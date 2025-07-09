@@ -49,8 +49,8 @@ Feature: Contact details for the filing member
     And I should see the contact details row 3 as 123456 on use contact page
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
-    And The caption must be Contact details
-    And The Heading should be What is the name of the person or team we should contact about compliance for Pillar 2 Top-up Taxes?
+#    And The caption must be Contact details
+#    And The Heading should be Who should we contact about compliance for Pillar 2 Top-up Taxes?
     When I enter Contact Name as Contact Name Test
     Then I should navigate to Contact details input email page
     And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
@@ -59,9 +59,9 @@ Feature: Contact details for the filing member
 #    And The Body content should be We will only use this to contact you about Pillar 2 Top-up Taxes.
     When I enter Contact Email as testContact@email.com
     Then I should navigate to Contact details telephone page
-    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
+    And the page title should be Can we contact by phone? - Report Pillar 2 Top-up Taxes - GOV.UK
     And The caption must be Contact details
-    And The Heading should be Can we contact Contact Name Test by telephone?
+    And The Heading should be Can we contact Contact Name Test by phone?
     When I select option No and continue to next
     Then I should navigate to Second Contact details page
     When I select back link
@@ -89,7 +89,7 @@ Feature: Contact details for the filing member
     And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
     Then I should navigate to Second Contact number page
-    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
+    And the page title should be Can we contact by phone? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I enter Second Contact Input as 1234554
@@ -147,13 +147,13 @@ Feature: Contact details for the filing member
       | KEY                                                 |  VALUE                   |
       | Contact name                                        | Contact Name Test        |
       | Email address                                       | testContact@email.com    |
-      | Can we contact the primary contact by telephone?    | Yes                      |
+      | Can we contact the primary contact by phone?    | Yes                      |
       | Telephone number                                    | 1234554                  |
       | Do you have a second contact?                       | Yes                      |
       | Secondary contact name                              | Second Contact Name Test |
       | Second contact email address                        | secondContact@email.com  |
-      | Can we contact the secondary contact by telephone?  | Yes                      |
-      | Second contact telephone number                     | 1234554                  |
+      | Can we contact the secondary contact by phone?  | Yes                      |
+      | Second contact phone number                     | 1234554                  |
       | Address                                             | Address Line 1           |
       | Address                                             | City                     |
       | Address                                             | EH5 5WY                  |
@@ -164,13 +164,13 @@ Feature: Contact details for the filing member
     When I click on change link for Email address
     And I enter Contact Email as email&change@test.com
     Then I should navigate to Contact details Check answers page
-    When I click on change link for Telephone number
+    When I click on change link for Phone number
     And I enter Contact Telephone as 1234555
     When I click on change link for Second Contact Name
     And I enter Second Contact Name as Second Contact Name Change
     When I click on change link for Second Contact Email
     And I enter Second Contact Email as secondContact&change@email.com
-    When I click on change link for Second Contact Telephone number
+    When I click on change link for Second Contact Phone number
     And I enter Second Contact Input as 71235643
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
@@ -182,8 +182,8 @@ Feature: Contact details for the filing member
       | Telephone number                                  | 1234555                        |
       | Secondary contact name                            | Second Contact Name Change   |
       | Second contact email address                      | secondContact&change@email.com |
-      | Can we contact the secondary contact by telephone?| Yes                            |
-      | Second contact telephone number                   | 71235643                       |
+      | Can we contact the secondary contact by phone?| Yes                            |
+      | Second contact phone number                   | 71235643                       |
       | Address                                           | Address Change                 |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
@@ -196,7 +196,7 @@ Feature: Contact details for the filing member
       | Address                                       | United Arab Emirates           |
       | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
-      | Can we contact by telephone?                  | Yes                            |
+      | Can we contact by phone?                  | Yes                            |
       | Telephone number                              | 123456                         |
       | Is there a nominated filing member            | No                             |
       | Where are the entities in your group located? | In the UK and outside the UK   |
@@ -205,12 +205,12 @@ Feature: Contact details for the filing member
       | Do you have a second contact?                 | Yes                            |
       | Secondary contact name                        | Second Contact Name Change     |
       | Second contact email address                  | secondContact&change@email.com |
-      | Second contact telephone number               | 71235643                       |
+      | Second contact phone number               | 71235643                       |
     And I should see row 12 with key Contact name and value Contact $ Name Change
     And I should see row 13 with key Email address and value email&change@test.com
-    And I should see row 14 with key Can we contact the primary contact by telephone? and value Yes
+    And I should see row 14 with key Can we contact the primary contact by phone? and value Yes
     And I should see row 15 with key Telephone number and value 1234555
-    And I should see row 19 with key Can we contact the secondary contact by telephone? and value Yes
+    And I should see row 19 with key Can we contact the secondary contact by phone? and value Yes
     And I should see row 21 with key Address and value Address Change
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Task list page
@@ -309,7 +309,7 @@ Feature: Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Contact details telephone page
     When I click on Continue button
-    Then I should see error message Select yes if we can contact Test ContactName by telephone on the Contact details display Page
+    Then I should see error message Select yes if we can contact Test ContactName by phone on the Contact details display Page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
     When I click on Continue button

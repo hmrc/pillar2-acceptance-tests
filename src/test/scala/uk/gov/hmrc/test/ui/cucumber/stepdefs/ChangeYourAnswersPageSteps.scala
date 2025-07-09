@@ -98,7 +98,7 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(ContactDetailsCheckAnswersPage.changeName)
       case "Email address" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeEmail)
-      case "Telephone number" =>
+      case "Phone number" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeContactNumber)
       case "Do you have a second contact?" =>
         clickByCss(ContactDetailsCheckAnswersPage.secondContact)
@@ -106,7 +106,7 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondName)
       case "Second Contact Email" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
-      case "Second Contact Telephone number" =>
+      case "Second Contact Phone number" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
       case "Address" =>
         clickByCss(ContactDetailsSummaryPage.changeAddress)

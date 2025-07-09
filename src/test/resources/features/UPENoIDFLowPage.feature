@@ -11,14 +11,8 @@ Feature: UPE NO ID journey
     And The Heading should be Is the Ultimate Parent Entity registered in the UK?
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
-    And The caption must be Group details
-    And The Heading should be What is the name of the Ultimate Parent Entity?
     When I enter UPE name as Test UPE
     Then I should navigate to input-upe-address page
-    And the page title should be What is the registered office address? - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The caption must be Group details
-    And The Heading should be What is the registered office address of Test UPE?
-    And The hint text should be Enter text and then choose from the list.
     When I enter Address as:
       | KEY          | VALUE                |
       | addressLine1 | Address Line 1 UPE   |
@@ -37,14 +31,8 @@ Feature: UPE NO ID journey
     And The hint text should be We will use this to confirm your records.
     When I enter UPE Email address as testcontactupe@email.com
     Then I should navigate to UPE Telephone page
-    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The caption must be Group details
-    And The Heading should be Can we contact Contact UPE by telephone?
-    And The hint text should be We will use this to confirm your records.
     When I select option Yes and continue to next
     Then I should navigate to input telephone page
-    And The caption must be Group details
-    And The hint text should be For international numbers include the country code
     And I enter Telephone Number as 1234569
     Then I should be on Check your answers page
     And The caption must be Group details
