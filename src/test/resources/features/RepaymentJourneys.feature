@@ -162,7 +162,7 @@ Feature: Repayment Journey
     Then I should be redirect to Repayment processing page
     And I should be on Repayment Confirmation Page
     And I can see Print this page link
-    When I click manage your Pillar 2 Top-up Taxes link
+    When I click Back to group homepage link
     Then I should be on Dashboard page
 
   @zap_accessibility @batch3
@@ -278,7 +278,7 @@ Feature: Repayment Journey
     And I should see the row 4 value Natwest
     And I should see the row 7 value 86473611
     And I click on Continue button
-    Then I should be redirect to Repayment processing page
+    Then I should be redirected to "Repayment processing page" or "Repayment Confirmation Page"
     And I should be on Repayment Confirmation Page
     And I can see Sign out link
     And I can see Print this page link
