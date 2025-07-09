@@ -115,9 +115,9 @@ Feature: Dashboard Page
       | Contact name                                   | Fred Flintstone         |
       | Email address                                  | fred.flintstone@aol.com |
       | Can we contact the primary contact by phone?   | Yes                     |
-      | Telephone number                               | 0115 9700 700           |
+      | Phone number                                   | 0115 9700 700           |
       | Do you have a second contact?                  | Yes                     |
-      | Secondary contact name                         | Donald Trump            |
+      | Second contact name                            | Donald Trump            |
       | Second contact email address                   | donald.trump@potus.com  |
       | Can we contact the secondary contact by phone? | Yes                     |
       | Second contact phone number                    | 0115 9700 701           |
@@ -133,7 +133,7 @@ Feature: Dashboard Page
     When I click on change link for Email address
     When I enter Contact Email as contact*@email.com
     When I click on change link for Phone number
-    When I enter Contact Telephone as 123456789
+    When I enter Telephone Number as 123456789
     When I click on change link for Do you have a second contact?
     When I select option No and continue to next
     And I should see row 5 value No
@@ -156,9 +156,9 @@ Feature: Dashboard Page
       | Contact name                                   | Contact Name Test #        |
       | Email address                                  | contact*@email.com         |
       | Can we contact the primary contact by phone?   | Yes                        |
-      | Telephone number                               | 123456789                  |
+      | Phone number                                   | 123456789                  |
       | Do you have a second contact?                  | Yes                        |
-      | Secondary contact name                         | Second Contact £ Name Test |
+      | Second contact name                            | Second Contact £ Name Test |
       | Second contact email address                   | second&Contact@email.com   |
       | Can we contact the secondary contact by phone? | Yes                        |
       | Second contact phone number                    | 1234554878                 |

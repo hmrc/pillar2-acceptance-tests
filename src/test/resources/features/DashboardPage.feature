@@ -110,7 +110,7 @@ Feature: Dashboard Page
     When I click on change link for Email address
     When I enter Contact Email as contact*@email.com
     When I click on change link for Phone number
-    When I enter Contact Telephone as 123456789
+    When I enter Telephone Number as 123456789
     When I click on change link for Do you have a second contact?
     When I select option No and continue to next
     When I click on change link for Do you have a second contact?

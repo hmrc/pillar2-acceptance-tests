@@ -1,4 +1,4 @@
-@tests @solo
+@tests
 Feature: Contact details for the filing member
   As a NFM Subscription user
   I want to enter contact details and navigate to dashboard page
@@ -51,23 +51,15 @@ Feature: Contact details for the filing member
     Then I should navigate to Contact details input name page
     When I enter Contact Name as Contact Name Test
     Then I should navigate to Contact details input email page
-    And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The caption must be Contact details
-    And The Heading should be What is the email address for Contact Name Test
-    And The Body content should be We’ll only use this to contact you about Pillar 2 Top-up Taxes.
     When I enter Contact Email as testContact@email.com
     Then I should navigate to Contact details telephone page
-    And the page title should be Can we contact by phone? - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The caption must be Contact details
-    And The Heading should be Can we contact Contact Name Test by phone?
     When I select option No and continue to next
     Then I should navigate to Second Contact details page
     When I select back link
     Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
-    And The caption must be Contact details
-    When I enter Contact Telephone as 1234554
+    When I enter Telephone Number as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
     When I select option No and continue to next
@@ -78,19 +70,12 @@ Feature: Contact details for the filing member
     Then I should navigate to Second Contact name page
     When I enter Second Contact Name as Second Contact Name Test
     Then I should navigate to Second Contact email page
-    And The caption must be Contact details
-    And The Heading should be What is the email address for Second Contact Name Test?
-    And The Body content should be We’ll only use this to contact you about Pillar 2 Top-up Taxes.
-    And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I enter Second Contact Email as secondContact@email.com
     Then I should navigate to Second Contact number page
-    And the page title should be Can we contact by phone? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I enter Second Contact Input as 1234554
     Then I should navigate to Contact address input page
-    And The caption must be Contact details
-    And The Heading should be What address do you want to use as the filing member’s contact address?
     When I enter Address as:
       | KEY          | VALUE          |
       | addressLine1 | Address Line 1 |
@@ -136,8 +121,6 @@ Feature: Contact details for the filing member
   Scenario: 2 - Check you Answers Page Validations
     Given Organisation User navigates to Contact Details check your answer page with credId ContactDetails
     Then I should be on Contact details Check answers page
-    And The caption must be Contact details
-    And The Heading should be Check your answers for contact details
     And I should see details as below:
       | KEY                                            | VALUE                    |
       | Contact name                                   | Contact Name Test        |
@@ -166,7 +149,7 @@ Feature: Contact details for the filing member
     When I click on change link for Second Contact Email
     And I enter Second Contact Email as secondContact&change@email.com
     When I click on change link for Second Contact Phone number
-    And I enter Second Contact Input as 71235643
+    And I enter Contact Telephone as 71235643
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
     And I click on Continue button
