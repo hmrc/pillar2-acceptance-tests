@@ -61,7 +61,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val delegatedIdentifierNameField: String  = "input-delegated-0-0-name"
   val delegatedIdentifierValueField: String = "input-delegated-0-0-value"
   val delegatedAuthRuleField: String        = "delegatedEnrolment[0].delegatedAuthRule"
-  val addDelegatedEnrolmentCTA: String      = "[onclick='addDelegatedEnrolment()']"
+  val addDelegatedEnrolmentCTA: String      = "#js-add-delegated-enrolment"
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
