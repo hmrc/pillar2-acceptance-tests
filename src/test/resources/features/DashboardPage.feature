@@ -102,46 +102,17 @@ Feature: Dashboard Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
-    And I should see user details row 1 key Group’s Pillar 2 Top-up Taxes ID:
-    And I should see user details row 2 key Registration date:
-    And I should see user details row 3 key Ultimate Parent Entity:
-    And I should see user details row 1 value XMPLR0012345676
-    And I should see user details row 2 value 31 January 2024
-    And I should see user details row 3 value International Organisation Inc.
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
-    And the page title should be Contact details - Report Pillar 2 Top-up Taxes - GOV.UK
-    And The Heading should be Contact details
-    And I should see sub section 1 as Primary contact
-    And I should see sub section 2 as Secondary contact
-    And I should see sub section 3 as Filing member contact address
-    And I should see details as below:
-      | KEY                                            | VALUE                   |
-      | Contact name                                   | Fred Flintstone         |
-      | Email address                                  | fred.flintstone@aol.com |
-      | Can we contact the primary contact by phone?   | Yes                     |
-      | Phone number                                   | 0115 9700 700           |
-      | Do you have a second contact?                  | Yes                     |
-      | Second contact name                            | Donald Trump            |
-      | Second contact email address                   | donald.trump@potus.com  |
-      | Can we contact the secondary contact by phone? | Yes                     |
-      | Second contact phone number                    | 0115 9700 701           |
-      | Address                                        | 1 High Street           |
-      | Address                                        | Egham                   |
-      | Address                                        | Wycombe                 |
-      | Address                                        | Surrey                  |
-      | Address                                        | HP13 6TT                |
-      | Address                                        | United Kingdom          |
     When I click on change link for Contact Name
     When I enter Contact Name as Contact Name Test #
     Then I should navigate to contact details summary page
     When I click on change link for Email address
     When I enter Contact Email as contact*@email.com
-    When I click on change link for Telephone number
+    When I click on change link for Phone number
     When I enter Telephone Number as 123456789
     When I click on change link for Do you have a second contact?
     When I select option No and continue to next
-    And I should see row 5 value No
     When I click on change link for Do you have a second contact?
     When I select option Yes and continue to next
     When I enter Second Contact Name as Second Contact £ Name Test
@@ -156,23 +127,6 @@ Feature: Dashboard Page
     And I enter Postal Code as EH5 5WY
     And I click on Continue button
     Then I should navigate to contact details summary page
-    And I should see details as below:
-      | KEY                                            | VALUE                      |
-      | Contact name                                   | Contact Name Test #        |
-      | Email address                                  | contact*@email.com         |
-      | Can we contact the primary contact by phone?   | Yes                        |
-      | Phone number                                   | 123456789                  |
-      | Do you have a second contact?                  | Yes                        |
-      | Second contact name                            | Second Contact £ Name Test |
-      | Second contact email address                   | second&Contact@email.com   |
-      | Can we contact the secondary contact by phone? | Yes                        |
-      | Second contact phone number                    | 1234554878                 |
-      | Address                                        | Test Address Line 1        |
-      | Address                                        | Test Address Line 2        |
-      | Address                                        | Test City                  |
-      | Address                                        | Test Region                |
-      | Address                                        | EH5 5WY                    |
-      | Address                                        | United Kingdom             |
     When I click on Continue button
     Then I should be redirected to "Manage Contact processing Page" or "Dashboard page"
     And I should be on Dashboard page

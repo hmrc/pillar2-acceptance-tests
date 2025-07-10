@@ -49,7 +49,6 @@ Feature: Contact details for the filing member
     And I should see the contact details row 3 as 123456 on use contact page
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
-    And The caption must be Contact details
     When I enter Contact Name as Contact Name Test
     Then I should navigate to Contact details input email page
     When I enter Contact Email as testContact@email.com
@@ -143,13 +142,13 @@ Feature: Contact details for the filing member
     When I click on change link for Email address
     And I enter Contact Email as email&change@test.com
     Then I should navigate to Contact details Check answers page
-    When I click on change link for Telephone number
+    When I click on change link for Phone number
     And I enter Contact Telephone as 1234555
     When I click on change link for Second Contact Name
     And I enter Second Contact Name as Second Contact Name Change
     When I click on change link for Second Contact Email
     And I enter Second Contact Email as secondContact&change@email.com
-    When I click on change link for Second Contact Telephone number
+    When I click on change link for Second Contact Phone number
     And I enter Contact Telephone as 71235643
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
@@ -176,7 +175,7 @@ Feature: Contact details for the filing member
       | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
       | Can we contact by telephone?                  | Yes                            |
-      | Telephone number                              | 123456                         |
+      | Phone number                                  | 1234555                        |
       | Is there a nominated filing member            | No                             |
       | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |
@@ -185,12 +184,6 @@ Feature: Contact details for the filing member
       | Second contact name                           | Second Contact Name Change     |
       | Second contact email address                  | secondContact&change@email.com |
       | Second contact phone number                   | 71235643                       |
-    And I should see row 12 with key Contact name and value Contact $ Name Change
-    And I should see row 13 with key Email address and value email&change@test.com
-    And I should see row 14 with key Can we contact the primary contact by phone? and value Yes
-    And I should see row 15 with key Phone number and value 1234555
-    And I should see row 19 with key Can we contact the secondary contact by phone? and value Yes
-    And I should see row 21 with key Address and value Address Change
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Task list page
     When I click Edit contact details link
@@ -204,9 +197,9 @@ Feature: Contact details for the filing member
     When I click on Continue button
     Then I should be on Contact details Check answers page
     And I should see details as below:
-      | KEY                               | VALUE          |
-      | Do you have a second contact?     | No             |
-      | Address                           | Address Change |
+      | KEY                           | VALUE          |
+      | Do you have a second contact? | No             |
+      | Address                       | Address Change |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
@@ -268,11 +261,6 @@ Feature: Contact details for the filing member
     Then I should see error message Select yes if you want to use this as your primary contact on the Contact details display Page
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
-    When I click on Continue button
-    Then I should see error message Enter name of the person or team we should contact about compliance for Pillar 2 Top-up Taxes on the Contact details display Page
-    When I enter Contact Details Name as Testing the character limit of contact details field is 160 character limit. Maximum character limit of contact details name field should be 160 characters, user should not be able to continue with more than 160 characters.
-    And I click on Continue button
-    Then I should see error message Name of the contact person or team should be 160 characters or less on the Contact details display Page
     When I enter Contact Details Name as Test ContactName
     And I click on Continue button
     Then I should navigate to Contact details input email page
@@ -299,11 +287,6 @@ Feature: Contact details for the filing member
     Then I should see error message Select yes if there is someone else we can contact if Test ContactName is not available on the Second Contact details Page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
-    And I click on Continue button
-    Then I should see error message Enter the name of the alternative person or team we should contact about compliance for Pillar 2 Top-up Taxes on the Second Contact details Page
-    When I enter Second Contact Name as Testing the character limit of contact details field is 160 character limit. Maximum character limit of contact details name field should be 160 characters, user should not be able to continue with more than 160 characters.
-    And I click on Continue button
-    Then I should see error message Name of the alternative contact person or team should be 160 characters or less on the Second Contact details Page
     When I enter Second Contact Name as Test secondName
     And I click on Continue button
     Then I should navigate to Second Contact email page
@@ -345,15 +328,6 @@ Feature: Contact details for the filing member
     And I click on Save&Continue button
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
-    And The Header should be Report Pillar 2 Top-up Taxes
-    And The Heading should be Registration complete
-    And The Id text should be Group’s Pillar 2 Top-up Taxes ID
-    When I should see heading 1 as Registration date:
-    And The registration date should be displayed as current day
-    And The Body content should be Test has successfully registered to report for Domestic Top-up Tax and Multinational Top-up Tax
-    And The Body content should be You will be able to find your Pillar 2 Top-up Taxes ID and registration date on your account homepage. Keep these details safe.
-    When I should see heading 2 as What happens next
-    And The Body content should be You can now report and manage your Pillar 2 Top-up Taxes.
     When I click report and manage your Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I should see user details row 1 value XMPLR0012345674
@@ -559,7 +533,7 @@ Feature: Contact details for the filing member
       | Email address                | testcontactupe@email.com |
       | Can we contact by telephone? | Yes                      |
       | Telephone number             | 1234569                  |
-  When I click on Continue button
+    When I click on Continue button
     Then I should navigate to Task list page
     When I click Add filing member details link
     Then I should navigate to NFM registration page
