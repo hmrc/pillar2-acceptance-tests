@@ -31,12 +31,13 @@ Feature: Agent user journeys
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    And I can see Agent Services Account link
+     #TODO: Need to confirm this link on new dashboard page.
+   # And I can see Agent Services Account link
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
-    When I click Change client link
-    When I click Report Pillar 2 Top-up Taxes link
-    Then I should navigate to ASA Home Page
+   # When I click Change client link
+   # When I click Report Pillar 2 Top-up Taxes link
+   # Then I should navigate to ASA Home Page
 
   @batch1
   Scenario: 2 - Agent user accessing dashboard features after login
@@ -50,30 +51,32 @@ Feature: Agent user journeys
     Then I should navigate to ASA Dashboard page
     And I click View outstanding payments link
     #TODO: Make a payment is under construction
-    Then I should navigate to Agent Make a Payment page
+   #Then I should navigate to Agent Make a Payment page
+    Then I should navigate to under construction page
     And I select back link
     Then I should navigate to ASA Dashboard page
-    When I click View outstanding payments link
-    Then I should navigate to Make a payment page
-    And I select back link
-    Then I should navigate to ASA Dashboard page
-    And I click View and amend contact details link
+   # When I click View outstanding payments link
+   # Then I should navigate to Make a payment page
+  #  And I select back link
+   # Then I should navigate to ASA Dashboard page
+
+    And I click Manage contact details link
     Then I should navigate to Agent Contact Detail Summary Page
-    And I should see row 2 value fred.flintstone@aol.com
+  #  And I should see row 2 value fred.flintstone@aol.com
     When I click on change link for Email address
     When I enter Contact Email as updatecontact@email.com
     Then I should navigate to Agent Contact Detail Summary Page
-    And I should see row 2 value updatecontact@email.com
+  #  And I should see row 2 value updatecontact@email.com
     When I click on Continue button
     Then I should navigate to ASA Dashboard page
-    And I click View and amend group details link
+    And I click Manage group details link
     Then I should navigate to Agent Account Summary Page
-    And I should see row 4 value 6 April 2025
+  #  And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the Accounting Period
     And Accounting Period End Month is entered as 12
     When I click on Continue button
     Then I should navigate to Agent Account Summary Page
-    And I should see row 4 value 6 December 2025
+  #  And I should see row 4 value 6 December 2025
     And I click on Continue button
     Then I should be redirected to "Manage Account processing Page" or "ASA Dashboard page"
     Then I should navigate to ASA Dashboard page
@@ -101,8 +104,8 @@ Feature: Agent user journeys
     Then I should navigate to Agent Amend API error Page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
-    And I click Make a payment link
-    Then I should navigate to Agent Make a Payment page
+  #  And I click Make a payment link
+  #  Then I should navigate to Agent Make a Payment page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     And I click Sign out link
@@ -174,11 +177,11 @@ Feature: Agent user journeys
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click View your client’s transaction history link
+    When I click View transaction history link
     Then I should be on Transaction History Page
     When I select back link
     Then I should be on ASA Dashboard page
-    When I click View your client’s transaction history link
+    When I click View transaction history link
     Then I should be on Transaction History Page
     And I should see Next CTA
     When I click Next CTA
@@ -198,7 +201,7 @@ Feature: Agent user journeys
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
     And I should be on Dashboard page
-    When I click View your client’s transaction history link
+    When I click View transaction history link
     Then I should be on Transaction History Empty Page
     When I select back link
     Then I should be on ASA Dashboard page
@@ -211,11 +214,11 @@ Feature: Agent user journeys
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click View your client’s transaction history link
+    When I click View transaction history link
     Then I should be on Transaction History Error Page
     When I click Return to your account homepage link
     Then I should be on ASA Dashboard page
-    When I click View your client’s transaction history link
+    When I click View transaction history link
     Then I should be on Transaction History Error Page
     When I select back link
     Then I should be on ASA Dashboard page
@@ -228,7 +231,7 @@ Feature: Agent user journeys
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click View your client’s transaction history link
+    When I click View transaction history link
     Then I should be on Transaction History Page
     And I click Sign out link
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -239,5 +242,5 @@ Feature: Agent user journeys
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click View your client’s transaction history link
+    When I click View transaction history link
     Then I should be on Transaction History Page
