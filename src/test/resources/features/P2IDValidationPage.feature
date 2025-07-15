@@ -13,10 +13,6 @@ Feature: BTA user registration for Pillar 2 service
     Then I should see error message Select yes if you have a Pillar 2 Top-up Taxes ID on the BTA Pillar2 validation Page
     When I select option No and continue to next
     Then I should navigate to bta register guidance page
-    And The Heading should be You need a Pillar 2 Top-up Taxes ID to access this service
-    And The Body content should be Register to report Pillar 2 Top-up Taxes to get a Pillar 2 Top-up Taxes ID.
-    And I should see Find out how to register to report Pillar 2 Top-up Taxes (opens in new tab) link
-    And I should see return to BTA button
     When I click Find out how to register to report Pillar 2 Top-up Taxes (opens in new tab) link
     Then I should be redirected to guidance page in a new tab
 

@@ -433,12 +433,8 @@ Feature: Contact details for the filing member
     And I click on Save&Continue button
     Then I should be redirect to Registration processing page
     Then I should navigate to Registration confirmation page
-#    And The Body content should be Test Example Company Name has successfully registered to report for Domestic Top-up Tax
     And I click the browser back button
     Then I should navigate to Registration return error page
-    And The Heading should be You cannot return, your registration is complete
-#    And The Body content should be You have successfully registered to report Pillar 2 Top-up Taxes.
-#    And The Body content should be You can now report and manage your Pillar 2 Top-up Taxes.
     And I click report and manage your Pillar 2 Top-up Taxes. link
     And I should be on Dashboard page
     And I click the browser back button

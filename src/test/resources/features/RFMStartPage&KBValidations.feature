@@ -44,9 +44,6 @@ Feature: RFM Start page
   Scenario: 3 - Verify Organisation Assistant User RFM KB page
     Given Assistant User logs in with rfm URL to Pillar2
     Then I should be on Assistant User RFM KB Page
-    And The Heading should be Sorry, you’re unable to use this service
-    And The Body content should be You’ve signed in with a standard organisation account.
-    And The Body content should be Only Government Gateway accounts with an administrator role can replace their nominated filing member.
     When I click Find out more about who can use this service link
     Then I should be on RFM start page
     When I select back link

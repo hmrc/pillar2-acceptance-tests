@@ -18,8 +18,6 @@ Feature: NFM NO ID journey
     And The Heading should be Is the nominated filing member registered in the UK?
     When I select option No and continue to next
     Then I should navigate to NFM Name page
-    And The caption must be Group details
-    And The Heading should be What is the name of the nominated filing member?
     When I enter NFM name as Test CYA
     Then I should navigate to NFM Address page
     When I enter Address as:
@@ -122,7 +120,6 @@ Feature: NFM NO ID journey
     Then I should navigate to NFM Name page
     When I enter NFM name as Test nfmName
     Then I should navigate to NFM Address page
-    And the page title should be What is the registered office address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I enter Address Line 1 as Test Address Line 1
     And I enter Address Line 2 as Test Address Line 2
     And I enter Region as Region

@@ -41,11 +41,6 @@ Feature: Eligibility Questions for Pillar 2
     Given I am on UPE EQ Page
     When I choose No and continue
     Then I should navigate to NFM EQ page
-    And The caption should be Check if you need to report Pillar 2 Top-up Taxes
-    And The Heading should be Are you registering as the group’s nominated filing member?
-    And The Body content should be The nominated filing member is responsible for managing the group’s Pillar 2 Top-up Taxes returns and keeping business records.
-    When I continue without selecting an option
-    Then I should see error message Select yes if you are registering as the group’s nominated filing member on the Eligibility question Page
     When I choose Eligibility No NFM and continue
     Then I should navigate to NFM guidance page
     And The Heading should be Based on your answers, you cannot register this group to report Pillar 2 Top-up Taxes

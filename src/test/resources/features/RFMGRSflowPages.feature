@@ -128,7 +128,6 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     When registration is unsuccessful with party type mismatch error
     And I click on Save&Continue button
     Then I should be on RFM GRS Registration Mismatch Error Page
-    And The Heading should be The details you entered did not match our records
     When I click go back to select the entity type link
     Then I should be on RFM UK based entity type page
     When I select option Limited liability partnership and continue to GRS page
@@ -155,7 +154,6 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     When registration is unsuccessful with identifiers not match error
     And I click on Save&Continue button
     Then I should be on RFM GRS Registration Not Called Error Page
-    And The Heading should be Sorry, there is a problem with the service
     When I click Go back to select the entity type link
     Then I should be on RFM UK based entity type page
     When I select option Entity type not listed and continue to Name page

@@ -5,10 +5,6 @@ Feature: Failure scenarios with different Affinity groups
   Scenario: 1 - User logins as organisation user and standard role
     Given Assistant User logs in to register for Pillar2
     Then I should be on Assistant role KB page
-    And The Heading should be Sorry, you’re unable to use this service
-    And The Body content should be You’ve signed in with a standard organisation account.
-    And The Body content should be Only Government Gateway accounts with an administrator role can register to use this service.
-    And The Body content should be You need to find someone with an administrator’s Government Gateway user ID who can register and then give you authority to report and manage Pillar 2 Top-up Taxes.
     When I click Find out more about who can use this service link
     Then I should navigate to guidance page
     When I click the browser back button

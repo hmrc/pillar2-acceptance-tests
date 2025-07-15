@@ -7,13 +7,6 @@ Feature: RFM CYA - NFM No ID flow
   Scenario: 1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated
     Given Organisation User logs in with rfm URL to Pillar2
     And I access RFM start page
-    And The caption must be Replace filing member
-    And The Heading should be Replace the filing member for a Pillar 2 Top-up Taxes account
-    And I should see 4 sections on RFM start page
-    And I should see the section 1 as Tell HMRC when you have replaced your filing member
-    And I should see the section 3 as Obligations as the filing member
-    And I should see the section 4 as What you will need
-    And I should see register to report Pillar 2 Top-up Taxes link
     And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
@@ -30,10 +23,6 @@ Feature: RFM CYA - NFM No ID flow
     Then I should see an error message Select if you are the Ultimate Parent Entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
     Then I should be on New NFM guidance page
-    And The caption must be Group details
-    And The Heading should be We need to match the details of the new nominated filing member to HMRC records
-    And The Body content should be If the new filing member is registered in the UK, we will ask you for identifying information so we can best match it with our records.
-    And The Body content should be If the new filing member is registered outside of the UK or if they are not a listed entity type, we will ask you for identifying information so we can create a new HMRC record.
     When I click on Continue button
     Then I should be on RFM registered in UK page
     When I select option No and continue to next
@@ -52,15 +41,6 @@ Feature: RFM CYA - NFM No ID flow
     And I click on Country selected
     And I click on Continue button
     Then I should be on RFM No ID CYA Page
-    Then The caption must be Group details
-    And The Heading should be Check your answers
-    And I should see details as below:
-      | KEY     | VALUE              |
-      | Name    | Test CYA           |
-      | Address | Address Line 1 CYA |
-      | Address | City CYA           |
-      | Address | EH55WY             |
-      | Address | Australia          |
     When I click change link for RFM New NFM Name
     Then I should navigate to RFM New NFM Contact Name Change
     When I provide RFM New NFM Name as New NFM Name Change

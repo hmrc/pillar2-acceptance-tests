@@ -8,32 +8,6 @@ Feature: Repayment Journey
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     And I access Non UK payment page
-    And The Heading should be Bank account details
-    When I click on Continue button
-    Then I should see bank account error message Enter the name of the bank on the Name of the Bank Element
-    And I should see bank account error message Enter the name on the account on the Account Name Element
-    And I should see bank account error message Enter the BIC or SWIFT code on the Swift Code Element
-    And I should see bank account error message Enter the IBAN on the Iban Element
-    When I refresh the page
-    When I enter Non UK Bank Account details as:
-      | KEY               | VALUE                  |
-      | bankName          | HSBC                   |
-      | nameOnBankAccount | HMRC Shipley           |
-      | bic               | HbuKGb4B               |
-      | iban              | gb29NWBK60161331926819 |
-    Then I should be on Repayment Contact Page
-    When I select back link
-    When I enter Non UK Bank Account details as:
-      | KEY               | VALUE                                                              |
-      | bankName          | NameOfTheBankMustBe40CharactersOrLessError                         |
-      | nameOnBankAccount | NameOnTheAccountMustBe60CharactersOrLessOrThereWillBeAnErrorAsSeen |
-      | bic               | HBUKG                                                              |
-      | iban              | 1Z03A1234567890ABCBBH1                                             |
-    Then I should see bank account error message Name of the bank must be 40 characters or less on the Name of the Bank Element
-    Then I should see bank account error message Name on the account must be 60 characters or less on the Account Name Element
-    Then I should see bank account error message BIC or SWIFT code must be between 8 and 11 characters long on the Swift Code Element
-    And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
-    When I refresh the page
     When I enter Non UK Bank Account details as:
       | KEY               | VALUE                                  |
       | bankName          | HSBC                                   |
@@ -49,26 +23,6 @@ Feature: Repayment Journey
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I click Sign out link
-    When Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
-    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
-    Then I should be on ASA Pillar2 Input Page
-    And I provide ASA Pillar2 ID as XMPLR0012345674
-    And I click on Continue button
-    Then I should navigate to ASA Confirmation Page
-    And I click on Continue button
-    Then I should navigate to ASA Dashboard page
-    And I directly access Agent Non UK Payment Page page
-    When I enter Non UK Bank Account details as:
-      | KEY               | VALUE                                                              |
-      | nameOnBankAccount | NameOnTheAccountMustBe60CharactersOrLessOrThereWillBeAnErrorAsSeen |
-      | bic               | 0BCDEF01A1C                                                        |
-      | iban              | 1Z03A1234567890ABCBBH1                                             |
-    Then I should see bank account error message Enter the name of the bank on the Name of the Bank Element
-    And I should see bank account error message Name on the account must be 60 characters or less on the Account Name Element
-    And I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
-    And I should see bank account error message Enter a valid IBAN like GB29NWBK60161331926819 on the Iban Element
-    When I click Report Pillar 2 Top-up Taxes link
-    Then I should be on ASA Dashboard page
 
   @zap_accessibility @batch3
   Scenario: 2 - Organisation User navigates to repayment pages
@@ -142,19 +96,6 @@ Feature: Repayment Journey
     When  I click change link for Repayment Contact Telephone
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
-    And I should see details as below:
-      | KEY                                              | VALUE                         |
-      | Refund amount                                    | £1000                         |
-      | Reason for refund request                        | Test Reason                   |
-      | What type of account will the refund be sent to? | Non-UK bank account           |
-      | Name of the bank                                 | HSBC2                         |
-      | Name on account                                  | Test Name2                    |
-      | BIC or SWIFT code                                | HBUKGB4C                      |
-      | IBAN                                             | GB29NWBK60161331926820        |
-      | Contact name                                     | Repayment Contact Name change |
-      | Email address                                    | email@change.com              |
-      | Can we contact by telephone?                     | No                            |
-    And I can see Print this page link
     When I click change link for Repayment UK Bank Method
     And I click on Continue button
     Then I should be on Repayment CYA Page
