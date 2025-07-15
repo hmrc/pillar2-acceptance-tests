@@ -7,35 +7,14 @@ Feature: Dashboard Page
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
-#    ------------------DashboardViewSpec
-#    And The Heading should be Your Pillar 2 Top-up Taxes account
-#    ---------------
     When I click Refer to the Pillar 2 Top-up Taxes manual (opens in new tab) link
     Then I should be navigated to new tab
     And  I should be on Draft guidance page
     Then I close new tab
     And I should navigate back to main tab
     And I should be on Dashboard page
-#    -----------------DashboardViewSpec
-#    And I should see User details in dashboard page
-#    And I should see user details row 1 key Group’s Pillar 2 Top-up Taxes ID:
-#    And I should see user details row 2 key Registration date:
-#    And I should see user details row 3 key Ultimate Parent Entity:
-#    And I should see the heading 1 on Dashboard page as Payments
-#    And The Body content should be You have no payments due
-#    And The Body content should be Make a payment
-#    And I should see the heading 2 on Dashboard page as Manage your account
-#    And The Body content should be View and amend contact details
-#    And The Body content should be View and amend group details
-#    And The Body content should be HMRC are currently delivering this service on a phased approach. We’ll release the tools that you need to submit your returns before the due date for reporting.
-#    And The Body content should be Refer to the Pillar 2 Top-up Taxes manual (opens in new tab) for more details.
-#    -------------------
     When I click Make a payment link
     Then I should navigate to Make a payment page
-#---------------------MakeAPaymentDashboardViewSpec
-#    And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 Top-up Taxes payments.
-#    And The Body content should be You can use the 'Pay Now' button to pay online, or read more about other payment methods. (opens in a new tab)
-#    --------------------
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     When I click Make a payment link
@@ -63,17 +42,6 @@ Feature: Dashboard Page
   Scenario: 2 - User navigates to group details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-   #    -----------------DashboardViewSpec
-#    And I should see User details in dashboard page
-#    And I should see user details row 1 key Group’s Pillar 2 Top-up Taxes ID:
-#    And I should see user details row 2 key Registration date:
-#    And I should see user details row 3 key Ultimate Parent Entity:
-#    And I should see user details row 1 value XMPLR0012345676
-#    And I should see user details row 2 value 31 January 2024
-#    And I should see user details row 3 value International Organisation Inc.
-#    And I should see the heading 1 on Dashboard page as Payments
-#    And I should see the heading 2 on Dashboard page as Manage your account
-    #    -----------------
     When I click View and amend group details link
     Then I should navigate to accounts summary page
     And the page title should be Group details - Report Pillar 2 Top-up Taxes - GOV.UK
