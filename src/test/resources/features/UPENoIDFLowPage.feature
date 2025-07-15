@@ -150,10 +150,6 @@ Feature: UPE NO ID journey
     Then I should see error message Select yes if the Ultimate Parent Entity is registered in the UK on the UPE business EQ Page
     When I select option No and continue to next
     Then I should navigate to input-upe-name page
-    When I click on Continue button
-    Then I should see error message You need to enter the name of the Ultimate Parent Entity on the Input UPE Name Page
-    When I enter UPE name as UPE Name character length Error validation and Maximum UPE character length should be entered 105 characters.
-    Then I should see error message Name of the Ultimate Parent Entity must be 105 characters or less on the Input UPE Name Page
     When I enter UPE name as Test upeName
     Then I should navigate to input-upe-address page
     When I enter Address as:

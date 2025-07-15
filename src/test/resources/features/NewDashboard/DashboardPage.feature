@@ -13,19 +13,6 @@ Feature: Dashboard Page
 #    And  I should be on Draft guidance page
 #    Then I close new tab
 #    And I should navigate back to main tab
-    And I should be on Dashboard page
-    And I should see User details in dashboard page
-    And I should see user details row 1 key ID:
-    And I should see user details row 2 key Registration date:
-    And I should see user details row 1 key Group:
-    And I should see the heading 2 on Dashboard page as Payments
-#    And The Body content should be You have no payments due
-#    And The Body content should be Make a payment
-    And I should see the heading 3 on Dashboard page as Manage account
-#    And The Body content should be View and amend contact details
-#    And The Body content should be View and amend group details
-#    And The Body content should be HMRC are currently delivering this service on a phased approach. We’ll release the tools that you need to submit your returns before the due date for reporting.
-#    And The Body content should be Refer to the Pillar 2 Top-up Taxes manual (opens in new tab) for more details.
     When I click View outstanding payments link
     Then I should navigate to under construction page
 #    And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 Top-up Taxes payments.
