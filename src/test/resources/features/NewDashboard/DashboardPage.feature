@@ -13,6 +13,7 @@ Feature: Dashboard Page
 #    And  I should be on Draft guidance page
 #    Then I close new tab
 #    And I should navigate back to main tab
+    And I should be on Dashboard page
     When I click View outstanding payments link
     Then I should navigate to under construction page
 #    And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 Top-up Taxes payments.
@@ -267,45 +268,44 @@ Feature: Dashboard Page
       | manage group status        | Manage group status Page              |
       | manage accounting period   | Manage accounting period Page         |
 
-  @batch3 #TODO: Payment screens are under construction
-  Scenario: 8 - Make successful payment as Organisation user
-    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
-    Then I should be on Dashboard page
-    When I click View outstanding payments link
-    Then I should navigate to Make a payment page
-    When I click on Continue button
-    Then I make successful payment
-    And I should navigate to Transaction History Page
-    When I click Report Pillar 2 Top-up Taxes link
-    Then I should be on Dashboard page
+  #@batch3 #TODO: Payment screens are under construction
+  #Scenario: 8 - Make successful payment as Organisation user
+  #  Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+  #  Then I should be on Dashboard page
+  #  When I click View outstanding payments link
+  #  Then I should navigate to Make a payment page
+  #  When I click on Continue button
+  #  Then I make successful payment
+  #  And I should navigate to Transaction History Page
+  #  When I click Report Pillar 2 Top-up Taxes link
+  #  Then I should be on Dashboard page
 
-  @batch3 #TODO: Payment screens are under construction
-  Scenario: 9 - Make successful payment as Agent
-    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
-    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
-    Then I should be on ASA Pillar2 Input Page
-    And I provide ASA Pillar2 ID as XMPLR0012345674
-    And I click on Continue button
-    Then I should navigate to ASA Confirmation Page
-    And I click on Continue button
-    Then I should navigate to ASA Dashboard page
-    And I can see Agent Services Account link
-    When I click View outstanding payments link
-    Then I should navigate to Make a payment page
-    When I click on Continue button
-    Then I make successful payment
-    And I should navigate to Transaction History Page
-    When I click Report Pillar 2 Top-up Taxes link
-    Then I should be on Dashboard page
+  #@batch3 #TODO: Payment screens are under construction
+  #Scenario: 9 - Make successful payment as Agent
+  #  Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+  #  And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
+  #  Then I should be on ASA Pillar2 Input Page
+  #  And I provide ASA Pillar2 ID as XMPLR0012345674
+  #  And I click on Continue button
+  #  Then I should navigate to ASA Confirmation Page
+  #  And I click on Continue button
+  #  Then I should navigate to ASA Dashboard page
+  #  And I can see Agent Services Account link
+  #  When I click View outstanding payments link
+  #  Then I should navigate to Make a payment page
+  #  When I click on Continue button
+  #  Then I make successful payment
+  #  And I should navigate to Transaction History Page
+  #  When I click Report Pillar 2 Top-up Taxes link
+  #  Then I should be on Dashboard page
 
-  @batch3 #TODO: Payment screens are under construction
-  Scenario: 10 - Back journey from Get ready to approve your payment page
-    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
-    Then I should be on Dashboard page
-    When I click Make a payment link
-    Then I should navigate to Make a payment page
-    When I click on Continue button
-    And I go till Get ready to approve your payment page
-    Then I should be able to navigate back to make a payment page
-    Then I should navigate to Make a payment page
-
+  #@batch3 #TODO: Payment screens are under construction
+  #Scenario: 10 - Back journey from Get ready to approve your payment page
+  #  Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
+  #  Then I should be on Dashboard page
+  #  When I click Make a payment link
+  #  Then I should navigate to Make a payment page
+  #  When I click on Continue button
+  #  And I go till Get ready to approve your payment page
+  #  Then I should be able to navigate back to make a payment page
+  #  Then I should navigate to Make a payment page
