@@ -36,7 +36,7 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
   val delegatedIdentifierNameField: String  = "delegatedEnrolment[0].taxIdentifier[0].name"
   val delegatedIdentifierValueField: String = "delegatedEnrolment[0].taxIdentifier[0].value"
   val delegatedAuthRuleField: String        = "delegatedEnrolment[0].delegatedAuthRule"
-  val addDelegatedEnrolmentCTA: String      = "[onclick='addDelegatedEnrolment()']"
+  val addDelegatedEnrolmentCTA: String      = "#js-add-delegated-enrolment"
 
   def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
