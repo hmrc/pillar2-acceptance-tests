@@ -26,13 +26,13 @@ Feature: Contact details for the filing member
     When I click Add further group details link
     When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
-      | KEY             | VALUE |
-      | startDate.day   | 15    |
-      | startDate.month | 1     |
-      | startDate.year  | 2024  |
-      | endDate.day     | 15    |
-      | endDate.month   | 1     |
-      | endDate.year    | 2025  |
+      | KEY             | VALUE   |
+      | startDate.day   | 15      |
+      | startDate.month | jan     |
+      | startDate.year  | 2024    |
+      | endDate.day     | 15      |
+      | endDate.month   | january |
+      | endDate.year    | 2025    |
     And I click on Continue button
     Then The Task Add contact details status should be Not started
     When I click Add contact details link
