@@ -57,8 +57,8 @@ the full journey pages included below:
 * https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/review-submit/confirmation
 * https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/pillar2-top-up-tax-home
 * https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/manage-account/contact-details/summary
-* https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/manage-account/further-details/change-group-status
-* https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/manage-account/further-details/change-accounting-period
+* https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/manage-account/account-details/change-group-status
+* https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/manage-account/account-details/change-accounting-period
 * https://www.staging.tax.service.gov.uk/report-pillar2-top-up-taxes/manage-account/account-details/summary
 
 #### The structure of the project is as follows:
