@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ManageAccountPeriodPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/further-details/change-accounting-period"
+  val url: String = s"$rootUrl" + "manage-account/account-details/change-accounting-period"
 
   val caption  = ".govuk-caption-l"
   val continue = ".govuk-button"

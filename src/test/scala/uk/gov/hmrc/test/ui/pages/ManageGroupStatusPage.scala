@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ManageGroupStatusPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/further-details/change-group-status"
+  val url: String = s"$rootUrl" + "manage-account/account-details/change-group-status"
 
   val caption  = ".govuk-caption-l"
   val continue = ".govuk-button"
