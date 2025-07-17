@@ -47,7 +47,7 @@ Feature: Dashboard Page
     And the page title should be Group details - Report Pillar 2 Top-up Taxes - GOV.UK
     And The Heading should be Group details
     And I should see row 1 key Where are the entities in your group located?
-    And I should see row 2 key Group’s current consolidated accounting period
+    And I should see row 2 key Group’s accounting period
     And I should see row 3 key Start date
     And I should see row 4 key End date
     And I should see row 1 value In the UK and outside the UK
