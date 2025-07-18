@@ -81,6 +81,7 @@ Feature: RFM Start page
     When I click the browser back button
     And I click Sign out link
 
+    #TODO Need to add all error messages to unit tests
   @batch2
   Scenario: 6 - Verify RFM start page and error validations on Enter pillar2 ID and Registration date page
     Given I clear the cache
@@ -89,97 +90,97 @@ Feature: RFM Start page
     And I click on Continue button
     Then I should be on RFM enter pillar2 id page
     And I click on Continue button
-#    Then I should see an error message Enter the group’s Pillar 2 Top-up Taxes ID on the RFM enter pillar2 id Page
+    Then I should see an error message Enter the group’s Pillar 2 Top-up Taxes ID on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as AXMPLR0123456785
     And I click on Continue button
-#    Then I should see an error message Pillar 2 Top-up Taxes ID must be 15 characters on the RFM enter pillar2 id Page
+    Then I should see an error message Pillar 2 Top-up Taxes ID must be 15 characters on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as a0000000909090
     And I click on Continue button
-#    Then I should see an error message Pillar 2 Top-up Taxes ID must be 15 characters on the RFM enter pillar2 id Page
+    Then I should see an error message Pillar 2 Top-up Taxes ID must be 15 characters on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as 0MPLR0123456789
     And I click on Continue button
-#    Then I should see an error message Enter the group’s Pillar 2 Top-up Taxes ID in the correct format on the RFM enter pillar2 id Page
+   Then I should see an error message Enter the group’s Pillar 2 Top-up Taxes ID in the correct format on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as XMplr0123456789
     And I click on Continue button
     Then I should be on RFM Registration Date Page
     And I click on Continue button
-#    Then I should see an error message Enter the registration date to the Report Pillar 2 Top-up Taxes service on the RFM Registration Date Page
+   Then I should see an error message Enter the registration date to the Report Pillar 2 Top-up Taxes service on the RFM Registration Date Page
     When Registration Day is entered as 15
     And I click on Continue button
-#    Then I should see an error message Registration date must include a month and year on the RFM Registration Date Page
+    Then I should see an error message Registration date must include a month and year on the RFM Registration Date Page
     When I refresh the page
     And Registration Month is entered as 1
     And I click on Continue button
-#    Then I should see an error message Registration date must include a day and year on the RFM Registration Date Page
+    Then I should see an error message Registration date must include a day and year on the RFM Registration Date Page
     When I refresh the page
     And Registration Year is entered as 2024
     And I click on Continue button
-#    Then I should see an error message Registration date must include a day and month on the RFM Registration Date Page
+    Then I should see an error message Registration date must include a day and month on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 15
     And Registration Month is entered as 1
     And I click on Continue button
-#    Then I should see an error message Registration date must include a year on the RFM Registration Date Page
+    Then I should see an error message Registration date must include a year on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 15
     And Registration Year is entered as 2024
     And I click on Continue button
-#    Then I should see an error message Registration date must include a month on the RFM Registration Date Page
+    Then I should see an error message Registration date must include a month on the RFM Registration Date Page
     When I refresh the page
     When Registration Month is entered as 1
     And Registration Year is entered as 2024
     And I click on Continue button
-#    Then I should see an error message Registration date must include a day on the RFM Registration Date Page
+    Then I should see an error message Registration date must include a day on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 0
     When Registration Month is entered as 0
     And Registration Year is entered as 2024
     And I click on Continue button
-#    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
+    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 1
     When Registration Month is entered as aa
     And Registration Year is entered as y2024
     And I click on Continue button
-#    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
+    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as aa
     When Registration Month is entered as m3
     And Registration Year is entered as y2024
     And I click on Continue button
-#    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
+    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 1
     When Registration Month is entered as aa
     And Registration Year is entered as y2024
     And I click on Continue button
-#    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
+    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 32
     When Registration Month is entered as 11
     And Registration Year is entered as 2024
     And I click on Continue button
-#    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
+    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 10
     When Registration Month is entered as 13
     And Registration Year is entered as 2024
     And I click on Continue button
-#    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
+    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 10
     When Registration Month is entered as 10
     And Registration Year is entered as 20244
     And I click on Continue button
-#    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
+    Then I should see an error message Registration date must be a real date on the RFM Registration Date Page
     When I refresh the page
     And I enter future date
     And I click on Continue button
-#    Then I should see an error message Registration date must be in the past on the RFM Registration Date Page
+    Then I should see an error message Registration date must be in the past on the RFM Registration Date Page
     When I refresh the page
     When Registration Day is entered as 10
     When Registration Month is entered as 10
     And Registration Year is entered as 2023
     And I click on Continue button
-#    Then I should see an error message Registration date must be on or after 31 December 2023 on the RFM Registration Date Page
+    Then I should see an error message Registration date must be on or after 31 December 2023 on the RFM Registration Date Page
     When I refresh the page
