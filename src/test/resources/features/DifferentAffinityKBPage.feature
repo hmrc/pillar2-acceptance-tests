@@ -15,10 +15,6 @@ Feature: Failure scenarios with different Affinity groups
   Scenario: 2 - User logins as Agent
     Given Agent User logs in to register for Pillar2
     Then I should be on Agent affinity KB page
-    #And The Heading should be Sorry, you’re unable to use this service
-    #And The Body content should be You’ve signed in using an agent Government Gateway user ID. Only groups can register to use this service.
-    #And The Body content should be if you are an agent that has been given authorisation to report Pillar 2 Top-up Taxes on behalf of a group, you must sign in via agent services
-    #And The Body content should be if you need to request authorisation to report Pillar 2 Top-up Taxes, you must request authorisation via agent services
     When I click sign in via agent services link
     Then I should navigate to agent services account page
     When I click the browser back button
@@ -37,9 +33,6 @@ Feature: Failure scenarios with different Affinity groups
   Scenario: 3 - User logins as Individual User
     Given Individual User logs in to register for Pillar2
     Then I should be on Individual affinity KB page
-   # And The Heading should be Sorry, you’re unable to use this service
-   # And The Body content should be You’ve signed in with an individual account. Only users with an organisation account can register to use this service.
-   # And The Body content should be If the group still needs to register, sign in to Government Gateway with an organisation account.
     When I click sign in to Government Gateway with an organisation account. link
     Then I should be on auth-login page
     When Individual User logs in to register for Pillar2
