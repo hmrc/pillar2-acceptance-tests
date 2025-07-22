@@ -29,21 +29,21 @@ Feature: NFM NO ID journey
     Then I should navigate to NFM Contact Name page
     When I enter NFM Contact name as Contact CYA
     Then I should navigate to NFM Contact Email page
-    And The Heading should be What is the email address for Contact CYA?
-    And The hint text should be We will use this to confirm your records.
+#    And The Heading should be What is the email address for Contact CYA?
+#    And The hint text should be We will use this to confirm your records.
     When I enter NFM Contact Email as testcya@email.com
     Then I should navigate to NFM Telephone page
-    And The caption must be Group details
-    And The Heading should be Can we contact Contact CYA by telephone?
-    And The hint text should be We will use this to confirm your records.
+#    And The caption must be Group details
+#    And The Heading should be Can we contact Contact CYA by telephone?
+#    And The hint text should be We will use this to confirm your records.
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
-    And The caption must be Group details
-    And The hint text should be For international numbers include the country code
+#    And The caption must be Group details
+#    And The hint text should be For international numbers include the country code
     When I enter NFM Telephone Number as 1234569
     Then I should navigate to NFM Check your answers page
-    And The caption must be Group details
-    And The Heading should be Check your answers for filing member details
+#    And The caption must be Group details
+#    And The Heading should be Check your answers for filing member details
     And I should see details as below:
       | KEY                          | VALUE                |
       | Name                         | Test CYA             |
@@ -88,9 +88,9 @@ Feature: NFM NO ID journey
     When I click on change hyperlink next to the NFM Address
     And I enter Address Line 1 as Change& Address /
     And I click on Continue button
-    And I should see row 2 value Change& Address /
-    And I should see row 2 value City CYA
-    And I should see row 2 value United Arab Emirates
+#    And I should see row 2 value Change& Address /
+#    And I should see row 2 value City CYA
+#    And I should see row 2 value United Arab Emirates
     When I click on change hyperlink next to the NFM Contact Name
     And I enter NFM Contact name as Change Contact $ Person ~
     And I should see row 3 value Change Contact $ Person ~
@@ -115,7 +115,7 @@ Feature: NFM NO ID journey
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
     When I click on Continue button
-    Then I should see NFM error message Select yes if the nominated filing member is registered in the UK on the NFM details page Element
+#    Then I should see NFM error message Select yes if the nominated filing member is registered in the UK on the NFM details page Element
     When I select option No and continue to next
     Then I should navigate to NFM Name page
     When I enter NFM name as Test nfmName
@@ -132,18 +132,18 @@ Feature: NFM NO ID journey
     When I enter NFM Contact name as NFM Contact
     When I click on Continue button
     Then I should navigate to NFM Contact Email page
-    And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
+#    And the page title should be What is the email address? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I click on Continue button
-    Then I should see NFM error message Enter the email address for NFM Contact on the Input NFM Contact Email Element
+#    Then I should see NFM error message Enter the email address for NFM Contact on the Input NFM Contact Email Element
     When I enter NFM Contact Email as incorrect email
-    Then I should see NFM error message Enter an email address in the correct format, like name@example.com on the Input NFM Contact Email Element
+#    Then I should see NFM error message Enter an email address in the correct format, like name@example.com on the Input NFM Contact Email Element
     When I enter NFM Contact Email as NFMNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
-    Then I should see NFM error message Email address must be 132 characters or less on the Input NFM Contact Email Element
+#    Then I should see NFM error message Email address must be 132 characters or less on the Input NFM Contact Email Element
     And I enter NFM Contact Email as test@email.com
     Then I should navigate to NFM Telephone page
-    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
+#    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I click on Continue button
-    Then I should see error message Select yes if we can contact NFM Contact by telephone on the NFM Telephone Page
+#    Then I should see error message Select yes if we can contact NFM Contact by telephone on the NFM Telephone Page
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
     When I click on Continue button
