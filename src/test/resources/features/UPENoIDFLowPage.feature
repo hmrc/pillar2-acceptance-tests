@@ -114,7 +114,7 @@ Feature: UPE NO ID journey
       | KEY          | VALUE                |
       | addressLine1 | Test Address Line 1  |
       | addressLine3 | Test City            |
-      | postalCode   | E H 5 5 W Y          |
+      | postalCode   | EH5 5WY              |
       | countryCode  | United Arab Emirates |
     When I click on Continue button
     When I enter UPE Person/Team name as UPE Contact Name
@@ -156,7 +156,7 @@ Feature: UPE NO ID journey
       | KEY          | VALUE                |
       | addressLine1 | Test Address Line 1  |
       | addressLine3 | Test City            |
-      | postalCode   | E H 5 5 W Y          |
+      | postalCode   | EH5 5WY              |
       | countryCode  | United Arab Emirates |
     When I click on Continue button
     Then I should navigate to UPE Contact person/team Name page
