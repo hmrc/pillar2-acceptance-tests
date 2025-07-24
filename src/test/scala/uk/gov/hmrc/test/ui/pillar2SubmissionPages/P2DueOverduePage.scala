@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2DueOverduePage extends PageObject {
-  val url: String = s"$p2SubRootUrl" + "due-and-overdue-returns"
+  val url: String = s"$rootUrl" + "due-and-overdue-returns"
 
   val submissionhistory     = "//*[a[contains(text(), 'due and overdue returns')]]"
   val actualMessage         = "//p[contains(text(), 'Your group is up to date')]"
