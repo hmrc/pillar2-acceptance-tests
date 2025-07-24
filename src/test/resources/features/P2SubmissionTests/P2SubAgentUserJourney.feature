@@ -1,4 +1,4 @@
-@p2tests  @p2zap_p2accessibility
+@tests @p2zap_p2accessibility
 Feature: Pillar2 submission Agent User Journey
   As an Agent authenticated user
   I should be able to access Agent features
