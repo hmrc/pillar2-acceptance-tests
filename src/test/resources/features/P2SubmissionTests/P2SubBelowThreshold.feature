@@ -1,4 +1,4 @@
-@tests @p2zap_p2accessibility
+@p2tests @p2zap_p2accessibility
 Feature: Pillar2 submission Below threshold  notification user journey
   As an authenticated user
   I should be able to complete below threshold notification journey
