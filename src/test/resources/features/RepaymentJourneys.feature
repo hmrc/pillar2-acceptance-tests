@@ -28,7 +28,7 @@ Feature: Repayment Journey
   Scenario: 2 - Organisation User navigates to repayment pages
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
@@ -116,7 +116,7 @@ Feature: Repayment Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Agent Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
@@ -135,7 +135,7 @@ Feature: Repayment Journey
     Then I should be on UK Bank Account Payment Page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Agent Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
@@ -196,17 +196,14 @@ Feature: Repayment Journey
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
     And I should see details as below:
-      | KEY                                              | VALUE                         |
-      | Refund amount                                    | £1000                         |
-      | Reason for refund request                        | Test Reason                   |
-      | What type of account will the refund be sent to? | Non-UK bank account           |
-      | Name of the bank                                 | HSBC2                         |
-      | Name on account                                  | Test Name2                    |
-      | BIC or SWIFT code                                | HBUKGB4C                      |
-      | IBAN                                             | GB29NWBK60161331926820        |
-      | Contact name                                     | Repayment Contact Name change |
-      | Email address                                    | email@change.com              |
-      | Can we contact by telephone?                     | No                            |
+      | KEY                          | VALUE                         |
+      | Name of the bank             | HSBC2                         |
+      | Name on account              | Test Name2                    |
+      | BIC or SWIFT code            | HBUKGB4C                      |
+      | IBAN                         | GB29NWBK60161331926820        |
+      | Contact name                 | Repayment Contact Name change |
+      | Email address                | email@change.com              |
+      | Can we contact by telephone? | No                            |
     When I click change link for Repayment UK Bank Method
     When I select repayment method as UK bank account
     And I click on Continue button
@@ -241,7 +238,7 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Agent Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
@@ -303,7 +300,7 @@ Feature: Repayment Journey
   Scenario: 5 - Organisation User navigates to repayment journey pages for UK bank account
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
@@ -363,7 +360,7 @@ Feature: Repayment Journey
   Scenario: 6 - Organisation User navigates to error page when repayment submission API fails to submit data to ETMP
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
@@ -400,7 +397,7 @@ Feature: Repayment Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
