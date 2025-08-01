@@ -82,15 +82,15 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     When I provide RFM second contact number as 09872960001
     Then I should navigate to RFM Final Review Page
     And I should see details as below:
-      | KEY                                                   | VALUE                      |
-      | Company                                               | Test Example Company Name  |
-      | Company Registration Number                           | 76543210                   |
-      | Unique Taxpayer Reference                             | 1234567890                 |
-      | Do you have a secondary contact?                      | Yes                        |
-      | Second contact name                                   | RFM second test contact    |
-      | Second contact email address                          | rfmsecondcontact@email.com |
-      | Can we contact the secondary contact by telephone?    | Yes                        |
-      | Second contact telephone number                       | 09872960001                |
+      | KEY                                            | VALUE                      |
+      | Company                                        | Test Example Company Name  |
+      | Company Registration Number                    | 76543210                   |
+      | Unique Taxpayer Reference                      | 1234567890                 |
+      | Do you have a secondary contact?               | Yes                        |
+      | Second contact name                            | RFM second test contact    |
+      | Second contact email address                   | rfmsecondcontact@email.com |
+      | Can we contact the secondary contact by phone? | Yes                        |
+      | Second contact phone number                    | 09872960001                |
     When I click change link for RFM New NFM Name
     And I provide RFM contact name as RFM test contact change
     And I should see the row 5 value RFM test contact change

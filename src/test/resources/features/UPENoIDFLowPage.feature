@@ -38,16 +38,16 @@ Feature: UPE NO ID journey
     And The caption must be Group details
     And The Heading should be Check your answers for ultimate parent details
     And I should see details as below:
-      | KEY                          | VALUE                    |
-      | Name                         | Test UPE                 |
-      | Address                      | Address Line 1 UPE       |
-      | Address                      | City UPE                 |
-      | Address                      | INVALID                  |
-      | Address                      | United Arab Emirates     |
-      | Contact name                 | Contact UPE              |
-      | Email address                | testcontactupe@email.com |
-      | Can we contact by telephone? | Yes                      |
-      | Telephone number             | 1234569                  |
+      | KEY                      | VALUE                    |
+      | Name                     | Test UPE                 |
+      | Address                  | Address Line 1 UPE       |
+      | Address                  | City UPE                 |
+      | Address                  | INVALID                  |
+      | Address                  | United Arab Emirates     |
+      | Contact name             | Contact UPE              |
+      | Email address            | testcontactupe@email.com |
+      | Can we contact by phone? | Yes                      |
+      | Phone number             | 1234569                  |
     When I click on Continue button
     Then I should be on Task list page
     And The Task Edit Ultimate Parent Entity details status should be Completed

@@ -175,8 +175,8 @@ Feature: Contact details for the filing member
       | Address                                       | United Arab Emirates           |
       | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
-      | Can we contact by telephone?                  | Yes                            |
-      | Telephone number                              | 123456                         |
+      | Can we contact by phone?                      | Yes                            |
+      | phone number                                  | 123456                         |
       | Is there a nominated filing member            | No                             |
       | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |

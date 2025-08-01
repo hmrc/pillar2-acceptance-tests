@@ -34,7 +34,7 @@ Feature: NFM NO ID journey
     When I enter NFM Contact Email as testcya@email.com
     Then I should navigate to NFM Telephone page
     And The caption must be Group details
-    And The Heading should be Can we contact Contact CYA by telephone?
+    And The Heading should be Can we contact Contact CYA by phone?
     And The hint text should be We will use this to confirm your records.
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
@@ -45,15 +45,15 @@ Feature: NFM NO ID journey
     And The caption must be Group details
     And The Heading should be Check your answers for filing member details
     And I should see details as below:
-      | KEY                          | VALUE                |
-      | Name                         | Test CYA             |
-      | Address                      | Address Line 1 CYA   |
-      | Address                      | City CYA             |
-      | Address                      | United Arab Emirates |
-      | Contact name                 | Contact CYA          |
-      | Email address                | testcya@email.com    |
-      | Can we contact by telephone? | Yes                  |
-      | Telephone number             | 1234569              |
+      | KEY                      | VALUE                |
+      | Name                     | Test CYA             |
+      | Address                  | Address Line 1 CYA   |
+      | Address                  | City CYA             |
+      | Address                  | United Arab Emirates |
+      | Contact name             | Contact CYA          |
+      | Email address            | testcya@email.com    |
+      | Can we contact by phone? | Yes                  |
+      | Phone number             | 1234569              |
     When I select back link
     Then I should navigate to input nfm telephone page
     When I click on Continue button
@@ -141,9 +141,9 @@ Feature: NFM NO ID journey
     Then I should see NFM error message Email address must be 132 characters or less on the Input NFM Contact Email Element
     And I enter NFM Contact Email as test@email.com
     Then I should navigate to NFM Telephone page
-    And the page title should be Can we contact by telephone? - Report Pillar 2 Top-up Taxes - GOV.UK
+    And the page title should be Can we contact by phone? - Report Pillar 2 Top-up Taxes - GOV.UK
     When I click on Continue button
-    Then I should see error message Select yes if we can contact NFM Contact by telephone on the NFM Telephone Page
+    Then I should see error message Select yes if we can contact NFM Contact by phone on the NFM Telephone Page
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
     When I click on Continue button

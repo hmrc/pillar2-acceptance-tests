@@ -143,7 +143,7 @@ Feature: Contact details for the filing member
     And I enter Contact Email as email&change@test.com
     Then I should navigate to Contact details Check answers page
     When I click on change link for Phone number
-    And I enter Contact Telephone as 1234555
+    And I enter Contact Phone as 1234555
     When I click on change link for Second Contact Name
     And I enter Second Contact Name as Second Contact Name Change
     When I click on change link for Second Contact Email
@@ -519,16 +519,16 @@ Feature: Contact details for the filing member
     And I enter Telephone Number as 1234569
     Then I should be on Check your answers page
     And I should see details as below:
-      | KEY                          | VALUE                    |
-      | Name                         | Medium Processing Corp   |
-      | Address                      | Address Line 1 UPE       |
-      | Address                      | City UPE                 |
-      | Address                      | INVALID                  |
-      | Address                      | United Arab Emirates     |
-      | Contact name                 | Medium Processing        |
-      | Email address                | testcontactupe@email.com |
-      | Can we contact by telephone? | Yes                      |
-      | Telephone number             | 1234569                  |
+      | KEY                      | VALUE                    |
+      | Name                     | Medium Processing Corp   |
+      | Address                  | Address Line 1 UPE       |
+      | Address                  | City UPE                 |
+      | Address                  | INVALID                  |
+      | Address                  | United Arab Emirates     |
+      | Contact name             | Medium Processing        |
+      | Email address            | testcontactupe@email.com |
+      | Can we contact by phone? | Yes                      |
+      | phone number             | 1234569                  |
     When I click on Continue button
     Then I should navigate to Task list page
     When I click Add filing member details link

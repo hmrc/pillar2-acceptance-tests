@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ContactDetailsTelephonePage extends PageObject {
-  val url: String     = s"$rootUrl" + "contact-details/telephone"
+  val url: String     = s"$rootUrl" + "contact-details/phone"
   val continue        = "#submit"
   val telephoneNumber = "#value"
 
