@@ -214,6 +214,7 @@ trait CommonFunctions
       case "Manage accounting period Page"              => ManageAccountPeriodPage
       case "Manage Account processing Page"             => ManageAccountProcessingPage
       case "Manage Contact processing Page"             => ManageContactProcessingPage
+      case "Outstanding Payment Page"                   => OutstandingPaymentsPage
     }
   }
 }
