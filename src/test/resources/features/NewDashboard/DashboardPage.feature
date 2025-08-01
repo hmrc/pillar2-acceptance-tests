@@ -15,13 +15,13 @@ Feature: Dashboard Page
 #    And I should navigate back to main tab
     And I should be on Dashboard page
     When I click View outstanding payments link
-    Then I should navigate to under construction page
+    Then I should navigate to Outstanding Payment Page
 #    And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 Top-up Taxes payments.
 #    And The Body content should be You can use the 'Pay Now' button to pay online, or read more about other payment methods. (opens in a new tab)
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     When I click View outstanding payments link
-    Then I should navigate to under construction page
+    Then I should navigate to Outstanding Payment Page
     When I select back link
     Then I should be on Dashboard page
     When I click Manage contact details link
