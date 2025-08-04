@@ -33,7 +33,7 @@ object ReviewAnswersPage extends PageObject {
   val changeUPEAddress       = "a[href*='ultimate-parent/no-id/change-input-address']"
   val changeUPEBName         = "a[href*='ultimate-parent/no-id/change-input-business-name']"
   val changeEmail            = "a[href*='ultimate-parent/no-id/change-input-email']"
-  val changeUPEContact       = "a[href*='/change-telephone']"
+  val changeUPEContact       = "a[href*='/change-phone']"
   val changeUPEContactNumber = "a[href*='/change-input-telephone']"
 
   // NFM Section

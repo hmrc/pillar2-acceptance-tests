@@ -1,4 +1,4 @@
-@tests
+@tests1
 Feature: Contact details for the filing member
   As a NFM Subscription user
   I want to enter contact details and navigate to dashboard page
@@ -59,7 +59,7 @@ Feature: Contact details for the filing member
     Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
-    When I enter Telephone Number as 1234554
+    When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
     When I select option No and continue to next
@@ -143,7 +143,7 @@ Feature: Contact details for the filing member
     And I enter Contact Email as email&change@test.com
     Then I should navigate to Contact details Check answers page
     When I click on change link for Phone number
-    And I enter Contact Phone as 1234555
+    And I enter Contact Telephone as 1234555
     When I click on change link for Second Contact Name
     And I enter Second Contact Name as Second Contact Name Change
     When I click on change link for Second Contact Email
@@ -174,7 +174,7 @@ Feature: Contact details for the filing member
       | Address                                       | United Arab Emirates           |
       | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
-      | Can we contact by telephone?                  | Yes                            |
+      | Can we contact by phone?                      | Yes                            |
       | Phone number                                  | 1234555                        |
       | Is there a nominated filing member            | No                             |
       | Where are the entities in your group located? | In the UK and outside the UK   |
@@ -226,7 +226,7 @@ Feature: Contact details for the filing member
     When I enter UPE Person/Team name as UPE Test
     When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
-    And I enter Telephone Number as 123456
+    And I enter Phone Number as 123456
     And I click on Continue button
     When I click Add filing member details link
     When I select Yes option and continue to next

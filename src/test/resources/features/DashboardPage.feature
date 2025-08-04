@@ -85,8 +85,8 @@ Feature: Dashboard Page
     Then I should navigate to contact details summary page
     When I click on change link for Email address
     When I enter Contact Email as contact*@email.com
-    When I click on change link for phone number
-    When I enter Telephone number as 123456789
+    When I click on change link for Phone number
+    When I enter Telephone Number as 123456789
     When I click on change link for Do you have a second contact?
     When I select option No and continue to next
     When I click on change link for Do you have a second contact?

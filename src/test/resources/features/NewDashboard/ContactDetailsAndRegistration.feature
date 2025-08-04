@@ -176,7 +176,7 @@ Feature: Contact details for the filing member
       | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
       | Can we contact by phone?                      | Yes                            |
-      | phone number                                  | 123456                         |
+      | Phone number                                  | 123456                         |
       | Is there a nominated filing member            | No                             |
       | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |
