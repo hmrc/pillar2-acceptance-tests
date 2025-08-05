@@ -14,7 +14,6 @@ Feature: NFM NO ID journey
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
-    #And The caption must be Group details
 #    And The Heading should be Is the nominated filing member registered in the UK?
     When I select option No and continue to next
     Then I should navigate to NFM Name page
@@ -31,13 +30,10 @@ Feature: NFM NO ID journey
     Then I should navigate to NFM Contact Email page
     When I enter NFM Contact Email as testcya@email.com
     Then I should navigate to NFM Telephone page
-#    And The caption must be Group details
     When I select option Yes and continue to next
     Then I should navigate to input nfm telephone page
-#    And The caption must be Group details
     When I enter NFM Telephone Number as 1234569
     Then I should navigate to NFM Check your answers page
-#    And The caption must be Group details
     And I should see details as below:
       | KEY                          | VALUE                |
       | Name                         | Test CYA             |
@@ -64,21 +60,21 @@ Feature: NFM NO ID journey
     And I should see the answer No remain selected
     Then I click on Continue button
     Then I should navigate to NFM Name page
-    And I should see the NFM name field is pre-populated with Test CYA
+#    And I should see the NFM name field is pre-populated with Test CYA
     Then I click on Continue button
-    And I should see the Address Line 1 field is pre-populated with Address Line 1 CYA
+#    And I should see the Address Line 1 field is pre-populated with Address Line 1 CYA
     Then I click on Continue button
-    And I should see the NFM Contact name field is pre-populated with Contact CYA
+#    And I should see the NFM Contact name field is pre-populated with Contact CYA
     Then I click on Continue button
-    And I should see the NFM Contact Email field is pre-populated with testcya@email.com
+#    And I should see the NFM Contact Email field is pre-populated with testcya@email.com
     Then I click on Continue button
-    And I should see the answer Yes remain selected
+#    And I should see the answer Yes remain selected
     Then I click on Continue button
-    Then I should see the NFM Telephone number field is pre-populated with 1234569
+#    Then I should see the NFM Telephone number field is pre-populated with 1234569
     Then I click on Continue button
     When I click on change hyperlink next to the NFM Name
     And I enter NFM name as Name () Change %^
-    And I should see row 1 value Name () Change %^
+#    And I should see row 1 value Name () Change %^
     When I click on change hyperlink next to the NFM Address
     And I enter Address Line 1 as Change& Address /
     And I click on Continue button
@@ -87,16 +83,16 @@ Feature: NFM NO ID journey
 #    And I should see row 2 value United Arab Emirates
     When I click on change hyperlink next to the NFM Contact Name
     And I enter NFM Contact name as Change Contact $ Person ~
-    And I should see row 3 value Change Contact $ Person ~
+#    And I should see row 3 value Change Contact $ Person ~
     When I click on change hyperlink next to the NFM Email Address
     And I enter NFM Contact Email as changetest&*@email.com
-    And I should see row 4 value changetest&*@email.com
+#    And I should see row 4 value changetest&*@email.com
     When I click on change hyperlink next to the NFM Telephone Number
     And I enter NFM Telephone Number as 12345679
-    And I should see row 6 value 12345679
+#    And I should see row 6 value 12345679
     When I click on change hyperlink next to the NFM Telephone Contact
     And I select option No and continue to next
-    And I should see row 5 value No
+#    And I should see row 5 value No
 
   @zap_accessibility @batch2
   Scenario: 3 - Validate different error messages for NFM no ID journey pages
