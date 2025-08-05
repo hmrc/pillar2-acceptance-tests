@@ -117,7 +117,7 @@ Feature: Contact details for the filing member
     Then The Task Edit contact details status should be Completed
     And The Task Check your answers status should be Not started
 
-  @batch1
+  @tests1
   Scenario: 2 - Check you Answers Page Validations
     Given Organisation User navigates to Contact Details check your answer page with credId ContactDetails
     Then I should be on Contact details Check answers page
@@ -495,6 +495,7 @@ Feature: Contact details for the filing member
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
+  @tests1
   Scenario: 6 - UPE No Id journey navigation to registration in progress page
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page

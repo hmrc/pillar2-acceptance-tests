@@ -38,7 +38,7 @@ Feature: Agent user journeys
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Home Page
 
-  @batch1
+  @tests1
   Scenario: 2 - Agent user accessing dashboard features after login
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
