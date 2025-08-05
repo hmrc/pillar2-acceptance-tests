@@ -14,7 +14,6 @@ Feature: NFM NO ID journey
     Then I should navigate to NFM registration page
     When I select Yes option and continue to next
     Then I should navigate to NFM details page
-#    And The Heading should be Is the nominated filing member registered in the UK?
     When I select option No and continue to next
     Then I should navigate to NFM Name page
     When I enter NFM name as Test CYA
@@ -78,9 +77,6 @@ Feature: NFM NO ID journey
     When I click on change hyperlink next to the NFM Address
     And I enter Address Line 1 as Change& Address /
     And I click on Continue button
-#    And I should see row 2 value Change& Address /
-#    And I should see row 2 value City CYA
-#    And I should see row 2 value United Arab Emirates
     When I click on change hyperlink next to the NFM Contact Name
     And I enter NFM Contact name as Change Contact $ Person ~
 #    And I should see row 3 value Change Contact $ Person ~

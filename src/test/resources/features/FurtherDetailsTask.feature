@@ -27,33 +27,6 @@ Feature: Further Details Task page validation
     When I select option Only in the UK in further details group status page
     Then I should navigate to Group accounting period page
     And I click on Continue button
-#    Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
-#    Then I should see error message Enter the end date of the group’s accounting period on the Group Accounting Period End Date Page
-    When I enter account period as:
-      | KEY             | VALUE |
-      | startDate.day   | 30    |
-      | startDate.month | 12    |
-      | startDate.year  | 2023  |
-#    Then I should see error message Start date must be on or after 31 December 2023 on the Group Accounting Period Start Date Page
-    When I enter account period as:
-      | KEY             | VALUE |
-      | startDate.day   | 15    |
-      | startDate.month | 1     |
-      | startDate.year  | 2024  |
-      | endDate.day     | 14    |
-      | endDate.month   | 1     |
-      | endDate.year    | 2024  |
-#    Then I should see error message End date must be after the start date on the Group Accounting Period End Date Page
-    When I enter account period as:
-      | KEY             | VALUE |
-      | startDate.day   | 1     |
-      | startDate.month | 15    |
-      | startDate.year  | 2024  |
-      | endDate.day     | 12    |
-      | endDate.month   | 20    |
-      | endDate.year    | 2024  |
-#    Then I should see error message Start date must be a real date on the Group Accounting Period Start Date Page
-#    And I should see error message End date must be a real date on the Group Accounting Period End Date Page
     When I enter account period as:
       | KEY             | VALUE |
       | startDate.day   | 15    |
@@ -141,19 +114,6 @@ Feature: Further Details Task page validation
     And I click on Continue button
     When I refresh the page
     When Accounting Period Start Day is entered as 10
-    And Accounting Period Start Month is entered as 12
-    And I click on Continue button
-#    Then I should see error message Start date must include a year on the Group Accounting Period Start Date Page
-#    Then I should see error message Enter the end date of the group’s accounting period on the Group Accounting Period End Date Page
-    When I refresh the page
-    When Accounting Period Start Day is entered as AA
-    And Accounting Period Start Month is entered as 12
-    And Accounting Period Start Year is entered as 2024
-    And I click on Continue button
-#    Then I should see error message Start date must be a real date on the Group Accounting Period Start Date Page
-#    Then I should see error message Enter the end date of the group’s accounting period on the Group Accounting Period End Date Page
-    When I refresh the page
-    When Accounting Period Start Day is entered as 10
     And Accounting Period Start Month is entered as 15
     And Accounting Period Start Year is entered as 2024
     And I click on Continue button
@@ -173,39 +133,6 @@ Feature: Further Details Task page validation
     And I click on Continue button
 #    Then I should see error message Start date must be a real date on the Group Accounting Period Start Date Page
 #    Then I should see error message Enter the end date of the group’s accounting period on the Group Accounting Period End Date Page
-    When I refresh the page
-    When Accounting Period End Day is entered as 12
-    And I click on Continue button
-#    Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
-#    Then I should see error message End date must include a month and year on the Group Accounting Period End Date Page
-    When I refresh the page
-    When Accounting Period End Month is entered as 10
-    And I click on Continue button
-#    Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
-#    Then I should see error message End date must include a day and year on the Group Accounting Period End Date Page
-    When I refresh the page
-    When Accounting Period End Year is entered as 2024
-    And I click on Continue button
-#    Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
-#    Then I should see error message End date must include a day and month on the Group Accounting Period End Date Page
-    When I refresh the page
-    And Accounting Period End Month is entered as 10
-    When Accounting Period End Year is entered as 2024
-    And I click on Continue button
-#    Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
-#    Then I should see error message End date must include a day on the Group Accounting Period End Date Page
-    When I refresh the page
-    When Accounting Period End Day is entered as 40
-    When Accounting Period End Year is entered as 2024
-    And I click on Continue button
-#    Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
-#    Then I should see error message End date must include a month on the Group Accounting Period End Date Page
-    When I refresh the page
-    When Accounting Period End Day is entered as 40
-    And Accounting Period End Month is entered as 10
-    And I click on Continue button
-#    Then I should see error message Enter the start date of the group’s accounting period on the Group Accounting Period Start Date Page
-#    Then I should see error message End date must include a year on the Group Accounting Period End Date Page
     When I refresh the page
     When Accounting Period End Day is entered as DD
     And Accounting Period End Month is entered as MM
