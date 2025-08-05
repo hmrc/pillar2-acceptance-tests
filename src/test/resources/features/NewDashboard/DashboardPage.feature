@@ -144,7 +144,7 @@ Feature: Dashboard Page
       | Contact name                                   | Contact Name Test #        |
       | Email address                                  | contact*@email.com         |
       | Can we contact the primary contact by phone?   | Yes                        |
-      | Phone number                                   | 123456789                  |
+      | Primary phone number                           | 123456789                  |
       | Do you have a second contact?                  | Yes                        |
       | Second contact name                            | Second Contact £ Name Test |
       | Second contact email address                   | second&Contact@email.com   |
