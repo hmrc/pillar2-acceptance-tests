@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #This script supports linux and mac installations.
-DEFAULT_VERSION="0.34.0"
+DEFAULT_VERSION="0.21.0"
 
 OS=${1:-linux64}
 GECKO_VERSION=${2:-$DEFAULT_VERSION}
