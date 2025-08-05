@@ -1,4 +1,4 @@
-@tests1
+@tests
 Feature: Contact details for the filing member
   As a NFM Subscription user
   I want to enter contact details and navigate to dashboard page
@@ -126,7 +126,7 @@ Feature: Contact details for the filing member
       | Contact name                                   | Contact Name Test        |
       | Email address                                  | testContact@email.com    |
       | Can we contact the primary contact by phone?   | Yes                      |
-      | Phone number                                   | 1234554                  |
+      | Primary phone number                           | 1234554                  |
       | Do you have a second contact?                  | Yes                      |
       | Second contact name                            | Second Contact Name Test |
       | Second contact email address                   | secondContact@email.com  |
@@ -157,7 +157,7 @@ Feature: Contact details for the filing member
       | KEY                                            | VALUE                          |
       | Contact name                                   | Contact $ Name Change          |
       | Email address                                  | email&change@test.com          |
-      | Phone number                                   | 1234555                        |
+      | Primary phone number                           | 1234555                        |
       | Second contact name                            | Second Contact Name Change     |
       | Second contact email address                   | secondContact&change@email.com |
       | Can we contact the secondary contact by phone? | Yes                            |
@@ -175,7 +175,7 @@ Feature: Contact details for the filing member
       | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
       | Can we contact by phone?                      | Yes                            |
-      | Phone number                                  | 1234555                        |
+      | Phone number                                  | 123456                         |
       | Is there a nominated filing member            | No                             |
       | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |
@@ -226,7 +226,7 @@ Feature: Contact details for the filing member
     When I enter UPE Person/Team name as UPE Test
     When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
-    And I enter Phone Number as 123456
+    And I enter Telephone Number as 123456
     And I click on Continue button
     When I click Add filing member details link
     When I select Yes option and continue to next
@@ -528,7 +528,7 @@ Feature: Contact details for the filing member
       | Contact name             | Medium Processing        |
       | Email address            | testcontactupe@email.com |
       | Can we contact by phone? | Yes                      |
-      | phone number             | 1234569                  |
+      | Phone number             | 1234569                  |
     When I click on Continue button
     Then I should navigate to Task list page
     When I click Add filing member details link
