@@ -22,7 +22,6 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     When I click on Continue button
     Then I should be on RFM Corp Position Page
     When I click on Continue button
-#    Then I should see an error message Select if you are the Ultimate Parent Entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
     Then I should be on New NFM guidance page
     When I click on Continue button
