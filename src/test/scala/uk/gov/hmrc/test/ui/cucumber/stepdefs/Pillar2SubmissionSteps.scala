@@ -154,8 +154,8 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
 
   And("""^I select option (.*) and continue on Pillar2 submission$""") { (option: String) =>
     option match {
-      case "Yes" => Input.clickByCss("#value")
-      case "No"  => Input.clickByCss("#value-no")
+      case "Yes" => Input.clickByCss("#value_0")
+      case "No"  => Input.clickByCss("#value_1")
     }
     P2SubBtnStartPage.clickContinue()
   }

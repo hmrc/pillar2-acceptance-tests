@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.pages.AgentAffinityKBPage.startAgain
 
 object P2SubBtnChangeDomesticOrMnePage extends PageObject {
-  val url: String = s"$p2SubRootUrl" + "below-threshold-notification/change-domestic-or-multinational"
+  val url: String = s"$rootUrl" + "below-threshold-notification/change-domestic-or-multinational"
   val changeDomesticOrMne             = "a[href*='/change-domestic-or-multinational']"
 }
