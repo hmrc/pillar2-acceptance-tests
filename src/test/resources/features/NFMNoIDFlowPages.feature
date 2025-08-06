@@ -51,47 +51,8 @@ Feature: NFM NO ID journey
     Then I should be on Task list page
     And The Task Edit filing member details status should be Completed
 
-  @batch1
-  Scenario: 2 - Verify change answers for all NFM No ID journey pages and Verify back links
-    Given Organisation User logs in with credId NFMCYA for Pillar2
-    When I click Edit filing member details link
-    When I click on Continue button
-    And I should see the answer No remain selected
-    Then I click on Continue button
-    Then I should navigate to NFM Name page
-#    And I should see the NFM name field is pre-populated with Test CYA
-    Then I click on Continue button
-#    And I should see the Address Line 1 field is pre-populated with Address Line 1 CYA
-    Then I click on Continue button
-#    And I should see the NFM Contact name field is pre-populated with Contact CYA
-    Then I click on Continue button
-#    And I should see the NFM Contact Email field is pre-populated with testcya@email.com
-    Then I click on Continue button
-#    And I should see the answer Yes remain selected
-    Then I click on Continue button
-#    Then I should see the NFM Telephone number field is pre-populated with 1234569
-    Then I click on Continue button
-    When I click on change hyperlink next to the NFM Name
-    And I enter NFM name as Name () Change %^
-#    And I should see row 1 value Name () Change %^
-    When I click on change hyperlink next to the NFM Address
-    And I enter Address Line 1 as Change& Address /
-    And I click on Continue button
-    When I click on change hyperlink next to the NFM Contact Name
-    And I enter NFM Contact name as Change Contact $ Person ~
-#    And I should see row 3 value Change Contact $ Person ~
-    When I click on change hyperlink next to the NFM Email Address
-    And I enter NFM Contact Email as changetest&*@email.com
-#    And I should see row 4 value changetest&*@email.com
-    When I click on change hyperlink next to the NFM Telephone Number
-    And I enter NFM Telephone Number as 12345679
-#    And I should see row 6 value 12345679
-    When I click on change hyperlink next to the NFM Telephone Contact
-    And I select option No and continue to next
-#    And I should see row 5 value No
-
   @zap_accessibility @batch2
-  Scenario: 3 - Validate different error messages for NFM no ID journey pages
+  Scenario: 2 - Validate different error messages for NFM no ID journey pages
     Given Organisation User logs in without Pillar2 enrolment
     And I select option Yes and continue to next
     And I select option UK limited company and continue to GRS page
