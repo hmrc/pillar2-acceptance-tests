@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.{findByCss, findById}
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2SubBtnMultipleAccountingPage extends PageObject {
-  val url: String                           = s"$p2SubRootUrl" + "below-threshold-notification/choose-accounting-period"
+  val url: String                           = s"$rootUrl" + "below-threshold-notification/choose-accounting-period"
   val CurrentAccountingPeriod               = "radio_0"
   val PreviousAccountingPeriod              = "radio_1"
   val PreviousAccountingPeriodUKTRSubmitted = "radio_2"

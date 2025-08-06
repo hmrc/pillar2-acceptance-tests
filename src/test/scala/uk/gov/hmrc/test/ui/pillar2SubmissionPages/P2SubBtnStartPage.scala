@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2SubBtnStartPage extends PageObject {
-  val url: String = s"$p2SubRootUrl" + "below-threshold-notification/start"
+  val url: String = s"$rootUrl" + "below-threshold-notification/start"
   val continue    = "button.govuk-button"
 
   def clickContinue(): Unit = findByCss(continue).click()
