@@ -342,7 +342,7 @@ Feature: RFM CYA - NFM No ID flow
     Then I should see an error message You need to enter the email address for RFM second test contact on the RFM contact email Page
     When I provide RFM contact email as rfmsecondcontact@email.com
     Then I click on Continue button
-    Then I should see an error message Select yes if we can contact RFM second test contact by telephone on the RFM input telephone Page
+    Then I should see an error message Select yes if we can contact RFM second test contact by phone on the RFM input telephone Page
     When I select option Yes and continue to next
     When I provide RFM second contact number as 09872960001
     When I enter Address as:

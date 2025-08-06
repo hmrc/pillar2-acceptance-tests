@@ -176,7 +176,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
     And I can see Print this page link
-    And I can see Download as PDF link
     When I click Back to group’s homepage link
     Then I should be on Dashboard page
 

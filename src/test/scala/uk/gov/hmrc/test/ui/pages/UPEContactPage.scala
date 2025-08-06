@@ -20,8 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UPEContactPage extends PageObject {
-//  val url: String        = s"$rootUrl"+"business-matching/ultimate-parent/no-id/telephone"
-  val url: String = s"$rootUrl" + "under-construction"
+  val url: String        = s"$rootUrl" + "business-matching/ultimate-parent/no-id/phone"
 
   val caption      = ".govuk-caption-l"
   val continue     = ".govuk-button"
