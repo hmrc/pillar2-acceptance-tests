@@ -10,12 +10,12 @@ Feature: RFM Start page
     And I click on Continue button
     When Individual User logs in with rfm URL to Pillar2
     Then I should be on Individual RFM KB Page
-#    And The Heading should be Sorry, you’re unable to use this service
-#    And The Body content should be You’ve signed in with an individual account. Only users with an organisation account can replace their nominated filing member.
-#    And The Body content should be If you need to replace a nominated filing member, sign in to Government Gateway with an organisation account.
+    And The Heading should be Sorry, you’re unable to use this service
+    And The Body content should be You’ve signed in with an individual account. Only users with an organisation account can replace their nominated filing member.
+    And The Body content should be If you need to replace a nominated filing member, sign in to Government Gateway with an organisation account.
     When I click sign in to Government Gateway with an organisation account link
     Then I should be on auth-login page
-#    And I should see the Redirect URL field is pre-populated with /replace-filing-member/start
+    And I should see the Redirect URL field is pre-populated with /replace-filing-member/start
     When I click the browser back button
     Then I should be on Individual RFM KB Page
     When I click Find out more about who can use this service link
@@ -29,10 +29,10 @@ Feature: RFM Start page
   Scenario: 2 - Verify Agent RFM KB page
     Given Agent User logs in with rfm URL to Pillar2
     Then I should be on Agent RFM KB Page
-#    And The Heading should be Sorry, you’re unable to use this service
-#    And The Body content should be You’ve signed in using an agent’s Government Gateway user ID.
-#    And The Body content should be Agents cannot use this service to replace a nominated filing member.
-#    And The Body content should be Someone with an administrator’s Government Gateway user ID who is the new nominated filing member will need to replace the current filing member.
+    And The Heading should be Sorry, you’re unable to use this service
+    And The Body content should be You’ve signed in using an agent’s Government Gateway user ID.
+    And The Body content should be Agents cannot use this service to replace a nominated filing member.
+    And The Body content should be Someone with an administrator’s Government Gateway user ID who is the new nominated filing member will need to replace the current filing member.
     When I click Find out more about who can use this service link
     Then I should be on RFM start page
     When I select back link
@@ -55,9 +55,9 @@ Feature: RFM Start page
   Scenario: 4 - Verify already enrolled Organisation User KB page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 with rfm URL to Pillar2 service
     Then I should be on Duplicate RFM KB Page
-#    And The Heading should be You cannot replace the current filing member for this group
-#    And The Body content should be The Government Gateway user ID you entered as the replacement is currently registered as the nominated filing member for this group.
-#    And The Body content should be To replace the nominated filing member for this group, the new nominated filing member will need to try again with their Government Gateway user ID.
+    And The Heading should be You cannot replace the current filing member for this group
+    And The Body content should be The Government Gateway user ID you entered as the replacement is currently registered as the nominated filing member for this group.
+    And The Body content should be To replace the nominated filing member for this group, the new nominated filing member will need to try again with their Government Gateway user ID.
     When I click Find out more about who can use this service link
     Then I should be on RFM start page
     When I select back link
