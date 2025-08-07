@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2SubBTNProblemWithServicePage extends PageObject {
-  val url: String = s"$p2SubRootUrl" + "below-threshold-notification/problem-with-service"
+  val url: String = s"$rootUrl" + "below-threshold-notification/problem-with-service"
 
   val header: String = "h1.govuk-heading-xl"
 

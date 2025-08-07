@@ -19,6 +19,6 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentProcessingPage extends PageObject {
-  val url: String    = s"$rootUrl" + "repayment/processing-refund"
+  val url: String    = s"$rootUrl" + "repayment/processing-repayment"
   val loadingSpinner = ".hods-loading-spinner__spinner"
 }

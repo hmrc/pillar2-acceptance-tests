@@ -33,7 +33,7 @@ object ReviewAnswersPage extends PageObject {
   val changeUPEAddress       = "a[href*='ultimate-parent/no-id/change-input-address']"
   val changeUPEBName         = "a[href*='ultimate-parent/no-id/change-input-business-name']"
   val changeEmail            = "a[href*='ultimate-parent/no-id/change-input-email']"
-  val changeUPEContact       = "a[href*='/change-telephone']"
+  val changeUPEContact       = "a[href*='/change-phone']"
   val changeUPEContactNumber = "a[href*='/change-input-telephone']"
 
   // NFM Section
@@ -52,8 +52,8 @@ object ReviewAnswersPage extends PageObject {
   // First Contact Section
   val changePCName          = "a[href*='/change-input-name']"
   val changePCEmail         = "a[href*='/change-input-email']"
-  val changePCContact       = "a[href*='/change-telephone']"
-  val changePCContactNumber = "a[href*='/change-input-telephone']"
+  val changePCContact       = "a[href*='/change-phone']"
+  val changePCContactNumber = "a[href*='/change-input-phone']"
 
   // Second Contact Section
   val changeSC              = "a[href*='/change-second-contact']"

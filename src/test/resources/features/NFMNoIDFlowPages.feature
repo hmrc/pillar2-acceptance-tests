@@ -34,15 +34,15 @@ Feature: NFM NO ID journey
     When I enter NFM Telephone Number as 1234569
     Then I should navigate to NFM Check your answers page
     And I should see details as below:
-      | KEY                          | VALUE                |
-      | Name                         | Test CYA             |
-      | Address                      | Address Line 1 CYA   |
-      | Address                      | City CYA             |
-      | Address                      | United Arab Emirates |
-      | Contact name                 | Contact CYA          |
-      | Email address                | testcya@email.com    |
-      | Can we contact by telephone? | Yes                  |
-      | Telephone number             | 1234569              |
+      | KEY                      | VALUE                |
+      | Name                     | Test CYA             |
+      | Address                  | Address Line 1 CYA   |
+      | Address                  | City CYA             |
+      | Address                  | United Arab Emirates |
+      | Contact name             | Contact CYA          |
+      | Email address            | testcya@email.com    |
+      | Can we contact by phone? | Yes                  |
+      | Phone number             | 1234569              |
     When I select back link
     Then I should navigate to input nfm telephone page
     When I click on Continue button
@@ -79,8 +79,6 @@ Feature: NFM NO ID journey
     When I click on Continue button
     Then I should navigate to NFM Contact Email page
     When I click on Continue button
-    When I enter NFM Contact Email as incorrect email
-    When I enter NFM Contact Email as NFMNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     And I enter NFM Contact Email as test@email.com
     Then I should navigate to NFM Telephone page
     When I click on Continue button

@@ -47,7 +47,7 @@ Feature: Dashboard Page
     And the page title should be Group details - Report Pillar 2 Top-up Taxes - GOV.UK
     And The Heading should be Group details
     And I should see row 1 key Where are the entities in your group located?
-    And I should see row 2 key Group’s current consolidated accounting period
+    And I should see row 2 key Group’s accounting period
     And I should see row 3 key Start date
     And I should see row 4 key End date
     And I should see row 1 value In the UK and outside the UK
@@ -108,7 +108,7 @@ Feature: Dashboard Page
     And I should be on Dashboard page
 
   @batch2
-  Scenario: 5 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
+  Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
@@ -127,7 +127,7 @@ Feature: Dashboard Page
     Then I should be on Dashboard page
 
   @batch1
-  Scenario: 6 - Verify Transaction History pages for Org user
+  Scenario: 5 - Verify Transaction History pages for Org user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0000000122 for Pillar2 service
     Then I should be on Dashboard page
     When I click View your transaction history link
@@ -178,7 +178,7 @@ Feature: Dashboard Page
     Then I should be on Transaction History Page
 
   @batch2
-  Scenario Outline: 7 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages
+  Scenario Outline: 6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages
     Given Organisation User logs in to register for Pillar2
     And I should be on Task list page
     When I access the <page name> page
@@ -216,7 +216,7 @@ Feature: Dashboard Page
       | manage accounting period   | Manage accounting period Page         |
 
   @batch3
-  Scenario: 8 - Make successful payment as Organisation user
+  Scenario: 7 - Make successful payment as Organisation user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     When I click Make a payment link
@@ -229,7 +229,7 @@ Feature: Dashboard Page
 
 
   @batch3
-  Scenario: 9 - Make successful payment as Agent
+  Scenario: 8 - Make successful payment as Agent
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
@@ -248,7 +248,7 @@ Feature: Dashboard Page
     Then I should be on Dashboard page
 
   @batch3
-  Scenario: 10 - Back journey from Get ready to approve your payment page
+  Scenario: 9 - Back journey from Get ready to approve your payment page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     When I click Make a payment link

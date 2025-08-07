@@ -26,13 +26,13 @@ Feature: Contact details for the filing member
     When I click Add further group details link
     When I select option In the UK and outside the UK in further details group status page
     When I enter account period as:
-      | KEY             | VALUE |
-      | startDate.day   | 15    |
-      | startDate.month | 1     |
-      | startDate.year  | 2024  |
-      | endDate.day     | 15    |
-      | endDate.month   | 1     |
-      | endDate.year    | 2025  |
+      | KEY             | VALUE   |
+      | startDate.day   | 15      |
+      | startDate.month | jan     |
+      | startDate.year  | 2024    |
+      | endDate.day     | 15      |
+      | endDate.month   | january |
+      | endDate.year    | 2025    |
     And I click on Continue button
     Then The Task Add contact details status should be Not started
     When I click Add contact details link
@@ -59,7 +59,7 @@ Feature: Contact details for the filing member
     Then I should navigate to Contact details telephone page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
-    When I enter Telephone Number as 1234554
+    When I enter Contact Telephone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
     When I select option No and continue to next
@@ -126,7 +126,7 @@ Feature: Contact details for the filing member
       | Contact name                                   | Contact Name Test        |
       | Email address                                  | testContact@email.com    |
       | Can we contact the primary contact by phone?   | Yes                      |
-      | Phone number                                   | 1234554                  |
+      | Primary phone number                           | 1234554                  |
       | Do you have a second contact?                  | Yes                      |
       | Second contact name                            | Second Contact Name Test |
       | Second contact email address                   | secondContact@email.com  |
@@ -157,7 +157,7 @@ Feature: Contact details for the filing member
       | KEY                                            | VALUE                          |
       | Contact name                                   | Contact $ Name Change          |
       | Email address                                  | email&change@test.com          |
-      | Phone number                                   | 1234555                        |
+      | Primary phone number                           | 1234555                        |
       | Second contact name                            | Second Contact Name Change     |
       | Second contact email address                   | secondContact&change@email.com |
       | Can we contact the secondary contact by phone? | Yes                            |
@@ -174,8 +174,8 @@ Feature: Contact details for the filing member
       | Address                                       | United Arab Emirates           |
       | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
-      | Can we contact by telephone?                  | Yes                            |
-      | Phone number                                  | 1234555                        |
+      | Can we contact by phone?                      | Yes                            |
+      | Phone number                                  | 123456                         |
       | Is there a nominated filing member            | No                             |
       | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |
@@ -519,16 +519,16 @@ Feature: Contact details for the filing member
     And I enter Telephone Number as 1234569
     Then I should be on Check your answers page
     And I should see details as below:
-      | KEY                          | VALUE                    |
-      | Name                         | Medium Processing Corp   |
-      | Address                      | Address Line 1 UPE       |
-      | Address                      | City UPE                 |
-      | Address                      | INVALID                  |
-      | Address                      | United Arab Emirates     |
-      | Contact name                 | Medium Processing        |
-      | Email address                | testcontactupe@email.com |
-      | Can we contact by telephone? | Yes                      |
-      | Telephone number             | 1234569                  |
+      | KEY                      | VALUE                    |
+      | Name                     | Medium Processing Corp   |
+      | Address                  | Address Line 1 UPE       |
+      | Address                  | City UPE                 |
+      | Address                  | INVALID                  |
+      | Address                  | United Arab Emirates     |
+      | Contact name             | Medium Processing        |
+      | Email address            | testcontactupe@email.com |
+      | Can we contact by phone? | Yes                      |
+      | Phone number             | 1234569                  |
     When I click on Continue button
     Then I should navigate to Task list page
     When I click Add filing member details link

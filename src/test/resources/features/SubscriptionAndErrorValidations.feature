@@ -99,7 +99,7 @@ Feature: Create a new registration and subscription
     When I click on Continue button
     When I click Check your answers before submitting your registration link
     When I click on change link for Primary Contact
-    Then I should navigate to Contact details change telephone page
+    Then I should navigate to Contact details change phone page
     When I select option Yes and continue to next
     And I select back link
     And I select back link
