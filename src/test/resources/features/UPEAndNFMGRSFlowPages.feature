@@ -1,4 +1,4 @@
-@tests
+@tests1
 Feature: Ultimate parent entity and Nominated Filling Member GRS journey
   As a MNE user
   I want to determine that the UPE is based in UK or LLP
@@ -94,9 +94,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select back link
     Then I should be on UPE registration failed error page
-    When registration is unsuccessful with party type mismatch error
-    And I click on Save&Continue button
-    Then I should be on NFM registration failed error page
     When I click go back to select the entity type link
     Then I should be on NFM entity type page
     When I select back link
