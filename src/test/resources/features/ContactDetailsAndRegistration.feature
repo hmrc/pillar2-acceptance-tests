@@ -495,7 +495,7 @@ Feature: Contact details for the filing member
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
-  Scenario: 6 - UPE No Id journey navigation to registration in progress page
+  Scenario: 6 - UPE No Id journey navigation to dashboard page
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
     When I select option No and continue to next
@@ -572,7 +572,4 @@ Feature: Contact details for the filing member
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
     And I click report and manage your Pillar 2 Top-up Taxes link
-    Then I should be on Registration In Progress page
-    And The Heading should be Your registration is in progress
-    When I refresh the registration in progress page
     Then I should be on Dashboard page

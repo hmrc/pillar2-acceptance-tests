@@ -210,6 +210,7 @@ class UPEPageSteps extends CommonFunctions {
   }
 
   And("""^I should see the (.*) field is pre-populated with (.*)$""") { (field: String, name: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
     field match {
       case "UPE name" =>
         assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
@@ -239,6 +240,7 @@ class UPEPageSteps extends CommonFunctions {
       case "NFM Contact Email" =>
         assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
       case "NFM Telephone number" =>
+        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.telephoneNumber)
         assert(getAttributeOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
       case "Contact Name" =>
         assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
@@ -274,8 +276,12 @@ class UPEPageSteps extends CommonFunctions {
 
   And("""^I select option (.*) and continue to GRS page$""") { (option: String) =>
     option match {
-      case "UK limited company"            => Input.clickById("value_0")
-      case "Limited liability partnership" => Input.clickById("value_1")
+      case "UK limited company"            => 
+        Wait.waitForElementToPresentById("value_0")
+        Input.clickById("value_0")
+      case "Limited liability partnership" => 
+        Wait.waitForElementToPresentById("value_1")
+        Input.clickById("value_1")
     }
     UPEEntityTypePage.clickContinue()
   }

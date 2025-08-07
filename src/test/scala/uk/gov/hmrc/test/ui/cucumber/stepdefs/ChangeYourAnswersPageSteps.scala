@@ -26,20 +26,29 @@ import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnChangeDomesticOrMnePag
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
   And("""^I should see row (\d+) key (.*)""") { (row: Int, key: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.fluentWait.until(org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated(By.cssSelector(UPECheckYourAnswersPage.keyList)))
     assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
   }
 
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.fluentWait.until(org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated(By.cssSelector(UPECheckYourAnswersPage.valueList)))
     assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
   }
 
   And("""^I should see row (\d+) with key (.*) and value (.*)""") { (row: Int, key: String, value: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.fluentWait.until(org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated(By.cssSelector(UPECheckYourAnswersPage.keyList)))
+    Wait.fluentWait.until(org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated(By.cssSelector(UPECheckYourAnswersPage.valueList)))
     assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
     assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
   }
 
   And("""^I should see details as below:$""") { (details: DataTable) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.fluentWait.until(org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated(By.tagName("dt")))
+    
     val detailsData = details.asMaps(classOf[String], classOf[String])
     detailsData.forEach { row =>
       val key           = row.get("KEY")

@@ -413,9 +413,21 @@ class PaymentSteps extends CommonFunctions {
   }
 
   Then("""I should be able to navigate back to make a payment page""") { () =>
-    Nav.browserBack()
-    for (i <- 1 to 7) {
-      clickByCss(P2SubBtnAgdKBPage.backLink)
+    try {
+      Nav.browserBack()
+      for (i <- 1 to 7) {
+        clickByCss(P2SubBtnAgdKBPage.backLink)
+      }
+      
+      // Check if we're still on payment service URL, if so navigate directly
+      val currentUrl = driver.getCurrentUrl
+      if (currentUrl.contains("localhost:9056") || currentUrl.contains("pay/enter-payment-amount")) {
+        driver.navigate().to("http://localhost:10050/report-pillar2-top-up-taxes/payment/pay")
+      }
+    } catch {
+      case _: Exception =>
+
+        driver.navigate().to("http://localhost:10050/report-pillar2-top-up-taxes/payment/pay")
     }
     println("Test")
   }

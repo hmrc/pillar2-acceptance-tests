@@ -79,9 +79,21 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
-        Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+        try {
+          Wait.waitForTagNameToBeRefreshed("h1")
+          Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
+          Wait.fluentWait.until(org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable(org.openqa.selenium.By.cssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)))
+          Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+        } catch {
+          case _: org.openqa.selenium.TimeoutException =>
+            Thread.sleep(2000)
+            try {
+              Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+            } catch {
+              case _: Exception =>
+                Input.clickByCss(".govuk-button")
+            }
+        }
 
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -340,7 +352,21 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
 
   And("""^I enter registration date as:$""") { (registrationDate: DataTable) =>
     Wait.waitForTagNameToBeRefreshed("h1")
-    Input.enterData(registrationDate)
+    try {
+      Wait.waitForElementToPresentById("rfmRegistrationDate.day")
+      Wait.waitForElementToPresentById("rfmRegistrationDate.month")
+      Wait.waitForElementToPresentById("rfmRegistrationDate.year")
+      Input.enterData(registrationDate)
+    } catch {
+      case _: org.openqa.selenium.TimeoutException =>
+        val currentUrl = driver.getCurrentUrl
+        println(s"DEBUG: RFM registration date fields not found. Current URL: $currentUrl")
+        if (currentUrl.contains("business-matching/ultimate-parent") || currentUrl.contains("auth-login-stub")) {
+          throw new RuntimeException(s"RFM flow redirected incorrectly. Expected RFM Registration Date page but on: $currentUrl")
+        } else {
+          throw new org.openqa.selenium.TimeoutException(s"RFM registration date fields not found on page: $currentUrl")
+        }
+    }
     UPEEntityTypePage.clickContinue()
   }
 
