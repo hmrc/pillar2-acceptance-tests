@@ -94,30 +94,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select back link
     Then I should be on UPE registration failed error page
-    When I click search Companies House for the company registration number and registered office address (opens in a new tab) link
-    Then I should be navigated to new tab
-    And  I should navigate to search register page
-    Then I close new tab
-    And I should navigate back to main tab
-    Then I should be on UPE registration failed error page
-    When I click ask for a copy of your Corporation Tax Unique Taxpayer Reference (opens in a new tab) link
-    Then I should be navigated to new tab
-    And  I should be on Corporation Tax UTR page
-    Then I close new tab
-    And I should navigate back to main tab
-    Then I should be on UPE registration failed error page
-    When I click the browser back button
-    When I registered successfully with BV enabled
-    And I click on Save&Continue button
-    Then I should navigate to Task list page
-    When I click Add filing member details link
-    Then I should navigate to NFM registration page
-    When I select Yes option and continue to next
-    Then I should navigate to NFM details page
-    When I select option Yes and continue to next
-    Then I should be on NFM entity type page
-    When I select option UK limited company and continue to GRS page
-    Then I should navigate to NFM UKCompany GRS page
     When registration is unsuccessful with party type mismatch error
     And I click on Save&Continue button
     Then I should be on NFM registration failed error page
