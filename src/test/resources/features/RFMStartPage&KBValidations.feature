@@ -81,6 +81,7 @@ Feature: RFM Start page
     When I click the browser back button
     And I click Sign out link
 
+    #TODO Need to add all error messages to unit tests
   @batch2
   Scenario: 6 - Verify RFM start page and error validations on Enter pillar2 ID and Registration date page
     Given I clear the cache
@@ -98,12 +99,12 @@ Feature: RFM Start page
     Then I should see an error message Pillar 2 Top-up Taxes ID must be 15 characters on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as 0MPLR0123456789
     And I click on Continue button
-    Then I should see an error message Enter the group’s Pillar 2 Top-up Taxes ID in the correct format on the RFM enter pillar2 id Page
+   Then I should see an error message Enter the group’s Pillar 2 Top-up Taxes ID in the correct format on the RFM enter pillar2 id Page
     When I provide RFM pillar2 id as XMplr0123456789
     And I click on Continue button
     Then I should be on RFM Registration Date Page
     And I click on Continue button
-    Then I should see an error message Enter the registration date to the Report Pillar 2 Top-up Taxes service on the RFM Registration Date Page
+   Then I should see an error message Enter the registration date to the Report Pillar 2 Top-up Taxes service on the RFM Registration Date Page
     When Registration Day is entered as 15
     And I click on Continue button
     Then I should see an error message Registration date must include a month and year on the RFM Registration Date Page

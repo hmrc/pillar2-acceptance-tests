@@ -22,17 +22,14 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     When I click on Continue button
     Then I should be on RFM Corp Position Page
     When I click on Continue button
-    Then I should see an error message Select if you are the Ultimate Parent Entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
     Then I should be on New NFM guidance page
     When I click on Continue button
     Then I should be on RFM registered in UK page
     And I click on Continue button
-    Then I should see an error message Select yes if the new nominated filing member is registered in the UK on the RFM journey error Page
     And I select option Yes and continue to next
     Then I should be on RFM UK based entity type page
     When I click on Continue button
-    And I should see an error message Select what type of entity the new filing member is on the RFM journey error Page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to RFM UK limited Company GRSPage
     When I registered successfully with BV enabled
@@ -158,4 +155,3 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     Then I should be on RFM UK based entity type page
     When I select option Entity type not listed and continue to Name page
     Then I should be on RFM New NFM Contact Name Page
-

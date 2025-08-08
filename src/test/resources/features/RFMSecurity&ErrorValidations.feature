@@ -173,4 +173,3 @@ Feature: RFM check your answers page
     When I click on Continue button
     Then I access RFM corporate position page
     And I should see the corporate position UPE remain selected
-

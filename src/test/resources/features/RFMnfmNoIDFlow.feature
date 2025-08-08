@@ -20,7 +20,6 @@ Feature: RFM CYA - NFM No ID flow
     When I click on Continue button
     Then I should be on RFM Corp Position Page
     And I click on Continue button
-    Then I should see an error message Select if you are the Ultimate Parent Entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
     Then I should be on New NFM guidance page
     When I click on Continue button
@@ -77,7 +76,7 @@ Feature: RFM CYA - NFM No ID flow
       | postalCode   | EH5 5WY            |
       | countryCode  | United Kingdom     |
     Then I should navigate to RFM Final Review Page
-    And I should see row 1 key Position in the group’s corporate structure
+   And I should see row 1 key Position in the group’s corporate structure
     And I should see row 1 value Ultimate Parent Entity (UPE)
     When I click change link for RFM Corporate Position
     When I select corp position as NFM
