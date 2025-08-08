@@ -213,7 +213,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   And("""^click (.*)$""") { (id: String) =>
-    Input.clickByLinkText(id)
+    NavigationHelper.clickLinkTextWithRetry(id)
   }
 
   And("""^I click start over CTA$""") { () =>

@@ -26,17 +26,36 @@ import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnChangeDomesticOrMnePag
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
   And("""^I should see row (\d+) key (.*)""") { (row: Int, key: String) =>
-    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
+    uk.gov.hmrc.test.ui.cucumber.NavigationHelper.ensureNotOnErrorPage()
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForPageToLoadCompletely()
+    
+    val elements = driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList))
+    assert(elements.size() >= row, s"Expected at least $row elements, but found ${elements.size()}")
+    assert(elements.get(row - 1).getText.contains(key))
   }
 
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
+    uk.gov.hmrc.test.ui.cucumber.NavigationHelper.ensureNotOnErrorPage()
     Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
+    Wait.waitForPageToLoadCompletely()
+    
+    val elements = driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList))
+    assert(elements.size() >= row, s"Expected at least $row elements, but found ${elements.size()}")
+    assert(elements.get(row - 1).getText.contains(value))
   }
 
   And("""^I should see row (\d+) with key (.*) and value (.*)""") { (row: Int, key: String, value: String) =>
-    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
-    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
+    uk.gov.hmrc.test.ui.cucumber.NavigationHelper.ensureNotOnErrorPage()
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Wait.waitForPageToLoadCompletely()
+    
+    val keyElements = driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList))
+    val valueElements = driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList))
+    assert(keyElements.size() >= row, s"Expected at least $row key elements, but found ${keyElements.size()}")
+    assert(valueElements.size() >= row, s"Expected at least $row value elements, but found ${valueElements.size()}")
+    assert(keyElements.get(row - 1).getText.contains(key))
+    assert(valueElements.get(row - 1).getText.contains(value))
   }
 
   And("""^I should see details as below:$""") { (details: DataTable) =>

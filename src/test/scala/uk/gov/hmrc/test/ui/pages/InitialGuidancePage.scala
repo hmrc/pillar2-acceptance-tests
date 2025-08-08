@@ -27,6 +27,6 @@ object InitialGuidancePage extends PageObject {
   val continue       = ".govuk-button"
   val backLink       = ".govuk-back-link"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue(): Unit = uk.gov.hmrc.test.ui.cucumber.NavigationHelper.clickElementWithStaleRetry(continue)
 
 }

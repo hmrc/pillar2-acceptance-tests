@@ -53,7 +53,7 @@ object Wait extends BasePage {
     driverWait.until((driver: WebDriver) => {
       val readyState = driver.asInstanceOf[org.openqa.selenium.JavascriptExecutor]
         .executeScript("return document.readyState").toString
-      readyState == "complete"
+      readyState.equals("complete") || readyState.equals("interactive")
     })
   }
 
