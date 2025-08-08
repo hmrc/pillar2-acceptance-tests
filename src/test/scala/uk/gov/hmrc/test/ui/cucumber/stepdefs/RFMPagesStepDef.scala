@@ -79,9 +79,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
-        Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+        RFMHelper.enterPillar2IdSafely(name)
 
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -283,11 +281,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
-    option match {
-      case "UPE" => Input.clickById("value_0")
-      case "NFM" => Input.clickById("value_1")
-    }
-    RFMStartPage.clickContinue()
+    RFMHelper.selectCorporatePositionSafely(option)
   }
 
   And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
@@ -339,9 +333,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
   }
 
   And("""^I enter registration date as:$""") { (registrationDate: DataTable) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
+    RFMHelper.waitForRFMPageLoad()
+    RFMHelper.waitForRFMNavigation("replace-filing-member/security/registration-date")
     Input.enterData(registrationDate)
-    UPEEntityTypePage.clickContinue()
+    RFMHelper.continueWithSafeClick()
   }
 
   Then("""I should be redirected to {string} or {string}""") { (page1: String, page2: String) =>

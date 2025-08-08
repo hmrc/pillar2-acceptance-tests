@@ -512,7 +512,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   And("""^I click (.*) link$""") { (linkText: String) =>
-    Input.clickByLinkText(linkText)
+    NavigationHelper.clickLinkTextWithRetry(linkText)
   }
 
   And("""^I select option (.*) and continue to next$""") { (option: String) =>

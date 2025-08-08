@@ -37,11 +37,15 @@ object Check extends BasePage {
   def checkSubHeading(p: String): Assertion =
     Find.findByCss("#main-content > div > div > p:nth-child(2)").getText should include(p)
 
-  def assertNavigationToPage(page: PageObject): Boolean =
+  def assertNavigationToPage(page: PageObject): Boolean = {
+    NavigationHelper.ensureNotOnErrorPage()
     Wait.waitForUrlToBeVisible(page.url)
+  }
 
-  def assertNavigationUrl(page: PageObject): Boolean =
+  def assertNavigationUrl(page: PageObject): Boolean = {
+    NavigationHelper.ensureNotOnErrorPage()
     Wait.waitForUrl(page.url)
+  }
 
   def assertNavigationToPageUrl(page: PageObject): Assertion = {
     Wait.waitForUrlToBeVisible(page.url)

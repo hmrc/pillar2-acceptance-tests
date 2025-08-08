@@ -38,7 +38,34 @@ object Wait extends BasePage {
 
   private def waitForElement(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
-  def secondsWait(secs: Int): Unit = Thread.sleep(secs.*(1000))
+  def waitForLinkTextToBePresent(linkText: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(25))
+    driverWait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText)))
+  }
+
+  def waitForLinkTextToBeClickable(linkText: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(25))
+    driverWait.until(ExpectedConditions.elementToBeClickable(By.linkText(linkText)))
+  }
+
+  def waitForPageToLoadCompletely(): Unit = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
+    driverWait.until((driver: WebDriver) => {
+      val readyState = driver.asInstanceOf[org.openqa.selenium.JavascriptExecutor]
+        .executeScript("return document.readyState").toString
+      readyState == "complete"
+    })
+  }
+
+  def waitForUrlToChange(currentUrl: String): Boolean = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
+    driverWait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(currentUrl)))
+  }
+
+  def waitForElementToBeStale(element: WebElement): Boolean = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10))
+    driverWait.until(ExpectedConditions.stalenessOf(element))
+  }
 
   def waitForElementToClickTagName(tagName: String): WebElement = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10))
