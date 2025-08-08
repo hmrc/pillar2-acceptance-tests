@@ -77,7 +77,7 @@ Feature: Further Details Task page validation
     And I should see row 4 value 5 June 2026
     And I should see row 4 value 5 June 2026
 
-#  @batch2 check this again
+  @batch2
   Scenario: 3 - Accounting period page Error Validations
     Given I clear the cache
     Given Organisation User logs in as upe with credId APErrors for Pillar2
