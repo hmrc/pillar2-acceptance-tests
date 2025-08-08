@@ -29,6 +29,7 @@ object Wait extends BasePage {
     .withTimeout(Duration.ofSeconds(20))
     .pollingEvery(Duration.ofMillis(250))
     .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+    .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
 
   def waitForElement(id: String): WebElement = waitForElement(By.id(id))
 
