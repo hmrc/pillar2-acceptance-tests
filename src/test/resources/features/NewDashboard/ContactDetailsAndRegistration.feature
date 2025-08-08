@@ -127,7 +127,7 @@ Feature: Contact details for the filing member
       | Contact name                                   | Contact Name Test        |
       | Email address                                  | testContact@email.com    |
       | Can we contact the primary contact by phone?   | Yes                      |
-      | Phone number                                   | 1234554                  |
+      | Primary phone number                           | 1234554                  |
       | Do you have a second contact?                  | Yes                      |
       | Second contact name                            | Second Contact Name Test |
       | Second contact email address                   | secondContact@email.com  |
@@ -158,7 +158,7 @@ Feature: Contact details for the filing member
       | KEY                                            | VALUE                          |
       | Contact name                                   | Contact $ Name Change          |
       | Email address                                  | email&change@test.com          |
-      | Phone number                                   | 1234555                        |
+      | Primary phone number                           | 1234555                        |
       | Second contact name                            | Second Contact Name Change     |
       | Second contact email address                   | secondContact&change@email.com |
       | Can we contact the secondary contact by phone? | Yes                            |
@@ -175,8 +175,8 @@ Feature: Contact details for the filing member
       | Address                                       | United Arab Emirates           |
       | Contact name                                  | UPE Test                       |
       | Email address                                 | test&upe@email.com             |
-      | Can we contact by telephone?                  | Yes                            |
-      | Telephone number                              | 123456                         |
+      | Can we contact by phone?                      | Yes                            |
+      | Phone number                                  | 123456                         |
       | Is there a nominated filing member            | No                             |
       | Where are the entities in your group located? | In the UK and outside the UK   |
       | Start date                                    | 15 January 2024                |

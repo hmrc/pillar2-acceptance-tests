@@ -52,7 +52,7 @@ Feature: Agent user journeys
     And I click View outstanding payments link
     #TODO: Make a payment is under construction
    #Then I should navigate to Agent Make a Payment page
-    Then I should navigate to under construction page
+    Then I should navigate to Outstanding Payment Page
     And I select back link
     Then I should navigate to ASA Dashboard page
    # When I click View outstanding payments link

@@ -13,7 +13,6 @@ Feature: Eligibility Questions for Pillar 2
     When I choose Yes and continue
     Then I should navigate to Global gross revenue
     When I continue without selecting an option
-    #Then I should see error message Select yes if the group has consolidated annual revenues of €750 million or more in at least 2 of the previous 4 accounting periods on the Global gross revenue Page
     When I choose Yes and continue
     Then I should navigate to confirmation page
     When I click Report Pillar 2 Top-up Taxes link
@@ -40,7 +39,6 @@ Feature: Eligibility Questions for Pillar 2
     When I choose Eligibility Yes NFM and continue
     Then I am on Business activity EQ Page
     When I continue without selecting an option
-    #Then I should see error message Select yes if the group has an entity located in the UK on the Eligibility question Page
     When I choose No and continue
     Then I should navigate to BA guidance page
     When I click Find out more about who is eligible for Pillar 2 Top-up Taxes link
