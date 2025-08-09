@@ -273,6 +273,7 @@ class UPEPageSteps extends CommonFunctions {
   }
 
   And("""^I select option (.*) and continue to GRS page$""") { (option: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
     option match {
       case "UK limited company"            => Input.clickById("value_0")
       case "Limited liability partnership" => Input.clickById("value_1")
