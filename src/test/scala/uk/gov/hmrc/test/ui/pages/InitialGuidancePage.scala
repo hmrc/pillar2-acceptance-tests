@@ -17,10 +17,9 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.cucumber.{PageObject, Wait}
 
-object InitialGuidancePage extends PageObject with BrowserDriver {
+object InitialGuidancePage extends PageObject {
   val url: String = s"$rootUrl" + "business-matching/match-hmrc-records"
 
   val caption        = ".govuk-caption-l"
@@ -29,17 +28,9 @@ object InitialGuidancePage extends PageObject with BrowserDriver {
   val backLink       = ".govuk-back-link"
 
   def clickContinue(): Unit = {
-    val wait = new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(10))
-    wait.until(new java.util.function.Function[org.openqa.selenium.WebDriver, java.lang.Boolean] {
-      def apply(driver: org.openqa.selenium.WebDriver): java.lang.Boolean = {
-        try {
-          findByCss(continue).click()
-          true
-        } catch {
-          case _: org.openqa.selenium.StaleElementReferenceException => false
-        }
-      }
-    })
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToPresentByCssSelector(continue)
+    findByCss(continue).click()
   }
 
 }

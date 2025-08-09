@@ -44,6 +44,8 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
     detailsData.forEach { row =>
       val key           = row.get("KEY")
       val expectedValue = row.get("VALUE")
+      Wait.waitForTagNameToBeRefreshed("h1")
+      Wait.waitForElementByXpathContainsText(s"//dt[contains(text(), '$key')]")
       val labelElement  = driver.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
       val valueElement  = labelElement.findElement(By.xpath("following-sibling::dd[1]"))
       if (key == "Address") {
