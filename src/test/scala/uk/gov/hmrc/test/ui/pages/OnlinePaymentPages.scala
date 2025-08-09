@@ -50,7 +50,7 @@ object OnlinePaymentPages extends PageObject with BrowserDriver {
     } catch {
       case _: org.openqa.selenium.TimeoutException =>
         println("Payment service not available - skipping bank selection step")
-        Wait.waitForPageToLoadCompletely()
+        Wait.waitForElementToClickTagName("h1")
     }
   }
 
@@ -64,7 +64,7 @@ object OnlinePaymentPages extends PageObject with BrowserDriver {
     } catch {
       case _: org.openqa.selenium.TimeoutException =>
         println("Payment email page not available - skipping email step")
-        Wait.waitForPageToLoadCompletely()
+        Wait.waitForElementToClickTagName("h1")
     }
   }
 
@@ -76,7 +76,7 @@ object OnlinePaymentPages extends PageObject with BrowserDriver {
     } catch {
       case _: org.openqa.selenium.TimeoutException =>
         println("Payment check details page not available - skipping check details step")
-        Wait.waitForPageToLoadCompletely()
+        Wait.waitForElementToClickTagName("h1")
     }
   }
 
@@ -88,7 +88,7 @@ object OnlinePaymentPages extends PageObject with BrowserDriver {
     } catch {
       case _: org.openqa.selenium.TimeoutException =>
         println("Payment ready to approve page not available - skipping approval step")
-        Wait.waitForPageToLoadCompletely()
+        Wait.waitForElementToClickTagName("h1")
     }
   }
 
