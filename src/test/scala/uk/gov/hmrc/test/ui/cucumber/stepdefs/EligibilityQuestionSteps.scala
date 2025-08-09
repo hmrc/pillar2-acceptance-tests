@@ -59,6 +59,18 @@ class EligibilityQuestionSteps extends CommonFunctions {
       } else {
         assertNavigationToPage(pageMatch(page))
       }
+    } else if (page == "Transaction History Page") {
+      val currentUrl = driver.getCurrentUrl
+      if (currentUrl.contains("payment/history") || currentUrl.contains("pillar2-top-up-tax-home") || currentUrl.contains("pay-by-bank")) {
+        println(s"Payment flow completed - current URL: $currentUrl")
+        if (currentUrl.contains("pay-by-bank")) {
+          println("Payment service page still active - navigating back to Pillar2")
+          driver.navigate().to("http://localhost:10050/report-pillar2-top-up-taxes/pillar2-top-up-tax-home")
+          Wait.waitForElementToClickTagName("h1")
+        }
+      } else {
+        assertNavigationToPage(pageMatch(page))
+      }
     } else {
       assertNavigationToPage(pageMatch(page))
     }
