@@ -6,6 +6,8 @@ Feature: RFM CYA - NFM No ID flow
   @zap_accessibility @batch3
   Scenario: 1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated
     Given Organisation User logs in with rfm URL to Pillar2
+    And I access RFM start page
+    And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
@@ -50,6 +52,8 @@ Feature: RFM CYA - NFM No ID flow
   Scenario: 2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey
     Given I clear the cache
     When Organisation User logs in with rfm URL to Pillar2
+    And I access RFM start page
+    And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
@@ -172,6 +176,8 @@ Feature: RFM CYA - NFM No ID flow
   @batch3
   Scenario: 4 - Validating RFM Check your answers page for UPE/NFM journey Responses
     Given Organisation User logs in with rfm URL to Pillar2
+    And I access RFM start page
+    And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
@@ -265,7 +271,9 @@ Feature: RFM CYA - NFM No ID flow
 
   @batch3
   Scenario: 5 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account
-    Given Organisation User logs in with rfm URL to Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
+    And I access RFM start page
+    And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |
@@ -308,7 +316,9 @@ Feature: RFM CYA - NFM No ID flow
 
   @batch3
   Scenario: 6 - Verify that UPE can replace existing FM on the Pillar 2 account
-    Given Organisation User logs in with rfm URL to Pillar2
+    Given Organisation User logs in without Pillar2 enrolment
+    And I access RFM start page
+    And I click on Continue button
     When I provide RFM pillar2 id as XMPLR0123456789
     When I enter registration date as:
       | KEY                       | VALUE |

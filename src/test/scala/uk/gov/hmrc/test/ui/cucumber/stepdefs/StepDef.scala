@@ -526,13 +526,34 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   And("""^I select option (.*) and continue to next$""") { (option: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
-    option match {
-      case "Yes" => 
-        Wait.waitForElementToPresentById("value_0")
-        Input.clickById("value_0")
-      case "No"  => 
-        Wait.waitForElementToPresentById("value_1")
-        Input.clickById("value_1")
+    val currentUrl        = driver.getCurrentUrl
+    val onRegisteredInUK  = currentUrl.contains("/replace-filing-member/business-matching/registered-in-uk")
+    val onContactNumber   = currentUrl.contains("/replace-filing-member/contact-details/telephone")
+    val targetId          = if (option == "Yes") "value_0" else "value_1"
+
+    try {
+      Wait.waitForElementToBeClickableByCssSelector(s"label[for='" + targetId + "']")
+      Input.clickByCss(s"label[for='" + targetId + "']")
+    } catch {
+      case _: Throwable =>
+        try {
+          Wait.waitForElementToPresentById(targetId)
+          Input.clickById(targetId)
+        } catch {
+          case _: Throwable =>
+            // Fallback for pages with value/value-2 pattern
+            val altTargetId = if (option == "Yes") "value" else "value-2"
+            try {
+              Wait.waitForElementToPresentById(altTargetId)
+              Input.clickById(altTargetId)
+            } catch {
+              case _: Throwable =>
+                // Last resort: click the radio button by value
+                val radioValue = if (option == "Yes") "true" else "false"
+                Wait.waitForElementToBeClickableByCssSelector(s"input[type='radio'][value='$radioValue']")
+                Input.clickByCss(s"input[type='radio'][value='$radioValue']")
+            }
+        }
     }
     Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
     Input.clickByCss(".govuk-button")

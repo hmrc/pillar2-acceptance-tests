@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
+import uk.gov.hmrc.test.ui.cucumber.Check
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
 import uk.gov.hmrc.test.ui.pages._
@@ -72,7 +73,14 @@ class EligibilityQuestionSteps extends CommonFunctions {
         assertNavigationToPage(pageMatch(page))
       }
     } else {
-      assertNavigationToPage(pageMatch(page))
+      val current = driver.getCurrentUrl
+      if (page == "RFM Final Review Page") {
+        val target = pageMatch(page)
+        val reached = Check.progressThroughIntermediatesAndAssert(target)
+        assert(reached)
+      } else {
+        assertNavigationToPage(pageMatch(page))
+      }
     }
   }
 

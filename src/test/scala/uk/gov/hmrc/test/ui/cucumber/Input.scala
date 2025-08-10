@@ -70,9 +70,16 @@ object Input extends BasePage {
   }
 
   def sendKeysByCss(value: String, css: String): Unit = {
-    findByCss(css)
-    findByCss(css).clear()
-    findByCss(css).sendKeys(value)
+    try {
+      findByCss(css)
+      findByCss(css).clear()
+      findByCss(css).sendKeys(value)
+    } catch {
+      case _: org.openqa.selenium.StaleElementReferenceException =>
+        Wait.waitForElementToPresentByCssSelector(css)
+        findByCss(css).clear()
+        findByCss(css).sendKeys(value)
+    }
   }
 
   def sendKeysByName(value: String, name: String): Unit = {

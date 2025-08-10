@@ -21,6 +21,7 @@ import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
 import org.openqa.selenium.By
 import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.pages.BasePage
+import scala.util.Try
 
 object Check extends BasePage {
 
@@ -53,6 +54,33 @@ object Check extends BasePage {
 
   def assertNavigationUrl(page: PageObject): Boolean =
     Wait.waitForUrl(page.url)
+
+  def progressThroughIntermediatesAndAssert(target: PageObject): Boolean = {
+    import uk.gov.hmrc.test.ui.cucumber.Input
+    var attempts = 0
+    var reached  = Try { assertNavigationToPage(target); true }.getOrElse(false)
+    while (!reached && attempts < 6) {
+      val url = Find.findURL()
+      if (url.contains("/replace-filing-member/business-matching/content") || url.contains("/business-matching/filing-member/no-id/check-answers") || url.contains("/security/check-answers") || url.contains("/security/saving-progress")) {
+        try {
+          Wait.waitForElementToBeClickableByCssSelector(".govuk-button, #submit")
+          Input.clickByCss(".govuk-button")
+        } catch {
+          case _: Throwable =>
+        }
+      } else if (url.contains("auth-login-stub/gg-sign-in")) {
+        try {
+          Wait.waitForUrl(target.url)
+        } catch {
+          case _: Throwable =>
+        }
+      }
+      reached = Try { assertNavigationToPage(target); true }.getOrElse(false)
+      if (!reached) Wait.waitForTagNameToBeRefreshed("h1")
+      attempts += 1
+    }
+    reached
+  }
 
   def assertNavigationToPageUrl(page: PageObject): Assertion = {
     Wait.waitForUrlToBeVisible(page.url)

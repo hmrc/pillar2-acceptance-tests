@@ -32,8 +32,9 @@ class UPEPageSteps extends CommonFunctions {
 
       case "NFM name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Input.sendKeysByCss(name, InputUPENamePage.nameField)
-        clickByCss(InputUPENamePage.continue)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.nameField)
+        Input.sendKeysByCss(name, RFMNewNFMContactNamePage.nameField)
+        clickByCss(RFMNewNFMContactNamePage.continue)
 
       case "Address Line 1" =>
         Wait.waitForTagNameToBeRefreshed("h1")
