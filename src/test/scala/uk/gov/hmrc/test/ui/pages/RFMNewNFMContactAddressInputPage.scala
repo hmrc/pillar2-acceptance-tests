@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Wait
 
 object RFMNewNFMContactAddressInputPage extends PageObject {
   val url: String              = s"$rootUrl" + "replace-filing-member/business-matching/filing-member/no-id/input-address"
@@ -38,6 +39,10 @@ object RFMNewNFMContactAddressInputPage extends PageObject {
   val postcodeErrorMessage     = "#postalCode-error"
   val countryErrorMessage      = "#countryCode-error"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue(): Unit = {
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToBeClickableByCssSelector(continue)
+    findByCss(continue).click()
+  }
 
 }

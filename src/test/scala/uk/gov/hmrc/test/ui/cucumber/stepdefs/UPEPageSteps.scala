@@ -279,6 +279,7 @@ class UPEPageSteps extends CommonFunctions {
       case "Limited liability partnership" => Input.clickById("value_1")
     }
     UPEEntityTypePage.clickContinue()
+    Wait.waitForUrl("stub-grs-journey-data")
   }
 
   And("""^I select option (.*) and continue to Name page$""") { (option: String) =>
@@ -329,7 +330,21 @@ class UPEPageSteps extends CommonFunctions {
   }
 
   And("""^I click on Save&Continue button""") {
-    UPEEntityTypePage.clickContinue()
+    Wait.waitForTagNameToBeRefreshed("h1")
+    val current = driver.getCurrentUrl
+    if (current.contains("/replace-filing-member/")) {
+      try {
+        Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
+        Input.clickByCss(".govuk-button")
+      } catch {
+        case _: Exception =>
+          Wait.waitForTagNameToBeRefreshed("body")
+          Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
+          Input.clickByCss(".govuk-button")
+      }
+    } else {
+      UPEEntityTypePage.clickContinue()
+    }
   }
 
   Then("""^The second heading should be (.*)$""") { header: String =>

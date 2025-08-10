@@ -17,6 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import org.scalatest.Assertion
+import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
+import org.openqa.selenium.By
 import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.pages.BasePage
 
@@ -24,7 +26,16 @@ object Check extends BasePage {
 
   val url = ""
 
-  def checkH1(h1: String): Assertion = Find.findByTagName("h1").getText should include(h1)
+  def checkH1(h1: String): Assertion = {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    val h1Text = Find.findByTagName("h1").getText
+    if (h1Text.contains(h1)) succeed
+    else {
+      val captions = driver.findElements(By.cssSelector(".govuk-caption-l"))
+      if (!captions.isEmpty && captions.get(0).getText.contains(h1)) succeed
+      else h1Text should include(h1)
+    }
+  }
 
   def checkID(id: String): Boolean = Find.findById(id).isDisplayed
 

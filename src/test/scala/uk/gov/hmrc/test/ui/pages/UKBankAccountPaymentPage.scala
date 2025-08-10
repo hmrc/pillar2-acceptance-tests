@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Wait
 
 object UKBankAccountPaymentPage extends PageObject {
 
@@ -40,6 +41,10 @@ object UKBankAccountPaymentPage extends PageObject {
   val errorUKAccountLink     = "[href='#accountNumber']"
   val errorUKSortCodeLink    = "[href='#sortCode']"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue(): Unit = {
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToBeClickableByCssSelector(continue)
+    findByCss(continue).click()
+  }
 
 }

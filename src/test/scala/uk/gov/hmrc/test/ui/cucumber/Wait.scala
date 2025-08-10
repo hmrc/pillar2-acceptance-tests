@@ -46,8 +46,13 @@ object Wait extends BasePage {
     driverWait.until(ExpectedConditions.elementToBeClickable(By.tagName(tagName)))
   }
 
+  def waitForElementToBeClickableByCssSelector(cssSelector: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
+    driverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)))
+  }
+
   def waitForUrlToBeVisible(url: String): Boolean = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(8))
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
     driverWait.until(ExpectedConditions.urlToBe(url))
   }
 

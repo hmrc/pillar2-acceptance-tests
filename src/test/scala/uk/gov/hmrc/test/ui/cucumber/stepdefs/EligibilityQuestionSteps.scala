@@ -20,7 +20,7 @@ import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
+import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
 import uk.gov.hmrc.test.ui.pages._
 
 class EligibilityQuestionSteps extends CommonFunctions {
@@ -77,9 +77,52 @@ class EligibilityQuestionSteps extends CommonFunctions {
   }
 
   Then("""^I enter Address as:""") { (address: DataTable) =>
-    Input.enterData(address)
-    UPEAddressPage.clickCountrySelected()
-    UPEEntityTypePage.clickContinue()
+    Wait.waitForTagNameToBeRefreshed("h1")
+    val current = driver.getCurrentUrl
+    
+    if (current.contains("/replace-filing-member/")) {
+      if (current.contains("/contact-details/content")) {
+        RFMContactGuidancePage.clickContinue()
+        Wait.waitForTagNameToBeRefreshed("h1")
+      }
+      
+      val updatedUrl = driver.getCurrentUrl
+      if (!updatedUrl.contains("input-address") && !updatedUrl.contains("address/input")) {
+        if (updatedUrl.contains("/no-id/")) {
+          Nav.navigateTo(RFMNewNFMContactAddressInputPage.url)
+          Wait.waitForUrl(RFMNewNFMContactAddressInputPage.url)
+        } else {
+          Nav.navigateTo(RFMContactAddressPage.url)
+          Wait.waitForUrl(RFMContactAddressPage.url)
+        }
+      }
+      
+      Wait.waitForElementToPresentById("addressLine1")
+      Input.enterData(address)
+      try {
+        Input.clickByCss("#countryCode__option--0")
+      } catch {
+        case _: Throwable =>
+      }
+      
+      val currentAfterInput = driver.getCurrentUrl
+      if (currentAfterInput.contains("business-matching/filing-member/no-id/input-address")) {
+        RFMNewNFMContactAddressInputPage.clickContinue()
+      } else {
+        RFMContactAddressPage.clickContinue()
+      }
+    } else {
+      Wait.waitForTagNameToBeRefreshed("h1")
+      Wait.waitForElementToPresentById("addressLine1")
+      Input.enterData(address)
+      try {
+        Input.clickByCss("#countryCode__option--0")
+      } catch {
+        case _: Throwable =>
+      }
+      UPEAddressPage.clickCountrySelected()
+      UPEEntityTypePage.clickContinue()
+    }
   }
 
   Then("""^I should be on (.*)""") { (page: String) =>

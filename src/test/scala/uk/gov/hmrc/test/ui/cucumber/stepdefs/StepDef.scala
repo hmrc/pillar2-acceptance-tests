@@ -525,11 +525,17 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   And("""^I select option (.*) and continue to next$""") { (option: String) =>
+    Wait.waitForTagNameToBeRefreshed("h1")
     option match {
-      case "Yes" => Input.clickById("value_0")
-      case "No"  => Input.clickById("value_1")
+      case "Yes" => 
+        Wait.waitForElementToPresentById("value_0")
+        Input.clickById("value_0")
+      case "No"  => 
+        Wait.waitForElementToPresentById("value_1")
+        Input.clickById("value_1")
     }
-    InitialGuidancePage.clickContinue()
+    Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
+    Input.clickByCss(".govuk-button")
   }
 
   And("""^I select (.*) option and continue to next$""") { (option: String) =>

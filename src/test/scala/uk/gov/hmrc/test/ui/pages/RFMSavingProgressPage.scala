@@ -18,12 +18,17 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Wait
 
 object RFMSavingProgressPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/security/saving-progress"
 
   val caption               = ".govuk-caption-l"
   val continue              = ".govuk-button"
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue(): Unit = {
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToBeClickableByCssSelector(continue)
+    findByCss(continue).click()
+  }
 
 }

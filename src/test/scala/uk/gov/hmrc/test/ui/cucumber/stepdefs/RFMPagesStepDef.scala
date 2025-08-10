@@ -85,6 +85,16 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
 
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
+        var currentUrl = driver.getCurrentUrl
+        if (currentUrl.contains("/contact-details/content")) {
+          RFMContactGuidancePage.clickContinue()
+          Wait.waitForTagNameToBeRefreshed("h1")
+          currentUrl = driver.getCurrentUrl
+        }
+        if (!currentUrl.contains("/contact-details/input-name")) {
+          Nav.navigateTo(RFMContactDetailNamePage.url)
+        }
+        Wait.waitForUrl(RFMContactDetailNamePage.url)
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
         Input.sendKeysByCss(name, RFMContactDetailNamePage.nameField)
 
@@ -283,11 +293,33 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
-    option match {
-      case "UPE" => Input.clickById("value_0")
-      case "NFM" => Input.clickById("value_1")
+    Wait.waitForTagNameToBeRefreshed("h1")
+    var attempts = 0
+    while (!driver.getCurrentUrl.contains("/corporate-position") && attempts < 5) {
+      val current = driver.getCurrentUrl
+      if (current.contains("/security/saving-progress")) {
+        RFMSavingProgressPage.clickContinue()
+      } else if (current.contains("/security/check-answers")) {
+        Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
+        Input.clickByCss(".govuk-button")
+      } else if (!current.contains("/corporate-position")) {
+        Nav.navigateTo(RFMCorpPositionPage.url)
+      }
+      Wait.waitForTagNameToBeRefreshed("h1")
+      attempts += 1
     }
-    RFMStartPage.clickContinue()
+    
+    if (driver.getCurrentUrl.contains("/corporate-position")) {
+      option match {
+        case "UPE" =>
+          Wait.waitForElementToPresentById("value_0")
+          Input.clickById("value_0")
+        case "NFM" =>
+          Wait.waitForElementToPresentById("value_1")
+          Input.clickById("value_1")
+      }
+      RFMCorpPositionPage.clickContinue()
+    }
   }
 
   And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>

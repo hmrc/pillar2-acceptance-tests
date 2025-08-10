@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.{PageObject, Wait}
+import org.openqa.selenium.StaleElementReferenceException
 
 object InitialGuidancePage extends PageObject {
   val url: String = s"$rootUrl" + "business-matching/match-hmrc-records"
@@ -29,8 +30,14 @@ object InitialGuidancePage extends PageObject {
 
   def clickContinue(): Unit = {
     Wait.waitForTagNameToBeRefreshed("body")
-    Wait.waitForElementToPresentByCssSelector(continue)
-    findByCss(continue).click()
+    Wait.waitForElementToBeClickableByCssSelector(continue)
+    try {
+      findByCss(continue).click()
+    } catch {
+      case _: StaleElementReferenceException =>
+        Wait.waitForElementToBeClickableByCssSelector(continue)
+        findByCss(continue).click()
+    }
   }
 
 }

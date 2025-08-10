@@ -20,6 +20,7 @@ import io.cucumber.datatable.DataTable
 import org.openqa.selenium._
 import org.openqa.selenium.io.FileHandler
 import uk.gov.hmrc.test.ui.cucumber.Find._
+import uk.gov.hmrc.test.ui.cucumber.Wait
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 import java.io.File
@@ -32,7 +33,16 @@ object Input extends BasePage {
 
   def clickByLinkText(text: String): Unit = findByLinkText(text).click()
 
-  def clickByCss(css: String): Unit = findByCss(css).click()
+  def clickByCss(css: String): Unit = {
+    Wait.waitForElementToBeClickableByCssSelector(css)
+    try {
+      findByCss(css).click()
+    } catch {
+      case _: org.openqa.selenium.StaleElementReferenceException =>
+        Wait.waitForElementToBeClickableByCssSelector(css)
+        findByCss(css).click()
+    }
+  }
 
   val enterData: DataTable => Unit = iterator(sendKeysById) _
 
