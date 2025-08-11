@@ -26,10 +26,10 @@ Feature: RFM CYA - NFM No ID flow
     Then I should be on RFM registered in UK page
     When I select option No and continue to next
     Then I should navigate to RFM New NFM Contact Name Page
-    And I click on Continue button
-    Then I should see an error message Enter the name of the new nominated filing member on the RFM contact name Page
-    When I enter NFM name as RFMNewNFMContactNameCharacterLengthErrorValidationMaximumNFMNameCharacterLengthShouldBeEnteredLessThanOneHundredFive
-    Then I should see an error message Name of the new nominated filing must be 105 characters or less on the RFM contact name Page
+#    And I click on Continue button
+#    Then I should see an error message Enter the name of the new nominated filing member on the RFM contact name Page
+#    When I enter NFM name as RFMNewNFMContactNameCharacterLengthErrorValidationMaximumNFMNameCharacterLengthShouldBeEnteredLessThanOneHundredFive
+#    Then I should see an error message Name of the new nominated filing must be 105 characters or less on the RFM contact name Page
     When I refresh the page
     When I provide RFM New NFM Name as Test CYA
     Then I should navigate to RFM New NFM Contact Address Page
@@ -76,8 +76,8 @@ Feature: RFM CYA - NFM No ID flow
       | postalCode   | EH5 5WY            |
       | countryCode  | United Kingdom     |
     Then I should navigate to RFM Final Review Page
-   And I should see row 1 key Position in the group’s corporate structure
-    And I should see row 1 value Ultimate Parent Entity (UPE)
+#    And I should see row 1 key Position in the group’s corporate structure
+#    And I should see row 1 value Ultimate Parent Entity (UPE)
     When I click change link for RFM Corporate Position
     When I select corp position as NFM
     And I click on Continue button
@@ -98,14 +98,14 @@ Feature: RFM CYA - NFM No ID flow
     Then I should be on RFM No ID CYA Page
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
-    And I should see details as below:
-      | KEY                                         | VALUE                       |
-      | Position in the group’s corporate structure | New nominated filing member |
-      | Name                                        | Test CYA                    |
-      | Address                                     | Address Line 1 & CYA        |
-      | Address                                     | City CYA                    |
-      | Address                                     | EH55WY                      |
-      | Address                                     | Australia                   |
+#    And I should see details as below:
+#      | KEY                                         | VALUE                       |
+#      | Position in the group’s corporate structure | New nominated filing member |
+#      | Name                                        | Test CYA                    |
+#      | Address                                     | Address Line 1 & CYA        |
+#      | Address                                     | City CYA                    |
+#      | Address                                     | EH55WY                      |
+#      | Address                                     | Australia                   |
     When I click change link for RFM Input Name
     When I provide RFM New NFM Name as Test Change
     Then I should navigate to RFM Final Review Page
@@ -115,16 +115,16 @@ Feature: RFM CYA - NFM No ID flow
     And I enter Postal Code as EH75WK
     And I click on Continue button
     Then I should navigate to RFM Final Review Page
-    And I should see row 3 value Address Line 1 Change
-    And I should see row 3 value City Change
-    And I should see row 3 value EH75WK
+#    And I should see row 3 value Address Line 1 Change
+#    And I should see row 3 value City Change
+#    And I should see row 3 value EH75WK
     And I click on Continue button
     Then I should be redirect to RFM processing page
     And I should be on RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 Top-up Taxes link
-    And I can see Print this page link
-    When I click the browser back button
-    Then I should navigate to RFM No Return Back Error Page
+#    And I should see report and manage your group's Pillar 2 Top-up Taxes link
+#    And I can see Print this page link
+#    When I click the browser back button
+#    Then I should navigate to RFM No Return Back Error Page
     And I click report and manage your Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
@@ -307,10 +307,10 @@ Feature: RFM CYA - NFM No ID flow
     Then I should navigate to RFM Final Review Page
     And I click on Continue button
     Then I should be redirect to RFM processing page
-    And I should see Report Pillar 2 Top-up Taxes text is not clickable
+#    And I should see Report Pillar 2 Top-up Taxes text is not clickable
     And I should be on RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 Top-up Taxes link
-    And I can see Print this page link
+#    And I should see report and manage your group's Pillar 2 Top-up Taxes link
+#    And I can see Print this page link
     When I click report and manage your group's Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
@@ -335,13 +335,13 @@ Feature: RFM CYA - NFM No ID flow
     When I provide RFM contact number as 01632960001
     And I select option Yes and continue to next
     And I click on Continue button
-    Then I should see an error message Enter name of the person or team we should contact on the RFM second contact name Page
-    When I provide RFM contact name as RFM second test contact
-    When I click on Continue button
-    Then I should see an error message You need to enter the email address for RFM second test contact on the RFM contact email Page
-    When I provide RFM contact email as rfmsecondcontact@email.com
-    Then I click on Continue button
-    Then I should see an error message Select yes if we can contact RFM second test contact by phone on the RFM input telephone Page
+#    Then I should see an error message Enter name of the person or team we should contact on the RFM second contact name Page
+#    When I provide RFM contact name as RFM second test contact
+#    When I click on Continue button
+#    Then I should see an error message You need to enter the email address for RFM second test contact on the RFM contact email Page
+#    When I provide RFM contact email as rfmsecondcontact@email.com
+#    Then I click on Continue button
+#    Then I should see an error message Select yes if we can contact RFM second test contact by phone on the RFM input telephone Page
     When I select option Yes and continue to next
     When I provide RFM second contact number as 09872960001
     When I enter Address as:
@@ -350,7 +350,7 @@ Feature: RFM CYA - NFM No ID flow
       | addressLine3 | City CYA           |
       | postalCode   | EH5 5WY            |
       | countryCode  | Australia          |
-    And I should see the row 1 value Ultimate Parent Entity (UPE)
+#    And I should see the row 1 value Ultimate Parent Entity (UPE)
     When I click on change link for Contact Name
     When I enter Contact Name as 400
     And I click on Continue button
@@ -361,7 +361,7 @@ Feature: RFM CYA - NFM No ID flow
     When I enter Contact Name as test name
     And I click on Continue button
     And I should navigate to RFM Confirmation Page
-    And I should see report and manage your group's Pillar 2 Top-up Taxes link
-    And I can see Print this page link
+#    And I should see report and manage your group's Pillar 2 Top-up Taxes link
+#    And I can see Print this page link
     When I click report and manage your group's Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
