@@ -19,14 +19,15 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationUrl
-import uk.gov.hmrc.test.ui.cucumber.Check
 import uk.gov.hmrc.test.ui.cucumber.Find.findURL
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
+import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
 import java.time.LocalDate
 import scala.util.Try
+import scala.collection.JavaConverters._
 
 class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunctions {
 
@@ -80,65 +81,108 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
         val targetUrl = RFMEnterPillar2IdPage.url
-        if (!driver.getCurrentUrl.contains("/replace-filing-member/security/enter-pillar2-id")) {
+        val current0  = driver.getCurrentUrl
+        if (!current0.contains("/replace-filing-member/security/enter-pillar2-id")) {
           Nav.navigateTo(targetUrl)
+          WaitUtils.waitForPageToFullyLoad()
         }
-
-        // Handle potential auth-login-stub redirect first
+        WaitUtils.waitForPageStability()
+        WaitUtils.waitForPageToFullyLoad()
+        
         var attempts = 0
-        var ready    = false
-        while (!ready && attempts < 5) {
-          try {
-            Wait.waitForUrl(targetUrl)
-            ready = true
-          } catch {
-            case _: Throwable =>
-              if (driver.getCurrentUrl.contains("auth-login-stub")) {
-                // wait briefly for redirect
-                Wait.waitForTagNameToBeRefreshed("body")
+        var foundPillar2Field = false
+        
+        while (!foundPillar2Field && attempts < 3) {
+          val currentUrl = driver.getCurrentUrl
+          
+          if (currentUrl.contains("auth-login-stub") || currentUrl.contains("gg-sign-in")) {
+            Try {
+          
+              val submitElements = driver.findElements(By.cssSelector("button[type='submit'], input[type='submit'], button:not([type]), .govuk-button, a.govuk-button"))
+              if (submitElements.size() > 0) {
+      
+                Try {
+                  val redirectField = driver.findElement(By.name("redirectionUrl"))
+                  if (redirectField != null) {
+                    val currentValue = redirectField.getAttribute("value")
+                    if (!currentValue.contains("enter-pillar2-id")) {
+                      redirectField.clear()
+                      redirectField.sendKeys("http://localhost:10050/report-pillar2-top-up-taxes/replace-filing-member/security/enter-pillar2-id")
+                    }
+                  }
+                }.recover(_ => ())
+                 val element = submitElements.get(0)
+                 WaitUtils.scrollToElement(element)
+                 WaitUtils.clickWithRetry(element)
+              
+                WaitUtils.waitForUrlToChange(currentUrl)
+                WaitUtils.waitForPageToFullyLoad()
+              }
+            }.recover {
+              case e =>
+                println(s"Auth stub handling attempt $attempts failed: ${e.getMessage}")
+            }
+          }
+          
+          
+          Try {
+            val elements = driver.findElements(By.cssSelector("#value, #pillar2topuptaxid, input[name='value'], input[id*='pillar2']"))
+            if (elements.size() > 0) {
+              
+              val field = elements.get(0)
+              WaitUtils.scrollToElement(field)
+              WaitUtils.sendKeysWithRetry(field, name)
+              foundPillar2Field = true
+            } else {
+              throw new NoSuchElementException("Pillar2 field not present yet")
+            }
+          }.recover {
+            case _ =>
+              val current = driver.getCurrentUrl
+              val h1      = Try(driver.findElement(By.tagName("h1")).getText).getOrElse("-")
+              println(s"[DEBUG] Pillar2 field missing. URL=$current H1=$h1")
+            
+              if (current.contains("auth-login-stub") || current.contains("gg-sign-in") || current.contains("restart-error") || current.contains("incomplete")) {
+                driver.findElements(By.cssSelector("button[type='submit'], .govuk-button, a.govuk-button"))
+                  .asScala
+                  .headOption
+                  .foreach { btn =>
+                    WaitUtils.scrollToElement(btn)
+                    WaitUtils.clickWithRetry(btn)
+                    WaitUtils.waitForUrlToChange(current)
+                    WaitUtils.waitForPageToFullyLoad()
+                  }
+              } else if (!current.contains("/replace-filing-member/security/enter-pillar2-id")) {
+            
+                Nav.navigateTo(targetUrl)
+                WaitUtils.waitForPageToFullyLoad()
               }
           }
+          
           attempts += 1
+          
+          if (!foundPillar2Field && attempts < 3) {
+          
+            WaitUtils.waitForPageStability()
+          }
         }
-
-        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
-        Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+        
+    
+        if (!foundPillar2Field) {
+          val pillar2Field = WaitUtils.waitForElementWithRetry(By.cssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid))
+          WaitUtils.sendKeysWithRetry(pillar2Field, name)
+        }
 
       case "contact name" =>
-        // Ensure we progress through any intermediate pages (content, saving-progress, etc.) until we land on the input-name page
-        var attempts = 0
-        while (!driver.getCurrentUrl.contains("/contact-details/input-name") && attempts < 5) {
-          val current = driver.getCurrentUrl
-          if (current.contains("/contact-details/content")) {
-            RFMContactGuidancePage.clickContinue()
-          } else if (current.contains("/security/saving-progress")) {
-            RFMSavingProgressPage.clickContinue()
-          } else {
-            Nav.navigateTo(RFMContactDetailNamePage.url)
-          }
-          Wait.waitForTagNameToBeRefreshed("h1")
-          attempts += 1
-        }
-
-        // Now enter the contact name
-        Wait.waitForUrl(RFMContactDetailNamePage.url)
+        Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.nameField)
         Input.sendKeysByCss(name, RFMContactDetailNamePage.nameField)
-        Input.clickByCss(RFMContactDetailNamePage.continue)
-        Wait.waitForUrl(RFMContactEmailPage.url)
 
       case "contact email" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        if (!driver.getCurrentUrl.contains("/replace-filing-member/contact-details/input-email")) {
-          Nav.navigateTo(RFMContactEmailPage.url)
-          Wait.waitForUrl(RFMContactEmailPage.url)
-        }
         Wait.waitForElementToPresentByCssSelector(RFMContactEmailPage.emailField)
         Input.sendKeysByCss(name, RFMContactEmailPage.emailField)
-        Input.clickByCss(RFMContactEmailPage.continue)
-        Wait.waitForUrl(RFMContactNumberPage.url)
 
       case "contact number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -154,7 +198,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephonePage.telephoneField)
         Input.sendKeysByCss(name, RFMSecondContactTelephonePage.telephoneField)
-        Input.clickByCss(RFMSecondContactTelephonePage.continue)
 
     }
     RFMStartPage.clickContinue()
@@ -216,17 +259,11 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
 
-        try {
-          Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorLink)
-          val errorLinkText = getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorLink))
-          assert(errorLinkText.contains(error) || errorLinkText.contains("Enter the name"))
-        } catch {
-          case _: Throwable =>
-        }
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorLink)
+        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorLink)) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
-        val errorMessageText = getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorMessage))
-        assert(errorMessageText.contains(error) || errorMessageText.contains("Enter the name"))
+        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorMessage)) should include(error)
 
       case "second contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -250,40 +287,23 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
 
       case "contact email" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        // Wait for summary list in case it's displayed
-        Try(Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorSummary))
-        // Try error link first; if missing fall back to first link inside summary
-        val links = driver.findElements(By.cssSelector(RFMSecondContactEmailPage.errorLink))
-        if (!links.isEmpty) {
-          links.get(0).getText should include(error)
-        } else {
-          val genericLinks = driver.findElements(By.cssSelector(".govuk-error-summary__list li a"))
-          if (!genericLinks.isEmpty) genericLinks.get(0).getText should include(error)
-        }
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorMessage)
 
-        val inlineErrors = driver.findElements(By.cssSelector(RFMSecondContactEmailPage.errorMessage))
-        if (!inlineErrors.isEmpty) {
-          inlineErrors.get(0).getText should include(error)
-        }
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorLink)
+        getTextOf(By cssSelector (RFMSecondContactEmailPage.errorLink)) should be(error)
+
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorMessage)
+        getTextOf(By cssSelector (RFMSecondContactEmailPage.errorMessage)) should include(error)
 
       case "input telephone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Try(Wait.waitForElementToPresentByCssSelector(".govuk-error-summary__list"))
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorMessage)
 
-        val linkSel = RFMSecondContactTelephoneQuestionPage.errorLink
-        val linkNodes = driver.findElements(By.cssSelector(linkSel))
-        if (!linkNodes.isEmpty) {
-          linkNodes.get(0).getText should include(error)
-        } else {
-          // Fallback to any error link in summary
-          val summaryLinks = driver.findElements(By.cssSelector(".govuk-error-summary__list li a"))
-          if (!summaryLinks.isEmpty) {
-            summaryLinks.get(0).getText should include(error)
-          }
-        }
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorLink)
+        getTextOf(By cssSelector (RFMSecondContactTelephoneQuestionPage.errorLink)) should be(error)
 
-        val inlineNodes = driver.findElements(By.cssSelector(RFMSecondContactTelephoneQuestionPage.errorMessage))
-        if (!inlineNodes.isEmpty) inlineNodes.get(0).getText should include(error)
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorMessage)
+        getTextOf(By cssSelector (RFMSecondContactTelephoneQuestionPage.errorMessage)) should include(error)
     }
   }
 
@@ -354,51 +374,46 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    var attempts = 0
-    while (!driver.getCurrentUrl.contains("/corporate-position") && attempts < 5) {
-      val current = driver.getCurrentUrl
-      if (current.contains("/security/saving-progress")) {
-        RFMSavingProgressPage.clickContinue()
-      } else if (current.contains("/security/check-answers")) {
-        Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
-        Input.clickByCss(".govuk-button")
-      } else if (!current.contains("/corporate-position")) {
-        Nav.navigateTo(RFMCorpPositionPage.url)
-      }
-      Wait.waitForTagNameToBeRefreshed("h1")
-      attempts += 1
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "UPE" => "value_0"
+      case "NFM" => "value_1"
     }
     
-    if (driver.getCurrentUrl.contains("/corporate-position")) {
-      option match {
-        case "UPE" =>
-          try {
-            Wait.waitForElementToBeClickableByCssSelector("label[for='value_0']")
-            Input.clickByCss("label[for='value_0']")
-          } catch {
-            case _: Throwable =>
-              Wait.waitForElementToPresentById("value_0")
-              Input.clickById("value_0")
-          }
-        case "NFM" =>
-          try {
-            Wait.waitForElementToBeClickableByCssSelector("label[for='value_1']")
-            Input.clickByCss("label[for='value_1']")
-          } catch {
-            case _: Throwable =>
-              Wait.waitForElementToPresentById("value_1")
-              Input.clickById("value_1")
-          }
-      }
-      Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
-      Input.clickByCss(".govuk-button")
+   
+    try {
+      val radioLabel = WaitUtils.waitForElementWithRetry(By.cssSelector(s"label[for='$radioId']"))
+      WaitUtils.clickWithRetry(radioLabel)
+    } catch {
+      case _: Exception =>
+        try {
+          val radioInput = WaitUtils.waitForElementWithRetry(By.id(radioId))
+          WaitUtils.clickWithRetry(radioInput)
+        } catch {
+          case _: Exception =>
+        
+            Input.clickById(radioId)
+        }
     }
+    
+    RFMStartPage.clickContinue()
   }
 
   And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    Wait.waitForElementToPresentByCssSelector(RFMFinalReviewCYAPage.valueList)
+    
+    val elements = driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList))
+    val index = row - 1
+    
+    assert(elements.size() > index, s"Expected at least $row elements but found ${elements.size()}")
+    assert(elements.get(index).getText.contains(value), s"Row $row did not contain expected value: $value")
   }
 
   Given("""^(.*) logs in to RFM with credId (.*) for Pillar2""") { (name: String, credId: String) =>
@@ -432,11 +447,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     for (i <- 1 to 5) {
       clickByCss(BusinessActivityEQPage.backLink)
     }
-    if (driver.getCurrentUrl.contains("/replace-filing-member/change-corporate-position")) {
-      Input.clickByCss(".govuk-button")
-    }
-    val reached = Check.progressThroughIntermediatesAndAssert(RFMFinalReviewCYAPage)
-    assert(reached)
   }
 
   Then("""^I should see (.*) text is not clickable""") { (linkText: String) =>

@@ -58,64 +58,148 @@ class TaskListPageSteps extends CommonFunctions {
   And("""^The Task (.*) status should be (.*)$""") { (taskName: String, status: String) =>
     taskName match {
       case "Add Ultimate Parent Entity details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 0, s"Expected at least 1 task item but found ${taskItems.size()}")
+        assert(taskItems.get(0).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 0, s"Expected at least 1 status item but found ${statusItems.size()}")
+        assert(statusItems.get(0).getText.contains(status))
 
       case "Edit Ultimate Parent Entity details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 0, s"Expected at least 1 task item but found ${taskItems.size()}")
+        assert(taskItems.get(0).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 0, s"Expected at least 1 status item but found ${statusItems.size()}")
+        assert(statusItems.get(0).getText.contains(status))
 
       case "Filing member details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 1, s"Expected at least 2 task items but found ${taskItems.size()}")
+        assert(taskItems.get(1).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 1, s"Expected at least 2 status items but found ${statusItems.size()}")
+        assert(statusItems.get(1).getText.contains(status))
 
       case "Add filing member details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 1, s"Expected at least 2 task items but found ${taskItems.size()}")
+        assert(taskItems.get(1).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 1, s"Expected at least 2 status items but found ${statusItems.size()}")
+        assert(statusItems.get(1).getText.contains(status))
 
       case "Edit filing member details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 1, s"Expected at least 2 task items but found ${taskItems.size()}")
+        assert(taskItems.get(1).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 1, s"Expected at least 2 status items but found ${statusItems.size()}")
+        assert(statusItems.get(1).getText.contains(status))
 
       case "Further group details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 2, s"Expected at least 3 task items but found ${taskItems.size()}")
+        assert(taskItems.get(2).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 2, s"Expected at least 3 status items but found ${statusItems.size()}")
+        assert(statusItems.get(2).getText.contains(status))
 
       case "Add further group details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 2, s"Expected at least 3 task items but found ${taskItems.size()}")
+        assert(taskItems.get(2).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 2, s"Expected at least 3 status items but found ${statusItems.size()}")
+        assert(statusItems.get(2).getText.contains(status))
 
       case "Edit further group details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 2, s"Expected at least 3 task items but found ${taskItems.size()}")
+        assert(taskItems.get(2).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 2, s"Expected at least 3 status items but found ${statusItems.size()}")
+        assert(statusItems.get(2).getText.contains(status))
 
       case "Contact details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 3, s"Expected at least 4 task items but found ${taskItems.size()}")
+        assert(taskItems.get(3).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 3, s"Expected at least 4 status items but found ${statusItems.size()}")
+        assert(statusItems.get(3).getText.contains(status))
 
       case "Add contact details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 3, s"Expected at least 4 task items but found ${taskItems.size()}")
+        assert(taskItems.get(3).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 3, s"Expected at least 4 status items but found ${statusItems.size()}")
+        assert(statusItems.get(3).getText.contains(status))
 
       case "Edit contact details" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 3, s"Expected at least 4 task items but found ${taskItems.size()}")
+        assert(taskItems.get(3).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 3, s"Expected at least 4 status items but found ${statusItems.size()}")
+        assert(statusItems.get(3).getText.contains(status))
 
       case "Check your answers" =>
+        import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+        WaitUtils.waitForPageToFullyLoad()
         Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElements(By.cssSelector(TaskListPage.taskItem)).get(4).getText.contains(taskName))
-        assert(driver.findElements(By.cssSelector(TaskListPage.status)).get(4).getText.contains(status))
+        Wait.waitForElementToPresentByCssSelector(TaskListPage.taskItem)
+        val taskItems = driver.findElements(By.cssSelector(TaskListPage.taskItem))
+        assert(taskItems.size() > 4, s"Expected at least 5 task items but found ${taskItems.size()}")
+        assert(taskItems.get(4).getText.contains(taskName))
+        val statusItems = driver.findElements(By.cssSelector(TaskListPage.status))
+        assert(statusItems.size() > 4, s"Expected at least 5 status items but found ${statusItems.size()}")
+        assert(statusItems.get(4).getText.contains(status))
 
     }
   }

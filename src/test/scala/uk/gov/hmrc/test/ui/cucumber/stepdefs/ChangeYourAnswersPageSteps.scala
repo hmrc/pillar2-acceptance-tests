@@ -30,10 +30,11 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
   }
 
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.waitForPageStability()
     Wait.waitForElementToPresentByCssSelector(".govuk-summary-list")
-    
-    Thread.sleep(2000)
+    WaitUtils.stabilizeAndWait()
     
     var valuesRfm = driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList))
     var valuesUpe = driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList))

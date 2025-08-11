@@ -27,12 +27,33 @@ import uk.gov.hmrc.test.ui.pages._
 class EligibilityQuestionSteps extends CommonFunctions {
 
   And("""^I choose (.*) and continue$""") { (option: String) =>
-    option match {
-      case "Yes"                 => Input.clickById("value_0")
-      case "No"                  => Input.clickById("value_1")
-      case "Eligibility Yes NFM" => Input.clickById("registeringNfmGroup_0")
-      case "Eligibility No NFM"  => Input.clickById("registeringNfmGroup_1")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "Yes"                 => "value_0"
+      case "No"                  => "value_1"
+      case "Eligibility Yes NFM" => "registeringNfmGroup_0"
+      case "Eligibility No NFM"  => "registeringNfmGroup_1"
     }
+    
+    try {
+      val radioLabel = WaitUtils.waitForElementWithRetry(By.cssSelector(s"label[for='$radioId']"))
+      WaitUtils.clickWithRetry(radioLabel)
+    } catch {
+      case _: Exception =>
+        try {
+          val radioInput = WaitUtils.waitForElementWithRetry(By.id(radioId))
+          WaitUtils.clickWithRetry(radioInput)
+        } catch {
+          case _: Exception =>
+            Input.clickById(radioId)
+        }
+    }
+    
     BusinessActivityEQPage.clickContinue()
   }
 
@@ -105,14 +126,24 @@ class EligibilityQuestionSteps extends CommonFunctions {
         }
       }
       
+      import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+      import org.openqa.selenium.By
+      
+      WaitUtils.waitForPageToFullyLoad()
       Wait.waitForElementToPresentById("addressLine1")
       Input.enterData(address)
+      
+   
       try {
-        Input.clickByCss("#countryCode__option--0")
+        WaitUtils.stabilizeAndWait()
+        val countryOption = WaitUtils.waitForElementWithRetry(By.cssSelector("#countryCode__option--0"))
+        WaitUtils.scrollToElement(countryOption)
+        WaitUtils.clickWithRetry(countryOption)
       } catch {
         case _: Throwable =>
       }
       
+      WaitUtils.stabilizeAndWait()
       val currentAfterInput = driver.getCurrentUrl
       if (currentAfterInput.contains("business-matching/filing-member/no-id/input-address")) {
         RFMNewNFMContactAddressInputPage.clickContinue()
@@ -121,14 +152,30 @@ class EligibilityQuestionSteps extends CommonFunctions {
       }
     } else {
       Wait.waitForTagNameToBeRefreshed("h1")
+      import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+      import org.openqa.selenium.By
+      
+      WaitUtils.waitForPageToFullyLoad()
       Wait.waitForElementToPresentById("addressLine1")
       Input.enterData(address)
+      
       try {
-        Input.clickByCss("#countryCode__option--0")
+        WaitUtils.stabilizeAndWait()
+        val countryOption = WaitUtils.waitForElementWithRetry(By.cssSelector("#countryCode__option--0"))
+        WaitUtils.scrollToElement(countryOption)
+        WaitUtils.clickWithRetry(countryOption)
       } catch {
         case _: Throwable =>
+          try {
+
+            WaitUtils.stabilizeAndWait()
+            UPEAddressPage.clickCountrySelected()
+          } catch {
+            case _: Throwable =>
+          }
       }
-      UPEAddressPage.clickCountrySelected()
+      
+      WaitUtils.stabilizeAndWait()
       UPEEntityTypePage.clickContinue()
     }
   }

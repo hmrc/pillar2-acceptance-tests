@@ -21,6 +21,7 @@ import org.openqa.selenium._
 import org.openqa.selenium.io.FileHandler
 import uk.gov.hmrc.test.ui.cucumber.Find._
 import uk.gov.hmrc.test.ui.cucumber.Wait
+import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 import java.io.File
@@ -29,19 +30,25 @@ import java.util.Date
 
 object Input extends BasePage {
 
-  def clickById(id: String): Unit = findById(id).click()
+  def clickById(id: String): Unit = {
+    WaitUtils.stabilizeAndWait()
+    val element = WaitUtils.waitForElementWithRetry(By.id(id))
+    WaitUtils.clickWithRetry(element)
+    WaitUtils.waitForPageToFullyLoad()
+  }
 
-  def clickByLinkText(text: String): Unit = findByLinkText(text).click()
+  def clickByLinkText(text: String): Unit = {
+    WaitUtils.stabilizeAndWait()
+    val element = WaitUtils.waitForElementWithRetry(By.linkText(text))
+    WaitUtils.clickWithRetry(element)
+    WaitUtils.waitForPageToFullyLoad()
+  }
 
   def clickByCss(css: String): Unit = {
-    Wait.waitForElementToBeClickableByCssSelector(css)
-    try {
-      findByCss(css).click()
-    } catch {
-      case _: org.openqa.selenium.StaleElementReferenceException =>
-        Wait.waitForElementToBeClickableByCssSelector(css)
-        findByCss(css).click()
-    }
+    WaitUtils.stabilizeAndWait()
+    val element = WaitUtils.waitForElementWithRetry(By.cssSelector(css))
+    WaitUtils.clickWithRetry(element)
+    WaitUtils.waitForPageToFullyLoad()
   }
 
   val enterData: DataTable => Unit = iterator(sendKeysById) _
@@ -64,28 +71,21 @@ object Input extends BasePage {
   def clickByXpath(id: String): Unit = findByXpath(id).click()
 
   def sendKeysById(id: String, value: String): Unit = {
-    findById(id)
-    findById(id).clear()
-    findById(id).sendKeys(value)
+    WaitUtils.stabilizeAndWait()
+    val element = WaitUtils.waitForElementWithRetry(By.id(id))
+    WaitUtils.sendKeysWithRetry(element, value)
   }
 
   def sendKeysByCss(value: String, css: String): Unit = {
-    try {
-      findByCss(css)
-      findByCss(css).clear()
-      findByCss(css).sendKeys(value)
-    } catch {
-      case _: org.openqa.selenium.StaleElementReferenceException =>
-        Wait.waitForElementToPresentByCssSelector(css)
-        findByCss(css).clear()
-        findByCss(css).sendKeys(value)
-    }
+    WaitUtils.stabilizeAndWait()
+    val element = WaitUtils.waitForElementWithRetry(By.cssSelector(css))
+    WaitUtils.sendKeysWithRetry(element, value)
   }
 
   def sendKeysByName(value: String, name: String): Unit = {
-    findByName(name)
-    findByName(name).clear()
-    findByName(name).sendKeys(value)
+    WaitUtils.stabilizeAndWait()
+    val element = WaitUtils.waitForElementWithRetry(By.name(name))
+    WaitUtils.sendKeysWithRetry(element, value)
   }
 
   def switchToNewWindow(driver: WebDriver): Unit = {

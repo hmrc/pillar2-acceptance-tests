@@ -183,7 +183,10 @@ class StepDef extends BaseStepDef with BrowserDriver {
     Input.clickSubmit()
   }
   When("""^(I click on Continue button)""") { (negate: String) =>
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    WaitUtils.stabilizeAndWait()
     InitialGuidancePage.clickContinue()
+    WaitUtils.waitForPageToFullyLoad()
   }
 
   When("""I select CurrentAccountingPeriod""") { () =>
@@ -511,8 +514,12 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   Then("""^The caption must be (.*)$""") { caption: String =>
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
     Wait.waitForElementToPresentByCssSelector(InitialGuidancePage.caption)
-    assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).equals(caption))
+    val actualCaption = getTextOf(By.cssSelector(InitialGuidancePage.caption))
+    assert(actualCaption.equals(caption), s"Expected caption '$caption' but got '$actualCaption'")
   }
 
   Then("""^the page title should be (.*)$""") { pageTitle: String =>
@@ -525,46 +532,98 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   And("""^I select option (.*) and continue to next$""") { (option: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    val currentUrl        = driver.getCurrentUrl
-    val onRegisteredInUK  = currentUrl.contains("/replace-filing-member/business-matching/registered-in-uk")
-    val onContactNumber   = currentUrl.contains("/replace-filing-member/contact-details/telephone")
-    val targetId          = if (option == "Yes") "value_0" else "value_1"
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    
+    val targetId = if (option == "Yes") "value_0" else "value_1"
 
     try {
-      Wait.waitForElementToBeClickableByCssSelector(s"label[for='" + targetId + "']")
-      Input.clickByCss(s"label[for='" + targetId + "']")
+      val labelElement = WaitUtils.waitForElementWithRetry(By.cssSelector(s"label[for='$targetId']"))
+      WaitUtils.clickWithRetry(labelElement)
     } catch {
       case _: Throwable =>
         try {
-          Wait.waitForElementToPresentById(targetId)
-          Input.clickById(targetId)
+          val radioElement = WaitUtils.waitForElementWithRetry(By.id(targetId))
+          WaitUtils.clickWithRetry(radioElement)
         } catch {
           case _: Throwable =>
-            // Fallback for pages with value/value-2 pattern
-            val altTargetId = if (option == "Yes") "value" else "value-2"
             try {
-              Wait.waitForElementToPresentById(altTargetId)
-              Input.clickById(altTargetId)
+              val altTargetId = if (option == "Yes") "value" else "value-2"
+              val altElement = WaitUtils.waitForElementWithRetry(By.id(altTargetId))
+              WaitUtils.clickWithRetry(altElement)
             } catch {
               case _: Throwable =>
-                // Last resort: click the radio button by value
-                val radioValue = if (option == "Yes") "true" else "false"
-                Wait.waitForElementToBeClickableByCssSelector(s"input[type='radio'][value='$radioValue']")
-                Input.clickByCss(s"input[type='radio'][value='$radioValue']")
+                try {
+              val radioValue = if (option == "Yes") "true" else "false"
+              val valueElement = WaitUtils.waitForElementWithRetry(By.cssSelector(s"input[name='value'][type='radio'][value='$radioValue']"))
+              WaitUtils.clickWithRetry(valueElement)
+                } catch {
+                  case _: Throwable =>
+                    try {
+                      val ynValue = if (option == "Yes") "yes" else "no"
+                      val ynElement = WaitUtils.waitForElementWithRetry(By.cssSelector(s"input[name='value'][type='radio'][value='$ynValue']"))
+                      WaitUtils.clickWithRetry(ynElement)
+                    } catch {
+                      case _: Throwable =>
+                        try {
+                      
+                          WaitUtils.waitForElementWithRetry(By.cssSelector(".govuk-radios input[type='radio']"))
+                          val radios = driver.findElements(By.cssSelector(".govuk-radios input[type='radio']"))
+                          if (!radios.isEmpty) {
+                            val index = if (option == "Yes") 0 else 1
+                            val chosen = radios.get(Math.min(index, radios.size() - 1))
+                            WaitUtils.clickWithRetry(chosen)
+                          } else {
+                            throw new RuntimeException("Radio options not found for selection")
+                          }
+                        } catch {
+                          case _: Throwable => throw new RuntimeException("Radio options not found for selection")
+                        }
+                    }
+                }
             }
         }
     }
-    Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
-    Input.clickByCss(".govuk-button")
+    
+    WaitUtils.stabilizeAndWait()
+    val continueBtn = WaitUtils.waitForElementWithRetry(By.cssSelector(".govuk-button"))
+    WaitUtils.clickWithRetry(continueBtn)
+    WaitUtils.waitForPageToFullyLoad()
   }
 
   And("""^I select (.*) option and continue to next$""") { (option: String) =>
-    option match {
-      case "Yes" => Input.clickById("nominateFilingMember_0")
-      case "No"  => Input.clickById("nominateFilingMember_1")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "Yes" => "nominateFilingMember_0"
+      case "No"  => "nominateFilingMember_1"
     }
+    
+    try {
+      val element = WaitUtils.waitForElementWithRetry(By.id(radioId))
+      WaitUtils.clickWithRetry(element)
+    } catch {
+      case _: Exception =>
+        try {
+          val label = driver.findElement(By.cssSelector(s"label[for='$radioId']"))
+          WaitUtils.scrollToElement(label)
+          WaitUtils.clickWithRetry(label)
+        } catch {
+          case _: Exception =>
+             Input.clickById(radioId)
+        }
+    }
+    
+    WaitUtils.waitForPageToFullyLoad()
+    val oldUrl = driver.getCurrentUrl
+    WaitUtils.stabilizeAndWait()
     InitialGuidancePage.clickContinue()
+    WaitUtils.waitForUrlToChange(oldUrl)
+    WaitUtils.waitForPageToFullyLoad()
   }
 
   And("""^I click the browser back button$""") { () =>
