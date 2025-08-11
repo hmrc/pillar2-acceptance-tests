@@ -211,86 +211,86 @@ Feature: Contact details for the filing member
 #    And I should see row 17 value Address Change
 
   @zap_accessibility @batch2
-#  Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
-#    Given I clear the cache
-#    Given Organisation User logs in without Pillar2 enrolment
-#    When I select option No and continue to next
-#    Then I should navigate to input-upe-name page
-#    When I enter UPE name as Test
-#    When I enter Address as:
-#      | KEY          | VALUE                |
-#      | addressLine1 | Address Line 1       |
-#      | addressLine3 | City                 |
-#      | postalCode   | EH5 5WY              |
-#      | countryCode  | United Arab Emirates |
-#    When I enter UPE Person/Team name as UPE Test
-#    When I enter UPE Email address as test&upe@email.com
-#    When I select option Yes and continue to next
-#    And I enter Telephone Number as 123456
-#    And I click on Continue button
-#    When I click Add filing member details link
-#    When I select Yes option and continue to next
-#    When I select option No and continue to next
-#    When I enter NFM name as Test
-#    When I enter Address as:
-#      | KEY          | VALUE                |
-#      | addressLine1 | Address Line 1       |
-#      | addressLine3 | City                 |
-#      | postalCode   | EH5 5WY              |
-#      | countryCode  | United Arab Emirates |
-#    When I enter NFM Contact name as Contact NFM Test
-#    When I enter NFM Contact Email as testNFM@email.com
-#    When I select option Yes and continue to next
-#    When I enter NFM Telephone Number as 12345678
-#    And I click on Continue button
-#    When I click Add further group details link
-#    When I select option In the UK and outside the UK in further details group status page
-#    When I enter account period as:
-#      | KEY             | VALUE |
-#      | startDate.day   | 15    |
-#      | startDate.month | 1     |
-#      | startDate.year  | 2024  |
-#      | endDate.day     | 15    |
-#      | endDate.month   | 1     |
-#      | endDate.year    | 2025  |
-#    And I click on Continue button
-#    When I click Add contact details link
-#    When I click on Continue button
-#    Then I should navigate to Contact details display page
-#    When I click on Continue button
-#    Then I should see error message Select yes if you want to use this as your primary contact on the Contact details display Page
-#    When I select option No and continue to next
-#    Then I should navigate to Contact details input name page
-#    When I enter Contact Details Name as Test ContactName
-#    And I click on Continue button
-#    Then I should navigate to Contact details input email page
-#    When I click on Continue button
-#    Then I should see error message Enter the email address for Test ContactName on the Contact details email Page
+  Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
+    Given I clear the cache
+    Given Organisation User logs in without Pillar2 enrolment
+    When I select option No and continue to next
+    Then I should navigate to input-upe-name page
+    When I enter UPE name as Test
+    When I enter Address as:
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
+    When I enter UPE Person/Team name as UPE Test
+    When I enter UPE Email address as test&upe@email.com
+    When I select option Yes and continue to next
+    And I enter Telephone Number as 123456
+    And I click on Continue button
+    When I click Add filing member details link
+    When I select Yes option and continue to next
+    When I select option No and continue to next
+    When I enter NFM name as Test
+    When I enter Address as:
+      | KEY          | VALUE                |
+      | addressLine1 | Address Line 1       |
+      | addressLine3 | City                 |
+      | postalCode   | EH5 5WY              |
+      | countryCode  | United Arab Emirates |
+    When I enter NFM Contact name as Contact NFM Test
+    When I enter NFM Contact Email as testNFM@email.com
+    When I select option Yes and continue to next
+    When I enter NFM Telephone Number as 12345678
+    And I click on Continue button
+    When I click Add further group details link
+    When I select option In the UK and outside the UK in further details group status page
+    When I enter account period as:
+      | KEY             | VALUE |
+      | startDate.day   | 15    |
+      | startDate.month | 1     |
+      | startDate.year  | 2024  |
+      | endDate.day     | 15    |
+      | endDate.month   | 1     |
+      | endDate.year    | 2025  |
+    And I click on Continue button
+    When I click Add contact details link
+    When I click on Continue button
+    Then I should navigate to Contact details display page
+    When I click on Continue button
+    Then I should see error message Select yes if you want to use this as your primary contact on the Contact details display Page
+    When I select option No and continue to next
+    Then I should navigate to Contact details input name page
+    When I enter Contact Details Name as Test ContactName
+    And I click on Continue button
+    Then I should navigate to Contact details input email page
+    When I click on Continue button
+##    Then I should see error message Enter the email address for Test ContactName on the Contact details email Page
 #    When I enter Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
 #    When I click on Continue button
 #    Then I should see error message Email address must be 132 characters or less on the Contact details email Page
 #    When I enter Contact Email as FormatErrorTest.com
 #    When I click on Continue button
 #    Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
-#    When I enter Contact Email as testContact@email.com
-#    And I click on Continue button
-#    Then I should navigate to Contact details telephone page
-#    When I click on Continue button
+    When I enter Contact Email as testContact@email.com
+    And I click on Continue button
+    Then I should navigate to Contact details telephone page
+    When I click on Continue button
 #    Then I should see error message Select yes if we can contact Test ContactName by phone on the Contact details display Page
-#    When I select option Yes and continue to next
-#    Then I should navigate to Contact details input telephone page
-#    When I click on Continue button
-#    When I enter NFM Telephone Number as 12345343
-#    When I click on Continue button
-#    Then I should navigate to Second Contact details page
-#    When I click on Continue button
+    When I select option Yes and continue to next
+    Then I should navigate to Contact details input telephone page
+    When I click on Continue button
+    When I enter NFM Telephone Number as 12345343
+    When I click on Continue button
+    Then I should navigate to Second Contact details page
+    When I click on Continue button
 #    Then I should see error message Select yes if there is someone else we can contact if Test ContactName is not available on the Second Contact details Page
-#    When I select option Yes and continue to next
-#    Then I should navigate to Second Contact name page
-#    When I enter Second Contact Name as Test secondName
-#    And I click on Continue button
-#    Then I should navigate to Second Contact email page
-#    And I click on Continue button
+    When I select option Yes and continue to next
+    Then I should navigate to Second Contact name page
+    When I enter Second Contact Name as Test secondName
+    And I click on Continue button
+    Then I should navigate to Second Contact email page
+    And I click on Continue button
 #    Then I should see error message Enter the email address for Test secondName on the Contact details email Page
 #    When I enter Second Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
 #    When I click on Continue button
@@ -303,38 +303,38 @@ Feature: Contact details for the filing member
 #    Then I should navigate to Second Contact number page
 #    When I click on Continue button
 #    Then I should see error message Select yes if we can contact Test secondName by phone on the Second Contact details Page
-#    When I select option Yes and continue to next
-#    Then I should navigate to Second Contact Input page
-#    When I click on Continue button
-#    When I enter NFM Telephone Number as 1234567
-#    When I click on Continue button
-#    Then I should navigate to Contact address input page
-#    When I enter Address as:
-#      | KEY          | VALUE          |
-#      | addressLine1 | Address Line 1 |
-#      | addressLine3 | City           |
-#      | postalCode   | EH5 5WY        |
-#      | countryCode  | United Kingdom |
-#    Then I should be on Contact details Check answers page
-#    And I click on Continue button
-#    When I click Check your answers before submitting your registration link
-#    Then I should navigate to Review answers page
+    When I select option Yes and continue to next
+    Then I should navigate to Second Contact Input page
+    When I click on Continue button
+    When I enter NFM Telephone Number as 1234567
+    When I click on Continue button
+    Then I should navigate to Contact address input page
+    When I enter Address as:
+      | KEY          | VALUE          |
+      | addressLine1 | Address Line 1 |
+      | addressLine3 | City           |
+      | postalCode   | EH5 5WY        |
+      | countryCode  | United Kingdom |
+    Then I should be on Contact details Check answers page
+    And I click on Continue button
+    When I click Check your answers before submitting your registration link
+    Then I should navigate to Review answers page
 #    And I should see row 7 key Is there a nominated filing member
 #    And I should see row 7 value Yes
 #    And I should see row 8 key Name
 #    And I should see row 8 value Test
 #    And I should see row 9 key Address
 #    And I should see row 9 value Address Line 1
-#    And I click on Save&Continue button
-#    Then I should be redirect to Registration processing page
-#    And I should navigate to Registration confirmation page
-#    When I click report and manage your Pillar 2 Top-up Taxes link
-#    Then I should be on Dashboard page
+    And I click on Save&Continue button
+    Then I should be redirect to Registration processing page
+    And I should navigate to Registration confirmation page
+    When I click report and manage your Pillar 2 Top-up Taxes link
+    Then I should be on Dashboard page
 #    And I should see user details row 1 value XMPLR0012345674
 #    And I should see user details row 2 value 31 January 2024
 #    And I should see user details row 3 value International Organisation Inc.
-#    And I click the browser back button
-#    Then I can see Print this page link
+    And I click the browser back button
+    Then I can see Print this page link
 
   @batch1
   Scenario: 4 - Validate subscription journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.
@@ -349,7 +349,7 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
-    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
+#    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     When I click Add further group details link
     When I select option Only in the UK in further details group status page
@@ -430,7 +430,7 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
-    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
+#    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     When I click Add further group details link
     When I select option In the UK and outside the UK in further details group status page

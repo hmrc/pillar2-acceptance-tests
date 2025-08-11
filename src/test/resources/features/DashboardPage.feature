@@ -257,4 +257,3 @@ Feature: Dashboard Page
     And I go till Get ready to approve your payment page
     Then I should be able to navigate back to make a payment page
     Then I should navigate to Make a payment page
-
