@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMTelephonePage extends PageObject {
-  val url: String  = s"$rootUrl" + "business-matching/filing-member/no-id/telephone"
+  val url: String  = s"$rootUrl" + "business-matching/filing-member/no-id/phone"
   val continue     = "#submit"
   val errorSummary = ".govuk-error-summary__list"
   val errorLink    = "[href*='#value']"

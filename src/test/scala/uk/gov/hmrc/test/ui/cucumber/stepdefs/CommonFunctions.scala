@@ -78,7 +78,7 @@ trait CommonFunctions
       case "Contact details input name page"            => ContactDetailsInputNamePage
       case "Contact details input email page"           => ContactDetailsInputEmailPage
       case "Contact details telephone page"             => ContactDetailsTelephonePage
-      case "Contact details change telephone page"      => ContactDetailsChangeTelephonePage
+      case "Contact details change phone page"          => ContactDetailsChangeTelephonePage
       case "Contact details input telephone page"       => ContactDetailsInputTelephonePage
       case "Second Contact details page"                => SecondContactDetailsPage
       case "Second Contact name page"                   => SecondContactNamePage
@@ -214,6 +214,7 @@ trait CommonFunctions
       case "Manage accounting period Page"              => ManageAccountPeriodPage
       case "Manage Account processing Page"             => ManageAccountProcessingPage
       case "Manage Contact processing Page"             => ManageContactProcessingPage
+      case "Outstanding Payment Page"                   => OutstandingPaymentsPage
     }
   }
 }

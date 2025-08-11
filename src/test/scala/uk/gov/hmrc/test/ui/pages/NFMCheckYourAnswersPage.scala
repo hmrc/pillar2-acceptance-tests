@@ -29,6 +29,6 @@ object NFMCheckYourAnswersPage extends PageObject {
   val changeAddress          = "a[href*='/change-input-address']"
   val changeContactname      = "a[href*='/change-input-business-name']"
   val changeEmailaddress     = "a[href*='/change-input-email']"
-  val changeTelephonecontact = "a[href*='/change-telephone']"
-  val changeTelephonenumber  = "a[href*='/change-input-telephone']"
+  val changeTelephonecontact = "a[href*='/change-phone']"
+  val changeTelephonenumber  = "a[href*='/change-input-phone']"
 }

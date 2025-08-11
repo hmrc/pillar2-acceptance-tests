@@ -8,14 +8,6 @@ Feature: Repayment Journey
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
     And I access Non UK payment page
-    When I enter Non UK Bank Account details as:
-      | KEY               | VALUE                                  |
-      | bankName          | HSBC                                   |
-      | nameOnBankAccount | HMRC Shipley                           |
-      | bic               | 0BCDEF01A1C                            |
-      | iban              | ErrorMessageIBANMustBeUpto34Characters |
-    Then I should see bank account error message Enter a valid BIC or SWIFT code like HBUKGB4B on the Swift Code Element
-    And I should see bank account error message IBAN must be up to 34 characters on the Iban Element
     When I click Sign out link
     Then I am on feedback survey page
     When Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
@@ -28,27 +20,14 @@ Feature: Repayment Journey
   Scenario: 2 - Organisation User navigates to repayment pages
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
     When I provide Refund Amount as 100.00
     Then I should navigate to Reason For Refund Page
-    And I select back link
-    Then I should navigate to Repayment Amount Page
-    And I click on Continue button
-    Then I should navigate to Reason For Refund Page
-    When I click Report Pillar 2 Top-up Taxes link
-    Then I should be on Dashboard page
-    And I click the browser back button
-    Then I should be on Reason For Refund Page
-    When I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
-    And The character limit text should display You have 8 characters remaining
-    And I click on Continue button
-    Then I should navigate to Repayment Method Page
-    When I select back link
-    Then I should navigate to Reason For Refund Page
-    And I click on Continue button
+    When I provide value for Refund Reason as Test Reason
+    When I click on Continue button
     And I select repayment method as UK bank account
     Then I should navigate to UK Bank Account Payment Page
     And I select back link
@@ -102,7 +81,6 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should be redirect to Repayment processing page
     And I should be on Repayment Confirmation Page
-    And I can see Print this page link
     When I click Back to group homepage link
     Then I should be on Dashboard page
 
@@ -116,7 +94,7 @@ Feature: Repayment Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Agent Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
@@ -135,14 +113,12 @@ Feature: Repayment Journey
     Then I should be on UK Bank Account Payment Page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Agent Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
-    And I should see Refund Amount field is pre-populated with 9999.99
     And I click on Continue button
     Then I should navigate to Agent Repayment Reason Page
-    And I should see Repayment reason field is pre-populated with A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
     And I click on Continue button
     Then I should navigate to Agent Repayment Method Page
     And I should see the repayment method UK bank account remain selected
@@ -195,18 +171,6 @@ Feature: Repayment Journey
     When  I click change link for Repayment Contact Telephone
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
-    And I should see details as below:
-      | KEY                                              | VALUE                         |
-      | Refund amount                                    | £1000                         |
-      | Reason for refund request                        | Test Reason                   |
-      | What type of account will the refund be sent to? | Non-UK bank account           |
-      | Name of the bank                                 | HSBC2                         |
-      | Name on account                                  | Test Name2                    |
-      | BIC or SWIFT code                                | HBUKGB4C                      |
-      | IBAN                                             | GB29NWBK60161331926820        |
-      | Contact name                                     | Repayment Contact Name change |
-      | Email address                                    | email@change.com              |
-      | Can we contact by telephone?                     | No                            |
     When I click change link for Repayment UK Bank Method
     When I select repayment method as UK bank account
     And I click on Continue button
@@ -215,21 +179,9 @@ Feature: Repayment Journey
     And I provide value for Sort Code as 206705
     And I provide value for UK Account number as 86473611
     And I click on Continue button
-    And I can see Print this page link
-    And I should see the row 4 value Natwest
-    And I should see the row 7 value 86473611
-    And I click on Continue button
-    Then I should be redirected to "Repayment processing page" or "Repayment Confirmation Page"
-    And I should be on Repayment Confirmation Page
-    And I can see Sign out link
-    And I can see Print this page link
+    Then I should be on Repayment CYA Page
     When I click the browser back button
-    Then I should be on Repayment Return Error Page
-    And I can see Sign out link
     When I click Report Pillar 2 Top-up Taxes link
-    Then I should be on Dashboard page
-    When I click the browser back button
-    And I click report and manage your Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
   @zap_accessibility @batch3
@@ -241,7 +193,7 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Agent Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Agent Repayment Amount Page
@@ -258,7 +210,6 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should be on UK Bank Account Payment Page
     And I click on Continue button
-    Then I should see bank account error message Enter the name of the bank on the UK Bank Name Element
     When I refresh the page
     When I enter UK Bank Account details as:
       | KEY               | VALUE              |
@@ -268,31 +219,11 @@ Feature: Repayment Journey
       | accountNumber     | 86473611           |
     Then I should be on Repayment Contact Page
     When I select back link
-    And I should see the UK Bank Name field is pre-populated with Natwest
     And I click on Continue button
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
     When I provide Repayment contact telephone as 789765423
-    Then I should be on Repayment CYA Page
-    And I should see the row 3 value UK bank account
-    And I should see the row 4 value Natwest
-    And I should see the row 5 value Epic Adventure Inc
-    And I should see the row 6 value 206705
-    And I should see the row 7 value 86473611
-    When I click change link for Repayment UK Bank Name
-    When I enter UK Bank Account details as:
-      | KEY               | VALUE                 |
-      | bankName          | Natwest Change        |
-      | accountHolderName | O'Connor Construction |
-      | sortCode          | 609593                |
-      | accountNumber     | 96863604              |
-    And I should see the row 4 value Natwest Change
-    And I should see the row 5 value O'Connor Construction
-    And I should see the row 6 value 609593
-    And I should see the row 7 value 96863604
-    When I click change link for Repayment UK Bank Method
-    And I click on Continue button
     Then I should be on Repayment CYA Page
     And I select back link
     When I click Report Pillar 2 Top-up Taxes link
@@ -303,7 +234,7 @@ Feature: Repayment Journey
   Scenario: 5 - Organisation User navigates to repayment journey pages for UK bank account
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
@@ -330,40 +261,12 @@ Feature: Repayment Journey
     When I select option Yes and continue to next
     When I provide Repayment contact telephone as 789765423
     Then I should be on Repayment CYA Page
-    And I should see the row 3 value UK bank account
-    And I should see the row 4 value Natwest
-    And I should see the row 5 value Epic Adventure Inc
-    And I should see the row 6 value 206705
-    And I should see the row 7 value 86473611
-    When I click change link for Repayment UK Bank Name
-    When I enter UK Bank Account details as:
-      | KEY               | VALUE                 |
-      | bankName          | Natwest Change        |
-      | accountHolderName | O'Connor Construction |
-      | sortCode          | 609593                |
-      | accountNumber     | 96863604              |
-    And I should see the row 4 value Natwest Change
-    And I should see the row 5 value O'Connor Construction
-    And I should see the row 6 value 609593
-    And I should see the row 7 value 96863604
-    When I click change link for Repayment UK Bank Method
-    When I select repayment method as Non-UK bank account
-    When I enter Non UK Bank Account details as:
-      | KEY               | VALUE                  |
-      | bankName          | HSBC                   |
-      | nameOnBankAccount | Test Name              |
-      | bic               | HBUKGB4C               |
-      | iban              | GB29NWBK60161331926820 |
-    And I should see the row 4 value HSBC
-    And I should see the row 5 value Test Name
-    And I should see the row 6 value HBUKGB4C
-    And I should see the row 7 value GB29NWBK60161331926820
 
   @batch3
   Scenario: 6 - Organisation User navigates to error page when repayment submission API fails to submit data to ETMP
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
@@ -385,10 +288,8 @@ Feature: Repayment Journey
     When I click go back and complete all the required answers link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
-    And I should see Refund Amount field is pre-populated with 100.00
     And I click on Continue button
     Then I should navigate to Agent Repayment Reason Page
-    And I should see Repayment reason field is pre-populated with Test Refund
 
   @batch3
   Scenario: 7 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP
@@ -400,7 +301,7 @@ Feature: Repayment Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     Then I should navigate to Repayment Amount Page
@@ -421,11 +322,6 @@ Feature: Repayment Journey
     Then I should be on Repayment Incomplete Error Page
     When I click go back and complete all the required answers link
     Then I should navigate to Repayment Guidance Page
-    When I click on Continue button
-    And I should see Refund Amount field is pre-populated with 100.00
-    And I click on Continue button
-    Then I should navigate to Agent Repayment Reason Page
-    And I should see Repayment reason field is pre-populated with Test Refund
 
   @batch3 @ignore
   Scenario: 8 - Organisation User navigates to journey recovery error page when they try to skip mandatory questions

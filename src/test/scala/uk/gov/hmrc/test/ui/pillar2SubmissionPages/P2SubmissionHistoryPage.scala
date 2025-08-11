@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2SubmissionHistoryPage extends PageObject {
-  val url: String                  = s"$p2SubRootUrl" + "submission-history"
+  val url: String                  = s"$rootUrl" + "submission-history"
   val singleaccountingperiodSubHis = ".govuk-table__caption"
   val typeofReturnSubHis           = ".govuk-table__cell"
   val actualMessage                = "//p[contains(text(), 'No submissions made.')]"

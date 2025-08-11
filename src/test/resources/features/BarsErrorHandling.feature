@@ -7,7 +7,7 @@ Feature: Bars Handling
   Scenario: 1 - Organisation User bars integration validation
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     When I click on Continue button
     When I provide Refund Amount as 100.00
     And I click on Continue button
@@ -88,7 +88,7 @@ Feature: Bars Handling
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    When I click Request a refund link
+    When I click Request a repayment link
     When I click on Continue button
     When I provide Refund Amount as 100.00
     And I click on Continue button

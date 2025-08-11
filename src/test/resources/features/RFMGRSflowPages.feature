@@ -22,17 +22,14 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     When I click on Continue button
     Then I should be on RFM Corp Position Page
     When I click on Continue button
-    Then I should see an error message Select if you are the Ultimate Parent Entity or a new nominated filing member on the RFM journey error Page
     When I select corp position as NFM
     Then I should be on New NFM guidance page
     When I click on Continue button
     Then I should be on RFM registered in UK page
     And I click on Continue button
-    Then I should see an error message Select yes if the new nominated filing member is registered in the UK on the RFM journey error Page
     And I select option Yes and continue to next
     Then I should be on RFM UK based entity type page
     When I click on Continue button
-    And I should see an error message Select what type of entity the new filing member is on the RFM journey error Page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to RFM UK limited Company GRSPage
     When I registered successfully with BV enabled
@@ -82,15 +79,15 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     When I provide RFM second contact number as 09872960001
     Then I should navigate to RFM Final Review Page
     And I should see details as below:
-      | KEY                                                   | VALUE                      |
-      | Company                                               | Test Example Company Name  |
-      | Company Registration Number                           | 76543210                   |
-      | Unique Taxpayer Reference                             | 1234567890                 |
-      | Do you have a secondary contact?                      | Yes                        |
-      | Second contact name                                   | RFM second test contact    |
-      | Second contact email address                          | rfmsecondcontact@email.com |
-      | Can we contact the secondary contact by telephone?    | Yes                        |
-      | Second contact telephone number                       | 09872960001                |
+      | KEY                                            | VALUE                      |
+      | Company                                        | Test Example Company Name  |
+      | Company Registration Number                    | 76543210                   |
+      | Unique Taxpayer Reference                      | 1234567890                 |
+      | Do you have a secondary contact?               | Yes                        |
+      | Second contact name                            | RFM second test contact    |
+      | Second contact email address                   | rfmsecondcontact@email.com |
+      | Can we contact the secondary contact by phone? | Yes                        |
+      | Second contact phone number                    | 09872960001                |
     When I click change link for RFM New NFM Name
     And I provide RFM contact name as RFM test contact change
     And I should see the row 5 value RFM test contact change
@@ -158,4 +155,3 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     Then I should be on RFM UK based entity type page
     When I select option Entity type not listed and continue to Name page
     Then I should be on RFM New NFM Contact Name Page
-

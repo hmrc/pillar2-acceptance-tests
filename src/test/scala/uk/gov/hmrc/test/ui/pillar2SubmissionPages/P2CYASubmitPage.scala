@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pillar2SubmissionPages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2CYASubmitPage extends PageObject {
-  val url: String = s"$p2SubRootUrl" + "below-threshold-notification/submit"
+  val url: String = s"$rootUrl" + "below-threshold-notification/submit"
 
 
 

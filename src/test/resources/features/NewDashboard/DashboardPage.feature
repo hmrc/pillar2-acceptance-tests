@@ -15,13 +15,13 @@ Feature: Dashboard Page
 #    And I should navigate back to main tab
     And I should be on Dashboard page
     When I click View outstanding payments link
-    Then I should navigate to under construction page
+    Then I should navigate to Outstanding Payment Page
 #    And The Body content should be Your unique payment reference is XMPLR0012345674. You must use this when making Pillar 2 Top-up Taxes payments.
 #    And The Body content should be You can use the 'Pay Now' button to pay online, or read more about other payment methods. (opens in a new tab)
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     When I click View outstanding payments link
-    Then I should navigate to under construction page
+    Then I should navigate to Outstanding Payment Page
     When I select back link
     Then I should be on Dashboard page
     When I click Manage contact details link
@@ -103,7 +103,7 @@ Feature: Dashboard Page
       | Contact name                                   | Fred Flintstone         |
       | Email address                                  | fred.flintstone@aol.com |
       | Can we contact the primary contact by phone?   | Yes                     |
-      | Phone number                                   | 0115 9700 700           |
+      | Primary phone number                           | 0115 9700 700           |
       | Do you have a second contact?                  | Yes                     |
       | Second contact name                            | Donald Trump            |
       | Second contact email address                   | donald.trump@potus.com  |
@@ -144,7 +144,7 @@ Feature: Dashboard Page
       | Contact name                                   | Contact Name Test #        |
       | Email address                                  | contact*@email.com         |
       | Can we contact the primary contact by phone?   | Yes                        |
-      | Phone number                                   | 123456789                  |
+      | Primary phone number                           | 123456789                  |
       | Do you have a second contact?                  | Yes                        |
       | Second contact name                            | Second Contact £ Name Test |
       | Second contact email address                   | second&Contact@email.com   |
@@ -161,7 +161,7 @@ Feature: Dashboard Page
     And I should be on Dashboard page
 
   @batch2
-  Scenario: 5 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
+  Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     And I should see User details in dashboard page
@@ -180,7 +180,7 @@ Feature: Dashboard Page
     Then I should be on Dashboard page
 
   @batch1
-  Scenario: 6 - Verify Transaction History pages for Org user
+  Scenario: 5 - Verify Transaction History pages for Org user
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0000000122 for Pillar2 service
     Then I should be on Dashboard page
     When I click View transaction history link
@@ -231,7 +231,7 @@ Feature: Dashboard Page
     Then I should be on Transaction History Page
 
   @batch2
-  Scenario Outline: 7 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages
+  Scenario Outline: 6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages
     Given Organisation User logs in to register for Pillar2
     And I should be on Task list page
     When I access the <page name> page

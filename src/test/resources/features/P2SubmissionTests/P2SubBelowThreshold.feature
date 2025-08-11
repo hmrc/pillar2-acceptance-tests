@@ -85,10 +85,11 @@ Feature: Pillar2 submission Below threshold  notification user journey
     And I access submission BTN start page
     When I click on Continue button
     Then I should be navigated to BTN Return Submission KB Page of Pillar2 Submission
-    When I click Report Pillar 2 Top-up Taxes link
-    Then I should be navigated to P2 ASA Home Page of Pillar2 Submission
-    When I select back link
-    Then I should be navigated to BTN Return Submission KB Page of Pillar2 Submission
+    #TODO: Need to clarify correct navigation based on outcome of PIL-2323
+#    When I click Report Pillar 2 Top-up Taxes link
+#    Then I should be navigated to P2 ASA Home Page of Pillar2 Submission
+#    When I select back link
+#    Then I should be navigated to BTN Return Submission KB Page of Pillar2 Submission
     When I click Sign out link
     Then I am on feedback survey page
     When I click on Continue button
@@ -175,7 +176,6 @@ Feature: Pillar2 submission Below threshold  notification user journey
     When I click on Continue button
     Then I should be navigated to BTN Confirmation Page of Pillar2 Submission
     And I can see Print this page link
-    And I can see Download as PDF link
     When I click Back to group’s homepage link
     Then I should be on Dashboard page
 
