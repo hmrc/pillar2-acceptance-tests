@@ -44,20 +44,9 @@ Feature: Dashboard Page
     Then I should be on Dashboard page
     When I click View and amend group details link
     Then I should navigate to accounts summary page
-#    And the page title should be Group details - Report Pillar 2 Top-up Taxes - GOV.UK
-#    And The Heading should be Group details
-#    And I should see row 1 key Where are the entities in your group located?
-#    And I should see row 2 key Group’s accounting period
-#    And I should see row 3 key Start date
-#    And I should see row 4 key End date
-#    And I should see row 1 value In the UK and outside the UK
-#    And I should see row 3 value 6 January 2024
-#    And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the FD Group Status
-#    And The caption must be Group details
     When I select option Only in the UK in further details group status page
     Then I should navigate to accounts summary page
-#    And I should see row 1 value Only in the UK
     When I click on change hyperlink next to the Accounting Period
     When I enter account period as:
       | KEY             | VALUE |
@@ -67,8 +56,6 @@ Feature: Dashboard Page
       | endDate.day     | 5     |
       | endDate.month   | 6     |
       | endDate.year    | 2026  |
-#    And I should see row 3 value 5 May 2025
-#    And I should see row 4 value 5 June 2026
     And I click on Continue button
     Then I should be redirected to "Manage Account processing Page" or "Dashboard page"
     And I should be on Dashboard page
@@ -77,7 +64,6 @@ Feature: Dashboard Page
   Scenario: 3 - User navigates to amend contact details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-#    And I should see User details in dashboard page
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
     When I click on change link for Contact Name
@@ -111,18 +97,13 @@ Feature: Dashboard Page
   Scenario: 4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
-#    And I should see User details in dashboard page
     When I click View and amend contact details link
     Then I should navigate to contact details summary page
-#    And I should see row 1 key Contact name
-#    And I should see row 1 value Fred Flintstone
     When I click on change link for Contact Name
     When I enter Contact Name as 400
     Then I should navigate to contact details summary page
     When I click on Continue button
     Then I should be on Subscription API error page
-#    And The Heading should be Sorry, there is a problem with the service
-#    And The Body content should be Please try again later.
     When I click Return to your account homepage to try again link
     Then I should be on Dashboard page
 
@@ -136,10 +117,8 @@ Feature: Dashboard Page
     Then I should be on Dashboard page
     When I click View your transaction history link
     Then I should be on Transaction History Page
-#    And I should see Next CTA
     When I click Next CTA
     Then I should be on Transaction History Second Page
-#    And I should see Previous CTA
     When I click Previous CTA
     Then I should be on Transaction History Page
     When I click Report Pillar 2 Top-up Taxes link
@@ -238,7 +217,6 @@ Feature: Dashboard Page
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-#    And I can see Agent Services Account link
     When I click Make a payment link
     Then I should navigate to Make a payment page
     When I click on Continue button

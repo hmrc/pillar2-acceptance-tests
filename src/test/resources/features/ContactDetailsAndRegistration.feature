@@ -37,16 +37,8 @@ Feature: Contact details for the filing member
     Then The Task Add contact details status should be Not started
     When I click Add contact details link
     Then I should navigate to Contact details guidance page
-#    And The caption must be Contact details
-#    And The Heading should be We need contact details for the filing member
-#    And The Body content should be We need the contact details for the filing member of this group so we can contact the right person or team when about compliance for Pillar 2 Top-up Taxes.
-#    And The Body content should be These may be different to any contact details you have already provided during this registration.
     When I click on Continue button
     Then I should navigate to Contact details display page
-#    And The Heading should be Saved contact
-#    And I should see the contact details row 1 as UPE Test on use contact page
-#    And I should see the contact details row 2 as test&upe@email.com on use contact page
-#    And I should see the contact details row 3 as 123456 on use contact page
     When I select option No and continue to next
     Then I should navigate to Contact details input name page
     When I enter Contact Name as Contact Name Test
@@ -87,55 +79,28 @@ Feature: Contact details for the filing member
     Then I should be on Contact address input page
     When I select back link
     Then I should be on Second Contact Input page
-#    And I should see the Second Contact Input field is pre-populated with 1234554
     When I select back link
     Then I should be on Second Contact number page
-#    And I should see the answer Yes remain selected
     When I select back link
-#    And I should see the Second Contact Email field is pre-populated with secondContact@email.com
     When I select back link
-#    And I should see the Second Contact Name field is pre-populated with Second Contact Name Test
     When I select back link
     Then I should navigate to Second Contact details page
-#    And I should see the answer Yes remain selected
     When I select back link
     When I select back link
-#    And I should see the Contact Telephone field is pre-populated with 1234554
     When I select back link
-#    And I should see the answer Yes remain selected
     When I select back link
-#    And I should see the Contact Email field is pre-populated with testContact@email.com
     When I select back link
-#    And I should see the Contact Name field is pre-populated with Contact Name Test
     When I select back link
     Then I should navigate to Contact details display page
-#    And I should see the answer No remain selected
     When I select back link
     Then I should navigate to Contact details guidance page
     When I select back link
     Then I should navigate to Task list page
-#    Then The Task Edit contact details status should be Completed
-#    And The Task Check your answers status should be Not started
 
   @batch1
   Scenario: 2 - Check you Answers Page Validations
     Given Organisation User navigates to Contact Details check your answer page with credId ContactDetails
     Then I should be on Contact details Check answers page
-#    And I should see details as below:
-#      | KEY                                            | VALUE                    |
-#      | Contact name                                   | Contact Name Test        |
-#      | Email address                                  | testContact@email.com    |
-#      | Can we contact the primary contact by phone?   | Yes                      |
-#      | Primary phone number                           | 1234554                  |
-#      | Do you have a second contact?                  | Yes                      |
-#      | Second contact name                            | Second Contact Name Test |
-#      | Second contact email address                   | secondContact@email.com  |
-#      | Can we contact the secondary contact by phone? | Yes                      |
-#      | Second contact phone number                    | 1234554                  |
-#      | Address                                        | Address Line 1           |
-#      | Address                                        | City                     |
-#      | Address                                        | EH5 5WY                  |
-#      | Address                                        | United Kingdom           |
     When I click on change link for Contact Name
     And I enter Contact Name as Contact $ Name Change
     Then I should navigate to Contact details Check answers page
@@ -153,37 +118,9 @@ Feature: Contact details for the filing member
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
     And I click on Continue button
-#    Then I should see details as below:
-#      | KEY                                            | VALUE                          |
-#      | Contact name                                   | Contact $ Name Change          |
-#      | Email address                                  | email&change@test.com          |
-#      | Primary phone number                           | 1234555                        |
-#      | Second contact name                            | Second Contact Name Change     |
-#      | Second contact email address                   | secondContact&change@email.com |
-#      | Can we contact the secondary contact by phone? | Yes                            |
-#      | Second contact phone number                    | 71235643                       |
-#      | Address                                        | Address Change                 |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
-#    And I should see details as below:
-#      | KEY                                           | VALUE                          |
-#      | Name                                          | Test                           |
-#      | Address                                       | Address Line 1                 |
-#      | Address                                       | City                           |
-#      | Address                                       | United Arab Emirates           |
-#      | Contact name                                  | UPE Test                       |
-#      | Email address                                 | test&upe@email.com             |
-#      | Can we contact by phone?                      | Yes                            |
-#      | Phone number                                  | 123456                         |
-#      | Is there a nominated filing member            | No                             |
-#      | Where are the entities in your group located? | In the UK and outside the UK   |
-#      | Start date                                    | 15 January 2024                |
-#      | End date                                      | 15 January 2025                |
-#      | Do you have a second contact?                 | Yes                            |
-#      | Second contact name                           | Second Contact Name Change     |
-#      | Second contact email address                  | secondContact&change@email.com |
-#      | Second contact phone number                   | 71235643                       |
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Task list page
     When I click Edit contact details link
@@ -196,19 +133,9 @@ Feature: Contact details for the filing member
     Then I should navigate to Contact address input page
     When I click on Continue button
     Then I should be on Contact details Check answers page
-#    And I should see details as below:
-#      | KEY                           | VALUE          |
-#      | Do you have a second contact? | No             |
-#      | Address                       | Address Change |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
-#    And I should see row 12 value UPE Test
-#    And I should see row 13 value test&upe@email.com
-#    And I should see row 14 value Yes
-#    And I should see row 15 value 123456
-#    And I should see row 16 value No
-#    And I should see row 17 value Address Change
 
   @zap_accessibility @batch2
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
@@ -265,18 +192,10 @@ Feature: Contact details for the filing member
     And I click on Continue button
     Then I should navigate to Contact details input email page
     When I click on Continue button
-##    Then I should see error message Enter the email address for Test ContactName on the Contact details email Page
-#    When I enter Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
-#    When I click on Continue button
-#    Then I should see error message Email address must be 132 characters or less on the Contact details email Page
-#    When I enter Contact Email as FormatErrorTest.com
-#    When I click on Continue button
-#    Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
     Then I should navigate to Contact details telephone page
     When I click on Continue button
-#    Then I should see error message Select yes if we can contact Test ContactName by phone on the Contact details display Page
     When I select option Yes and continue to next
     Then I should navigate to Contact details input telephone page
     When I click on Continue button
@@ -284,26 +203,14 @@ Feature: Contact details for the filing member
     When I click on Continue button
     Then I should navigate to Second Contact details page
     When I click on Continue button
-#    Then I should see error message Select yes if there is someone else we can contact if Test ContactName is not available on the Second Contact details Page
     When I select option Yes and continue to next
     Then I should navigate to Second Contact name page
     When I enter Second Contact Name as Test secondName
     And I click on Continue button
     Then I should navigate to Second Contact email page
+    When I enter Second Contact Email as test@email.com
     And I click on Continue button
-#    Then I should see error message Enter the email address for Test secondName on the Contact details email Page
-#    When I enter Second Contact Email as ContactNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
-#    When I click on Continue button
-#    Then I should see error message Email address must be 132 characters or less on the Contact details email Page
-#    When I enter Second Contact Email as FormatErrorTest.com
-#    When I click on Continue button
-#    Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
-#    When I enter Second Contact Email as testContact@email.com
-#    And I click on Continue button
-#    Then I should navigate to Second Contact number page
-#    When I click on Continue button
-#    Then I should see error message Select yes if we can contact Test secondName by phone on the Second Contact details Page
-    When I select option Yes and continue to next
+   When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I click on Continue button
     When I enter NFM Telephone Number as 1234567
@@ -319,20 +226,11 @@ Feature: Contact details for the filing member
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
-#    And I should see row 7 key Is there a nominated filing member
-#    And I should see row 7 value Yes
-#    And I should see row 8 key Name
-#    And I should see row 8 value Test
-#    And I should see row 9 key Address
-#    And I should see row 9 value Address Line 1
     And I click on Save&Continue button
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
     When I click report and manage your Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
-#    And I should see user details row 1 value XMPLR0012345674
-#    And I should see user details row 2 value 31 January 2024
-#    And I should see user details row 3 value International Organisation Inc.
     And I click the browser back button
     Then I can see Print this page link
 
@@ -349,7 +247,6 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
-#    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     When I click Add further group details link
     When I select option Only in the UK in further details group status page
@@ -377,33 +274,14 @@ Feature: Contact details for the filing member
       | postalCode   | EH5 5WY                |
       | countryCode  | United Kingdom         |
     Then I should navigate to Contact details Check answers page
-#    And I should see row 5 key Do you have a second contact?
-#    And I should see row 5 value No
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
-#    And I should see details as below:
-#      | KEY                         | VALUE                     |
-#      | Company                     | Test Example Company Name |
-#      | Company Registration Number | 76543210                  |
-#      | Unique Taxpayer Reference   | 1234567890                |
-#    And I should see row 4 key Is there a nominated filing member
-#    And I should see row 5 key Company
-#    And I should see row 6 key Company Registration Number
-#    And I should see row 7 key Unique Taxpayer Reference
-#    And I should see row 4 value Yes
-#    And I should see row 5 value Test Example Company Name
-#    And I should see row 6 value 76543210
-#    And I should see row 7 value 1234567890
-#    And I should see row 16 key Do you have a second contact?
-#    And I should see row 16 value No
     And I click on Save&Continue button
     Then I should navigate to Registration Duplication KB Page
     And I click on Save&Continue button
     When I select No option and continue to next
     Then I should navigate to Review answers page
-#    And I should see row 4 key Is there a nominated filing member
-#    And I should see row 4 value No
     And I click on Save&Continue button
     Then I should be redirect to Registration processing page
     Then I should navigate to Registration confirmation page
@@ -430,7 +308,6 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     When I select option UK limited company and continue to GRS page
     When I registered successfully with BV enabled
-#    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     When I click Add further group details link
     When I select option In the UK and outside the UK in further details group status page
@@ -458,8 +335,6 @@ Feature: Contact details for the filing member
       | postalCode   | EH5 5WY                |
       | countryCode  | United Kingdom         |
     Then I should navigate to Contact details Check answers page
-#    And I should see row 5 key Do you have a second contact?
-#    And I should see row 5 value No
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should navigate to Review answers page
@@ -518,17 +393,6 @@ Feature: Contact details for the filing member
     Then I should navigate to input telephone page
     And I enter Telephone Number as 1234569
     Then I should be on Check your answers page
-#    And I should see details as below:
-#      | KEY                      | VALUE                    |
-#      | Name                     | Medium Processing Corp   |
-#      | Address                  | Address Line 1 UPE       |
-#      | Address                  | City UPE                 |
-#      | Address                  | INVALID                  |
-#      | Address                  | United Arab Emirates     |
-#      | Contact name             | Medium Processing        |
-#      | Email address            | testcontactupe@email.com |
-#      | Can we contact by phone? | Yes                      |
-#      | Phone number             | 1234569                  |
     When I click on Continue button
     Then I should navigate to Task list page
     When I click Add filing member details link
@@ -573,6 +437,5 @@ Feature: Contact details for the filing member
     Then I should navigate to Registration confirmation page
     And I click report and manage your Pillar 2 Top-up Taxes link
     Then I should be on Registration In Progress page
-#    And The Heading should be Your registration is in progress
     When I refresh the registration in progress page
     Then I should be on Dashboard page
