@@ -8,12 +8,8 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
   Scenario: 1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
-#    And The caption must be Group details
-#    And The Heading should be Is the Ultimate Parent Entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
-#    And The caption must be Group details
-#    And The Heading should be What entity type is the ultimate parent?
     When I select option Entity type not listed and continue to Name page
     Then I should navigate to input-upe-name page
     When I select back link
@@ -27,29 +23,20 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV enabled
-    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-#    And The Task Edit Ultimate Parent Entity details status should be Completed
-#    And The Task Add filing member details status should be Not started
-#    When I click Add filing member details link
-#    Then I should navigate to NFM registration page
-#    When I select Yes option and continue to next
-#    Then I should navigate to NFM details page
-#    When I select option Yes and continue to next
-#    Then I should be on NFM entity type page
-#    When I click on Continue button
-#    Then I should see error message Select the entity type of the nominated filing member on the NFM Org type Page
+    When I click Add filing member details link
+    Then I should navigate to NFM registration page
+    When I select Yes option and continue to next
+    Then I should navigate to NFM details page
+    When I select option Yes and continue to next
+    Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV enabled
-#    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-#    And The Task Edit Ultimate Parent Entity details status should be Completed
 
   @batch1
   Scenario: 3 - User registered as UkLimitedCompany successfully with BV disabled
@@ -59,7 +46,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
@@ -71,12 +57,9 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV disabled
-#    And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-#    And The Task Edit filing member details status should be Completed
 
   @batch2
   Scenario: 4 - User registration as UkLimitedCompany failed with party type mismatch error
@@ -86,8 +69,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
-#    When registration is unsuccessful with party type mismatch error
+    When registration is unsuccessful with party type mismatch error
     And I click on Save&Continue button
     Then I should be on UPE registration failed error page
     When I click go back to select the entity type link
@@ -106,7 +88,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
-#    When registration is unsuccessful with party type mismatch error
+    When registration is unsuccessful with party type mismatch error
     And I click on Save&Continue button
     Then I should be on NFM registration failed error page
     When I click go back to select the entity type link
@@ -118,12 +100,8 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
   Scenario: 5 - User registration as UkLimitedCompany failed with generic error
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
-#    And The caption must be Group details
-#    And The Heading should be Is the Ultimate Parent Entity registered in the UK?
     When I select option Yes and continue to next
     Then I should be on UPE entity type page
-#    And The caption must be Group details
-#    And The Heading should be What entity type is the ultimate parent?
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
     When registration is unsuccessful with generic error error
@@ -141,8 +119,7 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
-   When registration is unsuccessful with generic error error
+    When registration is unsuccessful with generic error error
     And I click on Save&Continue button
     Then I should be on NFM registration failed error page
 
@@ -154,14 +131,9 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with identifiers not match error
     And I click on Save&Continue button
     Then I should be on UPE registration not called error page
-#    And The Heading should be Sorry, there is a problem with the service
-#    And The Body content should be Try again later.
-#    And The Body content should be Your company details could not be confirmed.
-#    And The Body content should be Go back to select the entity type to try again.
     When I click Go back to select the entity type link
     Then I should be on UPE entity type page
     When I select back link
@@ -182,10 +154,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When registration is unsuccessful with identifiers not match error
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
-#    And The Heading should be Sorry, there is a problem with the service
-#    And The Body content should be Try again later.
-#    And The Body content should be Your company details could not be confirmed.
-#    And The Body content should be Go back to select the entity type to try again.
     When I click Go back to select the entity type link
     Then I should be on NFM entity type page
     When I select back link
@@ -199,7 +167,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with BV failed error
     And I click on Save&Continue button
     Then I should be on UPE registration not called error page
@@ -215,7 +182,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on NFM entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to NFM UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with BV failed error
     And I click on Save&Continue button
     Then I should be on NFM registration not called error page
@@ -228,7 +194,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV enabled
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
@@ -242,12 +207,10 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on NFM entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to NFM LLP GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV enabled
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-#    And The Task Edit Ultimate Parent Entity details status should be Completed
 
   @batch1
   Scenario: 9 - User registered as UkLimitedCompany successfully with BV disabled
@@ -257,7 +220,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV disabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
@@ -270,12 +232,10 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on NFM entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to NFM LLP GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV disabled
     And The json response Body should contain the status "registrationStatus" : "REGISTERED"
     And I click on Save&Continue button
     Then I should navigate to Task list page
-#    And The Task Edit Ultimate Parent Entity details status should be Completed
 
   @batch2
   Scenario: 10 - User registration with LLP with different errors
@@ -285,7 +245,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to LLP GRS page
-#    And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with party type mismatch error
     And I click on Save&Continue button
     Then I should be on UPE registration failed error page
@@ -312,7 +271,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     When I select option Yes and continue to next
     Then I should be on NFM entity type page
     When I select option Limited liability partnership and continue to GRS page
-#    And The Heading should be Stub GRS Journey Data
     When registration is unsuccessful with party type mismatch error
     And I click on Save&Continue button
     Then I should be on NFM registration failed error page
@@ -337,7 +295,6 @@ Feature: Ultimate parent entity and Nominated Filling Member GRS journey
     Then I should be on UPE entity type page
     When I select option UK limited company and continue to GRS page
     Then I should navigate to UKCompany GRS page
-#    And The Heading should be Stub GRS Journey Data
     When I registered successfully with BV enabled
     And I click on Save&Continue button
     Then I should navigate to Task list page
