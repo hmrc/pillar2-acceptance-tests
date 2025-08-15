@@ -23,7 +23,7 @@ import uk.gov.hmrc.test.ui.cucumber._
 object AuthLoginPage extends BasePage with PageObject {
   val url: String                           = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
   val frontEndUrl: String                   = TestConfiguration.url("pillar2-frontend")
-  val incorrectUrl: String                  = TestConfiguration.url("pillar2-frontend") + "randomUrl"
+  val incorrectUrl: String                  = TestConfiguration.url("pillar2-frontend") + "this-page-does-not-exist"
   val submissionFrontEndUrl: String         = TestConfiguration.url("pillar2-submission-frontend")
   val frontEndSubscribeUrl: String          = s"$rootUrl" + "check-progress/register-your-group"
   val frontEndBtaUrl: String                = s"$rootUrl" + "bta/pillar2-id"

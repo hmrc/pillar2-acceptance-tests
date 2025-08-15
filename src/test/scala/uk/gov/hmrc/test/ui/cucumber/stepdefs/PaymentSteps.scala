@@ -126,10 +126,31 @@ class PaymentSteps extends CommonFunctions {
   }
 
   And("""^I select repayment method as (.*)$""") { (option: String) =>
-    option match {
-      case "UK bank account"     => Input.clickById("value_0")
-      case "Non-UK bank account" => Input.clickById("value_1")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "UK bank account"     => "value_0"
+      case "Non-UK bank account" => "value_1"
     }
+    
+    try {
+      val radioLabel = WaitUtils.waitForElementWithRetry(By.cssSelector(s"label[for='$radioId']"))
+      WaitUtils.clickWithRetry(radioLabel)
+    } catch {
+      case _: Exception =>
+        try {
+          val radioInput = WaitUtils.waitForElementWithRetry(By.id(radioId))
+          WaitUtils.clickWithRetry(radioInput)
+        } catch {
+          case _: Exception =>
+            Input.clickById(radioId)
+        }
+    }
+    
     UPEEntityTypePage.clickContinue()
   }
 
@@ -366,11 +387,40 @@ class PaymentSteps extends CommonFunctions {
   }
 
   And("""^I select option (.*) on partial name error page$""") { (option: String) =>
-    option match {
-      case "Yes" => Input.clickById("confirmRepaymentAccountName_0")
-      case "No"  => Input.clickById("confirmRepaymentAccountName_1")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "Yes" => "confirmRepaymentAccountName_0"
+      case "No"  => "confirmRepaymentAccountName_1"
     }
+    
+    try {
+      val element = WaitUtils.waitForElementWithRetry(By.id(radioId))
+      WaitUtils.clickWithRetry(element)
+    } catch {
+      case _: Exception =>
+        try {
+          val label = driver.findElement(By.cssSelector(s"label[for='$radioId']"))
+          WaitUtils.scrollToElement(label)
+          WaitUtils.clickWithRetry(label)
+        } catch {
+          case _: Exception =>
+            try {
+              val radioElement = driver.findElement(By.id(radioId))
+              WaitUtils.clickWithRetry(radioElement)
+            } catch {
+              case _: Exception =>
+                Input.clickById(radioId)
+            }
+        }
+    }
+    
+    WaitUtils.waitForPageToFullyLoad()
     UKBankAccountPaymentPage.clickContinue()
+    WaitUtils.stabilizeAndWait()
   }
 
   And("""^(I navigate from Contact page to CYA page)""") { (negate: String) =>

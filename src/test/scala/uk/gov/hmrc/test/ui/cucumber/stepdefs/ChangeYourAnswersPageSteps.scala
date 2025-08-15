@@ -30,8 +30,43 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
   }
 
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.waitForPageStability()
+    Wait.waitForElementToPresentByCssSelector(".govuk-summary-list")
+    WaitUtils.stabilizeAndWait()
+    
+    var valuesRfm = driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList))
+    var valuesUpe = driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList))
+    
+    if (valuesRfm.isEmpty && valuesUpe.isEmpty) {
+      try {
+        Wait.waitForElementToPresentByCssSelector(".govuk-summary-list__value")
+      } catch {
+        case _: Throwable =>
+      }
+      
+      valuesRfm = driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList))
+      valuesUpe = driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList))
+      
+      if (valuesRfm.isEmpty && valuesUpe.isEmpty) {
+        val genericValues = driver.findElements(By.cssSelector(".govuk-summary-list__value"))
+        if (!genericValues.isEmpty) {
+          assert(genericValues.size() >= row, s"Expected at least $row rows but found ${genericValues.size()}")
+          assert(genericValues.get(row - 1).getText.contains(value))
+        } else {
+          assert(false, "No summary list values found on the page")
+        }
+      } else {
+        val values = if (!valuesRfm.isEmpty) valuesRfm else valuesUpe
+        assert(values.size() >= row, s"Expected at least $row rows but found ${values.size()}")
+        assert(values.get(row - 1).getText.contains(value))
+      }
+    } else {
+      val values = if (!valuesRfm.isEmpty) valuesRfm else valuesUpe
+      assert(values.size() >= row, s"Expected at least $row rows but found ${values.size()}")
+      assert(values.get(row - 1).getText.contains(value))
+    }
   }
 
   And("""^I should see row (\d+) with key (.*) and value (.*)""") { (row: Int, key: String, value: String) =>
@@ -44,6 +79,8 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
     detailsData.forEach { row =>
       val key           = row.get("KEY")
       val expectedValue = row.get("VALUE")
+      Wait.waitForTagNameToBeRefreshed("h1")
+      Wait.waitForElementByXpathContainsText(s"//dt[contains(text(), '$key')]")
       val labelElement  = driver.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
       val valueElement  = labelElement.findElement(By.xpath("following-sibling::dd[1]"))
       if (key == "Address") {

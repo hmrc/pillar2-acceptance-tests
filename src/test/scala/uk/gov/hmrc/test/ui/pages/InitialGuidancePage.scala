@@ -17,7 +17,8 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.{PageObject, Wait}
+import org.openqa.selenium.StaleElementReferenceException
 
 object InitialGuidancePage extends PageObject {
   val url: String = s"$rootUrl" + "business-matching/match-hmrc-records"
@@ -27,6 +28,16 @@ object InitialGuidancePage extends PageObject {
   val continue       = ".govuk-button"
   val backLink       = ".govuk-back-link"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue(): Unit = {
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToBeClickableByCssSelector(continue)
+    try {
+      findByCss(continue).click()
+    } catch {
+      case _: StaleElementReferenceException =>
+        Wait.waitForElementToBeClickableByCssSelector(continue)
+        findByCss(continue).click()
+    }
+  }
 
 }

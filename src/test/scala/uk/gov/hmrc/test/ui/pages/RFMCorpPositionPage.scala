@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Wait
 
 object RFMCorpPositionPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/corporate-position"
@@ -35,6 +36,10 @@ object RFMCorpPositionPage extends PageObject {
   val backLink     = ".govuk-back-link"
   val errorMessage = ".govuk-error-message"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue(): Unit = {
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToBeClickableByCssSelector(continue)
+    findByCss(continue).click()
+  }
 
 }

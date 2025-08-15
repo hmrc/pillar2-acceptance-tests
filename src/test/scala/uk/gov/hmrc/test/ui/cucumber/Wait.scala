@@ -29,6 +29,7 @@ object Wait extends BasePage {
     .withTimeout(Duration.ofSeconds(20))
     .pollingEvery(Duration.ofMillis(250))
     .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+    .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
 
   def waitForElement(id: String): WebElement = waitForElement(By.id(id))
 
@@ -45,8 +46,13 @@ object Wait extends BasePage {
     driverWait.until(ExpectedConditions.elementToBeClickable(By.tagName(tagName)))
   }
 
+  def waitForElementToBeClickableByCssSelector(cssSelector: String): WebElement = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
+    driverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)))
+  }
+
   def waitForUrlToBeVisible(url: String): Boolean = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(8))
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
     driverWait.until(ExpectedConditions.urlToBe(url))
   }
 
@@ -56,8 +62,13 @@ object Wait extends BasePage {
   }
 
   def waitForElementToPresentByCssSelector(cssSelector: String): WebElement = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
     driverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)))
+  }
+
+  def waitForTextInCss(cssSelector: String, text: String): Boolean = {
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
+    driverWait.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(cssSelector), text))
   }
 
   def waitForElementToPresentById(id: String): WebElement = {

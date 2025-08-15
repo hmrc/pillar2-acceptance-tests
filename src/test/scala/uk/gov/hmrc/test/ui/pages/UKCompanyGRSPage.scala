@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Wait
 
 object UKCompanyGRSPage extends PageObject {
 //  val url: String      = s"$rootUrl"+"test-only/stub-grs-journey-data?continueUrl=normalmode&entityType=ukLimitedCompany"
@@ -28,6 +29,10 @@ object UKCompanyGRSPage extends PageObject {
   val backLink        = ".govuk-back-link"
   val errorMessage    = ".govuk-error-message"
 
-  def clickContinue(): Unit = findByCss(saveAndContinue).click()
+  def clickContinue(): Unit = {
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToPresentByCssSelector(saveAndContinue)
+    findByCss(saveAndContinue).click()
+  }
 
 }

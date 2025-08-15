@@ -32,8 +32,9 @@ class UPEPageSteps extends CommonFunctions {
 
       case "NFM name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Input.sendKeysByCss(name, InputUPENamePage.nameField)
-        clickByCss(InputUPENamePage.continue)
+        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.nameField)
+        Input.sendKeysByCss(name, RFMNewNFMContactNamePage.nameField)
+        clickByCss(RFMNewNFMContactNamePage.continue)
 
       case "Address Line 1" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -273,25 +274,95 @@ class UPEPageSteps extends CommonFunctions {
   }
 
   And("""^I select option (.*) and continue to GRS page$""") { (option: String) =>
-    option match {
-      case "UK limited company"            => Input.clickById("value_0")
-      case "Limited liability partnership" => Input.clickById("value_1")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "UK limited company"            => "value_0"
+      case "Limited liability partnership" => "value_1"
     }
+    
+
+    try {
+      val radioLabel = WaitUtils.waitForElementWithRetry(By.cssSelector(s"label[for='$radioId']"))
+      WaitUtils.clickWithRetry(radioLabel)
+    } catch {
+      case _: Exception =>
+        try {
+          val radioInput = WaitUtils.waitForElementWithRetry(By.id(radioId))
+          WaitUtils.clickWithRetry(radioInput)
+        } catch {
+          case _: Exception =>
+          
+            Input.clickById(radioId)
+        }
+    }
+    
     UPEEntityTypePage.clickContinue()
+    Wait.waitForUrl("stub-grs-journey-data")
   }
 
   And("""^I select option (.*) and continue to Name page$""") { (option: String) =>
-    option match {
-      case "Entity type not listed" => Input.clickById("value_2")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "Entity type not listed" => "value_2"
     }
+    
+ 
+    try {
+      val radioLabel = WaitUtils.waitForElementWithRetry(By.cssSelector(s"label[for='$radioId']"))
+      WaitUtils.clickWithRetry(radioLabel)
+    } catch {
+      case _: Exception =>
+        try {
+          val radioInput = WaitUtils.waitForElementWithRetry(By.id(radioId))
+          WaitUtils.clickWithRetry(radioInput)
+        } catch {
+          case _: Exception =>
+           
+            Input.clickById(radioId)
+        }
+    }
+    
     UPEEntityTypePage.clickContinue()
   }
 
   And("""^I select option (.*) in further details group status page$""") { (option: String) =>
-    option match {
-      case "In the UK and outside the UK" => Input.clickById("value_1")
-      case "Only in the UK"               => Input.clickById("value_0")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "In the UK and outside the UK" => "value_1"
+      case "Only in the UK"               => "value_0"
     }
+    
+ 
+    try {
+      val radioLabel = WaitUtils.waitForElementWithRetry(By.cssSelector(s"label[for='$radioId']"))
+      WaitUtils.clickWithRetry(radioLabel)
+    } catch {
+      case _: Exception =>
+        try {
+          val radioInput = WaitUtils.waitForElementWithRetry(By.id(radioId))
+          WaitUtils.clickWithRetry(radioInput)
+        } catch {
+          case _: Exception =>
+         
+            Input.clickById(radioId)
+        }
+    }
+    
     UPEEntityTypePage.clickContinue()
   }
 
@@ -328,7 +399,21 @@ class UPEPageSteps extends CommonFunctions {
   }
 
   And("""^I click on Save&Continue button""") {
-    UPEEntityTypePage.clickContinue()
+    Wait.waitForTagNameToBeRefreshed("h1")
+    val current = driver.getCurrentUrl
+    if (current.contains("/replace-filing-member/")) {
+      try {
+        Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
+        Input.clickByCss(".govuk-button")
+      } catch {
+        case _: Exception =>
+          Wait.waitForTagNameToBeRefreshed("body")
+          Wait.waitForElementToBeClickableByCssSelector(".govuk-button")
+          Input.clickByCss(".govuk-button")
+      }
+    } else {
+      UPEEntityTypePage.clickContinue()
+    }
   }
 
   Then("""^The second heading should be (.*)$""") { header: String =>

@@ -17,6 +17,8 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.Wait
 
 object RFMContactGuidancePage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/contact-details/content"
@@ -24,4 +26,10 @@ object RFMContactGuidancePage extends PageObject {
   val caption        = ".govuk-caption-l"
   val continue       = ".govuk-button"
   val header: String = "h1.govuk-heading-l"
+
+  def clickContinue(): Unit = {
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToBeClickableByCssSelector(continue)
+    findByCss(continue).click()
+  }
 }

@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Wait
 
 object UPEEntityTypePage extends PageObject {
   val url: String = s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
@@ -32,6 +33,10 @@ object UPEEntityTypePage extends PageObject {
   val errorMessage         = ".govuk-error-message"
   val inputUpeNamePageLink = "[href*='no-id/input-name']"
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def clickContinue(): Unit = {
+    Wait.waitForTagNameToBeRefreshed("body")
+    Wait.waitForElementToBeClickableByCssSelector(continue)
+    findByCss(continue).click()
+  }
 
 }
