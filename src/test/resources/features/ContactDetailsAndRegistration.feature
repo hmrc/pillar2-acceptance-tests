@@ -118,9 +118,43 @@ Feature: Contact details for the filing member
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
     And I click on Continue button
+    Then I should see details as below:
+      | KEY                                            | VALUE                          |
+      | Contact name                                   | Contact $ Name Change          |
+      | Email address                                  | email&change@test.com          |
+      | Primary phone number                           | 1234555                        |
+      | Second contact name                            | Second Contact Name Change     |
+      | Second contact email address                   | secondContact&change@email.com |
+      | Can we contact the secondary contact by phone? | Yes                            |
+      | Second contact phone number                    | 71235643                       |
+      | Address                                        | Address Change                 |
     And I click on Continue button
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
+    And I should see details as below:
+      | KEY                                           | VALUE                          |
+      | Name                                          | Test                           |
+      | Address                                       | Address Line 1                 |
+      | Address                                       | City                           |
+      | Address                                       | United Arab Emirates           |
+      | Contact name                                  | UPE Test                       |
+      | Email address                                 | test&upe@email.com             |
+      | Can we contact by phone?                      | Yes                            |
+      | Phone number                                  | 123456                         |
+      | Is there a nominated filing member            | No                             |
+      | Where are the entities in your group located? | In the UK and outside the UK   |
+      | Start date                                    | 15 January 2024                |
+      | End date                                      | 15 January 2025                |
+      | Do you have a second contact?                 | Yes                            |
+      | Second contact name                           | Second Contact Name Change     |
+      | Second contact email address                  | secondContact&change@email.com |
+      | Second contact phone number                   | 71235643                       |
+    And I should see row 12 with key Contact name and value Contact $ Name Change
+    And I should see row 13 with key Email address and value email&change@test.com
+    And I should see row 14 with key Can we contact the primary contact by phone? and value Yes
+    And I should see row 15 with key Primary phone number and value 123455
+    And I should see row 19 with key Can we contact the secondary contact by phone? and value Yes
+    And I should see row 21 with key Address and value Address Change
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to Task list page
     When I click Edit contact details link
@@ -210,7 +244,7 @@ Feature: Contact details for the filing member
     Then I should navigate to Second Contact email page
     When I enter Second Contact Email as test@email.com
     And I click on Continue button
-   When I select option Yes and continue to next
+    When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I click on Continue button
     When I enter NFM Telephone Number as 1234567
