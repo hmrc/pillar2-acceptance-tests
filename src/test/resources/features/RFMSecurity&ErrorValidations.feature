@@ -16,6 +16,7 @@ Feature: RFM check your answers page
     Then I should navigate to RFM journey recovery page
     And I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should be on RFM start page
+    And I click on Continue button
     And I provide RFM pillar2 id as XEPLR0123456222
     Then I should be on RFM Registration Date Page
     When Registration Day is entered as 27

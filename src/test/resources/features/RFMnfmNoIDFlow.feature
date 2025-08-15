@@ -90,7 +90,7 @@ Feature: RFM CYA - NFM No ID flow
     When I select back link
     Then I should be on RFM No ID CYA Page
     And I click on Continue button
-    Then I should navigate to RFM Final Review Page       |
+    Then I should navigate to RFM Final Review Page
     When I click change link for RFM Input Name
     When I provide RFM New NFM Name as Test Change
     Then I should navigate to RFM Final Review Page
@@ -301,6 +301,10 @@ Feature: RFM CYA - NFM No ID flow
     When I provide RFM contact number as 01632960001
     And I select option Yes and continue to next
     And I click on Continue button
+    When I provide RFM contact name as RFM second test contact
+    When I click on Continue button
+    When I provide RFM contact email as rfmsecondcontact@email.com
+    Then I click on Continue button
     When I select option Yes and continue to next
     When I provide RFM second contact number as 09872960001
     When I enter Address as:
