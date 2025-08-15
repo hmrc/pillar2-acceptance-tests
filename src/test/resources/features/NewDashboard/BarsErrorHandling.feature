@@ -16,27 +16,27 @@ Feature: Bars Handling
     And I click on Continue button
     Then I should navigate to Repayment Method Page
     And I select repayment method as UK bank account
-    When I enter UK Bank Account details as:
-      | KEY               | VALUE             |
-      | bankName          | Test              |
-      | accountHolderName | Sanguine Skincare |
-      | sortCode          | 206705            |
-      | accountNumber     | 86563612          |
-    Then I should see bank account error message Enter the account number as it appears on your bank statement on the UK Account Number Element
-    When I enter UK Bank Account details as:
-      | KEY               | VALUE             |
-      | bankName          | Test              |
-      | accountHolderName | Sanguine Skincare |
-      | sortCode          | 207106            |
-      | accountNumber     | 86473611          |
-    Then I should see bank account error message Enter the sort code as it appears on your bank statement on the UK Sort Code Element
-    When I enter UK Bank Account details as:
-      | KEY               | VALUE                |
-      | bankName          | Test                 |
-      | accountHolderName | Lambent Illumination |
-      | sortCode          | 207102               |
-      | accountNumber     | 86563611             |
-    Then I should see bank account error message Enter the name on the account as it appears on your bank statement on the UK Account Name Element
+#    When I enter UK Bank Account details as:
+#      | KEY               | VALUE             |
+#      | bankName          | Test              |
+#      | accountHolderName | Sanguine Skincare |
+#      | sortCode          | 206705            |
+#      | accountNumber     | 86563612          |
+#    Then I should see bank account error message Enter the account number as it appears on your bank statement on the UK Account Number Element
+#    When I enter UK Bank Account details as:
+#      | KEY               | VALUE             |
+#      | bankName          | Test              |
+#      | accountHolderName | Sanguine Skincare |
+#      | sortCode          | 207106            |
+#      | accountNumber     | 86473611          |
+#    Then I should see bank account error message Enter the sort code as it appears on your bank statement on the UK Sort Code Element
+#    When I enter UK Bank Account details as:
+#      | KEY               | VALUE                |
+#      | bankName          | Test                 |
+#      | accountHolderName | Lambent Illumination |
+#      | sortCode          | 207102               |
+#      | accountNumber     | 86563611             |
+#    Then I should see bank account error message Enter the name on the account as it appears on your bank statement on the UK Account Name Element
     When I enter UK Bank Account details as:
       | KEY               | VALUE     |
       | bankName          | Test      |

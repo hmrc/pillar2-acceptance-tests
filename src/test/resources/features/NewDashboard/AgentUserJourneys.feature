@@ -62,21 +62,17 @@ Feature: Agent user journeys
 
     And I click Manage contact details link
     Then I should navigate to Agent Contact Detail Summary Page
-  #  And I should see row 2 value fred.flintstone@aol.com
     When I click on change link for Email address
     When I enter Contact Email as updatecontact@email.com
     Then I should navigate to Agent Contact Detail Summary Page
-  #  And I should see row 2 value updatecontact@email.com
     When I click on Continue button
     Then I should navigate to ASA Dashboard page
     And I click Manage group details link
     Then I should navigate to Agent Account Summary Page
-  #  And I should see row 4 value 6 April 2025
     When I click on change hyperlink next to the Accounting Period
     And Accounting Period End Month is entered as 12
     When I click on Continue button
     Then I should navigate to Agent Account Summary Page
-  #  And I should see row 4 value 6 December 2025
     And I click on Continue button
     Then I should be redirected to "Manage Account processing Page" or "ASA Dashboard page"
     Then I should navigate to ASA Dashboard page
