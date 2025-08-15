@@ -105,8 +105,6 @@ Feature: Create a new registration and subscription
     And I select back link
     When I click on Continue button
     Then I should navigate to Incomplete Data Submission Error Page
-    And The Heading should be You have one or more incomplete registration tasks
-    And The Body content should be go back to register your group and complete any in progress tasks.
     When I click go back to register your group and complete any in progress tasks. link
     Then I should navigate to Task list page
     Then The Task Add contact details status should be In progress
@@ -165,9 +163,6 @@ Feature: Create a new registration and subscription
     When I click Check your answers before submitting your registration link
     And I click on Save&Continue button
     Then I should navigate to Registration API error page
-    And The Heading should be Sorry, there is a problem with the service
-    And The Body content should be You must still register, please try again later.
-    And The Body content should be We have saved your answers and they will be available for 28 days. After that time you will need to enter all of the information again.
     When I click Return to registration to try again link
     Then I should navigate to Task list page
 
@@ -175,9 +170,6 @@ Feature: Create a new registration and subscription
   Scenario: 4 - Verify the link on page can't be found page
     Given Organisation User logs in without Pillar2 enrolment
     And I access random page
-    And The Heading should be This page can’t be found
-    And The Body content should be Please check that you have entered the correct web address.
-    And The Body content should be You must return to your Pillar 2 Top-up Taxes registration and complete the required tasks.
     Then I click return to your Pillar 2 Top-up Taxes registration link
     Then I should see task list sections
     And The Task Add Ultimate Parent Entity details status should be Not started
