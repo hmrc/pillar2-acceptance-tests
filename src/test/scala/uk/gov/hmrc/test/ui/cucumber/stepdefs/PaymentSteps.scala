@@ -295,10 +295,10 @@ class PaymentSteps extends CommonFunctions {
         Input.sendKeysByCss(Value, RepaymentContactEmailPage.contactEmailField)
         clickByCss(RepaymentContactEmailPage.continue)
 
-      case "telephone" =>
+      case "phone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Input.sendKeysByCss(Value, RepaymentTelephoneInputPage.contactTelephone)
-        clickByCss(RepaymentTelephoneInputPage.continue)
+        Input.sendKeysByCss(Value, RepaymentPhoneInputPage.contactPhone)
+        clickByCss(RepaymentPhoneInputPage.continue)
     }
   }
 
@@ -333,10 +333,10 @@ class PaymentSteps extends CommonFunctions {
         clickByCss(RepaymentCYAPage.changeContactName)
       case "Contact Email" =>
         clickByCss(RepaymentCYAPage.changeContactEmail)
-      case "Contact Telephone" =>
-        clickByCss(RepaymentCYAPage.changeTelephone)
-      case "Contact Telephone Number" =>
-        clickByCss(RepaymentCYAPage.changeTelephoneNumber)
+      case "Contact Phone" =>
+        clickByCss(RepaymentCYAPage.changePhone)
+      case "Contact Phone Number" =>
+        clickByCss(RepaymentCYAPage.changePhoneNumber)
       case "UK Bank Name" =>
         clickByCss(RepaymentCYAPage.changeUKBankDetails)
       case "UK Bank Method" =>

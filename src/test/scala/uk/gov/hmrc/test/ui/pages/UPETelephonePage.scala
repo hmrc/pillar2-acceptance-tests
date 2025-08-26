@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object UPETelephonePage extends PageObject {
+object UPEPhonePage extends PageObject {
   val url: String  = s"$rootUrl" + "business-matching/ultimate-parent/no-id/phone"
   val continue     = "#submit"
   val errorSummary = ".govuk-error-summary__list"

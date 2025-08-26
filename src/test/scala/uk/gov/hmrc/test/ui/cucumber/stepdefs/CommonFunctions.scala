@@ -49,8 +49,8 @@ trait CommonFunctions
       case "UPE EQ page"                                => UPEEQPage
       case "input-upe-name page"                        => InputUPENamePage
       case "input-upe-address page"                     => UPEAddressPage
-      case "UPE Telephone page"                         => UPETelephonePage
-      case "input telephone page"                       => InputUPETelephonePage
+      case "UPE Phone page"                         => UPEPhonePage
+      case "input phone page"                       => InputUPEPhonePage
       case "under construction page"                    => UnderConstructionPage
       case "under construction error page"              => UnderConstructionErrorPage
       case "UPE Contact person/team Name page"          => UPEContactNamePage
@@ -67,8 +67,8 @@ trait CommonFunctions
       case "NFM Address page"                           => NFMAddressPage
       case "NFM Contact Name page"                      => NFMContactNamePage
       case "NFM Contact Email page"                     => NFMContactEmailPage
-      case "NFM Telephone page"                         => NFMTelephonePage
-      case "input nfm telephone page"                   => InputNFMTelephonePage
+      case "NFM Phone page"                         => NFMPhonePage
+      case "input nfm phone page"                   => InputNFMPhonePage
       case "NFM Check your answers page"                => NFMCheckYourAnswersPage
       case "MNE or domestic page"                       => FDGroupStatusPage
       case "Group accounting period page"               => GroupAccountingPeriodPage
@@ -77,9 +77,9 @@ trait CommonFunctions
       case "Contact details display page"               => ContactDetailsDisplayPage
       case "Contact details input name page"            => ContactDetailsInputNamePage
       case "Contact details input email page"           => ContactDetailsInputEmailPage
-      case "Contact details telephone page"             => ContactDetailsTelephonePage
-      case "Contact details change phone page"          => ContactDetailsChangeTelephonePage
-      case "Contact details input telephone page"       => ContactDetailsInputTelephonePage
+      case "Contact details phone page"             => ContactDetailsPhonePage
+      case "Contact details change phone page"          => ContactDetailsChangePhonePage
+      case "Contact details input phone page"       => ContactDetailsInputPhonePage
       case "Second Contact details page"                => SecondContactDetailsPage
       case "Second Contact name page"                   => SecondContactNamePage
       case "Second Contact email page"                  => SecondContactEmailPage
@@ -139,8 +139,8 @@ trait CommonFunctions
       case "RFM Second Contact Question Page"           => RFMSecondContactQuestionPage
       case "RFM second contact name page"               => RFMSecondContactNamePage
       case "RFM second contact email page"              => RFMSecondContactEmailPage
-      case "RFM second contact telephone question page" => RFMSecondContactTelephoneQuestionPage
-      case "RFM second contact telephone page"          => RFMSecondContactTelephonePage
+      case "RFM second contact phone question page" => RFMSecondContactPhoneQuestionPage
+      case "RFM second contact phone page"          => RFMSecondContactPhonePage
       case "RFM UK based entity type page"              => RFMGRSEntityTypePage
       case "RFM UK limited Company GRSPage"             => RFMUKlimitedCompanyGRSPage
       case "RFM LLP GRS page"                           => RFMLLPGRSPage
@@ -179,8 +179,8 @@ trait CommonFunctions
       case "Agent Repayment Amount Page"                => AgentRepaymentAmountPage
       case "Repayment Contact Page"                     => RepaymentContactPage
       case "Repayment Contact Email Page"               => RepaymentContactEmailPage
-      case "Repayment Telephone Page"                   => RepaymentTelephonePage
-      case "Repayment Telephone Input Page"             => RepaymentTelephoneInputPage
+      case "Repayment Phone Page"                   => RepaymentPhonePage
+      case "Repayment Phone Input Page"             => RepaymentPhoneInputPage
       case "Reason For Refund Page"                     => RepaymentReasonPage
       case "Repayment Method Page"                      => RepaymentMethodPage
       case "Agent Repayment Reason Page"                => AgentRepaymentReasonPage

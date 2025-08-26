@@ -22,10 +22,10 @@ Feature: UPE NO ID journey
     When I enter UPE Person/Team name as Contact UPE
     Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as testcontactupe@email.com
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input telephone page
-    And I enter Telephone Number as 1234569
+    Then I should navigate to input phone page
+    And I enter Phone Number as 1234569
     Then I should be on Check your answers page
     When I click on Continue button
     Then I should be on Task list page
@@ -40,7 +40,7 @@ Feature: UPE NO ID journey
     And I click on Continue button
     Then I click on Continue button
     When I select back link
-    Then I should be on UPE Telephone page
+    Then I should be on UPE Phone page
     When I select back link
     Then I should be on UPE Contact Email page
     When I select back link
@@ -74,12 +74,12 @@ Feature: UPE NO ID journey
     When I enter UPE Email address as testteam@email.com
     And I click on Continue button
     When I select option Yes and continue to next
-    When I enter Telephone Number as 123456
+    When I enter Phone Number as 123456
     Then I should be on Check your answers page
     When I select back link
-    Then I should navigate to input telephone page
+    Then I should navigate to input phone page
     When I select back link
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option No and continue to next
     Then I should be on Check your answers page
     When I click feedback link
@@ -114,7 +114,7 @@ Feature: UPE NO ID journey
     When I enter UPE Email address as testTeamEmail
     When I enter UPE Email address as NFMNameCharacterLengthErrorValidation@andMaximumNFMCharacterLengthShouldBeEnteredMoreThanOneHundredThirtyTwoCharactersForEmailTextField.com
     When I enter UPE Email address as testteam@email.com
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
 
   @batch1 @zap_accessibility
   Scenario: 4 - Change UPE fields from UPE check your answers page
@@ -134,10 +134,10 @@ Feature: UPE NO ID journey
     When I click on change hyperlink next to the UPE Email Address
     And I enter UPE Email address as changetest&@email.com
     And I should see row 4 value changetest&@email.com
-    When I click on change hyperlink next to the UPE Telephone Number
-    And I enter Telephone Number as 12345679
+    When I click on change hyperlink next to the UPE Phone Number
+    And I enter Phone Number as 12345679
     And I should see row 6 value 12345679
-    When I click on change hyperlink next to the UPE Telephone Contact
+    When I click on change hyperlink next to the UPE Phone Contact
     And I select option No and continue to next
     And I should see row 5 value No
     When I click Report Pillar 2 Top-up Taxes link
@@ -164,13 +164,13 @@ Feature: UPE NO ID journey
       | countryCode  | United Arab Emirates |
     When I enter UPE Person/Team name as UPE Contact Name
     When I enter UPE Email address as testteam@email.com
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option Yes and continue to next
-    And I navigate back to TaskList Page from Telephone Page
+    And I navigate back to TaskList Page from Phone Page
     Then The Task Add Ultimate Parent Entity details status should be In progress
     When I click Add Ultimate Parent Entity details link
-    And I navigate to Telephone Question Page from Initial guidance Page
+    And I navigate to Phone Question Page from Initial guidance Page
     And I select option Yes and continue to next
-    And I enter Telephone Number as 123456
-    And I navigate back to TaskList Page from Telephone Input Page
+    And I enter Phone Number as 123456
+    And I navigate back to TaskList Page from Phone Input Page
     Then The Task Edit Ultimate Parent Entity details status should be Completed

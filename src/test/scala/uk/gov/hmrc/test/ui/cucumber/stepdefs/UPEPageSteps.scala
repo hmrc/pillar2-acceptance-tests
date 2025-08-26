@@ -75,9 +75,9 @@ class UPEPageSteps extends CommonFunctions {
         Input.sendKeysById(UPEContactEmailPage.emailField, name)
         clickByCss(InputUPENamePage.continue)
 
-      case "Telephone Number" =>
-        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.telephoneNumber)
-        Input.sendKeysByCss(name, InputUPETelephonePage.telephoneNumber)
+      case "Phone Number" =>
+        Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.phoneNumber)
+        Input.sendKeysByCss(name, InputUPEPhonePage.phoneNumber)
         clickByCss(InputUPENamePage.continue)
 
       case "NFM Contact name" =>
@@ -90,9 +90,9 @@ class UPEPageSteps extends CommonFunctions {
         Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
         clickByCss(InputUPENamePage.continue)
 
-      case "NFM Telephone Number" =>
-        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.telephoneNumber)
-        Input.sendKeysByCss(name, InputNFMTelephonePage.telephoneNumber)
+      case "NFM Phone Number" =>
+        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.phoneNumber)
+        Input.sendKeysByCss(name, InputNFMPhonePage.phoneNumber)
         clickByCss(InputUPENamePage.continue)
 
       case "Contact Details Name" =>
@@ -110,9 +110,9 @@ class UPEPageSteps extends CommonFunctions {
         Input.sendKeysByCss(name, ContactDetailsInputEmailPage.contactEmail)
         clickByCss(InputUPENamePage.continue)
 
-      case "Contact Telephone" =>
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputTelephonePage.contactTelephone)
-        Input.sendKeysByCss(name, ContactDetailsInputTelephonePage.contactTelephone)
+      case "Contact Phone" =>
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputPhonePage.contactPhone)
+        Input.sendKeysByCss(name, ContactDetailsInputPhonePage.contactPhone)
         clickByCss(InputUPENamePage.continue)
 
       case "Second Contact Name" =>
@@ -126,8 +126,8 @@ class UPEPageSteps extends CommonFunctions {
         clickByCss(InputUPENamePage.continue)
 
       case "Second Contact Input" =>
-        Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactTelephone)
-        Input.sendKeysByCss(name, SecondContactInputPage.contactTelephone)
+        Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactPhone)
+        Input.sendKeysByCss(name, SecondContactInputPage.contactPhone)
         clickByCss(InputUPENamePage.continue)
 
     }
@@ -232,26 +232,26 @@ class UPEPageSteps extends CommonFunctions {
         assert(getAttributeOfId(UPEContactNamePage.contactName, "value").equals(name))
       case "UPE Email address" =>
         assert(getAttributeOfId(UPEContactEmailPage.emailField, "value").equals(name))
-      case "Telephone number" =>
-        assert(getAttributeOf(InputUPETelephonePage.telephoneNumber, "value").equals(name))
+      case "Phone number" =>
+        assert(getAttributeOf(InputUPEPhonePage.phoneNumber, "value").equals(name))
       case "NFM Contact name" =>
         assert(getAttributeOf(NFMContactNamePage.contactName, "value").equals(name))
       case "NFM Contact Email" =>
         assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
-      case "NFM Telephone number" =>
-        assert(getAttributeOf(InputNFMTelephonePage.telephoneNumber, "value").equals(name))
+      case "NFM Phone number" =>
+        assert(getAttributeOf(InputNFMPhonePage.phoneNumber, "value").equals(name))
       case "Contact Name" =>
         assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
       case "Contact Email" =>
         assert(getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
-      case "Contact Telephone" =>
-        assert(getAttributeOf(ContactDetailsInputTelephonePage.contactTelephone, "value").equals(name))
+      case "Contact Phone" =>
+        assert(getAttributeOf(ContactDetailsInputPhonePage.contactPhone, "value").equals(name))
       case "Second Contact Name" =>
         assert(getAttributeOf(SecondContactNamePage.contactName, "value").equals(name))
       case "Second Contact Email" =>
         assert(getAttributeOf(SecondContactEmailPage.contactEmail, "value").equals(name))
       case "Second Contact Input" =>
-        assert(getAttributeOf(SecondContactInputPage.contactTelephone, "value").equals(name))
+        assert(getAttributeOf(SecondContactInputPage.contactPhone, "value").equals(name))
       case "Redirect URL" =>
         assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
       case "PLRID" =>

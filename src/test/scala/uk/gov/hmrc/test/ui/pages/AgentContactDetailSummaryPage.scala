@@ -31,14 +31,14 @@ object AgentContactDetailSummaryPage extends PageObject {
 
   val changeName          = "a[href*='/change-input-name']"
   val changeEmail         = "a[href*='/change-input-email']"
-  val changeContact       = "a[href*='/change-telephone']"
-  val changeContactNumber = "a[href*='/change-input-telephone']"
+  val changeContact       = "a[href*='/change-phone']"
+  val changeContactNumber = "a[href*='/change-input-phone']"
 
   val secondContact         = "a[href*='/change-second-contact']"
   val changeSecondName      = "a[href*='/change-second-input-name']"
   val changeSecondEmail     = "a[href*='/change-second-input-email']"
-  val secondTelephone       = "a[href*='/change-second-telephone']"
-  val changeSecondTelephone = "a[href*='/change-second-input-telephone']"
+  val secondPhone       = "a[href*='/change-second-phone']"
+  val changeSecondPhone = "a[href*='/change-second-input-phone']"
 
   val changeAddress          = "a[href*='/change-input-address']"
   val dashboardAddressChange = "a[href*='address/change-input']"

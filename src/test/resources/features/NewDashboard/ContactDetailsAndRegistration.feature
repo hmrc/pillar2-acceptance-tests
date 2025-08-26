@@ -19,7 +19,7 @@ Feature: Contact details for the filing member
     When I enter UPE Person/Team name as UPE Test
     When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
-    And I enter Telephone Number as 123456
+    And I enter Phone Number as 123456
     And I click on Continue button
     When I click Add filing member details link
     When I select No option and continue to next
@@ -53,14 +53,14 @@ Feature: Contact details for the filing member
     When I enter Contact Name as Contact Name Test
     Then I should navigate to Contact details input email page
     When I enter Contact Email as testContact@email.com
-    Then I should navigate to Contact details telephone page
+    Then I should navigate to Contact details phone page
     When I select option No and continue to next
     Then I should navigate to Second Contact details page
     When I select back link
-    Then I should navigate to Contact details telephone page
+    Then I should navigate to Contact details phone page
     When I select option Yes and continue to next
-    Then I should navigate to Contact details input telephone page
-    When I enter Contact Telephone as 1234554
+    Then I should navigate to Contact details input phone page
+    When I enter Contact Phone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
     When I select option No and continue to next
@@ -101,7 +101,7 @@ Feature: Contact details for the filing member
 #    And I should see the answer Yes remain selected
     When I select back link
     When I select back link
-#    And I should see the Contact Telephone field is pre-populated with 1234554
+#    And I should see the Contact Phone field is pre-populated with 1234554
     When I select back link
 #    And I should see the answer Yes remain selected
     When I select back link
@@ -144,13 +144,13 @@ Feature: Contact details for the filing member
     And I enter Contact Email as email&change@test.com
     Then I should navigate to Contact details Check answers page
     When I click on change link for Phone number
-    And I enter Contact Telephone as 1234555
+    And I enter Contact Phone as 1234555
     When I click on change link for Second Contact Name
     And I enter Second Contact Name as Second Contact Name Change
     When I click on change link for Second Contact Email
     And I enter Second Contact Email as secondContact&change@email.com
     When I click on change link for Second Contact Phone number
-    And I enter Contact Telephone as 71235643
+    And I enter Contact Phone as 71235643
     When I click on change link for Address
     And I enter Address Line 1 as Address Change
     And I click on Continue button
@@ -233,7 +233,7 @@ Feature: Contact details for the filing member
     When I enter UPE Person/Team name as UPE Test
     When I enter UPE Email address as test&upe@email.com
     When I select option Yes and continue to next
-    And I enter Telephone Number as 123456
+    And I enter Phone Number as 123456
     And I click on Continue button
     When I click Add filing member details link
     When I select Yes option and continue to next
@@ -248,7 +248,7 @@ Feature: Contact details for the filing member
     When I enter NFM Contact name as Contact NFM Test
     When I enter NFM Contact Email as testNFM@email.com
     When I select option Yes and continue to next
-    When I enter NFM Telephone Number as 12345678
+    When I enter NFM Phone Number as 12345678
     And I click on Continue button
     When I click Add further group details link
     When I select option In the UK and outside the UK in further details group status page
@@ -286,13 +286,13 @@ Feature: Contact details for the filing member
 #    Then I should see error message Enter an email address in the correct format, like name@example.com on the Contact details email Page
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
-    Then I should navigate to Contact details telephone page
+    Then I should navigate to Contact details phone page
     When I click on Continue button
 #    Then I should see error message Select yes if we can contact Test ContactName by phone on the Contact details display Page
     When I select option Yes and continue to next
-    Then I should navigate to Contact details input telephone page
+    Then I should navigate to Contact details input phone page
     When I click on Continue button
-    When I enter NFM Telephone Number as 12345343
+    When I enter NFM Phone Number as 12345343
     When I click on Continue button
     Then I should navigate to Second Contact details page
     When I click on Continue button
@@ -323,7 +323,7 @@ Feature: Contact details for the filing member
     When I select option Yes and continue to next
     Then I should navigate to Second Contact Input page
     When I click on Continue button
-    When I enter NFM Telephone Number as 1234567
+    When I enter NFM Phone Number as 1234567
     When I click on Continue button
     Then I should navigate to Contact address input page
     When I enter Address as:
@@ -394,7 +394,7 @@ Feature: Contact details for the filing member
     When I enter Contact Name as Contact Name Test
     When I enter Contact Email as testContact@email.com
     When I select option Yes and continue to next
-    When I enter Contact Telephone as 1234554
+    When I enter Contact Phone as 1234554
     When I select option No and continue to next
     When I enter Address as:
       | KEY          | VALUE                  |
@@ -475,7 +475,7 @@ Feature: Contact details for the filing member
     When I enter Contact Name as Contact Name Test
     When I enter Contact Email as testContact@email.com
     When I select option Yes and continue to next
-    When I enter Contact Telephone as 1234554
+    When I enter Contact Phone as 1234554
     When I select option No and continue to next
     When I enter Address as:
       | KEY          | VALUE                  |
@@ -510,7 +510,7 @@ Feature: Contact details for the filing member
     When I click on Continue button
     When I enter NFM Contact name as Contact CYA
     When I enter NFM Contact Email as testcya@email.com
-    Then I should navigate to NFM Telephone page
+    Then I should navigate to NFM Phone page
     When I select option No and continue to next
     Then I should navigate to NFM Check your answers page
     When I click on Continue button

@@ -33,7 +33,7 @@ object RFMFinalReviewCYAPage extends PageObject {
   val changeAddress                 = "[href*='address/change-input']"
   val changeContactname             = "a[href*='/change-input-business-name']"
   val changeEmailaddress            = "a[href*='/change-input-email']"
-  val changeTelephonecontact        = "a[href*='/change-telephone']"
-  val changeTelephonenumber         = "a[href*='/change-input-telephone']"
+  val changePhonecontact        = "a[href*='/change-phone']"
+  val changePhonenumber         = "a[href*='/change-input-phone']"
   val changeSecondContactPreference = "[href*='change-second-contact']"
 }

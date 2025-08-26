@@ -44,7 +44,7 @@ Feature: Dashboard Page
       | Contact name                                   | Fred Flintstone         |
       | Email address                                  | fred.flintstone@aol.com |
       | Can we contact the primary contact by phone?   | Yes                     |
-      | Telephone number                               | 0115 9700 700           |
+      | Phone number                               | 0115 9700 700           |
       | Do you have a second contact?                  | Yes                     |
       | Secondary contact name                         | Donald Trump            |
       | Second contact email address                   | donald.trump@potus.com  |
@@ -62,7 +62,7 @@ Feature: Dashboard Page
     When I click on change link for Email address
     And I enter Contact Email as contact*@email.com
     And I click on change link for Phone number
-    And I enter Contact Telephone as 123456789
+    And I enter Contact Phone as 123456789
     And I click on change link for Do you have a second contact?
     And I select option No and continue to next
     Then I should see row 5 value No
@@ -85,7 +85,7 @@ Feature: Dashboard Page
       | Contact name                                   | Contact Name Test #        |
       | Email address                                  | contact*@email.com         |
       | Can we contact the primary contact by phone?   | Yes                        |
-      | Telephone number                               | 123456789                  |
+      | Phone number                               | 123456789                  |
       | Do you have a second contact?                  | Yes                        |
       | Secondary contact name                         | Second Contact £ Name Test |
       | Second contact email address                   | second&Contact@email.com   |
@@ -159,7 +159,7 @@ Feature: Dashboard Page
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
-    When I provide Repayment contact telephone as 789765423
+    When I provide Repayment contact phone as 789765423
     Then I should be on Repayment CYA Page
     When  I click change link for Repayment Amount
     When I provide Refund Amount as 1000.00
@@ -178,7 +178,7 @@ Feature: Dashboard Page
     And I provide Repayment contact name as Repayment Contact Name
     When  I click change link for Repayment Contact Email
     When I provide Repayment contact email as repayment@email.com
-    When  I click change link for Repayment Contact Telephone
+    When  I click change link for Repayment Contact Phone
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
     And I should see details as below:
@@ -224,7 +224,7 @@ Feature: Dashboard Page
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     And I select option Yes and continue to next
-    And I provide Repayment contact telephone as 789765423
+    And I provide Repayment contact phone as 789765423
     Then I should be on Repayment CYA Page
     And I should see details as below:
       | KEY                                              | VALUE                  |
@@ -275,7 +275,7 @@ Feature: Dashboard Page
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
-    When I provide Repayment contact telephone as 789765423
+    When I provide Repayment contact phone as 789765423
     Then I should be on Repayment CYA Page
     And I should see details as below:
       | KEY                                              | VALUE                  |
@@ -324,7 +324,7 @@ Feature: Dashboard Page
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
-    When I provide Repayment contact telephone as 789765423
+    When I provide Repayment contact phone as 789765423
     Then I should be on Repayment CYA Page
     When  I click change link for Repayment Amount
     When I provide Refund Amount as 1000.00
@@ -343,7 +343,7 @@ Feature: Dashboard Page
     And I provide Repayment contact name as Repayment Contact Name change
     When  I click change link for Repayment Contact Email
     When I provide Repayment contact email as email@change.com
-    When  I click change link for Repayment Contact Telephone
+    When  I click change link for Repayment Contact Phone
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
     And I should see details as below:

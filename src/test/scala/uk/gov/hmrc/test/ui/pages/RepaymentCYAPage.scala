@@ -31,8 +31,8 @@ object RepaymentCYAPage extends PageObject {
   val changeNonUKBankDetails = "a[href*='/change-non-uk-details']"
   val changeContactName      = "a[href*='/change-input-name']"
   val changeContactEmail     = "a[href*='/change-input-email']"
-  val changeTelephone        = "a[href*='/change-telephone']"
-  val changeTelephoneNumber  = "a[href*='/change-input-telephone']"
+  val changePhone        = "a[href*='/change-phone']"
+  val changePhoneNumber  = "a[href*='/change-input-phone']"
   val changeUKBankDetails    = "a[href*='/change-uk-details']"
   val changeBankAccountType  = "a[href*='/change-method']"
 }

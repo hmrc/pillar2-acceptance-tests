@@ -131,19 +131,19 @@ class TaskListPageSteps extends CommonFunctions {
           clickByCss(BusinessActivityEQPage.backLink)
         }
 
-      case "Telephone" =>
+      case "Phone" =>
         for (i <- 1 to 8) {
           clickByCss(BusinessActivityEQPage.backLink)
         }
 
-      case "Telephone Input" =>
+      case "Phone Input" =>
         for (i <- 1 to 9) {
           clickByCss(BusinessActivityEQPage.backLink)
         }
     }
   }
 
-  Then("""^I navigate to Telephone Question Page from Initial guidance Page""") { () =>
+  Then("""^I navigate to Phone Question Page from Initial guidance Page""") { () =>
     for (i <- 1 to 6) {
       InitialGuidancePage.clickContinue()
     }

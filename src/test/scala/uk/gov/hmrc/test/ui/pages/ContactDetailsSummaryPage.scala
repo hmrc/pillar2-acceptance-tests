@@ -37,8 +37,8 @@ object ContactDetailsSummaryPage extends PageObject {
   val secondContact         = "a[href*='/change-second-contact']"
   val changeSecondName      = "a[href*='/change-second-input-name']"
   val changeSecondEmail     = "a[href*='/change-second-input-email']"
-  val secondTelephone       = "a[href*='/change-second-phone']"
-  val changeSecondTelephone = "a[href*='/change-second-input-phone']"
+  val secondPhone       = "a[href*='/change-second-phone']"
+  val changeSecondPhone = "a[href*='/change-second-input-phone']"
 
   val changeAddress          = "a[href*='/change-input-address']"
   val dashboardAddressChange = "a[href*='address/change-input']"

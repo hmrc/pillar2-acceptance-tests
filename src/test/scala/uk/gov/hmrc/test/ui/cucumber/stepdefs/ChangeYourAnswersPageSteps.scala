@@ -67,10 +67,10 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(UPECheckYourAnswersPage.changeContactname)
       case "UPE Email Address" =>
         clickByCss(UPECheckYourAnswersPage.changeEmailaddress)
-      case "UPE Telephone Contact" =>
-        clickByCss(UPECheckYourAnswersPage.changeTelephonecontact)
-      case "UPE Telephone Number" =>
-        clickByCss(UPECheckYourAnswersPage.changeTelephonenumber)
+      case "UPE Phone Contact" =>
+        clickByCss(UPECheckYourAnswersPage.changePhonecontact)
+      case "UPE Phone Number" =>
+        clickByCss(UPECheckYourAnswersPage.changePhonenumber)
       case "NFM Name" =>
         clickByCss(NFMCheckYourAnswersPage.changeName)
       case "NFM Address" =>
@@ -79,10 +79,10 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
         clickByCss(NFMCheckYourAnswersPage.changeContactname)
       case "NFM Email Address" =>
         clickByCss(NFMCheckYourAnswersPage.changeEmailaddress)
-      case "NFM Telephone Contact" =>
-        clickByCss(NFMCheckYourAnswersPage.changeTelephonecontact)
-      case "NFM Telephone Number" =>
-        clickByCss(NFMCheckYourAnswersPage.changeTelephonenumber)
+      case "NFM Phone Contact" =>
+        clickByCss(NFMCheckYourAnswersPage.changePhonecontact)
+      case "NFM Phone Number" =>
+        clickByCss(NFMCheckYourAnswersPage.changePhonenumber)
       case "FD Group Status" =>
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
       case "Accounting Period" =>
@@ -107,7 +107,7 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
       case "Second Contact Email" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
       case "Second Contact Phone number" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeSecondTelephone)
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondPhone)
       case "Address" =>
         clickByCss(ContactDetailsSummaryPage.changeAddress)
       case "Dashboard Address" =>

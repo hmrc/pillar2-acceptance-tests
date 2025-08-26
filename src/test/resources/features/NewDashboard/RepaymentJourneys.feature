@@ -110,12 +110,12 @@ Feature: Repayment Journey
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
-    When I provide Repayment contact telephone as 789765423
+    When I provide Repayment contact phone as 789765423
     Then I should be on Repayment CYA Page
     When I select back link
-    Then I should be on Repayment Telephone Input Page
+    Then I should be on Repayment Phone Input Page
     When I select back link
-    Then I should be on Repayment Telephone Page
+    Then I should be on Repayment Phone Page
     When I select back link
     Then I should be on Repayment Contact Email Page
     When I select back link
@@ -139,7 +139,7 @@ Feature: Repayment Journey
     And I provide Repayment contact name as Repayment Contact Name change
     When  I click change link for Repayment Contact Email
     When I provide Repayment contact email as email@change.com
-    When  I click change link for Repayment Contact Telephone
+    When  I click change link for Repayment Contact Phone
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
     And I should see details as below:
@@ -150,7 +150,7 @@ Feature: Repayment Journey
       | IBAN                         | GB29NWBK60161331926820        |
       | Contact name                 | Repayment Contact Name change |
       | Email address                | email@change.com              |
-      | Can we contact by telephone? | No                            |
+      | Can we contact by phone? | No                            |
     And I can see Print this page link
     When I click change link for Repayment UK Bank Method
     And I click on Continue button
@@ -212,16 +212,16 @@ Feature: Repayment Journey
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
-    When I provide Repayment contact telephone as 789765423
+    When I provide Repayment contact phone as 789765423
     Then I should be on Repayment CYA Page
     When I select back link
-    Then I should be on Repayment Telephone Input Page
+    Then I should be on Repayment Phone Input Page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     When I click the browser back button
-    Then I should be on Repayment Telephone Input Page
+    Then I should be on Repayment Phone Input Page
     When I select back link
-    Then I should be on Repayment Telephone Page
+    Then I should be on Repayment Phone Page
     When I select back link
     Then I should be on Repayment Contact Email Page
     When I select back link
@@ -248,7 +248,7 @@ Feature: Repayment Journey
     When  I click change link for Repayment Contact Email
     When I provide Repayment contact email as email@change.com
     Then I should be on Repayment CYA Page
-    When  I click change link for Repayment Contact Telephone
+    When  I click change link for Repayment Contact Phone
     When I select option No and continue to next
     Then I should be on Repayment CYA Page
     And I should see details as below:
@@ -259,7 +259,7 @@ Feature: Repayment Journey
       | IBAN                         | GB29NWBK60161331926820        |
       | Contact name                 | Repayment Contact Name change |
       | Email address                | email@change.com              |
-      | Can we contact by telephone? | No                            |
+      | Can we contact by phone? | No                            |
     When I click change link for Repayment UK Bank Method
     When I select repayment method as UK bank account
     And I click on Continue button
@@ -326,7 +326,7 @@ Feature: Repayment Journey
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
-    When I provide Repayment contact telephone as 789765423
+    When I provide Repayment contact phone as 789765423
     Then I should be on Repayment CYA Page
   #  And I should see the row 3 value UK bank account
   #  And I should see the row 4 value Natwest
@@ -381,7 +381,7 @@ Feature: Repayment Journey
     And I provide Repayment contact name as Repayment Contact Name
     When I provide Repayment contact email as repayment@email.com
     When I select option Yes and continue to next
-    When I provide Repayment contact telephone as 789765423
+    When I provide Repayment contact phone as 789765423
     Then I should be on Repayment CYA Page
   #  And I should see the row 3 value UK bank account
   #  And I should see the row 4 value Natwest

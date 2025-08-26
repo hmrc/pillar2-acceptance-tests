@@ -198,7 +198,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
     UPEAddressPage.clickCountrySelected()
   }
 
-  And("""^(I navigate from Name page to Telephone page)""") { (negate: String) =>
+  And("""^(I navigate from Name page to Phone page)""") { (negate: String) =>
     for (i <- 1 to 5) {
       InitialGuidancePage.clickContinue()
     }
@@ -319,25 +319,25 @@ class StepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
         getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
 
-      case "UPE Telephone" =>
+      case "UPE Phone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPETelephonePage.errorSummary)
+        Wait.waitForElementToPresentByCssSelector(UPEPhonePage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(UPETelephonePage.errorLink)
-        getTextOf(By cssSelector (UPETelephonePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(UPEPhonePage.errorLink)
+        getTextOf(By cssSelector (UPEPhonePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(UPETelephonePage.errorMessage)
-        getTextOf(By cssSelector (UPETelephonePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(UPEPhonePage.errorMessage)
+        getTextOf(By cssSelector (UPEPhonePage.errorMessage)) should include(error)
 
-      case "Input Telephone" =>
+      case "Input Phone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.errorSummary)
+        Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.errorLink)
-        getTextOf(By cssSelector (InputUPETelephonePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.errorLink)
+        getTextOf(By cssSelector (InputUPEPhonePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(InputUPETelephonePage.errorMessage)
-        getTextOf(By cssSelector (InputUPETelephonePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.errorMessage)
+        getTextOf(By cssSelector (InputUPEPhonePage.errorMessage)) should include(error)
 
       case "UPE Contact person/team name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -379,25 +379,25 @@ class StepDef extends BaseStepDef with BrowserDriver {
         Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorMessage)
         getTextOf(By cssSelector (NFMRegistrationPage.errorMessage)) should include(error)
 
-      case "NFM Telephone" =>
+      case "NFM Phone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMTelephonePage.errorSummary)
+        Wait.waitForElementToPresentByCssSelector(NFMPhonePage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(NFMTelephonePage.errorLink)
-        getTextOf(By cssSelector (NFMTelephonePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(NFMPhonePage.errorLink)
+        getTextOf(By cssSelector (NFMPhonePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(NFMTelephonePage.errorMessage)
-        getTextOf(By cssSelector (NFMTelephonePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(NFMPhonePage.errorMessage)
+        getTextOf(By cssSelector (NFMPhonePage.errorMessage)) should include(error)
 
-      case "Input Nfm Telephone" =>
+      case "Input Nfm Phone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.errorSummary)
+        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.errorSummary)
 
-        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.errorLink)
-        getTextOf(By cssSelector (InputNFMTelephonePage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.errorLink)
+        getTextOf(By cssSelector (InputNFMPhonePage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(InputNFMTelephonePage.errorMessage)
-        getTextOf(By cssSelector (InputNFMTelephonePage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.errorMessage)
+        getTextOf(By cssSelector (InputNFMPhonePage.errorMessage)) should include(error)
 
       case "Further Details Group Status" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -648,10 +648,10 @@ class StepDef extends BaseStepDef with BrowserDriver {
         Nav.navigateTo(RepaymentContactPage.url)
       case "repayment contact email" =>
         Nav.navigateTo(RepaymentContactEmailPage.url)
-      case "repayment telephone" =>
-        Nav.navigateTo(RepaymentTelephonePage.url)
-      case "repayment telephone input" =>
-        Nav.navigateTo(RepaymentTelephoneInputPage.url)
+      case "repayment phone" =>
+        Nav.navigateTo(RepaymentPhonePage.url)
+      case "repayment phone input" =>
+        Nav.navigateTo(RepaymentPhoneInputPage.url)
       case "repayment CYA" =>
         Nav.navigateTo(RepaymentCYAPage.url)
       case "manage contact name" =>

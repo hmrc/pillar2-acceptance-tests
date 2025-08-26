@@ -19,10 +19,10 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object InputNFMTelephonePage extends PageObject {
+object InputNFMPhonePage extends PageObject {
   val url: String     = s"$rootUrl" + "business-matching/filing-member/no-id/input-phone"
   val continue        = "#submit"
-  val telephoneNumber = "#phoneNumber"
+  val phoneNumber = "#phoneNumber"
   val errorSummary    = ".govuk-error-summary__list"
   val errorLink       = "[href*='#value']"
   val backLink        = ".govuk-back-link"
