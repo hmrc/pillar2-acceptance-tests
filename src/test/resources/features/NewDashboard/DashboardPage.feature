@@ -7,7 +7,6 @@ Feature: Dashboard Page
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
-#    And I should be on Dashboard page
     When I click View outstanding payments link
     Then I should navigate to Outstanding Payment Page
     When I click Report Pillar 2 Top-up Taxes link
