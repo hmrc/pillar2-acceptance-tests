@@ -44,7 +44,7 @@ Feature: Dashboard Page
       | Contact name                                   | Fred Flintstone         |
       | Email address                                  | fred.flintstone@aol.com |
       | Can we contact the primary contact by phone?   | Yes                     |
-      | Phone number                               | 0115 9700 700           |
+      | Phone number                                   | 0115 9700 700           |
       | Do you have a second contact?                  | Yes                     |
       | Secondary contact name                         | Donald Trump            |
       | Second contact email address                   | donald.trump@potus.com  |
@@ -85,7 +85,7 @@ Feature: Dashboard Page
       | Contact name                                   | Contact Name Test #        |
       | Email address                                  | contact*@email.com         |
       | Can we contact the primary contact by phone?   | Yes                        |
-      | Phone number                               | 123456789                  |
+      | Phone number                                   | 123456789                  |
       | Do you have a second contact?                  | Yes                        |
       | Secondary contact name                         | Second Contact £ Name Test |
       | Second contact email address                   | second&Contact@email.com   |

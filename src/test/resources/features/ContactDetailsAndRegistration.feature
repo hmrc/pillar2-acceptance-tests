@@ -470,6 +470,6 @@ Feature: Contact details for the filing member
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
     And I click report and manage your Pillar 2 Top-up Taxes link
-#    Then I should be on Registration In Progress page
-#    When I refresh the registration in progress page
-#    Then I should be on Dashboard page
+    Then I should be on Registration In Progress page
+    When I refresh the registration in progress page
+    Then I should be on Dashboard page

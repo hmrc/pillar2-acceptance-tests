@@ -181,8 +181,8 @@ Feature: Dashboard Page
       | non-uk bank account        | Non UK Bank Account Payment Page      |
       | repayment contact name     | Repayment Contact Page                |
       | repayment contact email    | Repayment Journey Recovery Error Page |
-      | repayment phone        | Repayment Journey Recovery Error Page |
-      | repayment phone input  | Repayment Journey Recovery Error Page |
+      | repayment phone            | Repayment Journey Recovery Error Page |
+      | repayment phone input      | Repayment Journey Recovery Error Page |
       | repayment CYA              | Repayment CYA Page                    |
       | repayment change amount    | Repayment change amount Page          |
       | repayment change method    | Repayment change method Page          |
