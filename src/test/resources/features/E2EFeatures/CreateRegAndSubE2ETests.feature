@@ -48,14 +48,14 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to Contact details input email page
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
-    Then I should navigate to Contact details telephone page
+    Then I should navigate to Contact details phone page
     When I select option No and continue to next
     Then I should navigate to Second Contact details page
     When I select back link
-    Then I should navigate to Contact details telephone page
+    Then I should navigate to Contact details phone page
     When I select option Yes and continue to next
-    Then I should navigate to Contact details input telephone page
-    When I enter Contact Telephone as 1234554
+    Then I should navigate to Contact details input phone page
+    When I enter Contact Phone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
     When I select option No and continue to next
@@ -100,7 +100,7 @@ Feature: User registration and subscription e2e journey
     When I click on Continue button
     When I enter NFM Contact name as Contact CYA
     When I enter NFM Contact Email as testcya@email.com
-    Then I should navigate to NFM Telephone page
+    Then I should navigate to NFM Phone page
     When I select option No and continue to next
     Then I should navigate to NFM Check your answers page
     When I click on Continue button
@@ -151,14 +151,14 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to Contact details input email page
     When I enter Contact Email as testContact@email.com
     And I click on Continue button
-    Then I should navigate to Contact details telephone page
+    Then I should navigate to Contact details phone page
     When I select option No and continue to next
     Then I should navigate to Second Contact details page
     When I select back link
-    Then I should navigate to Contact details telephone page
+    Then I should navigate to Contact details phone page
     When I select option Yes and continue to next
-    Then I should navigate to Contact details input telephone page
-    When I enter Contact Telephone as 1234554
+    Then I should navigate to Contact details input phone page
+    When I enter Contact Phone as 1234554
     And I click on Continue button
     Then I should navigate to Second Contact details page
     When I select option No and continue to next
@@ -222,10 +222,10 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to NFM Contact Email page
     When I enter NFM Contact Email as testcya@email.com
     And I click on Continue button
-    Then I should navigate to NFM Telephone page
+    Then I should navigate to NFM Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input nfm telephone page
-    When I enter NFM Telephone Number as 1234569
+    Then I should navigate to input nfm phone page
+    When I enter NFM Phone Number as 1234569
     Then I should navigate to NFM Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
@@ -288,7 +288,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as testcontactupe@email.com
     And I click on Continue button
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option No and continue to next
     Then I should be on Check your answers page
     When I click on Continue button
@@ -313,10 +313,10 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to NFM Contact Email page
     When I enter NFM Contact Email as testcya@email.com
     And I click on Continue button
-    Then I should navigate to NFM Telephone page
+    Then I should navigate to NFM Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input nfm telephone page
-    When I enter NFM Telephone Number as 1234569
+    Then I should navigate to input nfm phone page
+    When I enter NFM Phone Number as 1234569
     Then I should navigate to NFM Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
@@ -379,7 +379,7 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as testcontactupe@email.com
     And I click on Continue button
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option No and continue to next
     Then I should be on Check your answers page
     When I click on Continue button
@@ -447,10 +447,10 @@ Feature: User registration and subscription e2e journey
     Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as testcontactupe@email.com
     And I click on Continue button
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input telephone page
-    And I enter Telephone Number as 1234569
+    Then I should navigate to input phone page
+    And I enter Phone Number as 1234569
     Then I should be on Check your answers page
     When I click on Continue button
     Then I should navigate to Task list page
@@ -521,7 +521,7 @@ Feature: User registration and subscription e2e journey
     When I enter UPE Person/Team name as UPE Contact Name
     Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as testcontactupe@email.com
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option No and continue to next
     Then I should be on Check your answers page
     When I click on Continue button
@@ -598,10 +598,10 @@ Feature: User registration and subscription e2e journey
     When I enter NFM Contact name as Contact CYA
     Then I should navigate to NFM Contact Email page
     When I enter NFM Contact Email as testcya@email.com
-    Then I should navigate to NFM Telephone page
+    Then I should navigate to NFM Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input nfm telephone page
-    When I enter NFM Telephone Number as 1234569
+    Then I should navigate to input nfm phone page
+    When I enter NFM Phone Number as 1234569
     And I click on Continue button
     And I click Add further group details link
     Then I should navigate to MNE or domestic page

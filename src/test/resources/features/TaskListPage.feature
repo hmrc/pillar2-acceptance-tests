@@ -75,10 +75,10 @@ Feature: Task list page
     Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as test@email.com
     And I click on Continue button
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input telephone page
-    And I enter Telephone Number as 1234569
+    Then I should navigate to input phone page
+    And I enter Phone Number as 1234569
     And I click on Continue button
     Then I should be on Check your answers page
     When I click on Continue button
@@ -101,10 +101,10 @@ Feature: Task list page
     Then I should navigate to NFM Contact Email page
     When I enter NFM Contact Email as teststatus@email.com
     And I click on Continue button
-    Then I should navigate to NFM Telephone page
+    Then I should navigate to NFM Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input nfm telephone page
-    When I enter NFM Telephone Number as 1234569
+    Then I should navigate to input nfm phone page
+    When I enter NFM Phone Number as 1234569
     And I click on Continue button
     Then I should navigate to NFM Check your answers page
     And I click on Continue button
@@ -159,10 +159,10 @@ Feature: Task list page
     Then I should navigate to UPE Contact Email page
     When I enter UPE Email address as test@email.com
     And I click on Continue button
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input telephone page
-    And I enter Telephone Number as 1234569
+    Then I should navigate to input phone page
+    And I enter Phone Number as 1234569
     When I click on Continue button
     Then I should be on Check your answers page
     When I click on Continue button
@@ -182,10 +182,10 @@ Feature: Task list page
     And I click on Continue button
     Then I should navigate to UPE Contact Email page
     And I click on Continue button
-    Then I should navigate to UPE Telephone page
+    Then I should navigate to UPE Phone page
     And I click on Continue button
-    Then I should navigate to input telephone page
-    When I navigate back to TaskList Page from Telephone Page
+    Then I should navigate to input phone page
+    When I navigate back to TaskList Page from Phone Page
     Then I should be on Task list page
     And The Task Edit ultimate parent's details status should be Completed
 

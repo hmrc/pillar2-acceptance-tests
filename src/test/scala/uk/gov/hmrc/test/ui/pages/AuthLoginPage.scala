@@ -41,8 +41,8 @@ object AuthLoginPage extends BasePage with PageObject {
   val frontEndNFMAddressUrl: String         = s"$rootUrl" + "business-matching/filing-member/no-id/input-address "
   val frontEndNFMContactNameUrl: String     = s"$rootUrl" + "business-matching/filing-member/no-id/input-business-name"
   val frontEndNFMContactEmailUrl: String    = s"$rootUrl" + "business-matching/filing-member/no-id/input-email"
-  val frontEndNFMTelephoneUrl: String       = s"$rootUrl" + "business-matching/filing-member/no-id/telephone"
-  val frontEndNFMTelephoneInputUrl: String  = s"$rootUrl" + "business-matching/filing-member/no-id/input-telephone"
+  val frontEndNFMTelephoneUrl: String       = s"$rootUrl" + "business-matching/filing-member/no-id/phone"
+  val frontEndNFMTelephoneInputUrl: String  = s"$rootUrl" + "business-matching/filing-member/no-id/input-phone"
   val frontEndFDGroupStatusUrl: String      = s"$rootUrl" + "further-details/group-status"
   val frontEndFDAccountPeriod: String       = s"$rootUrl" + "further-details/accounting-period"
   val frontEndCDAddressUrl: String          = s"$rootUrl" + "contact-details/address/input"
@@ -320,13 +320,13 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
-  def loginToNFMTelephone(name: String): Unit = {
+  def loginToNFMPhone(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMTelephoneUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
-  def loginToNFMTelephoneInput(name: String): Unit = {
+  def loginToNFMPhoneInput(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMTelephoneInputUrl, redirectUrlField)
     selectAffinityGroupOrg()

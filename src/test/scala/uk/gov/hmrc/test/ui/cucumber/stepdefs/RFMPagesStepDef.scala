@@ -95,8 +95,8 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
 
       case "contact number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.telephoneField)
-        Input.sendKeysByCss(name, RFMContactInputPage.telephoneField)
+        Wait.waitForElementToPresentByCssSelector(RFMContactInputPage.phoneField)
+        Input.sendKeysByCss(name, RFMContactInputPage.phoneField)
 
       case "New NFM Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -105,8 +105,8 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
 
       case "second contact number" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephonePage.telephoneField)
-        Input.sendKeysByCss(name, RFMSecondContactTelephonePage.telephoneField)
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactPhonePage.phoneField)
+        Input.sendKeysByCss(name, RFMSecondContactPhonePage.phoneField)
 
     }
     RFMStartPage.clickContinue()
@@ -204,15 +204,15 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
         Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorMessage)
         getTextOf(By cssSelector (RFMSecondContactEmailPage.errorMessage)) should include(error)
 
-      case "input telephone" =>
+      case "input phone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorMessage)
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactPhoneQuestionPage.errorMessage)
 
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorLink)
-        getTextOf(By cssSelector (RFMSecondContactTelephoneQuestionPage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactPhoneQuestionPage.errorLink)
+        getTextOf(By cssSelector (RFMSecondContactPhoneQuestionPage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactTelephoneQuestionPage.errorMessage)
-        getTextOf(By cssSelector (RFMSecondContactTelephoneQuestionPage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(RFMSecondContactPhoneQuestionPage.errorMessage)
+        getTextOf(By cssSelector (RFMSecondContactPhoneQuestionPage.errorMessage)) should include(error)
     }
   }
 
@@ -275,7 +275,7 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
       case "Input Address" =>
         clickByCss(RFMFinalReviewCYAPage.changeInputAddress)
       case "New RFM CYA Change Contact preference" =>
-        clickByCss(RFMFinalReviewCYAPage.changeTelephonecontact)
+        clickByCss(RFMFinalReviewCYAPage.changePhonecontact)
       case "Change Second Contact Preference" =>
         clickByCss(RFMFinalReviewCYAPage.changeSecondContactPreference)
       case "Change Address" =>

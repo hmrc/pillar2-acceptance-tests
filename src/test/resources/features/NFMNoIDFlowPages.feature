@@ -28,10 +28,10 @@ Feature: NFM NO ID journey
     When I enter NFM Contact name as Contact CYA
     Then I should navigate to NFM Contact Email page
     When I enter NFM Contact Email as testcya@email.com
-    Then I should navigate to NFM Telephone page
+    Then I should navigate to NFM Phone page
     When I select option Yes and continue to next
-    Then I should navigate to input nfm telephone page
-    When I enter NFM Telephone Number as 1234569
+    Then I should navigate to input nfm phone page
+    When I enter NFM Phone Number as 1234569
     Then I should navigate to NFM Check your answers page
     And I should see details as below:
       | KEY                      | VALUE                |
@@ -44,7 +44,7 @@ Feature: NFM NO ID journey
       | Can we contact by phone? | Yes                  |
       | Phone number             | 1234569              |
     When I select back link
-    Then I should navigate to input nfm telephone page
+    Then I should navigate to input nfm phone page
     When I click on Continue button
     Then I should be on NFM Check your answers page
     When I click on Continue button
@@ -80,13 +80,13 @@ Feature: NFM NO ID journey
     Then I should navigate to NFM Contact Email page
     When I click on Continue button
     And I enter NFM Contact Email as test@email.com
-    Then I should navigate to NFM Telephone page
+    Then I should navigate to NFM Phone page
     When I click on Continue button
     When I select option Yes and continue to next
-    Then I should navigate to input nfm telephone page
+    Then I should navigate to input nfm phone page
     When I click on Continue button
-    When I enter NFM Telephone Number as 9923-456
-    When I click on change hyperlink next to the NFM Telephone Contact
+    When I enter NFM Phone Number as 9923-456
+    When I click on change hyperlink next to the NFM Phone Contact
     And I select option No and continue to next
     And I should see row 5 value No
     And I select back link

@@ -3,7 +3,7 @@ Feature: Dashboard Page
   As a registered user
   I should be able to navigate to Links on dashboard page
 
-  @batch1 #TODO: Content to be moved to unit tests
+  @batch1  #TODO: Content to be moved to unit tests
   Scenario: 1 - User navigates to Dashboard page and validates the links
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service
     Then I should be on Dashboard page
@@ -60,7 +60,7 @@ Feature: Dashboard Page
     When I click on change link for Email address
     When I enter Contact Email as contact*@email.com
     When I click on change link for Phone number
-    When I enter Telephone Number as 123456789
+    When I enter Phone Number as 123456789
     When I click on change link for Do you have a second contact?
     When I select option No and continue to next
     When I click on change link for Do you have a second contact?
@@ -169,8 +169,8 @@ Feature: Dashboard Page
       | non-uk bank account        | Non UK Bank Account Payment Page      |
       | repayment contact name     | Repayment Contact Page                |
       | repayment contact email    | Repayment Journey Recovery Error Page |
-      | repayment telephone        | Repayment Journey Recovery Error Page |
-      | repayment telephone input  | Repayment Journey Recovery Error Page |
+      | repayment phone            | Repayment Journey Recovery Error Page |
+      | repayment phone input      | Repayment Journey Recovery Error Page |
       | repayment CYA              | Repayment CYA Page                    |
       | repayment change amount    | Repayment change amount Page          |
       | repayment change method    | Repayment change method Page          |

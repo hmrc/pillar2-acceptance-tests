@@ -21,10 +21,10 @@ Feature: Bookmark Feature
   Then I should navigate to UPE Contact Email page
   When I enter UPE Email address as test@email.com
   And I click on Continue button
-  Then I should navigate to UPE Telephone page
+  Then I should navigate to UPE Phone page
   When I select option Yes and continue to next
-  Then I should navigate to input telephone page
-  And I enter Telephone Number as 1234569
+  Then I should navigate to input phone page
+  And I enter Phone Number as 1234569
   And I click on Continue button
   Then I should be on Check your answers page
   When I click on Continue button

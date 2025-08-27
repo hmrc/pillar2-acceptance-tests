@@ -27,7 +27,7 @@ object UPEContactPage extends PageObject {
   val eqForm       = ".govuk-form-group"
   val eq           = ".govuk-form-group .govuk-fieldset"
   val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href*='#telephone']"
+  val errorLink    = "[href*='#phone']"
   val backLink     = ".govuk-back-link"
   val errorMessage = ".govuk-error-message"
 

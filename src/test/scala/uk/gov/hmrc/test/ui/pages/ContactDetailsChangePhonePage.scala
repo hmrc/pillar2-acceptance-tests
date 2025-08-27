@@ -19,14 +19,9 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object InputNFMTelephonePage extends PageObject {
-  val url: String     = s"$rootUrl" + "business-matching/filing-member/no-id/input-phone"
-  val continue        = "#submit"
-  val telephoneNumber = "#phoneNumber"
-  val errorSummary    = ".govuk-error-summary__list"
-  val errorLink       = "[href*='#value']"
-  val backLink        = ".govuk-back-link"
-  val errorMessage    = ".govuk-error-message"
+object ContactDetailsChangePhonePage extends PageObject {
+  val url: String = s"$rootUrl" + "contact-details/change-phone"
+  val continue    = "#submit"
 
   def clickContinue(): Unit = findByCss(continue).click()
 
