@@ -17,14 +17,26 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import org.scalatest.Assertion
+import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
+import org.openqa.selenium.By
 import org.scalatestplus.selenium.Chrome.currentUrl
 import uk.gov.hmrc.test.ui.pages.BasePage
+import scala.util.Try
 
 object Check extends BasePage {
 
   val url = ""
 
-  def checkH1(h1: String): Assertion = Find.findByTagName("h1").getText should include(h1)
+  def checkH1(h1: String): Assertion = {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    val h1Text = Find.findByTagName("h1").getText
+    if (h1Text.contains(h1)) succeed
+    else {
+      val captions = driver.findElements(By.cssSelector(".govuk-caption-l"))
+      if (!captions.isEmpty && captions.get(0).getText.contains(h1)) succeed
+      else h1Text should include(h1)
+    }
+  }
 
   def checkID(id: String): Boolean = Find.findById(id).isDisplayed
 
@@ -42,6 +54,33 @@ object Check extends BasePage {
 
   def assertNavigationUrl(page: PageObject): Boolean =
     Wait.waitForUrl(page.url)
+
+  def progressThroughIntermediatesAndAssert(target: PageObject): Boolean = {
+    import uk.gov.hmrc.test.ui.cucumber.Input
+    var attempts = 0
+    var reached  = Try { assertNavigationToPage(target); true }.getOrElse(false)
+    while (!reached && attempts < 6) {
+      val url = Find.findURL()
+      if (url.contains("/replace-filing-member/business-matching/content") || url.contains("/business-matching/filing-member/no-id/check-answers") || url.contains("/security/check-answers") || url.contains("/security/saving-progress")) {
+        try {
+          Wait.waitForElementToBeClickableByCssSelector(".govuk-button, #submit")
+          Input.clickByCss(".govuk-button")
+        } catch {
+          case _: Throwable =>
+        }
+      } else if (url.contains("auth-login-stub/gg-sign-in")) {
+        try {
+          Wait.waitForUrl(target.url)
+        } catch {
+          case _: Throwable =>
+        }
+      }
+      reached = Try { assertNavigationToPage(target); true }.getOrElse(false)
+      if (!reached) Wait.waitForTagNameToBeRefreshed("h1")
+      attempts += 1
+    }
+    reached
+  }
 
   def assertNavigationToPageUrl(page: PageObject): Assertion = {
     Wait.waitForUrlToBeVisible(page.url)

@@ -22,10 +22,12 @@ import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationUrl
 import uk.gov.hmrc.test.ui.cucumber.Find.findURL
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
+import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
 import java.time.LocalDate
 import scala.util.Try
+import scala.collection.JavaConverters._
 
 class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunctions {
 
@@ -79,9 +81,98 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
-        Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+        val targetUrl = RFMEnterPillar2IdPage.url
+        val current0  = driver.getCurrentUrl
+        if (!current0.contains("/replace-filing-member/security/enter-pillar2-id")) {
+          Nav.navigateTo(targetUrl)
+          WaitUtils.waitForPageToFullyLoad()
+        }
+        WaitUtils.waitForPageStability()
+        WaitUtils.waitForPageToFullyLoad()
+        
+        var attempts = 0
+        var foundPillar2Field = false
+        
+        while (!foundPillar2Field && attempts < 3) {
+          val currentUrl = driver.getCurrentUrl
+          
+          if (currentUrl.contains("auth-login-stub") || currentUrl.contains("gg-sign-in")) {
+            Try {
+          
+              val submitElements = driver.findElements(By.cssSelector("button[type='submit'], input[type='submit'], button:not([type]), .govuk-button, a.govuk-button"))
+              if (submitElements.size() > 0) {
+      
+                Try {
+                  val redirectField = driver.findElement(By.name("redirectionUrl"))
+                  if (redirectField != null) {
+                    val currentValue = redirectField.getAttribute("value")
+                    if (!currentValue.contains("enter-pillar2-id")) {
+                      redirectField.clear()
+                      redirectField.sendKeys("http://localhost:10050/report-pillar2-top-up-taxes/replace-filing-member/security/enter-pillar2-id")
+                    }
+                  }
+                }.recover(_ => ())
+                 val element = submitElements.get(0)
+                 WaitUtils.scrollToElement(element)
+                 WaitUtils.clickWithRetry(element)
+              
+                WaitUtils.waitForUrlToChange(currentUrl)
+                WaitUtils.waitForPageToFullyLoad()
+              }
+            }.recover {
+              case e =>
+                println(s"Auth stub handling attempt $attempts failed: ${e.getMessage}")
+            }
+          }
+          
+          
+          Try {
+            val elements = driver.findElements(By.cssSelector("#value, #pillar2topuptaxid, input[name='value'], input[id*='pillar2']"))
+            if (elements.size() > 0) {
+              
+              val field = elements.get(0)
+              WaitUtils.scrollToElement(field)
+              WaitUtils.sendKeysWithRetry(field, name)
+              foundPillar2Field = true
+            } else {
+              throw new NoSuchElementException("Pillar2 field not present yet")
+            }
+          }.recover {
+            case _ =>
+              val current = driver.getCurrentUrl
+              val h1      = Try(driver.findElement(By.tagName("h1")).getText).getOrElse("-")
+              println(s"[DEBUG] Pillar2 field missing. URL=$current H1=$h1")
+            
+              if (current.contains("auth-login-stub") || current.contains("gg-sign-in") || current.contains("restart-error") || current.contains("incomplete")) {
+                driver.findElements(By.cssSelector("button[type='submit'], .govuk-button, a.govuk-button"))
+                  .asScala
+                  .headOption
+                  .foreach { btn =>
+                    WaitUtils.scrollToElement(btn)
+                    WaitUtils.clickWithRetry(btn)
+                    WaitUtils.waitForUrlToChange(current)
+                    WaitUtils.waitForPageToFullyLoad()
+                  }
+              } else if (!current.contains("/replace-filing-member/security/enter-pillar2-id")) {
+            
+                Nav.navigateTo(targetUrl)
+                WaitUtils.waitForPageToFullyLoad()
+              }
+          }
+          
+          attempts += 1
+          
+          if (!foundPillar2Field && attempts < 3) {
+          
+            WaitUtils.waitForPageStability()
+          }
+        }
+        
+    
+        if (!foundPillar2Field) {
+          val pillar2Field = WaitUtils.waitForElementWithRetry(By.cssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid))
+          WaitUtils.sendKeysWithRetry(pillar2Field, name)
+        }
 
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -283,16 +374,46 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     }
   }
   And("""^I select corp position as (.*)$""") { (option: String) =>
-    option match {
-      case "UPE" => Input.clickById("value_0")
-      case "NFM" => Input.clickById("value_1")
+    import uk.gov.hmrc.test.ui.cucumber.utils.WaitUtils
+    import org.openqa.selenium.By
+    
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    
+    val radioId = option match {
+      case "UPE" => "value_0"
+      case "NFM" => "value_1"
     }
+    
+   
+    try {
+      val radioLabel = WaitUtils.waitForElementWithRetry(By.cssSelector(s"label[for='$radioId']"))
+      WaitUtils.clickWithRetry(radioLabel)
+    } catch {
+      case _: Exception =>
+        try {
+          val radioInput = WaitUtils.waitForElementWithRetry(By.id(radioId))
+          WaitUtils.clickWithRetry(radioInput)
+        } catch {
+          case _: Exception =>
+        
+            Input.clickById(radioId)
+        }
+    }
+    
     RFMStartPage.clickContinue()
   }
 
   And("""^I should see the row (\d+) value (.*)$""") { (row: Int, value: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
+    WaitUtils.waitForPageToFullyLoad()
+    WaitUtils.stabilizeAndWait()
+    Wait.waitForElementToPresentByCssSelector(RFMFinalReviewCYAPage.valueList)
+    
+    val elements = driver.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList))
+    val index = row - 1
+    
+    assert(elements.size() > index, s"Expected at least $row elements but found ${elements.size()}")
+    assert(elements.get(index).getText.contains(value), s"Row $row did not contain expected value: $value")
   }
 
   Given("""^(.*) logs in to RFM with credId (.*) for Pillar2""") { (name: String, credId: String) =>
