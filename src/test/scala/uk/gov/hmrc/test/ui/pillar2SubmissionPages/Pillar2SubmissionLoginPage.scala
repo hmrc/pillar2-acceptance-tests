@@ -28,7 +28,7 @@ object Pillar2SubmissionLoginPage extends BasePage with PageObject {
   val redirectUrlField: String              = "redirectionUrl"
   val redirectionUrlField: String           = "#redirectionUrl"
   val credIdField: String                   = "authorityId"
-  val submissionFrontEndASAUrl: String      = s"$p2SubRootUrl" + "asa/input-pillar-2-id"
+  val submissionFrontEndASAUrl: String      = s"$rootUrl" + "asa/input-pillar-2-id"
   val enrolmentKeyField: String             = "enrolment[0].name"
   val identifierNameField: String           = "enrolment[0].taxIdentifier[0].name"
   val identifierValueField: String          = "enrolment[0].taxIdentifier[0].value"

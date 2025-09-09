@@ -20,20 +20,12 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMFinalReviewCYAPage extends PageObject {
   val url: String                   = s"$rootUrl" + "replace-filing-member/review-submit/check-answers"
-  val header: String                = "h1.govuk-heading-l"
-  val keyList                       = ".govuk-summary-list__key"
   val valueList                     = ".govuk-summary-list__value"
-  val actionsList                   = ".govuk-summary-list__actions"
-  val rowNumber                     = "govuk-summary-list__row"
   val changeCorporatePosition       = "a[href*='/change-corporate-position']"
   val changeCompany                 = "a[href*='/change-registered-in-uk']"
   val changeInputName               = "a[href*='/change-input-name']"
   val changeInputAddress            = "a[href*='/change-input-address']"
-  val changeName                    = "a[href*='/change-input-name']"
   val changeAddress                 = "[href*='address/change-input']"
-  val changeContactname             = "a[href*='/change-input-business-name']"
-  val changeEmailaddress            = "a[href*='/change-input-email']"
-  val changePhonecontact            = "a[href*='/change-phone']"
-  val changePhonenumber             = "a[href*='/change-input-phone']"
+  val changePhoneContact            = "a[href*='/change-phone']"
   val changeSecondContactPreference = "[href*='change-second-contact']"
 }

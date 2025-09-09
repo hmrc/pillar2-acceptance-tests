@@ -1,4 +1,4 @@
-@newTests @zap_accessibility @ignore
+@newTests @zap_accessibility
 Feature: Agent user journeys
   As an Agent
   I should be able to access clients accounts using Pillar2 ID
@@ -31,13 +31,8 @@ Feature: Agent user journeys
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-     #TODO: Need to confirm this link on new dashboard page.
-   # And I can see Agent Services Account link
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
-   # When I click Change client link
-   # When I click Report Pillar 2 Top-up Taxes link
-   # Then I should navigate to ASA Home Page
 
   @batch1
   Scenario: 2 - Agent user accessing dashboard features after login
@@ -50,15 +45,11 @@ Feature: Agent user journeys
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
     And I click View outstanding payments link
-    #TODO: Make a payment is under construction
-   #Then I should navigate to Agent Make a Payment page
+
     Then I should navigate to Outstanding Payment Page
     And I select back link
     Then I should navigate to ASA Dashboard page
-   # When I click View outstanding payments link
-   # Then I should navigate to Make a payment page
-  #  And I select back link
-   # Then I should navigate to ASA Dashboard page
+
 
     And I click Manage contact details link
     Then I should navigate to Agent Contact Detail Summary Page
@@ -100,8 +91,6 @@ Feature: Agent user journeys
     Then I should navigate to Agent Amend API error Page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
-  #  And I click Make a payment link
-  #  Then I should navigate to Agent Make a Payment page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     And I click Sign out link
@@ -147,7 +136,6 @@ Feature: Agent user journeys
     Then I should be on ASA Organisation KB Page
 
   @batch1
-    #TODO: Needs to be fixed as part of PIL-1058
   Scenario: 6 - Agent user Not Authorised Page
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service

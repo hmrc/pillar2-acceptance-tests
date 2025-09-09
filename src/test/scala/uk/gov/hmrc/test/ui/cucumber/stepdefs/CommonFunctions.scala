@@ -22,12 +22,12 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 trait CommonFunctions
     extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "multiple territories EQ page"               => MultipleTerritoriesEQPage
       case "NFM EQ page"                                => NFMEQPage
       case "NFM details page"                           => NFMDetailsPage
       case "NFM registration page"                      => NFMRegistrationPage
@@ -37,11 +37,7 @@ trait CommonFunctions
       case "confirmation page"                          => ConfirmationPage
       case "BA guidance page"                           => BAGuidancePage
       case "NFM guidance page"                          => NFMGuidancePage
-      case "MT guidance page"                           => MTGuidancePage
       case "GGR guidance page"                          => GGRGuidancePage
-      case "gov uk guidance page1"                      => GUKGuidancePage1
-      case "gov uk guidance page2"                      => GUKGuidancePage2
-      case "gov uk guidance page3"                      => GUKGuidancePage3
       case "auth-login page"                            => AuthLoginPage
       case "Task list page"                             => TaskListPage
       case "Initial guidance Page"                      => InitialGuidancePage
@@ -51,8 +47,7 @@ trait CommonFunctions
       case "input-upe-address page"                     => UPEAddressPage
       case "UPE Phone page"                             => UPEPhonePage
       case "input phone page"                           => InputUPEPhonePage
-      case "under construction page"                    => UnderConstructionPage
-      case "under construction error page"              => UnderConstructionErrorPage
+      case "Under Construction Page"                    => UnderConstructionPage
       case "UPE Contact person/team Name page"          => UPEContactNamePage
       case "UPE Contact Email page"                     => UPEContactEmailPage
       case "UPE entity type page"                       => UPEEntityTypePage
@@ -93,8 +88,6 @@ trait CommonFunctions
       case "Review answers page"                        => ReviewAnswersPage
       case "UPE registration failed error page"         => UPEGRSRegistrationFailedErrorPage
       case "UPE registration not called error page"     => UPEGRSRegistrationNotCalledErrorPage
-      case "search register page"                       => SearchRegisterPage
-      case "Corporation Tax UTR page"                   => CorporationTaxUTRPage
       case "NFM registration failed error page"         => NFMGRSRegistrationFailedErrorPage
       case "NFM registration not called error page"     => NFMGRSRegistrationNotCalledErrorPage
       case "accounts summary page"                      => AccountsSummaryPage
@@ -105,7 +98,6 @@ trait CommonFunctions
       case "Individual affinity KB page"                => IndividualAffinityKBPage
       case "Registration return error page"             => RegistrationReturnErrorPage
       case "contact details summary page"               => ContactDetailsSummaryPage
-      case "error place holder page"                    => ErrorPlaceHolderPage
       case "duplicate ack ref error page"               => DuplicateAckRefErrorPage
       case "Make a payment page"                        => MakePaymentPage
       case "bta pillar2 ID check page"                  => BTAPillar2IDCheckPage
@@ -148,7 +140,6 @@ trait CommonFunctions
       case "RFM GRS Registration Mismatch Error Page"   => RFMGRSRegistrationMismatchErrorPage
       case "RFM Contact Address Page"                   => RFMContactAddressPage
       case "RFM Final Review Page"                      => RFMFinalReviewCYAPage
-      case "RFM Contact Details Final CYA Page"         => RFMFinalReviewCYAPage
       case "ASA Pillar2 Input Page"                     => ASAPillar2InputPage
       case "RFM No record Match Error Page"             => RFMNoMatchErrorPage
       case "RFM Saving Progress Page"                   => RFMSavingProgressPage
@@ -215,6 +206,18 @@ trait CommonFunctions
       case "Manage Account processing Page"             => ManageAccountProcessingPage
       case "Manage Contact processing Page"             => ManageContactProcessingPage
       case "Outstanding Payment Page"                   => OutstandingPaymentsPage
+      case "Due & Over Due Page"                        => P2DueOverduePage
+      case "BTN Accounting Period Page"                 => P2SubBtnAccountingPage
+      case "BTN Multiple Accounting Period Page"        => P2SubBtnMultipleAccountingPage
+      case "BTN Start Page"                             => P2SubBtnStartPage
+      case "BTN Domestic or MNE Page"                   => P2SubBtnDomesticOrMnePage
+      case "BTN AGD KB Page"                            => P2SubBtnAgdKBPage
+      case "BTN CYA Submit Page"                        => P2CYASubmitPage
+      case "BTN Confirmation Page"                      => P2ConfirmationPage
+      case "BTN Return Submission KB Page"              => P2BTNReturnSubmissionKBPage
+      case "BTN Cannot Return Page"                     => P2SubBTNCannotReturnPage
+      case "BTN Problem with service Page"              => P2SubBTNProblemWithServicePage
+      case "accounts summary page"                      => P2SubAccountsSummaryPage
     }
   }
 }

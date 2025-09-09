@@ -23,7 +23,6 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 import java.time.Duration
 
 object Wait extends BasePage {
-  val url = ""
 
   def fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(20))
@@ -32,13 +31,9 @@ object Wait extends BasePage {
 
   def waitForElement(id: String): WebElement = waitForElement(By.id(id))
 
-  def waitForElements(h1: String): WebElement = waitForElement(By.tagName(h1))
-
-  def waitForElementByXpathContainsText(xpath: String): WebElement=waitForElement(By.xpath(xpath))
+  def waitForElementByXpathContainsText(xpath: String): WebElement = waitForElement(By.xpath(xpath))
 
   private def waitForElement(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
-
-  def secondsWait(secs: Int): Unit = Thread.sleep(secs.*(1000))
 
   def waitForElementToClickTagName(tagName: String): WebElement = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10))

@@ -40,16 +40,6 @@ class EligibilityQuestionSteps extends CommonFunctions {
     clickByCss(BusinessActivityEQPage.backLink)
   }
 
-  Then("""^The caption should be (.*)$""") { caption: String =>
-    Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.caption)
-    assert(getTextOf(By.cssSelector(BusinessActivityEQPage.caption)).equals(caption))
-  }
-
-  Then("""^The caption is (.*)$""") { caption: String =>
-    Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.caption)
-    assert(getTextOf(By.cssSelector(NFMRegistrationPage.caption)).contains(caption))
-  }
-
   Then("""^I should navigate to (.*)""") { (page: String) =>
     Wait.waitForElementToClickTagName("h1")
     assertNavigationToPage(pageMatch(page))
@@ -68,11 +58,6 @@ class EligibilityQuestionSteps extends CommonFunctions {
 
   And("""^I continue|I continue without selecting an option$""") { () =>
     BusinessActivityEQPage.clickContinue()
-  }
-
-  Then("""^The inset text should be (.*)$""") { insetText: String =>
-    Wait.waitForElementToPresentByCssSelector(ConfirmationPage.insetText)
-    assert(getTextOf(By.cssSelector(ConfirmationPage.insetText)).equals(insetText))
   }
 
   Then("""^I should be redirect to (.*)""") { (page: String) =>

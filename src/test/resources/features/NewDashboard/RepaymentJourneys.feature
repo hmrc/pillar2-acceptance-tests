@@ -1,4 +1,4 @@
-@newTests @ignore
+@newTests
 Feature: Repayment Journey
   As a registered and subscribed user
   I should be able to access repayment journey pages
@@ -255,11 +255,11 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should be redirected to "Repayment processing page" or "Repayment Confirmation Page"
     And I should be on Repayment Confirmation Page
-    And I can see Sign out link
+    Then I can see Sign out link
     And I can see Print this page link
     When I click the browser back button
     Then I should be on Repayment Return Error Page
-    And I can see Sign out link
+    Then I can see Sign out link
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     When I click the browser back button
@@ -292,7 +292,7 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should be on UK Bank Account Payment Page
     And I click on Continue button
-  #  Then I should see bank account error message Enter the name of the bank on the UK Bank Name Element
+    Then I should see bank account error message Enter the name of the bank on the UK Bank Name Element
     When I refresh the page
     When I enter UK Bank Account details as:
       | KEY               | VALUE              |

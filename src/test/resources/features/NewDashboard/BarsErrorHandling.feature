@@ -1,9 +1,9 @@
-@newTests @zap_accessibility @ignore
+@newTests @zap_accessibility
 Feature: Bars Handling
   As a registered and subscribed user
   I should be able to navigate to Contact page after correct UK bank details
 
-  @batch3 #TODO: This scenario works in New and Old Dashboard
+  @batch3
   Scenario: 1 - Organisation User bars integration validation
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -57,7 +57,7 @@ Feature: Bars Handling
     And I select option No on partial name error page
     Then I should be on UK Bank Account Payment Page
 
-  @batch1 #TODO: PIL-2168 should cover this
+  @batch1
   Scenario: 2 - Agent User bars integration validation
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service

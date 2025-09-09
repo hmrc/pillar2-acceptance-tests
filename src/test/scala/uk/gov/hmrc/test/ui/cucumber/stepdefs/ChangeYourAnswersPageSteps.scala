@@ -25,10 +25,6 @@ import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnChangeDomesticOrMnePag
 
 class ChangeYourAnswersPageSteps extends CommonFunctions {
 
-  And("""^I should see row (\d+) key (.*)""") { (row: Int, key: String) =>
-    assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
-  }
-
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     assert(driver.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))

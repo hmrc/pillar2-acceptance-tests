@@ -25,8 +25,6 @@ trait PageObject {
   val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
   val rootUrl: String       = TestConfiguration.url("pillar2-frontend")
   val p2SubRootUrl: String  = TestConfiguration.url("pillar2-submission-frontend")
-  val back                  = "backLink"
-  val submit                = "submit"
   val url: String
 
 }

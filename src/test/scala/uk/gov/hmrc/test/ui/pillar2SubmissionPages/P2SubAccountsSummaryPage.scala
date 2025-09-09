@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2SubAccountsSummaryPage extends PageObject {
-  val url: String = s"$p2SubRootUrl" + "manage-account/account-details/summary"
+  val url: String = s"$rootUrl" + "manage-account/account-details/summary"
 
   val caption        = ".govuk-caption-l"
   val continue       = ".govuk-button"

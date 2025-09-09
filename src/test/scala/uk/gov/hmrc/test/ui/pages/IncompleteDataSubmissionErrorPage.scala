@@ -22,10 +22,4 @@ import uk.gov.hmrc.test.ui.pages.UPEAddressPage.continue
 
 object IncompleteDataSubmissionErrorPage extends PageObject {
   val url: String    = s"$rootUrl" + "error/incomplete"
-  val backLink       = ".govuk-back-link"
-  val header: String = "h1.govuk-heading-l"
-  val pageHeader     = "a[href='/report-pillar2-top-up-taxes']"
-
-  def clickContinue(): Unit = findByCss(continue).click()
-
 }

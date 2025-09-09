@@ -20,6 +20,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMProcessingPage extends PageObject {
   val url: String    = s"$rootUrl" + "replace-filing-member/review-submit/processing"
-  val header: String = "h1.govuk-panel__title"
-  val loadingSpinner = ".hods-loading-spinner__spinner"
 }

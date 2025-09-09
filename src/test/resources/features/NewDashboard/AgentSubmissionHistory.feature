@@ -1,4 +1,4 @@
-@p2tests @p2zap_p2accessibility
+@newTests @zap_accessibility @batch2
 Feature: Pillar2 Submission History Agent User Journey
   As an authenticated Agent user
   I should be able to view Submission History page
@@ -11,8 +11,7 @@ Feature: Pillar2 Submission History Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    And I access submission BTN start page
-    And I go to submission history page
+    Then I click View submission history link
     And I should see 0 accounting periods on Sub History Page
 
   Scenario: 2 -  Agent User navigates to Submission History for one accounting period
@@ -23,8 +22,7 @@ Feature: Pillar2 Submission History Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    And I access submission BTN start page
-    And I go to submission history page
+    Then I click View submission history link
     And I should see 1 accounting periods on Sub History Page
 
   Scenario: 3 - Agent User navigates to Submission History for multiple accounting period
@@ -35,7 +33,6 @@ Feature: Pillar2 Submission History Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    And I access submission BTN start page
-    And I go to submission history page
+    Then I click View submission history link
     And I should see 2 accounting periods on Sub History Page
 

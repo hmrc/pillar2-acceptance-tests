@@ -34,12 +34,7 @@ object Input extends BasePage {
 
   def clickByCss(css: String): Unit = findByCss(css).click()
 
-  val enterData: DataTable => Unit = iterator(sendKeysById) _
-
-  def clickAndContinue(id: String): Unit = {
-    findById(id).click()
-    clickSubmit()
-  }
+  val enterData: DataTable => Unit = iterator(sendKeysById)
 
   def iterator(f: (String, String) => Any)(data: DataTable): Unit = {
     val row = data.asMaps(classOf[String], classOf[String]).iterator()
@@ -71,28 +66,6 @@ object Input extends BasePage {
     findByName(name).sendKeys(value)
   }
 
-  def switchToNewWindow(driver: WebDriver): Unit = {
-    val handles = driver.getWindowHandles.toArray().toSeq
-
-    if (handles.length > 1) {
-      val newWindow = handles(1).toString
-      driver.close()
-      driver.switchTo().window(newWindow)
-    } else {
-      println("No new window to switch to.")
-    }
-  }
-
-  def takeScreenshot(scenarioName: String, s: String, dr: TakesScreenshot): Unit = {
-    val name = scenarioName + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())
-    if (!new java.io.File(s"./target/test-reports/$name$s.png").exists) {
-      val scr = dr.getScreenshotAs(OutputType.FILE)
-      FileHandler.copy(scr, new File(s"./target/test-reports/$name$s.png"))
-      // val byteFile = dr.getScreenshotAs(OutputType.BYTES)
-      // scenario.attach(byteFile, "image/png", "print_page")
-    }
-  }
-
   def getTextOf(by: By): String =
     driver.findElement(by).getText
 
@@ -101,5 +74,4 @@ object Input extends BasePage {
 
   def getAttributeOfId(locator: String, attributeName: String): String =
     driver.findElement(By.id(locator)).getAttribute(attributeName)
-
 }

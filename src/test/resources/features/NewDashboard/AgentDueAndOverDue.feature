@@ -1,8 +1,9 @@
-@p2tests @p2zap_p2accessibility
+@newTests @zap_accessibility @batch1
 Feature: Pillar2 Due & Overdue returns for Agent User Journey
 
   As an authenticated Agent user
   I should be able to view Due & Overdue returns Page
+
 
   Scenario: 1 - Agent User navigates to Due & Overdue returns page with multiple accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -13,16 +14,15 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    And I access submission BTN start page
-    When I go to due overdue page
-    Then I should be navigated to Due & Over Due Page of Pillar2 Submission
+    And I click View all due and overdue returns link
+    Then I should navigate to Due & Over Due Page
     And I should see 4 accounting periods on Due Overdue Page
     And I should see 1 section with status "Due"
     And I should see 3 section with status "Overdue"
     When I click submission history link
     And I should see 0 accounting periods on Sub History Page
     When I click due and overdue returns link
-    Then I should be navigated to Due & Over Due Page of Pillar2 Submission
+    Then I should navigate to Due & Over Due Page
 
   Scenario: 2 - Agent User navigates to Due & Overdue returns page with no accounting period
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -33,8 +33,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    And I access submission BTN start page
-    And I go to due overdue page
+    When I click View all due and overdue returns link
     And I should see 0 accounting periods on Due Overdue Page
     When I click submission history link
     And I should see 0 accounting periods on Sub History Page
@@ -48,8 +47,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    And I access submission BTN start page
-    And I go to due overdue page
+    When I click View all due and overdue returns link
     And I should see 1 accounting periods on Due Overdue Page
     And I should see 1 section with status "Due"
     And I should see 0 section with status "Overdue"
@@ -65,8 +63,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    And I access submission BTN start page
-    And I go to due overdue page
+    When I click View all due and overdue returns link
     And I should see 0 accounting periods on Due Overdue Page
     When I click submission history link
     And I should see 2 accounting periods on Sub History Page
@@ -80,8 +77,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    And I access submission BTN start page
-    And I go to due overdue page
+    When I click View all due and overdue returns link
     And I should see 2 accounting periods on Due Overdue Page
     And I should see 0 section with status "Due"
     And I should see 2 section with status "Overdue"

@@ -133,70 +133,6 @@ class UPEPageSteps extends CommonFunctions {
     }
   }
 
-  And("""^I should see address error message (.*) on the (.*) Element$""") { (error: String, page: String) =>
-    page match {
-      case "Address Line" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.addressErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.addressErrorMessage)) should include(error)
-
-      case "Address Line 2" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2ErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.addressLine2ErrorMessage)) should include(error)
-
-      case "City" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.cityErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.cityErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.cityErrorMessage)) should include(error)
-
-      case "Region" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionLink)
-        getTextOf(By cssSelector (UPEAddressPage.regionLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.regionErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.regionErrorMessage)) should include(error)
-
-      case "Postal code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCodeErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.postalCodeErrorMessage)) should include(error)
-
-      case "Country" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorLink)
-        getTextOf(By cssSelector (UPEAddressPage.countryErrorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.countryErrorMessage)
-        getTextOf(By cssSelector (UPEAddressPage.countryErrorMessage)) should include(error)
-    }
-  }
-
   And("""^I am on feedback survey page$""") { () =>
     Check.checkH1("Give feedback")
   }
@@ -261,17 +197,6 @@ class UPEPageSteps extends CommonFunctions {
     }
   }
 
-  And("""^I should see the (.*) field is selected with (.*)$""") { (field: String, name: String) =>
-    field match {
-      case "Country" =>
-        assert(getAttributeOf(NFMAddressPage.country, "value").equals(name))
-    }
-  }
-
-  When("""I continue to next page""") { () =>
-    UPEPage.clickContinue();
-  }
-
   And("""^I select option (.*) and continue to GRS page$""") { (option: String) =>
     option match {
       case "UK limited company"            => Input.clickById("value_0")
@@ -329,27 +254,5 @@ class UPEPageSteps extends CommonFunctions {
 
   And("""^I click on Save&Continue button""") {
     UPEEntityTypePage.clickContinue()
-  }
-
-  Then("""^The second heading should be (.*)$""") { header: String =>
-    Wait.waitForElementToPresentByCssSelector(UPEGRSRegistrationFailedErrorPage.secondHeader)
-    assert(getTextOf(By.cssSelector(UPEGRSRegistrationFailedErrorPage.secondHeader)).contains(header))
-  }
-
-  Then("""^The field heading should be (.*)$""") { header: String =>
-    Wait.waitForElementToPresentByCssSelector(FDGroupStatusPage.fieldHeader)
-    assert(getTextOf(By.cssSelector(FDGroupStatusPage.fieldHeader)).contains(header))
-  }
-  And("""^I should see heading (\d+) as (.*)""") { (sectionNumber: Int, sectionName: String) =>
-    sectionNumber match {
-      case 1 =>
-        assert(driver.findElements(By.cssSelector(ConfirmationPage.firstHeading)).get(sectionNumber - 1).getText.contains(sectionName))
-      case 2 =>
-        assert(driver.findElements(By.cssSelector(ConfirmationPage.secondHeading)).get(sectionNumber - 2).getText.contains(sectionName))
-    }
-  }
-  Then("""^The field content should be (.*)$""") { header: String =>
-    Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.fieldContent)
-    assert(getTextOf(By.cssSelector(NFMRegistrationPage.fieldContent)).contains(header))
   }
 }

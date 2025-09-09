@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.pillar2SubmissionPages.{P2ConfirmationPage, P2SubBtnMultipleAccountingPage}
+import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnMultipleAccountingPage
 
 class StepDef extends BaseStepDef with BrowserDriver {
 
@@ -79,6 +79,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
       case _                   => AuthLoginPage.loginAsUserWithCredId(name, credId)
     }
   }
+
   Given("""^(.*) logs in to upe org page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToOrgWithCredID(name, credId)
@@ -93,18 +94,21 @@ class StepDef extends BaseStepDef with BrowserDriver {
     }
 
   }
+
   Given("""^(.*) logs in to upe registered in UK page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToRegWithCredID(name, credId)
       case _                   => AuthLoginPage.loginToRegWithCredID(name, credId)
     }
   }
+
   Given("""^(.*) logs in to upe name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
       case _                   => AuthLoginPage.loginToUPEName(name, credId)
     }
   }
+
   Given("""^(.*) logs in to nfm name page with CredID (.*) for Pillar2$""") { (name: String, credId: String) =>
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
@@ -122,57 +126,22 @@ class StepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
-  When("""^Organisation User logs in to (.*) page with credId (.*)$""") { (name: String, credId: String) =>
-    name match {
-      case "NFM email"   => AuthLoginPage.loginToNFMEmail(name, credId)
-      case "NFM address" => AuthLoginPage.loginToNFMInputAddress(name, credId)
-    }
-  }
-
-  Then("""^I navigate to (.*) page$""") { page: String =>
-    page match {
-      case "start" =>
-        Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes")
-      case "individual" =>
-        Nav.navigateTo(
-          "http://localhost:10050/report-pillar2-top-up-taxes/register/problem/individual-sign-in-problem"
-        )
-    }
-  }
   Then("""^I clear the cache$""") {
     Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/eligibility/clear-session")
   }
 
   Then("""^The Heading should be (.*)$""") { header: String =>
     Check.checkH1(header)
-
-  }
-
-  Then("""^The page header should be (.*)$""") { header: String =>
-    Wait.waitForElementToPresentByCssSelector(TaskListPage.pageHeader)
-    assert(getTextOf(By.cssSelector(TaskListPage.pageHeader)).equals(header))
-  }
-
-  Then("""^The hint text should be (.*)$""") { header: String =>
-    Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.hintText)
-    assert(getTextOf(By.cssSelector(BTAPillar2IDCheckPage.hintText)).contains(header))
   }
 
   Then("""^The Body content should be (.*)$""") { text: String =>
     Check.checkBodyText(text)
   }
 
-  Given("""^I fill (.*) and continue$""") { page: String =>
-    page match {
-      case "What is the main address of your business page" => Forms.addressNonUK()
-    }
+  When("""^(I click Continue button|click Confirm and send|click Try Again)$""") { (negate: String) =>
     Input.clickSubmit()
   }
 
-  When(
-    """^(I click Continue button|click Confirm and send|click Try Again)$""") { (negate: String) =>
-    Input.clickSubmit()
-  }
   When("""^(I click on Continue button)""") { (negate: String) =>
     InitialGuidancePage.clickContinue()
   }
@@ -190,38 +159,11 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   Then("""I select PreviousAccountingPeriod""") { () =>
-    // Write code here that turns the phrase above into concrete actions
     P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriod()
   }
 
   When("""^(I click on Country selected)""") { (negate: String) =>
     UPEAddressPage.clickCountrySelected()
-  }
-
-  And("""^(I navigate from Name page to Phone page)""") { (negate: String) =>
-    for (i <- 1 to 5) {
-      InitialGuidancePage.clickContinue()
-    }
-  }
-  Then("""^I enter (.*) in (.*)$""") { (text: String, id: String) =>
-    Input.sendKeysById(id, text)
-  }
-
-  And("""^I select (.*) and continue$""") { (id: String) =>
-    Input.clickById(id)
-    Input.clickSubmit()
-  }
-
-  And("""^click (.*)$""") { (id: String) =>
-    Input.clickByLinkText(id)
-  }
-
-  And("""^I click start over CTA$""") { () =>
-    Input.clickByCss(ErrorPlaceHolderPage.startOverCTA)
-  }
-
-  And("""^I access reason for refund page$""") { () =>
-    navigateTo(RepaymentReasonPage.url)
   }
 
   Given("""^I am on (.*) Page$""") { page: String =>
@@ -506,11 +448,6 @@ class StepDef extends BaseStepDef with BrowserDriver {
     assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).equals(caption))
   }
 
-  Then("""^the page title should be (.*)$""") { pageTitle: String =>
-    Wait.waitForElementToClickTagName("h1")
-    assert(driver.getTitle.contains(pageTitle))
-  }
-
   And("""^I click (.*) link$""") { (linkText: String) =>
     Input.clickByLinkText(linkText)
   }
@@ -535,44 +472,16 @@ class StepDef extends BaseStepDef with BrowserDriver {
     Nav.browserBack()
   }
 
-  And("""^I should see the contact details row (\d+) as (.*) on use contact page""") { (row: Int, details: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElements(By.cssSelector(ContactDetailsDisplayPage.valueList)).get(row - 1).getText.contains(details))
-  }
-
-  And("""^The header should display (.*) banner$""") { (beta: String) =>
-    Find.findByXpath(UPEPage.betatag)
-  }
-
   Then("""^I should be navigated to (.*) page$""") { (text: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     assert(driver.findElement(By.cssSelector(UPEPage.sendyourfeedback)).getText.contains(text))
   }
 
-  And("""^I should see (.*) hyperLink$""") { (linkText: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.inputUpeNamePageLink)
-  }
-
-  And("""^I should see (.*) link$""") { (linkText: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(BTARegisterGuidancePage.registerLink)
-    assert(driver.findElement(By.cssSelector(BTARegisterGuidancePage.registerLink)).getText.contains(linkText))
-  }
-
-  And("""^I should see (.*) BTA button$""") { (option: String) =>
-    option match {
-      case "return to" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(BTARegisterGuidancePage.returnToBTA)
-    }
-  }
-
   When("""^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") {
-    (userType: String, enrolmentkey: String, identifiername: String, identifiervalue: String) =>
+    (userType: String, enrolmentKey: String, identifierName: String, identifierValue: String) =>
       userType match {
-        case "Organisation" => AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
-        case "Agent"        => AuthLoginPage.agentLoginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
+        case "Organisation" => AuthLoginPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
+        case "Agent"        => AuthLoginPage.agentLoginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
       }
   }
 
@@ -594,6 +503,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
     }
 
   }
+
   Given("""^I access random page$""") { () =>
     Nav.navigateTo(AuthLoginPage.incorrectUrl)
   }
@@ -603,9 +513,6 @@ class StepDef extends BaseStepDef with BrowserDriver {
       case "Print this page" =>
         Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
         assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
-      case "Download as PDF" =>
-        Wait.waitForElementToPresentByCssSelector(P2ConfirmationPage.downloadAsPDF)
-        assert(driver.findElement(By.cssSelector(P2ConfirmationPage.downloadAsPDF)).getText.contains(linkText))
       case "Agent Services Account" =>
         Wait.waitForElementToPresentByCssSelector(ASADashboardPage.ASALink)
         assert(driver.findElement(By.cssSelector(ASADashboardPage.ASALink)).getText.contains(linkText))
@@ -676,10 +583,6 @@ class StepDef extends BaseStepDef with BrowserDriver {
     }
   }
 
-  Given("""^I access accounts summary page$""") { () =>
-    Nav.navigateTo(AccountsSummaryPage.url)
-  }
-
   Then("""^I should see (.*) CTA$""") { (pageNumber: String) =>
     pageNumber match {
       case "Next" =>
@@ -697,5 +600,4 @@ class StepDef extends BaseStepDef with BrowserDriver {
         TransactionHistorySecondPage.clickPrevious()
     }
   }
-
 }
