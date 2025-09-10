@@ -19,8 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ManageContactProcessingPage extends PageObject {
-  val url: String    = s"$rootUrl" + "manage-account/contact/waiting-room"
-  val header: String = "h1.govuk-panel__title"
-  val loadingSpinner = ".hods-loading-spinner__spinner"
-
+  val url: String = s"$rootUrl" + "manage-account/contact/waiting-room"
 }

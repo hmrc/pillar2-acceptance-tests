@@ -24,16 +24,9 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Find extends BasePage {
 
-  val url = ""
-
   private def find(by: By): WebElement = {
     fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
     driver.findElement(by)
-  }
-
-  def elementIsNotDisplayed(id: String): Unit = {
-    val checkId = driver.getPageSource
-    Assert.assertFalse(checkId.contains(id))
   }
 
   def findById(id: String): WebElement = find(By.id(id))
@@ -49,7 +42,5 @@ object Find extends BasePage {
   def findByLinkText(text: String): WebElement = find(By.linkText(text))
 
   def findURL(): String = driver.getCurrentUrl
-
-  def findH1(): WebElement = findByTagName("h1")
 
 }

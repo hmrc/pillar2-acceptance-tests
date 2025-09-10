@@ -20,7 +20,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2ConfirmationPage extends PageObject {
   val url: String = s"$rootUrl" + "below-threshold-notification/confirmation"
-
-  val downloadAsPDF  = "#download"
-
 }

@@ -31,7 +31,7 @@ Feature: Agent user journeys
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     Then I should navigate to ASA Dashboard page
-    And I can see Agent Services Account link
+    Then I can see Agent Services Account link
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to ASA Dashboard page
     When I click Change client link

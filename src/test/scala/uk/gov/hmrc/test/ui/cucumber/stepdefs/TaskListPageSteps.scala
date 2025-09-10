@@ -30,31 +30,12 @@ class TaskListPageSteps extends CommonFunctions {
     assert(driver.findElements(By.cssSelector(TaskListPage.taskSection)).size() == 3)
   }
 
-  And("""^I should see section (\d+) as (.*)""") { (sectionNumber: Int, sectionName: String) =>
-    assert(driver.findElements(By.cssSelector(TaskListPage.taskSection)).get(sectionNumber - 1).getText.contains(sectionName))
-  }
-
-  And("""^I should see sub section (\d+) as (.*)""") { (sectionNumber: Int, sectionName: String) =>
-    assert(driver.findElements(By.cssSelector(ContactDetailsSummaryPage.section)).get(sectionNumber - 1).getText.contains(sectionName))
-  }
-
   And("""^I should see the task name (.*) on Business details section""") { (taskName: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
     assert(driver.findElement(By.cssSelector(TaskListPage.taskItems)).getText.contains(taskName))
   }
 
-  And("""^I should see the task section (\d+) with task name as (.*) on Contact details section$""") { (sectionNumber: Int, taskName: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
-    assert(driver.findElements(By.cssSelector(TaskListPage.taskSection)).get(sectionNumber - 1).getText.contains(taskName))
-  }
-
-  And("""^I should see employee status link (.*)""") { (empStatusLink: String) =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
-    isVisible(By.cssSelector(TaskListPage.empStatusLink)) shouldBe true
-  }
   And("""^The Task (.*) status should be (.*)$""") { (taskName: String, status: String) =>
     taskName match {
       case "Add Ultimate Parent Entity details" =>
@@ -119,6 +100,7 @@ class TaskListPageSteps extends CommonFunctions {
 
     }
   }
+
   Then("""^I navigate back to TaskList Page from (.*) Page""") { (page: String) =>
     page match {
       case "Name" =>

@@ -22,13 +22,6 @@ import uk.gov.hmrc.test.ui.pages._
 
 class ASAStepDef extends BaseStepDef with BrowserDriver {
 
-  Given("""^I access Agent (.*) page$""") { (name: String) =>
-    name match {
-      case "Pillar2 ID input"  => Nav.navigateTo(ASAPillar2InputPage.url)
-      case "Repayment contact" => Nav.navigateTo(AgentRepaymentContactPage.url)
-    }
-  }
-
   And("""^I directly access (.*) page$""") { (name: String) =>
     name match {
       case "Agent Non UK Payment Page" => Nav.navigateTo(AgentNonUKPaymentPage.url)
@@ -43,5 +36,4 @@ class ASAStepDef extends BaseStepDef with BrowserDriver {
         Input.sendKeysByCss(value, ASAPillar2InputPage.pillar2IDField)
     }
   }
-
 }

@@ -20,5 +20,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AgentServicesAccountPage extends PageObject {
   val url: String = "https://www.gov.uk/guidance/sign-in-to-your-agent-services-account"
-
 }

@@ -26,23 +26,6 @@ import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnAgdKBPage
 
 class PaymentSteps extends CommonFunctions {
 
-  And("""^I should see the heading (\d+) on Dashboard page as (.*)""") { (headingNumber: Int, heading: String) =>
-    assert(driver.findElements(By.cssSelector(DashboardPage.sectionHeading)).get(headingNumber - 1).getText.contains(heading))
-  }
-
-  Given("""^(.*) logs in Dashboard page for Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToDashboard(name)
-      case _                   => AuthLoginPage.loginToDashboard(name)
-    }
-  }
-
-  And("""^I should see User details in dashboard page$""") { () =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(DashboardPage.userDetailsSection)
-    assert(driver.findElements(By.cssSelector(DashboardPage.userDetailsSection)).size() >= 0)
-  }
-
   Then("""^I should be navigated to new tab$""") { () =>
     val handles   = driver.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
@@ -55,69 +38,19 @@ class PaymentSteps extends CommonFunctions {
     driver.switchTo().window(mainWindow)
   }
 
-  Then("""I should be redirected to search register page in a new tab""") { () =>
-    val handles    = driver.getWindowHandles.toArray().toSeq
-    val newWindow  = handles(1).toString
-    val mainWindow = handles.head.toString
-    driver.switchTo().window(newWindow)
-    Wait.waitForElementToPresentByCssSelector(SearchRegisterPage.element)
-    assert(driver.findElement(By.cssSelector(SearchRegisterPage.element)).isDisplayed)
-    driver.close()
-    driver.switchTo().window(mainWindow)
-  }
-
   Then("""I should be redirected to guidance page in a new tab""") { () =>
     val handles    = driver.getWindowHandles.toArray().toSeq
     val newWindow  = handles(1).toString
     val mainWindow = handles.head.toString
     driver.switchTo().window(newWindow)
-    Wait.waitForElementToPresentByCssSelector(GUKGuidancePage3.header)
-    assert(driver.findElement(By.cssSelector(GUKGuidancePage3.header)).isDisplayed)
+    Wait.waitForElementToPresentByCssSelector(GGRGuidancePage.header)
+    assert(driver.findElement(By.cssSelector(GGRGuidancePage.header)).isDisplayed)
     driver.close()
     driver.switchTo().window(mainWindow)
   }
 
   Then("""^I close new tab""") { () =>
     driver.close()
-  }
-
-  And("""^I should see user details row (\d+) key (.*)""") { (detailNumber: Int, detailName: String) =>
-    assert(driver.findElements(By.cssSelector(DashboardPage.userDetails)).get(detailNumber - 1).getText.contains(detailName))
-  }
-
-  And("""^I should see user details row (\d+) value (.*)""") { (detailNumber: Int, detailValue: String) =>
-    assert(driver.findElements(By.cssSelector(DashboardPage.userDetails)).get(detailNumber - 1).getText.contains(detailValue))
-  }
-
-  Then("""^The inactive status should be (.*)$""") { header: String =>
-    Wait.waitForElementToPresentByCssSelector(DashboardPage.inactiveStatus)
-    assert(getTextOf(By.cssSelector(DashboardPage.inactiveStatus)).contains(header))
-  }
-
-  Then("""^The caption for section (\d+) should be (.*)$""") { (detailNumber: Int, caption: String) =>
-    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCaption)).get(detailNumber - 1).getText.contains(caption))
-  }
-
-  Then("""^The warning message should be (.*)$""") { message: String =>
-    Wait.waitForElementToPresentByCssSelector(MakePaymentPage.warningMessage)
-    assert(getTextOf(By.cssSelector(MakePaymentPage.warningMessage)).contains(message))
-  }
-
-  Then("""^Hint text should be (.*)$""") { header: String =>
-    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.hintText)
-    assert(getTextOf(By.cssSelector(RepaymentReasonPage.hintText)).contains(header))
-  }
-
-  And("""^The section (\d+) with header (.*) value should be (.*)$""") { (detailNumber: Int, header: String, cell: String) =>
-    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableHeader)).get(detailNumber - 1).getText.contains(header))
-    assert(driver.findElements(By.cssSelector(MakePaymentPage.tableCell)).get(detailNumber - 1).getText.contains(cell))
-  }
-
-  When("""^I click on toggle link (.*)$""") { (option: String) =>
-    option match {
-      case "How long it takes"                  => Input.clickByXpath(MakePaymentPage.firstToggleLink)
-      case "Make a payment from outside the UK" => Input.clickByXpath(MakePaymentPage.secondToggleLink)
-    }
   }
 
   Then("""^The character limit text should display (.*)$""") { header: String =>
@@ -279,10 +212,6 @@ class PaymentSteps extends CommonFunctions {
     clickByCss(RepaymentAmountPage.continue)
   })
 
-  And("""^I should see Refund Amount field is pre-populated with (.*)$""") { (amount: String) =>
-    assert(getAttributeOf(RepaymentAmountPage.refundAmountField, "value").equals(amount))
-  }
-
   And("""^I provide Repayment contact (.*) as (.*)$""") { (page: String, Value: String) =>
     page match {
       case "name" =>
@@ -300,10 +229,6 @@ class PaymentSteps extends CommonFunctions {
         Input.sendKeysByCss(Value, RepaymentPhoneInputPage.contactPhone)
         clickByCss(RepaymentPhoneInputPage.continue)
     }
-  }
-
-  And("""^I should see Repayment reason field is pre-populated with (.*)$""") { (reason: String) =>
-    assert(getAttributeOf(RepaymentReasonPage.reasonTextField, "value").equals(reason))
   }
 
   And("""^I should see the repayment method (.*) remain selected$""") { (accountType: String) =>
@@ -342,10 +267,6 @@ class PaymentSteps extends CommonFunctions {
       case "UK Bank Method" =>
         clickByCss(RepaymentCYAPage.changeBankAccountType)
     }
-  }
-
-  Given("""^I access Repayment contact page$""") { () =>
-    Nav.navigateTo(RepaymentContactPage.url)
   }
 
   Given("""^I access Repayment contact email page$""") { () =>
@@ -401,15 +322,14 @@ class PaymentSteps extends CommonFunctions {
     OnlinePaymentPages.selectBankLoginOptionAndClickContinue()
     OnlinePaymentPages.clickSubmitOnStubBankPaymentPage()
     OnlinePaymentPages.verifyPaymentAndClickHmrcOnlineAccountLinkOnPaymentCompletePage()
-
   }
+
   Then("""I go till Get ready to approve your payment page""") { () =>
     OnlinePaymentPages.enterAmountAncClickContinueOnEnterPaymentAmountPage()
     OnlinePaymentPages.clickContinueOnChooseOpenBankingOrBacsPage()
     OnlinePaymentPages.enterBankNameAndClickContinueOnChooseBankPage()
     OnlinePaymentPages.enterEmailAndClickContinueOnEmailPage()
     OnlinePaymentPages.clickContinueOnCheckYourDetailsPage()
-
   }
 
   Then("""I should be able to navigate back to make a payment page""") { () =>

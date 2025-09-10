@@ -21,8 +21,5 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2BTNReturnSubmissionKBPage extends PageObject {
   val url: String = s"$rootUrl" + "below-threshold-notification/accounting-period"
-  val summaryList = ".govuk-summary-list"
   val continue    = ".govuk-button"
-
-  def clickContinue(): Unit = findByCss(continue).click()
 }

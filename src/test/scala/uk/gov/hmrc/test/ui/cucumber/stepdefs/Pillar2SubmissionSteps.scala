@@ -15,46 +15,24 @@
  */
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
-import io.cucumber.datatable.DataTable
-import org.junit.Assert
-import org.openqa.selenium.{By, WebElement}
-import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationToPage
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages.TaskListPage
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-
-class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
-
-  var accountingperiod: String = _
-  Given("""^(.*) logs in to subscribe for Pillar2 Submission$""") { name: String =>
-    name match {
-      case "Organisation User"           => Pillar2SubmissionLoginPage.loginToP2SubmissionWithUser(name)
-      case "Organisation Assistant User" => Pillar2SubmissionLoginPage.loginToP2SubmissionWithAssistantUser(name)
-      case "Agent User"                  => Pillar2SubmissionLoginPage.loginToP2SubmissionWithAgentUser(name)
-      case "Individual User"             => Pillar2SubmissionLoginPage.loginToP2SubmissionWithIndividualUser(name)
-      case _                             => Pillar2SubmissionLoginPage.loginToSubscribe(name)
-    }
-  }
+class Pillar2SubmissionSteps extends BaseStepDef with BrowserDriver  {
 
   When("""^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 submission service$""") {
-    (userType: String, enrolmentkey: String, identifiername: String, identifiervalue: String) =>
+    (userType: String, enrolmentKey: String, identifierName: String, identifierValue: String) =>
       userType match {
-        case "Agent" => Pillar2SubmissionLoginPage.p2SubAgentLoginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
-
+        case "Agent" => Pillar2SubmissionLoginPage.p2SubAgentLoginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
       }
   }
-  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 submission service$""") {
-    (enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String) =>
-      Pillar2SubmissionLoginPage.p2SubAddDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue, authRule)
-  }
 
-  Then("""^I should be navigated to (.*) of Pillar2 Submission""") { (page: String) =>
-    Wait.waitForElementToClickTagName("h1")
-    assertNavigationToPage(p2SubPageMatch(page))
+  When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 submission service$""") {
+    (enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String) =>
+      Pillar2SubmissionLoginPage.p2SubAddDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
   }
 
   Given("""^(.*) logs in to register for Pillar2 Submission Agent service$""") { name: String =>
@@ -62,21 +40,6 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
       case "Organisation User" => Pillar2SubmissionLoginPage.loginAsOrgToASA(name)
       case "Individual User"   => Pillar2SubmissionLoginPage.loginAsIndToASA(name)
       case "Assistant User"    => Pillar2SubmissionLoginPage.loginAsAssistantToASA(name)
-
-    }
-  }
-
-  And("""^I should see an error message (.*) on the Agent (.*) Page$""") { (error: String, page: String) =>
-    page match {
-      case "enter pillar2 id" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(ASAPillar2InputPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(ASAPillar2InputPage.errorLink)
-        getTextOf(By cssSelector ASAPillar2InputPage.errorLink) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(ASAPillar2InputPage.errorMessage)
-        getTextOf(By cssSelector ASAPillar2InputPage.errorMessage) should include(error)
     }
   }
 
@@ -111,47 +74,6 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
     }
   }
 
-  And("""^I verify details as below$""") { (details: DataTable) =>
-    val detailsData = details.asMaps(classOf[String], classOf[String])
-
-    detailsData.forEach { row =>
-      val key = row.get("KEY")
-
-      val expectedValue: Any = if (key == "Submission date") {
-        val formatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-        LocalDate.now().format(formatter)
-      } else if (key == "Due date") {
-        val formatter = DateTimeFormatter.ofPattern("d MMMM yyyy")
-        LocalDate.now().minusDays(1) format formatter
-      } else {
-        row.get("VALUE")
-      }
-
-      val labelElement = driver.findElement(By.xpath(s"//*[th[contains(text(), '$key')]]"))
-      val valueElement = labelElement.findElement(By.xpath(s"//tbody//tr//*[contains(text(), '$expectedValue')]"))
-
-      valueElement.getText shouldEqual expectedValue
-    }
-  }
-
-  Then("""accounting period should match (.*)$""") { (accountingPeriod: String) =>
-    Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.singleaccountingperiodSubHis)
-    getTextOf(By cssSelector P2SubmissionHistoryPage.singleaccountingperiodSubHis) should be(accountingPeriod)
-  }
-
-  Then("""Type of return should match (.*)$""") { (typeOfReturn: String) =>
-    Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.typeofReturnSubHis)
-    getTextOf(By cssSelector P2SubmissionHistoryPage.typeofReturnSubHis) should be(typeOfReturn)
-  }
-
-  Then("""I verify page {string},{string}""") { (expectedMessage: String, page: String) =>
-    val actualMessage = page match {
-      case "Submission History" => driver.findElement(By.xpath(P2SubmissionHistoryPage.actualMessage))
-      case "Due Overdue"        => driver.findElement(By.xpath(P2DueOverduePage.actualMessage))
-    }
-    Assert.assertEquals("Text should match the expected message.", expectedMessage, actualMessage.getText)
-  }
-
   And("""^I select option (.*) and continue on Pillar2 submission$""") { (option: String) =>
     option match {
       case "Yes" => Input.clickByCss("#value_0")
@@ -160,15 +82,8 @@ class Pillar2SubmissionSteps extends Pillar2SubmissionPage {
     P2SubBtnStartPage.clickContinue()
   }
 
-  And("""^I should see account period summary$""") { () =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(P2BTNReturnSubmissionKBPage.summaryList)
-    assert(driver.findElement(By.cssSelector(P2BTNReturnSubmissionKBPage.summaryList)).isDisplayed)
-  }
-
   And("""^I navigate back to BTN Return Submission KB Page$""") { () =>
     Nav.browserBack()
     clickByCss(P2SubBtnAgdKBPage.backLink)
   }
-
 }

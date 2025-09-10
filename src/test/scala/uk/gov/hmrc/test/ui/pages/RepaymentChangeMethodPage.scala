@@ -20,5 +20,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentChangeMethodPage extends PageObject {
   val url: String    = s"$rootUrl" + "repayment/change-method"
-  val header: String = "h1.govuk-heading-l"
 }

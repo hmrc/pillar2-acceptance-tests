@@ -20,7 +20,6 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object Nav extends BasePage {
-  val url = ""
 
   def navigateTo(url: String): Unit =
     driver.navigate.to(url)

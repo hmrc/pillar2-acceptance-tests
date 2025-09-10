@@ -1,9 +1,9 @@
-@newTests @zap_accessibility @ignore
+@newTests @zap_accessibility
 Feature: Contact details for the filing member
   As a NFM Subscription user
   I want to enter contact details and navigate to dashboard page
 
-  @batch1 #TODO: This scenario works in New and Old Dashboard
+  @batch1
   Scenario: 1 - Create a new subscription with UPE NoID Flow and NFM No Id flow to validate Contact Details
     Given Organisation User logs in as upe with credId ContactDetails for Pillar2
     Then I should be on UPE business page
@@ -99,7 +99,7 @@ Feature: Contact details for the filing member
     When I select back link
     Then I should navigate to Task list page
 
-  @batch1 #TODO: This scenario works in New and Old Dashboard
+  @batch1
   Scenario: 2 - Check you Answers Page Validations
     Given Organisation User navigates to Contact Details check your answer page with credId ContactDetails
     Then I should be on Contact details Check answers page

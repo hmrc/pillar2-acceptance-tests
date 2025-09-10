@@ -52,30 +52,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     }
   }
 
-  And("""^I should see RFM field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
-    field match {
-      case "pillar2 id" =>
-        assert(getAttributeOf(RFMEnterPillar2IdPage.pillar2topuptaxid, "value").equals(name))
-    }
-  }
-
-  And("""^I should see RFM date field (.*) is pre-populated with (.*)$""") { (field: String, name: String) =>
-    field match {
-      case "Start Day" =>
-        assert(getAttributeOfId(RFMRegistrationDatePage.regDay, "value").equals(name))
-
-      case "Start Month" =>
-        assert(getAttributeOfId(RFMRegistrationDatePage.regMonth, "value").equals(name))
-
-      case "Start Year" =>
-        assert(getAttributeOfId(RFMRegistrationDatePage.regYear, "value").equals(name))
-    }
-  }
-
-  And("""^I should see the corporate position (.*) remain selected$""") { (answer: String) =>
-    Check.checkOptionSelected(answer)
-  }
-
   And("""^I provide RFM (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
       case "pillar2 id" =>
@@ -112,110 +88,6 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     RFMStartPage.clickContinue()
   }
 
-  And("""^I should see an error message (.*) on the RFM (.*) Page$""") { (error: String, page: String) =>
-    page match {
-      case "start" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMStartPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMStartPage.errorLink)
-        getTextOf(By cssSelector (RFMStartPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMStartPage.errorMessage)
-        getTextOf(By cssSelector (RFMStartPage.errorMessage)) should include(error)
-
-      case "enter pillar2 id" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.errorLink)
-        getTextOf(By cssSelector (RFMEnterPillar2IdPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.errorMessage)
-        getTextOf(By cssSelector (RFMEnterPillar2IdPage.errorMessage)) should include(error)
-
-      case "Registration Date" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMRegistrationDatePage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMRegistrationDatePage.errorLink)
-        getTextOf(By cssSelector (RFMRegistrationDatePage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMRegistrationDatePage.errorMessage)
-        getTextOf(By cssSelector (RFMRegistrationDatePage.errorMessage)) should include(error)
-
-      case "journey error" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorLink)
-        getTextOf(By cssSelector (RFMCorpPositionPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMCorpPositionPage.errorMessage)
-        getTextOf(By cssSelector (RFMCorpPositionPage.errorMessage)) should include(error)
-
-      case "contact detail" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorLink)
-        getTextOf(By cssSelector (RFMContactDetailNamePage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMContactDetailNamePage.errorMessage)
-        getTextOf(By cssSelector (RFMContactDetailNamePage.errorMessage)) should include(error)
-
-      case "contact name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorLink)
-        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactNamePage.errorMessage)
-        getTextOf(By cssSelector (RFMNewNFMContactNamePage.errorMessage)) should include(error)
-
-      case "second contact name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorLink)
-        getTextOf(By cssSelector (RFMSecondContactNamePage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactNamePage.errorMessage)
-        getTextOf(By cssSelector (RFMSecondContactNamePage.errorMessage)) should include(error)
-
-      case "contact address change" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactAddressChange.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactAddressChange.errorLink)
-        getTextOf(By cssSelector (RFMNewNFMContactAddressChange.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMNewNFMContactAddressChange.errorMessage)
-        getTextOf(By cssSelector (RFMNewNFMContactAddressChange.errorMessage)) should include(error)
-
-      case "contact email" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorLink)
-        getTextOf(By cssSelector (RFMSecondContactEmailPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactEmailPage.errorMessage)
-        getTextOf(By cssSelector (RFMSecondContactEmailPage.errorMessage)) should include(error)
-
-      case "input phone" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactPhoneQuestionPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactPhoneQuestionPage.errorLink)
-        getTextOf(By cssSelector (RFMSecondContactPhoneQuestionPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RFMSecondContactPhoneQuestionPage.errorMessage)
-        getTextOf(By cssSelector (RFMSecondContactPhoneQuestionPage.errorMessage)) should include(error)
-    }
-  }
-
   And("""^Registration (.*) is entered as (.*)$""") { (field: String, name: String) =>
     field match {
       case "Day" =>
@@ -235,27 +107,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     }
   }
 
-  When("""I enter future date""") { () =>
-    val futureDate: LocalDate = LocalDate.now().plusDays(1)
-    Input.sendKeysById(RFMRegistrationDatePage.regDay, futureDate.getDayOfMonth.toString)
-    Input.sendKeysById(RFMRegistrationDatePage.regMonth, futureDate.getMonthValue.toString)
-    Input.sendKeysById(RFMRegistrationDatePage.regYear, futureDate.getYear.toString)
-  }
-
   When("""^Organisation User logs in with existing entity group (.*), (.*) and (.*) with rfm URL to Pillar2 service$""") {
-    (enrolmentkey: String, identifiername: String, identifiervalue: String) =>
-      AuthLoginPage.loginWithExistingEntity(enrolmentkey, identifiername, identifiervalue)
-      AuthLoginPage.loginWithExistingEntityWithRFM(enrolmentkey, identifiername, identifiervalue)
-  }
-
-  And("""^I should see 4 sections on RFM start page""") { () =>
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(RFMStartPage.sections)
-    assert(driver.findElements(By.cssSelector(RFMStartPage.sections)).size() == 4)
-  }
-
-  And("""^I should see the section (\d+) as (.*)""") { (sectionNumber: Int, sectionName: String) =>
-    assert(driver.findElements(By.cssSelector(RFMStartPage.sections)).get(sectionNumber - 1).getText.contains(sectionName))
+    (enrolmentKey: String, identifierName: String, identifierValue: String) =>
+      AuthLoginPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
+      AuthLoginPage.loginWithExistingEntityWithRFM(enrolmentKey, identifierName, identifierValue)
   }
 
   And("""^I click change link for RFM (.*)""") { (link: String) =>
@@ -275,13 +130,14 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
       case "Input Address" =>
         clickByCss(RFMFinalReviewCYAPage.changeInputAddress)
       case "New RFM CYA Change Contact preference" =>
-        clickByCss(RFMFinalReviewCYAPage.changePhonecontact)
+        clickByCss(RFMFinalReviewCYAPage.changePhoneContact)
       case "Change Second Contact Preference" =>
         clickByCss(RFMFinalReviewCYAPage.changeSecondContactPreference)
       case "Change Address" =>
         clickByCss(RFMFinalReviewCYAPage.changeAddress)
     }
   }
+
   And("""^I select corp position as (.*)$""") { (option: String) =>
     option match {
       case "UPE" => Input.clickById("value_0")
@@ -302,34 +158,10 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     }
   }
 
-  And("""^I should see RFM (.*) field as blank$""") { (value: String) =>
-    value match {
-      case "Pillar2 Id" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElement(By.cssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)).getAttribute("value").isEmpty())
-
-      case "Registration Day" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElement(By.id(RFMRegistrationDatePage.regDay)).getAttribute("value").isEmpty())
-
-      case "Registration Month" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElement(By.id(RFMRegistrationDatePage.regMonth)).getAttribute("value").isEmpty())
-
-      case "Registration Year" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(driver.findElement(By.id(RFMRegistrationDatePage.regYear)).getAttribute("value").isEmpty())
-    }
-  }
-
   Then("""^I navigate back to RFM CYA Page from GRS Page""") { () =>
     for (i <- 1 to 5) {
       clickByCss(BusinessActivityEQPage.backLink)
     }
-  }
-
-  Then("""^I should see (.*) text is not clickable""") { (linkText: String) =>
-    Wait.waitForCSSElementNotToPresent("[href='report-pillar2-top-up-taxes/banner']")
   }
 
   And("""^I continue to RFM contact name Page""") { () =>

@@ -20,7 +20,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object P2CYASubmitPage extends PageObject {
   val url: String = s"$rootUrl" + "below-threshold-notification/submit"
-
-
-
 }
