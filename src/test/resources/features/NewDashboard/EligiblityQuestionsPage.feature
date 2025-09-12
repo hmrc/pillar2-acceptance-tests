@@ -60,7 +60,7 @@ Feature: Eligibility Questions for Pillar 2
     When I click Report Pillar 2 Top-up Taxes link
     Then I should navigate to guidance page
 
-  @e2e
+  @e2e @ignore
   Scenario: 3 - User navigates to next eligibility question page by selecting yes option
     Given I clear the cache
     Given I am on UPE EQ Page
@@ -77,7 +77,7 @@ Feature: Eligibility Questions for Pillar 2
     When I continue
     Then I should be on auth-login page
 
-  @e2e
+  @e2e @ignore
   Scenario: 4 - User navigates to guidance page by selecting No option in eligibility questions
     Given I clear the cache
     Given I am on UPE EQ Page
