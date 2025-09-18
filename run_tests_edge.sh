@@ -4,7 +4,6 @@
 ENV="staging"
 BROWSER="edge"
 
-# Optionally allow overriding via arguments
 if [ -n "$1" ]; then
   ENV="$1"
 fi
