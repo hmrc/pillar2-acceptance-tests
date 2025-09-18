@@ -3,7 +3,7 @@ Feature: RFM Start page
   As a New Filing member
   I want to access start page of Replace Filing Member(RFM) journey
 
-  @zap_accessibility @batch3
+  @batch3 @zap_accessibility
   Scenario: 1 - Verify Individual RFM KB page
     Given I access RFM start page
     Then I should be on RFM start page
@@ -21,7 +21,7 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility @batch3
+  @batch3 @zap_accessibility
   Scenario: 2 - Verify Agent RFM KB page
     Given Agent User logs in with rfm URL to Pillar2
     Then I should be on Agent RFM KB Page
@@ -32,7 +32,7 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility @batch3
+  @batch3 @zap_accessibility
   Scenario: 3 - Verify Organisation Assistant User RFM KB page
     Given Assistant User logs in with rfm URL to Pillar2
     Then I should be on Assistant User RFM KB Page
@@ -43,7 +43,7 @@ Feature: RFM Start page
     When I select back link
     Then I should be on auth-login page
 
-  @zap_accessibility @batch3
+  @batch3 @zap_accessibility
   Scenario: 4 - Verify already enrolled Organisation User KB page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 with rfm URL to Pillar2 service
     Then I should be on Duplicate RFM KB Page
@@ -55,7 +55,7 @@ Feature: RFM Start page
     Then I should be on auth-login page
 
 #    Add groupId to user to match stub
-  @zap_accessibility @batch3
+  @batch3 @zap_accessibility
   Scenario: 5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page
     Given I clear the cache
     Given Organisation User logs in and navigates to RFM start page without Pillar2 enrolment with groupId 879D6270-E9C2-4092-AC91-21C61B69D1E7

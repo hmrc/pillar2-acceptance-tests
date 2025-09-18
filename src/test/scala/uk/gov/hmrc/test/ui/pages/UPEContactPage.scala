@@ -16,20 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UPEContactPage extends PageObject {
-  val url: String        = s"$rootUrl" + "business-matching/ultimate-parent/no-id/phone"
-
-  val caption      = ".govuk-caption-l"
-  val continue     = ".govuk-button"
-  val eqForm       = ".govuk-form-group"
-  val eq           = ".govuk-form-group .govuk-fieldset"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href*='#phone']"
-  val backLink     = ".govuk-back-link"
-  val errorMessage = ".govuk-error-message"
-
-  def clickContinue(): Unit = findByCss(continue).click()
+  val url: String = s"$rootUrl" + "business-matching/ultimate-parent/no-id/phone"
 }

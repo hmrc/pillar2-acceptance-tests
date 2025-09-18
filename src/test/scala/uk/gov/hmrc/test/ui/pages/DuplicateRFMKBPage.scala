@@ -20,8 +20,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object DuplicateRFMKBPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/error/duplicate-registration"
-
-  val header: String = "h1.govuk-heading-l"
-  val backLink       = ".govuk-back-link"
-
 }

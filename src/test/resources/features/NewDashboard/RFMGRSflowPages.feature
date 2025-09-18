@@ -36,7 +36,7 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     And I click on Save&Continue button
     Then I should be on RFM Contact Guidance page
 
-  @batch3
+  @batch3 @zap_accessibility
   Scenario: 2 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations
     Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page
@@ -130,7 +130,7 @@ Feature: RFM Ultimate Parent Entity and New nominated Filling Member GRS journey
     When I select option Limited liability partnership and continue to GRS page
     Then I should navigate to RFM LLP GRS page
 
-  @batch2
+  @batch2 @zap_accessibility
   Scenario: 4 - User registration as UK limited company failed with identifiers mismatch error and entity type page validation
     Given Organisation User logs in without Pillar2 enrolment
     And I access RFM start page

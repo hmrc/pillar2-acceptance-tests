@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object ASADashboardPage extends PageObject {
-  val url: String = s"$rootUrl" + "pillar2-top-up-tax-home"
-
-  val ASALink        = "a[href*='/asa/home']"
-  val inactiveStatus = ".govuk-notification-banner__heading"
-
+object BtnConfirmationPage extends PageObject {
+  val url: String = s"$rootUrl" + "below-threshold-notification/confirmation"
 }

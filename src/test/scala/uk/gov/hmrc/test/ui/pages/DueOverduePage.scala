@@ -16,16 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object AgentRepaymentContactPage extends PageObject {
+object DueOverduePage extends PageObject {
+  val url: String = s"$rootUrl" + "due-and-overdue-returns"
 
-  val url: String    = s"$rootUrl" + "repayment/contact-details/input-name"
-  val header: String = "h1.govuk-heading-l"
-  val backLink       = ".govuk-back-link"
-
-  val continue = ".govuk-button"
-
-  def clickContinue(): Unit = findByCss(continue).click()
+  val accountPeriodSections = ".govuk-grid-column-full"
+  val dueSection            = ".govuk-tag--blue"
+  val overDueSection        = ".govuk-tag--red"
+  val accountDetails        = ".govuk-grid-row"
 }

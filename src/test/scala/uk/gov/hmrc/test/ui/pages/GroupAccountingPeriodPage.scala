@@ -21,13 +21,9 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object GroupAccountingPeriodPage extends PageObject {
   val url: String = s"$rootUrl" + "further-details/accounting-period"
 
-  val caption               = ".govuk-caption-l"
-  val form                  = ".govuk-form-group"
-  val continue              = ".govuk-button"
   val errorSummary          = ".govuk-error-summary__list"
   val errorLinkStartDate    = "[href*='#startDate']"
   val errorLinkEndDate      = "[href*='#endDate']"
-  val backLink              = ".govuk-back-link"
   val errorMessageStartDate = "#startDate-error"
   val errorMessageEndDate   = "#endDate-error"
   val startDay              = "startDate.day"
@@ -36,6 +32,4 @@ object GroupAccountingPeriodPage extends PageObject {
   val endDay                = "endDate.day"
   val endMonth              = "endDate.month"
   val endYear               = "endDate.year"
-  val dateMessage           = ".govuk-fieldset__heading"
-
 }

@@ -21,9 +21,8 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnChangeDomesticOrMnePage
 
-class ChangeYourAnswersPageSteps extends CommonFunctions {
+class CYASteps extends CommonFunctions {
 
   And("""^I should see row (\d+) value (.*)$""") { (row: Int, value: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
@@ -60,31 +59,31 @@ class ChangeYourAnswersPageSteps extends CommonFunctions {
       case "UPE Address" =>
         clickByCss(UPECheckYourAnswersPage.changeAddress)
       case "UPE Contact Name" =>
-        clickByCss(UPECheckYourAnswersPage.changeContactname)
+        clickByCss(UPECheckYourAnswersPage.changeContactName)
       case "UPE Email Address" =>
-        clickByCss(UPECheckYourAnswersPage.changeEmailaddress)
+        clickByCss(UPECheckYourAnswersPage.changeEmailAddress)
       case "UPE Phone Contact" =>
-        clickByCss(UPECheckYourAnswersPage.changePhonecontact)
+        clickByCss(UPECheckYourAnswersPage.changePhoneContact)
       case "UPE Phone Number" =>
-        clickByCss(UPECheckYourAnswersPage.changePhonenumber)
+        clickByCss(UPECheckYourAnswersPage.changePhoneNumber)
       case "NFM Name" =>
         clickByCss(NFMCheckYourAnswersPage.changeName)
       case "NFM Address" =>
         clickByCss(NFMCheckYourAnswersPage.changeAddress)
       case "NFM Contact Name" =>
-        clickByCss(NFMCheckYourAnswersPage.changeContactname)
+        clickByCss(NFMCheckYourAnswersPage.changeContactName)
       case "NFM Email Address" =>
-        clickByCss(NFMCheckYourAnswersPage.changeEmailaddress)
+        clickByCss(NFMCheckYourAnswersPage.changeEmailAddress)
       case "NFM Phone Contact" =>
-        clickByCss(NFMCheckYourAnswersPage.changePhonecontact)
+        clickByCss(NFMCheckYourAnswersPage.changePhoneContact)
       case "NFM Phone Number" =>
-        clickByCss(NFMCheckYourAnswersPage.changePhonenumber)
+        clickByCss(NFMCheckYourAnswersPage.changePhoneNumber)
       case "FD Group Status" =>
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
       case "Accounting Period" =>
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeAccountingPeriod)
       case "Domestic or Mne" =>
-        clickByCss(P2SubBtnChangeDomesticOrMnePage.changeDomesticOrMne)
+        clickByCss(BtnChangeDomesticOrMnePage.changeDomesticOrMne)
     }
   }
 

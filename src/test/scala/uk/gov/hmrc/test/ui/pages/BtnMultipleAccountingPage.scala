@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pillar2SubmissionPages
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.{findByCss, findById}
+import uk.gov.hmrc.test.ui.cucumber.Find.findById
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubBtnMultipleAccountingPage extends PageObject {
+object BtnMultipleAccountingPage extends PageObject {
   val url: String                           = s"$rootUrl" + "below-threshold-notification/choose-accounting-period"
   val CurrentAccountingPeriod               = "radio_0"
   val PreviousAccountingPeriod              = "radio_1"

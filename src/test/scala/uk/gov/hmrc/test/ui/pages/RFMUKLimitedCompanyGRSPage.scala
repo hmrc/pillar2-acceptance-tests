@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pillar2SubmissionPages
+package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubBtnDomesticOrMnePage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/domestic-or-multinational"
-
+object RFMUKLimitedCompanyGRSPage extends PageObject {
+  val url: String = s"$rootUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=ukLimitedCompany"
 }

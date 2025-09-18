@@ -19,9 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMGRSRegistrationNotCalledErrorPage extends PageObject {
-  val url: String    = s"$rootUrl" + "replace-filing-member/business-matching/filing-member/uk-based/error/fail"
-  val content        = "#main-content"
-  val header: String = "h1.govuk-heading-l"
-  val backLink       = ".govuk-back-link"
-
+  val url: String = s"$rootUrl" + "replace-filing-member/business-matching/filing-member/uk-based/error/fail"
 }

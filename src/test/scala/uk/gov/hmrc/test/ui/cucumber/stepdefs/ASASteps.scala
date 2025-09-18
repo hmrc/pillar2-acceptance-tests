@@ -16,17 +16,12 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.scala.{EN, ScalaDsl}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
 
-class ASAStepDef extends BaseStepDef with BrowserDriver {
-
-  And("""^I directly access (.*) page$""") { (name: String) =>
-    name match {
-      case "Agent Non UK Payment Page" => Nav.navigateTo(AgentNonUKPaymentPage.url)
-    }
-  }
+class ASASteps extends BrowserDriver with ScalaDsl with EN {
 
   And("""^I provide ASA (.*) as (.*)$""") { (field: String, value: String) =>
     field match {

@@ -39,7 +39,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
@@ -58,22 +58,22 @@ Feature: Pillar2 submission Below threshold notification user journey
     When I click Sign out link
     Then I am on feedback survey page
 
-  Scenario: 3 - Org User navigates to BTN return submission KB page
+  Scenario: 3 - Org User navigates to BTN Accounting Period Page
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service
     Then I should be on Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
-    Then I should navigate to BTN Return Submission KB Page
+    Then I should navigate to BTN Accounting Period Page
     When I click on Continue button
     Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     Then I should navigate to BTN CYA Submit Page
     When I navigate back to BTN Return Submission KB Page
-    Then I should navigate to BTN Return Submission KB Page
+    Then I should navigate to BTN Accounting Period Page
     When I click Sign out link
     Then I am on feedback survey page
 
-  Scenario: 4 - Agent User navigates to BTN return submission KB page
+  Scenario: 4 - Agent User navigates to BTN Accounting Period Page
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999991 and pillar2-auth for Pillar2 service
     Then I should be on ASA Pillar2 Input Page
@@ -81,15 +81,15 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should be on ASA Dashboard page
+    Then I should be on Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
-    Then I should navigate to BTN Return Submission KB Page
+    Then I should navigate to BTN Accounting Period Page
     #TODO: Need to clarify correct navigation based on outcome of PIL-2323
 #    When I click Report Pillar 2 Top-up Taxes link
 #    Then I should be navigated to P2 ASA Home Page of Pillar2 Submission
 #    When I select back link
-#    Then I should be navigated to BTN Return Submission KB Page of Pillar2 Submission
+#    Then I should be navigated to BTN Accounting Period Page of Pillar2 Submission
     When I click Sign out link
     Then I am on feedback survey page
     When I click on Continue button
@@ -102,7 +102,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
@@ -124,12 +124,12 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     When I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     Then I should navigate to BTN CYA Submit Page
     When I click on change hyperlink next to the Domestic or Mne
@@ -148,7 +148,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     When I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     Then I should navigate to BTN CYA Submit Page
     When I click on change hyperlink next to the Domestic or Mne
@@ -164,7 +164,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     When I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     Then I should navigate to BTN CYA Submit Page
     When I click on change hyperlink next to the Domestic or Mne
@@ -186,7 +186,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     When I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     Then I should navigate to BTN CYA Submit Page
     When I click on Continue button
@@ -205,7 +205,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     When I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     When I click on Continue button
     Then I should navigate to BTN Problem with service Page
@@ -225,12 +225,12 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     When I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     When I click on Continue button
     Then I should navigate to BTN Problem with service Page
@@ -250,7 +250,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Multiple Accounting Period Page
@@ -263,7 +263,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     Then I should be on accounts summary page
     And I click the browser back button
     When I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option No and continue on Pillar2 submission
     Then I should navigate to BTN AGD KB Page
     When I click Amend group details link
@@ -279,7 +279,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Multiple Accounting Period Page
@@ -290,7 +290,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I select CurrentAccountingPeriod
     And  I click on Continue button
     And  I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     Then I should navigate to BTN CYA Submit Page
     When I click on Continue button
@@ -304,7 +304,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Multiple Accounting Period Page
@@ -312,16 +312,16 @@ Feature: Pillar2 submission Below threshold notification user journey
     And  I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     And I click Return to homepage link
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click the browser back button
     Then I should navigate to BTN Accounting Period Page
     And I select back link
     Then I should navigate to BTN Multiple Accounting Period Page
     And I select PreviousAccountingPeriodBTNSubmitted
     And  I click on Continue button
-    Then I should navigate to BTN Return Submission KB Page
+    Then I should navigate to BTN Accounting Period Page
     And I click Return to homepage link
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click the browser back button
     And I select back link
     Then I should navigate to BTN Multiple Accounting Period Page
@@ -333,7 +333,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And  I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     And  I click on Continue button
-      Then I should navigate to BTN Domestic or MNE Page
+    Then I should navigate to BTN Domestic or MNE Page
     When I select option Yes and continue on Pillar2 submission
     Then I should navigate to BTN CYA Submit Page
     When I click on Continue button
@@ -346,7 +346,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Multiple Accounting Period Page

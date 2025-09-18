@@ -16,15 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object SecondContactEmailPage extends PageObject {
-  val url: String = s"$rootUrl" + "contact-details/second-input-email"
-
-  val caption      = ".govuk-caption-l"
-  val continue     = ".govuk-button"
+  val url: String  = s"$rootUrl" + "contact-details/second-input-email"
   val contactEmail = "#emailAddress"
 
-  def clickContinue(): Unit = findByCss(continue).click()
 }

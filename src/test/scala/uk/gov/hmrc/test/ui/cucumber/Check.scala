@@ -17,10 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import org.scalatest.Assertion
-import org.scalatestplus.selenium.Chrome.currentUrl
-import uk.gov.hmrc.test.ui.pages.BasePage
+import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-object Check extends BasePage {
+object Check extends BrowserDriver with Matchers {
 
   def checkH1(h1: String): Assertion = Find.findByTagName("h1").getText should include(h1)
 

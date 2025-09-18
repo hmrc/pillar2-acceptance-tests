@@ -19,7 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object DuplicateAckRefErrorPage extends PageObject {
-  val url: String    = s"$rootUrl" + "error/subscription-failure"
-  val content        = "main#main-content"
-  val header: String = "h1.govuk-heading-xl"
+  val url: String = s"$rootUrl" + "error/subscription-failure"
 }

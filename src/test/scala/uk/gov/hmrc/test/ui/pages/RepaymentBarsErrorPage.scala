@@ -19,7 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentBarsErrorPage extends PageObject {
-
   val url: String = s"$rootUrl" + "repayment/error/view"
-
 }

@@ -17,13 +17,9 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{getAttributeOfId, getTextOf}
-import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
+import uk.gov.hmrc.test.ui.cucumber.Input.getAttributeOfId
+import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.pages._
-
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 class SubscriptionJourneySteps extends CommonFunctions {
 

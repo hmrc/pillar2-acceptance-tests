@@ -20,11 +20,6 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentCYAPage extends PageObject {
   val url: String            = s"$rootUrl" + "repayment/check-answers"
-  val header: String         = "h1.govuk-heading-l"
-  val keyList                = ".govuk-summary-list__key"
-  val valueList              = ".govuk-summary-list__value"
-  val actionsList            = ".govuk-summary-list__actions"
-  val rowNumber              = "govuk-summary-list__row"
   val changeRefundAmount     = "a[href*='/change-amount']"
   val changeRefundReason     = "a[href*='/change-reason']"
   val changeRepaymentMethod  = "a[href*='/change-method']"

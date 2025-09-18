@@ -16,28 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ContactDetailsCheckAnswersPage extends PageObject {
-  val url: String    = s"$rootUrl" + "contact-details/check-answers"
-  val header: String = "h1.govuk-heading-l"
-  val keyList        = ".govuk-summary-list__key"
-  val valueList      = ".govuk-summary-list__value"
-  val actionsList    = ".govuk-summary-list__actions"
-  val rowNumber      = "govuk-summary-list__row"
-  val continue       = "#continue"
+  val url: String = s"$rootUrl" + "contact-details/check-answers"
 
   val changeName          = "a[href*='/change-input-name']"
   val changeEmail         = "a[href*='/change-input-email']"
-  val changeContact       = "a[href*='/change-phone']"
   val changeContactNumber = "a[href*='/change-input-phone']"
 
   val secondContact     = "a[href*='/change-second-contact']"
   val changeSecondName  = "a[href*='/change-second-input-name']"
   val changeSecondEmail = "a[href*='/change-second-input-email']"
-  val secondPhone       = "a[href*='/change-second-phone']"
   val changeSecondPhone = "a[href*='/change-second-input-phone']"
 
-  def saveAndContinue(): Unit = findByCss(continue).click()
 }

@@ -16,28 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMAddressPage extends PageObject {
-  val url: String              = s"$rootUrl" + "business-matching/filing-member/no-id/input-address"
-  val continue                 = "#submit"
-  val errorSummary             = ".govuk-error-summary__list"
-  val addressLine1ErrorLink    = "[href='#addressLine1']"
-  val addressLine2ErrorLink    = "[href='#addressLine2']"
-  val cityErrorLink            = "[href='#addressLine3']"
-  val regionErrorLink          = "[href='#addressLine4']"
-  val postcodeErrorLink        = "[href='#postalCode']"
-  val countryErrorLink         = "[href='#countryCode']"
-  val country                  = "#countryCode"
-  val backLink                 = ".govuk-back-link"
-  val addressLine1ErrorMessage = "#addressLine1-error"
-  val addressLine2ErrorMessage = "#addressLine2-error"
-  val cityErrorMessage         = "#addressLine3-error"
-  val regionErrorMessage       = "#addressLine4-error"
-  val postcodeErrorMessage     = "#postalCode-error"
-  val countryErrorMessage      = "#countryCode-error"
-
-  def clickContinue(): Unit = findByCss(continue).click()
-
+  val url: String = s"$rootUrl" + "business-matching/filing-member/no-id/input-address"
 }

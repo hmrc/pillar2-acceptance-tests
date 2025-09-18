@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
+import io.cucumber.scala.{EN, ScalaDsl}
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationUrl
 import uk.gov.hmrc.test.ui.cucumber.Find.findURL
@@ -24,10 +25,10 @@ import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
-import java.time.LocalDate
+
 import scala.util.Try
 
-class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunctions {
+class RFMSteps extends EN with ScalaDsl with BrowserDriver with CommonFunctions {
 
   Given("""^(.*) logs in with rfm URL to Pillar2$""") { name: String =>
     name match {
@@ -56,8 +57,8 @@ class RFMPagesStepDef extends BaseStepDef with BrowserDriver with CommonFunction
     field match {
       case "pillar2 id" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2topuptaxid)
-        Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2topuptaxid)
+        Wait.waitForElementToPresentByCssSelector(RFMEnterPillar2IdPage.pillar2TopUpTaxId)
+        Input.sendKeysByCss(name, RFMEnterPillar2IdPage.pillar2TopUpTaxId)
 
       case "contact name" =>
         Wait.waitForTagNameToBeRefreshed("h1")

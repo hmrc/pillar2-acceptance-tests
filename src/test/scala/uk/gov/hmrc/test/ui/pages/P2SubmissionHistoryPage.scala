@@ -15,21 +15,11 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
-import org.openqa.selenium.By
-import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-trait BasePage extends BrowserDriver with Matchers {
-  val continueButton = "continue-button"
+import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-  def submitPage(): Unit =
-    driver.findElement(By.id(continueButton)).click()
-
-  def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != pageTitle)
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
+object P2SubmissionHistoryPage extends PageObject {
+  val url: String       = s"$rootUrl" + "submission-history"
+  val accountingPeriods = ".table-scroll-wrapper .govuk-table"
+  val accountDetails    = ".govuk-grid-column-two-thirds"
 }
-
-case class PageNotFoundException(s: String) extends Exception(s)

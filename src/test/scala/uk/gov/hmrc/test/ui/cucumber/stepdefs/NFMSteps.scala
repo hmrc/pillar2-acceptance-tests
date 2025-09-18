@@ -16,13 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.openqa.selenium.support.ui.Select
-import org.openqa.selenium.{By, WebElement}
-import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
-import uk.gov.hmrc.test.ui.cucumber.{Find, Wait}
 import uk.gov.hmrc.test.ui.pages._
 
-class NFMPageSteps extends CommonFunctions {
+class NFMSteps extends CommonFunctions {
 
   Given("""^(.*) logs in NFM name page for Pillar2$""") { name: String =>
     name match {
@@ -49,27 +45,6 @@ class NFMPageSteps extends CommonFunctions {
     name match {
       case "Organisation User" => AuthLoginPage.loginToNFMContactEmail(name)
       case _                   => AuthLoginPage.loginToNFMContactEmail(name)
-    }
-  }
-
-  Given("""^(.*) logs in NFM Phone page for Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMPhone(name)
-      case _                   => AuthLoginPage.loginToNFMPhone(name)
-    }
-  }
-
-  Given("""^(.*) logs in Further details group status page for Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToFDGroupStatus(name)
-      case _                   => AuthLoginPage.loginToFDGroupStatus(name)
-    }
-  }
-
-  Given("""^(.*) logs in NFM Phone input page for Pillar2$""") { name: String =>
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMPhoneInput(name)
-      case _                   => AuthLoginPage.loginToNFMPhoneInput(name)
     }
   }
 }

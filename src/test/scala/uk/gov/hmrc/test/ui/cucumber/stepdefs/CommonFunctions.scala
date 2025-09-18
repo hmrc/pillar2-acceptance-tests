@@ -22,7 +22,6 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.pillar2SubmissionPages._
 trait CommonFunctions
     extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
@@ -134,7 +133,7 @@ trait CommonFunctions
       case "RFM second contact phone question page"     => RFMSecondContactPhoneQuestionPage
       case "RFM second contact phone page"              => RFMSecondContactPhonePage
       case "RFM UK based entity type page"              => RFMGRSEntityTypePage
-      case "RFM UK limited Company GRSPage"             => RFMUKlimitedCompanyGRSPage
+      case "RFM UK limited Company GRSPage"             => RFMUKLimitedCompanyGRSPage
       case "RFM LLP GRS page"                           => RFMLLPGRSPage
       case "RFM GRS Registration Not Called Error Page" => RFMGRSRegistrationNotCalledErrorPage
       case "RFM GRS Registration Mismatch Error Page"   => RFMGRSRegistrationMismatchErrorPage
@@ -145,7 +144,6 @@ trait CommonFunctions
       case "RFM Saving Progress Page"                   => RFMSavingProgressPage
       case "ASA No record Match Error Page"             => ASANoMatchErrorPage
       case "ASA Confirmation Page"                      => ASAConfirmationPage
-      case "ASA Dashboard page"                         => ASADashboardPage
       case "ASA Home Page"                              => ASAHomePage
       case "RFM No Return Back Error Page"              => RFMNoReturnBackErrorPage
       case "ASA Not Authorised page"                    => ASANotAuthorisedPage
@@ -153,29 +151,18 @@ trait CommonFunctions
       case "Amend API error Page for RFM"               => AmendAPIerrorPage_RFM
       case "ASA Individual KB Page"                     => ASAIndividualKBPage
       case "ASA Organisation KB Page"                   => ASAOrganisationKBPage
-      case "Agent Amend API error Page"                 => AgentAmendAPIerrorPage
-      case "Agent Contact Detail Summary Page"          => AgentContactDetailSummaryPage
-      case "Agent Account Summary Page"                 => AgentAccountSummaryPage
-      case "Agent Make a Payment page"                  => AgentMakePaymentPage
       case "RFM journey recovery page"                  => RFMJourneyRecoveryPage
       case "RFM incomplete task error page"             => RFMIncompleteErrorPage
       case "Non UK Bank Account Payment Page"           => NonUKBankAccountPaymentPage
-      case "Change Non UK Bank Account Payment Page"    => ChangeNonUKBankAccountPaymentPage
       case "UK Bank Account Payment Page"               => UKBankAccountPaymentPage
-      case "Change UK Bank Account Payment Page"        => ChangeUKBankAccountPaymentPage
-      case "Agent Non UK Payment Page"                  => AgentNonUKPaymentPage
       case "Repayment Guidance Page"                    => RepaymentGuidancePage
       case "Repayment Amount Page"                      => RepaymentAmountPage
-      case "Agent Repayment Guidance Page"              => AgentRepaymentGuidancePage
-      case "Agent Repayment Amount Page"                => AgentRepaymentAmountPage
       case "Repayment Contact Page"                     => RepaymentContactPage
       case "Repayment Contact Email Page"               => RepaymentContactEmailPage
       case "Repayment Phone Page"                       => RepaymentPhonePage
       case "Repayment Phone Input Page"                 => RepaymentPhoneInputPage
       case "Reason For Refund Page"                     => RepaymentReasonPage
       case "Repayment Method Page"                      => RepaymentMethodPage
-      case "Agent Repayment Reason Page"                => AgentRepaymentReasonPage
-      case "Agent Repayment Method Page"                => AgentRepaymentMethodPage
       case "Repayment CYA Page"                         => RepaymentCYAPage
       case "Repayment Could Not Confirm Error Page"     => RepaymentCouldNotConfirmErrorPage
       case "Repayment Bank Details Error Page"          => RepaymentBankDetailsErrorPage
@@ -206,18 +193,16 @@ trait CommonFunctions
       case "Manage Account processing Page"             => ManageAccountProcessingPage
       case "Manage Contact processing Page"             => ManageContactProcessingPage
       case "Outstanding Payment Page"                   => OutstandingPaymentsPage
-      case "Due & Over Due Page"                        => P2DueOverduePage
-      case "BTN Accounting Period Page"                 => P2SubBtnAccountingPage
-      case "BTN Multiple Accounting Period Page"        => P2SubBtnMultipleAccountingPage
-      case "BTN Start Page"                             => P2SubBtnStartPage
-      case "BTN Domestic or MNE Page"                   => P2SubBtnDomesticOrMnePage
-      case "BTN AGD KB Page"                            => P2SubBtnAgdKBPage
-      case "BTN CYA Submit Page"                        => P2CYASubmitPage
-      case "BTN Confirmation Page"                      => P2ConfirmationPage
-      case "BTN Return Submission KB Page"              => P2BTNReturnSubmissionKBPage
-      case "BTN Cannot Return Page"                     => P2SubBTNCannotReturnPage
-      case "BTN Problem with service Page"              => P2SubBTNProblemWithServicePage
-      case "accounts summary page"                      => P2SubAccountsSummaryPage
+      case "Due & Over Due Page"                        => DueOverduePage
+      case "BTN Accounting Period Page"                 => BtnAccountingPage
+      case "BTN Multiple Accounting Period Page"        => BtnMultipleAccountingPage
+      case "BTN Start Page"                             => BtnStartPage
+      case "BTN Domestic or MNE Page"                   => BtnDomesticOrMnePage
+      case "BTN AGD KB Page"                            => BtnAgdKBPage
+      case "BTN CYA Submit Page"                        => BtnCyaSubmitPage
+      case "BTN Confirmation Page"                      => BtnConfirmationPage
+      case "BTN Cannot Return Page"                     => BtnCannotReturnPage
+      case "BTN Problem with service Page"              => BtnProblemWithServicePage
     }
   }
 }

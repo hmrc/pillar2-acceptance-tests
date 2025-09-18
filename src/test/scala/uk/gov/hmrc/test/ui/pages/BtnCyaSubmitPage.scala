@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pillar2SubmissionPages
+package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2ConfirmationPage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/confirmation"
+object BtnCyaSubmitPage extends PageObject {
+  val url: String = s"$rootUrl" + "below-threshold-notification/submit"
 }

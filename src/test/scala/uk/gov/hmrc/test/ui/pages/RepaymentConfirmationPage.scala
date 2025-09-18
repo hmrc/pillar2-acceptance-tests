@@ -19,10 +19,6 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentConfirmationPage extends PageObject {
-
-  val url: String    = s"$rootUrl" + "repayment/confirmation"
-  val header: String = "h1.govuk-panel__title"
-  val printthispage  = "#print-this-page"
-  val signOut        = ".hmrc-sign-out-nav__link"
-
+  val url: String = s"$rootUrl" + "repayment/confirmation"
+  val signOut     = ".hmrc-sign-out-nav__link"
 }

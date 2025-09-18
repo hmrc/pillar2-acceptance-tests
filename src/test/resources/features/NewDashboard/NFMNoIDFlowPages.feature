@@ -3,7 +3,7 @@ Feature: NFM NO ID journey
   As a MNE user
   I would like to enter my details via NFM No ID journey
 
-  @zap_accessibility @batch1
+  @batch1 @zap_accessibility
   Scenario: 1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated
     Given Organisation User logs in as upe with credId NFMCYA for Pillar2
     When I select option Yes and continue to next
@@ -51,7 +51,7 @@ Feature: NFM NO ID journey
     Then I should be on Task list page
     And The Task Edit filing member details status should be Completed
 
-  @zap_accessibility @batch2
+  @batch2 @zap_accessibility
   Scenario: 2 - Validate different error messages for NFM no ID journey pages
     Given Organisation User logs in without Pillar2 enrolment
     And I select option Yes and continue to next

@@ -16,16 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object AssistantRoleKBPage extends PageObject {
   val url: String = s"$rootUrl" + "unauthorised/standard-user"
-
-  val header: String = "h1.govuk-heading-l"
-  val startAgain     = ".govuk-button"
-  val backLink       = ".govuk-back-link"
-
-  def clickStartAgain(): Unit = findByCss(startAgain).click()
-
 }

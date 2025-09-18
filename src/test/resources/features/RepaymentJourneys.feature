@@ -93,34 +93,34 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click Request a repayment link
-    Then I should navigate to Agent Repayment Guidance Page
+    Then I should navigate to Repayment Guidance Page
     When I click on Continue button
-    Then I should navigate to Agent Repayment Amount Page
+    Then I should navigate to Repayment Amount Page
     When I provide Refund Amount as 9999.99
     And I click on Continue button
-    Then I should navigate to Agent Repayment Reason Page
+    Then I should navigate to Reason For Refund Page
     When I click Report Pillar 2 Top-up Taxes link
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click the browser back button
-    Then I should navigate to Agent Repayment Reason Page
+    Then I should navigate to Reason For Refund Page
     When I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
     And I click on Continue button
-    Then I should navigate to Agent Repayment Method Page
+    Then I should navigate to Repayment Method Page
     And I select repayment method as UK bank account
     And I click on Continue button
     Then I should be on UK Bank Account Payment Page
     When I click Report Pillar 2 Top-up Taxes link
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click Request a repayment link
-    Then I should navigate to Agent Repayment Guidance Page
+    Then I should navigate to Repayment Guidance Page
     When I click on Continue button
-    Then I should navigate to Agent Repayment Amount Page
+    Then I should navigate to Repayment Amount Page
     And I click on Continue button
-    Then I should navigate to Agent Repayment Reason Page
+    Then I should navigate to Reason For Refund Page
     And I click on Continue button
-    Then I should navigate to Agent Repayment Method Page
+    Then I should navigate to Repayment Method Page
     And I should see the repayment method UK bank account remain selected
     When I select repayment method as Non-UK bank account
     When I enter Non UK Bank Account details as:
@@ -194,19 +194,19 @@ Feature: Repayment Journey
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
     When I click Request a repayment link
-    Then I should navigate to Agent Repayment Guidance Page
+    Then I should navigate to Repayment Guidance Page
     When I click on Continue button
-    Then I should navigate to Agent Repayment Amount Page
+    Then I should navigate to Repayment Amount Page
     When I provide Refund Amount as 999.99
     And I click on Continue button
-    Then I should navigate to Agent Repayment Reason Page
+    Then I should navigate to Reason For Refund Page
     When I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.
     And I click on Continue button
-    Then I should navigate to Agent Repayment Method Page
+    Then I should navigate to Repayment Method Page
     And I select repayment method as UK bank account
     Then I should be on UK Bank Account Payment Page
     When I select back link
-    Then I should navigate to Agent Repayment Method Page
+    Then I should navigate to Repayment Method Page
     And I click on Continue button
     Then I should be on UK Bank Account Payment Page
     And I click on Continue button
@@ -227,7 +227,7 @@ Feature: Repayment Journey
     Then I should be on Repayment CYA Page
     And I select back link
     When I click Report Pillar 2 Top-up Taxes link
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click Sign out link
 
   @batch3
@@ -289,7 +289,7 @@ Feature: Repayment Journey
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     And I click on Continue button
-    Then I should navigate to Agent Repayment Reason Page
+    Then I should navigate to Reason For Refund Page
 
   @batch3
   Scenario: 7 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP
@@ -300,7 +300,7 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click Request a repayment link
     Then I should navigate to Repayment Guidance Page
     When I click on Continue button
@@ -313,7 +313,7 @@ Feature: Repayment Journey
     When I click Continue button
     Then I should be on Repayment Incomplete Error Page
     When I click Report Pillar 2 Top-up Taxes link
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click the browser back button
     Then I should be on Repayment Incomplete Error Page
     When I select back link
@@ -328,7 +328,7 @@ Feature: Repayment Journey
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
     When I click Request a refund link
-    Then I should navigate to Agent Repayment Guidance Page
+    Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     When I provide Refund Amount as 100.00
     And I provide Refund Reason as Test Reason
@@ -361,9 +361,9 @@ Feature: Repayment Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click Request a refund link
-    Then I should navigate to Agent Repayment Guidance Page
+    Then I should navigate to Repayment Guidance Page
     When I click on Continue button
     When I provide Refund Amount as 100.00
     And I provide Refund Reason as Test Reason
@@ -381,8 +381,8 @@ Feature: Repayment Journey
     When I access Repayment contact email page
     Then I should be on Repayment Journey Recovery Error Page
     When I click Report Pillar 2 Top-up Taxes link
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click the browser back button
     Then I should be on Repayment Journey Recovery Error Page
     When I click Return to account homepage link
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page

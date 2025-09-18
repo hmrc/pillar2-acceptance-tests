@@ -19,16 +19,13 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object AgentRepaymentMethodPage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/method"
+object BtnCannotReturnPage extends PageObject {
+  val url: String = s"$rootUrl" + "below-threshold-notification/cannot-return"
 
-  val header          = ".govuk-caption-l"
-  val saveAndContinue = ".govuk-button"
-  val backLink        = ".govuk-back-link"
-  val errorMessage    = ".govuk-error-message"
-  val errorLink       = "[href*='#value_0']"
-  val textField       = "#value"
+  val header: String = "h1.govuk-heading-l"
+  val startAgain     = ".govuk-button"
+  val backLink       = ".govuk-back-link"
 
-  def clickContinue(): Unit = findByCss(saveAndContinue).click()
+  def clickStartAgain(): Unit = findByCss(startAgain).click()
 
 }

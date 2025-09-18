@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pillar2SubmissionPages
+package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubBtnAgdKBPage extends PageObject {
+object BtnAgdKBPage extends PageObject {
   val url: String = s"$rootUrl" + "below-threshold-notification/amend-group-details"
   val backLink    = ".govuk-back-link"
 }

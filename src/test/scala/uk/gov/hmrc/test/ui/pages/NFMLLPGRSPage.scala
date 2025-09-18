@@ -16,17 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMLLPGRSPage extends PageObject {
   val url: String = s"$rootUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/fm&entityType=limitedLiabilityPartnership"
-
-  val header          = ".govuk-caption-l"
-  val saveAndContinue = ".govuk-button"
-  val backLink        = ".govuk-back-link"
-  val errorMessage    = ".govuk-error-message"
-
-  def clickContinue(): Unit = findByCss(saveAndContinue).click()
-
 }

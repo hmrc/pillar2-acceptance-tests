@@ -16,15 +16,16 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import io.cucumber.scala.{EN, ScalaDsl}
 import org.openqa.selenium.By
+import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnMultipleAccountingPage
 
-class StepDef extends BaseStepDef with BrowserDriver {
+class CommonSteps extends EN with ScalaDsl with BrowserDriver with Matchers {
 
   Given("""^(.*) logs in to register for Pillar2$""") { name: String =>
     name match {
@@ -147,19 +148,19 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   When("""I select CurrentAccountingPeriod""") { () =>
-    P2SubBtnMultipleAccountingPage.selectCurrentAccountingPeriod()
+    BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
   }
 
   When("""I select PreviousAccountingPeriodBTNSubmitted""") { () =>
-    P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriodBTNSubmitted()
+    BtnMultipleAccountingPage.selectPreviousAccountingPeriodBTNSubmitted()
   }
 
   When("""I select PreviousAccountingPeriodUKTRSubmitted""") { () =>
-    P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
+    BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
   }
 
   Then("""I select PreviousAccountingPeriod""") { () =>
-    P2SubBtnMultipleAccountingPage.selectPreviousAccountingPeriod()
+    BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
   }
 
   When("""^(I click on Country selected)""") { (negate: String) =>
@@ -433,13 +434,13 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
       case "Agent Repayment Method" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(AgentRepaymentMethodPage.errorMessage)
+        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorMessage)
 
-        Wait.waitForElementToPresentByCssSelector(AgentRepaymentMethodPage.errorLink)
-        getTextOf(By cssSelector (AgentRepaymentMethodPage.errorLink)) should be(error)
+        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorLink)
+        getTextOf(By cssSelector (RepaymentMethodPage.errorLink)) should be(error)
 
-        Wait.waitForElementToPresentByCssSelector(AgentRepaymentMethodPage.errorMessage)
-        getTextOf(By cssSelector (AgentRepaymentMethodPage.errorMessage)) should include(error)
+        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorMessage)
+        getTextOf(By cssSelector (RepaymentMethodPage.errorMessage)) should include(error)
     }
   }
 
@@ -474,7 +475,7 @@ class StepDef extends BaseStepDef with BrowserDriver {
 
   Then("""^I should be navigated to (.*) page$""") { (text: String) =>
     Wait.waitForTagNameToBeRefreshed("h1")
-    assert(driver.findElement(By.cssSelector(UPEPage.sendyourfeedback)).getText.contains(text))
+    assert(driver.findElement(By.cssSelector(UPEPage.sendYourFeedback)).getText.contains(text))
   }
 
   When("""^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$""") {
@@ -486,8 +487,8 @@ class StepDef extends BaseStepDef with BrowserDriver {
   }
 
   When("""^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 service$""") {
-    (enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String) =>
-      AuthLoginPage.addDelegatedEnrolment(enrolmentkey, identifiername, identifiervalue, authRule)
+    (enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String) =>
+      AuthLoginPage.addDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
   }
 
   When("""^I refresh the page$""") { () =>
@@ -511,11 +512,11 @@ class StepDef extends BaseStepDef with BrowserDriver {
   Then("""^I can see (.*) link$""") { (linkText: String) =>
     linkText match {
       case "Print this page" =>
-        Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printthispage)
-        assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printthispage)).getText.contains(linkText))
+        Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printThisPage)
+        assert(driver.findElement(By.cssSelector(RegistrationConfirmationPage.printThisPage)).getText.contains(linkText))
       case "Agent Services Account" =>
-        Wait.waitForElementToPresentByCssSelector(ASADashboardPage.ASALink)
-        assert(driver.findElement(By.cssSelector(ASADashboardPage.ASALink)).getText.contains(linkText))
+        Wait.waitForElementToPresentByCssSelector(DashboardPage.ASALink)
+        assert(driver.findElement(By.cssSelector(DashboardPage.ASALink)).getText.contains(linkText))
       case "Sign out" =>
         Wait.waitForElementToPresentByCssSelector(RepaymentConfirmationPage.signOut)
         assert(driver.findElement(By.cssSelector(RepaymentConfirmationPage.signOut)).getText.contains(linkText))
@@ -526,8 +527,8 @@ class StepDef extends BaseStepDef with BrowserDriver {
     page match {
       case "Review answers page" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(ReviewAnswersPage.printthispage)
-        assert(driver.findElement(By.cssSelector(ReviewAnswersPage.printthispage)).getText.contains(linkText))
+        Wait.waitForElementToPresentByCssSelector(ReviewAnswersPage.printThisPage)
+        assert(driver.findElement(By.cssSelector(ReviewAnswersPage.printThisPage)).getText.contains(linkText))
     }
   }
 

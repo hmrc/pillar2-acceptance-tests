@@ -17,9 +17,9 @@
 package uk.gov.hmrc.test.ui.cucumber
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-object Nav extends BasePage {
+object Nav extends BrowserDriver {
 
   def navigateTo(url: String): Unit =
     driver.navigate.to(url)

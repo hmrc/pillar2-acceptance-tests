@@ -19,6 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMNoMatchErrorPage extends PageObject {
-
   val url: String = s"$rootUrl" + "replace-filing-member/error/no-match"
 }

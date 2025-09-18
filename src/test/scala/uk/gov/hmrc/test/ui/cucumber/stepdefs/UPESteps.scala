@@ -16,12 +16,11 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
 import uk.gov.hmrc.test.ui.pages._
 
-class UPEPageSteps extends CommonFunctions {
+class UPESteps extends CommonFunctions {
 
   And("""^I enter (.*) as (.*)$""") { (field: String, name: String) =>
     field match {
@@ -193,7 +192,7 @@ class UPEPageSteps extends CommonFunctions {
       case "PLRID" =>
         assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
       case "UK Bank Name" =>
-        assert(getAttributeOf(UKBankAccountPaymentPage.UKbankName, "value").equals(name))
+        assert(getAttributeOf(UKBankAccountPaymentPage.UkBankName, "value").equals(name))
     }
   }
 

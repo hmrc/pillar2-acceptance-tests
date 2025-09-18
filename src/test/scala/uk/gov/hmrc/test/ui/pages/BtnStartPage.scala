@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pillar2SubmissionPages
+package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object P2SubmissionHistoryPage extends PageObject {
-  val url: String                  = s"$rootUrl" + "submission-history"
-  val singleaccountingperiodSubHis = ".govuk-table__caption"
-  val typeofReturnSubHis           = ".govuk-table__cell"
-  val actualMessage                = "//p[contains(text(), 'No submissions made.')]"
-  val accountingPeriods            = ".table-scroll-wrapper .govuk-table"
-  val accountDetails               = ".govuk-grid-column-two-thirds"
+object BtnStartPage extends PageObject {
+  val url: String = s"$rootUrl" + "below-threshold-notification/start"
+  val continue    = "button.govuk-button"
+
+  def clickContinue(): Unit = findByCss(continue).click()
 }

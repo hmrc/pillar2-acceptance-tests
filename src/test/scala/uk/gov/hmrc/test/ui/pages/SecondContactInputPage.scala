@@ -16,15 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object SecondContactInputPage extends PageObject {
   val url: String  = s"$rootUrl" + "contact-details/second-input-phone"
-  val continue     = "#submit"
   val contactPhone = "#phoneNumber"
-  val backLink     = ".govuk-back-link"
-
-  def clickContinue(): Unit = findByCss(continue).click()
-
 }

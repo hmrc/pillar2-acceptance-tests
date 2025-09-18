@@ -19,7 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RegistrationInProgressPage extends PageObject {
-
   val url: String = s"$rootUrl" + "review-submit/registration-in-progress/XEPLR0000000002"
-  val header      = "govuk-heading-l govuk-!-margin-bottom-7"
 }
