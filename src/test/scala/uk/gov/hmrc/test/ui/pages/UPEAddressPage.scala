@@ -20,32 +20,15 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UPEAddressPage extends PageObject {
-  val url: String              = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-address"
-  val continue                 = "#submit"
-  val errorSummary             = ".govuk-error-summary__list"
-  val addressErrorLink         = "[href='#addressLine1']"
-  val addressLine2ErrorLink    = "[href='#addressLine2']"
-  val cityErrorLink            = "[href='#addressLine3']"
-  val regionLink               = "[href='#addressLine4']"
-  val postalCodeErrorLink      = "[href='#postalCode']"
-  val countryErrorLink         = "[href='#countryCode']"
-  val addressLine1             = "#addressLine1"
-  val townOrCity               = "#addressLine3"
-  val country                  = "#countryCode"
-  val addressLine2             = "#addressLine2"
-  val region                   = "#addressLine4"
-  val postalCode               = "#postalCode"
-  val postalCodeErrorMessage   = "#postalCode-error"
-  val backLink                 = ".govuk-back-link"
-  val addressErrorMessage      = "#addressLine1-error"
-  val addressLine2ErrorMessage = "#addressLine2-error"
-  val cityErrorMessage         = "#addressLine3-error"
-  val regionErrorMessage       = "#addressLine4-error"
-  val countryErrorMessage      = "#countryCode-error"
-  val selected                 = "#countryCode__option--0"
-  val hintText                 = ".govuk-hint"
+  val url: String  = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-address"
+  val continue     = "#submit"
+  val addressLine1 = "#addressLine1"
+  val townOrCity   = "#addressLine3"
+  val country      = "#countryCode"
+  val addressLine2 = "#addressLine2"
+  val region       = "#addressLine4"
+  val postalCode   = "#postalCode"
+  val selected     = "#countryCode__option--0"
 
-  def clickContinue(): Unit        = findByCss(continue).click()
   def clickCountrySelected(): Unit = findByCss(selected).click()
-
 }

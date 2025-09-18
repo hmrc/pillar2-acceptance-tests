@@ -17,9 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.pages._
 

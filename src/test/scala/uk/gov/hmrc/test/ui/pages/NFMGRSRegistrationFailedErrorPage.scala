@@ -22,6 +22,4 @@ object NFMGRSRegistrationFailedErrorPage extends PageObject {
   val url: String    = s"$rootUrl" + "business-matching/filing-member/uk-based/error/mismatching-details"
   val content        = "#main-content"
   val header: String = "h1.govuk-heading-l"
-  val backLink       = ".govuk-back-link"
-
 }

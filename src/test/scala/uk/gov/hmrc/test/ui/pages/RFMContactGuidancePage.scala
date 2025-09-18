@@ -20,8 +20,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMContactGuidancePage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/contact-details/content"
-
-  val caption        = ".govuk-caption-l"
-  val continue       = ".govuk-button"
-  val header: String = "h1.govuk-heading-l"
 }

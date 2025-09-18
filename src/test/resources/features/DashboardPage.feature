@@ -216,7 +216,7 @@ Feature: Dashboard Page
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click Make a payment link
     Then I should navigate to Make a payment page
     When I click on Continue button

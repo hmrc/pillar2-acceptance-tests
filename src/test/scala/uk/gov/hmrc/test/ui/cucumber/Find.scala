@@ -16,13 +16,12 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
-import org.junit.Assert
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.test.ui.cucumber.Wait.fluentWait
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-object Find extends BasePage {
+object Find extends BrowserDriver {
 
   private def find(by: By): WebElement = {
     fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))

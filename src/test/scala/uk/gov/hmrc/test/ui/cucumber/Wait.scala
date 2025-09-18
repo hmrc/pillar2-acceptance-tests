@@ -18,11 +18,11 @@ package uk.gov.hmrc.test.ui.cucumber
 
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, WebDriverWait}
 import org.openqa.selenium.{By, WebDriver, WebElement}
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 import java.time.Duration
 
-object Wait extends BasePage {
+object Wait extends BrowserDriver {
 
   def fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(20))

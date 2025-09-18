@@ -18,11 +18,9 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getAttributeOf, getTextOf}
+import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
-import uk.gov.hmrc.test.ui.pages.OnlinePaymentPages.enterEmailAndClickContinueOnEmailPage
 import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.pillar2SubmissionPages.P2SubBtnAgdKBPage
 
 class PaymentSteps extends CommonFunctions {
 
@@ -95,13 +93,13 @@ class PaymentSteps extends CommonFunctions {
 
       case "UK Bank Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UKbankName)
-        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UKbankName)
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UkBankName)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UkBankName)
 
       case "UK Account Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UKaccountName)
-        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UKaccountName)
+        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UkAccountName)
+        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UkAccountName)
 
       case "Sort Code" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -129,20 +127,20 @@ class PaymentSteps extends CommonFunctions {
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
 
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorBankNameLink)
-        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorBankNameLink)) should be(error)
+        getTextOf(By cssSelector NonUKBankAccountPaymentPage.errorBankNameLink) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorBankNameMessage)
-        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorBankNameMessage)) should include(error)
+        getTextOf(By cssSelector NonUKBankAccountPaymentPage.errorBankNameMessage) should include(error)
 
       case "Account Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
 
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorAccountNameLink)
-        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorAccountNameLink)) should be(error)
+        getTextOf(By cssSelector NonUKBankAccountPaymentPage.errorAccountNameLink) should be(error)
 
         Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorAccountNameMessage)
-        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorAccountNameMessage)) should include(error)
+        getTextOf(By cssSelector NonUKBankAccountPaymentPage.errorAccountNameMessage) should include(error)
 
       case "Swift Code" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -335,8 +333,7 @@ class PaymentSteps extends CommonFunctions {
   Then("""I should be able to navigate back to make a payment page""") { () =>
     Nav.browserBack()
     for (i <- 1 to 7) {
-      clickByCss(P2SubBtnAgdKBPage.backLink)
+      clickByCss(BtnAgdKBPage.backLink)
     }
-    println("Test")
   }
 }

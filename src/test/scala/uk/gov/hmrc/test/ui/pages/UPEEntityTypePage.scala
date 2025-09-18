@@ -22,16 +22,10 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object UPEEntityTypePage extends PageObject {
   val url: String = s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
 
-  val caption              = ".govuk-caption-l"
-  val eqForm               = ".govuk-form-group"
-  val eq                   = ".govuk-form-group .govuk-fieldset"
-  val continue             = "button.govuk-button"
-  val errorSummary         = ".govuk-error-summary__list"
-  val errorLink            = "[href*='#value']"
-  val backLink             = ".govuk-back-link"
-  val errorMessage         = ".govuk-error-message"
-  val inputUpeNamePageLink = "[href*='no-id/input-name']"
+  val continue     = "button.govuk-button"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLink    = "[href*='#value']"
+  val errorMessage = ".govuk-error-message"
 
   def clickContinue(): Unit = findByCss(continue).click()
-
 }

@@ -21,5 +21,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object TransactionHistoryErrorPage extends PageObject {
 
   val url: String = s"$rootUrl" + "repayment/error/payment-history"
-
 }

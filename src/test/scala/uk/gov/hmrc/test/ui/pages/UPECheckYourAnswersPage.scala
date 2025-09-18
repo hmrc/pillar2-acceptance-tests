@@ -20,15 +20,13 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UPECheckYourAnswersPage extends PageObject {
   val url: String        = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
-  val header: String     = "h1.govuk-heading-l"
   val keyList            = ".govuk-summary-list__key"
   val valueList          = ".govuk-summary-list__value"
-  val actionsList        = ".govuk-summary-list__actions"
-  val rowNumber          = "govuk-summary-list__row"
+  val actinsList         = ".govuk-summary-list__actions"
   val changeName         = "a[href*='/change-input-name']"
   val changeAddress      = "a[href*='/change-input-address']"
-  val changeContactname  = "a[href*='/change-input-business-name']"
-  val changeEmailaddress = "a[href*='/change-input-email']"
-  val changePhonecontact = "a[href*='/change-phone']"
-  val changePhonenumber  = "a[href*='/change-input-phone']"
+  val changeContactName  = "a[href*='/change-input-business-name']"
+  val changeEmailAddress = "a[href*='/change-input-email']"
+  val changePhoneContact = "a[href*='/change-phone']"
+  val changePhoneNumber  = "a[href*='/change-input-phone']"
 }

@@ -19,12 +19,12 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber._
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-object AuthLoginPage extends BasePage with PageObject {
+object AuthLoginPage extends BrowserDriver with PageObject {
   val url: String                           = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
   val frontEndUrl: String                   = TestConfiguration.url("pillar2-frontend")
   val incorrectUrl: String                  = TestConfiguration.url("pillar2-frontend") + "randomUrl"
-  val submissionFrontEndUrl: String         = TestConfiguration.url("pillar2-submission-frontend")
   val frontEndSubscribeUrl: String          = s"$rootUrl" + "check-progress/register-your-group"
   val frontEndBtaUrl: String                = s"$rootUrl" + "bta/pillar2-id"
   val frontEndUPEUrl: String                = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
@@ -32,7 +32,7 @@ object AuthLoginPage extends BasePage with PageObject {
   val redirectUrlField: String              = "redirectionUrl"
   val redirectionUrlField: String           = "#redirectionUrl"
   val credIdField: String                   = "authorityId"
-  val groupIdField:String = "groupIdentifier"
+  val groupIdField: String                  = "groupIdentifier"
   val frontEndNameUrl: String               = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-name"
   val frontEndCAUrl: String                 = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
   val frontEndUPERegTypeUrl: String         = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
@@ -100,6 +100,7 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
+
   def loginToNfmOrgWithCredID(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysById(credIdField, credId)
@@ -107,6 +108,7 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
+
   def loginToRegWithCredID(name: String, credId: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysById(credIdField, credId)
@@ -114,12 +116,20 @@ object AuthLoginPage extends BasePage with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
+
   def loginToSubscribe(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndSubscribeUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
+
+  private def selectAffinityGroupOrg(): Unit =
+    new Select(findAffinityGroup()).selectByVisibleText("Organisation")
+
+  private def findAffinityGroup() = Find.findByName("affinityGroup")
+
+  def clickSubmitButton(): Unit = Find.findById("submit").click()
 
   def loginUsingBta(name: String): Unit = {
     Nav.navigateTo(url)
@@ -135,7 +145,7 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def loginToRFMWithGroupId(groupId:String): Unit = {
+  def loginToRFMWithGroupId(groupId: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(rfmUrl, redirectUrlField)
     selectAffinityGroupOrg()
@@ -227,6 +237,9 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  private def selectAffinityGroupIndividual(): Unit =
+    new Select(findAffinityGroup()).selectByVisibleText("Individual")
+
   def loginAsAssistantToASA(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndASAUrl, redirectUrlField)
@@ -248,6 +261,9 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
+  private def selectAffinityGroupAgent(): Unit =
+    new Select(findAffinityGroup()).selectByVisibleText("Agent")
+
   def loginAsAgentToRFM(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(rfmUrl, redirectUrlField)
@@ -262,6 +278,11 @@ object AuthLoginPage extends BasePage with PageObject {
     selectCredRoleAssistant()
     clickSubmitButton()
   }
+
+  private def selectCredRoleAssistant(): Unit =
+    new Select(findCredentialRole()).selectByVisibleText("Assistant")
+
+  private def findCredentialRole() = Find.findByName("credentialRole")
 
   def loginAssistantToRFM(name: String): Unit = {
     Nav.navigateTo(url)
@@ -278,23 +299,8 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def loginToDashboard(name: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(frontEndDashboardUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-
   def loginToNFMAddress(name: String): Unit = {
     Nav.navigateTo(url)
-    Input.sendKeysByName(frontEndNFMAddressUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-
-  def loginToNFMInputAddress(name: String, credId: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysById(credIdField, credId)
     Input.sendKeysByName(frontEndNFMAddressUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
@@ -310,32 +316,6 @@ object AuthLoginPage extends BasePage with PageObject {
   def loginToNFMContactEmail(name: String): Unit = {
     Nav.navigateTo(url)
     Input.sendKeysByName(frontEndNFMContactEmailUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-  def loginToNFMEmail(name: String, credId: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysById(credIdField, credId)
-    Input.sendKeysByName(frontEndNFMContactEmailUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-  def loginToNFMPhone(name: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(frontEndNFMTelephoneUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-  def loginToNFMPhoneInput(name: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(frontEndNFMTelephoneInputUrl, redirectUrlField)
-    selectAffinityGroupOrg()
-    clickSubmitButton()
-  }
-
-  def loginToFDGroupStatus(name: String): Unit = {
-    Nav.navigateTo(url)
-    Input.sendKeysByName(frontEndFDGroupStatusUrl, redirectUrlField)
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
@@ -369,32 +349,14 @@ object AuthLoginPage extends BasePage with PageObject {
     clickSubmitButton()
   }
 
-  def addDelegatedEnrolment(enrolmentkey: String, identifiername: String, identifiervalue: String, authRule: String): Unit = {
+  def addDelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
     clickAddDelegatedEnrolmentCTA()
-    Input.sendKeysByName(enrolmentkey, delegatedEnrolmentKeyField)
-    Input.sendKeysById(delegatedIdentifierNameField, identifiername)
-    Input.sendKeysById(delegatedIdentifierValueField, identifiervalue)
+    Input.sendKeysByName(enrolmentKey, delegatedEnrolmentKeyField)
+    Input.sendKeysById(delegatedIdentifierNameField, identifierName)
+    Input.sendKeysById(delegatedIdentifierValueField, identifierValue)
     Input.sendKeysById(delegatedAuthRuleField, authRule)
     clickSubmitButton()
   }
-
-  private def selectAffinityGroupOrg() =
-    new Select(findAffinityGroup()).selectByVisibleText("Organisation")
-
-  private def selectAffinityGroupAgent() =
-    new Select(findAffinityGroup()).selectByVisibleText("Agent")
-
-  private def selectAffinityGroupIndividual() =
-    new Select(findAffinityGroup()).selectByVisibleText("Individual")
-
-  private def selectCredRoleAssistant() =
-    new Select(findCredentialRole()).selectByVisibleText("Assistant")
-
-  private def findAffinityGroup() = Find.findByName("affinityGroup")
-
-  private def findCredentialRole() = Find.findByName("credentialRole")
-
-  def clickSubmitButton(): Unit = Find.findById("submit").click()
 
   def clickAddDelegatedEnrolmentCTA(): Unit = Find.findByCss(addDelegatedEnrolmentCTA).click()
 

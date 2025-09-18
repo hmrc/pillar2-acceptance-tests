@@ -3,7 +3,7 @@ Feature: RFM check your answers page
   As a replacing filing member
   I want to enter my subscription details and access CYA page to check my answers and carry on in the journey
 
-  @batch2
+  @batch2 @zap_accessibility
   Scenario: 1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey
     Given Organisation User logs in with rfm URL to Pillar2
     When I provide RFM pillar2 id as XEPLR0123456400
@@ -118,7 +118,7 @@ Feature: RFM check your answers page
     When I click replace the filing member for a Pillar 2 Top-up Taxes account to try again link
     Then I should be on RFM Final Review Page
 
-  @zap_accessibility @batch2
+  @batch2 @zap_accessibility
   Scenario: 4 - Verify Security questions are not pre populated for RFM journey
     Given Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2
     Then I should be on RFM enter pillar2 id page

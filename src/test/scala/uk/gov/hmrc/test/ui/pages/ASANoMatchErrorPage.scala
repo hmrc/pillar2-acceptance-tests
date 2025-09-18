@@ -20,7 +20,4 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ASANoMatchErrorPage extends PageObject {
   val url: String = s"$rootUrl" + "asa/error/no-match"
-
-  val header: String = ".govuk-heading-l"
-
 }

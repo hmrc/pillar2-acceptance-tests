@@ -20,11 +20,6 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object FurtherDetailsCheckYourAnswersPage extends PageObject {
   val url: String            = s"$rootUrl" + "further-details/check-answers"
-  val header: String         = "h1.govuk-heading-l"
-  val keyList                = ".govuk-summary-list__key"
-  val valueList              = ".govuk-summary-list__value"
-  val actionsList            = ".govuk-summary-list__actions"
-  val rowNumber              = "govuk-summary-list__row"
   val changeGroupStatus      = "a[href*='/change-group-status']"
   val changeAccountingPeriod = "a[href*='/change-accounting-period']"
 }

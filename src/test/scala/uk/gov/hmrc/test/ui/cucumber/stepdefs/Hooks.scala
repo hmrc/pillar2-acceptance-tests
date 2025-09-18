@@ -21,6 +21,7 @@ import org.apache.commons.io.FileUtils
 import org.openqa.selenium.{OutputType, TakesScreenshot}
 import uk.gov.hmrc.selenium.webdriver.{Browser, Driver}
 import uk.gov.hmrc.test.ui.cucumber.Nav
+
 import java.io.File
 
 object Hooks extends ScalaDsl with EN with Browser {

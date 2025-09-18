@@ -16,16 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object EACDPage extends PageObject {
-
-  val url: String    = s"$rootUrl" + "bta/eacd"
-  val header: String = "h1.govuk-heading-l"
-  val backLink       = ".govuk-back-link"
-  val continue       = ".govuk-button"
-
-  def clickContinue(): Unit = findByCss(continue).click()
-
+  val url: String = s"$rootUrl" + "bta/eacd"
 }

@@ -16,13 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object UnderConstructionPage extends PageObject {
   val url: String = s"$rootUrl" + "under-construction"
-  val continue    = "#submit"
-
-  def clickContinue(): Unit = findByCss(continue).click()
-
 }

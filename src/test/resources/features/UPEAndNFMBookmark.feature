@@ -3,47 +3,47 @@ Feature: Bookmark Feature
   I should not be able to navigate to next page without answering the previous question
 
   Scenario: 1 - User fill the information for UPE and NFM no ID flow and try moving ahead in the journey without answering mandatory questions
-  Given Organisation User logs in as upe with credId Bookmark1 for Pillar2
-  Then I should be on UPE business page
-  When I select option No and continue to next
-  Then I should navigate to input-upe-name page
-  When I enter UPE name as Test Bookmark
-  Then I should navigate to input-upe-address page
-  When I enter Address Line 1 as Address Line 1
-  And I enter City as City
-  And I enter Postal Code as EH5 5WY
-  And I enter Country as United Kingdom
-  And I click on Country selected
-  And I click on Continue button
-  Then I should navigate to UPE Contact person/team Name page
-  When I enter UPE Person/Team name as Bookmark contact
-  And I click on Continue button
-  Then I should navigate to UPE Contact Email page
-  When I enter UPE Email address as test@email.com
-  And I click on Continue button
-  Then I should navigate to UPE Phone page
-  When I select option Yes and continue to next
-  Then I should navigate to input phone page
-  And I enter Phone Number as 1234569
-  And I click on Continue button
-  Then I should be on Check your answers page
-  When I click on Continue button
-  And I click Add filing member details link
-  Then I should navigate to NFM registration page
-  When I select Yes option and continue to next
-  Then I should navigate to NFM details page
-  When I select option No and continue to next
-  Then I should navigate to NFM Name page
-  When I click Report Pillar 2 Top-up Taxes link
-  Then I should navigate to Task list page
-  And I click Sign out link
-  Then I am on feedback survey page
-  When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
-  Then I should be on Bookmark page
-  Then The Heading should be There has been an error
-  Then I click return to your Pillar 2 Top-up Taxes registration link
-  Then I should see task list sections
-  And The Task Add filing member details status should be In progress
+    Given Organisation User logs in as upe with credId Bookmark1 for Pillar2
+    Then I should be on UPE business page
+    When I select option No and continue to next
+    Then I should navigate to input-upe-name page
+    When I enter UPE name as Test Bookmark
+    Then I should navigate to input-upe-address page
+    When I enter Address Line 1 as Address Line 1
+    And I enter City as City
+    And I enter Postal Code as EH5 5WY
+    And I enter Country as United Kingdom
+    And I click on Country selected
+    And I click on Continue button
+    Then I should navigate to UPE Contact person/team Name page
+    When I enter UPE Person/Team name as Bookmark contact
+    And I click on Continue button
+    Then I should navigate to UPE Contact Email page
+    When I enter UPE Email address as test@email.com
+    And I click on Continue button
+    Then I should navigate to UPE Phone page
+    When I select option Yes and continue to next
+    Then I should navigate to input phone page
+    And I enter Phone Number as 1234569
+    And I click on Continue button
+    Then I should be on Check your answers page
+    When I click on Continue button
+    And I click Add filing member details link
+    Then I should navigate to NFM registration page
+    When I select Yes option and continue to next
+    Then I should navigate to NFM details page
+    When I select option No and continue to next
+    Then I should navigate to NFM Name page
+    When I click Report Pillar 2 Top-up Taxes link
+    Then I should navigate to Task list page
+    And I click Sign out link
+    Then I am on feedback survey page
+    When Organisation User logs in to nfm org page with CredID Bookmark1 for Pillar2
+    Then I should be on Bookmark page
+    Then The Heading should be There has been an error
+    Then I click return to your Pillar 2 Top-up Taxes registration link
+    Then I should see task list sections
+    And The Task Add filing member details status should be In progress
 
   Scenario: 2 - User completes UPE GRS journey and try navigating to NFM NO ID flow
     Given Organisation User logs in as upe with credId Bookmark2 for Pillar2

@@ -13,7 +13,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     And I click View all due and overdue returns link
     Then I should navigate to Due & Over Due Page
     And I should see 4 accounting periods on Due Overdue Page
@@ -32,7 +32,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click View all due and overdue returns link
     And I should see 0 accounting periods on Due Overdue Page
     When I click submission history link
@@ -46,7 +46,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click View all due and overdue returns link
     And I should see 1 accounting periods on Due Overdue Page
     And I should see 1 section with status "Due"
@@ -62,7 +62,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click View all due and overdue returns link
     And I should see 0 accounting periods on Due Overdue Page
     When I click submission history link
@@ -76,7 +76,7 @@ Feature: Pillar2 Due & Overdue returns for Agent User Journey
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click View all due and overdue returns link
     And I should see 2 accounting periods on Due Overdue Page
     And I should see 0 section with status "Due"

@@ -26,7 +26,7 @@ Feature: Dashboard Page
     When I click Sign out link
     Then I am on feedback survey page
 
-  @zap_accessibility @batch1
+  @batch1 @zap_accessibility
   Scenario: 2 - User navigates to group details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -48,7 +48,7 @@ Feature: Dashboard Page
     Then I should be redirected to "Manage Account processing Page" or "Dashboard page"
     And I should be on Dashboard page
 
-  @zap_accessibility @batch1
+  @batch1 @zap_accessibility
   Scenario: 3 - User navigates to amend contact details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -203,7 +203,7 @@ Feature: Dashboard Page
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click View outstanding payments link
     Then I should navigate to Outstanding Payment Page
     And I click on Continue button

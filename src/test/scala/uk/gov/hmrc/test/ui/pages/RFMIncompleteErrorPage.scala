@@ -19,9 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMIncompleteErrorPage extends PageObject {
-
-  val url: String    = s"$rootUrl" + "replace-filing-member/error/incomplete-task"
-  val header: String = "h1.govuk-heading-l"
-  val backLink       = ".govuk-back-link"
-
+  val url: String = s"$rootUrl" + "replace-filing-member/error/incomplete-task"
 }

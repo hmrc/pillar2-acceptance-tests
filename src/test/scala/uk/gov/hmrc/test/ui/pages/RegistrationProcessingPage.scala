@@ -19,7 +19,5 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RegistrationProcessingPage extends PageObject {
   val url: String    = s"$rootUrl" + "review-submit/processing-registration"
-  val header: String = "h1.govuk-panel__title"
   val loadingSpinner = ".hods-loading-spinner__spinner"
-
 }

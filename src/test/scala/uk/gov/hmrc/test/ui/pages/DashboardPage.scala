@@ -16,17 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object DashboardPage extends PageObject {
-  val url: String        = s"$rootUrl" + "pillar2-top-up-tax-home"
-  val continue           = "#submit"
-  val sectionHeading     = ".govuk-heading-m"
-  val userDetailsSection = "h1+p.govuk-body"
-  val userDetails        = "p.govuk-body"
-  val inactiveStatus     = ".govuk-notification-banner__heading"
-
-  def clickContinue(): Unit = findByCss(continue).click()
-
+  val url: String = s"$rootUrl" + "pillar2-top-up-tax-home"
+  val ASALink     = "a[href*='/asa/home']"
 }

@@ -19,5 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RFMProcessingPage extends PageObject {
-  val url: String    = s"$rootUrl" + "replace-filing-member/review-submit/processing"
+  val url: String = s"$rootUrl" + "replace-filing-member/review-submit/processing"
 }

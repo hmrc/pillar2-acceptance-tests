@@ -16,18 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentAmountPage extends PageObject {
-
-  val url: String        = s"$rootUrl" + "repayment/amount"
-  val header: String     = ".govuk-label"
-  val backLink           = ".govuk-back-link"
-  val refundAmountField  = ".govuk-input"
-  val errorAmountLink    = "[href='#value']"
-  val errorAmountMessage = "#value-error"
-  val continue           = ".govuk-button"
-
-  def clickContinue(): Unit = findByCss(continue).click()
+  val url: String       = s"$rootUrl" + "repayment/amount"
+  val refundAmountField = ".govuk-input"
+  val continue          = ".govuk-button"
 }

@@ -16,18 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object SecondContactDetailsDisplayPage extends PageObject {
-  val url: String    = s"$rootUrl" + "contact-details/primary-contact"
-  val continue       = "#submit"
-  val errorSummary   = ".govuk-error-summary__list"
-  val errorLink      = "[href*='#value']"
-  val backLink       = ".govuk-back-link"
-  val errorMessage   = ".govuk-error-message"
-  val contactDetails = ".govuk-list"
-
-  def clickContinue(): Unit = findByCss(continue).click()
-
+  val url: String  = s"$rootUrl" + "contact-details/primary-contact"
+  val errorSummary = ".govuk-error-summary__list"
+  val errorLink    = "[href*='#value']"
+  val errorMessage = ".govuk-error-message"
 }

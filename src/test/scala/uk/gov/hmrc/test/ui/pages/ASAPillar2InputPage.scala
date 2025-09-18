@@ -16,20 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ASAPillar2InputPage extends PageObject {
-  val url: String = s"$rootUrl" + "asa/input-pillar-2-id"
-
-  val continue       = ".govuk-button"
-  val header: String = ".govuk-label"
+  val url: String    = s"$rootUrl" + "asa/input-pillar-2-id"
   val pillar2IDField = ".govuk-input"
-  val errorSummary   = ".govuk-error-summary__list"
-  val errorLink      = "[href='#value']"
-  val backLink       = ".govuk-back-link"
-  val errorMessage   = ".govuk-error-message"
-
-  def clickContinue(): Unit = findByCss(continue).click()
-
 }

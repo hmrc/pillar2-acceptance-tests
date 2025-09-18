@@ -18,15 +18,10 @@ package uk.gov.hmrc.test.ui.cucumber
 
 import io.cucumber.datatable.DataTable
 import org.openqa.selenium._
-import org.openqa.selenium.io.FileHandler
 import uk.gov.hmrc.test.ui.cucumber.Find._
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-import java.io.File
-import java.text.SimpleDateFormat
-import java.util.Date
-
-object Input extends BasePage {
+object Input extends BrowserDriver {
 
   def clickById(id: String): Unit = findById(id).click()
 

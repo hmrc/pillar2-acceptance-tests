@@ -19,6 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object RepaymentChangeNamePage extends PageObject {
-  val url: String    = s"$rootUrl" + "repayment/contact-details/change-input-name"
-  val header: String = "h1.govuk-heading-l"
+  val url: String = s"$rootUrl" + "repayment/contact-details/change-input-name"
 }

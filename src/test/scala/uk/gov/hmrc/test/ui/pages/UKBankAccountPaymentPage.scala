@@ -22,16 +22,10 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 object UKBankAccountPaymentPage extends PageObject {
 
   val url: String            = s"$rootUrl" + "repayment/uk-details"
-  val header: String         = "h1.govuk-heading-l"
-  val backLink               = ".govuk-back-link"
-  val tableCaption           = ".govuk-table__caption"
-  val warningMessage         = ".govuk-warning-text__text"
-  val tableHeader            = ".govuk-table__header"
-  val tableCell              = ".govuk-table__cell"
   val errorMessage           = ".govuk-error-message"
   val errorSummary           = ".govuk-error-summary__list"
-  val UKbankName             = "#bankName"
-  val UKaccountName          = "#accountHolderName"
+  val UkBankName             = "#bankName"
+  val UkAccountName          = "#accountHolderName"
   val sortCode               = "#sortCode"
   val accountNumber          = "#accountNumber"
   val continue               = ".govuk-button"
@@ -41,5 +35,4 @@ object UKBankAccountPaymentPage extends PageObject {
   val errorUKSortCodeLink    = "[href='#sortCode']"
 
   def clickContinue(): Unit = findByCss(continue).click()
-
 }

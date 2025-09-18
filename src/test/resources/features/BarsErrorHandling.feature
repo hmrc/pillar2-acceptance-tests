@@ -3,7 +3,7 @@ Feature: Bars Handling
   As a registered and subscribed user
   I should be able to navigate to Contact page after correct UK bank details
 
-  @zap_accessibility @batch3
+  @batch3 @zap_accessibility
   Scenario: 1 - Organisation User bars integration validation
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
@@ -66,15 +66,15 @@ Feature: Bars Handling
     And I click on Continue button
     Then I should navigate to ASA Confirmation Page
     And I click on Continue button
-    Then I should navigate to ASA Dashboard page
+    Then I should navigate to Dashboard page
     When I click Request a repayment link
     When I click on Continue button
     When I provide Refund Amount as 100.00
     And I click on Continue button
-    Then I should be on Agent Repayment Reason Page
+    Then I should be on Reason For Refund Page
     When I provide value for Refund Reason as Bars Integration Test
     And I click on Continue button
-    Then I should navigate to Agent Repayment Method Page
+    Then I should navigate to Repayment Method Page
     And I select repayment method as UK bank account
     When I enter UK Bank Account details as:
       | KEY               | VALUE     |
@@ -100,7 +100,7 @@ Feature: Bars Handling
       | accountNumber     | 86473611        |
     Then I should be on Repayment Bars Error Page
     When I click Return to your account homepage link
-    Then I should be on ASA Dashboard page
+    Then I should be on Dashboard page
     When I click the browser back button
     When I select back link
     When I enter UK Bank Account details as:
