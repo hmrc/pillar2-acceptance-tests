@@ -220,5 +220,5 @@ Feature: Dashboard Page
     Then I should navigate to Outstanding Payment Page
     And I click on Continue button
     And I go till Get ready to approve your payment page
-    And I should be able to navigate back to make a payment page
-    Then I should navigate to Make a payment page
+    And I should be able to navigate back to outstanding payment page
+    Then I should navigate to Outstanding Payment Page
