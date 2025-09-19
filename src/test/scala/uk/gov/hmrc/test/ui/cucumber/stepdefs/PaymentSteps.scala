@@ -336,4 +336,10 @@ class PaymentSteps extends CommonFunctions {
       clickByCss(BtnAgdKBPage.backLink)
     }
   }
+  Then("""I should be able to navigate back to outstanding payment page""") { () =>
+    Nav.browserBack()
+    for (i <- 1 to 7) {
+      clickByCss(BtnAgdKBPage.backLink)
+    }
+  }
 }
