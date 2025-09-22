@@ -171,7 +171,7 @@ Feature: Contact details for the filing member
     When I click Check your answers before submitting your registration link
     Then I should be on Review answers page
 
-  @zap_accessibility @batch2
+  @batch2 @zap_accessibility
   Scenario: 3 - Contact details pages Error validations and Registration Confirmation Page Validations
     Given I clear the cache
     Given Organisation User logs in without Pillar2 enrolment
@@ -404,7 +404,7 @@ Feature: Contact details for the filing member
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
-  @tests1
+  @batch3
   Scenario: 6 - UPE No Id journey navigation to registration in progress page
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
