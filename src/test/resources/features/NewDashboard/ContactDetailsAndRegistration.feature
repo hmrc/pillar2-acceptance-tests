@@ -405,7 +405,7 @@ Feature: Contact details for the filing member
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
-  @batch3
+  @batch3 #Restart PILLAR2_ALL to run this testcase successfully
   Scenario: 6 - UPE No Id journey navigation to registration in progress page
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
@@ -472,8 +472,6 @@ Feature: Contact details for the filing member
     And I click on Save&Continue button
     Then I should navigate to Registration confirmation page
     And I click report and manage your Pillar 2 Top-up Taxes link
-    #Comment two lines to run in local multiple times
     Then I should be on Registration In Progress page
     When I refresh the registration in progress page
-    #Comment two lines to run in local multiple times
     Then I should be on Dashboard page
