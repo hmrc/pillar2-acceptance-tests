@@ -405,7 +405,7 @@ Feature: Contact details for the filing member
     Then I should be redirect to Registration processing page
     And I should navigate to Registration confirmation page
 
-  @batch3 @tests1 #Restart PILLAR2_ALL to run this testcase successfully
+  @batch3 #Restart PILLAR2_ALL to run this testcase successfully
   Scenario: 6 - UPE No Id journey navigation to registration in progress page
     Given Organisation User logs in without Pillar2 enrolment
     Then I should be on UPE business page
