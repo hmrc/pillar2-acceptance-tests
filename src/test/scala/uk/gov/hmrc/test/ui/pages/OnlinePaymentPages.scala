@@ -83,6 +83,6 @@ object OnlinePaymentPages extends PageObject with BrowserDriver {
   def verifyPaymentAndClickHmrcOnlineAccountLinkOnPaymentCompletePage(): Unit = {
     Wait.waitForUrl("http://localhost:7802/pay-by-bank/payment-complete")
     Wait.waitForElementByXpathContainsText("//h1[contains(text(), 'Payment complete')]")
-    Input.clickByLinkText("HMRC online account.")
+    Input.clickByLinkText("online account.")
   }
 }
