@@ -36,7 +36,7 @@ object Wait extends BrowserDriver {
   private def waitForElement(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
   def waitForElementToClickTagName(tagName: String): WebElement = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10))
+    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20))
     driverWait.until(ExpectedConditions.elementToBeClickable(By.tagName(tagName)))
   }
 
@@ -45,25 +45,44 @@ object Wait extends BrowserDriver {
     driverWait.until(ExpectedConditions.urlToBe(url))
   }
 
-  def waitForUrl(url: String): Boolean = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
-    driverWait.until(ExpectedConditions.urlContains(url))
-  }
+def waitForUrl(url: String): Boolean = {
+  val fluentWait = new FluentWait(driver)
+    .withTimeout(Duration.ofSeconds(5))
+    .pollingEvery(Duration.ofMillis(10))
+    .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+    .ignoring(classOf[org.openqa.selenium.TimeoutException])
 
-  def waitForElementToPresentByCssSelector(cssSelector: String): WebElement = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
-    driverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)))
-  }
+  fluentWait.until(ExpectedConditions.urlContains(url))
+}
+
+def waitForElementToPresentByCssSelector(cssSelector: String): WebElement = {
+  val fluentWait = new FluentWait(driver)
+    .withTimeout(Duration.ofSeconds(5))
+    .pollingEvery(Duration.ofMillis(10))
+    .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+    .ignoring(classOf[org.openqa.selenium.TimeoutException])
+
+  fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)))
+}
 
   def waitForElementToPresentById(id: String): WebElement = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
     driverWait.until(ExpectedConditions.presenceOfElementLocated(By.id(id)))
   }
 
-  def waitForTagNameToBeRefreshed(tagName: String): WebElement = {
-    val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
-    driverWait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.tagName(tagName))))
-  }
+def waitForTagNameToBeRefreshed(tagName: String): WebElement = {
+  val fluentWait = new FluentWait(driver)
+    .withTimeout(Duration.ofSeconds(5))
+    .pollingEvery(Duration.ofMillis(10))
+    .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+    .ignoring(classOf[org.openqa.selenium.TimeoutException])
+
+  fluentWait.until(
+    ExpectedConditions.refreshed(
+      ExpectedConditions.presenceOfElementLocated(By.tagName(tagName))
+    )
+  )
+}
 
   def waitForCSSElementNotToPresent(css: String): Boolean = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))

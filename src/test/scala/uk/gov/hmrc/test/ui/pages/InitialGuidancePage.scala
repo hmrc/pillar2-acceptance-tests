@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.StaleElementReferenceException
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
@@ -24,5 +25,22 @@ object InitialGuidancePage extends PageObject {
 
   val caption               = ".govuk-caption-l"
   val continue              = ".govuk-button"
-  def clickContinue(): Unit = findByCss(continue).click()
+
+  def clickContinue(): Unit = {
+    var lastError: Throwable = null
+
+    for (_ <- 1 to 3) {
+      try {
+        val button = findByCss(continue)
+        button.click()
+        return
+      } catch {
+        case e: StaleElementReferenceException =>
+          lastError = e
+          Thread.sleep(200)
+      }
+    }
+
+    throw new RuntimeException(s"Failed to click continue button after retries", lastError)
+  }
 }

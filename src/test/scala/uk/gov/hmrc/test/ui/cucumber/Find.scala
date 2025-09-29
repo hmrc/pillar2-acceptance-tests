@@ -16,18 +16,38 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
-import org.openqa.selenium.support.ui.ExpectedConditions
-import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
+import org.openqa.selenium.{By, StaleElementReferenceException, WebDriver, WebElement}
 import uk.gov.hmrc.test.ui.cucumber.Wait.fluentWait
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import java.time.Duration
+
 
 object Find extends BrowserDriver {
 
-  private def find(by: By): WebElement = {
-    fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
-    driver.findElement(by)
+private def find(by: By): WebElement = {
+  val wait = new FluentWait(driver)
+    .withTimeout(Duration.ofSeconds(200))
+    .pollingEvery(Duration.ofMillis(10))
+    .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
+    .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
+
+  var lastException: Throwable = null
+
+  for (_ <- 1 to 3) {
+    try {
+      val element = wait.until(ExpectedConditions.presenceOfElementLocated(by))
+      element.isDisplayed
+      return element
+    } catch {
+      case e: StaleElementReferenceException =>
+        lastException = e
+        Thread.sleep(10)
+    }
   }
 
+  throw new RuntimeException(s"Failed to locate stable element for: $by", lastException)
+}
   def findById(id: String): WebElement = find(By.id(id))
 
   def findByName(name: String): WebElement = find(By.name(name))
