@@ -8,6 +8,7 @@ import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.pages._
 
+
 object CommonSteps {
 
   // ^(.*) logs in to register for Pillar2$

@@ -1,9 +1,7 @@
 package uk.gov.hmrc.test.ui.specs
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.Hooks.{And, Given, Then, When}
 
-class AgentUserJourneysSpec extends AnyFeatureSpec with Matchers {
+class AgentUserJourneysSpec extends BaseSpec with Matchers {
 
   Feature("Agent user journeys") {
 

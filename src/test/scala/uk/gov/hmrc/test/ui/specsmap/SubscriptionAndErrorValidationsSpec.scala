@@ -1,0 +1,522 @@
+package uk.gov.hmrc.test.ui.specsmap
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.featurespec.AnyFeatureSpec
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.Hooks.{And, Given, Then, When}
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.CYASteps._
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.EligibilityQuestionSteps._
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.SubscriptionJourneySteps._
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.TaskListSteps._
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.UPESteps._
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.CommonSteps._
+
+class SubscriptionAndErrorValidationsSpec extends AnyFeatureSpec with Matchers {
+
+  Feature("Create a new registration and subscription") {
+
+    Scenario("1 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.") {
+      Given("Organisation User logs in to subscribe for Pillar2")
+        givenXLogsInToSubscribeForPillar2("Organisation User")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Add Ultimate Parent Entity details link")
+        andIClickXLink("Add Ultimate Parent Entity details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      And("I enter UPE name as XMPLR0009999999")
+        andIEnterXAsX("UPE name", "XMPLR0009999999")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter Address as:")
+        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I enter UPE Person/Team name as UPE Contact Name")
+        andIEnterXAsX("UPE Person/Team name", "UPE Contact Name")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter UPE Email address as testteam@email.com")
+        andIEnterXAsX("UPE Email address", "testteam@email.com")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      Then("I should be on Check your answers page")
+        thenIShouldBeOnX("Check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Add filing member details link")
+        andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I select No option and continue to next")
+        andISelectXOptionAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectOptionXAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select option (.*) and continue to next
+
+      When("I click Add further group details link")
+        andIClickXLink("Add further group details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I select option In the UK and outside the UK in further details group status page")
+        andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter account period as:")
+        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneySteps.scala)
+
+      And("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Add contact details link")
+        andIClickXLink("Add contact details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I select option Yes and continue to next")
+        andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      When("I enter Address as:")
+        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      Then("I should navigate to Contact details Check answers page")
+        thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Check your answers before submitting your registration link")
+        andIClickXLink("Check your answers before submitting your registration")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Review answers page")
+        thenIShouldNavigateToX("Review answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to duplicate ack ref error page")
+        thenIShouldNavigateToX("duplicate ack ref error page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+    }
+
+    Scenario("2 - User redirected to a placeholder error page, for an incomplete data submission during registration") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        givenXLogsInWithoutPillar2Enrolment()  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should be on UPE business page")
+        thenIShouldBeOnX("UPE business page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option Yes and continue to next")
+        andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      When("I select option UK limited company and continue to GRS page")
+        andISelectOptionXAndContinueToGRSPage("UK limited company")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      Then("I should navigate to UKCompany GRS page")
+        thenIShouldNavigateToX("UKCompany GRS page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I registered successfully with BV enabled")
+        andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      When("I click Add filing member details link")
+        andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I select Yes option and continue to next")
+        andISelectXOptionAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectOptionXAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select option (.*) and continue to next
+
+      Then("I should navigate to NFM details page")
+        thenIShouldNavigateToX("NFM details page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option Yes and continue to next")
+        andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      Then("I should be on NFM entity type page")
+        thenIShouldBeOnX("NFM entity type page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option UK limited company and continue to GRS page")
+        andISelectOptionXAndContinueToGRSPage("UK limited company")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      Then("I should navigate to NFM UKCompany GRS page")
+        thenIShouldNavigateToX("NFM UKCompany GRS page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      When("I click Add further group details link")
+        andIClickXLink("Add further group details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I select option In the UK and outside the UK in further details group status page")
+        andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter account period as:")
+        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneySteps.scala)
+
+      Then("I should navigate to FD check your answers page")
+        thenIShouldNavigateToX("FD check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Task list page")
+        thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click Add contact details link")
+        andIClickXLink("Add contact details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Contact details guidance page")
+        thenIShouldNavigateToX("Contact details guidance page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I enter Contact Name as Contact Name Test")
+        andIEnterXAsX("Contact Name", "Contact Name Test")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter Contact Email as testContact@email.com")
+        andIEnterXAsX("Contact Email", "testContact@email.com")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      Then("I should navigate to Second Contact details page")
+        thenIShouldNavigateToX("Second Contact details page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      When("I enter Address as:")
+        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      Then("I should navigate to Contact details Check answers page")
+        thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Check your answers before submitting your registration link")
+        andIClickXLink("Check your answers before submitting your registration")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click on change link for Primary Contact")
+        andIClickOnChangeLinkForX("Primary Contact")  // auto-chosen (score=1.00, CYASteps.scala)
+        // --- Other possible matches ---
+        // andIClickXLink() [0.83] (CommonSteps.scala) pattern: I click (.*) link
+
+      Then("I should navigate to Contact details change phone page")
+        thenIShouldNavigateToX("Contact details change phone page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option Yes and continue to next")
+        andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      And("I select back link")
+        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I select back link")
+        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Incomplete Data Submission Error Page")
+        thenIShouldNavigateToX("Incomplete Data Submission Error Page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click go back to register your group and complete any in progress tasks. link")
+        andIClickXLink("go back to register your group and complete any in progress tasks.")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Task list page")
+        thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      Then("The Task Add contact details status should be In progress")
+        andTheTaskXStatusShouldBeX("Add contact details", "In progress")  // auto-chosen (score=1.00, TaskListSteps.scala)
+
+    }
+
+    Scenario("3 - User redirected to a placeholder error page, for an invalid request during registration.") {
+      Given("Organisation User logs in to subscribe for Pillar2")
+        givenXLogsInToSubscribeForPillar2("Organisation User")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should be on Task list page")
+        thenIShouldBeOnX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click Add Ultimate Parent Entity details link")
+        andIClickXLink("Add Ultimate Parent Entity details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Initial guidance Page")
+        thenIShouldNavigateToX("Initial guidance Page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to UPE business page")
+        thenIShouldNavigateToX("UPE business page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      Then("I should navigate to input-upe-name page")
+        thenIShouldNavigateToX("input-upe-name page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I enter UPE name as regNoIDInvalidRequest")
+        andIEnterXAsX("UPE name", "regNoIDInvalidRequest")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter Address as:")
+        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I enter UPE Person/Team name as UPE Contact Name")
+        andIEnterXAsX("UPE Person/Team name", "UPE Contact Name")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter UPE Email address as testteam@email.com")
+        andIEnterXAsX("UPE Email address", "testteam@email.com")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      Then("I should be on Check your answers page")
+        thenIShouldBeOnX("Check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Add filing member details link")
+        andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to NFM registration page")
+        thenIShouldNavigateToX("NFM registration page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select No option and continue to next")
+        andISelectXOptionAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectOptionXAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select option (.*) and continue to next
+
+      When("I click Add further group details link")
+        andIClickXLink("Add further group details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I select option In the UK and outside the UK in further details group status page")
+        andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter account period as:")
+        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneySteps.scala)
+
+      Then("I should navigate to FD check your answers page")
+        thenIShouldNavigateToX("FD check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Add contact details link")
+        andIClickXLink("Add contact details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Contact details display page")
+        thenIShouldNavigateToX("Contact details display page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option Yes and continue to next")
+        andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      Then("I should navigate to Second Contact details page")
+        thenIShouldNavigateToX("Second Contact details page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      When("I enter Address as:")
+        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      Then("I should navigate to Contact details Check answers page")
+        thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Check your answers before submitting your registration link")
+        andIClickXLink("Check your answers before submitting your registration")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Registration API error page")
+        thenIShouldNavigateToX("Registration API error page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click Return to registration to try again link")
+        andIClickXLink("Return to registration to try again")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Task list page")
+        thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+    }
+
+    Scenario("4 - Verify the link on page can't be found page") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        givenXLogsInWithoutPillar2Enrolment()  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      And("I access random page")
+        givenIAccessRandomPage()  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I click return to your Pillar 2 Top-up Taxes registration link")
+        andIClickXLink("return to your Pillar 2 Top-up Taxes registration")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should see task list sections")
+        andIShouldSeeTaskListSections()  // auto-chosen (score=1.00, TaskListSteps.scala)
+
+      And("The Task Add Ultimate Parent Entity details status should be Not started")
+        andTheTaskXStatusShouldBeX("Add Ultimate Parent Entity details", "Not started")  // auto-chosen (score=1.00, TaskListSteps.scala)
+
+    }
+
+    Scenario("5 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.") {
+      Given("Organisation User logs in to subscribe for Pillar2")
+        givenXLogsInToSubscribeForPillar2("Organisation User")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should be on Task list page")
+        thenIShouldBeOnX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click Add Ultimate Parent Entity details link")
+        andIClickXLink("Add Ultimate Parent Entity details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Initial guidance Page")
+        thenIShouldNavigateToX("Initial guidance Page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to UPE business page")
+        thenIShouldNavigateToX("UPE business page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      And("I enter UPE name as Test UPE")
+        andIEnterXAsX("UPE name", "Test UPE")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter Address as:")
+        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      Then("I should navigate to UPE Contact person/team Name page")
+        thenIShouldNavigateToX("UPE Contact person/team Name page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I enter UPE Person/Team name as UPE Contact Name")
+        andIEnterXAsX("UPE Person/Team name", "UPE Contact Name")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter UPE Email address as testteam@email.com")
+        andIEnterXAsX("UPE Email address", "testteam@email.com")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      Then("I should be on Check your answers page")
+        thenIShouldBeOnX("Check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Add filing member details link")
+        andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to NFM registration page")
+        thenIShouldNavigateToX("NFM registration page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select No option and continue to next")
+        andISelectXOptionAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectOptionXAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select option (.*) and continue to next
+
+      When("I click Add further group details link")
+        andIClickXLink("Add further group details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I select option In the UK and outside the UK in further details group status page")
+        andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPESteps.scala)
+
+      When("I enter account period as:")
+        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneySteps.scala)
+
+      Then("I should navigate to FD check your answers page")
+        thenIShouldNavigateToX("FD check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Add contact details link")
+        andIClickXLink("Add contact details")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Contact details guidance page")
+        thenIShouldNavigateToX("Contact details guidance page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Contact details display page")
+        thenIShouldNavigateToX("Contact details display page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option Yes and continue to next")
+        andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      Then("I should navigate to Second Contact details page")
+        thenIShouldNavigateToX("Second Contact details page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I select option No and continue to next")
+        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonSteps.scala)
+        // --- Other possible matches ---
+        // andISelectXOptionAndContinueToNext() [0.90] (CommonSteps.scala) pattern: I select (.*) option and continue to next
+
+      When("I enter Address as:")
+        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      Then("I should navigate to Contact details Check answers page")
+        thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      When("I click on Continue button")
+        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      When("I click Check your answers before submitting your registration link")
+        andIClickXLink("Check your answers before submitting your registration")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+      Then("I should navigate to Review answers page")
+        thenIShouldNavigateToX("Review answers page")  // auto-chosen (score=1.00, EligibilityQuestionSteps.scala)
+
+      And("I should see Print this page link on Review answers page")
+        andIShouldSeeXLinkOnX("Print this page", "Review answers page")  // auto-chosen (score=1.00, CommonSteps.scala)
+
+    }
+  }
+}
