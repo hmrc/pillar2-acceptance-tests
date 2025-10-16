@@ -1,0 +1,870 @@
+package uk.gov.hmrc.test.ui.specs
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.featurespec.AnyFeatureSpec
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.Hooks.{And, Given, Then, When}
+class UPEAndNFMGRSFlowPagesSpec extends AnyFeatureSpec with Matchers {
+
+  Feature("Ultimate parent entity and Nominated Filling Member GRS journey") {
+
+    Scenario("1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option Entity type not listed and continue to Name page")
+        // ⚠️ No step-def match found for: I select option Entity type not listed and continue to Name page
+
+      Then("I should navigate to input-upe-name page")
+        // ⚠️ No step-def match found for: I should navigate to input-upe-name page
+
+      When("I select back link")
+        // ⚠️ No step-def match found for: I select back link
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+    }
+
+    Scenario("2 - User registered as UkLimitedCompany successfully with BV enabled") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to UKCompany GRS page
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to NFM UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to NFM UKCompany GRS page
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+    }
+
+    Scenario("3 - User registered as UkLimitedCompany successfully with BV disabled") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to UKCompany GRS page
+
+      When("I registered successfully with BV disabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV disabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to NFM UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to NFM UKCompany GRS page
+
+      When("I registered successfully with BV disabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV disabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+    }
+
+    Scenario("4 - User registration as UkLimitedCompany failed with party type mismatch error") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to UKCompany GRS page
+
+      When("registration is unsuccessful with party type mismatch error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with party type mismatch error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on UPE registration failed error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration failed error page
+
+      When("I click go back to select the entity type link")
+        // ⚠️ No step-def match found for: I click go back to select the entity type link
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select back link")
+        // ⚠️ No step-def match found for: I select back link
+
+      Then("I should be on UPE registration failed error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration failed error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to NFM UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to NFM UKCompany GRS page
+
+      When("registration is unsuccessful with party type mismatch error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with party type mismatch error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on NFM registration failed error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration failed error page
+
+      When("I click go back to select the entity type link")
+        // ⚠️ No step-def match found for: I click go back to select the entity type link
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select back link")
+        // ⚠️ No step-def match found for: I select back link
+
+      Then("I should be on NFM registration failed error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration failed error page
+
+    }
+
+    Scenario("5 - User registration as UkLimitedCompany failed with generic error") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to UKCompany GRS page
+
+      When("registration is unsuccessful with generic error error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with generic error error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on UPE registration failed error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration failed error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to NFM UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to NFM UKCompany GRS page
+
+      When("registration is unsuccessful with generic error error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with generic error error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on NFM registration failed error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration failed error page
+
+    }
+
+    Scenario("6 - User registration as UkLimitedCompany failed with identifiers do not match error") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to UKCompany GRS page
+
+      When("registration is unsuccessful with identifiers not match error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with identifiers not match error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on UPE registration not called error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration not called error page
+
+      When("I click Go back to select the entity type link")
+        // ⚠️ No step-def match found for: I click Go back to select the entity type link
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select back link")
+        // ⚠️ No step-def match found for: I select back link
+
+      Then("I should be on UPE registration not called error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration not called error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to NFM UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to NFM UKCompany GRS page
+
+      When("registration is unsuccessful with identifiers not match error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with identifiers not match error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on NFM registration not called error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration not called error page
+
+      When("I click Go back to select the entity type link")
+        // ⚠️ No step-def match found for: I click Go back to select the entity type link
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select back link")
+        // ⚠️ No step-def match found for: I select back link
+
+      Then("I should be on NFM registration not called error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration not called error page
+
+    }
+
+    Scenario("7 - User registration as UkLimitedCompany failed with BV failed error") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to UKCompany GRS page
+
+      When("registration is unsuccessful with BV failed error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with BV failed error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on UPE registration not called error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration not called error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to NFM UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to NFM UKCompany GRS page
+
+      When("registration is unsuccessful with BV failed error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with BV failed error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on NFM registration not called error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration not called error page
+
+    }
+
+    Scenario("8 - User registered as LimitedLiabilityPartnership successfully with BV enabled") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option Limited liability partnership and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option Limited liability partnership and continue to GRS page
+
+      Then("I should navigate to LLP GRS page")
+        // ⚠️ No step-def match found for: I should navigate to LLP GRS page
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("The json response Body should contain the status registrationStatus : REGISTERED")
+        // ⚠️ No step-def match found for: The json response Body should contain the status registrationStatus : REGISTERED
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      And("The Task Edit Ultimate Parent Entity details status should be Completed")
+        // ⚠️ No step-def match found for: The Task Edit Ultimate Parent Entity details status should be Completed
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option Limited liability partnership and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option Limited liability partnership and continue to GRS page
+
+      Then("I should navigate to NFM LLP GRS page")
+        // ⚠️ No step-def match found for: I should navigate to NFM LLP GRS page
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("The json response Body should contain the status registrationStatus : REGISTERED")
+        // ⚠️ No step-def match found for: The json response Body should contain the status registrationStatus : REGISTERED
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+    }
+
+    Scenario("9 - User registered as UkLimitedCompany successfully with BV disabled") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option Limited liability partnership and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option Limited liability partnership and continue to GRS page
+
+      Then("I should navigate to LLP GRS page")
+        // ⚠️ No step-def match found for: I should navigate to LLP GRS page
+
+      When("I registered successfully with BV disabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV disabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      And("The Task Edit Ultimate Parent Entity details status should be Completed")
+        // ⚠️ No step-def match found for: The Task Edit Ultimate Parent Entity details status should be Completed
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option Limited liability partnership and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option Limited liability partnership and continue to GRS page
+
+      Then("I should navigate to NFM LLP GRS page")
+        // ⚠️ No step-def match found for: I should navigate to NFM LLP GRS page
+
+      When("I registered successfully with BV disabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV disabled
+
+      And("The json response Body should contain the status registrationStatus : REGISTERED")
+        // ⚠️ No step-def match found for: The json response Body should contain the status registrationStatus : REGISTERED
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+    }
+
+    Scenario("10 - User registration with LLP with different errors") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option Limited liability partnership and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option Limited liability partnership and continue to GRS page
+
+      Then("I should navigate to LLP GRS page")
+        // ⚠️ No step-def match found for: I should navigate to LLP GRS page
+
+      When("registration is unsuccessful with party type mismatch error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with party type mismatch error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on UPE registration failed error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration failed error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("registration is unsuccessful with generic error error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with generic error error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on UPE registration failed error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration failed error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("registration is unsuccessful with identifiers not match error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with identifiers not match error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on UPE registration not called error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration not called error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("registration is unsuccessful with BV failed error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with BV failed error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on UPE registration not called error page")
+        // ⚠️ No step-def match found for: I should be on UPE registration not called error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option Limited liability partnership and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option Limited liability partnership and continue to GRS page
+
+      When("registration is unsuccessful with party type mismatch error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with party type mismatch error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on NFM registration failed error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration failed error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("registration is unsuccessful with generic error error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with generic error error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on NFM registration failed error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration failed error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("registration is unsuccessful with identifiers not match error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with identifiers not match error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on NFM registration not called error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration not called error page
+
+      When("I click the browser back button")
+        // ⚠️ No step-def match found for: I click the browser back button
+
+      When("registration is unsuccessful with BV failed error")
+        // ⚠️ No step-def match found for: registration is unsuccessful with BV failed error
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should be on NFM registration not called error page")
+        // ⚠️ No step-def match found for: I should be on NFM registration not called error page
+
+    }
+
+    Scenario("11 - User can navigate to Entity type not listed hyperlink on NFM Org type page") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      Then("I should be on UPE business page")
+        // ⚠️ No step-def match found for: I should be on UPE business page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on UPE entity type page")
+        // ⚠️ No step-def match found for: I should be on UPE entity type page
+
+      When("I select option UK limited company and continue to GRS page")
+        // ⚠️ No step-def match found for: I select option UK limited company and continue to GRS page
+
+      Then("I should navigate to UKCompany GRS page")
+        // ⚠️ No step-def match found for: I should navigate to UKCompany GRS page
+
+      When("I registered successfully with BV enabled")
+        // ⚠️ No step-def match found for: I registered successfully with BV enabled
+
+      And("I click on Save&Continue button")
+        // ⚠️ No step-def match found for: I click on Save&Continue button
+
+      Then("I should navigate to Task list page")
+        // ⚠️ No step-def match found for: I should navigate to Task list page
+
+      And("The Task Edit Ultimate Parent Entity details status should be Completed")
+        // ⚠️ No step-def match found for: The Task Edit Ultimate Parent Entity details status should be Completed
+
+      When("I click Add filing member details link")
+        // ⚠️ No step-def match found for: I click Add filing member details link
+
+      Then("I should navigate to NFM registration page")
+        // ⚠️ No step-def match found for: I should navigate to NFM registration page
+
+      When("I select Yes option and continue to next")
+        // ⚠️ No step-def match found for: I select Yes option and continue to next
+
+      Then("I should navigate to NFM details page")
+        // ⚠️ No step-def match found for: I should navigate to NFM details page
+
+      When("I select option Yes and continue to next")
+        // ⚠️ No step-def match found for: I select option Yes and continue to next
+
+      Then("I should be on NFM entity type page")
+        // ⚠️ No step-def match found for: I should be on NFM entity type page
+
+      When("I select option Entity type not listed and continue to Name page")
+        // ⚠️ No step-def match found for: I select option Entity type not listed and continue to Name page
+
+      Then("I should navigate to NFM Name page")
+        // ⚠️ No step-def match found for: I should navigate to NFM Name page
+
+    }
+
+    Scenario("12 - UPE User error pages - ZAP-Accessibility Test") {
+      Given("Organisation User logs in without Pillar2 enrolment")
+        // ⚠️ No step-def match found for: Organisation User logs in without Pillar2 enrolment
+
+      And("I am on UPE registration failed error Page")
+        // ⚠️ No step-def match found for: I am on UPE registration failed error Page
+
+      And("I am on UPE registration not called error Page")
+        // ⚠️ No step-def match found for: I am on UPE registration not called error Page
+
+      And("I am on NFM registration failed error Page")
+        // ⚠️ No step-def match found for: I am on NFM registration failed error Page
+
+      And("I am on NFM registration not called error Page")
+        // ⚠️ No step-def match found for: I am on NFM registration not called error Page
+
+    }
+  }
+}
