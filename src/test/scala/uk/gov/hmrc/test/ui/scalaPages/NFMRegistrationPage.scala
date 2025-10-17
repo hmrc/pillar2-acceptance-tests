@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-
-
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object NFMRegistrationPage extends PageObject {
