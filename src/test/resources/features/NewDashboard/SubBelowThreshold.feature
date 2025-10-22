@@ -257,7 +257,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I select back link
     Then I should navigate to BTN Start Page
     When I click on Continue button
-    And I select CurrentAccountingPeriod
+    And I click radio button for CurrentAccountingPeriod
     And  I click on Continue button
     When I click update the group’s accounting period dates link
     Then I should be on accounts summary page
@@ -283,11 +283,11 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Multiple Accounting Period Page
-    And I select CurrentAccountingPeriod
+    And I click radio button for CurrentAccountingPeriod
     And  I click on Continue button
     And I click Select different accounting period link
     Then I should navigate to BTN Multiple Accounting Period Page
-    And I select CurrentAccountingPeriod
+    And I click radio button for CurrentAccountingPeriod
     And  I click on Continue button
     And  I click on Continue button
     Then I should navigate to BTN Domestic or MNE Page
@@ -308,7 +308,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click Submit a Below-Threshold Notification link
     When I click on Continue button
     Then I should navigate to BTN Multiple Accounting Period Page
-    And I select PreviousAccountingPeriodUKTRSubmitted
+    And I click radio button for PreviousAccountingPeriodUKTRSubmitted
     And  I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     And I click Return to homepage link
@@ -317,7 +317,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     Then I should navigate to BTN Accounting Period Page
     And I select back link
     Then I should navigate to BTN Multiple Accounting Period Page
-    And I select PreviousAccountingPeriodBTNSubmitted
+    And I click radio button for PreviousAccountingPeriodBTNSubmitted
     And  I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     And I click Return to homepage link
@@ -325,11 +325,11 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click the browser back button
     And I select back link
     Then I should navigate to BTN Multiple Accounting Period Page
-    And I select PreviousAccountingPeriodBTNSubmitted
+    And I click radio button for PreviousAccountingPeriodBTNSubmitted
     And  I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     And I select back link
-    And I select PreviousAccountingPeriodUKTRSubmitted
+    And I click radio button for PreviousAccountingPeriodUKTRSubmitted
     And  I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     And  I click on Continue button
@@ -354,13 +354,65 @@ Feature: Pillar2 submission Below threshold notification user journey
     Then I should navigate to BTN Start Page
     When I click on Continue button
     Then I should navigate to BTN Multiple Accounting Period Page
-    And I select CurrentAccountingPeriod
+    And I click radio button for CurrentAccountingPeriod
     And  I click on Continue button
     When I click Select different accounting period link
     Then I should navigate to BTN Multiple Accounting Period Page
-    And I select PreviousAccountingPeriod
+    And I click radio button for PreviousAccountingPeriod
     When I click on Continue button
     Then I should navigate to BTN Accounting Period Page
     And  I click on Continue button
     And I click the browser back button
     Then I should navigate to BTN Accounting Period Page
+
+  Scenario: 16 - Org User navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true.
+    Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999995 for Pillar2 service
+    Then I should be on Dashboard page
+    And I click Submit a Below-Threshold Notification link
+    When I click on Continue button
+    Then I should navigate to BTN Multiple Accounting Period Page
+    And I click radio button for PreviousAccountingPeriod
+    When I click on Continue button
+    Then I should navigate to BTN Under Enquiry Page
+    And I click the browser back button
+    Then I should navigate to BTN Multiple Accounting Period Page
+    And I click radio button for CurrentAccountingPeriod
+    And  I click on Continue button
+    Then I should navigate to BTN Accounting Period Page
+    And  I click on Continue button
+    Then I should navigate to BTN Domestic or MNE Page
+    When I select option Yes and continue on Pillar2 submission
+    Then I should navigate to BTN CYA Submit Page
+    When I click on Continue button
+    Then I should navigate to BTN Confirmation Page
+    When I click Report Pillar 2 Top-up Taxes link
+    Then I should be on Dashboard page
+
+  Scenario: 17- Agent User navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true
+    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
+    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999995 and pillar2-auth for Pillar2 service
+    Then I should be on ASA Pillar2 Input Page
+    And I provide ASA Pillar2 ID as XEPLR9999999995
+    And I click on Continue button
+    Then I should navigate to ASA Confirmation Page
+    And I click on Continue button
+    Then I should navigate to Dashboard page
+    And I click Submit a Below-Threshold Notification link
+    When I click on Continue button
+    Then I should navigate to BTN Multiple Accounting Period Page
+    And I click radio button for PreviousAccountingPeriod
+    When I click on Continue button
+    Then I should navigate to BTN Under Enquiry Page
+    And I click the browser back button
+    Then I should navigate to BTN Multiple Accounting Period Page
+    And I click radio button for CurrentAccountingPeriod
+    And  I click on Continue button
+    Then I should navigate to BTN Accounting Period Page
+    When I click on Continue button
+    Then I should navigate to BTN Domestic or MNE Page
+    When I select option Yes and continue on Pillar2 submission
+    Then I should navigate to BTN CYA Submit Page
+    When I click on Continue button
+    Then I should navigate to BTN Confirmation Page
+    When I click Report Pillar 2 Top-up Taxes link
+    Then I should be on Dashboard page
