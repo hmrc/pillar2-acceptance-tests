@@ -147,20 +147,8 @@ class CommonSteps extends EN with ScalaDsl with BrowserDriver with Matchers {
     InitialGuidancePage.clickContinue()
   }
 
-  When("""I select CurrentAccountingPeriod""") { () =>
-    BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
-  }
-
-  When("""I select PreviousAccountingPeriodBTNSubmitted""") { () =>
-    BtnMultipleAccountingPage.selectPreviousAccountingPeriodBTNSubmitted()
-  }
-
-  When("""I select PreviousAccountingPeriodUKTRSubmitted""") { () =>
-    BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
-  }
-
-  Then("""I select PreviousAccountingPeriod""") { () =>
-    BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
+  And("""^I click radio button for (.*)$""") { accountingPeriod: String =>
+    BtnMultipleAccountingPage.selectAccountingPeriod(accountingPeriod)
   }
 
   When("""^(I click on Country selected)""") { (negate: String) =>
