@@ -20,7 +20,7 @@ import io.cucumber.datatable.DataTable
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specstepdef.CommonFunctions._
 
 

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.specsold
 
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.Hooks.{And, Given, Then, When}
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.Hooks.{And, Given, Then}
 
 class AgentSubmissionHistorySpec extends AnyFeatureSpec with Matchers {
 

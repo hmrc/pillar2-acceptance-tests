@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.specpages._
 
 object NFMStepsSteps {
 

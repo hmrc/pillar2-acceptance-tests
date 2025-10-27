@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.specsold
 
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.featurespec.AnyFeatureSpec

@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specsmap
+package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.Hooks.{And, Given, Then}
+import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 
 
-class AgentSubmissionHistorySpec extends AnyFeatureSpec with Matchers {
+class AgentSubmissionHistory extends BaseSpec with Matchers {
 
   Feature("Pillar2 Submission History Agent User Journey") {
 

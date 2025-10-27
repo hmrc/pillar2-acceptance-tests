@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.specsold
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.Hooks.{And, Given, Then, When}
 
-class AgentDueAndOverDueSpec extends AnyFeatureSpec with Matchers {
+
+class AgentDueAndOverDueSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 Due & Overdue returns for Agent User Journey") {
 

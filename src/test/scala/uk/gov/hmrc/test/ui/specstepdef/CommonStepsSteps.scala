@@ -22,7 +22,8 @@ import uk.gov.hmrc.test.ui.cucumber.Check.{be, convertToAnyShouldWrapper, includ
 import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.specpages._
+
 
 object CommonStepsSteps {
 

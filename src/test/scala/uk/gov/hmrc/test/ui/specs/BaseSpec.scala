@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specstepdef
-import uk.gov.hmrc.test.ui.cucumber._
-import uk.gov.hmrc.test.ui.specpages._
+package uk.gov.hmrc.test.ui.specs
 
-object ASAStepsSteps {
+import org.scalatest.featurespec.AnyFeatureSpec
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
+import uk.gov.hmrc.selenium.webdriver.{Browser, ScreenshotOnFailure}
 
-  // ^I provide ASA (.*) as (.*)$
-  def andIProvideASAXAsX(field: String, value: String): Unit = {
-    field match {
-          case "Pillar2 ID" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(ASAPillar2InputPage.pillar2IDField)
-            Input.sendKeysByCss(value, ASAPillar2InputPage.pillar2IDField)
-        }
-  }
+trait BaseSpec
+  extends AnyFeatureSpec
+    with GivenWhenThen
+    with Matchers
+    with BeforeAndAfterEach
+    with Browser
+    with ScreenshotOnFailure {
+
+  override def beforeEach(): Unit =
+    startBrowser()
+
+  override def afterEach(): Unit =
+    quitBrowser()
 
 }

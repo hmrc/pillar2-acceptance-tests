@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.specstepdef
 
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.specpages._
 
 object UPEStepsSteps {
 

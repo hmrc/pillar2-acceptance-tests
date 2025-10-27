@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.specstepdef
 import io.cucumber.datatable.DataTable
 import uk.gov.hmrc.test.ui.cucumber.Input.getAttributeOfId
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.specpages._
 
 object SubscriptionJourneyStepsSteps {
 

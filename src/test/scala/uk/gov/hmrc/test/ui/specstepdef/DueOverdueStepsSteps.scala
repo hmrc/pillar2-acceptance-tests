@@ -19,7 +19,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.specpages._
 
 object DueOverdueStepsSteps {
 

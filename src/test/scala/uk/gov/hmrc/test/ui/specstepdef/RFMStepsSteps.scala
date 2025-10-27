@@ -23,7 +23,7 @@ import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationUrl
 import uk.gov.hmrc.test.ui.cucumber.Find.findURL
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.specpages._
 import scala.util.Try
 import uk.gov.hmrc.test.ui.specstepdef.CommonFunctions._
 

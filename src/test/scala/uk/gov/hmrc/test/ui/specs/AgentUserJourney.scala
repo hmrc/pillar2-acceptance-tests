@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specsmap
+package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.Hooks.{And, Given, Then, When}
+import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
@@ -27,7 +27,7 @@ import uk.gov.hmrc.test.ui.specstepdef.SubscriptionJourneyStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
 
 
-class AgentUserJourney extends AnyFeatureSpec with Matchers {
+class AgentUserJourney extends BaseSpec with Matchers {
 
   Feature("Agent user journeys") {
 

@@ -22,7 +22,7 @@ import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.cucumber.Check.{be, convertToAnyShouldWrapper, include}
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.specpages._
 
 object PaymentStepsSteps {
 
