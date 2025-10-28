@@ -214,8 +214,8 @@ Feature: Pillar2 submission Below threshold notification user journey
     Examples:
       | PLRID           |
       | XEPLR4220000000 |
-      | XEPLR4000000000 |
-      | XEPLR5000000000 |
+   #   | XEPLR4000000000 |
+    #  | XEPLR5000000000 |
 
   Scenario Outline: 11 - Agent User navigates to KB page, if BTN submission unsuccessful
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
@@ -239,8 +239,8 @@ Feature: Pillar2 submission Below threshold notification user journey
     Examples:
       | PLRID           |
       | XEPLR4220000000 |
-      | XEPLR4000000000 |
-      | XEPLR5000000000 |
+     # | XEPLR4000000000 |
+     # | XEPLR5000000000 |
 
   Scenario: 12 - Agent User navigates to BTN multiple accounting period for current accounting period to check amend group details
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service

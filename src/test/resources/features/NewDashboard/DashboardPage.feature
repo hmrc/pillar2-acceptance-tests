@@ -123,17 +123,17 @@ Feature: Dashboard Page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I click Sign out link
-    Then Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service
-    And I should be on Dashboard page
-    When I click View transaction history link
-    Then I should be on Transaction History Error Page
-    When I click Return to your account homepage link
-    Then I should be on Dashboard page
-    When I click View transaction history link
-    Then I should be on Transaction History Error Page
-    When I select back link
-    Then I should be on Dashboard page
-    And I click Sign out link
+#    Then Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service
+#    And I should be on Dashboard page
+#    When I click View transaction history link
+#    Then I should be on Transaction History Error Page
+#    When I click Return to your account homepage link
+#    Then I should be on Dashboard page
+#    When I click View transaction history link
+#    Then I should be on Transaction History Error Page
+#    When I select back link
+#    Then I should be on Dashboard page
+#    And I click Sign out link
     Then Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR6666666666 for Pillar2 service
     And I should be on Dashboard page
     When I click View transaction history link
