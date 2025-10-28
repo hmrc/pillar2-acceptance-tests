@@ -367,7 +367,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     And I click the browser back button
     Then I should navigate to BTN Accounting Period Page
 
-# To do : Final implementation to follow after Cucucmber to Scala migration
+# TODO : Final implementation to follow after Cucucmber to Scala migration
   Scenario: 16 - Org User navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true.
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999995 for Pillar2 service
     Then I should be on Dashboard page
@@ -391,7 +391,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
 
-# To do : Final implementation to follow after Cucucmber to Scala migration
+# TODO : Final implementation to follow after Cucucmber to Scala migration
   Scenario: 17- Agent User navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999995 and pillar2-auth for Pillar2 service
