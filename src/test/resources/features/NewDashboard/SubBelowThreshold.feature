@@ -198,7 +198,7 @@ Feature: Pillar2 submission Below threshold notification user journey
     When I click Return to your group’s homepage link
     Then I should be on Dashboard page
 
- #  To do : Final implementation to follow after Cucucmber to Scala migration
+ #  TODO : Final implementation to follow after Cucucmber to Scala migration
   Scenario Outline: 10 - Org User navigates to KB page, if BTN submission unsuccessful
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and <PLRID> for Pillar2 service
     Then I should be on Dashboard page
@@ -218,7 +218,7 @@ Feature: Pillar2 submission Below threshold notification user journey
    #   | XEPLR4000000000 |
    #   | XEPLR5000000000 |
 
-# To do : Final implementation to follow after Cucucmber to Scala migration
+# TODO : Final implementation to follow after Cucucmber to Scala migration
   Scenario Outline: 11 - Agent User navigates to KB page, if BTN submission unsuccessful
     Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
     And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, <PLRID> and pillar2-auth for Pillar2 service

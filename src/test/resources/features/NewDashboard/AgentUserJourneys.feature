@@ -187,7 +187,7 @@ Feature: Agent user journeys
     When I select back link
     Then I should be on Dashboard page
     And I click Sign out link
- # To do : Final implementation to follow after Cucucmber to Scala migration
+ # TODO : Final implementation to follow after Cucucmber to Scala migration
 #    Given Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service
 #    And I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR4000000000 and pillar2-auth for Pillar2 service
 #    Then I should be on ASA Pillar2 Input Page

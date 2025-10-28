@@ -123,7 +123,7 @@ Feature: Dashboard Page
     When I click Report Pillar 2 Top-up Taxes link
     Then I should be on Dashboard page
     And I click Sign out link
-#    To do : Final implementation to follow after Cucucmber to Scala migration
+#   TODO : Final implementation to follow after Cucucmber to Scala migration
 #    Then Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service
 #    And I should be on Dashboard page
 #    When I click View transaction history link
