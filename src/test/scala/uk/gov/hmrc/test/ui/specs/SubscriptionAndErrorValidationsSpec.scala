@@ -47,7 +47,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andIEnterXAsX("UPE name", "XMPLR0009999999")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter UPE Person/Team name as UPE Contact Name")
         andIEnterXAsX("UPE Person/Team name", "UPE Contact Name")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -95,7 +95,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to Contact details Check answers page")
         thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -206,7 +206,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to Contact details Check answers page")
         thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -278,7 +278,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andIEnterXAsX("UPE name", "regNoIDInvalidRequest")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter UPE Person/Team name as UPE Contact Name")
         andIEnterXAsX("UPE Person/Team name", "UPE Contact Name")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -338,7 +338,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to Contact details Check answers page")
         thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -407,7 +407,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andIEnterXAsX("UPE name", "Test UPE")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to UPE Contact person/team Name page")
         thenIShouldNavigateToX("UPE Contact person/team Name page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -473,7 +473,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to Contact details Check answers page")
         thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

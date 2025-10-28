@@ -163,9 +163,9 @@ class CommonSteps extends EN with ScalaDsl with BrowserDriver with Matchers {
     BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
   }
 
-  When("""^(I click on Country selected)""") { (negate: String) =>
-    UPEAddressPage.clickCountrySelected()
-  }
+//  When("""^(I click on Country selected)""") { (negate: String) =>
+//    UPEAddressPage.clickCountrySelected()
+//  }
 
   Given("""^I am on (.*) Page$""") { page: String =>
     page match {

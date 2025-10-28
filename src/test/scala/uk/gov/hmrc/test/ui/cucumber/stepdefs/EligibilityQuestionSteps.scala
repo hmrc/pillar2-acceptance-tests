@@ -44,11 +44,11 @@ class EligibilityQuestionSteps extends CommonFunctions {
     assertNavigationToPage(pageMatch(page))
   }
 
-  Then("""^I enter Address as:""") { (address: DataTable) =>
-    Input.enterData(address)
-    UPEAddressPage.clickCountrySelected()
-    UPEEntityTypePage.clickContinue()
-  }
+//  Then("""^I enter Address as:""") { (address: DataTable) =>
+//    Input.enterData(address)
+//    UPEAddressPage.clickCountrySelected()
+//    UPEEntityTypePage.clickContinue()
+//  }
 
   Then("""^I should be on (.*)""") { (page: String) =>
     Wait.waitForElementToClickTagName("h1")

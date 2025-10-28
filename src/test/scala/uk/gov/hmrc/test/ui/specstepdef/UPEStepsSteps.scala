@@ -35,36 +35,6 @@ object UPEStepsSteps {
             Input.sendKeysByCss(name, InputUPENamePage.nameField)
             clickByCss(InputUPENamePage.continue)
 
-          case "Address Line 1" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine1)
-            Input.sendKeysByCss(name, UPEAddressPage.addressLine1)
-
-          case "Address Line 2" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2)
-            Input.sendKeysByCss(name, UPEAddressPage.addressLine2)
-
-          case "City" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEAddressPage.townOrCity)
-            Input.sendKeysByCss(name, UPEAddressPage.townOrCity)
-
-          case "Region" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEAddressPage.region)
-            Input.sendKeysByCss(name, UPEAddressPage.region)
-
-          case "Postal Code" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCode)
-            Input.sendKeysByCss(name, UPEAddressPage.postalCode)
-
-          case "Country" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEAddressPage.country)
-            Input.sendKeysByCss(name, UPEAddressPage.country)
-
           case "UPE Person/Team name" =>
             Wait.waitForTagNameToBeRefreshed("h1")
             Input.sendKeysById(UPEContactNamePage.contactName, name)
@@ -155,19 +125,6 @@ object UPEStepsSteps {
             assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
           case "NFM name" =>
             assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
-          case "Address Line 1" =>
-            assert(getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name))
-          case "Address Line 2" =>
-            assert(getAttributeOf(UPEAddressPage.addressLine2, "value").equals(name))
-          case "City" =>
-            assert(getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name))
-          case "Region" =>
-            assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
-            UPEEntityTypePage.clickContinue()
-          case "Postal Code" =>
-            assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
-          case "Country" =>
-            assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
           case "UPE Person/Team name" =>
             assert(getAttributeOfId(UPEContactNamePage.contactName, "value").equals(name))
           case "UPE Email address" =>

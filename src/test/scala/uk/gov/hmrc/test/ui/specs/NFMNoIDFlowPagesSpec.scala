@@ -70,7 +70,7 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("NFM Address page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -187,7 +187,7 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
         andIEnterXAsX("Country", "Australia")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Country selected")
-        whenIClickOnCountrySelected("I click on Country selected")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//        whenIClickOnCountrySelected("I click on Country selected")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)

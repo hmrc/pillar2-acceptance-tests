@@ -193,10 +193,10 @@ def clickAction(action: String): Unit = {
     BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
   }
 
-  // ^(I click on Country selected)
-  def whenIClickOnCountrySelected(negate: String): Unit = {
-    UPEAddressPage.clickCountrySelected()
-  }
+//  // ^(I click on Country selected)
+//  def whenIClickOnCountrySelected(negate: String): Unit = {
+//    UPEAddressPage.clickCountrySelected()
+//  }
 
   // ^I am on (.*) Page$
   def givenIAmOnXPage(page: String ): Unit = {

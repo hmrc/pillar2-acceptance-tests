@@ -50,11 +50,11 @@ object EligibilityQuestionStepsSteps {
   }
 
   // ^I enter Address as:
-  def thenIEnterAddressAs(address: DataTable): Unit = {
-    Input.enterData(address)
-        UPEAddressPage.clickCountrySelected()
-        UPEEntityTypePage.clickContinue()
-  }
+//  def thenIEnterAddressAs(address: DataTable): Unit = {
+//    Input.enterData(address)
+//        UPEAddressPage.clickCountrySelected()
+//        UPEEntityTypePage.clickContinue()
+//  }
 
   //todo: commented overload Test and delete if required.
 

@@ -16,19 +16,31 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.UPEPage.rootUrl
 
-object UPEAddressPage extends PageObject {
-  val url: String  = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-address"
-  val continue     = "#submit"
-  val addressLine1 = "#addressLine1"
-  val townOrCity   = "#addressLine3"
-  val country      = "#countryCode"
-  val addressLine2 = "#addressLine2"
-  val region       = "#addressLine4"
-  val postalCode   = "#postalCode"
-  val selected     = "#countryCode__option--0"
+object UPEAddressPage extends BasePage {
 
-  def clickCountrySelected(): Unit = findByCss(selected).click()
+  override val url: String = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-address"
+  override val countryDropdown: By = By.id("countryCode")
+  override val countryOption: By   = By.id("countryCode__option--0")
+  override val buttonName = "Save and continue"
+
+  private val addressLine1: By = By.id("addressLine1")
+  private val addressLine2: By = By.id("addressLine2")
+  private val city: By         = By.id("addressLine3")
+  private val region: By       = By.id("addressLine4")
+  private val postcode: By     = By.id("postalCode")
+
+  def enterAddressNonUK(): Unit = {
+    onPage()
+    sendKeys(addressLine1, "Test Street")
+    sendKeys(addressLine2, "Test Town")
+    sendKeys(city, "Test City")
+    sendKeys(region, "Test Region")
+    sendKeys(postcode, "AA1 1AA")
+    countryAutoSelect("India")
+    clickButtonByText(buttonName)
+  }
+
 }

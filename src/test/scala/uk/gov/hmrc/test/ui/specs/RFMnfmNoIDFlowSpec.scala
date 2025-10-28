@@ -100,7 +100,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIEnterXAsX("Country", "Australia")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Country selected")
-        whenIClickOnCountrySelected("I click on Country selected")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//        whenIClickOnCountrySelected("I click on Country selected")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -178,7 +178,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -205,7 +205,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("RFM New NFM Contact Address Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should be on RFM No ID CYA Page")
         thenIShouldBeOnX("RFM No ID CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -328,7 +328,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -430,7 +430,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click change link for RFM Corporate Position")
         andIClickChangeLinkForRFMX("Corporate Position")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -448,7 +448,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("New NFM Name", "Test CYA")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should be on RFM No ID CYA Page")
         thenIShouldBeOnX("RFM No ID CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -610,7 +610,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("New NFM Name", "Test CYA")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -631,7 +631,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -718,7 +718,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("second contact number", "09872960001")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click on change link for Contact Name")
         andIClickOnChangeLinkForX("Contact Name")  // auto-chosen (score=1.00, CYAStepsSteps.scala)

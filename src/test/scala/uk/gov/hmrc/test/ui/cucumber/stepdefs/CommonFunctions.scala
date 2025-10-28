@@ -43,7 +43,6 @@ trait CommonFunctions
       case "UPE business page"                          => UPEPage
       case "UPE EQ page"                                => UPEEQPage
       case "input-upe-name page"                        => InputUPENamePage
-      case "input-upe-address page"                     => UPEAddressPage
       case "UPE Phone page"                             => UPEPhonePage
       case "input phone page"                           => InputUPEPhonePage
       case "Under Construction Page"                    => UnderConstructionPage
