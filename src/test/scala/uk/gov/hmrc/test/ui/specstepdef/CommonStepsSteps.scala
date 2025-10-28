@@ -255,16 +255,6 @@ def clickAction(action: String): Unit = {
             Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorMessage)
             getTextOf(By cssSelector (GlobalGrossRevenueEQPage.errorMessage)) should include(error)
 
-          case "UPE business EQ" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEPage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(UPEPage.errorLink)
-            getTextOf(By cssSelector (UPEPage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
-            getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
-
           case "UPE Org type" =>
             Wait.waitForTagNameToBeRefreshed("h1")
             Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.errorSummary)
@@ -285,16 +275,6 @@ def clickAction(action: String): Unit = {
             Wait.waitForElementToPresentByCssSelector(NFMEntityTypePage.errorMessage)
             getTextOf(By cssSelector (NFMEntityTypePage.errorMessage)) should include(error)
 
-          case "Input UPE Name" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEPage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(UPEPage.errorLink)
-            getTextOf(By cssSelector (UPEPage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(UPEPage.errorMessage)
-            getTextOf(By cssSelector (UPEPage.errorMessage)) should include(error)
-
           case "UPE Phone" =>
             Wait.waitForTagNameToBeRefreshed("h1")
             Wait.waitForElementToPresentByCssSelector(UPEPhonePage.errorSummary)
@@ -304,36 +284,6 @@ def clickAction(action: String): Unit = {
 
             Wait.waitForElementToPresentByCssSelector(UPEPhonePage.errorMessage)
             getTextOf(By cssSelector (UPEPhonePage.errorMessage)) should include(error)
-
-          case "Input Phone" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.errorLink)
-            getTextOf(By cssSelector (InputUPEPhonePage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.errorMessage)
-            getTextOf(By cssSelector (InputUPEPhonePage.errorMessage)) should include(error)
-
-          case "UPE Contact person/team name" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEContactNamePage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(UPEContactNamePage.errorLink)
-            getTextOf(By cssSelector (UPEContactNamePage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(UPEContactNamePage.errorMessage)
-            getTextOf(By cssSelector (UPEContactNamePage.errorMessage)) should include(error)
-
-          case "UPE contact email" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEContactEmailPage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(UPEContactEmailPage.errorLink)
-            getTextOf(By cssSelector (UPEContactEmailPage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(UPEContactEmailPage.errorMessage)
-            getTextOf(By cssSelector (UPEContactEmailPage.errorMessage)) should include(error)
 
           case "NFM details page" =>
             Wait.waitForTagNameToBeRefreshed("h1")
@@ -509,12 +459,6 @@ def clickAction(action: String): Unit = {
   // ^I click the browser back button$
   def andIClickTheBrowserBackButton(): Unit = {
     Nav.browserBack()
-  }
-
-  // ^I should be navigated to (.*) page$
-  def thenIShouldBeNavigatedToXPage(text: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElement(By.cssSelector(UPEPage.sendYourFeedback)).getText.contains(text))
   }
 
   // ^(.*) User logs in with existing entity group (.*), (.*) and (.*) for Pillar2 service$

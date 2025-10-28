@@ -16,12 +16,21 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object UPENamePage extends BasePage {
+  override val url: String      = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-name"
 
-object InputUPEPhonePage extends PageObject {
-  val url: String  = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-phone"
-  val phoneNumber  = "#phoneNumber"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href*='#phoneNumber']"
-  val errorMessage = ".govuk-error-message"
+  private val nameValue: String = "Entity Name"
+  private val nameUpdatedValue: String = "New Entity Name"
+
+  def enterName(): Unit = {
+    onPage()
+    sendKeys(textInputField, nameValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def updateName(): Unit = {
+    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-name")
+    sendKeys(textInputField, nameUpdatedValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

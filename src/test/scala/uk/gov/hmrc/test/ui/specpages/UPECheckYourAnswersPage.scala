@@ -16,17 +16,24 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object UPECheckYourAnswersPage extends PageObject {
-  val url: String        = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
-  val keyList            = ".govuk-summary-list__key"
-  val valueList          = ".govuk-summary-list__value"
-  val actinsList         = ".govuk-summary-list__actions"
+object UPECheckYourAnswersPage extends BasePage {
+  val url: String        = s"$baseUrl" + "business-matching/ultimate-parent/no-id/check-answers"
+
   val changeName         = "a[href*='/change-input-name']"
   val changeAddress      = "a[href*='/change-input-address']"
   val changeContactName  = "a[href*='/change-input-business-name']"
   val changeEmailAddress = "a[href*='/change-input-email']"
-  val changePhoneContact = "a[href*='/change-phone']"
   val changePhoneNumber  = "a[href*='/change-input-phone']"
+
+  def clickChangeLink(changeLink: String): Unit = {
+    onPage()
+    click(By.cssSelector(changeLink))
+  }
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(continueButtonId)
+  }
 }

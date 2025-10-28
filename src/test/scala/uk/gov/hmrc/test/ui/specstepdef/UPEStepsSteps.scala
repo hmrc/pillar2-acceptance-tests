@@ -25,82 +25,68 @@ object UPEStepsSteps {
   // ^I enter (.*) as (.*)$
   def andIEnterXAsX(field: String, name: String): Unit = {
     field match {
-          case "UPE name" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Input.sendKeysByCss(name, InputUPENamePage.nameField)
-            clickByCss(InputUPENamePage.continue)
 
-          case "NFM name" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Input.sendKeysByCss(name, InputUPENamePage.nameField)
-            clickByCss(InputUPENamePage.continue)
+      case "NFM name" =>
+        Wait.waitForTagNameToBeRefreshed("h1")
+        Input.sendKeysByCss(name, UPENamePage.nameField)
+        clickByCss(UPENamePage.continue)
 
-          case "UPE Person/Team name" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Input.sendKeysById(UPEContactNamePage.contactName, name)
-            clickByCss(InputUPENamePage.continue)
+      case "Phone Number" =>
+        Wait.waitForElementToPresentByCssSelector(UPEPhoneInputPage.phoneNumber)
+        Input.sendKeysByCss(name, UPEPhoneInputPage.phoneNumber)
+        clickByCss(UPENamePage.continue)
 
-          case "UPE Email address" =>
-            Wait.waitForElementToPresentById(UPEContactEmailPage.emailField)
-            Input.sendKeysById(UPEContactEmailPage.emailField, name)
-            clickByCss(InputUPENamePage.continue)
+      case "NFM Contact name" =>
+        Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.contactName)
+        Input.sendKeysByCss(name, NFMContactNamePage.contactName)
+        clickByCss(UPENamePage.continue)
 
-          case "Phone Number" =>
-            Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.phoneNumber)
-            Input.sendKeysByCss(name, InputUPEPhonePage.phoneNumber)
-            clickByCss(InputUPENamePage.continue)
+      case "NFM Contact Email" =>
+        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
+        Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
+        clickByCss(UPENamePage.continue)
 
-          case "NFM Contact name" =>
-            Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.contactName)
-            Input.sendKeysByCss(name, NFMContactNamePage.contactName)
-            clickByCss(InputUPENamePage.continue)
+      case "NFM Phone Number" =>
+        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.phoneNumber)
+        Input.sendKeysByCss(name, InputNFMPhonePage.phoneNumber)
+        clickByCss(UPENamePage.continue)
 
-          case "NFM Contact Email" =>
-            Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
-            Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
-            clickByCss(InputUPENamePage.continue)
+      case "Contact Details Name" =>
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
+        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
+        clickByCss(UPENamePage.continue)
 
-          case "NFM Phone Number" =>
-            Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.phoneNumber)
-            Input.sendKeysByCss(name, InputNFMPhonePage.phoneNumber)
-            clickByCss(InputUPENamePage.continue)
+      case "Contact Name" =>
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
+        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
+        clickByCss(UPENamePage.continue)
 
-          case "Contact Details Name" =>
-            Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
-            Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
-            clickByCss(InputUPENamePage.continue)
+      case "Contact Email" =>
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputEmailPage.contactEmail)
+        Input.sendKeysByCss(name, ContactDetailsInputEmailPage.contactEmail)
+        clickByCss(UPENamePage.continue)
 
-          case "Contact Name" =>
-            Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
-            Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
-            clickByCss(InputUPENamePage.continue)
+      case "Contact Phone" =>
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputPhonePage.contactPhone)
+        Input.sendKeysByCss(name, ContactDetailsInputPhonePage.contactPhone)
+        clickByCss(UPENamePage.continue)
 
-          case "Contact Email" =>
-            Wait.waitForElementToPresentByCssSelector(ContactDetailsInputEmailPage.contactEmail)
-            Input.sendKeysByCss(name, ContactDetailsInputEmailPage.contactEmail)
-            clickByCss(InputUPENamePage.continue)
+      case "Second Contact Name" =>
+        Wait.waitForElementToPresentByCssSelector(SecondContactNamePage.contactName)
+        Input.sendKeysByCss(name, SecondContactNamePage.contactName)
+        clickByCss(UPENamePage.continue)
 
-          case "Contact Phone" =>
-            Wait.waitForElementToPresentByCssSelector(ContactDetailsInputPhonePage.contactPhone)
-            Input.sendKeysByCss(name, ContactDetailsInputPhonePage.contactPhone)
-            clickByCss(InputUPENamePage.continue)
+      case "Second Contact Email" =>
+        Wait.waitForElementToPresentByCssSelector(SecondContactEmailPage.contactEmail)
+        Input.sendKeysByCss(name, SecondContactEmailPage.contactEmail)
+        clickByCss(UPENamePage.continue)
 
-          case "Second Contact Name" =>
-            Wait.waitForElementToPresentByCssSelector(SecondContactNamePage.contactName)
-            Input.sendKeysByCss(name, SecondContactNamePage.contactName)
-            clickByCss(InputUPENamePage.continue)
+      case "Second Contact Input" =>
+        Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactPhone)
+        Input.sendKeysByCss(name, SecondContactInputPage.contactPhone)
+        clickByCss(UPENamePage.continue)
 
-          case "Second Contact Email" =>
-            Wait.waitForElementToPresentByCssSelector(SecondContactEmailPage.contactEmail)
-            Input.sendKeysByCss(name, SecondContactEmailPage.contactEmail)
-            clickByCss(InputUPENamePage.continue)
-
-          case "Second Contact Input" =>
-            Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactPhone)
-            Input.sendKeysByCss(name, SecondContactInputPage.contactPhone)
-            clickByCss(InputUPENamePage.continue)
-
-        }
+    }
   }
 
   // ^I am on feedback survey page$
@@ -121,102 +107,96 @@ object UPEStepsSteps {
   // ^I should see the (.*) field is pre-populated with (.*)$
   def andIShouldSeeTheXFieldIsPrepopulatedWithX(field: String, name: String): Unit = {
     field match {
-          case "UPE name" =>
-            assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
-          case "NFM name" =>
-            assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
-          case "UPE Person/Team name" =>
-            assert(getAttributeOfId(UPEContactNamePage.contactName, "value").equals(name))
-          case "UPE Email address" =>
-            assert(getAttributeOfId(UPEContactEmailPage.emailField, "value").equals(name))
-          case "Phone number" =>
-            assert(getAttributeOf(InputUPEPhonePage.phoneNumber, "value").equals(name))
-          case "NFM Contact name" =>
-            assert(getAttributeOf(NFMContactNamePage.contactName, "value").equals(name))
-          case "NFM Contact Email" =>
-            assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
-          case "NFM Phone number" =>
-            assert(getAttributeOf(InputNFMPhonePage.phoneNumber, "value").equals(name))
-          case "Contact Name" =>
-            assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
-          case "Contact Email" =>
-            assert(getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
-          case "Contact Phone" =>
-            assert(getAttributeOf(ContactDetailsInputPhonePage.contactPhone, "value").equals(name))
-          case "Second Contact Name" =>
-            assert(getAttributeOf(SecondContactNamePage.contactName, "value").equals(name))
-          case "Second Contact Email" =>
-            assert(getAttributeOf(SecondContactEmailPage.contactEmail, "value").equals(name))
-          case "Second Contact Input" =>
-            assert(getAttributeOf(SecondContactInputPage.contactPhone, "value").equals(name))
-          case "Redirect URL" =>
-            assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
-          case "PLRID" =>
-            assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
-          case "UK Bank Name" =>
-            assert(getAttributeOf(UKBankAccountPaymentPage.UkBankName, "value").equals(name))
-        }
+//          case "NFM name" =>
+//            assert(getAttributeOf(UPENamePage.nameField, "value").equals(name))
+      case "Phone number" =>
+        assert(getAttributeOf(UPEPhoneInputPage.phoneNumber, "value").equals(name))
+      case "NFM Contact name" =>
+        assert(getAttributeOf(NFMContactNamePage.contactName, "value").equals(name))
+      case "NFM Contact Email" =>
+        assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
+      case "NFM Phone number" =>
+        assert(getAttributeOf(InputNFMPhonePage.phoneNumber, "value").equals(name))
+      case "Contact Name" =>
+        assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
+      case "Contact Email" =>
+        assert(getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
+      case "Contact Phone" =>
+        assert(getAttributeOf(ContactDetailsInputPhonePage.contactPhone, "value").equals(name))
+      case "Second Contact Name" =>
+        assert(getAttributeOf(SecondContactNamePage.contactName, "value").equals(name))
+      case "Second Contact Email" =>
+        assert(getAttributeOf(SecondContactEmailPage.contactEmail, "value").equals(name))
+      case "Second Contact Input" =>
+        assert(getAttributeOf(SecondContactInputPage.contactPhone, "value").equals(name))
+      case "Redirect URL" =>
+        assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
+      case "PLRID" =>
+        assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
+      case "UK Bank Name" =>
+        assert(getAttributeOf(UKBankAccountPaymentPage.UkBankName, "value").equals(name))
+    }
   }
 
   // ^I select option (.*) and continue to GRS page$
   def andISelectOptionXAndContinueToGRSPage(option: String): Unit = {
     option match {
-          case "UK limited company"            => Input.clickById("value_0")
-          case "Limited liability partnership" => Input.clickById("value_1")
-        }
-        UPEEntityTypePage.clickContinue()
+      case "UK limited company"            => Input.clickById("value_0")
+      case "Limited liability partnership" => Input.clickById("value_1")
+    }
+    UPEEntityTypePage.clickContinue()
   }
 
   // ^I select option (.*) and continue to Name page$
   def andISelectOptionXAndContinueToNamePage(option: String): Unit = {
     option match {
-          case "Entity type not listed" => Input.clickById("value_2")
-        }
-        UPEEntityTypePage.clickContinue()
+      case "Entity type not listed" => Input.clickById("value_2")
+    }
+    UPEEntityTypePage.clickContinue()
   }
 
   // ^I select option (.*) in further details group status page$
   def andISelectOptionXInFurtherDetailsGroupStatusPage(option: String): Unit = {
     option match {
-          case "In the UK and outside the UK" => Input.clickById("value_1")
-          case "Only in the UK"               => Input.clickById("value_0")
-        }
-        UPEEntityTypePage.clickContinue()
+      case "In the UK and outside the UK" => Input.clickById("value_1")
+      case "Only in the UK"               => Input.clickById("value_0")
+    }
+    UPEEntityTypePage.clickContinue()
   }
 
   // ^I registered successfully with (.*)
   def andIRegisteredSuccessfullyWithX(option: String): Unit = {
     option match {
-          case "BV disabled" =>
-            Wait.waitForElement("registrationSuccessBvDisabled")
-            Input.clickById("registrationSuccessBvDisabled")
-          case "BV enabled" =>
-            Wait.waitForElement("registrationSuccessBvEnabled")
-            Input.clickById("registrationSuccessBvEnabled")
-        }
+      case "BV disabled" =>
+        Wait.waitForElement("registrationSuccessBvDisabled")
+        Input.clickById("registrationSuccessBvDisabled")
+      case "BV enabled" =>
+        Wait.waitForElement("registrationSuccessBvEnabled")
+        Input.clickById("registrationSuccessBvEnabled")
+    }
   }
 
   // ^registration is unsuccessful with (.*) error
   def andRegistrationIsUnsuccessfulWithXError(error: String): Unit = {
     error match {
-          case "party type mismatch" =>
-            Wait.waitForElement("registrationFailedPartyTypeMismatch")
-            Input.clickById("registrationFailedPartyTypeMismatch")
-          case "generic error" =>
-            Wait.waitForElement("registrationFailedGeneric")
-            Input.clickById("registrationFailedGeneric")
-          case "identifiers not match" =>
-            Wait.waitForElement("registrationFailedGeneric")
-            Input.clickById("registrationNotCalledIdentifierMismatch")
-          case "BV failed" =>
-            Wait.waitForElement("registrationFailedGeneric")
-            Input.clickById("registrationNotCalledBvFailed")
-        }
+      case "party type mismatch" =>
+        Wait.waitForElement("registrationFailedPartyTypeMismatch")
+        Input.clickById("registrationFailedPartyTypeMismatch")
+      case "generic error" =>
+        Wait.waitForElement("registrationFailedGeneric")
+        Input.clickById("registrationFailedGeneric")
+      case "identifiers not match" =>
+        Wait.waitForElement("registrationFailedGeneric")
+        Input.clickById("registrationNotCalledIdentifierMismatch")
+      case "BV failed" =>
+        Wait.waitForElement("registrationFailedGeneric")
+        Input.clickById("registrationNotCalledBvFailed")
+    }
   }
 
   // ^The json response Body should contain the status (.*)$
   def thenTheJsonResponseBodyShouldContainTheStatusX(text: String): Unit = {
-        Check.checkBodyText(text)
+    Check.checkBodyText(text)
   }
 
   // ^I click on Save&Continue button

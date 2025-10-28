@@ -21,10 +21,9 @@ import uk.gov.hmrc.test.ui.pages.UPEPage.rootUrl
 
 object UPEAddressPage extends BasePage {
 
-  override val url: String = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-address"
+  override val url: String = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-address"
   override val countryDropdown: By = By.id("countryCode")
   override val countryOption: By   = By.id("countryCode__option--0")
-  override val buttonName = "Save and continue"
 
   private val addressLine1: By = By.id("addressLine1")
   private val addressLine2: By = By.id("addressLine2")
@@ -39,8 +38,13 @@ object UPEAddressPage extends BasePage {
     sendKeys(city, "Test City")
     sendKeys(region, "Test Region")
     sendKeys(postcode, "AA1 1AA")
-    countryAutoSelect("India")
-    clickButtonByText(buttonName)
+    countryAutoSelect("Brazil")
+    clickButtonByText(buttonSaveAndContinue)
   }
 
+  def updateAddressNonUK(): Unit = {
+    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-address")
+    sendKeys(city, "Updated Test City")
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

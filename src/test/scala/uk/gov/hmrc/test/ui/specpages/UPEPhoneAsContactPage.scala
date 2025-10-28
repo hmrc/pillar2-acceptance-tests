@@ -18,11 +18,12 @@ package uk.gov.hmrc.test.ui.specpages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object UPEPage extends PageObject {
-  val url: String = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
+object UPEPhoneAsContactPage extends BasePage {
+  val url: String = s"$baseUrl" + "business-matching/ultimate-parent/no-id/phone"
 
-  val errorSummary     = ".govuk-error-summary__list"
-  val errorLink        = "[href*='#value']"
-  val errorMessage     = ".govuk-error-message"
-  val sendYourFeedback = ".govuk-heading-xl"
+  def contactByPhoneYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
 }

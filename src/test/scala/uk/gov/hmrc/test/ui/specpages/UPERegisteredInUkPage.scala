@@ -16,8 +16,12 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object UPERegisteredInUkPage extends BasePage {
+  override val url: String = s"$baseUrl" + "business-matching/ultimate-parent/registered-in-uk"
 
-object UPEContactPage extends PageObject {
-  val url: String = s"$rootUrl" + "business-matching/ultimate-parent/no-id/phone"
+  def registeredInUkNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    click(submitButtonId)
+  }
 }

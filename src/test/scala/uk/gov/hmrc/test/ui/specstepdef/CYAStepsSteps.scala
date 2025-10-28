@@ -26,18 +26,6 @@ import uk.gov.hmrc.test.ui.specpages._
 
 object CYAStepsSteps {
 
-  // ^I should see row (\d+) value (.*)$
-  def andIShouldSeeRowValueX(row: Int, value: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
-  }
-
-  // ^I should see row (\d+) with key (.*) and value (.*)
-  def andIShouldSeeRowWithKeyXAndValueX(row: Int, key: String, value: String): Unit = {
-    assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
-        assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
-  }
-
   // ^I should see details as below:$
   def andIShouldSeeDetailsAsBelow(details: DataTable): Unit = {
     val detailsData = details.asMaps(classOf[String], classOf[String])
@@ -76,18 +64,6 @@ object CYAStepsSteps {
   // ^I click on change hyperlink next to the (.*)
   def andIClickOnChangeHyperlinkNextToTheX(link: String): Unit = {
     link match {
-          case "UPE Name" =>
-            clickByCss(UPECheckYourAnswersPage.changeName)
-          case "UPE Address" =>
-            clickByCss(UPECheckYourAnswersPage.changeAddress)
-          case "UPE Contact Name" =>
-            clickByCss(UPECheckYourAnswersPage.changeContactName)
-          case "UPE Email Address" =>
-            clickByCss(UPECheckYourAnswersPage.changeEmailAddress)
-          case "UPE Phone Contact" =>
-            clickByCss(UPECheckYourAnswersPage.changePhoneContact)
-          case "UPE Phone Number" =>
-            clickByCss(UPECheckYourAnswersPage.changePhoneNumber)
           case "NFM Name" =>
             clickByCss(NFMCheckYourAnswersPage.changeName)
           case "NFM Address" =>

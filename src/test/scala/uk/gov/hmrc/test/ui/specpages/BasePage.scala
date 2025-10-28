@@ -28,15 +28,20 @@ import java.time.Duration
 trait BasePage extends Matchers with PageObject {
 
   val url: String
-  val baseUrl: String     = TestConfiguration.url("pillar2-frontend")
-  val submitButtonId: By  = By.id("submit")
-  val yesRadioId: By      = By.id("value")
-  val noRadioId: By       = By.id("value-no")
-  val countryDropdown: By = By.id("country")
-  val countryOption: By   = By.id("country__option--0")
-  val backLinkText: By    = By.linkText("Back")
+  val baseUrl: String       = TestConfiguration.url("pillar2-frontend")
+  val submitButtonId: By    = By.id("submit")
+  val continueButtonId: By    = By.id("continue")
+  val yesRadioId: By        = By.id("value_0")
+  val noRadioId: By         = By.id("value_1")
+  val countryDropdown: By   = By.id("country")
+  val countryOption: By     = By.id("country__option--0")
+  val backLinkText: By      = By.linkText("Back")
+  val textInputField: By    = By.id("value")
+  val buttonContinue        = "Continue"
+  val buttonSaveAndContinue = "Save and continue"
 
-  val buttonName: String
+  val continue    = ".govuk-button"
+  val nameField   = "#value"
 
   private def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
     .withTimeout(Duration.ofSeconds(2))

@@ -16,21 +16,24 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-object UPEContactNamePage extends BasePage {
-  val url: String = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-business-name"
+import org.openqa.selenium.By
 
-  private val nameValue: String       = "Contact Entity Name"
-  private val nameUpdatedValue: String = "Updated Contact Entity Name"
+object UPEEmailPage extends BasePage {
+  val url: String = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-email"
 
-  def enterName(): Unit = {
+  override val textInputField: By = By.id("emailAddress")
+  private val emailValue: String  = "abc@def.com"
+  private val emailUpdatedValue: String  = "def@abc.com"
+
+  def enterEmail(): Unit = {
     onPage()
-    sendKeys(textInputField, nameValue)
+    sendKeys(textInputField, emailValue)
     clickButtonByText(buttonSaveAndContinue)
   }
 
-  def updateName(): Unit = {
-    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-business-name")
-    sendKeys(textInputField, nameUpdatedValue)
+  def updateEmail(): Unit = {
+    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-email")
+    sendKeys(textInputField, emailUpdatedValue)
     clickButtonByText(buttonSaveAndContinue)
   }
 }
