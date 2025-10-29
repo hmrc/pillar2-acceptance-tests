@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
@@ -298,13 +297,13 @@ class PaymentSteps extends CommonFunctions {
     }
   }
 
-  And("""^I enter UK Bank Account details as:$""") { (details: DataTable) =>
+  And("""^I enter UK Bank Account details as:$""") { (details: Map[String,String]) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()
   }
 
-  And("""^I enter Non UK Bank Account details as:$""") { (details: DataTable) =>
+  And("""^I enter Non UK Bank Account details as:$""") { (details: Map[String,String]) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()

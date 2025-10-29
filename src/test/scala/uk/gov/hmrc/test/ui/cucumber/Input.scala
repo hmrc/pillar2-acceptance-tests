@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.cucumber
 
-import io.cucumber.datatable.DataTable
 import org.openqa.selenium._
 import uk.gov.hmrc.test.ui.cucumber.Find._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
@@ -29,13 +28,21 @@ object Input extends BrowserDriver {
 
   def clickByCss(css: String): Unit = findByCss(css).click()
 
-  val enterData: DataTable => Unit = iterator(sendKeysById)
+  //val enterData: DataTable => Unit = iterator(sendKeysById)
+//  def enterData(data: DataTable): Unit = {
+//    iterator(sendKeysById)(data)
+//  }
+//  def iterator(f: (String, String) => Any)(data: DataTable): Unit = {
+//    val row = data.asMaps(classOf[String], classOf[String]).iterator()
+//    while (row.hasNext) {
+//      val map = row.next()
+//      f(map.get("KEY"), map.get("VALUE"))
+//    }
+//  }
 
-  def iterator(f: (String, String) => Any)(data: DataTable): Unit = {
-    val row = data.asMaps(classOf[String], classOf[String]).iterator()
-    while (row.hasNext) {
-      val map = row.next()
-      f(map.get("KEY"), map.get("VALUE"))
+  def enterData(data: Map[String, String]): Unit = {
+    data.foreach { case (key, value) =>
+      sendKeysById(key, value)
     }
   }
 

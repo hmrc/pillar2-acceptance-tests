@@ -54,7 +54,7 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
         andIClickXLink("View submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 0 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 0 accounting periods on Sub History Page
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
     }
 
@@ -84,7 +84,7 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
         andIClickXLink("View submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 1 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 1 accounting periods on Sub History Page
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(1)
 
     }
 
@@ -114,7 +114,7 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
         andIClickXLink("View submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 2 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 2 accounting periods on Sub History Page
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
 
     }
   }

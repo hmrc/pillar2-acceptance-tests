@@ -50,7 +50,7 @@ object EligibilityQuestionStepsSteps {
   }
 
   // ^I enter Address as:
-  def thenIEnterAddressAs(address: DataTable): Unit = {
+  def thenIEnterAddressAs(address: Map[String,String]): Unit = {
     Input.enterData(address)
         UPEAddressPage.clickCountrySelected()
         UPEEntityTypePage.clickContinue()

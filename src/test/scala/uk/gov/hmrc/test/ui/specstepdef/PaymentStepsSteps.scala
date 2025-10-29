@@ -25,7 +25,6 @@ import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
 
 object PaymentStepsSteps {
-
   // ^I should be navigated to new tab$
   def thenIShouldBeNavigatedToNewTab(): Unit = {
     val handles = Driver.instance.getWindowHandles.toArray().toSeq
@@ -216,7 +215,7 @@ object PaymentStepsSteps {
   }
 
   // ^I provide Refund Amount as (.*)$""")((refundAmount: String) => {
-  def andIProvideRefundAmountAsX(refundAmount: String): Unit = {
+  def andIProvideRefundAmountAs(refundAmount: String): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.sendKeysByCss(refundAmount, RepaymentAmountPage.refundAmountField)
     clickByCss(RepaymentAmountPage.continue)
@@ -320,7 +319,7 @@ object PaymentStepsSteps {
   }
 
   // ^I enter UK Bank Account details as:$
-  def andIEnterUKBankAccountDetailsAs(details: DataTable): Unit = {
+  def andIEnterUKBankAccountDetailsAs(details:Map[String,String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()
@@ -342,8 +341,9 @@ object PaymentStepsSteps {
 //    }
 //  }
 
+
   // ^I enter Non UK Bank Account details as:$
-  def andIEnterNonUKBankAccountDetailsAs(details: DataTable): Unit = {
+  def andIEnterNonUKBankAccountDetailsAs(details: Map[String,String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()

@@ -181,7 +181,7 @@ object RFMStepsSteps {
   }
 
   // ^I enter registration date as:$
-  def andIEnterRegistrationDateAs(registrationDate: DataTable): Unit = {
+  def andIEnterRegistrationDateAs(registrationDate: Map[String,String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
         Input.enterData(registrationDate)
         UPEEntityTypePage.clickContinue()

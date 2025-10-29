@@ -24,7 +24,7 @@ import uk.gov.hmrc.test.ui.specpages._
 object SubscriptionJourneyStepsSteps {
 
   // ^I enter account period as:$
-  def andIEnterAccountPeriodAs(accountPeriod: DataTable): Unit = {
+  def andIEnterAccountPeriodAs(accountPeriod: Map[String,String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
         Input.enterData(accountPeriod)
         UPEEntityTypePage.clickContinue()

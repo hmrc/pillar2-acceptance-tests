@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.datatable.DataTable
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationUrl
@@ -171,7 +170,7 @@ class RFMSteps extends EN with ScalaDsl with BrowserDriver with CommonFunctions 
     }
   }
 
-  And("""^I enter registration date as:$""") { (registrationDate: DataTable) =>
+  And("""^I enter registration date as:$""") { (registrationDate: Map[String,String]) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(registrationDate)
     UPEEntityTypePage.clickContinue()
