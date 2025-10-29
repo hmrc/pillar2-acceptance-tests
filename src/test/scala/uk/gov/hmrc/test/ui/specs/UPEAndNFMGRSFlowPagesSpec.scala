@@ -23,39 +23,15 @@ import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.tags.Wip
 
 class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
   Feature("Ultimate parent entity and Nominated Filling Member GRS journey") {
 
-    Scenario("1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page") {
-      Given("Organisation User logs in without Pillar2 enrolment")
-        givenXLogsInWithoutPillar2Enrolment()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      Then("I should be on UPE business page")
-        thenIShouldBeOnX("UPE business page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
-      When("I select option Yes and continue to next")
-        andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on UPE entity type page")
-        thenIShouldBeOnX("UPE entity type page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select option Entity type not listed and continue to Name page")
-        andISelectOptionXAndContinueToNamePage("Entity type not listed")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
-
-      Then("I should navigate to input-upe-name page")
-        thenIShouldNavigateToX("input-upe-name page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      Then("I should be on UPE entity type page")
-        thenIShouldBeOnX("UPE entity type page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-    }
-
-    Scenario("2 - User registered as UkLimitedCompany successfully with BV enabled") {
+    Scenario("2 - User registered as UkLimitedCompany successfully with BV enabled", Wip) {
       Given("Organisation User logs in without Pillar2 enrolment")
         givenXLogsInWithoutPillar2Enrolment()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 

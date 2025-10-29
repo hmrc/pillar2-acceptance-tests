@@ -19,13 +19,12 @@ package uk.gov.hmrc.test.ui.specs
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.tags.Wip
 
 class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
   Feature("UPE NO ID journey") {
 
-    Scenario("User adds UPE and then makes amendments on the check your answers page", Wip) {
+    Scenario("User adds UPE and then makes amendments on the check your answers page") {
       Given("Organisation User logs in without enrollment")
       givenXLogsInWithoutPillar2Enrolment()
 
