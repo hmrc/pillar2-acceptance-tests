@@ -164,7 +164,6 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
       Then("I should navigate to agent services account page")
         thenIShouldNavigateToX("agent services account page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
     }
 
     Scenario("6 - User logins as Individual User") {

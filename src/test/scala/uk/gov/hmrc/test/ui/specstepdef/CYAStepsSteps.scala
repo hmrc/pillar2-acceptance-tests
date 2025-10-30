@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
+import org.scalatest.matchers.should.Matchers._
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.cucumber.Check.{contain, convertToAnyShouldWrapper}
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
@@ -27,35 +27,52 @@ import uk.gov.hmrc.test.ui.specpages._
 object CYAStepsSteps {
 
   // ^I should see row (\d+) value (.*)$
-  def andIShouldSeeRowValueX(row: Int, value: String): Unit = {
+  def andIShouldSeeRowValue(row: Int, value: String): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
         assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
   }
 
   // ^I should see row (\d+) with key (.*) and value (.*)
-  def andIShouldSeeRowWithKeyXAndValueX(row: Int, key: String, value: String): Unit = {
+  def andIShouldSeeRowWithKeyAndValue(row: Int, key: String, value: String): Unit = {
     assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
         assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
   }
 
   // ^I should see details as below:$
-  def andIShouldSeeDetailsAsBelow(details: DataTable): Unit = {
-    val detailsData = details.asMaps(classOf[String], classOf[String])
-        detailsData.forEach { row =>
-          val key           = row.get("KEY")
-          val expectedValue = row.get("VALUE")
-          val labelElement  = Driver.instance.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
-          val valueElement  = labelElement.findElement(By.xpath("following-sibling::dd[1]"))
-          if (key == "Address") {
-            val actualValueLines = valueElement.getText.split("\n").map(_.trim)
-            expectedValue.split("\n").foreach { expectedLine =>
-              actualValueLines should contain(expectedLine)
-            }
-          } else {
-            valueElement.getText shouldEqual expectedValue
-          }
+//  def andIShouldSeeDetailsAsBelow(details: DataTable): Unit = {
+//    val detailsData = details.asMaps(classOf[String], classOf[String])
+//        detailsData.forEach { row =>
+//          val key           = row.get("KEY")
+//          val expectedValue = row.get("VALUE")
+//          val labelElement  = Driver.instance.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
+//          val valueElement  = labelElement.findElement(By.xpath("following-sibling::dd[1]"))
+//          if (key == "Address") {
+//            val actualValueLines = valueElement.getText.split("\n").map(_.trim)
+//            expectedValue.split("\n").foreach { expectedLine =>
+//              actualValueLines should contain(expectedLine)
+//            }
+//          } else {
+//            valueElement.getText shouldEqual expectedValue
+//          }
+//        }
+//  }
+
+  def andIShouldSeeDetailsAsBelow(detailsMap: Map[String, String]): Unit = {
+    detailsMap.foreach { case (key, expectedValue) =>
+      val labelElement = Driver.instance.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
+      val valueElement = labelElement.findElement(By.xpath("following-sibling::dd"))
+      if (key == "Address") {
+        val actualValueLines = valueElement.getText.split("\n").map(_.trim)
+        expectedValue.split("\n").foreach { expectedLine =>
+          actualValueLines should contain(expectedLine)
         }
+      } else {
+        valueElement.getText shouldEqual expectedValue
+      }
+    }
   }
+
+
 
   //todo: commented overload Test and delete if required.
 

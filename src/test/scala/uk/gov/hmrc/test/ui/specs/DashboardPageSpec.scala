@@ -24,6 +24,7 @@ import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{thenIGoTillGetReadyToApproveYourPaymentPage, thenIMakeSuccessfulPayment, thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage}
+import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps.thenIShouldBeRedirectedTo
 import uk.gov.hmrc.test.ui.specstepdef.SubscriptionJourneyStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
 
@@ -90,10 +91,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
-
+        andIAmOnFeedbackSurveyPage()
     }
 
     Scenario("2 - User navigates to group details page and validates the data") {
@@ -111,8 +109,6 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the FD Group Status")
         andIClickOnChangeHyperlinkNextToTheX("FD Group Status")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       When("I select option Only in the UK in further details group status page")
         andISelectOptionXInFurtherDetailsGroupStatusPage("Only in the UK")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -122,17 +118,23 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the Accounting Period")
         andIClickOnChangeHyperlinkNextToTheX("Accounting Period")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       When("I enter account period as:")
-        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+        val dateRangeData: Map[String, String] = Map(
+          "startDate.day"   -> "5",
+          "startDate.month" -> "5",
+          "startDate.year"  -> "2025",
+          "endDate.day"     -> "5",
+          "endDate.month"   -> "6",
+          "endDate.year"    -> "2026"
+        )
+        andIEnterAccountPeriodAs(dateRangeData)      // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be redirected to Manage Account processing Page or Dashboard page")
-        // ⚠️ No step-def match found for: I should be redirected to Manage Account processing Page or Dashboard page
+      thenIShouldBeRedirectedTo("Manage Account processing Page","Dashboard page")
 
       And("I should be on Dashboard page")
         thenIShouldBeOnX("Dashboard page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -225,7 +227,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be redirected to Manage Contact processing Page or Dashboard page")
-        // ⚠️ No step-def match found for: I should be redirected to Manage Contact processing Page or Dashboard page
+        thenIShouldBeRedirectedTo("Manage Contact processing Page","Dashboard page")
 
       And("I should be on Dashboard page")
         thenIShouldBeOnX("Dashboard page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1168,7 +1170,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("8 - Make successful payment as Organisation user") {
+    Scenario("7 - Make successful payment as Organisation user") {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
         whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
@@ -1198,7 +1200,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("9 - Make successful payment as Agent") {
+    Scenario("8 - Make successful payment as Agent") {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
         whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
@@ -1246,7 +1248,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("10 - Back journey from Get ready to approve your payment page") {
+    Scenario("9 - Back journey from Get ready to approve your payment page") {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
         whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
