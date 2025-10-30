@@ -16,12 +16,17 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Find.{findByClass, findByCss}
 
-object BtnStartPage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/start"
-  val continue    = "button.govuk-button"
+object BtnStartPage extends BasePage {
+  override val url: String = s"$baseUrl" + "below-threshold-notification/start"
+  override val continue    = "button.govuk-button"
+  private val continueButton       = "govuk-button"
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    findByClass(continueButton).click()
+  }
 
   def clickContinue(): Unit = findByCss(continue).click()
 }

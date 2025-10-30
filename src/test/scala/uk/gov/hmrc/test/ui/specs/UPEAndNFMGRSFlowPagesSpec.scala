@@ -22,7 +22,6 @@ import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
-import uk.gov.hmrc.test.ui.tags.Wip
 
 class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
@@ -30,7 +29,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     Scenario("1 - User registers a Uk Limited Company successfully with BV enabled") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      givenXLogsInWithoutPillar2Enrolment()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV Enabled")
       UPERegisteredInUkPage.registeredInUkYes()

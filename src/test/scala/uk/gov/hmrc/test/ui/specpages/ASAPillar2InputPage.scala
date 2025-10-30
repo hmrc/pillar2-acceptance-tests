@@ -18,7 +18,13 @@ package uk.gov.hmrc.test.ui.specpages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object ASAPillar2InputPage extends PageObject {
-  val url: String    = s"$rootUrl" + "asa/input-pillar-2-id"
+object ASAPillar2InputPage extends BasePage {
+  override val url: String    = s"$baseUrl" + "asa/input-pillar-2-id"
   val pillar2IDField = ".govuk-input"
+
+  def enterPLR2Id(pLRId: String): Unit = {
+    onPage()
+    sendKeys(textInputField, pLRId)
+    clickButtonByText(buttonContinue)
+  }
 }

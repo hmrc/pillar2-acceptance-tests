@@ -19,13 +19,12 @@ package uk.gov.hmrc.test.ui.specs
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.tags.Wip
 
 class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 Due & Overdue returns And Submission History User Journey") {
 
-    Scenario("1 - Org User navigates to Due & Overdue returns and Submission History", Wip) {
+    Scenario("1 - Org User navigates to Due & Overdue returns and Submission History") {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5555555555 for Pillar2 service")
       whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
         "Organisation",

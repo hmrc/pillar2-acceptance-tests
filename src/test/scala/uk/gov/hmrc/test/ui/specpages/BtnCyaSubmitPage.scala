@@ -16,8 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object BtnCyaSubmitPage extends BasePage {
+  override val url: String = s"$baseUrl" + "below-threshold-notification/submit"
 
-object BtnCyaSubmitPage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/submit"
 }

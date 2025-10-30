@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object BtnConfirmationPage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/confirmation"
+object BtnConfirmationPage extends BasePage {
+  override val url: String = s"$baseUrl" + "below-threshold-notification/confirmation"
 }

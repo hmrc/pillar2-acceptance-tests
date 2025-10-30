@@ -16,8 +16,11 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object ASAConfirmationPage extends BasePage {
+  override val url: String = s"$baseUrl" + "asa/confirm"
 
-object ASAConfirmationPage extends PageObject {
-  val url: String = s"$rootUrl" + "asa/confirm"
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(continueButtonId)
+  }
 }

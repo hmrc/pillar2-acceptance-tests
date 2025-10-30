@@ -16,9 +16,22 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.cucumber.Find.findByClass
+import uk.gov.hmrc.test.ui.specpages.BtnAccountingPage.continueButton
 
-object BtnDomesticOrMnePage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/domestic-or-multinational"
+object BtnDomesticOrMnePage extends BasePage {
+  val url: String = s"$baseUrl" + "below-threshold-notification/domestic-or-multinational"
+  private val continueButton       = "govuk-button"
 
+  def entityInAndOutUkYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    findByClass(continueButton).click()
+  }
+
+  def entityInAndOutUkNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    findByClass(continueButton).click()
+  }
 }

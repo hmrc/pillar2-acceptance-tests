@@ -15,10 +15,8 @@
  */
 
 package uk.gov.hmrc.test.ui.specstepdef
-import org.openqa.selenium.By
-import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
-import uk.gov.hmrc.test.ui.cucumber.{Input, Nav, Wait}
+import uk.gov.hmrc.test.ui.cucumber.{Input, Nav}
 import uk.gov.hmrc.test.ui.specpages._
 
 object DueOverdueStepsSteps {
@@ -26,16 +24,16 @@ object DueOverdueStepsSteps {
   // ^I select option (.*) and continue on Pillar2 submission$
   def andISelectOptionXAndContinueOnPillar2Submission(option: String): Unit = {
     option match {
-          case "Yes" => Input.clickByCss("#value_0")
-          case "No"  => Input.clickByCss("#value_1")
-        }
-        BtnStartPage.clickContinue()
+      case "Yes" => Input.clickByCss("#value_0")
+      case "No"  => Input.clickByCss("#value_1")
+    }
+    BtnStartPage.clickContinue()
   }
 
   // ^I navigate back to BTN Return Submission KB Page$
   def andINavigateBackToBTNReturnSubmissionKBPage(): Unit = {
     Nav.browserBack()
-        clickByCss(BtnAgdKBPage.backLink)
+    clickByCss(BtnAgdKBPage.backLink)
   }
 
 }

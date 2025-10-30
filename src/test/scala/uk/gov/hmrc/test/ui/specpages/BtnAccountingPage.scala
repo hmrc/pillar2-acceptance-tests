@@ -16,8 +16,38 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.cucumber.Find.findByClass
 
-object BtnAccountingPage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/accounting-period"
+object BtnAccountingPage extends BasePage {
+  override val url: String          = s"$baseUrl" + "below-threshold-notification/accounting-period"
+  private val accountDetailsSummary = "a[href*='/account-details/summary']"
+  private val continueButton        = "govuk-button"
+  private val startDayId            = By.id("startDate.day")
+  private val startMonthId          = By.id("startDate.month")
+  private val startYearId           = By.id("startDate.year")
+  private val endDayId              = By.id("endDate.day")
+  private val endMonthId            = By.id("endDate.month")
+  private val endYearId             = By.id("endDate.year")
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    findByClass(continueButton).click()
+  }
+
+  def clickAccountDetailsSummaryLink(): Unit = {
+    onPage()
+    click(By.cssSelector(accountDetailsSummary))
+  }
+
+  def updateDates(): Unit = {
+    onPage(s"$baseUrl" + "manage-account/account-details/change-accounting-period")
+    sendKeys(startDayId, "01")
+    sendKeys(startMonthId, "02")
+    sendKeys(startYearId, "2024")
+    sendKeys(endDayId, "31")
+    sendKeys(endMonthId, "01")
+    sendKeys(endYearId, "2025")
+    clickButtonByText(buttonContinue)
+  }
 }

@@ -16,8 +16,26 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object AccountsSummaryPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/account-details/summary"
+object AccountsSummaryPage extends BasePage {
+  val url: String = s"$baseUrl" + "manage-account/account-details/summary"
+
+  private val changeGroupStatus      = "a[href*='/change-group-status']"
+  private val changeAccountingPeriod = "a[href*='/change-accounting-period']"
+
+  def clickChangeGroupStatusLink(): Unit = {
+    onPage()
+    click(By.cssSelector(changeGroupStatus))
+  }
+
+  def clickChangeAccountingPeriodLink(): Unit = {
+    onPage()
+    click(By.cssSelector(changeAccountingPeriod))
+  }
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(submitButtonId)
+  }
 }

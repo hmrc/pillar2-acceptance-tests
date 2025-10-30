@@ -16,9 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object BtnAgdKBPage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/amend-group-details"
+object BtnAgdKBPage extends BasePage {
+  val url: String = s"$baseUrl" + "below-threshold-notification/amend-group-details"
   val backLink    = ".govuk-back-link"
 }

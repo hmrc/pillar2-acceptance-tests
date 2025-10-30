@@ -89,7 +89,7 @@ object CommonFunctions
 //      case "UPE registration not called error page"     => UPEGRSRegistrationNotCalledErrorPage
 //      case "NFM registration failed error page"         => NFMGRSRegistrationFailedErrorPage
 //      case "NFM registration not called error page"     => NFMGRSRegistrationNotCalledErrorPage
-      case "accounts summary page"                      => AccountsSummaryPage
+//      case "accounts summary page"                      => AccountsSummaryPage
       case "Assistant role KB page"                     => AssistantRoleKBPage
       case "Agent affinity KB page"                     => AgentAffinityKBPage
       case "agent services account page"                => AgentServicesAccountPage
@@ -139,11 +139,11 @@ object CommonFunctions
       case "RFM GRS Registration Mismatch Error Page"   => RFMGRSRegistrationMismatchErrorPage
       case "RFM Contact Address Page"                   => RFMContactAddressPage
       case "RFM Final Review Page"                      => RFMFinalReviewCYAPage
-      case "ASA Pillar2 Input Page"                     => ASAPillar2InputPage
+//      case "ASA Pillar2 Input Page"                     => ASAPillar2InputPage
       case "RFM No record Match Error Page"             => RFMNoMatchErrorPage
       case "RFM Saving Progress Page"                   => RFMSavingProgressPage
       case "ASA No record Match Error Page"             => ASANoMatchErrorPage
-      case "ASA Confirmation Page"                      => ASAConfirmationPage
+//      case "ASA Confirmation Page"                      => ASAConfirmationPage
       case "ASA Home Page"                              => ASAHomePage
       case "RFM No Return Back Error Page"              => RFMNoReturnBackErrorPage
       case "ASA Not Authorised page"                    => ASANotAuthorisedPage
@@ -194,15 +194,15 @@ object CommonFunctions
       case "Manage Contact processing Page"             => ManageContactProcessingPage
       case "Outstanding Payment Page"                   => OutstandingPaymentsPage
 //      case "Due & Over Due Page"                        => DueOverduePage
-      case "BTN Accounting Period Page"                 => BtnAccountingPage
+//      case "BTN Accounting Period Page"                 => BtnAccountingPage
       case "BTN Multiple Accounting Period Page"        => BtnMultipleAccountingPage
-      case "BTN Start Page"                             => BtnStartPage
-      case "BTN Domestic or MNE Page"                   => BtnDomesticOrMnePage
-      case "BTN AGD KB Page"                            => BtnAgdKBPage
-      case "BTN CYA Submit Page"                        => BtnCyaSubmitPage
-      case "BTN Confirmation Page"                      => BtnConfirmationPage
-      case "BTN Cannot Return Page"                     => BtnCannotReturnPage
-      case "BTN Problem with service Page"              => BtnProblemWithServicePage
+//      case "BTN Start Page"                             => BtnStartPage
+//      case "BTN Domestic or MNE Page"                   => BtnDomesticOrMnePage
+//      case "BTN AGD KB Page"                            => BtnAgdKBPage
+//      case "BTN CYA Submit Page"                        => BtnCyaSubmitPage
+//      case "BTN Confirmation Page"                      => BtnConfirmationPage
+//      case "BTN Cannot Return Page"                     => BtnCannotReturnPage
+//      case "BTN Problem with service Page"              => BtnProblemWithServicePage
     }
   }
 }

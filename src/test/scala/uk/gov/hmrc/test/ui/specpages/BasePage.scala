@@ -22,6 +22,8 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.selenium.component.PageObject
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
+import uk.gov.hmrc.test.ui.cucumber.Nav
 
 import java.time.Duration
 
@@ -65,6 +67,11 @@ trait BasePage extends Matchers with PageObject {
     click(backLinkText)
   }
 
+  def clickBackButton(): Unit = {
+    onPage()
+    Nav.browserBack()
+  }
+
   def clickOnByPartialLinkText(partialLinkText: By): Unit = {
     onPage()
     click(partialLinkText)
@@ -75,4 +82,7 @@ trait BasePage extends Matchers with PageObject {
     click(button)
   }
 
+  def clickByCss(text: String): Unit = findByCss(text).click()
+
+  def clickByClass(text: String): Unit = findByCss(text).click()
 }
