@@ -16,11 +16,16 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object NFMRegistrationPage extends PageObject {
-  val url: String  = s"$rootUrl" + "business-matching/filing-member/nominate"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href='#nominateFilingMember_0']"
-  val errorMessage = ".govuk-error-message"
+object NFMRegistrationPage extends BasePage {
+  override val url: String = s"$baseUrl" + "business-matching/filing-member/nominate"
+
+  override val yesRadioId: By = By.id("nominateFilingMember_0")
+
+  def nominatedFilingMemberYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
 }

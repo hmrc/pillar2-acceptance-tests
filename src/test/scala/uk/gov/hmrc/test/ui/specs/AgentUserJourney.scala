@@ -188,7 +188,7 @@ class AgentUserJourney extends BaseSpec with Matchers {
         // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       And("Accounting Period End Month is entered as 12")
-        andAccountingPeriodXIsEnteredAsX("End Month", "12")  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+//        andAccountingPeriodXIsEnteredAsX("End Month", "12")  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)

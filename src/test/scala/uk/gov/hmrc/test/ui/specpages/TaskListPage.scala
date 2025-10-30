@@ -16,13 +16,40 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object TaskListPage extends PageObject {
-  val url: String = s"$rootUrl" + "check-progress/register-your-group"
+object TaskListPage extends BasePage {
+
+  override val url: String = s"$baseUrl" + "check-progress/register-your-group"
+
   val taskList    = ".app-task-list"
   val taskSection = ".app-task-list__section"
   val taskItems   = ".app-task-list__items"
   val taskItem    = ".app-task-list__item"
   val status      = ".hmrc-status-tag"
+
+  private val addFilingMember        = "a[href*='/nominate']"
+  private val addFurtherGroupDetails = "a[href*='/group-status']"
+  private val addContactDetails      = "a[href*='/contact-details']"
+  private val reviewAndSubmit        = "a[href*='/check-answers']"
+
+  def clickAddFilingMemberLink(): Unit = {
+    onPage()
+    click(By.cssSelector(addFilingMember))
+  }
+
+  def clickAddFurtherGroupDetailsLink(): Unit = {
+    onPage()
+    click(By.cssSelector(addFurtherGroupDetails))
+  }
+
+  def clickAddContactDetailsLink(): Unit = {
+    onPage()
+    click(By.cssSelector(addContactDetails))
+  }
+
+  def clickReviewAndSubmitLink(): Unit = {
+    onPage()
+    click(By.cssSelector(reviewAndSubmit))
+  }
 }

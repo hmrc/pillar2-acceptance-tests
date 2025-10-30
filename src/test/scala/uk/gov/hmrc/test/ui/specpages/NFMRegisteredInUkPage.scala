@@ -18,18 +18,12 @@ package uk.gov.hmrc.test.ui.specpages
 
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object GroupAccountingPeriodPage extends PageObject {
-  val url: String = s"$rootUrl" + "further-details/accounting-period"
+object NFMRegisteredInUkPage extends BasePage {
+  override val url: String  = s"$baseUrl" + "business-matching/filing-member/registered-in-uk"
 
-  val errorSummary          = ".govuk-error-summary__list"
-  val errorLinkStartDate    = "[href*='#startDate']"
-  val errorLinkEndDate      = "[href*='#endDate']"
-  val errorMessageStartDate = "#startDate-error"
-  val errorMessageEndDate   = "#endDate-error"
-  val startDay              = "startDate.day"
-  val startMonth            = "startDate.month"
-  val startYear             = "startDate.year"
-  val endDay                = "endDate.day"
-  val endMonth              = "endDate.month"
-  val endYear               = "endDate.year"
+  def registeredInUkYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
 }

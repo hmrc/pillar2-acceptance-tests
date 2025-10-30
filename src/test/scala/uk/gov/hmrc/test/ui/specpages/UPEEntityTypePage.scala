@@ -16,16 +16,33 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
 
-object UPEEntityTypePage extends PageObject {
-  val url: String = s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
+object UPEEntityTypePage extends BasePage {
+  override val url: String = s"$baseUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
 
-  val continue     = "button.govuk-button"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href*='#value']"
-  val errorMessage = ".govuk-error-message"
+  private val ukLimitedCompany            = "value_0"
+  private val limitedLiabilityPartnership = "value_1"
+  private val companyTypeNotListed        = "value_2"
+
+  def enterEntityTypeUkLimitedCompany(): Unit = {
+    onPage()
+    click(By.id(ukLimitedCompany))
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def enterEntityTypeLimitedLiabilityPartnership(): Unit = {
+    onPage()
+    click(By.id(limitedLiabilityPartnership))
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def enterEntityTypeCompanyTypeNotListed(): Unit = {
+    onPage()
+    click(By.id(companyTypeNotListed))
+    clickButtonByText(buttonSaveAndContinue)
+  }
 
   def clickContinue(): Unit = findByCss(continue).click()
 }

@@ -16,10 +16,12 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object ContactDetailsPhoneAsContactPage extends BasePage {
+  val url: String = s"$baseUrl" + "contact-details/phone"
 
-object FurtherDetailsCheckYourAnswersPage extends PageObject {
-  val url: String            = s"$rootUrl" + "further-details/check-answers"
-  val changeGroupStatus      = "a[href*='/change-group-status']"
-  val changeAccountingPeriod = "a[href*='/change-accounting-period']"
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
 }

@@ -51,21 +51,6 @@ object UPEStepsSteps {
         Input.sendKeysByCss(name, InputNFMPhonePage.phoneNumber)
         clickByCss(UPENamePage.continue)
 
-      case "Contact Details Name" =>
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
-        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
-        clickByCss(UPENamePage.continue)
-
-      case "Contact Name" =>
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
-        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
-        clickByCss(UPENamePage.continue)
-
-      case "Contact Email" =>
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputEmailPage.contactEmail)
-        Input.sendKeysByCss(name, ContactDetailsInputEmailPage.contactEmail)
-        clickByCss(UPENamePage.continue)
-
       case "Contact Phone" =>
         Wait.waitForElementToPresentByCssSelector(ContactDetailsInputPhonePage.contactPhone)
         Input.sendKeysByCss(name, ContactDetailsInputPhonePage.contactPhone)
@@ -117,10 +102,6 @@ object UPEStepsSteps {
         assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
       case "NFM Phone number" =>
         assert(getAttributeOf(InputNFMPhonePage.phoneNumber, "value").equals(name))
-      case "Contact Name" =>
-        assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
-      case "Contact Email" =>
-        assert(getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
       case "Contact Phone" =>
         assert(getAttributeOf(ContactDetailsInputPhonePage.contactPhone, "value").equals(name))
       case "Second Contact Name" =>

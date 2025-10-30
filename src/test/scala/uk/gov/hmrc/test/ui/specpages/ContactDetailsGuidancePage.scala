@@ -16,8 +16,13 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object ContactDetailsGuidancePage extends PageObject {
-  val url: String = s"$rootUrl" + "contact-details"
+object ContactDetailsGuidancePage extends BasePage {
+  override val url: String = s"$baseUrl" + "contact-details"
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(By.partialLinkText("Continue"))
+  }
 }

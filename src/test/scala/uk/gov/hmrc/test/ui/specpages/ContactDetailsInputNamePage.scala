@@ -16,9 +16,17 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object ContactDetailsInputNamePage extends PageObject {
-  val url: String = s"$rootUrl" + "contact-details/input-name"
-  val contactName = "#value"
+
+object ContactDetailsInputNamePage extends BasePage {
+  override val url: String = s"$baseUrl" + "contact-details/input-name"
+
+  private val nameValue: String = "Contact Name"
+
+  def enterName(): Unit = {
+    onPage()
+    sendKeys(textInputField, nameValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

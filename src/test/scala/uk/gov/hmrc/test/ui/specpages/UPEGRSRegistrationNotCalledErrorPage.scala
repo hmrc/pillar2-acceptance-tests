@@ -16,10 +16,17 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object UPEGRSRegistrationNotCalledErrorPage extends PageObject {
-  val url: String    = s"$rootUrl" + "business-matching/ultimate-parent/uk-based/error/unable-to-confirm-details"
-  val content        = "#main-content"
-  val header: String = "h1.govuk-heading-l"
+object UPEGRSRegistrationNotCalledErrorPage extends BasePage {
+  override val url: String = s"$baseUrl" + "business-matching/ultimate-parent/uk-based/error/unable-to-confirm-details"
+  val content              = "#main-content"
+  val header: String       = "h1.govuk-heading-l"
+
+  private val goBackToEntityType        = "a[href*='/entity-type']"
+
+  def clickGoBackToEntityTypeLink(): Unit = {
+    onPage()
+    click(By.cssSelector(goBackToEntityType))
+  }
 }

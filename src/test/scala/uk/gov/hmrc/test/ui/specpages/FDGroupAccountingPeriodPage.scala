@@ -18,22 +18,24 @@ package uk.gov.hmrc.test.ui.specpages
 
 import org.openqa.selenium.By
 
-object UPEPhoneInputPage extends BasePage {
-  override val url: String                      = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-phone"
-  val phoneNumber                      = "#phoneNumber"
-  override val textInputField: By      = By.id("phoneNumber")
-  private val phoneNumberValue: String = "01234 567890"
-  private val phoneNumberUpdatedValue: String = "09876 543210"
+object FDGroupAccountingPeriodPage extends BasePage {
+  override val url: String = s"$baseUrl" + "further-details/accounting-period"
 
-  def enterPhoneNumber(): Unit = {
+  private val startDayId   = By.id("startDate.day")
+  private val startMonthId = By.id("startDate.month")
+  private val startYearId  = By.id("startDate.year")
+  private val endDayId     = By.id("endDate.day")
+  private val endMonthId   = By.id("endDate.month")
+  private val endYearId    = By.id("endDate.year")
+
+  def enterDates(): Unit = {
     onPage()
-    sendKeys(textInputField, phoneNumberValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def updatePhoneNumber(): Unit = {
-    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-phone")
-    sendKeys(textInputField, phoneNumberUpdatedValue)
+    sendKeys(startDayId, "01")
+    sendKeys(startMonthId, "01")
+    sendKeys(startYearId, "2024")
+    sendKeys(endDayId, "01")
+    sendKeys(endMonthId, "01")
+    sendKeys(endYearId, "2025")
     clickButtonByText(buttonSaveAndContinue)
   }
 }

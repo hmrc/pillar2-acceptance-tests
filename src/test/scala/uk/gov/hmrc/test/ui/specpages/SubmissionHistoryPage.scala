@@ -16,8 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object SubmissionHistoryPage extends BasePage {
+  override val url: String = s"$baseUrl" + "submission-history"
 
-object UKCompanyGRSPage extends PageObject {
-  val url: String = s"$rootUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=ukLimitedCompany"
 }

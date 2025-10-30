@@ -16,8 +16,18 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object SecondContactDetailsPage extends BasePage {
+  val url: String = s"$baseUrl" + "contact-details/second-contact"
 
-object SecondContactDetailsPage extends PageObject {
-  val url: String = s"$rootUrl" + "contact-details/second-contact"
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    click(submitButtonId)
+  }
 }

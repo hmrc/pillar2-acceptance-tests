@@ -16,12 +16,10 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
 object UPEPhoneAsContactPage extends BasePage {
-  val url: String = s"$baseUrl" + "business-matching/ultimate-parent/no-id/phone"
+  override val url: String = s"$baseUrl" + "business-matching/ultimate-parent/no-id/phone"
 
-  def contactByPhoneYes(): Unit = {
+  def selectYes(): Unit = {
     onPage()
     click(yesRadioId)
     click(submitButtonId)

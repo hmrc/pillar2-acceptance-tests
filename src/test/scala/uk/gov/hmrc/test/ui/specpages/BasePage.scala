@@ -30,7 +30,7 @@ trait BasePage extends Matchers with PageObject {
   val url: String
   val baseUrl: String       = TestConfiguration.url("pillar2-frontend")
   val submitButtonId: By    = By.id("submit")
-  val continueButtonId: By    = By.id("continue")
+  val continueButtonId: By  = By.id("continue")
   val yesRadioId: By        = By.id("value_0")
   val noRadioId: By         = By.id("value_1")
   val countryDropdown: By   = By.id("country")
@@ -40,8 +40,8 @@ trait BasePage extends Matchers with PageObject {
   val buttonContinue        = "Continue"
   val buttonSaveAndContinue = "Save and continue"
 
-  val continue    = ".govuk-button"
-  val nameField   = "#value"
+  val continue  = ".govuk-button"
+  val nameField = "#value"
 
   private def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
     .withTimeout(Duration.ofSeconds(2))

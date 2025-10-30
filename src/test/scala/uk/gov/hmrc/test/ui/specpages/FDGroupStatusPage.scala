@@ -16,12 +16,16 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object FDGroupStatusPage extends PageObject {
-  val url: String = s"$rootUrl" + "further-details/group-status"
+object FDGroupStatusPage extends BasePage {
+  override val url: String = s"$baseUrl" + "further-details/group-status"
 
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href*='#value']"
-  val errorMessage = ".govuk-error-message"
+  private val onlyUk: By = By.id("value_0")
+
+  def selectOnlyUk(): Unit = {
+    onPage()
+    click(onlyUk)
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

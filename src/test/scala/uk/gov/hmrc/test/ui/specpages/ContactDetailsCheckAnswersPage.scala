@@ -16,10 +16,8 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object ContactDetailsCheckAnswersPage extends PageObject {
-  val url: String = s"$rootUrl" + "contact-details/check-answers"
+object ContactDetailsCheckAnswersPage extends BasePage {
+  val url: String = s"$baseUrl" + "contact-details/check-answers"
 
   val changeName          = "a[href*='/change-input-name']"
   val changeEmail         = "a[href*='/change-input-email']"
@@ -30,4 +28,8 @@ object ContactDetailsCheckAnswersPage extends PageObject {
   val changeSecondEmail = "a[href*='/change-second-input-email']"
   val changeSecondPhone = "a[href*='/change-second-input-phone']"
 
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(continueButtonId)
+  }
 }

@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.specpages
 
 import org.openqa.selenium.By
 
-object NFMLLPGRSPage extends BasePage {
-  override val url: String = s"$baseUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/fm&entityType=limitedLiabilityPartnership"
+object UPECompanyUkGRSPage extends BasePage {
+  override val url: String = s"$baseUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=ukLimitedCompany"
 
   private val registrationSuccessBvDisabled: By           = By.id("registrationSuccessBvDisabled")
   private val registrationSuccessBvEnabled: By            = By.id("registrationSuccessBvEnabled")
@@ -63,4 +63,5 @@ object NFMLLPGRSPage extends BasePage {
     click(registrationNotCalledBvFailed)
     clickButtonByText(buttonSaveAndContinue)
   }
+
 }

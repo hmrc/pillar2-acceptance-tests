@@ -24,7 +24,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
   Feature("UPE NO ID journey") {
 
-    Scenario("User adds UPE and then makes amendments on the check your answers page") {
+    Scenario("User adds a Non-UK UPE and then makes amendments on the check your answers page") {
       Given("Organisation User logs in without enrollment")
       givenXLogsInWithoutPillar2Enrolment()
 
@@ -34,7 +34,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterName()
       UPEEmailPage.enterEmail()
-      UPEPhoneAsContactPage.contactByPhoneYes()
+      UPEPhoneAsContactPage.selectYes()
       UPEPhoneInputPage.enterPhoneNumber()
 
       And("The user amends Entity name via the Check your answers page")

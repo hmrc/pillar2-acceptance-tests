@@ -16,8 +16,13 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object FDCheckYourAnswersPage extends BasePage {
+  override val url: String            = s"$baseUrl" + "further-details/check-answers"
+  val changeGroupStatus      = "a[href*='/change-group-status']"
+  val changeAccountingPeriod = "a[href*='/change-accounting-period']"
 
-object ContactDetailsPhonePage extends PageObject {
-  val url: String = s"$rootUrl" + "contact-details/phone"
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(continueButtonId)
+  }
 }

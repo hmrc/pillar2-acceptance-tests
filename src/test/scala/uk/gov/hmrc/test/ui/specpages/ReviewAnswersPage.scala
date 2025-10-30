@@ -16,10 +16,8 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object ReviewAnswersPage extends PageObject {
-  val url: String = s"$rootUrl" + "review-submit/check-answers"
+object ReviewAnswersPage extends BasePage {
+  override val url: String = s"$baseUrl" + "review-submit/check-answers"
 
   // UPE Section
   val changeUPEContact = "a[href*='/change-phone']"
@@ -27,4 +25,10 @@ object ReviewAnswersPage extends PageObject {
   // Contact Address Section
   val changeContactAddress = "a[href*='address/change-input']"
   val printThisPage        = "[data-module='hmrc-print-link']"
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    onPageSubmitById()
+  }
+
 }

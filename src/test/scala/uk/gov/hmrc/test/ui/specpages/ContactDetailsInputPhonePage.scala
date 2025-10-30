@@ -16,9 +16,18 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object ContactDetailsInputPhonePage extends PageObject {
-  val url: String  = s"$rootUrl" + "contact-details/input-phone"
+object ContactDetailsInputPhonePage extends BasePage {
+  val url: String  = s"$baseUrl" + "contact-details/input-phone"
   val contactPhone = "#phoneNumber"
+
+  override val textInputField: By      = By.id("phoneNumber")
+  private val phoneNumberValue: String = "01234 567890"
+
+  def enterPhoneNumber(): Unit = {
+    onPage()
+    sendKeys(textInputField, phoneNumberValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

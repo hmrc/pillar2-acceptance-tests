@@ -16,13 +16,15 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object DueOverduePage extends PageObject {
-  val url: String = s"$rootUrl" + "due-and-overdue-returns"
+object DueOverduePage extends BasePage {
+  override val url: String = s"$baseUrl" + "due-and-overdue-returns"
 
-  val accountPeriodSections = ".govuk-grid-column-full"
-  val dueSection            = ".govuk-tag--blue"
-  val overDueSection        = ".govuk-tag--red"
-  val accountDetails        = ".govuk-grid-row"
+  private val submissionHistory        = "a[href*='/submission-history']"
+
+  def clickSubmissionHistoryLink(): Unit = {
+    onPage()
+    click(By.cssSelector(submissionHistory))
+  }
 }

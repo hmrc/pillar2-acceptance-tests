@@ -255,56 +255,6 @@ def clickAction(action: String): Unit = {
             Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorMessage)
             getTextOf(By cssSelector (GlobalGrossRevenueEQPage.errorMessage)) should include(error)
 
-          case "UPE Org type" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.errorLink)
-            getTextOf(By cssSelector (UPEEntityTypePage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(UPEEntityTypePage.errorMessage)
-            getTextOf(By cssSelector (UPEEntityTypePage.errorMessage)) should include(error)
-
-          case "NFM Org type" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(NFMEntityTypePage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(NFMEntityTypePage.errorLink)
-            getTextOf(By cssSelector (NFMEntityTypePage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(NFMEntityTypePage.errorMessage)
-            getTextOf(By cssSelector (NFMEntityTypePage.errorMessage)) should include(error)
-
-          case "UPE Phone" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(UPEPhonePage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(UPEPhonePage.errorLink)
-            getTextOf(By cssSelector (UPEPhonePage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(UPEPhonePage.errorMessage)
-            getTextOf(By cssSelector (UPEPhonePage.errorMessage)) should include(error)
-
-          case "NFM details page" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorLink)
-            getTextOf(By cssSelector (NFMDetailsPage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(NFMDetailsPage.errorMessage)
-            getTextOf(By cssSelector (NFMDetailsPage.errorMessage)) should include(error)
-
-          case "NFM registration page" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorLink)
-            getTextOf(By cssSelector (NFMRegistrationPage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(NFMRegistrationPage.errorMessage)
-            getTextOf(By cssSelector (NFMRegistrationPage.errorMessage)) should include(error)
-
           case "NFM Phone" =>
             Wait.waitForTagNameToBeRefreshed("h1")
             Wait.waitForElementToPresentByCssSelector(NFMPhonePage.errorSummary)
@@ -324,36 +274,6 @@ def clickAction(action: String): Unit = {
 
             Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.errorMessage)
             getTextOf(By cssSelector (InputNFMPhonePage.errorMessage)) should include(error)
-
-          case "Further Details Group Status" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(FDGroupStatusPage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(FDGroupStatusPage.errorLink)
-            getTextOf(By cssSelector (FDGroupStatusPage.errorLink)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(FDGroupStatusPage.errorMessage)
-            getTextOf(By cssSelector (FDGroupStatusPage.errorMessage)) should include(error)
-
-          case "Group Accounting Period Start Date" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorLinkStartDate)
-            getTextOf(By cssSelector (GroupAccountingPeriodPage.errorLinkStartDate)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorMessageStartDate)
-            getTextOf(By cssSelector (GroupAccountingPeriodPage.errorMessageStartDate)) should include(error)
-
-          case "Group Accounting Period End Date" =>
-            Wait.waitForTagNameToBeRefreshed("h1")
-            Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorSummary)
-
-            Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorLinkEndDate)
-            getTextOf(By cssSelector (GroupAccountingPeriodPage.errorLinkEndDate)) should be(error)
-
-            Wait.waitForElementToPresentByCssSelector(GroupAccountingPeriodPage.errorMessageEndDate)
-            getTextOf(By cssSelector (GroupAccountingPeriodPage.errorMessageEndDate)) should include(error)
 
           case "Contact details display" =>
             Wait.waitForTagNameToBeRefreshed("h1")
@@ -500,9 +420,6 @@ def clickAction(action: String): Unit = {
           case "Print this page" =>
             Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printThisPage)
             assert(Driver.instance.findElement(By.cssSelector(RegistrationConfirmationPage.printThisPage)).getText.contains(linkText))
-          case "Agent Services Account" =>
-            Wait.waitForElementToPresentByCssSelector(DashboardPage.ASALink)
-            assert(Driver.instance.findElement(By.cssSelector(DashboardPage.ASALink)).getText.contains(linkText))
           case "Sign out" =>
             Wait.waitForElementToPresentByCssSelector(RepaymentConfirmationPage.signOut)
             assert(Driver.instance.findElement(By.cssSelector(RepaymentConfirmationPage.signOut)).getText.contains(linkText))

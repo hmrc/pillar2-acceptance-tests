@@ -77,9 +77,9 @@ object CYAStepsSteps {
           case "NFM Phone Number" =>
             clickByCss(NFMCheckYourAnswersPage.changePhoneNumber)
           case "FD Group Status" =>
-            clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
+            clickByCss(FDCheckYourAnswersPage.changeGroupStatus)
           case "Accounting Period" =>
-            clickByCss(FurtherDetailsCheckYourAnswersPage.changeAccountingPeriod)
+            clickByCss(FDCheckYourAnswersPage.changeAccountingPeriod)
           case "Domestic or Mne" =>
             clickByCss(BtnChangeDomesticOrMnePage.changeDomesticOrMne)
         }
