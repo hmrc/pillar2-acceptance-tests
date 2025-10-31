@@ -44,7 +44,7 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click Add filing member details link")
         andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -98,7 +98,15 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter account period as:")
-        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+        val dateRangeDataOne: Map[String, String] = Map(
+          "startDate.day"   -> "15",
+          "startDate.month" -> "1",
+          "startDate.year"  -> "2024",
+          "endDate.day"     -> "15",
+          "endDate.month"   -> "1",
+          "endDate.year"    -> "2025"
+        )
+        andIEnterAccountPeriodAs(dateRangeDataOne)
 
       Then("I should navigate to FD check your answers page")
         thenIShouldNavigateToX("FD check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -128,9 +136,7 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
+        andIAmOnFeedbackSurveyPage()
 
       When("Organisation User logs in with credId FDTask for Pillar2")
         givenXLogsInWithCredIdXForPillar2("Organisation User", "FDTask")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -154,7 +160,7 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Group accounting period page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see date field Start Day is pre-populated with 15")
-        // ⚠️ No step-def match found for: I should see date field Start Day is pre-populated with 15
+      andIShouldSeeDateFieldXIsPrepopulatedWithX("Start Day","15")
 
       When("I select back link")
         andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -173,8 +179,6 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the FD Group Status")
         andIClickOnChangeHyperlinkNextToTheX("FD Group Status")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       When("I select option In the UK and outside the UK in further details group status page")
         andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -183,25 +187,27 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("FD check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see row 1 value In the UK and outside the UK")
-        // ⚠️ No step-def match found for: I should see row 1 value In the UK and outside the UK
+        andIShouldSeeRowValue(1,"In the UK and outside the UK")
 
       When("I click on change hyperlink next to the Accounting Period")
         andIClickOnChangeHyperlinkNextToTheX("Accounting Period")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       When("I enter account period as:")
-        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+        val dateRangeDatTwo: Map[String, String] = Map(
+          "startDate.day"   -> "15",
+          "startDate.month" -> "1",
+          "startDate.year"  -> "2024",
+          "endDate.day"     -> "15",
+          "endDate.month"   -> "1",
+          "endDate.year"    -> "2025"
+        )
+        andIEnterAccountPeriodAs(dateRangeDatTwo)
 
       And("I should see row 3 value 5 May 2025")
-        // ⚠️ No step-def match found for: I should see row 3 value 5 May 2025
+        andIShouldSeeRowValue(3,"5 May 2025")
 
       And("I should see row 4 value 5 June 2026")
-        // ⚠️ No step-def match found for: I should see row 4 value 5 June 2026
-
-      And("I should see row 4 value 5 June 2026")
-        // ⚠️ No step-def match found for: I should see row 4 value 5 June 2026
-
+        andIShouldSeeRowValue(4,"5 June 2026")
     }
 
     Scenario("3 - Accounting period page Error Validations") {
@@ -224,7 +230,7 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click Add filing member details link")
         andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -240,7 +246,6 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 
       Then("I should navigate to Group accounting period page")
         thenIShouldNavigateToX("Group accounting period page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
     }
   }
 }

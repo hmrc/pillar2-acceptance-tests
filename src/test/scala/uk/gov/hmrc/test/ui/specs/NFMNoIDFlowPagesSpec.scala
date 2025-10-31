@@ -43,7 +43,7 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click Add filing member details link")
         andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -70,7 +70,12 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("NFM Address page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      val addressData: Map[String, String] = Map(
+        "addressLine1" -> " Address Line 1 CYA",
+        "addressLine3" -> "City CYA",
+        "countryCode"  -> "United Arab Emirates"
+      )
+      thenIEnterAddressAs(addressData)
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -103,7 +108,15 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("NFM Check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see details as below:")
-        andIShouldSeeDetailsAsBelow(null)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
+        val detailsMap: Map[String, String] = Map(
+          "Name"                     -> "Test CYA",
+          "Address"                  -> "United Arab Emirates",
+          "Contact name"             -> "Contact CYA",
+          "Email address"            -> "testcya@email.com",
+          "Can we contact by phone?" -> "Yes",
+          "Phone number"             -> "1234569"
+        )
+        andIShouldSeeDetailsAsBelow(detailsMap)
 
       When("I select back link")
         andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -142,7 +155,7 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click Add filing member details link")
         andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -230,14 +243,12 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the NFM Phone Contact")
         andIClickOnChangeHyperlinkNextToTheX("NFM Phone Contact")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       And("I select option No and continue to next")
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see row 5 value No")
-        // ⚠️ No step-def match found for: I should see row 5 value No
+        andIShouldSeeRowValue(5,"No")
 
       And("I select back link")
         andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

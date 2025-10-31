@@ -34,7 +34,7 @@ class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
         givenIAmOnXPage("UPE EQ")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I continue without selecting an option")
-        // ⚠️ No step-def match found for: I continue without selecting an option
+        continueAction("I continue without selecting an option")
 
       When("I choose Yes and continue")
         andIChooseXAndContinue("Yes")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -49,7 +49,7 @@ class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Global gross revenue")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I continue without selecting an option")
-        // ⚠️ No step-def match found for: I continue without selecting an option
+        continueAction("I continue without selecting an option")
 
       When("I choose Yes and continue")
         andIChooseXAndContinue("Yes")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -70,7 +70,7 @@ class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("confirmation page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I continue")
-        // ⚠️ No step-def match found for: I continue
+      continueAction("I continue")
 
       Then("I should be on auth-login page")
         thenIShouldBeOnX("auth-login page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -121,7 +121,7 @@ class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
         givenIAmOnXPage("Business activity EQ")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I continue without selecting an option")
-        // ⚠️ No step-def match found for: I continue without selecting an option
+        continueAction("I continue without selecting an option")
 
       When("I choose No and continue")
         andIChooseXAndContinue("No")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
