@@ -91,9 +91,6 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
       Then("I am on feedback survey page")
         givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
-
     }
 
     Scenario("2 - User navigates to group details page and validates the data") {

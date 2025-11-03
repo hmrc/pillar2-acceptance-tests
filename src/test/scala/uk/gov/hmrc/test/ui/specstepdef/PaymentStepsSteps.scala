@@ -215,14 +215,6 @@ object PaymentStepsSteps {
     }
   }
 
-  // ^I provide Refund Amount as (.*)$""")((refundAmount: String) => {
-  def andIProvideRefundAmountAsX(refundAmount: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Input.sendKeysByCss(refundAmount, RepaymentAmountPage.refundAmountField)
-    clickByCss(RepaymentAmountPage.continue)
-  }
-
-  //And("""^I provide Repayment contact (.*) as (.*)$
 
   def IProvideRepaymentContactXAsX(page: String, Value: String): Unit = {
     page match {

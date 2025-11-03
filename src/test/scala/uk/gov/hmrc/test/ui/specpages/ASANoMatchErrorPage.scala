@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object ASANoMatchErrorPage extends PageObject {
-  val url: String = s"$rootUrl" + "asa/error/no-match"
+object ASANoMatchErrorPage extends BasePage {
+  val url: String = s"$baseUrl" + "asa/error/no-match"
 }

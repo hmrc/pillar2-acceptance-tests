@@ -74,12 +74,7 @@ object UPEStepsSteps {
     }
   }
 
-  // ^I am on feedback survey page$
-  def andIAmOnFeedbackSurveyPage(): Unit = {
-    Check.checkH1("Give feedback")
-  }
-
-  // ^I should see the answer (.*) remain selected$
+   // ^I should see the answer (.*) remain selected$
   def andIShouldSeeTheAnswerXRemainSelected(answer: String): Unit = {
     Check.checkAnswerSelection(answer)
   }
@@ -87,36 +82,6 @@ object UPEStepsSteps {
   // ^I should see the option (.*) remain selected$
   def andIShouldSeeTheOptionXRemainSelected(answer: String): Unit = {
     Check.checkOptionSelected(answer)
-  }
-
-  // ^I should see the (.*) field is pre-populated with (.*)$
-  def andIShouldSeeTheXFieldIsPrepopulatedWithX(field: String, name: String): Unit = {
-    field match {
-//          case "NFM name" =>
-//            assert(getAttributeOf(UPENamePage.nameField, "value").equals(name))
-      case "Phone number" =>
-        assert(getAttributeOf(UPEPhoneInputPage.phoneNumber, "value").equals(name))
-      case "NFM Contact name" =>
-        assert(getAttributeOf(NFMContactNamePage.contactName, "value").equals(name))
-      case "NFM Contact Email" =>
-        assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
-      case "NFM Phone number" =>
-        assert(getAttributeOf(InputNFMPhonePage.phoneNumber, "value").equals(name))
-      case "Contact Phone" =>
-        assert(getAttributeOf(ContactDetailsInputPhonePage.contactPhone, "value").equals(name))
-      case "Second Contact Name" =>
-        assert(getAttributeOf(SecondContactNamePage.contactName, "value").equals(name))
-      case "Second Contact Email" =>
-        assert(getAttributeOf(SecondContactEmailPage.contactEmail, "value").equals(name))
-      case "Second Contact Input" =>
-        assert(getAttributeOf(SecondContactInputPage.contactPhone, "value").equals(name))
-      case "Redirect URL" =>
-        assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
-      case "PLRID" =>
-        assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
-      case "UK Bank Name" =>
-        assert(getAttributeOf(UKBankAccountPaymentPage.UkBankName, "value").equals(name))
-    }
   }
 
   // ^I select option (.*) and continue to GRS page$
@@ -163,26 +128,9 @@ object UPEStepsSteps {
       case "party type mismatch" =>
         Wait.waitForElement("registrationFailedPartyTypeMismatch")
         Input.clickById("registrationFailedPartyTypeMismatch")
-      case "generic error" =>
-        Wait.waitForElement("registrationFailedGeneric")
-        Input.clickById("registrationFailedGeneric")
       case "identifiers not match" =>
         Wait.waitForElement("registrationFailedGeneric")
         Input.clickById("registrationNotCalledIdentifierMismatch")
-      case "BV failed" =>
-        Wait.waitForElement("registrationFailedGeneric")
-        Input.clickById("registrationNotCalledBvFailed")
     }
   }
-
-  // ^The json response Body should contain the status (.*)$
-  def thenTheJsonResponseBodyShouldContainTheStatusX(text: String): Unit = {
-    Check.checkBodyText(text)
-  }
-
-  // ^I click on Save&Continue button
-  def andIClickOnSaveContinueButton(): Unit = {
-    UPEEntityTypePage.clickContinue()
-  }
-
 }

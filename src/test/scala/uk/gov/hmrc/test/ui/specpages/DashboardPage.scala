@@ -17,27 +17,26 @@
 package uk.gov.hmrc.test.ui.specpages
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object DashboardPage extends BasePage {
   override val url: String = s"$baseUrl" + "pillar2-top-up-tax-home"
 
-  private val ASALink     = "a[href*='/asa/home']"
-  private val dueAndOverdueReturns        = "a[href*='/due-and-overdue-returns']"
-  private val submissionHistory = "a[href*='/submission-history']"
-  private val paymentHistory      = "a[href*='/payment/history']"
-  private val paymentOutstanding        = "a[href*='/payment/outstanding']"
-  private val requestRepayment        = "a[href*='/repayment/before-you-start']"
-  private val manageContactDetails        = "a[href*='/contact-details/summary']"
-  private val manageGroupDetails        = "a[href*='/account-details/summary']"
-  private val submitBTN        = "a[href*='/below-threshold-notification/start']"
+  private val ASALink              = "a[href*='/asa/home']"
+  private val dueAndOverdueReturns = "a[href*='/due-and-overdue-returns']"
+  private val submissionHistory    = "a[href*='/submission-history']"
+  private val paymentHistory       = "a[href*='/payment/history']"
+  private val paymentOutstanding   = "a[href*='/payment/outstanding']"
+  private val requestRepayment     = "a[href*='/repayment/before-you-start']"
+  private val manageContactDetails = "a[href*='/contact-details/summary']"
+  private val manageGroupDetails   = "a[href*='/account-details/summary']"
+  private val submitBTN            = "a[href*='/below-threshold-notification/start']"
 
   def clickASALink(): Unit = {
     onPage()
     click(By.cssSelector(ASALink))
   }
 
-    def clickDueAndOverdueReturnsLink(): Unit = {
+  def clickDueAndOverdueReturnsLink(): Unit = {
     onPage()
     clickOnByPartialLinkText(By.cssSelector(dueAndOverdueReturns))
   }

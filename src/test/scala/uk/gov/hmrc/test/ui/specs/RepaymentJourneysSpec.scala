@@ -71,8 +71,6 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
       Then("I am on feedback survey page")
         givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
 
       When("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
         whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
