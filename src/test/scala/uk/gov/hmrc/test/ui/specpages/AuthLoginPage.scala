@@ -69,6 +69,36 @@ object AuthLoginPage extends BrowserDriver with PageObject {
     selectAffinityGroupOrg()
     clickSubmitButton()
   }
+  case class Enrolment(enrolmentKey: String, identifierName: String, identifierValue: String)
+
+  def loginToRFM(userType: String,
+                 enrolment: Option[Enrolment] = None,
+                 credRole: String = "User",
+                 groupId: String = ""): Unit = {
+    Nav.navigateTo(url)
+    Input.sendKeysByName(rfmUrl, redirectUrlField)
+    selectAffinityGroup(userType)
+    selectCredRole(credRole)
+    addGroupId(groupId)
+    enrolment.foreach { e =>
+      addEnrolment(e.enrolmentKey, e.identifierName, e.identifierValue)
+    }
+    clickSubmitButton()
+  }
+
+def addEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
+  Input.sendKeysById(enrolmentKeyField, enrolmentKey)
+  Input.sendKeysById(identifierNameField, identifierName)
+  Input.sendKeysById(identifierValueField, identifierValue)
+}
+  private def addGroupId(groupId: String): Unit = {
+    Input.sendKeysById(groupIdField, groupId)
+  }
+  private def selectAffinityGroup(userType: String): Unit =
+    new Select(findAffinityGroup()).selectByVisibleText(userType)
+
+  private def selectCredRole(role: String): Unit =
+    new Select(findCredentialRole()).selectByVisibleText(role)
 
   def loginWithUserToRFM(name: String): Unit = {
     Nav.navigateTo(url)

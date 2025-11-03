@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.upe._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._

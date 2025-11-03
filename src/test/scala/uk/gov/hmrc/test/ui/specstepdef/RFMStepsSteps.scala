@@ -24,6 +24,8 @@ import uk.gov.hmrc.test.ui.cucumber.Find.findURL
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
+
 import scala.util.Try
 import uk.gov.hmrc.test.ui.specstepdef.CommonFunctions._
 
@@ -40,17 +42,16 @@ object RFMStepsSteps {
         }
   }
 
+//  def loginToRFM(userType: String, page: String): Unit = {
+//
+//
+//  }
+
   // ^I access RFM (.*) page$
   def givenIAccessRFMXPage(name: String): Unit = {
     name match {
           case "start"              => Nav.navigateTo(RFMStartPage.url)
           case "corporate position" => Nav.navigateTo(RFMCorpPositionPage.url)
-          case "New NFM guidance"   => Nav.navigateTo(NewNFMGuidancePage.url)
-          case "Contact Guidance"   => Nav.navigateTo(RFMContactGuidancePage.url)
-          case "CYA NFM"            => Nav.navigateTo(RFMNewNFMContactNamePage.url)
-          case "Saving Progress"    => Nav.navigateTo(RFMSavingProgressPage.url)
-          case "contact email"      => Nav.navigateTo(RFMContactEmailPage.url)
-
         }
   }
 
@@ -88,7 +89,7 @@ object RFMStepsSteps {
             Input.sendKeysByCss(name, RFMSecondContactPhonePage.phoneField)
 
         }
-        RFMStartPage.clickContinue()
+//        RFMStartPage.clickContinue()
   }
 
   // ^Registration (.*) is entered as (.*)$
@@ -149,7 +150,7 @@ object RFMStepsSteps {
           case "UPE" => Input.clickById("value_0")
           case "NFM" => Input.clickById("value_1")
         }
-        RFMStartPage.clickContinue()
+//        RFMStartPage.clickContinue()
   }
 
   // ^I should see the row (\d+) value (.*)$

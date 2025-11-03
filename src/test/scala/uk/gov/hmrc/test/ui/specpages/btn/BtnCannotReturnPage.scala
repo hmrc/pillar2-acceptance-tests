@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.btn
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object BtnCannotReturnPage extends BasePage {
   override val url: String = s"$baseUrl" + "below-threshold-notification/cannot-return"

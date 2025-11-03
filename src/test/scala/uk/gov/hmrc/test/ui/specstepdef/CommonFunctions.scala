@@ -71,12 +71,6 @@ object CommonFunctions
       case "Subscription API error page"                => SubscriptionAPIerrorPage
       case "Registration API error page"                => RegistrationAPIerrorPage
       case "Registration In Progress page"              => RegistrationInProgressPage
-      case "RFM start page"                             => RFMStartPage
-      case "Individual RFM KB Page"                     => IndividualRFMKBPage
-      case "Agent RFM KB Page"                          => AgentRFMKBPage
-      case "RFM enter pillar2 id page"                  => RFMEnterPillar2IdPage
-      case "Assistant User RFM KB Page"                 => AssistantUserRFMKBPage
-      case "Duplicate RFM KB Page"                      => DuplicateRFMKBPage
       case "RFM Registration Date Page"                 => RFMRegistrationDatePage
       case "Incomplete Data Submission Error Page"      => IncompleteDataSubmissionErrorPage
       case "RFM CYA Page"                               => RFMCYAPage
@@ -140,7 +134,6 @@ object CommonFunctions
       case "Registration processing page"               => RegistrationProcessingPage
       case "Repayment processing page"                  => RepaymentProcessingPage
       case "RFM processing page"                        => RFMProcessingPage
-      case "RFM Existing Member KB Page"                => RFMExistingMemberKBPage
       case "Unauthorised Page"                          => UnauthorisedPage
       case "Repayment change amount Page"               => RepaymentChangeAmountPage
       case "Repayment change method Page"               => RepaymentChangeMethodPage

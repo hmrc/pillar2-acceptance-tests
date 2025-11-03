@@ -18,10 +18,8 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
+import uk.gov.hmrc.test.ui.specpages.asa.{ASAConfirmationPage, ASAIndividualKBPage, ASANoMatchErrorPage, ASANotAuthorisedPage, ASAOrganisationKBPage, ASAPillar2InputPage}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.tags.Wip
 
 class SubAgentUserSpec extends BaseSpec with Matchers {
 

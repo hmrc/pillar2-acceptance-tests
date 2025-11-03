@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specstepdef
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.asa.ASAPillar2InputPage
 
 object ASAStepsSteps {
 

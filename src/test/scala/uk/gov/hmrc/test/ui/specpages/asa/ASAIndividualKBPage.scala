@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.asa
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object ASAIndividualKBPage extends BasePage {
   val url: String = s"$baseUrl" + "asa/error/individual"

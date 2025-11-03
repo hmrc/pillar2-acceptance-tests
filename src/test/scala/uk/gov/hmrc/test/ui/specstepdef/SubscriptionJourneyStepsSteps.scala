@@ -20,6 +20,7 @@ import io.cucumber.datatable.DataTable
 import uk.gov.hmrc.test.ui.cucumber.Input.getAttributeOfId
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object SubscriptionJourneyStepsSteps {
 

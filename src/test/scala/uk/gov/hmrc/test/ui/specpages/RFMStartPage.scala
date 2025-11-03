@@ -16,12 +16,11 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object RFMStartPage extends BasePage {
+  val url: String = s"$baseUrl" + "replace-filing-member/start"
 
-object RFMStartPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/start"
-
-  val continue              = ".govuk-button"
-  def clickContinue(): Unit = findByCss(continue).click()
+  def continueToNextPage(): Unit = {
+    onPage()
+    clickByCss(continue)
+  }
 }

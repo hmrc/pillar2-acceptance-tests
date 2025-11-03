@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.upe._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 
 class UPENoIDFLowPageSpec extends BaseSpec with Matchers {

@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.upe
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object UPEGRSRegistrationNotCalledErrorPage extends BasePage {
   override val url: String = s"$baseUrl" + "business-matching/ultimate-parent/uk-based/error/unable-to-confirm-details"

@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.upe
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object UPEContactNamePage extends BasePage {
   val url: String = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-business-name"

@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.upe
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object UPECompanyUkGRSPage extends BasePage {
   override val url: String = s"$baseUrl" + "test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=ukLimitedCompany"

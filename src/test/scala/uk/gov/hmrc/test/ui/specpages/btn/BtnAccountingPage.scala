@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.btn
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.cucumber.Find.findByClass
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object BtnAccountingPage extends BasePage {
   override val url: String          = s"$baseUrl" + "below-threshold-notification/accounting-period"

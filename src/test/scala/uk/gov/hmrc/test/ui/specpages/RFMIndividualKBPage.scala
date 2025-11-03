@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object IndividualRFMKBPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/error/individual"
+object RFMIndividualKBPage extends BasePage {
+  val url: String = s"$baseUrl" + "replace-filing-member/error/individual"
 }

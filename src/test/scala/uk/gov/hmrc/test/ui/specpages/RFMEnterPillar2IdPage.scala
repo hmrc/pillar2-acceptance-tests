@@ -16,9 +16,13 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object RFMEnterPillar2IdPage extends PageObject {
-  val url: String       = s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
+object RFMEnterPillar2IdPage extends BasePage {
+  val url: String       = s"$baseUrl" + "replace-filing-member/security/enter-pillar2-id"
   val pillar2TopUpTaxId = "#value"
+
+  def enterPLRId(pLRIdValue: String): Unit = {
+    onPage()
+    sendKeys(textInputField, pLRIdValue)
+    clickButtonByText(buttonContinue)
+  }
 }
