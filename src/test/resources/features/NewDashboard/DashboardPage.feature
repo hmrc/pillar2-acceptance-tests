@@ -26,7 +26,8 @@ Feature: Dashboard Page
     When I click Sign out link
     Then I am on feedback survey page
 
-  @batch1 @zap_accessibility
+    # TODO : Final implementation to follow after Cucumber to Scala migration
+  @batch1 @zap_accessibility @ignore
   Scenario: 2 - User navigates to group details page and validates the data
     Given Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service
     Then I should be on Dashboard page
