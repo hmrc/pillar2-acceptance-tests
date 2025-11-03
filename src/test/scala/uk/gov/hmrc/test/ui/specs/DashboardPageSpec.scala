@@ -128,17 +128,16 @@ class DashboardPageSpec extends BaseSpec with Matchers {
           "endDate.month"   -> "6",
           "endDate.year"    -> "2026"
         )
-        andIEnterAccountPeriodAs(dateRangeData)      // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+        andIEnterAccountPeriodAs(dateRangeData)
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should be redirected to Manage Account processing Page or Dashboard page")
-      thenIShouldBeRedirectedTo("Manage Account processing Page","Dashboard page")
+        thenIShouldBeRedirectedTo("Manage Account processing Page","Dashboard page")
 
       And("I should be on Dashboard page")
-        thenIShouldBeOnX("Dashboard page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
+        thenIShouldBeOnX("Dashboard page")
     }
 
     Scenario("3 - User navigates to amend contact details page and validates the data") {
