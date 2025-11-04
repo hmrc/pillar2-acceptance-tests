@@ -280,7 +280,10 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     Scenario("11 - User can navigate to Entity type not listed hyperlink on NFM Org type page") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       Then("I should be on UPE business page")
       thenIShouldBeOnX("UPE business page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

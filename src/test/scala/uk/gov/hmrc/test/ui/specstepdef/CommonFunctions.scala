@@ -71,9 +71,7 @@ object CommonFunctions
       case "Subscription API error page"                => SubscriptionAPIerrorPage
       case "Registration API error page"                => RegistrationAPIerrorPage
       case "Registration In Progress page"              => RegistrationInProgressPage
-      case "RFM Registration Date Page"                 => RFMRegistrationDatePage
       case "Incomplete Data Submission Error Page"      => IncompleteDataSubmissionErrorPage
-      case "RFM CYA Page"                               => RFMCYAPage
       case "RFM Corp Position Page"                     => RFMCorpPositionPage
       case "New NFM guidance page"                      => NewNFMGuidancePage
       case "RFM registered in UK page"                  => RFMRegisteredInUKPage
@@ -100,7 +98,6 @@ object CommonFunctions
       case "RFM Contact Address Page"                   => RFMContactAddressPage
       case "RFM Final Review Page"                      => RFMFinalReviewCYAPage
       case "RFM No record Match Error Page"             => RFMNoMatchErrorPage
-      case "RFM Saving Progress Page"                   => RFMSavingProgressPage
       case "ASA Home Page"                              => ASAHomePage
       case "RFM No Return Back Error Page"              => RFMNoReturnBackErrorPage
       case "RFM Confirmation Page"                      => RFMConfirmationPage

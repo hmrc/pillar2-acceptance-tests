@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
@@ -29,7 +30,10 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     Scenario("1 - Verify RFM GRS journey when New NFM is based in UK - UK limited company") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start") // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -113,7 +117,10 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     Scenario("2 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start") // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -276,7 +283,10 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     Scenario("3 - User registration as Limited liability partnership failed with party type mismatch error") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start") // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -344,7 +354,10 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     Scenario("4 - User registration as UK limited company failed with identifiers mismatch error and entity type page validation") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start") // auto-chosen (score=1.00, RFMStepsSteps.scala)

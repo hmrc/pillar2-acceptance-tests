@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.thenIShouldBeRedirectedToGuidancePageInANewTab
@@ -27,7 +28,10 @@ class IDValidationPageSpec extends BaseSpec with Matchers {
 
     Scenario("1 - Validation page and guidance page for users with NO PLRID and error validation.") {
       Given("Organisation User logs in with BTA for Pillar2")
-      givenXLogsInWithBTAForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "bta"
+      )
 
       Then("I should be on bta pillar2 ID check page")
       thenIShouldBeOnX("bta pillar2 ID check page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -51,7 +55,10 @@ class IDValidationPageSpec extends BaseSpec with Matchers {
 
     Scenario("2 - Confirmation page for users with PLRID") {
       Given("Organisation User logs in with BTA for Pillar2")
-      givenXLogsInWithBTAForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "bta"
+      )
 
       Then("I should be on bta pillar2 ID check page")
       thenIShouldBeOnX("bta pillar2 ID check page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

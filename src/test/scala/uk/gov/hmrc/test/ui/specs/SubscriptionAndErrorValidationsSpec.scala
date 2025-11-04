@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
@@ -137,7 +138,10 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
 
     Scenario("2 - User redirected to a placeholder error page, for an incomplete data submission during registration") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       Then("I should be on UPE business page")
       thenIShouldBeOnX("UPE business page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -417,7 +421,10 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
 
     Scenario("4 - Verify the link on page can't be found page") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("I access random page")
 //      givenIAccessRandomPage() // auto-chosen (score=1.00, CommonStepsSteps.scala)

@@ -16,11 +16,14 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object RFMCYAPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/security/check-answers"
+object RFMCYAPage extends BasePage {
+  val url: String = s"$baseUrl" + "replace-filing-member/security/check-answers"
 
   val changePID              = "a[href*='/change-enter-pillar-2-id']"
   val changeRegistrationDate = "a[href*='/change-registration-date']"
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    clickButtonByText(buttonConfirmAndContinue)
+  }
 }

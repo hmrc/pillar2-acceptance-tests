@@ -28,11 +28,11 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
   Feature("RFM check your answers page") {
 
-    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey", Wip) {
+    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey") {
       Given("Organisation User logs in with rfm URL to Pillar2")
       login(
         userType = "Organisation",
-        pageUrl = "rfm"
+        pageUrl = "rfm-start"
       )
 
       When("I provide RFM pillar2 id as XEPLR0123456400")
@@ -116,7 +116,10 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     Scenario("2 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start") // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -211,7 +214,10 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     Scenario("3 - Verify Incomplete data error") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start") // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -312,7 +318,11 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     Scenario("4 - Verify Security questions are not pre populated for RFM journey") {
       Given("Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2")
-      givenXLogsInToRFMWithCredIdXForPillar2("Organisation User", "RFMSaveProgress") // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "rfm",
+        credId = "RFMSaveProgress"
+      )
 
       Then("I should be on RFM enter pillar2 id page")
       thenIShouldBeOnX("RFM enter pillar2 id page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -365,7 +375,11 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
       andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2")
-      givenXLogsInToRFMWithCredIdXForPillar2("Organisation User", "RFMSaveProgress") // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "rfm",
+        credId = "RFMSaveProgress"
+      )
 
       Then("I access RFM start page")
       givenIAccessRFMXPage("start") // auto-chosen (score=1.00, RFMStepsSteps.scala)

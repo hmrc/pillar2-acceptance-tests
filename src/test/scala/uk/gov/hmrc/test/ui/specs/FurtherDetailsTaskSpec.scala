@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
@@ -30,7 +31,11 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 
     Scenario("1 - User navigates to check your answer page answering all the questions of Further Details Page") {
       Given("Organisation User logs in as upe with credId FDTask for Pillar2")
-      givenXLogsInAsUpeWithCredIdXForPillar2("Organisation User", "FDTask") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe",
+        credId = "FDTask"
+      )
 
       When("I select option Yes and continue to next")
       andISelectOptionXAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -137,7 +142,11 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 //        andIAmOnFeedbackSurveyPage()
 
       When("Organisation User logs in with credId FDTask for Pillar2")
-      givenXLogsInWithCredIdXForPillar2("Organisation User", "FDTask") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend",
+        credId = "FDTask"
+      )
 
       And("The Task Edit further group details status should be Completed")
       andTheTaskXStatusShouldBeX("Edit further group details", "Completed") // auto-chosen (score=1.00, TaskListStepsSteps.scala)
@@ -170,7 +179,11 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 
     Scenario("2 - Change all the details from Furthers details check your answers page") {
       Given("Organisation User navigates to FD check your answer page with credId FDTask")
-      givenOrganisationUserNavigatesToXCheckYourAnswerPageWithCredIdX("FD", "FDTask") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "contact-details-cya",
+        credId = "FDTask"
+      )
 
       Then("I should be on FD check your answers page")
       thenIShouldBeOnX("FD check your answers page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -213,7 +226,11 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
       thenIClearTheCache() // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Given("Organisation User logs in as upe with credId APErrors for Pillar2")
-      givenXLogsInAsUpeWithCredIdXForPillar2("Organisation User", "APErrors") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe",
+        credId = "APErrors"
+      )
 
       When("I select option Yes and continue to next")
       andISelectOptionXAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)

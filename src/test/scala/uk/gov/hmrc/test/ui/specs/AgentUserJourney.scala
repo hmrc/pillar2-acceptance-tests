@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
@@ -310,7 +311,10 @@ class AgentUserJourney extends BaseSpec with Matchers {
 
     Scenario("4 - Verify Agent service account user unauthorised pages") {
       Given("Individual User logs in to register for Pillar2 Agent service")
-      givenXLogsInToRegisterForPillar2AgentService("Individual User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Individual",
+        pageUrl = "asa"
+      )
 
       Then("I should be on ASA Individual KB Page")
       thenIShouldBeOnX("ASA Individual KB Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -361,7 +365,10 @@ class AgentUserJourney extends BaseSpec with Matchers {
 
     Scenario("5 - Verify Agent service account user unauthorised pages") {
       Given("Organisation User logs in to register for Pillar2 Agent service")
-      givenXLogsInToRegisterForPillar2AgentService("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "asa"
+      )
 
       Then("I should be on ASA Organisation KB Page")
       thenIShouldBeOnX("ASA Organisation KB Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -409,7 +416,10 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldBeOnX("auth-login page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("Assistant User logs in to register for Pillar2 Agent service")
-      givenXLogsInToRegisterForPillar2AgentService("Assistant User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Assistant",
+        pageUrl = "asa"
+      )
 
       Then("I should be on ASA Organisation KB Page")
       thenIShouldBeOnX("ASA Organisation KB Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

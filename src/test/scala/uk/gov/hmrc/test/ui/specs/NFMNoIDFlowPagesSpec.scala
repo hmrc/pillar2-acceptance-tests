@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
@@ -29,7 +30,11 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
 
     Scenario("1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated") {
       Given("Organisation User logs in as upe with credId NFMCYA for Pillar2")
-      givenXLogsInAsUpeWithCredIdXForPillar2("Organisation User", "NFMCYA") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe",
+        credId = "NFMCYA"
+      )
 
       When("I select option Yes and continue to next")
       andISelectOptionXAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -141,7 +146,10 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
 
     Scenario("2 - Validate different error messages for NFM no ID journey pages") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("I select option Yes and continue to next")
       andISelectOptionXAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)

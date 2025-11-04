@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
@@ -30,7 +31,11 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     Scenario("1 - Create a new subscription with UPE NoID Flow and NFM No Id flow to validate Contact Details") {
       Given("Organisation User logs in as upe with credId ContactDetails for Pillar2")
-      givenXLogsInAsUpeWithCredIdXForPillar2("Organisation User", "ContactDetails") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe",
+        credId = "ContactDetails"
+      )
 
       Then("I should be on UPE business page")
       thenIShouldBeOnX("UPE business page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -281,7 +286,11 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     Scenario("2 - Check you Answers Page Validations") {
       Given("Organisation User navigates to Contact Details check your answer page with credId ContactDetails")
-      givenOrganisationUserNavigatesToXCheckYourAnswerPageWithCredIdX("Contact Details", "ContactDetails") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "contact-details-cya",
+        credId = "ContactDetails"
+      )
 
       Then("I should be on Contact details Check answers page")
       thenIShouldBeOnX("Contact details Check answers page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -449,7 +458,10 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
       thenIClearTheCache() // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       When("I select option No and continue to next")
       andISelectOptionXAndContinueToNext("No") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -685,7 +697,10 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     Scenario("4 - Validate subscription journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       When("I select option Yes and continue to next")
       andISelectOptionXAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -844,7 +859,10 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     Scenario("5 - Validate Yes journey from knock back page for duplicate details on registration for UPE and NFM GRS flows") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       When("I select option Yes and continue to next")
       andISelectOptionXAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -1032,7 +1050,10 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     Scenario("6 - UPE No Id journey navigation to registration in progress page") {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       Then("I should be on UPE business page")
       thenIShouldBeOnX("UPE business page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

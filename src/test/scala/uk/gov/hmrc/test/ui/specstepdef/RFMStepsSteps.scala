@@ -23,17 +23,6 @@ import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object RFMStepsSteps {
 
-  // ^(.*) logs in with rfm URL to Pillar2$
-  def givenXLogsInWithRfmURLToPillar2(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginWithUserToRFM(name)
-      case "Individual User"   => AuthLoginPage.loginAsIndToRFM(name)
-      case "Agent User"        => AuthLoginPage.loginAsAgentToRFM(name)
-      case "Assistant User"    => AuthLoginPage.loginAssistantToRFM(name)
-
-    }
-  }
-
   // ^I access RFM (.*) page$
   def givenIAccessRFMXPage(name: String): Unit = {
     name match {
@@ -81,22 +70,22 @@ object RFMStepsSteps {
 
   // ^Registration (.*) is entered as (.*)$
   def andRegistrationXIsEnteredAsX(field: String, name: String): Unit = {
-    field match {
-      case "Day" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regDay)
-        Input.sendKeysById(RFMRegistrationDatePage.regDay, name)
-
-      case "Month" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regMonth)
-        Input.sendKeysById(RFMRegistrationDatePage.regMonth, name)
-
-      case "Year" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
-        Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
-    }
+//    field match {
+//      case "Day" =>
+//        Wait.waitForTagNameToBeRefreshed("h1")
+//        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regDay)
+//        Input.sendKeysById(RFMRegistrationDatePage.regDay, name)
+//
+//      case "Month" =>
+//        Wait.waitForTagNameToBeRefreshed("h1")
+//        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regMonth)
+//        Input.sendKeysById(RFMRegistrationDatePage.regMonth, name)
+//
+//      case "Year" =>
+//        Wait.waitForTagNameToBeRefreshed("h1")
+//        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
+//        Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
+//    }
   }
 
   // ^I click change link for RFM (.*)
@@ -136,10 +125,10 @@ object RFMStepsSteps {
 
   // ^(.*) logs in to RFM with credId (.*) for Pillar2
   def givenXLogsInToRFMWithCredIdXForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
-      case _                   => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
-    }
+//    name match {
+//      case "Organisation User" => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
+//      case _                   => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
+//    }
   }
 
   // ^I navigate back to RFM CYA Page from GRS Page

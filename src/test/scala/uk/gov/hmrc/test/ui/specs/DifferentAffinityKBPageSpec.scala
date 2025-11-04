@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 
@@ -26,7 +27,10 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     Scenario("1 - User logins as organisation user and standard role") {
       Given("Assistant User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Assistant User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Assistant",
+        pageUrl = "pillar2-frontend"
+      )
 
       Then("I should be on Assistant role KB page")
       thenIShouldBeOnX("Assistant role KB page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -53,7 +57,10 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     Scenario("2 - User logins as Agent") {
       Given("Agent User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Agent User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Agent",
+        pageUrl = "pillar2-frontend"
+      )
 
       Then("I should be on Agent affinity KB page")
       thenIShouldBeOnX("Agent affinity KB page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -104,7 +111,10 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     Scenario("3 - User logins as Individual User") {
       Given("Individual User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Individual User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Individual",
+        pageUrl = "pillar2-frontend"
+      )
 
       Then("I should be on Individual affinity KB page")
       thenIShouldBeOnX("Individual affinity KB page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -116,7 +126,10 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
       thenIShouldBeOnX("auth-login page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("Individual User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Individual User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Individual",
+        pageUrl = "pillar2-frontend"
+      )
 
       Then("I should be on Individual affinity KB page")
       thenIShouldBeOnX("Individual affinity KB page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -143,7 +156,10 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     Scenario("4 - User logins as organisation user and standard role - ZAP-Accessibility Tests") {
       Given("Assistant User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Assistant User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Assistant",
+        pageUrl = "pillar2-frontend"
+      )
 
       Then("I should be on Assistant role KB page")
       thenIShouldBeOnX("Assistant role KB page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -152,7 +168,10 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     Scenario("5 - User logins as Agent") {
       Given("Agent User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Agent User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Agent",
+        pageUrl = "pillar2-frontend"
+      )
 
       Then("I should be on Agent affinity KB page")
       thenIShouldBeOnX("Agent affinity KB page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -166,7 +185,10 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - User logins as Individual User") {
       Given("Individual User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Individual User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Individual",
+        pageUrl = "pillar2-frontend"
+      )
 
       Then("I should be on Individual affinity KB page")
       thenIShouldBeOnX("Individual affinity KB page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

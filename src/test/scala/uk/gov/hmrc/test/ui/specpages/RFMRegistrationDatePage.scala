@@ -16,12 +16,20 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
 
-object RFMRegistrationDatePage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/security/registration-date"
+object RFMRegistrationDatePage extends BasePage {
+  val url: String = s"$baseUrl" + "replace-filing-member/security/registration-date"
 
-  val regDay   = "rfmRegistrationDate.day"
-  val regMonth = "rfmRegistrationDate.month"
-  val regYear  = "rfmRegistrationDate.year"
+  private val registrationDayId   = By.id("rfmRegistrationDate.day")
+  private val registrationMonthId = By.id("rfmRegistrationDate.month")
+  private val registrationYearId  = By.id("rfmRegistrationDate.year")
+
+  def enterDates(day: String, month: String, year: String): Unit = {
+    onPage()
+    sendKeys(registrationDayId, day)
+    sendKeys(registrationMonthId, month)
+    sendKeys(registrationYearId, year)
+    clickButtonByText(buttonContinue)
+  }
 }

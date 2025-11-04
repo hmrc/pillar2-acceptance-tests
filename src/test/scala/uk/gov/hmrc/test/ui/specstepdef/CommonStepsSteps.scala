@@ -26,106 +26,6 @@ import uk.gov.hmrc.test.ui.specpages._
 
 object CommonStepsSteps {
 
-  // ^(.*) logs in to register for Pillar2$
-  def givenXLogsInToRegisterForPillar2(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginWithUser(name)
-      case "Individual User"   => AuthLoginPage.loginAsInd(name)
-      case "Agent User"        => AuthLoginPage.loginAsAgent(name)
-      case "Assistant User"    => AuthLoginPage.loginAssistant(name)
-    }
-  }
-
-  // ^(.*) logs in to register for Pillar2 Agent service$
-  def givenXLogsInToRegisterForPillar2AgentService(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginAsOrgToASA(name)
-      case "Individual User"   => AuthLoginPage.loginAsIndToASA(name)
-      case "Assistant User"    => AuthLoginPage.loginAsAssistantToASA(name)
-
-    }
-  }
-
-  // ^(.*) logs in with BTA for Pillar2$
-  def givenXLogsInWithBTAForPillar2(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginUsingBta(name)
-      case _                   => AuthLoginPage.loginToSubscribe(name)
-    }
-  }
-
-  // ^.* logs in without Pillar2 enrolment$
-  def givenXLogsInWithoutPillar2Enrolment(): Unit = {
-    AuthLoginPage.loginToUPE()
-  }
-
-  // ^(.*) logs in as upe with credId (.*) for Pillar2$
-  def givenXLogsInAsUpeWithCredIdXForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToUPEWithCredID(name, credId)
-    }
-  }
-
-  // ^(.*) logs in with credId (.*) for Pillar2$
-  def givenXLogsInWithCredIdXForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginAsUserWithCredId(name, credId)
-      case _                   => AuthLoginPage.loginAsUserWithCredId(name, credId)
-    }
-  }
-
-  // ^(.*) logs in to upe org page with CredID (.*) for Pillar2$
-  def givenXLogsInToUpeOrgPageWithCredIDXForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToOrgWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToOrgWithCredID(name, credId)
-    }
-  }
-
-  // ^(.*) logs in to nfm org page with CredID (.*) for Pillar2$
-  def givenXLogsInToNfmOrgPageWithCredIDXForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
-    }
-  }
-
-  // ^(.*) logs in to upe registered in UK page with CredID (.*) for Pillar2$
-  def givenXLogsInToUpeRegisteredInUKPageWithCredIDXForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToRegWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToRegWithCredID(name, credId)
-    }
-  }
-
-  // ^(.*) logs in to upe name page with CredID (.*) for Pillar2$
-  def givenXLogsInToUpeNamePageWithCredIDXForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
-      case _                   => AuthLoginPage.loginToUPEName(name, credId)
-    }
-  }
-
-  // ^(.*) logs in to nfm name page with CredID (.*) for Pillar2$
-  def givenXLogsInToNfmNamePageWithCredIDXForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
-    }
-  }
-
-  // ^Organisation User navigates to (.*) check your answer page with credId (.*)$
-  def givenOrganisationUserNavigatesToXCheckYourAnswerPageWithCredIdX(name: String, credId: String): Unit = {
-    name match {
-      case "UPE"                      => AuthLoginPage.loginToCA(name, credId)
-      case "NFM"                      => AuthLoginPage.loginToNFMCA(name, credId)
-      case "FD"                       => AuthLoginPage.loginToFDCA(name, credId)
-      case "Contact Details"          => AuthLoginPage.loginToCDCA(name, credId)
-      case "Final Check Your Answers" => AuthLoginPage.loginToFinalCA(name, credId)
-    }
-  }
-
   // ^I clear the cache$
   def thenIClearTheCache(): Unit = {
     Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/eligibility/clear-session")
@@ -136,11 +36,6 @@ object CommonStepsSteps {
     Check.checkH1(header)
   }
 
-//commented by Priti and rewritten the step in scalatest
-  // ^(I click Continue button|click Confirm and send|click Try Again)$
-//  def when(IClickContinueButton|clickConfirmAndSend|clickTryAgain)(negate: String): Unit = {
-//    Input.clickSubmit()
-//  }
   def clickAction(action: String): Unit = {
     action match {
       case "I click Continue button" | "click Continue button" | "click Confirm and send" | "click Try Again" =>
@@ -174,11 +69,6 @@ object CommonStepsSteps {
   def thenISelectPreviousAccountingPeriod(): Unit = {
     BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
   }
-
-//  // ^(I click on Country selected)
-//  def whenIClickOnCountrySelected(negate: String): Unit = {
-//    UPEAddressPage.clickCountrySelected()
-//  }
 
   // ^I am on (.*) Page$
   def givenIAmOnXPage(page: String): Unit = {

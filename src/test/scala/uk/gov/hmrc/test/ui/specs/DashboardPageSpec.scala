@@ -17,15 +17,12 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{
-  thenIGoTillGetReadyToApproveYourPaymentPage,
-  thenIMakeSuccessfulPayment,
-  thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage
-}
+import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{thenIGoTillGetReadyToApproveYourPaymentPage, thenIMakeSuccessfulPayment, thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage}
 //import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps.thenIShouldBeRedirectedTo
 import uk.gov.hmrc.test.ui.specstepdef.SubscriptionJourneyStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
@@ -459,7 +456,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=contact details summary, page=contact details summary page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -497,7 +497,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=account summary, page=accounts summary page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -535,7 +538,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=MakePayment, page=Make a payment page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -573,7 +579,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment guidance, page=Repayment Guidance Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -611,7 +620,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment amount, page=Repayment Amount Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -649,7 +661,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment reason, page=Reason For Refund Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -687,7 +702,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment method, page=Repayment Method Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -725,7 +743,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=uk bank account, page=UK Bank Account Payment Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -763,7 +784,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=non-uk bank account, page=Non UK Bank Account Payment Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -801,7 +825,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment contact name, page=Repayment Contact Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -839,7 +866,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment contact email, page=Repayment Journey Recovery Error Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -877,7 +907,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment phone, page=Repayment Journey Recovery Error Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -915,7 +948,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment phone input, page=Repayment Journey Recovery Error Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -953,7 +989,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment CYA, page=Repayment CYA Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -991,7 +1030,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change amount, page=Repayment change amount Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1029,7 +1071,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change method, page=Repayment change method Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1067,7 +1112,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change name, page=Repayment change name Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1105,7 +1153,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=transaction history, page=Transaction History Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1143,7 +1194,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage contact name, page=Manage contact name Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1181,7 +1235,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage second contact name, page=Manage second contact name]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1219,7 +1276,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage contact address, page=Manage contact address Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1257,7 +1317,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage group status, page=Manage group status Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1295,7 +1358,10 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage accounting period, page=Manage accounting period Page]") {
       Given("Organisation User logs in to register for Pillar2")
-      givenXLogsInToRegisterForPillar2("Organisation User") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "pillar2-frontend"
+      )
 
       And("I should be on Task list page")
       thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
