@@ -20,7 +20,7 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatest.featurespec.AnyFeatureSpec
 import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
+import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps.{andIShouldSeeRowValue, _}
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
@@ -49,7 +49,13 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("input-upe-address page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressData: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1 UPE",
+          "addressLine3" -> "City UPE",
+          "postalCode"   -> "Invalid",
+          "countryCode"  -> "United Arab Emirates"
+        )
+        thenIEnterAddressAs(addressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -91,9 +97,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
+        andIAmOnFeedbackSurveyPage()
 
       When("Organisation User logs in as upe with credId UPENoIDJourney for Pillar2")
         givenXLogsInAsUpeWithCredIdXForPillar2("Organisation User", "UPENoIDJourney")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -183,7 +187,13 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("input-upe-address page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressDetails: Map[String, String] = Map(
+          "addressLine1" -> "Test Address Line 1",
+          "addressLine3" -> "Test City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Arab Emirates"
+        )
+        thenIEnterAddressAs(addressDetails)
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -270,7 +280,13 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("input-upe-address page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressData: Map[String, String] = Map(
+          "addressLine1" -> "Test Address Line 1",
+          "addressLine3" -> "Test City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Arab Emirates"
+        )
+        thenIEnterAddressAs(addressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -316,19 +332,15 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the UPE Name")
         andIClickOnChangeHyperlinkNextToTheX("UPE Name")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       And("I enter UPE name as Name Change @&#")
         andIEnterXAsX("UPE name", "Name Change @&#")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I should see row 1 value Name Change @&#")
-        // ⚠️ No step-def match found for: I should see row 1 value Name Change @&#
+        andIShouldSeeRowValue(1,"Name Change @&#")
 
       When("I click on change hyperlink next to the UPE Address")
         andIClickOnChangeHyperlinkNextToTheX("UPE Address")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       And("I enter Address Line 1 as Change Address &")
         andIEnterXAsX("Address Line 1", "Change Address &")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -337,12 +349,10 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see row 2 value Change Address &")
-        // ⚠️ No step-def match found for: I should see row 2 value Change Address &
+        andIShouldSeeRowValue(2,"Change Address &")
 
       When("I click on change hyperlink next to the UPE Contact Name")
-        andIClickOnChangeHyperlinkNextToTheX("UPE Contact Name")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
+        andIClickOnChangeHyperlinkNextToTheX("UPE Contact Name")  // auto-chosen (score=1.00, CYAStepsSteps.scala
 
       And("I enter UPE Person/Team name as Change Contact Person~")
         andIEnterXAsX("UPE Person/Team name", "Change Contact Person~")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -351,40 +361,34 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see row 3 value Change Contact Person~")
-        // ⚠️ No step-def match found for: I should see row 3 value Change Contact Person~
+        andIShouldSeeRowValue(3,"Change Contact Person~")
 
       When("I click on change hyperlink next to the UPE Email Address")
         andIClickOnChangeHyperlinkNextToTheX("UPE Email Address")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       And("I enter UPE Email address as changetest&@email.com")
         andIEnterXAsX("UPE Email address", "changetest&@email.com")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I should see row 4 value changetest&@email.com")
-        // ⚠️ No step-def match found for: I should see row 4 value changetest&@email.com
+        andIShouldSeeRowValue(4,"changetest&@email.com")
 
       When("I click on change hyperlink next to the UPE Phone Number")
         andIClickOnChangeHyperlinkNextToTheX("UPE Phone Number")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       And("I enter Phone Number as 12345679")
         andIEnterXAsX("Phone Number", "12345679")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I should see row 6 value 12345679")
-        // ⚠️ No step-def match found for: I should see row 6 value 12345679
+        andIShouldSeeRowValue(6,"12345679")
 
       When("I click on change hyperlink next to the UPE Phone Contact")
         andIClickOnChangeHyperlinkNextToTheX("UPE Phone Contact")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       And("I select option No and continue to next")
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see row 5 value No")
-        // ⚠️ No step-def match found for: I should see row 5 value No
+        andIShouldSeeRowValue(5,"No")
 
       When("I click Report Pillar 2 Top-up Taxes link")
         andIClickXLink("Report Pillar 2 Top-up Taxes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -396,9 +400,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
+        andIAmOnFeedbackSurveyPage()
 
       When("I click the browser back button")
         andIClickTheBrowserBackButton()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -431,7 +433,13 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
         andIEnterXAsX("UPE name", "Test UPE")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressData: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1",
+          "addressLine3" -> "City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Arab Emirates"
+        )
+        thenIEnterAddressAs(addressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter UPE Person/Team name as UPE Contact Name")
         andIEnterXAsX("UPE Person/Team name", "UPE Contact Name")  // auto-chosen (score=1.00, UPEStepsSteps.scala)

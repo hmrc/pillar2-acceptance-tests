@@ -78,7 +78,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -111,7 +111,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -141,7 +141,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV disabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -174,7 +174,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV disabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -204,7 +204,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("party type mismatch")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on UPE registration failed error page")
         thenIShouldBeOnX("UPE registration failed error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -228,7 +228,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -261,7 +261,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("party type mismatch")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on NFM registration failed error page")
         thenIShouldBeOnX("NFM registration failed error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -303,7 +303,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("generic error")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on UPE registration failed error page")
         thenIShouldBeOnX("UPE registration failed error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -315,7 +315,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -348,7 +348,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("generic error")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on NFM registration failed error page")
         thenIShouldBeOnX("NFM registration failed error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -378,7 +378,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("identifiers not match")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on UPE registration not called error page")
         thenIShouldBeOnX("UPE registration not called error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -402,7 +402,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -435,7 +435,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("identifiers not match")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on NFM registration not called error page")
         thenIShouldBeOnX("NFM registration not called error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -477,7 +477,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("BV failed")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on UPE registration not called error page")
         thenIShouldBeOnX("UPE registration not called error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -489,7 +489,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -522,7 +522,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("BV failed")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on NFM registration not called error page")
         thenIShouldBeOnX("NFM registration not called error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -555,7 +555,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         thenTheJsonResponseBodyShouldContainTheStatusX("registrationStatus : REGISTERED")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -594,7 +594,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         thenTheJsonResponseBodyShouldContainTheStatusX("registrationStatus : REGISTERED")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -624,7 +624,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV disabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -663,7 +663,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         thenTheJsonResponseBodyShouldContainTheStatusX("registrationStatus : REGISTERED")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -693,7 +693,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("party type mismatch")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on UPE registration failed error page")
         thenIShouldBeOnX("UPE registration failed error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -705,7 +705,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("generic error")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on UPE registration failed error page")
         thenIShouldBeOnX("UPE registration failed error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -717,7 +717,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("identifiers not match")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on UPE registration not called error page")
         thenIShouldBeOnX("UPE registration not called error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -729,7 +729,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("BV failed")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on UPE registration not called error page")
         thenIShouldBeOnX("UPE registration not called error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -741,7 +741,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -771,7 +771,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("party type mismatch")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on NFM registration failed error page")
         thenIShouldBeOnX("NFM registration failed error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -783,7 +783,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("generic error")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on NFM registration failed error page")
         thenIShouldBeOnX("NFM registration failed error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -795,7 +795,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("identifiers not match")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on NFM registration not called error page")
         thenIShouldBeOnX("NFM registration not called error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -807,7 +807,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("BV failed")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on NFM registration not called error page")
         thenIShouldBeOnX("NFM registration not called error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -837,7 +837,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Task list page")
         thenIShouldNavigateToX("Task list page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
