@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.specstepdef
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.rfm.{RFMCYAPage, RFMContactDetailNamePage, RFMContactEmailPage, RFMContactInputPage, RFMCorpPositionPage, RFMEnterPillar2IdPage, RFMFinalReviewCYAPage, RFMNewNFMContactNamePage, RFMNoIDCYAPage, RFMSecondContactPhonePage, RFMStartPage}
 import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object RFMStepsSteps {

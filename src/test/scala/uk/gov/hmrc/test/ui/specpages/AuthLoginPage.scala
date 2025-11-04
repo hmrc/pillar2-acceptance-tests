@@ -21,6 +21,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.Input.{sendKeysById, sendKeysByName}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.specpages.rfm.RFMStartPage
 
 object AuthLoginPage extends BrowserDriver with PageObject {
   val url: String          = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"

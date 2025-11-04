@@ -23,6 +23,7 @@ import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.btn.BtnAgdKBPage
+import uk.gov.hmrc.test.ui.specpages.repayments.{RepaymentAmountPage, RepaymentCYAPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentPhoneInputPage, RepaymentReasonPage}
 import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object PaymentStepsSteps {

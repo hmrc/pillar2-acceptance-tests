@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.specs
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages.AuthLoginPage._
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.rfm.{RFMEnterPillar2IdPage, RFMIndividualKBPage, RFMKBAgentPage, RFMKBAssistantUserPage, RFMKBDuplicatePage, RFMKBExistingMemberPage}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.tags.Tests
 

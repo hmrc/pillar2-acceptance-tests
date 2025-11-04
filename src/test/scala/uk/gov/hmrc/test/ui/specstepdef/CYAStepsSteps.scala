@@ -23,6 +23,8 @@ import uk.gov.hmrc.test.ui.cucumber.Check.{contain, convertToAnyShouldWrapper}
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.Wait
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsCheckAnswersPage, ContactDetailsSummaryPage}
+import uk.gov.hmrc.test.ui.specpages.nfm.NFMCheckYourAnswersPage
 
 object CYAStepsSteps {
 

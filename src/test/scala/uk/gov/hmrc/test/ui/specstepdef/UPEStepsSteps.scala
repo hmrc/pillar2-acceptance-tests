@@ -19,6 +19,8 @@ package uk.gov.hmrc.test.ui.specstepdef
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsInputPhonePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage}
+import uk.gov.hmrc.test.ui.specpages.nfm.{NFMContactEmailPage, NFMContactNamePage}
 import uk.gov.hmrc.test.ui.specpages.upe.{UPEEntityTypePage, UPENamePage, UPEPhoneInputPage}
 
 object UPEStepsSteps {

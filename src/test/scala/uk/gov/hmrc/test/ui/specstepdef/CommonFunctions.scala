@@ -22,6 +22,10 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsChangePhonePage, ContactDetailsDisplayPage, ContactDetailsSummaryPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage}
+import uk.gov.hmrc.test.ui.specpages.nfm.{NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMEQPage, NFMGuidancePage, NFMNamePage, NFMPhonePage}
+import uk.gov.hmrc.test.ui.specpages.repayments.{RepaymentAmountPage, RepaymentBankDetailsErrorPage, RepaymentBarsErrorPage, RepaymentCYAPage, RepaymentChangeAmountPage, RepaymentChangeMethodPage, RepaymentChangeNamePage, RepaymentConfirmationPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentCouldNotConfirmErrorPage, RepaymentGuidancePage, RepaymentIncompleteErrorPage, RepaymentJourneyRecoveryErrorPage, RepaymentMethodPage, RepaymentPartialNameErrorPage, RepaymentPhoneInputPage, RepaymentPhonePage, RepaymentProcessingPage, RepaymentReasonPage, RepaymentReturnErrorPage}
+import uk.gov.hmrc.test.ui.specpages.rfm.{RFMConfirmationPage, RFMContactAddressPage, RFMContactDetailNamePage, RFMContactEmailPage, RFMContactGuidancePage, RFMContactInputPage, RFMContactNumberPage, RFMCorpPositionPage, RFMFinalReviewCYAPage, RFMGRSEntityTypePage, RFMGRSRegistrationMismatchErrorPage, RFMGRSRegistrationNotCalledErrorPage, RFMIncompleteErrorPage, RFMJourneyRecoveryPage, RFMLLPGRSPage, RFMNewNFMContactAddressInputPage, RFMNewNFMContactNameChangePage, RFMNewNFMContactNamePage, RFMNoIDCYAPage, RFMNoIDChangeCYAPage, RFMNoMatchErrorPage, RFMNoReturnBackErrorPage, RFMProcessingPage, RFMRegisteredInUKPage, RFMSecondContactEmailPage, RFMSecondContactNamePage, RFMSecondContactPhonePage, RFMSecondContactPhoneQuestionPage, RFMSecondContactQuestionPage, RFMUKLimitedCompanyGRSPage}
 
 object CommonFunctions
     extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {

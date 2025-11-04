@@ -23,6 +23,8 @@ import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsDisplayPage, ContactDetailsSummaryPage}
+import uk.gov.hmrc.test.ui.specpages.repayments.{RepaymentAmountPage, RepaymentCYAPage, RepaymentChangeAmountPage, RepaymentChangeMethodPage, RepaymentChangeNamePage, RepaymentConfirmationPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentGuidancePage, RepaymentMethodPage, RepaymentPhoneInputPage, RepaymentPhonePage, RepaymentReasonPage}
 
 object CommonStepsSteps {
 
