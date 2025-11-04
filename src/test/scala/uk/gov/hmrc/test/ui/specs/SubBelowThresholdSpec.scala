@@ -17,22 +17,28 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.asa.{ASAConfirmationPage, ASAPillar2InputPage}
-import uk.gov.hmrc.test.ui.specpages.btn.{BtnAccountingPage, BtnAgdKBPage, BtnCannotReturnPage, BtnConfirmationPage, BtnCyaSubmitPage, BtnDomesticOrMnePage, BtnProblemWithServicePage, BtnStartPage}
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.specpages.btn._
+import uk.gov.hmrc.test.ui.tags.Tests
 
 class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 submission Below threshold notification user journeys") {
 
-    Scenario("1 - Org User makes successful below threshold notification submission") {
+    Scenario("1 - Org User makes successful below threshold notification submission", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR9999999991"
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            "HMRC-PILLAR2-ORG",
+            "PLRID",
+            "XEPLR9999999991"
+          )
+        )
       )
 
       Then("The user submits a below threshold notification")
@@ -50,20 +56,26 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       BtnCannotReturnPage.onPage()
     }
 
-    Scenario("2 - Agent User makes successful below threshold notification submission") {
-      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
-      And("The agent adds delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999991 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR9999999991",
-        "pillar2-auth"
+    Scenario("2 - Agent User makes successful below threshold notification submission", Tests) {
+      Given("Agent User logs in with delegated enrollment XEPLR9999999991")
+      login(
+        userType = "Agent",
+        pageUrl = "asa",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-AS-AGENT",
+            identifierName = "AgentReference",
+            identifierValue = "1234"
+          )
+        ),
+        delegatedEnrolment = Some(
+          DelegatedEnrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XEPLR9999999991",
+            authRule = "pillar2-auth"
+          )
+        )
       )
 
       Then("The agent confirms client PLRId")
@@ -85,13 +97,18 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       BtnCannotReturnPage.onPage()
     }
 
-    Scenario("3 - Org User updates below threshold notification accounting period dates") {
+    Scenario("3 - Org User updates below threshold notification accounting period dates", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR9999999991"
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XEPLR9999999991"
+          )
+        )
       )
 
       Then("The user navigates to the summary page")
@@ -108,13 +125,18 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       DashboardPage.onPage()
     }
 
-    Scenario("4 - Org User changes below threshold notification entity location and gets KB page") {
+    Scenario("4 - Org User changes below threshold notification entity location and gets KB page", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR9999999991"
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XEPLR9999999991"
+          )
+        )
       )
 
       Then("The user changes the below threshold notification entity to being based only in the UK")
@@ -127,13 +149,18 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       BtnAgdKBPage.onPage()
     }
 
-    Scenario("5 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]") {
+    Scenario("5 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4220000000 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR4220000000"
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XEPLR4220000000"
+          )
+        )
       )
 
       Then("The user submits a below threshold notification")
@@ -147,13 +174,18 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       BtnProblemWithServicePage.onPage()
     }
 
-    Scenario("6 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]") {
+    Scenario("6 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR4000000000"
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XEPLR4000000000"
+          )
+        )
       )
 
       Then("The user submits a below threshold notification")
@@ -167,13 +199,18 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       BtnProblemWithServicePage.onPage()
     }
 
-    Scenario("7 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]") {
+    Scenario("7 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5000000000 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR5000000000"
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XEPLR5000000000"
+          )
+        )
       )
 
       Then("The user submits a below threshold notification")

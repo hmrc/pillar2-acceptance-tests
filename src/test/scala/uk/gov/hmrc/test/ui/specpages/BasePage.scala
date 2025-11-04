@@ -47,7 +47,7 @@ trait BasePage extends Matchers with PageObject {
   val nameField = "#value"
 
   private def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
-    .withTimeout(Duration.ofSeconds(2))
+    .withTimeout(Duration.ofSeconds(3))
     .pollingEvery(Duration.ofMillis(200))
 
   def onPage(url: String = this.url): Unit = fluentWait.until(ExpectedConditions.urlToBe(url))

@@ -17,20 +17,26 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.{Enrolment, login}
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.tags.Tests
 
 class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 Due & Overdue returns And Submission History User Journey") {
 
-    Scenario("1 - Org User navigates to Due & Overdue returns and Submission History") {
+    Scenario("1 - Org User navigates to Due & Overdue returns and Submission History", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5555555555 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR5555555555"
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            "HMRC-PILLAR2-ORG",
+            "PLRID",
+            "XEPLR5555555555"
+          )
+        )
       )
 
       Then("The user successfully checks all due and overdue returns")

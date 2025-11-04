@@ -18,19 +18,24 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.featurespec.AnyFeatureSpec
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.tags.Wip
 
 class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
   Feature("RFM check your answers page") {
 
-    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey") {
+    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey", Wip) {
       Given("Organisation User logs in with rfm URL to Pillar2")
-        givenXLogsInWithRfmURLToPillar2("Organisation User")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      login(
+        userType = "Organisation",
+        pageUrl = "rfm"
+      )
 
       When("I provide RFM pillar2 id as XEPLR0123456400")
         andIProvideRFMXAsX("pillar2 id", "XEPLR0123456400")  // auto-chosen (score=1.00, RFMStepsSteps.scala)

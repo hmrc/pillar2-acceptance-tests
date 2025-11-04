@@ -17,20 +17,25 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.upe._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.tags.Tests
 
 class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
   Feature("Ultimate parent entity and Nominated Filling Member GRS journey") {
 
-    Scenario("1 - User registers a Uk Limited Company successfully with BV enabled") {
+    Scenario("1 - User registers a Uk Limited Company successfully with BV enabled", Tests) {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV Enabled")
       UPERegisteredInUkPage.registeredInUkYes()
@@ -68,9 +73,12 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 //      ReviewAnswersPage.continueToNextPage()
     }
 
-    Scenario("2 - User registers a Uk Limited Company successfully with BV disabled") {
+    Scenario("2 - User registers a Uk Limited Company successfully with BV disabled", Tests) {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV Disabled")
       UPERegisteredInUkPage.registeredInUkYes()
@@ -88,9 +96,12 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
       TaskListPage.onPage()
     }
 
-    Scenario("3 - User registration as UkLimitedCompany failed with party type mismatch error") {
+    Scenario("3 - User registration as UkLimitedCompany failed with party type mismatch error", Tests) {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Failed Party Type Mismatch")
       UPERegisteredInUkPage.registeredInUkYes()
@@ -119,9 +130,12 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
       NFMGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
     }
 
-    Scenario("4 - User registration as Uk Limited Company failed with generic error") {
+    Scenario("4 - User registration as Uk Limited Company failed with generic error", Tests) {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Generic Error")
       UPERegisteredInUkPage.registeredInUkYes()
@@ -150,9 +164,12 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
       NFMGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
     }
 
-    Scenario("5 - User registration as Uk Limited Company failed with Identifiers Mismatch error") {
+    Scenario("5 - User registration as Uk Limited Company failed with Identifiers Mismatch error", Tests) {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Identifiers Mismatch")
       UPERegisteredInUkPage.registeredInUkYes()
@@ -181,9 +198,12 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
       NFMGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
     }
 
-    Scenario("6 - User registration as UkLimitedCompany failed with BV failed error") {
+    Scenario("6 - User registration as UkLimitedCompany failed with BV failed error", Tests) {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV failed")
       UPERegisteredInUkPage.registeredInUkYes()
@@ -212,9 +232,12 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
       NFMGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
     }
 
-    Scenario("7 - User registered as Limited Liability Partnership successfully with BV enabled") {
+    Scenario("7 - User registered as Limited Liability Partnership successfully with BV enabled", Tests) {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds a Limited Liability Partnership as an Ultimate Parent Entity with BV Enabled")
       UPERegisteredInUkPage.registeredInUkYes()
@@ -232,9 +255,12 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
       TaskListPage.onPage()
     }
 
-    Scenario("8 - User registered as Limited Liability Partnership successfully with BV disabled") {
+    Scenario("8 - User registered as Limited Liability Partnership successfully with BV disabled", Tests) {
       Given("Organisation User logs in without Pillar2 enrolment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds a Limited Liability Partnership as an Ultimate Parent Entity with BV disabled")
       UPERegisteredInUkPage.registeredInUkYes()

@@ -47,14 +47,6 @@ object CommonStepsSteps {
     }
   }
 
-  // ^(.*) logs in to subscribe for Pillar2$
-  def givenXLogsInToSubscribeForPillar2(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
-      case _                   => AuthLoginPage.loginToSubscribe(name)
-    }
-  }
-
   // ^(.*) logs in with BTA for Pillar2$
   def givenXLogsInWithBTAForPillar2(name: String): Unit = {
     name match {
@@ -66,11 +58,6 @@ object CommonStepsSteps {
   // ^.* logs in without Pillar2 enrolment$
   def givenXLogsInWithoutPillar2Enrolment(): Unit = {
     AuthLoginPage.loginToUPE()
-  }
-
-  // ^.* logs in and navigates to RFM start page without Pillar2 enrolment with groupId (.*)$
-  def givenXLogsInAndNavigatesToRFMStartPageWithoutPillar2EnrolmentWithGroupIdX(groupId: String): Unit = {
-    AuthLoginPage.loginToRFMWithGroupId(groupId)
   }
 
   // ^(.*) logs in as upe with credId (.*) for Pillar2$
@@ -150,10 +137,6 @@ object CommonStepsSteps {
     Check.checkH1(header)
   }
 
-  // ^The Body content should be (.*)$
-  def thenTheBodyContentShouldBeX(text: String): Unit = {
-    Check.checkBodyText(text)
-  }
 //commented by Priti and rewritten the step in scalatest
   // ^(I click Continue button|click Confirm and send|click Try Again)$
 //  def when(IClickContinueButton|clickConfirmAndSend|clickTryAgain)(negate: String): Unit = {
@@ -213,68 +196,12 @@ object CommonStepsSteps {
         navigateTo(GlobalGrossRevenueEQPage.url)
         Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.eqForm)
         isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
-      case "NFM registration failed error" =>
-        navigateTo(NFMGRSRegistrationFailedErrorPage.url)
-        Wait.waitForElementToPresentByCssSelector(NFMGRSRegistrationFailedErrorPage.content)
-        isVisible(By.cssSelector(NFMGRSRegistrationFailedErrorPage.header)) shouldBe true
-      case "NFM registration not called error" =>
-        navigateTo(NFMGRSRegistrationNotCalledErrorPage.url)
-        Wait.waitForElementToPresentByCssSelector(NFMGRSRegistrationNotCalledErrorPage.content)
-        isVisible(By.cssSelector(NFMGRSRegistrationNotCalledErrorPage.header)) shouldBe true
-      case "UPE registration failed error" =>
-        navigateTo(UPEGRSRegistrationFailedErrorPage.url)
-        Wait.waitForElementToPresentByCssSelector(UPEGRSRegistrationFailedErrorPage.content)
-        isVisible(By.cssSelector(UPEGRSRegistrationFailedErrorPage.header)) shouldBe true
-      case "UPE registration not called error" =>
-        navigateTo(UPEGRSRegistrationNotCalledErrorPage.url)
-        Wait.waitForElementToPresentByCssSelector(UPEGRSRegistrationNotCalledErrorPage.content)
-        isVisible(By.cssSelector(UPEGRSRegistrationNotCalledErrorPage.header)) shouldBe true
     }
   }
 
   // ^I should see error message (.*) on the (.*) Page$
   def andIShouldSeeErrorMessageXOnTheXPage(error: String, page: String): Unit = {
     page match {
-      case "Eligibility question" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorLink)
-        getTextOf(By cssSelector (BusinessActivityEQPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.errorMessage)
-        getTextOf(By cssSelector (BusinessActivityEQPage.errorMessage)) should include(error)
-
-      case "Global gross revenue" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorLink)
-        getTextOf(By cssSelector (GlobalGrossRevenueEQPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.errorMessage)
-        getTextOf(By cssSelector (GlobalGrossRevenueEQPage.errorMessage)) should include(error)
-
-      case "NFM Phone" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMPhonePage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(NFMPhonePage.errorLink)
-        getTextOf(By cssSelector (NFMPhonePage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(NFMPhonePage.errorMessage)
-        getTextOf(By cssSelector (NFMPhonePage.errorMessage)) should include(error)
-
-      case "Input Nfm Phone" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.errorLink)
-        getTextOf(By cssSelector (InputNFMPhonePage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.errorMessage)
-        getTextOf(By cssSelector (InputNFMPhonePage.errorMessage)) should include(error)
-
       case "Contact details display" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorSummary)
@@ -284,66 +211,6 @@ object CommonStepsSteps {
 
         Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorMessage)
         getTextOf(By cssSelector (ContactDetailsDisplayPage.errorMessage)) should include(error)
-
-      case "Second Contact details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(SecondContactDetailsDisplayPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(SecondContactDetailsDisplayPage.errorLink)
-        getTextOf(By cssSelector (SecondContactDetailsDisplayPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(SecondContactDetailsDisplayPage.errorMessage)
-        getTextOf(By cssSelector (SecondContactDetailsDisplayPage.errorMessage)) should include(error)
-
-      case "Contact details email" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorLink)
-        getTextOf(By cssSelector (NFMContactEmailPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.errorMessage)
-        getTextOf(By cssSelector (NFMContactEmailPage.errorMessage)) should include(error)
-
-      case "BTA Pillar2 validation" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorLink)
-        getTextOf(By cssSelector (BTAPillar2IDCheckPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(BTAPillar2IDCheckPage.errorMessage)
-        getTextOf(By cssSelector (BTAPillar2IDCheckPage.errorMessage)) should include(error)
-
-      case "Reason For Refund" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.errorLink)
-        getTextOf(By cssSelector (RepaymentReasonPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.errorMessage)
-        getTextOf(By cssSelector (RepaymentReasonPage.errorMessage)) should include(error)
-
-      case "Repayment Method" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorLink)
-        getTextOf(By cssSelector (RepaymentMethodPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorMessage)
-        getTextOf(By cssSelector (RepaymentMethodPage.errorMessage)) should include(error)
-
-      case "Agent Repayment Method" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorMessage)
-
-        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorLink)
-        getTextOf(By cssSelector (RepaymentMethodPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(RepaymentMethodPage.errorMessage)
-        getTextOf(By cssSelector (RepaymentMethodPage.errorMessage)) should include(error)
     }
   }
 
@@ -395,7 +262,7 @@ object CommonStepsSteps {
 
   // ^I add delegated enrolment with (.*), (.*), (.*) and (.*) for Pillar2 service$
   def whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
-    AuthLoginPage.addDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
+    AuthLoginPage.addDelegatedEnrolmentOld(enrolmentKey, identifierName, identifierValue, authRule)
   }
 
   // ^I refresh the page$
@@ -411,11 +278,6 @@ object CommonStepsSteps {
       Driver.instance.navigate().refresh()
       i += 1
     }
-  }
-
-  // ^I access random page$
-  def givenIAccessRandomPage(): Unit = {
-    Nav.navigateTo(AuthLoginPage.incorrectUrl)
   }
 
   // ^I can see (.*) link$

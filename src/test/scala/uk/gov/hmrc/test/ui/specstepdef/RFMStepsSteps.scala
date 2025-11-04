@@ -42,11 +42,6 @@ object RFMStepsSteps {
         }
   }
 
-//  def loginToRFM(userType: String, page: String): Unit = {
-//
-//
-//  }
-
   // ^I access RFM (.*) page$
   def givenIAccessRFMXPage(name: String): Unit = {
     name match {
@@ -112,12 +107,6 @@ object RFMStepsSteps {
         }
   }
 
-  // ^Organisation User logs in with existing entity group (.*), (.*) and (.*) with rfm URL to Pillar2 service$
-  def whenOrganisationUserLogsInWithExistingEntityGroupXXAndXWithRfmURLToPillar2Service(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
-    AuthLoginPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
-          AuthLoginPage.loginWithExistingEntityWithRFM(enrolmentKey, identifierName, identifierValue)
-  }
-
   // ^I click change link for RFM (.*)
   def andIClickChangeLinkForRFMX(link: String): Unit = {
     link match {
@@ -153,11 +142,6 @@ object RFMStepsSteps {
 //        RFMStartPage.clickContinue()
   }
 
-  // ^I should see the row (\d+) value (.*)$
-  def andIShouldSeeTheRowValueX(row: Int, value: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(RFMFinalReviewCYAPage.valueList)).get(row - 1).getText.contains(value))
-  }
 
   // ^(.*) logs in to RFM with credId (.*) for Pillar2
   def givenXLogsInToRFMWithCredIdXForPillar2(name: String, credId: String): Unit = {
@@ -203,18 +187,4 @@ object RFMStepsSteps {
 //    }
 //  }
 
-  // I should be redirected to {string} or {string}
-  def thenIShouldBeRedirectedTo(page1: String, page2: String): Unit = {
-    Wait.waitForElementToClickTagName("h1")
-
-        val pageOption1 = pageMatch(page1)
-        val pageOption2 = pageMatch(page2)
-
-        val navigated = Try { assertNavigationUrl(pageOption1) }.getOrElse(false) || Try { assertNavigationUrl(pageOption2) }.getOrElse(false)
-
-        assert(
-          navigated,
-          s"Navigation failed. Expected URL to match either '${pageOption1.url}' or '${pageOption2.url}', but current URL was '${findURL()}'"
-        )
-  }
 }

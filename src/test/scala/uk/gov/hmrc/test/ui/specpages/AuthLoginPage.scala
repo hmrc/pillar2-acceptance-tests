@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.specpages
 
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.cucumber.Input.{sendKeysById, sendKeysByName}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
@@ -53,7 +54,7 @@ object AuthLoginPage extends BrowserDriver with PageObject {
   val frontEndSubUrl: String                = s"$rootUrl" + "review-submit/confirmation"
   val frontEndDashboardUrl: String          = s"$rootUrl" + "pillar2-top-up-tax-home"
   val frontEndASAUrl: String                = s"$rootUrl" + "asa/input-pillar-2-id"
-  val rfmUrl: String                        = s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
+  val rfmUrl: String                        = s"${rootUrl}replace-filing-member/security/enter-pillar2-id"
   val enrolmentKeyField: String             = "enrolment[0].name"
   val identifierNameField: String           = "input-0-0-name"
   val identifierValueField: String          = "input-0-0-value"
@@ -70,27 +71,48 @@ object AuthLoginPage extends BrowserDriver with PageObject {
     clickSubmitButton()
   }
   case class Enrolment(enrolmentKey: String, identifierName: String, identifierValue: String)
+  case class DelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String)
 
-  def loginToRFM(userType: String,
-                 enrolment: Option[Enrolment] = None,
-                 credRole: String = "User",
-                 groupId: String = ""): Unit = {
+  def login(userType: String, pageUrl: String, enrolment: Option[Enrolment] = None, delegatedEnrolment: Option[DelegatedEnrolment] = None, credRole: String = "User", groupId: String = ""): Unit = {
+    val matchedUrl = urlMatch(pageUrl)
     Nav.navigateTo(url)
-    Input.sendKeysByName(rfmUrl, redirectUrlField)
+    Input.sendKeysByName(matchedUrl, redirectUrlField)
     selectAffinityGroup(userType)
     selectCredRole(credRole)
     addGroupId(groupId)
     enrolment.foreach { e =>
       addEnrolment(e.enrolmentKey, e.identifierName, e.identifierValue)
     }
+    delegatedEnrolment.foreach { e =>
+      addDelegatedEnrolment(e.enrolmentKey, e.identifierName, e.identifierValue, e.authRule)
+    }
+
     clickSubmitButton()
   }
 
-def addEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
-  Input.sendKeysById(enrolmentKeyField, enrolmentKey)
-  Input.sendKeysById(identifierNameField, identifierName)
-  Input.sendKeysById(identifierValueField, identifierValue)
-}
+  def urlMatch(page: String): String = {
+    page match {
+      case "asa"       => s"${rootUrl}asa/input-pillar-2-id"
+      case "rfm"       => s"${rootUrl}replace-filing-member/security/enter-pillar2-id"
+      case "upe"       => s"${rootUrl}business-matching/ultimate-parent/registered-in-uk"
+      case "dashboard" => s"${rootUrl}pillar2-top-up-tax-home"
+    }
+  }
+
+  def addEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
+    sendKeysById(enrolmentKeyField, enrolmentKey)
+    sendKeysById(identifierNameField, identifierName)
+    sendKeysById(identifierValueField, identifierValue)
+  }
+
+  def addDelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
+    clickAddDelegatedEnrolmentCTA()
+    sendKeysByName(enrolmentKey, delegatedEnrolmentKeyField)
+    sendKeysById(delegatedIdentifierNameField, identifierName)
+    sendKeysById(delegatedIdentifierValueField, identifierValue)
+    sendKeysById(delegatedAuthRuleField, authRule)
+  }
+
   private def addGroupId(groupId: String): Unit = {
     Input.sendKeysById(groupIdField, groupId)
   }
@@ -379,7 +401,7 @@ def addEnrolment(enrolmentKey: String, identifierName: String, identifierValue: 
     clickSubmitButton()
   }
 
-  def addDelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
+  def addDelegatedEnrolmentOld(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
     clickAddDelegatedEnrolmentCTA()
     Input.sendKeysByName(enrolmentKey, delegatedEnrolmentKeyField)
     Input.sendKeysById(delegatedIdentifierNameField, identifierName)

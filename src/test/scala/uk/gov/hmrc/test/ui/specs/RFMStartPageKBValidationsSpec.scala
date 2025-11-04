@@ -17,48 +17,60 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.{Enrolment, loginToRFM}
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage._
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.tags.Wip
+import uk.gov.hmrc.test.ui.tags.Tests
 
 class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
   Feature("RFM Start page") {
 
-    Scenario("1 - Verify Individual RFM KB page", Wip) {
+    Scenario("1 - Verify Individual RFM KB page", Tests) {
       Given("An individual accesses the RFM start page")
-      loginToRFM("Individual")
+      login(
+        userType = "Individual",
+        pageUrl = "rfm"
+      )
 
       Then("The user will be on the unable to use this service page")
       RFMIndividualKBPage.onPage()
     }
 
-    Scenario("2 - Verify Agent RFM KB page", Wip) {
+    Scenario("2 - Verify Agent RFM KB page", Tests) {
       Given("Agent accesses the RFM start page")
-      loginToRFM("Agent")
+      login(
+        userType = "Agent",
+        pageUrl = "rfm"
+      )
 
       Then("The user will be on the unable to use this service page")
       RFMKBAgentPage.onPage()
     }
 
-    Scenario("3 - Verify Organisation Assistant User RFM KB page", Wip) {
+    Scenario("3 - Verify Organisation Assistant User RFM KB page", Tests) {
       Given("Assistant User accesses the RFM start page")
-      loginToRFM("Organisation", credRole = "Assistant")
+      login(
+        userType = "Organisation",
+        pageUrl = "rfm",
+        credRole = "Assistant"
+      )
 
       Then("The user will be on the unable to use this service page")
       RFMKBAssistantUserPage.onPage()
     }
 
-    Scenario("4 - Verify already enrolled Organisation User KB page", Wip) {
+    Scenario("4 - Verify already enrolled Organisation User KB page", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 with rfm URL to Pillar2 service")
-      loginToRFM(
-        "Organisation",
+      login(
+        userType = "Organisation",
+        pageUrl = "rfm",
         Some(
           Enrolment(
             "HMRC-PILLAR2-ORG",
             "PLRID",
-            "XMPLR0012345674")
+            "XMPLR0012345674"
+          )
         )
       )
 
@@ -66,13 +78,14 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       RFMKBDuplicatePage.onPage()
     }
 
-    Scenario("5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page", Wip) {
+    Scenario("5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page", Tests) {
       Given("I clear the cache")
       thenIClearTheCache()
 
       Given("Organisation User logs in and navigates to RFM start page without Pillar2 enrolment with groupId 879D6270-E9C2-4092-AC91-21C61B69D1E7")
-      loginToRFM(
-        "Organisation",
+      login(
+        userType = "Organisation",
+        pageUrl = "rfm",
         groupId = "879D6270-E9C2-4092-AC91-21C61B69D1E7"
       )
 

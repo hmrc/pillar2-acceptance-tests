@@ -17,16 +17,20 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specpages.upe._
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.tags.Tests
 
 class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
   Feature("UPE NO ID journey") {
 
-    Scenario("User adds a Non-UK UPE and then makes amendments on the check your answers page") {
+    Scenario("User adds a Non-UK UPE and then makes amendments on the check your answers page", Tests) {
       Given("Organisation User logs in without enrollment")
-      givenXLogsInWithoutPillar2Enrolment()
+      login(
+        userType = "Organisation",
+        pageUrl = "upe"
+      )
 
       And("The user adds an Ultimate Parent Entity with a non-UK Address")
       UPERegisteredInUkPage.registeredInUkNo()

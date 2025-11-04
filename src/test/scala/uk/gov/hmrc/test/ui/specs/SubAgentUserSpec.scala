@@ -17,29 +17,34 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.asa.{ASAConfirmationPage, ASAIndividualKBPage, ASANoMatchErrorPage, ASANotAuthorisedPage, ASAOrganisationKBPage, ASAPillar2InputPage}
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
+import uk.gov.hmrc.test.ui.specpages.asa._
+import uk.gov.hmrc.test.ui.tags.Tests
 
 class SubAgentUserSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 submission Agent User Journey") {
 
-    Scenario("1 - Agent user uses incorrect PLRId and is taken to the not authorised page") {
-      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
-
-      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674",
-        "pillar2-auth"
+    Scenario("1 - Agent user uses incorrect PLRId and is taken to the not authorised page", Tests) {
+      Given("Agent User logs in with delegated enrollment XMPLR0012345674")
+      login(
+        userType = "Agent",
+        pageUrl = "asa",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-AS-AGENT",
+            identifierName = "AgentReference",
+            identifierValue = "1234"
+          )
+        ),
+        delegatedEnrolment = Some(
+          DelegatedEnrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XMPLR0012345674",
+            authRule = "pillar2-auth"
+          )
+        )
       )
 
       When("The agent enters XMPLR0123456789 as the client's PLRId")
@@ -50,21 +55,26 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
       ASANotAuthorisedPage.onPage()
     }
 
-    Scenario("2 - Agent user uses incorrect PLRId and is taken to the no match page") {
-      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
-
-      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674",
-        "pillar2-auth"
+    Scenario("2 - Agent user uses incorrect PLRId and is taken to the no match page", Tests) {
+      Given("Agent User logs in with delegated enrollment XMPLR0012345674")
+      login(
+        userType = "Agent",
+        pageUrl = "asa",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-AS-AGENT",
+            identifierName = "AgentReference",
+            identifierValue = "1234"
+          )
+        ),
+        delegatedEnrolment = Some(
+          DelegatedEnrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XMPLR0012345674",
+            authRule = "pillar2-auth"
+          )
+        )
       )
 
       When("The agent enters XEPLR0123456500 as the client's PLRId")
@@ -74,17 +84,23 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
       ASANoMatchErrorPage.onPage()
     }
 
-    Scenario("3 - Individual tries to access Agent service and is taken to unauthorised page") {
+    Scenario("3 - Individual tries to access Agent service and is taken to unauthorised page", Tests) {
       Given("Individual User logs in to register for Pillar2 Agent service")
-      givenXLogsInToRegisterForPillar2AgentService("Individual User")
+      login(
+        userType = "Individual",
+        pageUrl = "asa"
+      )
 
       Then("The user should be taken to the ASA Individual unauthorised Page")
       ASAIndividualKBPage.onPage()
     }
 
-    Scenario("4 - Organisation tries to access Agent service and is taken to unauthorised page") {
+    Scenario("4 - Organisation tries to access Agent service and is taken to unauthorised page", Tests) {
       Given("Organisation User logs in to register for Pillar2 Agent service")
-      givenXLogsInToRegisterForPillar2AgentService("Organisation User")
+      login(
+        userType = "Organisation",
+        pageUrl = "asa"
+      )
 
       Then("The user should be taken to the ASA Individual unauthorised Page")
       ASAOrganisationKBPage.onPage()
