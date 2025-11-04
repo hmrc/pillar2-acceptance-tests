@@ -47,7 +47,13 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andIEnterXAsX("UPE name", "XMPLR0009999999")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      val addressData: Map[String, String] = Map(
+        "addressLine1" -> "Address Line 1",
+        "addressLine3" -> "City",
+        "postalCode"   -> "EH5 5WY",
+        "countryCode"  -> "United Arab Emirates"
+      )
+      thenIEnterAddressAs(addressData)
 
       When("I enter UPE Person/Team name as UPE Contact Name")
         andIEnterXAsX("UPE Person/Team name", "UPE Contact Name")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -77,7 +83,15 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter account period as:")
-        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+        val dateRangeData: Map[String, String] = Map(
+          "startDate.day"   -> "15",
+          "startDate.month" -> "1",
+          "startDate.year"  -> "2024",
+          "endDate.day"     -> "15",
+          "endDate.month"   -> "1",
+          "endDate.year"    -> "2025"
+        )
+        andIEnterAccountPeriodAs(dateRangeData)
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -95,7 +109,13 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressDataOne: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1",
+          "addressLine3" -> "City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Kingdom"
+        )
+        thenIEnterAddressAs(addressDataOne)
 
       Then("I should navigate to Contact details Check answers page")
         thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -110,7 +130,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Review answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to duplicate ack ref error page")
         thenIShouldNavigateToX("duplicate ack ref error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -137,7 +157,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click Add filing member details link")
         andIClickXLink("Add filing member details")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -161,7 +181,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("NFM UKCompany GRS page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click Add further group details link")
         andIClickXLink("Add further group details")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -170,7 +190,15 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter account period as:")
-        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+        val dateRangeData: Map[String, String] = Map(
+          "startDate.day"   -> "15",
+          "startDate.month" -> "1",
+          "startDate.year"  -> "2024",
+          "endDate.day"     -> "15",
+          "endDate.month"   -> "1",
+          "endDate.year"    -> "2025"
+        )
+        andIEnterAccountPeriodAs(dateRangeData)
 
       Then("I should navigate to FD check your answers page")
         thenIShouldNavigateToX("FD check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -206,7 +234,13 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressDataOne: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1",
+          "addressLine3" -> "City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Kingdom"
+        )
+        thenIEnterAddressAs(addressDataOne)
 
       Then("I should navigate to Contact details Check answers page")
         thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -278,7 +312,13 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andIEnterXAsX("UPE name", "regNoIDInvalidRequest")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressData: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1",
+          "addressLine3" -> "City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Arab Emirates"
+        )
+        thenIEnterAddressAs(addressData)
 
       When("I enter UPE Person/Team name as UPE Contact Name")
         andIEnterXAsX("UPE Person/Team name", "UPE Contact Name")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -311,7 +351,15 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter account period as:")
-        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+        val dateRangeData: Map[String, String] = Map(
+          "startDate.day"   -> "15",
+          "startDate.month" -> "1",
+          "startDate.year"  -> "2024",
+          "endDate.day"     -> "15",
+          "endDate.month"   -> "1",
+          "endDate.year"    -> "2025"
+        )
+        andIEnterAccountPeriodAs(dateRangeData)
 
       Then("I should navigate to FD check your answers page")
         thenIShouldNavigateToX("FD check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -338,7 +386,13 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressDataOne: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1",
+          "addressLine3" -> "City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Kingdom"
+        )
+        thenIEnterAddressAs(addressDataOne)
 
       Then("I should navigate to Contact details Check answers page")
         thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -350,7 +404,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andIClickXLink("Check your answers before submitting your registration")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should navigate to Registration API error page")
         thenIShouldNavigateToX("Registration API error page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -407,7 +461,13 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andIEnterXAsX("UPE name", "Test UPE")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressDataOne: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1",
+          "addressLine3" -> "City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Kingdom"
+        )
+        thenIEnterAddressAs(addressDataOne)
 
       Then("I should navigate to UPE Contact person/team Name page")
         thenIShouldNavigateToX("UPE Contact person/team Name page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -443,7 +503,15 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXInFurtherDetailsGroupStatusPage("In the UK and outside the UK")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       When("I enter account period as:")
-        andIEnterAccountPeriodAs(null)  // auto-chosen (score=1.00, SubscriptionJourneyStepsSteps.scala)
+        val dateRangeData: Map[String, String] = Map(
+          "startDate.day"   -> "15",
+          "startDate.month" -> "1",
+          "startDate.year"  -> "2024",
+          "endDate.day"     -> "15",
+          "endDate.month"   -> "1",
+          "endDate.year"    -> "2025"
+        )
+        andIEnterAccountPeriodAs(dateRangeData)
 
       Then("I should navigate to FD check your answers page")
         thenIShouldNavigateToX("FD check your answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -473,7 +541,13 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      val addressData: Map[String, String] = Map(
+        "addressLine1" -> "Address Line 1",
+        "addressLine3" -> "City",
+        "postalCode"   -> "EH5 5WY",
+        "countryCode"  -> "United Kingdom"
+      )
+      thenIEnterAddressAs(addressData)
 
       Then("I should navigate to Contact details Check answers page")
         thenIShouldNavigateToX("Contact details Check answers page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

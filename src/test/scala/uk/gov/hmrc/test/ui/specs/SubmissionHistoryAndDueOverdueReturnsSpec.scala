@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.featurespec.AnyFeatureSpec
+import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps.{andIShouldSeeIntAccountingPeriodsOnDueOverduePage, andIShouldSeeIntAccountingPeriodsOnSubHistoryPage, andIShouldSeeIntSectionWithStatusString}
 import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps.{thenIShouldBeOnX, thenIShouldNavigateToX}
@@ -37,26 +38,25 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 4 accounting periods on Due Overdue Page")
-        // ⚠️ No step-def match found for: I should see 4 accounting periods on Due Overdue Page
+        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(4)
 
       And("I should see 1 section with status Due")
-        // ⚠️ No step-def match found for: I should see 1 section with status Due
+        andIShouldSeeIntSectionWithStatusString(1,"Due")
 
       And("I should see 3 section with status Overdue")
-        // ⚠️ No step-def match found for: I should see 3 section with status Overdue
+        andIShouldSeeIntSectionWithStatusString(3,"Overdue")
 
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 0 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 0 accounting periods on Sub History Page
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
       When("I click due and overdue returns link")
         andIClickXLink("due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should navigate to Due & Over Due Page")
         thenIShouldNavigateToX("Due & Over Due Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
     }
 
     Scenario("2 - Org User navigates to Due & Overdue returns and Submission History pages for no accounting period") {
@@ -70,13 +70,13 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 0 accounting periods on Due Overdue Page")
-        // ⚠️ No step-def match found for: I should see 0 accounting periods on Due Overdue Page
+        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 0 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 0 accounting periods on Sub History Page
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
     }
 
@@ -91,19 +91,19 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 1 accounting periods on Due Overdue Page")
-        // ⚠️ No step-def match found for: I should see 1 accounting periods on Due Overdue Page
+        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(1)
 
       And("I should see 1 section with status Due")
-        // ⚠️ No step-def match found for: I should see 1 section with status Due
+        andIShouldSeeIntSectionWithStatusString(1,"Due")
 
       And("I should see 0 section with status Overdue")
-        // ⚠️ No step-def match found for: I should see 0 section with status Overdue
+        andIShouldSeeIntSectionWithStatusString(0,"Overdue")
 
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 0 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 0 accounting periods on Sub History Page
+      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
     }
 
@@ -118,13 +118,13 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 0 accounting periods on Due Overdue Page")
-        // ⚠️ No step-def match found for: I should see 0 accounting periods on Due Overdue Page
+        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 2 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 2 accounting periods on Sub History Page
+      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
 
     }
 
@@ -139,19 +139,19 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 2 accounting periods on Due Overdue Page")
-        // ⚠️ No step-def match found for: I should see 2 accounting periods on Due Overdue Page
+      andIShouldSeeIntAccountingPeriodsOnDueOverduePage(2)
 
       And("I should see 0 section with status Due")
-        // ⚠️ No step-def match found for: I should see 0 section with status Due
+      andIShouldSeeIntSectionWithStatusString(0,"Due")
 
       And("I should see 2 section with status Overdue")
-        // ⚠️ No step-def match found for: I should see 2 section with status Overdue
+      andIShouldSeeIntSectionWithStatusString(2,"Overdue")
 
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 2 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 2 accounting periods on Sub History Page
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
 
     }
 
@@ -166,13 +166,13 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 0 accounting periods on Due Overdue Page")
-        // ⚠️ No step-def match found for: I should see 0 accounting periods on Due Overdue Page
+      andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I should see 1 accounting periods on Sub History Page")
-        // ⚠️ No step-def match found for: I should see 1 accounting periods on Sub History Page
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(1)
 
     }
   }
