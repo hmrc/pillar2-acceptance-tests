@@ -17,13 +17,12 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.DueOverdueStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
+import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps.andIAmOnFeedbackSurveyPage
 
 class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
@@ -184,10 +183,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
-
+         andIAmOnFeedbackSurveyPage()
     }
 
     Scenario("3 - Org User navigates to BTN Accounting Period Page") {
@@ -228,10 +224,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
-
+      andIAmOnFeedbackSurveyPage()
     }
 
     Scenario("4 - Agent User navigates to BTN Accounting Period Page") {
@@ -272,13 +265,10 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
+        andIAmOnFeedbackSurveyPage()
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
     }
 
     Scenario("5 - Agent User navigates to below threshold notification CYA page and change pages") {
@@ -329,8 +319,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the Domestic or Mne")
         andIClickOnChangeHyperlinkNextToTheX("Domestic or Mne")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -394,8 +382,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the Domestic or Mne")
         andIClickOnChangeHyperlinkNextToTheX("Domestic or Mne")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       When("I select option No and continue on Pillar2 submission")
         andISelectOptionXAndContinueOnPillar2Submission("No")  // auto-chosen (score=1.00, DueOverdueStepsSteps.scala)
@@ -450,8 +436,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the Domestic or Mne")
         andIClickOnChangeHyperlinkNextToTheX("Domestic or Mne")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -497,8 +481,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
       When("I click on change hyperlink next to the Domestic or Mne")
         andIClickOnChangeHyperlinkNextToTheX("Domestic or Mne")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       When("I select option No and continue on Pillar2 submission")
         andISelectOptionXAndContinueOnPillar2Submission("No")  // auto-chosen (score=1.00, DueOverdueStepsSteps.scala)
@@ -954,9 +936,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIAmOnFeedbackSurveyPage() [1.00] (UPEStepsSteps.scala) pattern: I am on feedback survey page
+        andIAmOnFeedbackSurveyPage()
 
     }
 
@@ -1068,8 +1048,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
       And("I select PreviousAccountingPeriodUKTRSubmitted")
         whenISelectPreviousAccountingPeriodUKTRSubmitted()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // thenISelectPreviousAccountingPeriod() [1.00] (CommonStepsSteps.scala) pattern: I select PreviousAccountingPeriod
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -1097,8 +1075,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
       And("I select PreviousAccountingPeriodBTNSubmitted")
         whenISelectPreviousAccountingPeriodBTNSubmitted()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // thenISelectPreviousAccountingPeriod() [1.00] (CommonStepsSteps.scala) pattern: I select PreviousAccountingPeriod
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -1123,8 +1099,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
       And("I select PreviousAccountingPeriodBTNSubmitted")
         whenISelectPreviousAccountingPeriodBTNSubmitted()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // thenISelectPreviousAccountingPeriod() [1.00] (CommonStepsSteps.scala) pattern: I select PreviousAccountingPeriod
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -1136,9 +1110,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I select PreviousAccountingPeriodUKTRSubmitted")
-        whenISelectPreviousAccountingPeriodUKTRSubmitted()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-        // --- Other possible matches ---
-        // thenISelectPreviousAccountingPeriod() [1.00] (CommonStepsSteps.scala) pattern: I select PreviousAccountingPeriod
+        whenISelectPreviousAccountingPeriodUKTRSubmitted()  // auto-chosen (score=1.00, CommonStepsSteps.scala
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)

@@ -23,6 +23,7 @@ import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps._
+import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps.andIShouldSeeTheXFieldIsPrepopulatedWithX
 
 class SubAgentUserSpec extends BaseSpec with Matchers {
 
@@ -120,7 +121,7 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("ASA Pillar2 Input Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see the PLRID field is pre-populated with XMPLR0012345674")
-        // ⚠️ No step-def match found for: I should see the PLRID field is pre-populated with XMPLR0012345674
+        andIShouldSeeTheXFieldIsPrepopulatedWithX("PLRID","XMPLR0012345674")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -229,7 +230,6 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
 
       Then("I should navigate to ASA Organisation KB Page")
         thenIShouldNavigateToX("ASA Organisation KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
     }
   }
 }

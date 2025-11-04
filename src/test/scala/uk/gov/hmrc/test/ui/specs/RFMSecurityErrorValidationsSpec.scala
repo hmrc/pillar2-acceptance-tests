@@ -36,7 +36,12 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XEPLR0123456400")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -79,8 +84,6 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
       When("I click change link for RFM Pillar 2 Top-up Taxes ID")
         andIClickChangeLinkForRFMX("Pillar 2 Top-up Taxes ID")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
-        // --- Other possible matches ---
-        // andIClickXLink() [1.00] (CommonStepsSteps.scala) pattern: I click (.*) link
 
       And("I provide RFM pillar2 id as XEPLR0123456404")
         andIProvideRFMXAsX("pillar2 id", "XEPLR0123456404")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -122,10 +125,15 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0012345111")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Saving Progress Page")
         thenIShouldBeOnX("RFM Saving Progress Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -149,7 +157,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToGRSPage("UK limited company")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Contact Guidance page")
         thenIShouldBeOnX("RFM Contact Guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -170,7 +178,13 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      val addressData: Map[String, String] = Map(
+        "addressLine1" -> "Address Line 1 CYA",
+        "addressLine3" -> "City CYA",
+        "postalCode"   -> "EH5 5WY",
+        "countryCode"  -> "Australia"
+      )
+      thenIEnterAddressAs(addressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -179,7 +193,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be redirected to RFM processing page or Amend API error Page for RFM")
-        // ⚠️ No step-def match found for: I should be redirected to RFM processing page or Amend API error Page for RFM
+        thenIShouldBeRedirectedTo("RFM processing page","Amend API error Page for RFM")
 
       And("I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link")
         andIClickXLink("to replace the filing member for a Pillar 2 Top-up Taxes account to try again")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -206,10 +220,15 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       And("I access RFM corporate position page")
         givenIAccessRFMXPage("corporate position")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -227,7 +246,13 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("New NFM Name", "Test CYA")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressData: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1 CYA",
+          "addressLine3" -> "City CYA",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "Australia"
+        )
+        thenIEnterAddressAs(addressData)
 
       And("I continue to RFM contact name Page")
         andIContinueToRFMContactNamePage()  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -245,7 +270,13 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      val addressDataOne: Map[String, String] = Map(
+        "addressLine1" -> "Address Line 1 CYA",
+        "addressLine3" -> "City CYA",
+        "postalCode"   -> "EH5 5WY",
+        "countryCode"  -> "Australia"
+      )
+      thenIEnterAddressAs(addressDataOne)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -287,10 +318,15 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Saving Progress Page")
         thenIShouldBeOnX("RFM Saving Progress Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -344,10 +380,15 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("RFM Registration Date Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateDataOne: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateDataOne)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Saving Progress Page")
         thenIShouldBeOnX("RFM Saving Progress Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
