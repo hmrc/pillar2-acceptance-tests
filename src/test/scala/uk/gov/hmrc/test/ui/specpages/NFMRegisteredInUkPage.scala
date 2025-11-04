@@ -16,10 +16,8 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
 object NFMRegisteredInUkPage extends BasePage {
-  override val url: String  = s"$baseUrl" + "business-matching/filing-member/registered-in-uk"
+  override val url: String = s"$baseUrl" + "business-matching/filing-member/registered-in-uk"
 
   def registeredInUkYes(): Unit = {
     onPage()

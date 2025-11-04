@@ -16,22 +16,19 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import io.cucumber.datatable.DataTable
-import uk.gov.hmrc.test.ui.cucumber.Input.getAttributeOfId
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
-import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object SubscriptionJourneyStepsSteps {
 
   // ^I enter account period as:$
-  def andIEnterAccountPeriodAs(accountPeriod: DataTable): Unit = {
+  def andIEnterAccountPeriodAs(accountPeriod: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
-        Input.enterData(accountPeriod)
-        UPEEntityTypePage.clickContinue()
+    Input.enterData(accountPeriod)
+    UPEEntityTypePage.clickContinue()
   }
 
-  //todo: commented overload Test and delete if required.
+  // todo: commented overload Test and delete if required.
 
   // Overload for ScalaTest (no DataTable, accepts varargs)
 //  def andIEnterAccountPeriodAs(links: (String, String)*): Unit = {
@@ -48,7 +45,6 @@ object SubscriptionJourneyStepsSteps {
 //  }
 
   // ^Accounting Period (.*) is entered as (.*)$
-
 
   // ^I should see date field (.*) is pre-populated with (.*)$
 }

@@ -75,7 +75,7 @@ object UPEStepsSteps {
     }
   }
 
-   // ^I should see the answer (.*) remain selected$
+  // ^I should see the answer (.*) remain selected$
   def andIShouldSeeTheAnswerXRemainSelected(answer: String): Unit = {
     Check.checkAnswerSelection(answer)
   }

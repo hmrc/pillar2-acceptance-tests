@@ -17,12 +17,10 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{andIAccessXPaymentPage, andIEnterUKBankAccountDetailsAs, andIProvideValueForXAsX, andISelectOptionXOnPartialNameErrorPage, andISelectRepaymentMethodAsX}
+import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{andIAccessXPaymentPage, andIEnterUKBankAccountDetailsAs, andIProvideRefundAmountAs, andIProvideValueForXAsX, andISelectOptionXOnPartialNameErrorPage, andISelectRepaymentMethodAsX}
 
 
 class BarsErrorHandlingSpec extends BaseSpec with Matchers {
@@ -43,7 +41,7 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I provide Refund Amount as 100.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 100.00
+        andIProvideRefundAmountAs("100.00")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -64,7 +62,15 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         andISelectRepaymentMethodAsX("UK bank account")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      // 1. Create an instance of your case class with the data from the table.
+      val bankDetailsOneData: Map[String, String] = Map(
+        "bankName"          -> "Test",
+        "accountHolderName" -> "Eco Focus",
+        "sortCode"          -> "206705",
+        "accountNumber"     -> "56945688"
+      )
+
+      andIEnterUKBankAccountDetailsAs(bankDetailsOneData)
 
       Then("I should be on Repayment Could Not Confirm Error Page")
         thenIShouldBeOnX("Repayment Could Not Confirm Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -76,7 +82,13 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("UK Bank Account Payment Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      val bankDetailsTwoData: Map[String, String] = Map(
+        "bankName"          -> "Test",
+        "accountHolderName" -> "Innovation Arch",
+        "sortCode"          -> "206705",
+        "accountNumber"     -> "56523611"
+      )
+        andIEnterUKBankAccountDetailsAs(bankDetailsTwoData)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Bank Details Error Page")
         thenIShouldBeOnX("Repayment Bank Details Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -88,7 +100,13 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("UK Bank Account Payment Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      val bankDetailsThreeData: Map[String, String] = Map(
+        "bankName"          -> "Test",
+        "accountHolderName" -> "Flux Water Gear",
+        "sortCode"          -> "207102",
+        "accountNumber"     -> "86473611"
+      )
+        andIEnterUKBankAccountDetailsAs(bankDetailsThreeData)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Bars Error Page")
         thenIShouldBeOnX("Repayment Bars Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -103,7 +121,13 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         andIAccessXPaymentPage("UK")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      val bankDetailsFourData: Map[String, String] = Map(
+        "bankName"          -> "Test",
+        "accountHolderName" -> "Epic",
+        "sortCode"          -> "206705",
+        "accountNumber"     -> "86473611"
+      )
+        andIEnterUKBankAccountDetailsAs(bankDetailsFourData)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Partial Name Error Page")
         thenIShouldBeOnX("Repayment Partial Name Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -157,7 +181,7 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I provide Refund Amount as 100.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 100.00
+        andIProvideRefundAmountAs("100.00")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -178,7 +202,13 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         andISelectRepaymentMethodAsX("UK bank account")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      val bankDetailsFiveData: Map[String, String] = Map(
+        "bankName"          -> "Test",
+        "accountHolderName" -> "Eco Focus",
+        "sortCode"          -> "206705",
+        "accountNumber"     -> "56945688"
+      )
+        andIEnterUKBankAccountDetailsAs(bankDetailsFiveData)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Could Not Confirm Error Page")
         thenIShouldBeOnX("Repayment Could Not Confirm Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -187,7 +217,13 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         andIClickXLink("return to your bank details and try again")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      val bankDetailsSixData: Map[String, String] = Map(
+        "bankName"          -> "Test",
+        "accountHolderName" -> "Innovation Arch",
+        "sortCode"          -> "206705",
+        "accountNumber"     -> "56523611"
+      )
+        andIEnterUKBankAccountDetailsAs(bankDetailsSixData)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Bank Details Error Page")
         thenIShouldBeOnX("Repayment Bank Details Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -196,7 +232,13 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         andIClickXLink("try again with a different business bank account")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      val bankDetailsSevenData: Map[String, String] = Map(
+        "bankName"          -> "Test",
+        "accountHolderName" -> "Flux Water Gear",
+        "sortCode"          -> "207102",
+        "accountNumber"     -> "86473611"
+      )
+        andIEnterUKBankAccountDetailsAs(bankDetailsSevenData)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Bars Error Page")
         thenIShouldBeOnX("Repayment Bars Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -214,7 +256,13 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
         andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      val bankDetailsEightData: Map[String, String] = Map(
+        "bankName"          -> "Test",
+        "accountHolderName" -> "Epic",
+        "sortCode"          -> "206705",
+        "accountNumber"     -> "86473611"
+      )
+        andIEnterUKBankAccountDetailsAs(bankDetailsEightData)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Partial Name Error Page")
         thenIShouldBeOnX("Repayment Partial Name Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

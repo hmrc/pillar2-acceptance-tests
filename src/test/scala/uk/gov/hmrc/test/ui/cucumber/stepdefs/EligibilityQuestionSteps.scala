@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.datatable.DataTable
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
@@ -44,11 +43,11 @@ class EligibilityQuestionSteps extends CommonFunctions {
     assertNavigationToPage(pageMatch(page))
   }
 
-//  Then("""^I enter Address as:""") { (address: DataTable) =>
-//    Input.enterData(address)
+  Then("""^I enter Address as:""") { (address: Map[String,String]) =>
+    Input.enterData(address)
 //    UPEAddressPage.clickCountrySelected()
-//    UPEEntityTypePage.clickContinue()
-//  }
+    UPEEntityTypePage.clickContinue()
+  }
 
   Then("""^I should be on (.*)""") { (page: String) =>
     Wait.waitForElementToClickTagName("h1")

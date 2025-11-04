@@ -17,13 +17,13 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{andIAccessXPaymentPage, andIEnterNonUKBankAccountDetailsAs, andIEnterUKBankAccountDetailsAs, andINavigateFromContactPageToCYAPage, andIProvideValueForXAsX, andISelectRepaymentMethodAsX, givenIAccessRepaymentContactEmailPage, thenTheCharacterLimitTextShouldDisplayX, whenIAccessRepaymentCYAPage, whenIClickChangeLinkForRepaymentX}
+import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{IProvideRepaymentContactXAsX, IShouldSeeBankAccountErrorMessageXOnTheXElement, andIAccessXPaymentPage, andIEnterNonUKBankAccountDetailsAs, andIEnterUKBankAccountDetailsAs, andINavigateFromContactPageToCYAPage, andIProvideRefundAmountAs, andIProvideRefundReasonAsX, andIProvideValueForXAsX, andISelectRepaymentMethodAsX, givenIAccessRepaymentContactEmailPage, thenTheCharacterLimitTextShouldDisplayX, whenIAccessRepaymentCYAPage, whenIClickChangeLinkForRepaymentX}
+//import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps.thenIShouldBeRedirectedTo
+//import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps.andIAmOnFeedbackSurveyPage
 
 class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
@@ -49,7 +49,13 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIRefreshThePage()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val bankDetailsFromTable: Map[String, String] = Map(
+          "bankName"          -> "HSBC",
+          "nameOnBankAccount" -> "HMRC Shipley",
+          "bic"               -> "HbuKGb4B",
+          "iban"              -> "gb29NWBK60161331926819"
+        )
+        andIEnterNonUKBankAccountDetailsAs(bankDetailsFromTable)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Contact Page")
         thenIShouldBeOnX("Repayment Contact Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -58,19 +64,31 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val invalidBankDetails: Map[String, String] = Map(
+          "bankName"          -> "NameOfTheBankMustBe40CharactersOrLessError",
+          "nameOnBankAccount" -> "NameOnTheAccountMustBe60CharactersOrLessOrThereWillBeAnErrorAsSeen",
+          "bic"               -> "HBUKG",
+          "iban"              -> "1Z03A1234567890ABCBBH1"
+        )
+        andIEnterNonUKBankAccountDetailsAs(invalidBankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I refresh the page")
         whenIRefreshThePage()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val mixedValidityBankDetails: Map[String, String] = Map(
+          "bankName"          -> "HSBC",
+          "nameOnBankAccount" -> "HMRC Shipley",
+          "bic"               -> "0BCDEF01A1C",
+          "iban"              -> "ErrorMessageIBANMustBeUpto34Characters"
+        )
+        andIEnterNonUKBankAccountDetailsAs(mixedValidityBankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I click Sign out link")
         andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I am on feedback survey page")
-        givenIAmOnXPage("feedback survey")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//        andIAmOnFeedbackSurveyPage()
 
       When("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
         whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -115,7 +133,12 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         givenIAccessTheXPage("non-uk bank account")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val partialBankDetails: Map[String, String] = Map(
+          "nameOnBankAccount" -> "NameOnTheAccountMustBe60CharactersOrLessOrThereWillBeAnErrorAsSeen",
+          "bic"               -> "0BCDEF01A1C",
+          "iban"              -> "1Z03A1234567890ABCBBH1"
+        )
+        andIEnterNonUKBankAccountDetailsAs(partialBankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I click Report Pillar 2 Top-up Taxes link")
         andIClickXLink("Report Pillar 2 Top-up Taxes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -145,7 +168,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Repayment Amount Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I provide Refund Amount as 100.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 100.00
+        andIProvideRefundAmountAs("100.00")
 
       Then("I should navigate to Reason For Refund Page")
         thenIShouldNavigateToX("Reason For Refund Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -214,19 +237,25 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Non UK Bank Account Payment Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val validBankDetails: Map[String, String] = Map(
+          "bankName"          -> "HSBC",
+          "nameOnBankAccount" -> "Test Name",
+          "bic"               -> "HBUKGB4B",
+          "iban"              -> "GB29NWBK60161331926819"
+        )
+        andIEnterNonUKBankAccountDetailsAs(validBankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       And("I provide Repayment contact name as Repayment Contact Name")
-        // ⚠️ No step-def match found for: I provide Repayment contact name as Repayment Contact Name
+        IProvideRepaymentContactXAsX("name","Contact Name")
 
       When("I provide Repayment contact email as repayment@email.com")
-        // ⚠️ No step-def match found for: I provide Repayment contact email as repayment@email.com
+      IProvideRepaymentContactXAsX("email","repayment@email.com")
 
       When("I select option Yes and continue to next")
         andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I provide Repayment contact phone as 789765423")
-        // ⚠️ No step-def match found for: I provide Repayment contact phone as 789765423
+        IProvideRepaymentContactXAsX("phone","789765423")
 
       Then("I should be on Repayment CYA Page")
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -265,13 +294,12 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickChangeLinkForRepaymentX("Amount")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I provide Refund Amount as 1000.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 1000.00
-
+        andIProvideRefundAmountAs("1000.00")
       When("I click change link for Repayment Reason")
         whenIClickChangeLinkForRepaymentX("Reason")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       And("I provide Refund Reason as Test Reason")
-        // ⚠️ No step-def match found for: I provide Refund Reason as Test Reason
+        andIProvideRefundReasonAsX("Test Reason")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -283,19 +311,26 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickChangeLinkForRepaymentX("Bank Name")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val updatedBankDetails: Map[String, String] = Map(
+          "bankName"          -> "HSBC2",
+          "nameOnBankAccount" -> "Test Name2",
+          "bic"               -> "HBUKGB4C",
+          "iban"              -> "GB29NWBK60161331926820"
+        )
+
+        andIEnterNonUKBankAccountDetailsAs(updatedBankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I click change link for Repayment Contact Name")
         whenIClickChangeLinkForRepaymentX("Contact Name")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       And("I provide Repayment contact name as Repayment Contact Name change")
-        // ⚠️ No step-def match found for: I provide Repayment contact name as Repayment Contact Name change
+        IProvideRepaymentContactXAsX("name","Repayment Contact Name change")
 
       When("I click change link for Repayment Contact Email")
         whenIClickChangeLinkForRepaymentX("Contact Email")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I provide Repayment contact email as email@change.com")
-        // ⚠️ No step-def match found for: I provide Repayment contact email as email@change.com
+        IProvideRepaymentContactXAsX("email","email@change.com")
 
       When("I click change link for Repayment Contact Phone")
         whenIClickChangeLinkForRepaymentX("Contact Phone")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
@@ -307,7 +342,16 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see details as below:")
-        andIShouldSeeDetailsAsBelow(null)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
+        val updatedContactAndBankDetails: Map[String, String] = Map(
+          "Name of the bank"                 -> "HSBC2",
+          "Name on account"                  -> "Test Name2",
+          "BIC or SWIFT code"                -> "HBUKGB4C",
+          "IBAN"                             -> "GB29NWBK60161331926820",
+          "Contact name"                     -> "Repayment Contact Name change",
+          "Email address"                    -> "email@change.com",
+          "Can we contact by phone?"         -> "No"
+        )
+        andIShouldSeeDetailsAsBelow(updatedContactAndBankDetails)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
 
       And("I can see Print this page link")
         thenICanSeeXLink("Print this page")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -379,7 +423,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Repayment Amount Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I provide Refund Amount as 9999.99")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 9999.99
+        andIProvideRefundAmountAs("9999.99")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -451,19 +495,27 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         andISelectRepaymentMethodAsX("Non-UK bank account")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val bankDetails: Map[String, String] = Map(
+          "bankName"          -> "HSBC",
+          "nameOnBankAccount" -> "Test Name",
+          "bic"               -> "HBUKGB4B",
+          "iban"              -> "GB29NWBK60161331926819"
+        )
+        andIEnterNonUKBankAccountDetailsAs(bankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       And("I provide Repayment contact name as Repayment Contact Name")
-        // ⚠️ No step-def match found for: I provide Repayment contact name as Repayment Contact Name
+        IProvideRepaymentContactXAsX("name","Repayment Contact Name")
 
       When("I provide Repayment contact email as repayment@email.com")
-        // ⚠️ No step-def match found for: I provide Repayment contact email as repayment@email.com
+        IProvideRepaymentContactXAsX("email","repayment@email.com")
+
 
       When("I select option Yes and continue to next")
         andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I provide Repayment contact phone as 789765423")
-        // ⚠️ No step-def match found for: I provide Repayment contact phone as 789765423
+        IProvideRepaymentContactXAsX("phone","789765423")
+
 
       Then("I should be on Repayment CYA Page")
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -514,7 +566,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickChangeLinkForRepaymentX("Amount")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I provide Refund Amount as 1000.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 1000.00
+        andIProvideRefundAmountAs("1000.00")
 
       Then("I should be on Repayment CYA Page")
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -523,7 +575,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickChangeLinkForRepaymentX("Reason")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       And("I provide Refund Reason as Test Reason")
-        // ⚠️ No step-def match found for: I provide Refund Reason as Test Reason
+        andIProvideRefundReasonAsX("Test Reason")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -556,7 +608,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickChangeLinkForRepaymentX("Contact Name")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       And("I provide Repayment contact name as Repayment Contact Name change")
-        // ⚠️ No step-def match found for: I provide Repayment contact name as Repayment Contact Name change
+        IProvideRepaymentContactXAsX("name","Repayment Contact Name change")
 
       Then("I should be on Repayment CYA Page")
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -565,7 +617,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickChangeLinkForRepaymentX("Contact Email")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I provide Repayment contact email as email@change.com")
-        // ⚠️ No step-def match found for: I provide Repayment contact email as email@change.com
+        IProvideRepaymentContactXAsX("email","email@change.com")
 
       Then("I should be on Repayment CYA Page")
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -580,7 +632,16 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see details as below:")
-        andIShouldSeeDetailsAsBelow(null)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
+        val summaryDetails: Map[String, String] = Map(
+          "Name of the bank"                 -> "HSBC2",
+          "Name on account"                  -> "Test Name2",
+          "BIC or SWIFT code"                -> "HBUKGB4C",
+          "IBAN"                             -> "GB29NWBK60161331926820",
+          "Contact name"                     -> "Repayment Contact Name change",
+          "Email address"                    -> "email@change.com",
+          "Can we contact by phone?"         -> "No"
+        )
+        andIShouldSeeDetailsAsBelow(summaryDetails)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
 
       When("I click change link for Repayment UK Bank Method")
         whenIClickChangeLinkForRepaymentX("UK Bank Method")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
@@ -613,7 +674,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be redirected to Repayment processing page or Repayment Confirmation Page")
-        // ⚠️ No step-def match found for: I should be redirected to Repayment processing page or Repayment Confirmation Page
+//        thenIShouldBeRedirectedTo("Repayment processing page","Repayment Confirmation Page")
 
       And("I should be on Repayment Confirmation Page")
         thenIShouldBeOnX("Repayment Confirmation Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -685,7 +746,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Repayment Amount Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I provide Refund Amount as 999.99")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 999.99
+        andIProvideRefundAmountAs("999.99")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -724,13 +785,19 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should see bank account error message Enter the name of the bank on the UK Bank Name Element")
-        // ⚠️ No step-def match found for: I should see bank account error message Enter the name of the bank on the UK Bank Name Element
+        IShouldSeeBankAccountErrorMessageXOnTheXElement("Enter the name of the bank","UK Bank Name")
 
       When("I refresh the page")
         whenIRefreshThePage()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      val ukBankDetails: Map[String, String] = Map(
+        "bankName"          -> "Natwest",
+        "accountHolderName" -> "Epic Adventure Inc",
+        "sortCode"          -> "206705",
+        "accountNumber"     -> "86473611"
+      )
+      andIEnterUKBankAccountDetailsAs(ukBankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Contact Page")
         thenIShouldBeOnX("Repayment Contact Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -742,16 +809,16 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I provide Repayment contact name as Repayment Contact Name")
-        // ⚠️ No step-def match found for: I provide Repayment contact name as Repayment Contact Name
+        IProvideRepaymentContactXAsX("name","Repayment Contact Name")
 
       When("I provide Repayment contact email as repayment@email.com")
-        // ⚠️ No step-def match found for: I provide Repayment contact email as repayment@email.com
+        IProvideRepaymentContactXAsX("email","repayment@email.com")
 
       When("I select option Yes and continue to next")
         andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I provide Repayment contact phone as 789765423")
-        // ⚠️ No step-def match found for: I provide Repayment contact phone as 789765423
+        IProvideRepaymentContactXAsX("phone","789765423")
 
       Then("I should be on Repayment CYA Page")
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -760,7 +827,13 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickChangeLinkForRepaymentX("UK Bank Name")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val updatedUkBankDetails: Map[String, String] = Map(
+          "bankName"          -> "Natwest Change",
+          "accountHolderName" -> "O'Connor Construction",
+          "sortCode"          -> "609593",
+          "accountNumber"     -> "96863604"
+        )
+        andIEnterUKBankAccountDetailsAs(updatedUkBankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I click change link for Repayment UK Bank Method")
         whenIClickChangeLinkForRepaymentX("UK Bank Method")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
@@ -805,7 +878,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Repayment Amount Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I provide Refund Amount as 100.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 100.00
+        andIProvideRefundAmountAs("100.00")
 
       Then("I should navigate to Reason For Refund Page")
         thenIShouldNavigateToX("Reason For Refund Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -829,7 +902,13 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("UK Bank Account Payment Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val ukBankDetailsOne: Map[String, String] = Map(
+          "bankName"          -> "Natwest",
+          "accountHolderName" -> "Epic Adventure Inc",
+          "sortCode"          -> "206705",
+          "accountNumber"     -> "86473611"
+        )
+        andIEnterUKBankAccountDetailsAs(ukBankDetailsOne)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Contact Page")
         thenIShouldBeOnX("Repayment Contact Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -844,16 +923,16 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I provide Repayment contact name as Repayment Contact Name")
-        // ⚠️ No step-def match found for: I provide Repayment contact name as Repayment Contact Name
+        IProvideRepaymentContactXAsX("name","Repayment Contact Name")
 
       When("I provide Repayment contact email as repayment@email.com")
-        // ⚠️ No step-def match found for: I provide Repayment contact email as repayment@email.com
+        IProvideRepaymentContactXAsX("email","repayment@email.com")
 
       When("I select option Yes and continue to next")
         andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I provide Repayment contact phone as 789765423")
-        // ⚠️ No step-def match found for: I provide Repayment contact phone as 789765423
+        IProvideRepaymentContactXAsX("phone","789765423")
 
       Then("I should be on Repayment CYA Page")
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -862,7 +941,13 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickChangeLinkForRepaymentX("UK Bank Name")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I enter UK Bank Account details as:")
-        andIEnterUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val bankDetailsData: Map[String, String] = Map(
+          "bankName"          -> "Natwest Change",
+          "accountHolderName" -> "O'Connor Construction",
+          "sortCode"          -> "609593",
+          "accountNumber"     -> "96863604"
+        )
+        andIEnterUKBankAccountDetailsAs(bankDetailsData)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I click change link for Repayment UK Bank Method")
         whenIClickChangeLinkForRepaymentX("UK Bank Method")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
@@ -871,7 +956,13 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         andISelectRepaymentMethodAsX("Non-UK bank account")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val bankDetails: Map[String, String] = Map(
+          "bankName"          -> "HSBC",
+          "nameOnBankAccount" -> "Test Name",
+          "bic"               -> "HBUKGB4C",
+          "iban"              -> "GB29NWBK60161331926820"
+        )
+      andIEnterNonUKBankAccountDetailsAs(bankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
     }
 
@@ -895,7 +986,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Repayment Amount Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I provide Refund Amount as 100.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 100.00
+        andIProvideRefundAmountAs("100.00")
 
       And("I provide value for Refund Reason as Test Refund")
         andIProvideValueForXAsX("Refund Reason", "Test Refund")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
@@ -910,7 +1001,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click Continue button")
-        // ⚠️ No step-def match found for: I click Continue button
+        clickAction("I click Continue button")
 
       Then("I should be on Repayment Incomplete Error Page")
         thenIShouldBeOnX("Repayment Incomplete Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -934,7 +1025,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click Continue button")
-        // ⚠️ No step-def match found for: I click Continue button
+        clickAction("I click Continue button")
 
       Then("I should be on Repayment Incomplete Error Page")
         thenIShouldBeOnX("Repayment Incomplete Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -994,7 +1085,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("Repayment Amount Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I provide Refund Amount as 100.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 100.00
+        andIProvideRefundAmountAs("100.00")
 
       And("I provide value for Refund Reason as Test Refund")
         andIProvideValueForXAsX("Refund Reason", "Test Refund")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
@@ -1009,7 +1100,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click Continue button")
-        // ⚠️ No step-def match found for: I click Continue button
+        clickAction("I click Continue button")
 
       Then("I should be on Repayment Incomplete Error Page")
         thenIShouldBeOnX("Repayment Incomplete Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1033,7 +1124,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Repayment CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click Continue button")
-        // ⚠️ No step-def match found for: I click Continue button
+        clickAction("I click Continue button")
 
       Then("I should be on Repayment Incomplete Error Page")
         thenIShouldBeOnX("Repayment Incomplete Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1072,10 +1163,10 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I provide Refund Amount as 100.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 100.00
+        andIProvideRefundAmountAs("100.00")
 
       And("I provide Refund Reason as Test Reason")
-        // ⚠️ No step-def match found for: I provide Refund Reason as Test Reason
+        andIProvideRefundReasonAsX("Test Reason")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -1090,7 +1181,13 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Non UK Bank Account Payment Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val internationalBankDetails: Map[String, String] = Map(
+          "bankName"          -> "HSBC",
+          "nameOnBankAccount" -> "Test Name",
+          "bic"               -> "HBUKGB4B",
+          "iban"              -> "GB29NWBK60161331926819"
+        )
+        andIEnterNonUKBankAccountDetailsAs(internationalBankDetails)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
       Then("I should be on Repayment Contact Page")
         thenIShouldBeOnX("Repayment Contact Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -1156,10 +1253,10 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I provide Refund Amount as 100.00")
-        // ⚠️ No step-def match found for: I provide Refund Amount as 100.00
+        andIProvideRefundAmountAs("100.00")
 
       And("I provide Refund Reason as Test Reason")
-        // ⚠️ No step-def match found for: I provide Refund Reason as Test Reason
+        andIProvideRefundReasonAsX("Test Reason")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -1174,7 +1271,13 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
         thenIShouldBeOnX("Non UK Bank Account Payment Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Non UK Bank Account details as:")
-        andIEnterNonUKBankAccountDetailsAs(null)  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+        val internationalBankDetails: Map[String, String] = Map(
+          "bankName"          -> "HSBC",
+          "nameOnBankAccount" -> "Test Name",
+          "bic"               -> "HBUKGB4B",
+          "iban"              -> "GB29NWBK60161331926819"
+        )
+        andIEnterNonUKBankAccountDetailsAs(internationalBankDetails)
 
       Then("I should be on Repayment Contact Page")
         thenIShouldBeOnX("Repayment Contact Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

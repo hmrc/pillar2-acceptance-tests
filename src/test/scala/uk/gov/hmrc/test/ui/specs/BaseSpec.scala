@@ -19,7 +19,8 @@ package uk.gov.hmrc.test.ui.specs
 import org.scalatest.featurespec.AnyFeatureSpec
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
-import uk.gov.hmrc.selenium.webdriver.{Browser, ScreenshotOnFailure}
+import uk.gov.hmrc.selenium.webdriver.{Browser, Driver, ScreenshotOnFailure}
+import uk.gov.hmrc.test.ui.cucumber.Nav
 
 trait BaseSpec
   extends AnyFeatureSpec
@@ -29,10 +30,14 @@ trait BaseSpec
     with Browser
     with ScreenshotOnFailure {
 
-  override def beforeEach(): Unit =
+  override def beforeEach(): Unit = {
     startBrowser()
+    Driver.instance.manage().deleteAllCookies()
+    Nav.clearCollections()
+  }
 
-  override def afterEach(): Unit =
+  override def afterEach(): Unit = {
     quitBrowser()
+  }
 
 }

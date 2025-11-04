@@ -23,7 +23,6 @@ import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.upe.{UPEGRSRegistrationFailedErrorPage, UPEGRSRegistrationNotCalledErrorPage}
 
 object CommonStepsSteps {
 

@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.cucumber.Check.{be, convertToAnyShouldWrapper, include}
@@ -27,25 +26,24 @@ import uk.gov.hmrc.test.ui.specpages.btn.BtnAgdKBPage
 import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object PaymentStepsSteps {
-
   // ^I should be navigated to new tab$
   def thenIShouldBeNavigatedToNewTab(): Unit = {
-    val handles = Driver.instance.getWindowHandles.toArray().toSeq
+    val handles   = Driver.instance.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
     Driver.instance.switchTo().window(newWindow)
   }
 
   // ^I should navigate back to main tab
   def thenIShouldNavigateBackToMainTab(): Unit = {
-    val handles = Driver.instance.getWindowHandles.toArray().toSeq
+    val handles    = Driver.instance.getWindowHandles.toArray().toSeq
     val mainWindow = handles.head.toString
     Driver.instance.switchTo().window(mainWindow)
   }
 
   // I should be redirected to guidance page in a new tab
   def thenIShouldBeRedirectedToGuidancePageInANewTab(): Unit = {
-    val handles = Driver.instance.getWindowHandles.toArray().toSeq
-    val newWindow = handles(1).toString
+    val handles    = Driver.instance.getWindowHandles.toArray().toSeq
+    val newWindow  = handles(1).toString
     val mainWindow = handles.head.toString
     Driver.instance.switchTo().window(newWindow)
     Wait.waitForElementToPresentByCssSelector(GGRGuidancePage.header)
@@ -68,7 +66,7 @@ object PaymentStepsSteps {
   // ^I select repayment method as (.*)$
   def andISelectRepaymentMethodAsX(option: String): Unit = {
     option match {
-      case "UK bank account" => Input.clickById("value_0")
+      case "UK bank account"     => Input.clickById("value_0")
       case "Non-UK bank account" => Input.clickById("value_1")
     }
     UPEEntityTypePage.clickContinue()
@@ -131,7 +129,7 @@ object PaymentStepsSteps {
     Input.sendKeysByCss(refundReason, RepaymentReasonPage.reasonTextField)
   }
 
-  //And("""^I should see bank account error message (.*) on the (.*) Element$
+  // And("""^I should see bank account error message (.*) on the (.*) Element$
 
   def IShouldSeeBankAccountErrorMessageXOnTheXElement(error: String, page: String): Unit = {
     page match {
@@ -217,6 +215,14 @@ object PaymentStepsSteps {
     }
   }
 
+  // ^I provide Refund Amount as (.*)$""")((refundAmount: String) => {
+  def andIProvideRefundAmountAs(refundAmount: String): Unit = {
+    Wait.waitForTagNameToBeRefreshed("h1")
+    Input.sendKeysByCss(refundAmount, RepaymentAmountPage.refundAmountField)
+    clickByCss(RepaymentAmountPage.continue)
+  }
+
+  // And("""^I provide Repayment contact (.*) as (.*)$
 
   def IProvideRepaymentContactXAsX(page: String, Value: String): Unit = {
     page match {
@@ -240,7 +246,7 @@ object PaymentStepsSteps {
   // ^I should see the repayment method (.*) remain selected$
   def andIShouldSeeTheRepaymentMethodXRemainSelected(accountType: String): Unit = {
     accountType match {
-      case "UK bank account" => Find.findByCss("#value_0").isSelected
+      case "UK bank account"     => Find.findByCss("#value_0").isSelected
       case "Non-UK bank account" => Find.findByCss("#value_1").isSelected
     }
   }
@@ -301,7 +307,7 @@ object PaymentStepsSteps {
   def andISelectOptionXOnPartialNameErrorPage(option: String): Unit = {
     option match {
       case "Yes" => Input.clickById("confirmRepaymentAccountName_0")
-      case "No" => Input.clickById("confirmRepaymentAccountName_1")
+      case "No"  => Input.clickById("confirmRepaymentAccountName_1")
     }
     UKBankAccountPaymentPage.clickContinue()
   }
@@ -314,13 +320,13 @@ object PaymentStepsSteps {
   }
 
   // ^I enter UK Bank Account details as:$
-  def andIEnterUKBankAccountDetailsAs(details: DataTable): Unit = {
+  def andIEnterUKBankAccountDetailsAs(details: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()
   }
 
-  //todo: commented overload Test and delete if required.
+  // todo: commented overload Test and delete if required.
 
   // Overload for ScalaTest (no DataTable, accepts varargs)
 //  def andIEnterUKBankAccountDetailsAs(links: (String, String)*): Unit = {
@@ -337,13 +343,13 @@ object PaymentStepsSteps {
 //  }
 
   // ^I enter Non UK Bank Account details as:$
-  def andIEnterNonUKBankAccountDetailsAs(details: DataTable): Unit = {
+  def andIEnterNonUKBankAccountDetailsAs(details: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()
   }
 
-  //todo: commented overload Test and delete if required.
+  // todo: commented overload Test and delete if required.
 
   // Overload for ScalaTest (no DataTable, accepts varargs)
 //  def andIEnterNonUKBankAccountDetailsAs(links: (String, String)*): Unit = {

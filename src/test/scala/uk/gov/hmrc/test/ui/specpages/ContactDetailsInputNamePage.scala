@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import org.openqa.selenium.By
-
 
 object ContactDetailsInputNamePage extends BasePage {
   override val url: String = s"$baseUrl" + "contact-details/input-name"
