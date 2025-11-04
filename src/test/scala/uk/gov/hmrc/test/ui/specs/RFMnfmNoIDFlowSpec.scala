@@ -43,13 +43,18 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       Then("I should be on RFM CYA Page")
         thenIShouldBeOnX("RFM CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Saving Progress Page")
         thenIShouldBeOnX("RFM Saving Progress Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -148,10 +153,15 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -178,7 +188,14 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val rfmAddressData: Map[String, String] = Map(
+          "addressLine1" -> "RFM Address Line 1",
+          "addressLine3" -> "RFM City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Kingdom"
+        )
+
+        thenIEnterAddressAs(rfmAddressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -205,7 +222,13 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("RFM New NFM Contact Address Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressData: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1 & CYA",
+          "addressLine3" -> "City CYA",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "Australia"
+        )
+      thenIEnterAddressAs(addressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should be on RFM No ID CYA Page")
         thenIShouldBeOnX("RFM No ID CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -256,13 +279,13 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see row 3 value Address Line 1 Change")
-        // ⚠️ No step-def match found for: I should see row 3 value Address Line 1 Change
+        andIShouldSeeRowValue(3,"Address Line 1 Change")
 
       And("I should see row 3 value City Change")
-        // ⚠️ No step-def match found for: I should see row 3 value City Change
+        andIShouldSeeRowValue(3,"City Change")
 
       And("I should see row 3 value EH75WK")
-        // ⚠️ No step-def match found for: I should see row 3 value EH75WK
+        andIShouldSeeRowValue(3,"EH75WK")
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -301,10 +324,15 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -328,7 +356,13 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val rfmAddressData: Map[String, String] = Map(
+          "addressLine1" -> "RFM Address Line 1",
+          "addressLine3" -> "RFM City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Kingdom"
+        )
+        thenIEnterAddressAs(rfmAddressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -403,10 +437,15 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       And("I access RFM corporate position page")
         givenIAccessRFMXPage("corporate position")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -430,7 +469,13 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val rfmAddressData: Map[String, String] = Map(
+          "addressLine1" -> "RFM Address Line 1",
+          "addressLine3" -> "RFM City",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "United Kingdom"
+        )
+        thenIEnterAddressAs(rfmAddressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click change link for RFM Corporate Position")
         andIClickChangeLinkForRFMX("Corporate Position")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -448,7 +493,13 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("New NFM Name", "Test CYA")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressData: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1 CYA",
+          "addressLine3" -> "City CYA",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "Australia"
+        )
+        thenIEnterAddressAs(addressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should be on RFM No ID CYA Page")
         thenIShouldBeOnX("RFM No ID CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -499,7 +550,11 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see details as below:")
-        andIShouldSeeDetailsAsBelow(null)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
+      val addressChangeData: Map[String, String] = Map(
+        "Address" -> "Address Line 1 Change\nCity Change\nEH75WK"
+      )
+
+      andIShouldSeeDetailsAsBelow(addressChangeData)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
 
       When("I click change link for RFM Corporate Position")
         andIClickChangeLinkForRFMX("Corporate Position")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -508,7 +563,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectCorpPositionAsX("UPE")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       And("I should see row 1 value Ultimate Parent Entity (UPE)")
-        // ⚠️ No step-def match found for: I should see row 1 value Ultimate Parent Entity (UPE)
+        andIShouldSeeRowValue(1,"Ultimate Parent Entity (UPE)")
 
       When("I click change link for RFM Corporate Position")
         andIClickChangeLinkForRFMX("Corporate Position")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -532,7 +587,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Contact Guidance page")
         thenIShouldBeOnX("RFM Contact Guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -589,10 +644,15 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+        val rfmDateData: Map[String, String] = Map(
+          "rfmRegistrationDate.day"   -> "31",
+          "rfmRegistrationDate.month" -> "1",
+          "rfmRegistrationDate.year"  -> "2024"
+        )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -610,7 +670,13 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("New NFM Name", "Test CYA")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      val addressData: Map[String, String] = Map(
+        "addressLine1" -> "Address Line 1 CYA",
+        "addressLine3" -> "City CYA",
+        "postalCode"   -> "EH5 5WY",
+        "countryCode"  -> "Australia"
+      )
+        thenIEnterAddressAs(addressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -631,7 +697,13 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressDataOne: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1 CYA",
+          "addressLine3" -> "City CYA",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "Australia"
+        )
+        thenIEnterAddressAs(addressDataOne)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -667,10 +739,15 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      val rfmDateData: Map[String, String] = Map(
+        "rfmRegistrationDate.day"   -> "31",
+        "rfmRegistrationDate.month" -> "1",
+        "rfmRegistrationDate.year"  -> "2024"
+      )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -718,7 +795,13 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("second contact number", "09872960001")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        val addressDataOne: Map[String, String] = Map(
+          "addressLine1" -> "Address Line 1 CYA",
+          "addressLine3" -> "City CYA",
+          "postalCode"   -> "EH5 5WY",
+          "countryCode"  -> "Australia"
+        )
+        thenIEnterAddressAs(addressDataOne)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click on change link for Contact Name")
         andIClickOnChangeLinkForX("Contact Name")  // auto-chosen (score=1.00, CYAStepsSteps.scala)
@@ -730,7 +813,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be redirected to RFM processing page or Amend API error Page for RFM")
-        // ⚠️ No step-def match found for: I should be redirected to RFM processing page or Amend API error Page for RFM
+        thenIShouldBeRedirectedTo("RFM processing page","Amend API error Page for RFM")
 
       When("I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link")
         andIClickXLink("to replace the filing member for a Pillar 2 Top-up Taxes account to try again")  // auto-chosen (score=1.00, CommonStepsSteps.scala)

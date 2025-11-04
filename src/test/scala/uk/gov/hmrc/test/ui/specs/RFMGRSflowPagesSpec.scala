@@ -46,13 +46,19 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      val rfmDateData: Map[String, String] = Map(
+        "rfmRegistrationDate.day"   -> "31",
+        "rfmRegistrationDate.month" -> "1",
+        "rfmRegistrationDate.year"  -> "2024"
+      )
+
+      andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       Then("I should be on RFM CYA Page")
         thenIShouldBeOnX("RFM CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Saving Progress Page")
         thenIShouldBeOnX("RFM Saving Progress Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -100,7 +106,7 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andIRegisteredSuccessfullyWithX("BV enabled")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Contact Guidance page")
         thenIShouldBeOnX("RFM Contact Guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -121,13 +127,18 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      val rfmDateData: Map[String, String] = Map(
+        "rfmRegistrationDate.day"   -> "31",
+        "rfmRegistrationDate.month" -> "1",
+        "rfmRegistrationDate.year"  -> "2024"
+      )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       Then("I should be on RFM CYA Page")
         thenIShouldBeOnX("RFM CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -148,7 +159,7 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToGRSPage("UK limited company")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM Contact Guidance page")
         thenIShouldBeOnX("RFM Contact Guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -175,7 +186,13 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Address as:")
-        thenIEnterAddressAs(null)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      val addressData: Map[String, String] = Map(
+        "addressLine1" -> "Address Line 1 CYA",
+        "addressLine3" -> "City CYA",
+        "postalCode"   -> "EH5 5WY",
+        "countryCode"  -> "Australia"
+      )
+      thenIEnterAddressAs(addressData)  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -202,7 +219,18 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see details as below:")
-        andIShouldSeeDetailsAsBelow(null)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
+      val companyAndContactDetails: Map[String, String] = Map(
+        "Company"                                        -> "Test Example Company Name",
+        "Company Registration Number"                    -> "76543210",
+        "Unique Taxpayer Reference"                      -> "1234567890",
+        "Do you have a secondary contact?"               -> "Yes",
+        "Second contact name"                            -> "RFM second test contact",
+        "Second contact email address"                   -> "rfmsecondcontact@email.com",
+        "Can we contact the secondary contact by phone?" -> "Yes",
+        "Second contact phone number"                    -> "09872960001"
+      )
+
+      andIShouldSeeDetailsAsBelow(companyAndContactDetails)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
 
       When("I click change link for RFM New NFM Name")
         andIClickChangeLinkForRFMX("New NFM Name")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -211,7 +239,7 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("contact name", "RFM test contact change")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       And("I should see the row 5 value RFM test contact change")
-        // ⚠️ No step-def match found for: I should see the row 5 value RFM test contact change
+      andIShouldSeeTheRowValueX(5,"RFM test contact change")
 
       When("I click change link for RFM New RFM CYA Change Contact preference")
         andIClickChangeLinkForRFMX("New RFM CYA Change Contact preference")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -232,7 +260,7 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         thenIShouldNavigateToX("RFM Final Review Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       And("I should see the row 13 value Address Line 1 CYA change")
-        // ⚠️ No step-def match found for: I should see the row 13 value Address Line 1 CYA change
+      andIShouldSeeTheRowValueX(13,"Address Line 1 CYA change")
 
       And("I should see Print this page link on Review answers page")
         andIShouldSeeXLinkOnX("Print this page", "Review answers page")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -262,13 +290,18 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      val rfmDateData: Map[String, String] = Map(
+        "rfmRegistrationDate.day"   -> "31",
+        "rfmRegistrationDate.month" -> "1",
+        "rfmRegistrationDate.year"  -> "2024"
+      )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       Then("I should be on RFM CYA Page")
         thenIShouldBeOnX("RFM CYA Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -292,7 +325,7 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("party type mismatch")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM GRS Registration Mismatch Error Page")
         thenIShouldBeOnX("RFM GRS Registration Mismatch Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
@@ -325,10 +358,15 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I enter registration date as:")
-        andIEnterRegistrationDateAs(null)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      val rfmDateData: Map[String, String] = Map(
+        "rfmRegistrationDate.day"   -> "31",
+        "rfmRegistrationDate.month" -> "1",
+        "rfmRegistrationDate.year"  -> "2024"
+      )
+        andIEnterRegistrationDateAs(rfmDateData)  // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -352,7 +390,7 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         andRegistrationIsUnsuccessfulWithXError("identifiers not match")  // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       And("I click on Save&Continue button")
-        // ⚠️ No step-def match found for: I click on Save&Continue button
+        andIClickOnSaveContinueButton()
 
       Then("I should be on RFM GRS Registration Not Called Error Page")
         thenIShouldBeOnX("RFM GRS Registration Not Called Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
