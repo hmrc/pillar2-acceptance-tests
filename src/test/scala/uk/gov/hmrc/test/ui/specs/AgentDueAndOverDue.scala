@@ -27,35 +27,34 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
 
     Scenario("1 - Agent User navigates to Due & Overdue returns page with multiple accounting period") {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR1111111111 and pillar2-auth for Pillar2 service")
-        whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR1111111111", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR1111111111", "pillar2-auth")
 
       Then("I should be on ASA Pillar2 Input Page")
-        thenIShouldBeOnX("ASA Pillar2 Input Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldBeOn("ASA Pillar2 Input Page")
 
       And("I provide ASA Pillar2 ID as XEPLR1111111111")
-        andIProvideASAXAsX("Pillar2 ID", "XEPLR1111111111")  // auto-chosen (score=1.00, ASAStepsSteps.scala)
+        andIProvideASAAs("Pillar2 ID", "XEPLR1111111111")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to ASA Confirmation Page")
-        thenIShouldNavigateToX("ASA Confirmation Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("ASA Confirmation Page")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to Dashboard page")
-        thenIShouldNavigateToX("Dashboard page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("Dashboard page")
 
       And("I click View all due and overdue returns link")
-        andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("View all due and overdue returns")
 
       Then("I should navigate to Due & Over Due Page")
-        thenIShouldNavigateToX("Due & Over Due Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("Due & Over Due Page")
 
       And("I should see 4 accounting periods on Due Overdue Page")
         andIShouldSeeIntAccountingPeriodsOnDueOverduePage(4)
@@ -67,85 +66,83 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
         andIShouldSeeIntSectionWithStatusString(3,"Overdue")
 
       When("I click submission history link")
-        andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
-      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
       When("I click due and overdue returns link")
-        andIClickXLink("due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("due and overdue returns")
 
       Then("I should navigate to Due & Over Due Page")
-        thenIShouldNavigateToX("Due & Over Due Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
+        thenIShouldNavigateTo("Due & Over Due Page")
     }
 
     Scenario("2 - Agent User navigates to Due & Overdue returns page with no accounting period") {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-        whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR2222222222 and pillar2-auth for Pillar2 service")
-        whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR2222222222", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR2222222222", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be on ASA Pillar2 Input Page")
-        thenIShouldBeOnX("ASA Pillar2 Input Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldBeOn("ASA Pillar2 Input Page")
 
       And("I provide ASA Pillar2 ID as XEPLR2222222222")
-        andIProvideASAXAsX("Pillar2 ID", "XEPLR2222222222")  // auto-chosen (score=1.00, ASAStepsSteps.scala)
+        andIProvideASAAs("Pillar2 ID", "XEPLR2222222222")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to ASA Confirmation Page")
-        thenIShouldNavigateToX("ASA Confirmation Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("ASA Confirmation Page")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to Dashboard page")
-        thenIShouldNavigateToX("Dashboard page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("Dashboard page")
 
       When("I click View all due and overdue returns link")
-        andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("View all due and overdue returns")
 
       And("I should see 0 accounting periods on Due Overdue Page")
         andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
-        andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
-      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
-
+        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
     }
 
     Scenario("3 -  Agent User navigates to Due & Overdue returns page with single accounting period") {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-        whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR3333333333 and pillar2-auth for Pillar2 service")
-        whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR3333333333", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR3333333333", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be on ASA Pillar2 Input Page")
-        thenIShouldBeOnX("ASA Pillar2 Input Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldBeOn("ASA Pillar2 Input Page")
 
       And("I provide ASA Pillar2 ID as XEPLR3333333333")
-        andIProvideASAXAsX("Pillar2 ID", "XEPLR3333333333")  // auto-chosen (score=1.00, ASAStepsSteps.scala)
+        andIProvideASAAs("Pillar2 ID", "XEPLR3333333333")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to ASA Confirmation Page")
-        thenIShouldNavigateToX("ASA Confirmation Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("ASA Confirmation Page")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to Dashboard page")
-        thenIShouldNavigateToX("Dashboard page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("Dashboard page")
 
       When("I click View all due and overdue returns link")
-        andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("View all due and overdue returns")
 
       And("I should see 1 accounting periods on Due Overdue Page")
         andIShouldSeeIntAccountingPeriodsOnDueOverduePage(1)
@@ -157,81 +154,77 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
         andIShouldSeeIntSectionWithStatusString(0,"Overdue")
 
       When("I click submission history link")
-        andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
         andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
-
-
     }
 
     Scenario("4 - Agent User navigates to Due & Overdue returns page with all fulfilled submissions") {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-        whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR4444444444 and pillar2-auth for Pillar2 service")
-        whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR4444444444", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR4444444444", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be on ASA Pillar2 Input Page")
-        thenIShouldBeOnX("ASA Pillar2 Input Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldBeOn("ASA Pillar2 Input Page")
 
       And("I provide ASA Pillar2 ID as XEPLR4444444444")
-        andIProvideASAXAsX("Pillar2 ID", "XEPLR4444444444")  // auto-chosen (score=1.00, ASAStepsSteps.scala)
+        andIProvideASAAs("Pillar2 ID", "XEPLR4444444444")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to ASA Confirmation Page")
-        thenIShouldNavigateToX("ASA Confirmation Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("ASA Confirmation Page")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to Dashboard page")
-        thenIShouldNavigateToX("Dashboard page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("Dashboard page")
 
       When("I click View all due and overdue returns link")
-        andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("View all due and overdue returns")
 
       And("I should see 0 accounting periods on Due Overdue Page")
-      andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
+        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
-        andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("submission history")
 
       And("I should see 2 accounting periods on Sub History Page")
         andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
-
-
     }
 
     Scenario("5 - Agent User navigates to Due & Overdue returns page with some fulfilled submissions") {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-        whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR5555555555 and pillar2-auth for Pillar2 service")
-        whenIAddDelegatedEnrolmentWithXXXAndXForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR5555555555", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR5555555555", "pillar2-auth")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be on ASA Pillar2 Input Page")
-        thenIShouldBeOnX("ASA Pillar2 Input Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldBeOn("ASA Pillar2 Input Page")
 
       And("I provide ASA Pillar2 ID as XEPLR5555555555")
-        andIProvideASAXAsX("Pillar2 ID", "XEPLR5555555555")  // auto-chosen (score=1.00, ASAStepsSteps.scala)
+        andIProvideASAAs("Pillar2 ID", "XEPLR5555555555")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to ASA Confirmation Page")
-        thenIShouldNavigateToX("ASA Confirmation Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("ASA Confirmation Page")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should navigate to Dashboard page")
-        thenIShouldNavigateToX("Dashboard page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+        thenIShouldNavigateTo("Dashboard page")
 
       When("I click View all due and overdue returns link")
-        andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("View all due and overdue returns")
 
       And("I should see 2 accounting periods on Due Overdue Page")
         andIShouldSeeIntAccountingPeriodsOnDueOverduePage(2)
@@ -240,10 +233,10 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
         andIShouldSeeIntSectionWithStatusString(0,"Due")
 
       And("I should see 2 section with status Overdue")
-      andIShouldSeeIntSectionWithStatusString(2,"Overdue")
+        andIShouldSeeIntSectionWithStatusString(2,"Overdue")
 
       When("I click submission history link")
-        andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+        andIClickLink("submission history")
 
       And("I should see 2 accounting periods on Sub History Page")
         andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
