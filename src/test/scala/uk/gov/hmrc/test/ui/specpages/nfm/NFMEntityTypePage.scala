@@ -37,7 +37,7 @@ object NFMEntityTypePage extends BasePage {
     clickButtonByText(buttonContinue)
   }
 
-  def enterEntityTypeCompanyTypeNotListed(): Unit = {
+  def enterEntityTypeNotListed(): Unit = {
     onPage()
     click(By.id(companyTypeNotListed))
     clickButtonByText(buttonContinue)

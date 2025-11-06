@@ -14,14 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.furtherDetails
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object FDCheckYourAnswersPage extends BasePage {
+  override val url: String            = s"$baseUrl" + "further-details/check-answers"
+  val changeGroupStatus      = "a[href*='/change-group-status']"
+  val changeAccountingPeriod = "a[href*='/change-accounting-period']"
 
-object InputNFMPhonePage extends PageObject {
-  val url: String  = s"$rootUrl" + "business-matching/filing-member/no-id/input-phone"
-  val phoneNumber  = "#phoneNumber"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href*='#value']"
-  val errorMessage = ".govuk-error-message"
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(continueButtonId)
+  }
 }

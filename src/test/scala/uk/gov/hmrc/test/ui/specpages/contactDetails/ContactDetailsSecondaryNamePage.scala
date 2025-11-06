@@ -16,18 +16,24 @@
 
 package uk.gov.hmrc.test.ui.specpages.contactDetails
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object ContactDetailsInputEmailPage extends BasePage {
-  override val url: String = s"$baseUrl" + "contact-details/input-email"
+object ContactDetailsSecondaryNamePage extends BasePage {
+  val url: String = s"$baseUrl" + "contact-details/second-input-name"
+  val contactName = "#value"
 
-  override val textInputField: By = By.id("emailAddress")
-  private val emailValue: String  = "abc@def.com"
+  private val nameValue: String = "Contact Name"
+  private val nameUpdatedValue: String = "Updated Contact Name"
 
-  def enterEmail(): Unit = {
+  def enterName(): Unit = {
     onPage()
-    sendKeys(textInputField, emailValue)
+    sendKeys(textInputField, nameValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def updateName(): Unit = {
+    onPage(s"$baseUrl" + "contact-details/change-second-input-name")
+    sendKeys(textInputField, nameUpdatedValue)
     clickButtonByText(buttonSaveAndContinue)
   }
 }

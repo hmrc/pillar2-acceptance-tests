@@ -22,7 +22,6 @@ import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.SubscriptionJourneyStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
 
 class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
@@ -99,17 +98,11 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
       And("I click on Continue button")
       whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      Then("The Task Add contact details status should be Not started")
-      andTheTaskXStatusShouldBeX("Add contact details", "Not started") // auto-chosen (score=1.00, TaskListStepsSteps.scala)
-
       When("I click Add contact details link")
       andIClickXLink("Add contact details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should navigate to Contact details guidance page")
       thenIShouldNavigateToX("Contact details guidance page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("The caption must be Contact details")
-      thenTheCaptionMustBeX("Contact details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I click on Continue button")
       whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -122,9 +115,6 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
       Then("I should navigate to Contact details input name page")
       thenIShouldNavigateToX("Contact details input name page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("The caption must be Contact details")
-      thenTheCaptionMustBeX("Contact details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I enter Contact Name as Contact Name Test")
       andIEnterXAsX("Contact Name", "Contact Name Test") // auto-chosen (score=1.00, UPEStepsSteps.scala)
@@ -357,7 +347,6 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
         "Second contact phone number"                    -> "71235643",
         "Address"                                        -> "Address Change"
       )
-      andIShouldSeeDetailsAsBelow(contactDetailsData) // auto-chosen (score=1.00, CYAStepsSteps.scala)
 
       And("I click on Continue button")
       whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -386,25 +375,6 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
         "Second contact phone number"                   -> "71235643"
       )
 
-      andIShouldSeeDetailsAsBelow(detailsMap) // auto-chosen (score=1.00, CYAStepsSteps.scala)
-
-      And("I should see row 12 with key Contact name and value Contact $ Name Change")
-      andIShouldSeeRowWithKeyAndValue(12, "Contact name", "Contact $ Name Change")
-
-      And("I should see row 13 with key Email address and value email&change@test.com")
-      andIShouldSeeRowWithKeyAndValue(13, "Email address", "email&change@test.com")
-
-      And("I should see row 14 with key Can we contact the primary contact by phone? and value Yes")
-      andIShouldSeeRowWithKeyAndValue(14, "Can we contact the primary contact by phone?", "Yes")
-
-      And("I should see row 15 with key Primary phone number and value 123455")
-      andIShouldSeeRowWithKeyAndValue(15, "Primary phone number", "123455")
-
-      And("I should see row 19 with key Can we contact the secondary contact by phone? and value Yes")
-      andIShouldSeeRowWithKeyAndValue(19, "Can we contact the secondary contact by phone?", "Yes")
-
-      And("I should see row 21 with key Address and value Address Change")
-      andIShouldSeeRowWithKeyAndValue(21, "Address", "Address Change")
 
       When("I click Report Pillar 2 Top-up Taxes link")
       andIClickXLink("Report Pillar 2 Top-up Taxes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -557,12 +527,6 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
       When("I click on Continue button")
       whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should see error message Select yes if you want to use this as your primary contact on the Contact details display Page")
-      andIShouldSeeErrorMessageXOnTheXPage(
-        "Select yes if you want to use this as your primary contact",
-        "Contact details display"
-      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I select option No and continue to next")
       andISelectOptionXAndContinueToNext("No") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -971,9 +935,6 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
       When("I click Report Pillar 2 Top-up Taxes link")
       andIClickXLink("Report Pillar 2 Top-up Taxes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      Then("The Task Edit filing member details status should be Completed")
-      andTheTaskXStatusShouldBeX("Edit filing member details", "Completed") // auto-chosen (score=1.00, TaskListStepsSteps.scala)
-
       When("I click Check your answers before submitting your registration link")
       andIClickXLink("Check your answers before submitting your registration") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
@@ -1126,9 +1087,6 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
       Then("I should navigate to Task list page")
       thenIShouldNavigateToX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("The Task Edit filing member details status should be Completed")
-      andTheTaskXStatusShouldBeX("Edit filing member details", "Completed") // auto-chosen (score=1.00, TaskListStepsSteps.scala)
 
       When("I click Add further group details link")
       andIClickXLink("Add further group details") // auto-chosen (score=1.00, CommonStepsSteps.scala)

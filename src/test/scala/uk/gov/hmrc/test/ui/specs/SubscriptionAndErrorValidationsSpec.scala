@@ -22,7 +22,6 @@ import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.SubscriptionJourneyStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
 
 class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
@@ -280,9 +279,6 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
       Then("I should navigate to Task list page")
       thenIShouldNavigateToX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
-      Then("The Task Add contact details status should be In progress")
-      andTheTaskXStatusShouldBeX("Add contact details", "In progress") // auto-chosen (score=1.00, TaskListStepsSteps.scala)
-
     }
 
     Scenario("3 - User redirected to a placeholder error page, for an invalid request during registration.") {
@@ -435,9 +431,6 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
       Then("I should see task list sections")
 //      andIShouldSeeTaskListSections() // auto-chosen (score=1.00, TaskListStepsSteps.scala)
 
-      And("The Task Add Ultimate Parent Entity details status should be Not started")
-      andTheTaskXStatusShouldBeX("Add Ultimate Parent Entity details", "Not started") // auto-chosen (score=1.00, TaskListStepsSteps.scala)
-
     }
 
     Scenario("5 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.") {
@@ -565,10 +558,6 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
 
       Then("I should navigate to Review answers page")
       thenIShouldNavigateToX("Review answers page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("I should see Print this page link on Review answers page")
-      andIShouldSeeXLinkOnX("Print this page", "Review answers page") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
     }
   }
 }

@@ -16,14 +16,25 @@
 
 package uk.gov.hmrc.test.ui.specpages.nfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object NFMCheckYourAnswersPage extends PageObject {
-  val url: String        = s"$rootUrl" + "business-matching/filing-member/no-id/check-answers"
+object NFMCheckYourAnswersPage extends BasePage {
+  val url: String        = s"$baseUrl" + "business-matching/filing-member/no-id/check-answers"
   val changeName         = "a[href*='/change-input-name']"
   val changeAddress      = "a[href*='/change-input-address']"
   val changeContactName  = "a[href*='/change-input-business-name']"
   val changeEmailAddress = "a[href*='/change-input-email']"
   val changePhoneContact = "a[href*='/change-phone']"
   val changePhoneNumber  = "a[href*='/change-input-phone']"
+
+  def clickChangeLink(changeLink: String): Unit = {
+    onPage()
+    click(By.cssSelector(changeLink))
+  }
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(continueButtonId)
+  }
 }

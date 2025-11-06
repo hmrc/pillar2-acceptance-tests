@@ -16,12 +16,24 @@
 
 package uk.gov.hmrc.test.ui.specpages.nfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object NFMContactEmailPage extends PageObject {
-  val url: String  = s"$rootUrl" + "business-matching/filing-member/no-id/input-email"
-  val contactEmail = "[type='email']"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href='#emailAddress']"
-  val errorMessage = ".govuk-error-message"
+object NFMContactEmailPage extends BasePage {
+  val url: String                       = s"$baseUrl" + "business-matching/filing-member/no-id/input-email"
+  override val textInputField: By       = By.id("emailAddress")
+  private val emailValue: String        = "abc@def.com"
+  private val emailUpdatedValue: String = "def@abc.com"
+
+  def enterEmail(): Unit = {
+    onPage()
+    sendKeys(textInputField, emailValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def updateEmail(): Unit = {
+    onPage(s"$baseUrl" + "business-matching/filing-member/no-id/change-input-email")
+    sendKeys(textInputField, emailUpdatedValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

@@ -15,19 +15,25 @@
  */
 
 package uk.gov.hmrc.test.ui.specpages.contactDetails
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object ContactDetailsCheckAnswersPage extends BasePage {
   val url: String = s"$baseUrl" + "contact-details/check-answers"
 
-  val changeName          = "a[href*='/change-input-name']"
-  val changeEmail         = "a[href*='/change-input-email']"
-  val changeContactNumber = "a[href*='/change-input-phone']"
+  val changePrimaryContactName          = "a[href*='/change-input-name']"
+  val changePrimaryContactEmailAddress         = "a[href*='/change-input-email']"
+  val changePrimaryContactPhoneNumber = "a[href*='/change-input-phone']"
+  val changeSecondaryContact       = "a[href*='/change-second-contact']"
+  val changeSecondaryContactName    = "a[href*='/change-second-input-name']"
+  val changeSecondaryContactEmailAddress   = "a[href*='/change-second-input-email']"
+  val changeSecondaryContactPhoneNumber   = "a[href*='/change-second-input-phone']"
+  val changeContactAddress       = "a[href*='/change-input-address']"
 
-  val secondContact     = "a[href*='/change-second-contact']"
-  val changeSecondName  = "a[href*='/change-second-input-name']"
-  val changeSecondEmail = "a[href*='/change-second-input-email']"
-  val changeSecondPhone = "a[href*='/change-second-input-phone']"
+  def clickChangeLink(changeLink: String): Unit = {
+    onPage()
+    click(By.cssSelector(changeLink))
+  }
 
   def continueToNextPage(): Unit = {
     onPage()

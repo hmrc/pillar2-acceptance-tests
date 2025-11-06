@@ -54,32 +54,11 @@ object EligibilityQuestionStepsSteps {
 //        UPEEntityTypePage.clickContinue()
   }
 
-  // todo: commented overload Test and delete if required.
-
-  // Overload for ScalaTest (no DataTable, accepts varargs)
-//  def thenIEnterAddressAs(links: (String, String)*): Unit = {
-//    links.foreach { case (text, url) =>
-//      val driverWait: WebDriverWait =
-//        new WebDriverWait(Driver.instance, Duration.ofSeconds(10), Duration.ofSeconds(1))
-//      driverWait.until(
-//        ExpectedConditions.elementToBeClickable(
-//          Driver.instance.findElement(By.id(url))
-//        )
-//      )
-//      verifyLinkById(url, text)
-//    }
-//  }
-
   // ^I should be on (.*)
   def thenIShouldBeOnX(page: String): Unit = {
     Wait.waitForElementToClickTagName("h1")
     assertNavigationUrl(pageMatch(page))
   }
-
-  // ^I continue|I continue without selecting an option$
-//  def andIContinue|IContinueWithoutSelectingAnOption(): Unit = {
-//    BusinessActivityEQPage.clickContinue()
-//  }
 
   // ^I continue|I continue without selecting an option$
   def continueAction(action: String): Unit = {

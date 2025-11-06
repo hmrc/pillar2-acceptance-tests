@@ -15,14 +15,27 @@
  */
 
 package uk.gov.hmrc.test.ui.specpages.contactDetails
+
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object ContactDetailsPhoneAsContactPage extends BasePage {
-  val url: String = s"$baseUrl" + "contact-details/phone"
+object ContactDetailsPrimaryPhonePage extends BasePage {
+  val url: String  = s"$baseUrl" + "contact-details/input-phone"
+  val contactPhone = "#phoneNumber"
 
-  def selectYes(): Unit = {
+  override val textInputField: By      = By.id("phoneNumber")
+  private val phoneNumberValue: String = "01234 567890"
+  private val phoneNumberUpdatedValue: String = "09876 543210"
+
+  def enterPhoneNumber(): Unit = {
     onPage()
-    click(yesRadioId)
-    click(submitButtonId)
+    sendKeys(textInputField, phoneNumberValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def updatePhoneNumber(): Unit = {
+    onPage(s"$baseUrl" + "contact-details/change-input-phone")
+    sendKeys(textInputField, phoneNumberUpdatedValue)
+    clickButtonByText(buttonSaveAndContinue)
   }
 }

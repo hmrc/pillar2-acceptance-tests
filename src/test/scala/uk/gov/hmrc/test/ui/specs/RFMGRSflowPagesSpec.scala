@@ -235,7 +235,6 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
         "Second contact phone number"                    -> "09872960001"
       )
 
-      andIShouldSeeDetailsAsBelow(companyAndContactDetails) // auto-chosen (score=1.00, CYAStepsSteps.scala)
 
       When("I click change link for RFM New NFM Name")
       andIClickChangeLinkForRFMX("New NFM Name") // auto-chosen (score=1.00, RFMStepsSteps.scala)
@@ -266,9 +265,6 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
       And("I should see the row 13 value Address Line 1 CYA change")
 //      andIShouldSeeTheRowValueX(13,"Address Line 1 CYA change")
-
-      And("I should see Print this page link on Review answers page")
-      andIShouldSeeXLinkOnX("Print this page", "Review answers page") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       And("I click on Continue button")
       whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)

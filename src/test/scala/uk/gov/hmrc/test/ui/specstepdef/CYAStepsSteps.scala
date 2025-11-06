@@ -16,132 +16,64 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import org.openqa.selenium.By
-import org.scalatest.matchers.should.Matchers._
-import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.cucumber.Check.{contain, convertToAnyShouldWrapper}
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
-import uk.gov.hmrc.test.ui.cucumber.Wait
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsCheckAnswersPage, ContactDetailsSummaryPage}
+import uk.gov.hmrc.test.ui.specpages.furtherDetails.FDCheckYourAnswersPage
 import uk.gov.hmrc.test.ui.specpages.nfm.NFMCheckYourAnswersPage
 
 object CYAStepsSteps {
 
-  // ^I should see row (\d+) value (.*)$
-  def andIShouldSeeRowValue(row: Int, value: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-//        assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
-  }
-
-  // ^I should see row (\d+) with key (.*) and value (.*)
-  def andIShouldSeeRowWithKeyAndValue(row: Int, key: String, value: String): Unit = {
-//    assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
-//        assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
-  }
-
-  // ^I should see details as below:$
-//  def andIShouldSeeDetailsAsBelow(details: DataTable): Unit = {
-//    val detailsData = details.asMaps(classOf[String], classOf[String])
-//        detailsData.forEach { row =>
-//          val key           = row.get("KEY")
-//          val expectedValue = row.get("VALUE")
-//          val labelElement  = Driver.instance.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
-//          val valueElement  = labelElement.findElement(By.xpath("following-sibling::dd[1]"))
-//          if (key == "Address") {
-//            val actualValueLines = valueElement.getText.split("\n").map(_.trim)
-//            expectedValue.split("\n").foreach { expectedLine =>
-//              actualValueLines should contain(expectedLine)
-//            }
-//          } else {
-//            valueElement.getText shouldEqual expectedValue
-//          }
-//        }
-//  }
-
-  def andIShouldSeeDetailsAsBelow(detailsMap: Map[String, String]): Unit = {
-    detailsMap.foreach { case (key, expectedValue) =>
-      val labelElement = Driver.instance.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
-      val valueElement = labelElement.findElement(By.xpath("following-sibling::dd"))
-      if (key == "Address") {
-        val actualValueLines = valueElement.getText.split("\n").map(_.trim)
-        expectedValue.split("\n").foreach { expectedLine =>
-          actualValueLines should contain(expectedLine)
-        }
-      } else {
-        valueElement.getText shouldEqual expectedValue
-      }
-    }
-  }
-
-
-
-  //todo: commented overload Test and delete if required.
-
-  // Overload for ScalaTest (no DataTable, accepts varargs)
-//  def andIShouldSeeDetailsAsBelow(links: (String, String)*): Unit = {
-//    links.foreach { case (text, url) =>
-//      val driverWait: WebDriverWait =
-//        new WebDriverWait(Driver.instance, Duration.ofSeconds(10), Duration.ofSeconds(1))
-//      driverWait.until(
-//        ExpectedConditions.elementToBeClickable(
-//          Driver.instance.findElement(By.id(url))
-//        )
-//      )
-//      verifyLinkById(url, text)
-//    }
-//  }
-
   // ^I click on change hyperlink next to the (.*)
   def andIClickOnChangeHyperlinkNextToTheX(link: String): Unit = {
     link match {
-          case "NFM Name" =>
-            clickByCss(NFMCheckYourAnswersPage.changeName)
-          case "NFM Address" =>
-            clickByCss(NFMCheckYourAnswersPage.changeAddress)
-          case "NFM Contact Name" =>
-            clickByCss(NFMCheckYourAnswersPage.changeContactName)
-          case "NFM Email Address" =>
-            clickByCss(NFMCheckYourAnswersPage.changeEmailAddress)
-          case "NFM Phone Contact" =>
-            clickByCss(NFMCheckYourAnswersPage.changePhoneContact)
-          case "NFM Phone Number" =>
-            clickByCss(NFMCheckYourAnswersPage.changePhoneNumber)
-          case "FD Group Status" =>
-            clickByCss(FDCheckYourAnswersPage.changeGroupStatus)
-          case "Accounting Period" =>
-            clickByCss(FDCheckYourAnswersPage.changeAccountingPeriod)
-          case "Domestic or Mne" =>
-            clickByCss(BtnChangeDomesticOrMnePage.changeDomesticOrMne)
-        }
+      case "NFM Name" =>
+        clickByCss(NFMCheckYourAnswersPage.changeName)
+      case "NFM Address" =>
+        clickByCss(NFMCheckYourAnswersPage.changeAddress)
+      case "NFM Contact Name" =>
+        clickByCss(NFMCheckYourAnswersPage.changeContactName)
+      case "NFM Email Address" =>
+        clickByCss(NFMCheckYourAnswersPage.changeEmailAddress)
+      case "NFM Phone Contact" =>
+        clickByCss(NFMCheckYourAnswersPage.changePhoneContact)
+      case "NFM Phone Number" =>
+        clickByCss(NFMCheckYourAnswersPage.changePhoneNumber)
+      case "FD Group Status" =>
+        clickByCss(FDCheckYourAnswersPage.changeGroupStatus)
+      case "Accounting Period" =>
+        clickByCss(FDCheckYourAnswersPage.changeAccountingPeriod)
+      case "Domestic or Mne" =>
+        clickByCss(BtnChangeDomesticOrMnePage.changeDomesticOrMne)
+    }
   }
 
   // ^I click on change link for (.*)
   def andIClickOnChangeLinkForX(link: String): Unit = {
     link match {
-          case "Contact Name" =>
-            clickByCss(ContactDetailsCheckAnswersPage.changeName)
-          case "Email address" =>
-            clickByCss(ContactDetailsCheckAnswersPage.changeEmail)
-          case "Phone number" =>
-            clickByCss(ContactDetailsCheckAnswersPage.changeContactNumber)
-          case "Do you have a second contact?" =>
-            clickByCss(ContactDetailsCheckAnswersPage.secondContact)
-          case "Second Contact Name" =>
-            clickByCss(ContactDetailsCheckAnswersPage.changeSecondName)
-          case "Second Contact Email" =>
-            clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
-          case "Second Contact Phone number" =>
-            clickByCss(ContactDetailsCheckAnswersPage.changeSecondPhone)
-          case "Address" =>
-            clickByCss(ContactDetailsSummaryPage.changeAddress)
-          case "Dashboard Address" =>
-            clickByCss(ContactDetailsSummaryPage.dashboardAddressChange)
-          case "Primary Contact" =>
-            clickByCss(ReviewAnswersPage.changeUPEContact)
-          case _ =>
-            clickByCss(ContactDetailsCheckAnswersPage.changeName)
-        }
+      case "Contact Name" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changePrimaryContactName)
+      case "Email address" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changePrimaryContactEmailAddress)
+      case "Phone number" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changePrimaryContactPhoneNumber)
+      case "Do you have a second contact?" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondaryContact)
+      case "Second Contact Name" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondaryContactName)
+      case "Second Contact Email" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondaryContactEmailAddress)
+      case "Second Contact Phone number" =>
+        clickByCss(ContactDetailsCheckAnswersPage.changeSecondaryContactPhoneNumber)
+      case "Address" =>
+        clickByCss(ContactDetailsSummaryPage.changeAddress)
+      case "Dashboard Address" =>
+        clickByCss(ContactDetailsSummaryPage.dashboardAddressChange)
+      case "Primary Contact" =>
+        clickByCss(ReviewAnswersPage.changeUPEContact)
+      case _ =>
+        clickByCss(ContactDetailsCheckAnswersPage.changePrimaryContactName)
+    }
   }
 
 }

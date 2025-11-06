@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.specstepdef
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber.{Check, Input, Wait}
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsInputPhonePage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage}
-import uk.gov.hmrc.test.ui.specpages.nfm.{NFMContactEmailPage, NFMContactNamePage}
+import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsPrimaryPhonePage, ContactDetailsSecondaryEmailPage, ContactDetailsSecondaryPhoneInputPage, ContactDetailsSecondaryNamePage}
+import uk.gov.hmrc.test.ui.specpages.nfm.{NFMContactEmailPage, NFMContactNamePage, NFMPhoneInputPage}
 import uk.gov.hmrc.test.ui.specpages.upe.{UPEEntityTypePage, UPENamePage, UPEPhoneInputPage}
 
 object UPEStepsSteps {
@@ -44,42 +44,37 @@ object UPEStepsSteps {
         Input.sendKeysByCss(name, NFMContactNamePage.contactName)
         clickByCss(UPENamePage.continue)
 
-      case "NFM Contact Email" =>
-        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
-        Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
-        clickByCss(UPENamePage.continue)
+//      case "NFM Contact Email" =>
+//        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
+//        Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
+//        clickByCss(UPENamePage.continue)
 
       case "NFM Phone Number" =>
-        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.phoneNumber)
-        Input.sendKeysByCss(name, InputNFMPhonePage.phoneNumber)
+        Wait.waitForElementToPresentByCssSelector(NFMPhoneInputPage.phoneNumber)
+        Input.sendKeysByCss(name, NFMPhoneInputPage.phoneNumber)
         clickByCss(UPENamePage.continue)
 
       case "Contact Phone" =>
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputPhonePage.contactPhone)
-        Input.sendKeysByCss(name, ContactDetailsInputPhonePage.contactPhone)
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsPrimaryPhonePage.contactPhone)
+        Input.sendKeysByCss(name, ContactDetailsPrimaryPhonePage.contactPhone)
         clickByCss(UPENamePage.continue)
 
       case "Second Contact Name" =>
-        Wait.waitForElementToPresentByCssSelector(SecondContactNamePage.contactName)
-        Input.sendKeysByCss(name, SecondContactNamePage.contactName)
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsSecondaryNamePage.contactName)
+        Input.sendKeysByCss(name, ContactDetailsSecondaryNamePage.contactName)
         clickByCss(UPENamePage.continue)
 
       case "Second Contact Email" =>
-        Wait.waitForElementToPresentByCssSelector(SecondContactEmailPage.contactEmail)
-        Input.sendKeysByCss(name, SecondContactEmailPage.contactEmail)
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsSecondaryEmailPage.contactEmail)
+        Input.sendKeysByCss(name, ContactDetailsSecondaryEmailPage.contactEmail)
         clickByCss(UPENamePage.continue)
 
       case "Second Contact Input" =>
-        Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactPhone)
-        Input.sendKeysByCss(name, SecondContactInputPage.contactPhone)
+        Wait.waitForElementToPresentByCssSelector(ContactDetailsSecondaryPhoneInputPage.contactPhone)
+        Input.sendKeysByCss(name, ContactDetailsSecondaryPhoneInputPage.contactPhone)
         clickByCss(UPENamePage.continue)
 
     }
-  }
-
-  // ^I should see the answer (.*) remain selected$
-  def andIShouldSeeTheAnswerXRemainSelected(answer: String): Unit = {
-    Check.checkAnswerSelection(answer)
   }
 
   // ^I should see the option (.*) remain selected$

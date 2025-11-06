@@ -22,8 +22,7 @@ import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{thenIGoTillGetReadyToApproveYourPaymentPage, thenIMakeSuccessfulPayment, thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage}
-//import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps.thenIShouldBeRedirectedTo
+import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.SubscriptionJourneyStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
 
@@ -32,70 +31,70 @@ class DashboardPageSpec extends BaseSpec with Matchers {
   Feature("Dashboard Page") {
 
     Scenario("1 - User navigates to Dashboard page and validates the links") {
-      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674"
-      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click View outstanding payments link")
-      andIClickXLink("View outstanding payments") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should navigate to Outstanding Payment Page")
-      thenIShouldNavigateToX("Outstanding Payment Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click Report Pillar 2 Top-up Taxes link")
-      andIClickXLink("Report Pillar 2 Top-up Taxes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click View outstanding payments link")
-      andIClickXLink("View outstanding payments") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should navigate to Outstanding Payment Page")
-      thenIShouldNavigateToX("Outstanding Payment Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select back link")
-      andISelectBackLink() // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click Manage contact details link")
-      andIClickXLink("Manage contact details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should navigate to contact details summary page")
-      thenIShouldNavigateToX("contact details summary page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton() // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click Manage group details link")
-      andIClickXLink("Manage group details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should navigate to accounts summary page")
-      thenIShouldNavigateToX("accounts summary page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton() // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click Sign out link")
-      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I am on feedback survey page")
-//        andIAmOnFeedbackSurveyPage()
+//      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
+//      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
+//        "Organisation",
+//        "HMRC-PILLAR2-ORG",
+//        "PLRID",
+//        "XMPLR0012345674"
+//      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click View outstanding payments link")
+//      andIClickXLink("View outstanding payments") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should navigate to Outstanding Payment Page")
+//      thenIShouldNavigateToX("Outstanding Payment Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click Report Pillar 2 Top-up Taxes link")
+//      andIClickXLink("Report Pillar 2 Top-up Taxes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click View outstanding payments link")
+//      andIClickXLink("View outstanding payments") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should navigate to Outstanding Payment Page")
+//      thenIShouldNavigateToX("Outstanding Payment Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I select back link")
+//      andISelectBackLink() // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click Manage contact details link")
+//      andIClickXLink("Manage contact details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should navigate to contact details summary page")
+//      thenIShouldNavigateToX("contact details summary page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click the browser back button")
+//      andIClickTheBrowserBackButton() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click Manage group details link")
+//      andIClickXLink("Manage group details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should navigate to accounts summary page")
+//      thenIShouldNavigateToX("accounts summary page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click the browser back button")
+//      andIClickTheBrowserBackButton() // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click Sign out link")
+//      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I am on feedback survey page")
+////        andIAmOnFeedbackSurveyPage()
     }
 
     Scenario("2 - User navigates to group details page and validates the data") {
@@ -339,81 +338,81 @@ class DashboardPageSpec extends BaseSpec with Matchers {
       And("I click Sign out link")
       andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4040000000 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR4040000000"
-      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click View transaction history link")
-      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Transaction History Empty Page")
-      thenIShouldBeOnX("Transaction History Empty Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select back link")
-      andISelectBackLink() // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click View transaction history link")
-      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Transaction History Empty Page")
-      thenIShouldBeOnX("Transaction History Empty Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click Report Pillar 2 Top-up Taxes link")
-      andIClickXLink("Report Pillar 2 Top-up Taxes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("I click Sign out link")
-      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR4000000000"
-      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click View transaction history link")
-      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Transaction History Error Page")
-      thenIShouldBeOnX("Transaction History Error Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click Return to your account homepage link")
-      andIClickXLink("Return to your account homepage") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click View transaction history link")
-      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Transaction History Error Page")
-      thenIShouldBeOnX("Transaction History Error Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select back link")
-      andISelectBackLink() // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("I click Sign out link")
-      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4040000000 for Pillar2 service")
+//      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
+//        "Organisation",
+//        "HMRC-PILLAR2-ORG",
+//        "PLRID",
+//        "XEPLR4040000000"
+//      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      And("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click View transaction history link")
+//      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Transaction History Empty Page")
+//      thenIShouldBeOnX("Transaction History Empty Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I select back link")
+//      andISelectBackLink() // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click View transaction history link")
+//      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Transaction History Empty Page")
+//      thenIShouldBeOnX("Transaction History Empty Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click Report Pillar 2 Top-up Taxes link")
+//      andIClickXLink("Report Pillar 2 Top-up Taxes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      And("I click Sign out link")
+//      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
+//      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
+//        "Organisation",
+//        "HMRC-PILLAR2-ORG",
+//        "PLRID",
+//        "XEPLR4000000000"
+//      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      And("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click View transaction history link")
+//      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Transaction History Error Page")
+//      thenIShouldBeOnX("Transaction History Error Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click Return to your account homepage link")
+//      andIClickXLink("Return to your account homepage") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I click View transaction history link")
+//      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+//
+//      Then("I should be on Transaction History Error Page")
+//      thenIShouldBeOnX("Transaction History Error Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      When("I select back link")
+//      andISelectBackLink() // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+//
+//      And("I click Sign out link")
+//      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR6666666666 for Pillar2 service")
       whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(

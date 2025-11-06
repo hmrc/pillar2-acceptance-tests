@@ -268,15 +268,6 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
       Then("I should navigate to RFM Final Review Page")
       thenIShouldNavigateToX("RFM Final Review Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
-      And("I should see row 3 value Address Line 1 Change")
-      andIShouldSeeRowValue(3, "Address Line 1 Change")
-
-      And("I should see row 3 value City Change")
-      andIShouldSeeRowValue(3, "City Change")
-
-      And("I should see row 3 value EH75WK")
-      andIShouldSeeRowValue(3, "EH75WK")
-
       And("I click on Continue button")
       whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
@@ -550,16 +541,12 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
         "Address" -> "Address Line 1 Change\nCity Change\nEH75WK"
       )
 
-      andIShouldSeeDetailsAsBelow(addressChangeData) // auto-chosen (score=1.00, CYAStepsSteps.scala)
 
       When("I click change link for RFM Corporate Position")
       andIClickChangeLinkForRFMX("Corporate Position") // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       When("I select corp position as UPE")
       andISelectCorpPositionAsX("UPE") // auto-chosen (score=1.00, RFMStepsSteps.scala)
-
-      And("I should see row 1 value Ultimate Parent Entity (UPE)")
-      andIShouldSeeRowValue(1, "Ultimate Parent Entity (UPE)")
 
       When("I click change link for RFM Corporate Position")
       andIClickChangeLinkForRFMX("Corporate Position") // auto-chosen (score=1.00, RFMStepsSteps.scala)

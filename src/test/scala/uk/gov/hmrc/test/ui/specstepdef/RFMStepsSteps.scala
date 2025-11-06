@@ -124,14 +124,6 @@ object RFMStepsSteps {
 //        RFMStartPage.clickContinue()
   }
 
-  // ^(.*) logs in to RFM with credId (.*) for Pillar2
-  def givenXLogsInToRFMWithCredIdXForPillar2(name: String, credId: String): Unit = {
-//    name match {
-//      case "Organisation User" => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
-//      case _                   => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
-//    }
-  }
-
   // ^I navigate back to RFM CYA Page from GRS Page
   def thenINavigateBackToRFMCYAPageFromGRSPage(): Unit = {
     for (i <- 1 to 5) {

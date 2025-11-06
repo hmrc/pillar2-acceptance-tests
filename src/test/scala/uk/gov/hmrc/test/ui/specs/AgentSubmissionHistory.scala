@@ -59,10 +59,6 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
 
       Then("I click View submission history link")
       andIClickXLink("View submission history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should see 0 accounting periods on Sub History Page")
-      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
-
     }
 
     Scenario("2 -  Agent User navigates to Submission History for one accounting period") {
@@ -99,10 +95,6 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
 
       Then("I click View submission history link")
       andIClickXLink("View submission history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should see 1 accounting periods on Sub History Page")
-      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(1)
-
     }
 
     Scenario("3 - Agent User navigates to Submission History for multiple accounting period") {
@@ -139,10 +131,6 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
 
       Then("I click View submission history link")
       andIClickXLink("View submission history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should see 2 accounting periods on Sub History Page")
-      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
-
     }
   }
 }

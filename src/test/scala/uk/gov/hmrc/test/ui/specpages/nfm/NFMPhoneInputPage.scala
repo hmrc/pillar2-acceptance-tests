@@ -16,23 +16,26 @@
 
 package uk.gov.hmrc.test.ui.specpages.nfm
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object NFMContactNamePage extends BasePage {
-  val url: String = s"$baseUrl" + "business-matching/filing-member/no-id/input-business-name"
-  val contactName = "#value"
-  val nameValue = "Contact Name"
-  val nameUpdatedValue = "Updated Contact Name"
+object NFMPhoneInputPage extends BasePage {
+  val url: String = s"$baseUrl" + "business-matching/filing-member/no-id/input-phone"
+  val phoneNumber = "#phoneNumber"
 
-  def enterName(): Unit = {
+  override val textInputField: By             = By.id("phoneNumber")
+  private val phoneNumberValue: String        = "01234 567890"
+  private val phoneNumberUpdatedValue: String = "09876 543210"
+
+  def enterPhoneNumber(): Unit = {
     onPage()
-    sendKeys(textInputField, nameValue)
+    sendKeys(textInputField, phoneNumberValue)
     clickButtonByText(buttonSaveAndContinue)
   }
 
-  def updateName(): Unit = {
-    onPage(s"$baseUrl" + "business-matching/filing-member/no-id/change-input-business-name")
-    sendKeys(textInputField, nameUpdatedValue)
+  def updatePhoneNumber(): Unit = {
+    onPage(s"$baseUrl" + "business-matching/filing-member/no-id/change-input-phone")
+    sendKeys(textInputField, phoneNumberUpdatedValue)
     clickButtonByText(buttonSaveAndContinue)
   }
 }

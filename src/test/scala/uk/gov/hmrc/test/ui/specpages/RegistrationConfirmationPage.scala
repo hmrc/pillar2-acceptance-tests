@@ -16,9 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specpages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
-
-object RegistrationConfirmationPage extends PageObject {
-  val url: String   = s"$rootUrl" + "review-submit/confirmation"
+object RegistrationConfirmationPage extends BasePage {
+  val url: String   = s"$baseUrl" + "review-submit/confirmation"
   val printThisPage = "#print-this-page"
 }

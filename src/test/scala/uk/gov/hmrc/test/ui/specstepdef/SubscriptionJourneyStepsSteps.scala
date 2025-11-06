@@ -21,30 +21,9 @@ import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object SubscriptionJourneyStepsSteps {
 
-  // ^I enter account period as:$
   def andIEnterAccountPeriodAs(accountPeriod: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(accountPeriod)
     UPEEntityTypePage.clickContinue()
   }
-
-  // todo: commented overload Test and delete if required.
-
-  // Overload for ScalaTest (no DataTable, accepts varargs)
-//  def andIEnterAccountPeriodAs(links: (String, String)*): Unit = {
-//    links.foreach { case (text, url) =>
-//      val driverWait: WebDriverWait =
-//        new WebDriverWait(Driver.instance, Duration.ofSeconds(10), Duration.ofSeconds(1))
-//      driverWait.until(
-//        ExpectedConditions.elementToBeClickable(
-//          Driver.instance.findElement(By.id(url))
-//        )
-//      )
-//      verifyLinkById(url, text)
-//    }
-//  }
-
-  // ^Accounting Period (.*) is entered as (.*)$
-
-  // ^I should see date field (.*) is pre-populated with (.*)$
 }

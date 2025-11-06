@@ -27,19 +27,19 @@ object UPEEntityTypePage extends BasePage {
   private val limitedLiabilityPartnership = "value_1"
   private val companyTypeNotListed        = "value_2"
 
-  def enterEntityTypeUkLimitedCompany(): Unit = {
+  def selectEntityTypeUkLimitedCompany(): Unit = {
     onPage()
     click(By.id(ukLimitedCompany))
     clickButtonByText(buttonSaveAndContinue)
   }
 
-  def enterEntityTypeLimitedLiabilityPartnership(): Unit = {
+  def selectEntityTypeLimitedLiabilityPartnership(): Unit = {
     onPage()
     click(By.id(limitedLiabilityPartnership))
     clickButtonByText(buttonSaveAndContinue)
   }
 
-  def enterEntityTypeCompanyTypeNotListed(): Unit = {
+  def selectEntityTypeCompanyTypeNotListed(): Unit = {
     onPage()
     click(By.id(companyTypeNotListed))
     clickButtonByText(buttonSaveAndContinue)

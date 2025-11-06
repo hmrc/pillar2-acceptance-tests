@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.furtherDetails
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object FDGroupAccountingPeriodPage extends BasePage {
   override val url: String = s"$baseUrl" + "further-details/accounting-period"

@@ -15,9 +15,23 @@
  */
 
 package uk.gov.hmrc.test.ui.specpages.contactDetails
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object ContactDetailsPrimaryNamePage extends BasePage {
+  override val url: String = s"$baseUrl" + "contact-details/input-name"
 
-object ContactDetailsChangePhonePage extends PageObject {
-  val url: String = s"$rootUrl" + "contact-details/change-phone"
+  private val nameValue: String = "Contact Name"
+  private val nameUpdatedValue: String = "Updated Contact Name"
+
+  def enterName(): Unit = {
+    onPage()
+    sendKeys(textInputField, nameValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def updateName(): Unit = {
+    onPage(s"$baseUrl" + "contact-details/change-input-name")
+    sendKeys(textInputField, nameUpdatedValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

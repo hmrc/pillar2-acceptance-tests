@@ -14,25 +14,27 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages.nfm
+package uk.gov.hmrc.test.ui.specpages.contactDetails
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object NFMContactNamePage extends BasePage {
-  val url: String = s"$baseUrl" + "business-matching/filing-member/no-id/input-business-name"
-  val contactName = "#value"
-  val nameValue = "Contact Name"
-  val nameUpdatedValue = "Updated Contact Name"
+object ContactDetailsPrimaryEmailPage extends BasePage {
+  override val url: String = s"$baseUrl" + "contact-details/input-email"
 
-  def enterName(): Unit = {
+  override val textInputField: By = By.id("emailAddress")
+  private val emailValue: String  = "abc@def.com"
+  private val emailUpdatedValue: String  = "xyz@tuv.com"
+
+  def enterEmail(): Unit = {
     onPage()
-    sendKeys(textInputField, nameValue)
+    sendKeys(textInputField, emailValue)
     clickButtonByText(buttonSaveAndContinue)
   }
 
-  def updateName(): Unit = {
-    onPage(s"$baseUrl" + "business-matching/filing-member/no-id/change-input-business-name")
-    sendKeys(textInputField, nameUpdatedValue)
+  def updateEmail(): Unit = {
+    onPage(s"$baseUrl" + "contact-details/change-input-email")
+    sendKeys(textInputField, emailUpdatedValue)
     clickButtonByText(buttonSaveAndContinue)
   }
 }

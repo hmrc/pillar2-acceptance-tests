@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps.{andIShouldSeeIntAccountingPeriodsOnSubHistoryPage, _}
+import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 
 
@@ -57,20 +57,8 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       Then("I should navigate to Due & Over Due Page")
         thenIShouldNavigateToX("Due & Over Due Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
-      And("I should see 4 accounting periods on Due Overdue Page")
-        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(4)
-
-      And("I should see 1 section with status Due")
-        andIShouldSeeIntSectionWithStatusString(1,"Due")
-
-      And("I should see 3 section with status Overdue")
-        andIShouldSeeIntSectionWithStatusString(3,"Overdue")
-
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should see 0 accounting periods on Sub History Page")
-      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
       When("I click due and overdue returns link")
         andIClickXLink("due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -108,14 +96,8 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       When("I click View all due and overdue returns link")
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      And("I should see 0 accounting periods on Due Overdue Page")
-        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
-
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should see 0 accounting periods on Sub History Page")
-      andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
     }
 
@@ -147,22 +129,8 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       When("I click View all due and overdue returns link")
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      And("I should see 1 accounting periods on Due Overdue Page")
-        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(1)
-
-      And("I should see 1 section with status Due")
-        andIShouldSeeIntSectionWithStatusString(1,"Due")
-
-      And("I should see 0 section with status Overdue")
-        andIShouldSeeIntSectionWithStatusString(0,"Overdue")
-
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should see 0 accounting periods on Sub History Page")
-        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
-
-
     }
 
     Scenario("4 - Agent User navigates to Due & Overdue returns page with all fulfilled submissions") {
@@ -193,16 +161,8 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       When("I click View all due and overdue returns link")
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      And("I should see 0 accounting periods on Due Overdue Page")
-      andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
-
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should see 2 accounting periods on Sub History Page")
-        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
-
-
     }
 
     Scenario("5 - Agent User navigates to Due & Overdue returns page with some fulfilled submissions") {
@@ -233,20 +193,8 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       When("I click View all due and overdue returns link")
         andIClickXLink("View all due and overdue returns")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      And("I should see 2 accounting periods on Due Overdue Page")
-        andIShouldSeeIntAccountingPeriodsOnDueOverduePage(2)
-
-      And("I should see 0 section with status Due")
-        andIShouldSeeIntSectionWithStatusString(0,"Due")
-
-      And("I should see 2 section with status Overdue")
-      andIShouldSeeIntSectionWithStatusString(2,"Overdue")
-
       When("I click submission history link")
         andIClickXLink("submission history")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I should see 2 accounting periods on Sub History Page")
-        andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
     }
   }
 }

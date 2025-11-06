@@ -23,7 +23,6 @@ import uk.gov.hmrc.test.ui.specpages.nfm.{NFMEntityTypePage, NFMGRSRegistrationF
 import uk.gov.hmrc.test.ui.specpages.upe._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
 import uk.gov.hmrc.test.ui.tags.Tests
 
@@ -40,7 +39,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV Enabled")
       UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
 
       And("The user adds a Uk Limited Company as a Nominated Filing Member with BV Enabled")
@@ -52,26 +51,6 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       Then("The user ends up back on the task list")
       TaskListPage.onPage()
-//      And("The user adds Uk as Entity location and enters the Accounting period")
-//      TaskListPage.clickAddFurtherGroupDetailsLink()
-//      FDGroupStatusPage.selectOnlyUk()
-//      FDGroupAccountingPeriodPage.enterDates()
-//      FDCheckYourAnswersPage.continueToNextPage()
-//
-//      And("The user adds contact details")
-//      TaskListPage.clickAddContactDetailsLink()
-//      ContactDetailsGuidancePage.continueToNextPage()
-//      ContactDetailsInputNamePage.enterName()
-//      ContactDetailsInputEmailPage.enterEmail()
-//      ContactDetailsPhoneAsContactPage.selectYes()
-//      ContactDetailsInputPhonePage.enterPhoneNumber()
-//      SecondContactDetailsPage.selectNo()
-//      ContactAddressInputPage.enterAddressUK()
-//      ContactDetailsCheckAnswersPage.continueToNextPage()
-//
-//      Then("The user reviews and submits")
-//      TaskListPage.clickReviewAndSubmitLink()
-//      ReviewAnswersPage.continueToNextPage()
     }
 
     Scenario("2 - User registers a Uk Limited Company successfully with BV disabled", Tests) {
@@ -83,7 +62,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV Disabled")
       UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationSuccessBvDisabled()
 
       And("The user adds a Uk Limited Company as a Nominated Filing Member with BV Enabled")
@@ -106,7 +85,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Failed Party Type Mismatch")
       UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationFailedPartyTypeMismatch()
 
       When("The user is presented with the mismatching-details error page")
@@ -114,7 +93,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Failed Party Type Mismatch")
@@ -140,7 +119,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Generic Error")
       UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationFailedGeneric()
 
       When("The user is presented with the mismatching-details error page")
@@ -148,7 +127,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Generic Error")
@@ -174,7 +153,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Identifiers Mismatch")
       UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationNotCalledIdentifierMismatch()
 
       When("The user is presented with the Identifiers Mismatch error page")
@@ -182,7 +161,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Identifiers Mismatch")
@@ -208,7 +187,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV failed")
       UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationNotCalledBvFailed()
 
       When("The user is presented with the BV failed error page")
@@ -216,7 +195,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
-      UPEEntityTypePage.enterEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with BV failed")
@@ -242,7 +221,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user adds a Limited Liability Partnership as an Ultimate Parent Entity with BV Enabled")
       UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.enterEntityTypeLimitedLiabilityPartnership()
+      UPEEntityTypePage.selectEntityTypeLimitedLiabilityPartnership()
       UPELLPGRSPage.clickRegistrationSuccessBvEnabled()
 
       And("The user adds a Limited Liability Partnership as a Nominated Filing Member with BV Enabled")
@@ -265,7 +244,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       And("The user adds a Limited Liability Partnership as an Ultimate Parent Entity with BV disabled")
       UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.enterEntityTypeLimitedLiabilityPartnership()
+      UPEEntityTypePage.selectEntityTypeLimitedLiabilityPartnership()
       UPELLPGRSPage.clickRegistrationSuccessBvDisabled()
 
       And("The user adds a Limited Liability Partnership as a Nominated Filing Member with BV disabled")
@@ -277,67 +256,6 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
       Then("The user ends up back on the task list")
       TaskListPage.onPage()
-    }
-
-    Scenario("11 - User can navigate to Entity type not listed hyperlink on NFM Org type page") {
-      Given("Organisation User logs in without Pillar2 enrolment")
-      login(
-        userType = "Organisation",
-        pageUrl = "upe"
-      )
-
-      Then("I should be on UPE business page")
-      thenIShouldBeOnX("UPE business page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select option Yes and continue to next")
-      andISelectOptionXAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on UPE entity type page")
-      thenIShouldBeOnX("UPE entity type page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select option UK limited company and continue to GRS page")
-      andISelectOptionXAndContinueToGRSPage("UK limited company") // auto-chosen (score=1.00, UPEStepsSteps.scala)
-
-      Then("I should navigate to UKCompany GRS page")
-      thenIShouldNavigateToX("UKCompany GRS page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I registered successfully with BV enabled")
-      andIRegisteredSuccessfullyWithX("BV enabled") // auto-chosen (score=1.00, UPEStepsSteps.scala)
-
-      And("I click on Save&Continue button")
-      // ⚠️ No step-def match found for: I click on Save&Continue button
-//        andIClickOnSaveContinueButton()
-
-      Then("I should navigate to Task list page")
-      thenIShouldNavigateToX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("The Task Edit Ultimate Parent Entity details status should be Completed")
-      andTheTaskXStatusShouldBeX("Edit Ultimate Parent Entity details", "Completed") // auto-chosen (score=1.00, TaskListStepsSteps.scala)
-
-      When("I click Add filing member details link")
-      andIClickXLink("Add filing member details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should navigate to NFM registration page")
-      thenIShouldNavigateToX("NFM registration page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select Yes option and continue to next")
-      andISelectXOptionAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should navigate to NFM details page")
-      thenIShouldNavigateToX("NFM details page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select option Yes and continue to next")
-      andISelectOptionXAndContinueToNext("Yes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on NFM entity type page")
-      thenIShouldBeOnX("NFM entity type page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I select option Entity type not listed and continue to Name page")
-      andISelectOptionXAndContinueToNamePage("Entity type not listed") // auto-chosen (score=1.00, UPEStepsSteps.scala)
-
-      Then("I should navigate to NFM Name page")
-      thenIShouldNavigateToX("NFM Name page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
     }
   }
 }

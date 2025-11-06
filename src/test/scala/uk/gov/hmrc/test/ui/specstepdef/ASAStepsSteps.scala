@@ -29,26 +29,4 @@ object ASAStepsSteps {
         Input.sendKeysByCss(value, ASAPillar2InputPage.pillar2IDField)
     }
   }
-
-  // ^I should see {int} accounting periods on Due Overdue Page$
-  def andIShouldSeeIntAccountingPeriodsOnDueOverduePage(accountingPeriods: Int): Unit = {
-//    Wait.waitForElementToPresentByCssSelector(DueOverduePage.accountDetails)
-//    assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.accountPeriodSections)).size() == accountingPeriods)
-    println(s"Verified presence of $accountingPeriods periods.")
-  }
-
-  // "I should see {int} section with status {string}"
-  def andIShouldSeeIntSectionWithStatusString(count: Int, dueType: String): Unit = {
-//    dueType match {
-////      case "Due"     => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.dueSection)).size() == count)
-////      case "Overdue" => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.overDueSection)).size() == count)
-//    }
-  }
-
-  // "I should see {int} accounting periods on Sub History Page"
-  def andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(accountingPeriods: Int): Unit = {
-//    Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.accountDetails)
-//    assert(Driver.instance.findElements(By.cssSelector(P2SubmissionHistoryPage.accountingPeriods)).size() == accountingPeriods)
-  }
-
 }

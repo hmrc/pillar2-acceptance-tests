@@ -23,7 +23,7 @@ import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsDisplayPage, ContactDetailsSummaryPage}
+import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsPrimaryContactPage, ContactDetailsSummaryPage}
 import uk.gov.hmrc.test.ui.specpages.repayments.{RepaymentAmountPage, RepaymentCYAPage, RepaymentChangeAmountPage, RepaymentChangeMethodPage, RepaymentChangeNamePage, RepaymentConfirmationPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentGuidancePage, RepaymentMethodPage, RepaymentPhoneInputPage, RepaymentPhonePage, RepaymentReasonPage}
 
 object CommonStepsSteps {
@@ -31,11 +31,6 @@ object CommonStepsSteps {
   // ^I clear the cache$
   def thenIClearTheCache(): Unit = {
     Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/eligibility/clear-session")
-  }
-
-  // ^The Heading should be (.*)$
-  def thenTheHeadingShouldBeX(header: String): Unit = {
-    Check.checkH1(header)
   }
 
   def clickAction(action: String): Unit = {
@@ -50,26 +45,6 @@ object CommonStepsSteps {
   // ^(I click on Continue button)
   def whenIClickOnContinueButton(negate: String): Unit = {
     InitialGuidancePage.clickContinue()
-  }
-
-  // I select CurrentAccountingPeriod
-  def whenISelectCurrentAccountingPeriod(): Unit = {
-    BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
-  }
-
-  // I select PreviousAccountingPeriodBTNSubmitted
-  def whenISelectPreviousAccountingPeriodBTNSubmitted(): Unit = {
-    BtnMultipleAccountingPage.selectPreviousAccountingPeriodBTNSubmitted()
-  }
-
-  // I select PreviousAccountingPeriodUKTRSubmitted
-  def whenISelectPreviousAccountingPeriodUKTRSubmitted(): Unit = {
-    BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
-  }
-
-  // I select PreviousAccountingPeriod
-  def thenISelectPreviousAccountingPeriod(): Unit = {
-    BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
   }
 
   // ^I am on (.*) Page$
@@ -88,27 +63,6 @@ object CommonStepsSteps {
         Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.eqForm)
         isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
     }
-  }
-
-  // ^I should see error message (.*) on the (.*) Page$
-  def andIShouldSeeErrorMessageXOnTheXPage(error: String, page: String): Unit = {
-    page match {
-      case "Contact details display" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorLink)
-        getTextOf(By cssSelector (ContactDetailsDisplayPage.errorLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsDisplayPage.errorMessage)
-        getTextOf(By cssSelector (ContactDetailsDisplayPage.errorMessage)) should include(error)
-    }
-  }
-
-  // ^The caption must be (.*)$
-  def thenTheCaptionMustBeX(caption: String): Unit = {
-    Wait.waitForElementToPresentByCssSelector(InitialGuidancePage.caption)
-    assert(getTextOf(By.cssSelector(InitialGuidancePage.caption)).equals(caption))
   }
 
   // ^I click (.*) link$
@@ -171,28 +125,6 @@ object CommonStepsSteps {
     }
   }
 
-  // ^I can see (.*) link$
-  def thenICanSeeXLink(linkText: String): Unit = {
-    linkText match {
-      case "Print this page" =>
-        Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printThisPage)
-        assert(Driver.instance.findElement(By.cssSelector(RegistrationConfirmationPage.printThisPage)).getText.contains(linkText))
-      case "Sign out" =>
-        Wait.waitForElementToPresentByCssSelector(RepaymentConfirmationPage.signOut)
-        assert(Driver.instance.findElement(By.cssSelector(RepaymentConfirmationPage.signOut)).getText.contains(linkText))
-    }
-  }
-
-  // ^I should see (.*) link on (.*)$
-  def andIShouldSeeXLinkOnX(linkText: String, page: String): Unit = {
-    page match {
-      case "Review answers page" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(ReviewAnswersPage.printThisPage)
-        assert(Driver.instance.findElement(By.cssSelector(ReviewAnswersPage.printThisPage)).getText.contains(linkText))
-    }
-  }
-
   // ^I access the (.*) page$
   def givenIAccessTheXPage(page: String): Unit = {
     page match {
@@ -243,16 +175,6 @@ object CommonStepsSteps {
       case "transaction history" =>
         Nav.navigateTo(TransactionHistoryPage.url)
 
-    }
-  }
-
-  // ^I should see (.*) CTA$
-  def thenIShouldSeeXCTA(pageNumber: String): Unit = {
-    pageNumber match {
-      case "Next" =>
-        assert(Driver.instance.findElement(By.cssSelector(TransactionHistoryPage.nextPageCTA)).isDisplayed)
-      case "Previous" =>
-        assert(Driver.instance.findElement(By.cssSelector(TransactionHistorySecondPage.previousPageCTA)).isDisplayed)
     }
   }
 

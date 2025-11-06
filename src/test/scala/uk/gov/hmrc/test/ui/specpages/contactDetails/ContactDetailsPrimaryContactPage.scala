@@ -16,11 +16,17 @@
 
 package uk.gov.hmrc.test.ui.specpages.contactDetails
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object ContactDetailsDisplayPage extends PageObject {
-  val url: String  = s"$rootUrl" + "contact-details/primary-contact"
+object ContactDetailsPrimaryContactPage extends BasePage {
+  val url: String  = s"$baseUrl" + "contact-details/primary-contact"
   val errorSummary = ".govuk-error-summary__list"
   val errorLink    = "[href*='#value']"
   val errorMessage = ".govuk-error-message"
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    clickByClass(continue)
+  }
 }

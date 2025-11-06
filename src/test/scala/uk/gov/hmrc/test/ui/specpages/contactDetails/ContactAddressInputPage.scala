@@ -41,4 +41,10 @@ object ContactAddressInputPage extends BasePage {
     countryAutoSelect("United Kingdom")
     clickButtonByText(buttonSaveAndContinue)
   }
+
+  def updateAddressUK(): Unit = {
+    onPage(s"$baseUrl" + "contact-details/change-input-address")
+    sendKeys(city, "Updated Test City")
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

@@ -15,11 +15,14 @@
  */
 
 package uk.gov.hmrc.test.ui.specpages.contactDetails
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+object ContactDetailsPrimaryPhoneAsContactPage extends BasePage {
+  val url: String = s"$baseUrl" + "contact-details/phone"
 
-object SecondContactEmailPage extends PageObject {
-  val url: String  = s"$rootUrl" + "contact-details/second-input-email"
-  val contactEmail = "#emailAddress"
-
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
 }

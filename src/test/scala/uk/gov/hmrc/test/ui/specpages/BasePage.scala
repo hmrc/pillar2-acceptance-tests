@@ -46,11 +46,11 @@ trait BasePage extends Matchers with PageObject {
   val continue  = ".govuk-button"
   val nameField = "#value"
 
-  private def fluentWait: Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
-    .withTimeout(Duration.ofSeconds(3))
+  private def fluentWait(timeoutSeconds: Long = 3): Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
+    .withTimeout(Duration.ofSeconds(timeoutSeconds))
     .pollingEvery(Duration.ofMillis(200))
 
-  def onPage(url: String = this.url): Unit = fluentWait.until(ExpectedConditions.urlToBe(url))
+  def onPage(url: String = this.url, timeoutSeconds: Long = 3): Unit = fluentWait(timeoutSeconds).until(ExpectedConditions.urlToBe(url))
 
   def countryAutoSelect(countryName: String): Unit = {
     click(countryDropdown)

@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.contactDetails
 
-object FDCheckYourAnswersPage extends BasePage {
-  override val url: String            = s"$baseUrl" + "further-details/check-answers"
-  val changeGroupStatus      = "a[href*='/change-group-status']"
-  val changeAccountingPeriod = "a[href*='/change-accounting-period']"
+import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-  def continueToNextPage(): Unit = {
+object ContactDetailsSecondaryPhoneAsContactPage extends BasePage {
+  val url: String = s"$baseUrl" + "contact-details/second-phone"
+
+  def selectYes(): Unit = {
     onPage()
-    click(continueButtonId)
+    click(yesRadioId)
+    click(submitButtonId)
   }
 }

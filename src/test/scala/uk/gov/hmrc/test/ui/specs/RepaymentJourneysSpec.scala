@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{IProvideRepaymentContactXAsX, IShouldSeeBankAccountErrorMessageXOnTheXElement, andIAccessXPaymentPage, andIEnterNonUKBankAccountDetailsAs, andIEnterUKBankAccountDetailsAs, andINavigateFromContactPageToCYAPage, andIProvideRefundAmountAs, andIProvideRefundReasonAsX, andIProvideValueForXAsX, andISelectRepaymentMethodAsX, givenIAccessRepaymentContactEmailPage, thenTheCharacterLimitTextShouldDisplayX, whenIAccessRepaymentCYAPage, whenIClickChangeLinkForRepaymentX}
+import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{IProvideRepaymentContactXAsX, IShouldSeeBankAccountErrorMessageXOnTheXElement, andIAccessXPaymentPage, andIEnterNonUKBankAccountDetailsAs, andIEnterUKBankAccountDetailsAs, andINavigateFromContactPageToCYAPage, andIProvideRefundAmountAs, andIProvideRefundReasonAsX, andIProvideValueForXAsX, andISelectRepaymentMethodAsX, givenIAccessRepaymentContactEmailPage, whenIAccessRepaymentCYAPage, whenIClickChangeLinkForRepaymentX}
 //import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps.thenIShouldBeRedirectedTo
 //import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps.andIAmOnFeedbackSurveyPage
 
@@ -38,9 +38,6 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
       And("I access Non UK payment page")
         andIAccessXPaymentPage("Non UK")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
-
-      And("The Heading should be Bank account details")
-        thenTheHeadingShouldBeX("Bank account details")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -200,9 +197,6 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
       When("I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.")
         andIProvideValueForXAsX("Refund Reason", "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
 
-      And("The character limit text should display You have 8 characters remaining")
-        thenTheCharacterLimitTextShouldDisplayX("You have 8 characters remaining")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
-
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
@@ -351,10 +345,6 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
           "Email address"                    -> "email@change.com",
           "Can we contact by phone?"         -> "No"
         )
-        andIShouldSeeDetailsAsBelow(updatedContactAndBankDetails)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
-
-      And("I can see Print this page link")
-        thenICanSeeXLink("Print this page")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I click change link for Repayment UK Bank Method")
         whenIClickChangeLinkForRepaymentX("UK Bank Method")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
@@ -373,9 +363,6 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
       And("I should be on Repayment Confirmation Page")
         thenIShouldBeOnX("Repayment Confirmation Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("I can see Print this page link")
-        thenICanSeeXLink("Print this page")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I click Back to group homepage link")
         andIClickXLink("Back to group homepage")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -641,7 +628,6 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
           "Email address"                    -> "email@change.com",
           "Can we contact by phone?"         -> "No"
         )
-        andIShouldSeeDetailsAsBelow(summaryDetails)  // auto-chosen (score=1.00, CYAStepsSteps.scala)
 
       When("I click change link for Repayment UK Bank Method")
         whenIClickChangeLinkForRepaymentX("UK Bank Method")  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
@@ -667,9 +653,6 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-      And("I can see Print this page link")
-        thenICanSeeXLink("Print this page")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
       And("I click on Continue button")
         whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
@@ -679,20 +662,11 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
       And("I should be on Repayment Confirmation Page")
         thenIShouldBeOnX("Repayment Confirmation Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
-      Then("I can see Sign out link")
-        thenICanSeeXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("I can see Print this page link")
-        thenICanSeeXLink("Print this page")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
       When("I click the browser back button")
         andIClickTheBrowserBackButton()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be on Repayment Return Error Page")
         thenIShouldBeOnX("Repayment Return Error Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      Then("I can see Sign out link")
-        thenICanSeeXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I click Report Pillar 2 Top-up Taxes link")
         andIClickXLink("Report Pillar 2 Top-up Taxes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)

@@ -22,10 +22,10 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsChangePhonePage, ContactDetailsDisplayPage, ContactDetailsSummaryPage, SecondContactEmailPage, SecondContactInputPage, SecondContactNamePage, SecondContactNumberPage}
-import uk.gov.hmrc.test.ui.specpages.nfm.{NFMAddressPage, NFMCheckYourAnswersPage, NFMContactEmailPage, NFMContactNamePage, NFMEQPage, NFMGuidancePage, NFMNamePage, NFMPhonePage}
-import uk.gov.hmrc.test.ui.specpages.repayments.{RepaymentAmountPage, RepaymentBankDetailsErrorPage, RepaymentBarsErrorPage, RepaymentCYAPage, RepaymentChangeAmountPage, RepaymentChangeMethodPage, RepaymentChangeNamePage, RepaymentConfirmationPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentCouldNotConfirmErrorPage, RepaymentGuidancePage, RepaymentIncompleteErrorPage, RepaymentJourneyRecoveryErrorPage, RepaymentMethodPage, RepaymentPartialNameErrorPage, RepaymentPhoneInputPage, RepaymentPhonePage, RepaymentProcessingPage, RepaymentReasonPage, RepaymentReturnErrorPage}
-import uk.gov.hmrc.test.ui.specpages.rfm.{RFMConfirmationPage, RFMContactAddressPage, RFMContactDetailNamePage, RFMContactEmailPage, RFMContactGuidancePage, RFMContactInputPage, RFMContactNumberPage, RFMCorpPositionPage, RFMFinalReviewCYAPage, RFMGRSEntityTypePage, RFMGRSRegistrationMismatchErrorPage, RFMGRSRegistrationNotCalledErrorPage, RFMIncompleteErrorPage, RFMJourneyRecoveryPage, RFMLLPGRSPage, RFMNewNFMContactAddressInputPage, RFMNewNFMContactNameChangePage, RFMNewNFMContactNamePage, RFMNoIDCYAPage, RFMNoIDChangeCYAPage, RFMNoMatchErrorPage, RFMNoReturnBackErrorPage, RFMProcessingPage, RFMRegisteredInUKPage, RFMSecondContactEmailPage, RFMSecondContactNamePage, RFMSecondContactPhonePage, RFMSecondContactPhoneQuestionPage, RFMSecondContactQuestionPage, RFMUKLimitedCompanyGRSPage}
+import uk.gov.hmrc.test.ui.specpages.contactDetails._
+import uk.gov.hmrc.test.ui.specpages.nfm._
+import uk.gov.hmrc.test.ui.specpages.repayments._
+import uk.gov.hmrc.test.ui.specpages.rfm._
 
 object CommonFunctions
     extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
@@ -44,21 +44,7 @@ object CommonFunctions
       case "Initial guidance Page"                      => InitialGuidancePage
       case "UPE EQ page"                                => UPEEQPage
       case "Under Construction Page"                    => UnderConstructionPage
-      case "NFM Name page"                              => NFMNamePage
-      case "NFM Address page"                           => NFMAddressPage
-      case "NFM Contact Name page"                      => NFMContactNamePage
-      case "NFM Contact Email page"                     => NFMContactEmailPage
-      case "NFM Phone page"                             => NFMPhonePage
-      case "input nfm phone page"                       => InputNFMPhonePage
-      case "NFM Check your answers page"                => NFMCheckYourAnswersPage
-      case "Contact details display page"               => ContactDetailsDisplayPage
-      case "Contact details change phone page"          => ContactDetailsChangePhonePage
-      case "Second Contact name page"                   => SecondContactNamePage
-      case "Second Contact email page"                  => SecondContactEmailPage
-      case "Second Contact number page"                 => SecondContactNumberPage
-      case "Second Contact Input page"                  => SecondContactInputPage
       case "Bookmark page"                              => BookMarkPage
-      case "Registration confirmation page"             => RegistrationConfirmationPage
       case "Draft guidance page"                        => DraftGuidancePage
       case "Assistant role KB page"                     => AssistantRoleKBPage
       case "Agent affinity KB page"                     => AgentAffinityKBPage
@@ -76,7 +62,6 @@ object CommonFunctions
       case "Registration API error page"                => RegistrationAPIerrorPage
       case "Registration In Progress page"              => RegistrationInProgressPage
       case "Incomplete Data Submission Error Page"      => IncompleteDataSubmissionErrorPage
-      case "RFM Corp Position Page"                     => RFMCorpPositionPage
       case "New NFM guidance page"                      => NewNFMGuidancePage
       case "RFM registered in UK page"                  => RFMRegisteredInUKPage
       case "RFM Contact Guidance page"                  => RFMContactGuidancePage

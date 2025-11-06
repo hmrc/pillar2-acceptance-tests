@@ -16,8 +16,24 @@
 
 package uk.gov.hmrc.test.ui.specpages.nfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object NFMNamePage extends PageObject {
-  val url: String = s"$rootUrl" + "business-matching/filing-member/no-id/input-name"
+object NFMNamePage extends BasePage {
+  val url: String = s"$baseUrl" + "business-matching/filing-member/no-id/input-name"
+
+  private val nameValue: String = "Member Name"
+  private val nameUpdatedValue: String = "New Member Name"
+
+  def enterName(): Unit = {
+    onPage()
+    sendKeys(textInputField, nameValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def updateName(): Unit = {
+    onPage(s"$baseUrl" + "business-matching/filing-member/no-id/change-input-name")
+    sendKeys(textInputField, nameUpdatedValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
 }

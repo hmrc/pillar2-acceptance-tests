@@ -27,19 +27,7 @@ import uk.gov.hmrc.test.ui.specpages.repayments.{RepaymentAmountPage, RepaymentC
 import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object PaymentStepsSteps {
-  // ^I should be navigated to new tab$
-  def thenIShouldBeNavigatedToNewTab(): Unit = {
-    val handles   = Driver.instance.getWindowHandles.toArray().toSeq
-    val newWindow = handles(1).toString
-    Driver.instance.switchTo().window(newWindow)
-  }
 
-  // ^I should navigate back to main tab
-  def thenIShouldNavigateBackToMainTab(): Unit = {
-    val handles    = Driver.instance.getWindowHandles.toArray().toSeq
-    val mainWindow = handles.head.toString
-    Driver.instance.switchTo().window(mainWindow)
-  }
 
   // I should be redirected to guidance page in a new tab
   def thenIShouldBeRedirectedToGuidancePageInANewTab(): Unit = {
@@ -51,17 +39,6 @@ object PaymentStepsSteps {
     assert(Driver.instance.findElement(By.cssSelector(GGRGuidancePage.header)).isDisplayed)
     Driver.instance.close()
     Driver.instance.switchTo().window(mainWindow)
-  }
-
-  // ^I close new tab
-  def thenICloseNewTab(): Unit = {
-    Driver.instance.close()
-  }
-
-  // ^The character limit text should display (.*)$
-  def thenTheCharacterLimitTextShouldDisplayX(header: String): Unit = {
-    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.charLimit)
-    assert(getTextOf(By.cssSelector(RepaymentReasonPage.charLimit)).contains(header))
   }
 
   // ^I select repayment method as (.*)$
@@ -244,14 +221,6 @@ object PaymentStepsSteps {
     }
   }
 
-  // ^I should see the repayment method (.*) remain selected$
-  def andIShouldSeeTheRepaymentMethodXRemainSelected(accountType: String): Unit = {
-    accountType match {
-      case "UK bank account"     => Find.findByCss("#value_0").isSelected
-      case "Non-UK bank account" => Find.findByCss("#value_1").isSelected
-    }
-  }
-
   // ^I click change link for Repayment (.*)
   def whenIClickChangeLinkForRepaymentX(link: String): Unit = {
     link match {
@@ -327,44 +296,12 @@ object PaymentStepsSteps {
     UKBankAccountPaymentPage.clickContinue()
   }
 
-  // todo: commented overload Test and delete if required.
-
-  // Overload for ScalaTest (no DataTable, accepts varargs)
-//  def andIEnterUKBankAccountDetailsAs(links: (String, String)*): Unit = {
-//    links.foreach { case (text, url) =>
-//      val driverWait: WebDriverWait =
-//        new WebDriverWait(Driver.instance, Duration.ofSeconds(10), Duration.ofSeconds(1))
-//      driverWait.until(
-//        ExpectedConditions.elementToBeClickable(
-//          Driver.instance.findElement(By.id(url))
-//        )
-//      )
-//      verifyLinkById(url, text)
-//    }
-//  }
-
   // ^I enter Non UK Bank Account details as:$
   def andIEnterNonUKBankAccountDetailsAs(details: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()
   }
-
-  // todo: commented overload Test and delete if required.
-
-  // Overload for ScalaTest (no DataTable, accepts varargs)
-//  def andIEnterNonUKBankAccountDetailsAs(links: (String, String)*): Unit = {
-//    links.foreach { case (text, url) =>
-//      val driverWait: WebDriverWait =
-//        new WebDriverWait(Driver.instance, Duration.ofSeconds(10), Duration.ofSeconds(1))
-//      driverWait.until(
-//        ExpectedConditions.elementToBeClickable(
-//          Driver.instance.findElement(By.id(url))
-//        )
-//      )
-//      verifyLinkById(url, text)
-//    }
-//  }
 
   // I make successful payment
   def thenIMakeSuccessfulPayment(): Unit = {
@@ -386,14 +323,6 @@ object PaymentStepsSteps {
     OnlinePaymentPages.enterBankNameAndClickContinueOnChooseBankPage()
     OnlinePaymentPages.enterEmailAndClickContinueOnEmailPage()
     OnlinePaymentPages.clickContinueOnCheckYourDetailsPage()
-  }
-
-  // I should be able to navigate back to make a payment page
-  def thenIShouldBeAbleToNavigateBackToMakeAPaymentPage(): Unit = {
-    Nav.browserBack()
-    for (i <- 1 to 7) {
-      clickByCss(BtnAgdKBPage.backLink)
-    }
   }
 
   // I should be able to navigate back to outstanding payment page

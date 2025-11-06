@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.specs
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.asa.{ASAConfirmationPage, ASAPillar2InputPage}
+import uk.gov.hmrc.test.ui.specpages.asa._
 import uk.gov.hmrc.test.ui.specpages.btn._
 import uk.gov.hmrc.test.ui.tags.Tests
 

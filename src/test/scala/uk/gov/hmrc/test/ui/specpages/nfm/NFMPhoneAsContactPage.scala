@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages.contactDetails
+package uk.gov.hmrc.test.ui.specpages.nfm
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object ContactDetailsInputPhonePage extends BasePage {
-  val url: String  = s"$baseUrl" + "contact-details/input-phone"
-  val contactPhone = "#phoneNumber"
+object NFMPhoneAsContactPage extends BasePage {
+  val url: String = s"$baseUrl" + "business-matching/filing-member/no-id/phone"
 
-  override val textInputField: By      = By.id("phoneNumber")
-  private val phoneNumberValue: String = "01234 567890"
-
-  def enterPhoneNumber(): Unit = {
+  def selectYes(): Unit = {
     onPage()
-    sendKeys(textInputField, phoneNumberValue)
-    clickButtonByText(buttonSaveAndContinue)
+    click(yesRadioId)
+    click(submitButtonId)
   }
 }

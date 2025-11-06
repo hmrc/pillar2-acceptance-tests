@@ -531,17 +531,11 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Then("I should be on Transaction History Page")
       thenIShouldBeOnX("Transaction History Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
-      And("I should see Next CTA")
-      thenIShouldSeeXCTA("Next") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
       When("I click Next CTA")
       whenIClickXCTA("Next") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be on Transaction History Second Page")
       thenIShouldBeOnX("Transaction History Second Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("I should see Previous CTA")
-      thenIShouldSeeXCTA("Previous") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       When("I click Previous CTA")
       whenIClickXCTA("Previous") // auto-chosen (score=1.00, CommonStepsSteps.scala)
