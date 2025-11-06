@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.specpages.contactDetails
 import uk.gov.hmrc.test.ui.cucumber.PageObject
 
 object ContactDetailsSummaryPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/contact-details/summary"
+  override val url: String = s"$rootUrl" + "manage-account/contact-details/summary"
 
   val changeAddress          = "a[href*='/change-input-address']"
   val dashboardAddressChange = "a[href*='address/change-input']"

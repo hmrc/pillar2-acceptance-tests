@@ -14,20 +14,28 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages.btn
+package uk.gov.hmrc.test.ui.specpages.eligibility
 
-import uk.gov.hmrc.test.ui.cucumber.Find.{findByClass, findByCss}
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object BtnStartPage extends BasePage {
-  override val url: String   = s"$baseUrl" + "below-threshold-notification/start"
-  override val continue      = "button.govuk-button"
-  private val continueButton = "govuk-button"
+object EligibilityGlobalGrossRevenueEQPage extends BasePage {
+  val url: String = s"$baseUrl" + "eligibility/group-consolidated-annual-revenues"
 
-  def continueToNextPage(): Unit = {
+//  val eqForm       = "form[action*='eligibility']"
+//  val eq           = "form[action*='eligibility'] .govuk-fieldset"
+//  val errorSummary = ".govuk-error-summary__list"
+//  val errorLink    = "[href*='#value']"
+//  val errorMessage = ".govuk-error-message"
+
+  def selectYes(): Unit = {
     onPage()
-    findByClass(continueButton).click()
+    click(yesRadioId)
+    clickByClass(continue)
   }
 
-  def clickContinue(): Unit = findByCss(continue).click()
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    clickByClass(continue)
+  }
 }

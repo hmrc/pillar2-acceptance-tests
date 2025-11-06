@@ -23,13 +23,13 @@ import uk.gov.hmrc.test.ui.specpages.contactDetails._
 import uk.gov.hmrc.test.ui.specpages.furtherDetails._
 import uk.gov.hmrc.test.ui.specpages.nfm._
 import uk.gov.hmrc.test.ui.specpages.upe._
-import uk.gov.hmrc.test.ui.tags.{Tests, Wip}
+import uk.gov.hmrc.test.ui.tags.{Tests}
 
 class FullRegistrationNoIdFlowSpec extends BaseSpec with Matchers {
 
   Feature("UPE NO ID journey") {
 
-    Scenario("Full registration journey with amendments made on check your answers pages", Tests, Wip) {
+    Scenario("Full registration journey with amendments made on check your answers pages", Tests) {
       Given("Organisation User logs in without enrollment")
       login(
         userType = "Organisation",

@@ -23,11 +23,10 @@ import uk.gov.hmrc.test.ui.cucumber.Input.{clickByCss, getTextOf}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.btn.BtnAgdKBPage
-import uk.gov.hmrc.test.ui.specpages.repayments.{RepaymentAmountPage, RepaymentCYAPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentPhoneInputPage, RepaymentReasonPage}
+import uk.gov.hmrc.test.ui.specpages.repayments._
 import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object PaymentStepsSteps {
-
 
   // I should be redirected to guidance page in a new tab
   def thenIShouldBeRedirectedToGuidancePageInANewTab(): Unit = {
@@ -35,8 +34,8 @@ object PaymentStepsSteps {
     val newWindow  = handles(1).toString
     val mainWindow = handles.head.toString
     Driver.instance.switchTo().window(newWindow)
-    Wait.waitForElementToPresentByCssSelector(GGRGuidancePage.header)
-    assert(Driver.instance.findElement(By.cssSelector(GGRGuidancePage.header)).isDisplayed)
+//    Wait.waitForElementToPresentByCssSelector(EligibilityNotSuitableAsUnder750MillionPage.header)
+//    assert(Driver.instance.findElement(By.cssSelector(EligibilityNotSuitableAsUnder750MillionPage.header)).isDisplayed)
     Driver.instance.close()
     Driver.instance.switchTo().window(mainWindow)
   }

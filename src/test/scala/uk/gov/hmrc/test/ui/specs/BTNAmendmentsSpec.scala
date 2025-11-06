@@ -23,9 +23,9 @@ import uk.gov.hmrc.test.ui.specpages.asa._
 import uk.gov.hmrc.test.ui.specpages.btn._
 import uk.gov.hmrc.test.ui.tags.Tests
 
-class SubBelowThresholdSpec extends BaseSpec with Matchers {
+class BTNAmendmentsSpec extends BaseSpec with Matchers {
 
-  Feature("Pillar2 submission Below threshold notification user journeys") {
+  Feature("Below threshold notification amendments user journeys") {
 
     Scenario("1 - Org User makes successful below threshold notification submission", Tests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
@@ -178,7 +178,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        pageUrl = "btn",
         enrolment = Some(
           Enrolment(
             enrolmentKey = "HMRC-PILLAR2-ORG",
@@ -188,12 +188,12 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         )
       )
 
-      Then("The user submits a below threshold notification")
-      DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
-      BtnCyaSubmitPage.onPageSubmitById()
+//      Then("The user submits a below threshold notification")
+//      DashboardPage.clickSubmitBTNLink()
+//      BtnStartPage.continueToNextPage()
+//      BtnAccountingPage.continueToNextPage()
+//      BtnDomesticOrMnePage.entityInAndOutUkYes()
+//      BtnCyaSubmitPage.onPageSubmitById()
 
       Then("The user encounters the problem with service page")
       BtnProblemWithServicePage.onPage()
@@ -203,7 +203,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5000000000 for Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        pageUrl = "btn",
         enrolment = Some(
           Enrolment(
             enrolmentKey = "HMRC-PILLAR2-ORG",
@@ -213,12 +213,12 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         )
       )
 
-      Then("The user submits a below threshold notification")
-      DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
-      BtnCyaSubmitPage.onPageSubmitById()
+//      Then("The user submits a below threshold notification")
+//      DashboardPage.clickSubmitBTNLink()
+//      BtnStartPage.continueToNextPage()
+//      BtnAccountingPage.continueToNextPage()
+//      BtnDomesticOrMnePage.entityInAndOutUkYes()
+//      BtnCyaSubmitPage.onPageSubmitById()
 
       Then("The user encounters the problem with service page")
       BtnProblemWithServicePage.onPage()

@@ -20,25 +20,15 @@ import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigat
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityActiveInUkPage
 import uk.gov.hmrc.test.ui.specstepdef.CommonFunctions._
 
 object EligibilityQuestionStepsSteps {
 
-  // ^I choose (.*) and continue$
-  def andIChooseXAndContinue(option: String): Unit = {
-    option match {
-      case "Yes"                 => Input.clickById("value_0")
-      case "No"                  => Input.clickById("value_1")
-      case "Eligibility Yes NFM" => Input.clickById("registeringNfmGroup_0")
-      case "Eligibility No NFM"  => Input.clickById("registeringNfmGroup_1")
-    }
-    BusinessActivityEQPage.clickContinue()
-  }
-
   // ^I select back link$
   def andISelectBackLink(): Unit = {
     Wait.waitForElementToClickTagName("h1")
-    clickByCss(BusinessActivityEQPage.backLink)
+//    clickByCss(EligibilityActiveInUkPage.backLink)
   }
 
   // ^I should navigate to (.*)
@@ -58,16 +48,6 @@ object EligibilityQuestionStepsSteps {
   def thenIShouldBeOnX(page: String): Unit = {
     Wait.waitForElementToClickTagName("h1")
     assertNavigationUrl(pageMatch(page))
-  }
-
-  // ^I continue|I continue without selecting an option$
-  def continueAction(action: String): Unit = {
-    action match {
-      case "I continue" | "I continue without selecting an option" =>
-        BusinessActivityEQPage.clickContinue()
-      case _ =>
-        throw new IllegalArgumentException(s"Unknown continue action: $action")
-    }
   }
 
   // ^I should be redirect to (.*)

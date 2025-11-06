@@ -14,16 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.eligibility
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object GlobalGrossRevenueEQPage extends PageObject {
-  val url: String = s"$rootUrl" + "eligibility/group-consolidated-annual-revenues"
-
-  val eqForm       = "form[action*='eligibility']"
-  val eq           = "form[action*='eligibility'] .govuk-fieldset"
-  val errorSummary = ".govuk-error-summary__list"
-  val errorLink    = "[href*='#value']"
-  val errorMessage = ".govuk-error-message"
+object EligibilityNotSuitableAsNotActiveInUkPage extends BasePage {
+  val url: String = s"$baseUrl" + "eligibility/service-not-suitable/not-active-in-uk"
 }

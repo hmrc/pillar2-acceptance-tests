@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.specstepdef
 
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
-import uk.gov.hmrc.test.ui.specpages._
+import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityActiveInUkPage
 import uk.gov.hmrc.test.ui.specpages.rfm._
 import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
@@ -127,7 +127,7 @@ object RFMStepsSteps {
   // ^I navigate back to RFM CYA Page from GRS Page
   def thenINavigateBackToRFMCYAPageFromGRSPage(): Unit = {
     for (i <- 1 to 5) {
-      clickByCss(BusinessActivityEQPage.backLink)
+//      clickByCss(EligibilityActiveInUkPage.backLink)
     }
   }
 

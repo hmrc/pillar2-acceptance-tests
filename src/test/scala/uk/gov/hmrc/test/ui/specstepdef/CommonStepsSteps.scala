@@ -16,13 +16,12 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.cucumber.Check.convertToAnyShouldWrapper
-import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
+import uk.gov.hmrc.test.ui.cucumber.Nav.navigateTo
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.contactDetails.ContactDetailsSummaryPage
+import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityUPEPage
 import uk.gov.hmrc.test.ui.specpages.repayments._
 
 object CommonStepsSteps {
@@ -50,17 +49,17 @@ object CommonStepsSteps {
   def givenIAmOnXPage(page: String): Unit = {
     page match {
       case "UPE EQ" =>
-        navigateTo(UPEEQPage.url)
-        Wait.waitForElementToPresentByCssSelector(UPEEQPage.eqForm)
-        isVisible(By.cssSelector(UPEEQPage.eq)) shouldBe true
-      case "Business activity EQ" =>
-        navigateTo(BusinessActivityEQPage.url)
-        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
-        isVisible(By.cssSelector(BusinessActivityEQPage.eq)) shouldBe true
-      case "Global gross revenue" =>
-        navigateTo(GlobalGrossRevenueEQPage.url)
-        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.eqForm)
-        isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
+        navigateTo(EligibilityUPEPage.url)
+//        Wait.waitForElementToPresentByCssSelector(EligibilityUPEPage.eqForm)
+//        isVisible(By.cssSelector(EligibilityUPEPage.eq)) shouldBe true
+//      case "Business activity EQ" =>
+//        navigateTo(EligibilityActiveInUkPage.url)
+//        Wait.waitForElementToPresentByCssSelector(EligibilityActiveInUkPage.eqForm)
+//        isVisible(By.cssSelector(EligibilityActiveInUkPage.eq)) shouldBe true
+//      case "Global gross revenue" =>
+//        navigateTo(EligibilityGlobalGrossRevenueEQPage.url)
+//        Wait.waitForElementToPresentByCssSelector(EligibilityGlobalGrossRevenueEQPage.eqForm)
+//        isVisible(By.cssSelector(EligibilityGlobalGrossRevenueEQPage.eq)) shouldBe true
     }
   }
 

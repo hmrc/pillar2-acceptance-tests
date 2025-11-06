@@ -14,12 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.eligibility
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object UPEEQPage extends PageObject {
-  val url: String = s"$rootUrl" + "eligibility/upe"
-  val eqForm      = "form[action*='eligibility']"
-  val eq          = "form[action*='eligibility'] .govuk-fieldset"
+object EligibilityActiveInUkPage extends BasePage {
+  val url: String = s"$baseUrl" + "eligibility/activities-within-the-uk"
+
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    clickByClass(continue)
+  }
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    clickByClass(continue)
+  }
 }

@@ -14,10 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages.nfm
+package uk.gov.hmrc.test.ui.specpages.eligibility
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object NFMEQPage extends PageObject {
-  val url: String = s"$rootUrl" + "eligibility/nfm"
+object EligibilityNFMPage extends BasePage {
+  override val url: String   = s"${baseUrl}eligibility/nfm"
+  override val yesRadioId: By = By.id("registeringNfmGroup_0")
+  override val noRadioId: By = By.id("registeringNfmGroup_1")
+
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    clickByClass(continue)
+  }
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    clickByClass(continue)
+  }
 }

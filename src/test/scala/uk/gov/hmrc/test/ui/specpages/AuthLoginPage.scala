@@ -21,6 +21,8 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.Input.{sendKeysById, sendKeysByName}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.specpages.btn.BtnStartPage
+import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityUPEPage
 import uk.gov.hmrc.test.ui.specpages.rfm.RFMStartPage
 
 object AuthLoginPage extends BrowserDriver with PageObject {
@@ -75,6 +77,8 @@ object AuthLoginPage extends BrowserDriver with PageObject {
     page match {
       case "asa"              => s"${rootUrl}asa/input-pillar-2-id"
       case "bta"              => s"${rootUrl}bta/pillar2-id"
+      case "btn"              => BtnStartPage.url
+      case "eligibility"      => EligibilityUPEPage.url
       case "pillar2-frontend" => TestConfiguration.url("pillar2-frontend")
 //      case "rfm"                 => s"${rootUrl}replace-filing-member/security/enter-pillar2-id"
       case "rfm"                 => RFMStartPage.url

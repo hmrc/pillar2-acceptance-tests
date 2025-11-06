@@ -23,26 +23,17 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.contactDetails._
-import uk.gov.hmrc.test.ui.specpages.nfm._
+import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityNotSuitableAsUnder750MillionPage
 import uk.gov.hmrc.test.ui.specpages.repayments._
 import uk.gov.hmrc.test.ui.specpages.rfm._
-import uk.gov.hmrc.test.ui.specpages.upe.UPEInitialGuidancePage
 
 object CommonFunctions
     extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "NFM EQ page"                                => NFMEQPage
-      case "business EQ page"                           => BusinessActivityEQPage
-      case "guidance page"                              => Pillar2GovUkGuidancePage
-      case "Global gross revenue"                       => GlobalGrossRevenueEQPage
-      case "confirmation page"                          => ConfirmationPage
-      case "BA guidance page"                           => BAGuidancePage
-      case "NFM guidance page"                          => NFMGuidancePage
-      case "GGR guidance page"                          => GGRGuidancePage
+      case "guidance page" => Pillar2GovUkGuidancePage
       case "auth-login page"                            => AuthLoginPage
-      case "UPE EQ page"                                => UPEEQPage
       case "Under Construction Page"                    => UnderConstructionPage
       case "Bookmark page"                              => BookMarkPage
       case "Draft guidance page"                        => DraftGuidancePage

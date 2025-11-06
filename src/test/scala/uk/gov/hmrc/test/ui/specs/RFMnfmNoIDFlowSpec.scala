@@ -31,7 +31,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
 
   Feature("RFM CYA - NFM No ID flow") {
 
-    Scenario("1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated", Wip) {
+    Scenario("1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated") {
       Given("Organisation User logs in with rfm URL to Pillar2")
       login(
         userType = "Organisation",

@@ -14,11 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.eligibility
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object GGRGuidancePage extends PageObject {
-  val url: String    = s"$rootUrl" + "eligibility/service-not-suitable/under-750-million"
-  val header: String = "h1.govuk-heading-l"
+object EligibilityUPEPage extends BasePage {
+  override val url: String = s"${baseUrl}eligibility/upe"
+
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    clickByClass(continue)
+  }
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    clickByClass(continue)
+  }
 }

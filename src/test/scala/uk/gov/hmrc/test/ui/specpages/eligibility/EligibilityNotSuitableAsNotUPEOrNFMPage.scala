@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.eligibility
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object BAGuidancePage extends PageObject {
-  val url: String = s"$rootUrl" + "eligibility/service-not-suitable/not-active-in-uk"
+object EligibilityNotSuitableAsNotUPEOrNFMPage extends BasePage {
+  val url: String = s"${baseUrl}eligibility/service-not-suitable/not-upe-or-nfm"
 }

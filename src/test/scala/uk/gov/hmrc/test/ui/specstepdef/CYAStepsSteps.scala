@@ -27,24 +27,10 @@ object CYAStepsSteps {
   // ^I click on change hyperlink next to the (.*)
   def andIClickOnChangeHyperlinkNextToTheX(link: String): Unit = {
     link match {
-      case "NFM Name" =>
-        clickByCss(NFMCheckYourAnswersPage.changeName)
-      case "NFM Address" =>
-        clickByCss(NFMCheckYourAnswersPage.changeAddress)
-      case "NFM Contact Name" =>
-        clickByCss(NFMCheckYourAnswersPage.changeContactName)
-      case "NFM Email Address" =>
-        clickByCss(NFMCheckYourAnswersPage.changeEmailAddress)
-      case "NFM Phone Contact" =>
-        clickByCss(NFMCheckYourAnswersPage.changePhoneContact)
-      case "NFM Phone Number" =>
-        clickByCss(NFMCheckYourAnswersPage.changePhoneNumber)
       case "FD Group Status" =>
         clickByCss(FDCheckYourAnswersPage.changeGroupStatus)
       case "Accounting Period" =>
         clickByCss(FDCheckYourAnswersPage.changeAccountingPeriod)
-      case "Domestic or Mne" =>
-        clickByCss(BtnChangeDomesticOrMnePage.changeDomesticOrMne)
     }
   }
 
