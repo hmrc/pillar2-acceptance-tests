@@ -35,7 +35,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
       Given("Organisation User logs in with rfm URL to Pillar2")
       login(
         userType = "Organisation",
-        pageUrl = "rfm-start"
+        pageUrl = "rfm"
       )
 
       And("The user enters PLRId as XMPLR0123456789 and registration date")

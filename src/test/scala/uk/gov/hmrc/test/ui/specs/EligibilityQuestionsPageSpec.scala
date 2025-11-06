@@ -20,7 +20,7 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 
-class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
+class EligibilityQuestionsPageSpec extends BaseSpec with Matchers {
 
   Feature("Eligibility Questions for Pillar 2") {
 

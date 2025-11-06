@@ -24,38 +24,15 @@ import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.specpages.rfm.RFMStartPage
 
 object AuthLoginPage extends BrowserDriver with PageObject {
-  val url: String          = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val frontEndUrl: String  = TestConfiguration.url("pillar2-frontend")
-  val incorrectUrl: String = TestConfiguration.url("pillar2-frontend") + "randomUrl"
-//  val frontEndSubscribeUrl: String          = s"$rootUrl" + "check-progress/register-your-group"
-//  val frontEndBtaUrl: String                = s"$rootUrl" + "bta/pillar2-id"
-//  val frontEndUPEUrl: String                = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
-  val frontEndUPEOrgTypeUrl: String = s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
-  val redirectUrlField: String      = "redirectionUrl"
-  val redirectionUrlField: String   = "#redirectionUrl"
-  val credIdField: String           = "authorityId"
-  val groupIdField: String          = "groupIdentifier"
-  val frontEndNameUrl: String       = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-name"
-//  val frontEndCAUrl: String                 = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
-//  val frontEndUPERegTypeUrl: String         = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
-//  val frontEndNFMNameUrl: String            = s"$rootUrl" + "business-matching/filing-member/no-id/input-name"
-//  val frontEndNFMOrgTypeUrl: String         = s"$rootUrl" + "business-matching/filing-member/uk-based/entity-type"
-//  val frontEndNFMAddressUrl: String         = s"$rootUrl" + "business-matching/filing-member/no-id/input-address "
-//  val frontEndNFMContactNameUrl: String     = s"$rootUrl" + "business-matching/filing-member/no-id/input-business-name"
-//  val frontEndNFMContactEmailUrl: String    = s"$rootUrl" + "business-matching/filing-member/no-id/input-email"
-//  val frontEndNFMTelephoneUrl: String       = s"$rootUrl" + "business-matching/filing-member/no-id/phone"
-//  val frontEndNFMTelephoneInputUrl: String  = s"$rootUrl" + "business-matching/filing-member/no-id/input-phone"
-//  val frontEndFDGroupStatusUrl: String      = s"$rootUrl" + "further-details/group-status"
-//  val frontEndFDAccountPeriod: String       = s"$rootUrl" + "further-details/accounting-period"
-//  val frontEndCDAddressUrl: String          = s"$rootUrl" + "contact-details/address/input"
-//  val frontEndNFMCAUrl: String              = s"$rootUrl" + "business-matching/filing-member/no-id/check-answers"
-//  val frontEndFDCAUrl: String               = s"$rootUrl" + "further-details/check-answers"
-//  val frontEndCDCAUrl: String               = s"$rootUrl" + "contact-details/check-answers"
-//  val frontEndFinalReviewCAUrl: String      = s"$rootUrl" + "review-submit/check-answers"
-//  val frontEndSubUrl: String                = s"$rootUrl" + "review-submit/confirmation"
-  val frontEndDashboardUrl: String = s"$rootUrl" + "pillar2-top-up-tax-home"
-  val frontEndASAUrl: String       = s"$rootUrl" + "asa/input-pillar-2-id"
-//  val rfmUrl: String                        = s"${rootUrl}replace-filing-member/security/enter-pillar2-id"
+  val url: String                           = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  val frontEndUrl: String                   = TestConfiguration.url("pillar2-frontend")
+  val incorrectUrl: String                  = TestConfiguration.url("pillar2-frontend") + "randomUrl"
+  val redirectUrlField: String              = "redirectionUrl"
+  val redirectionUrlField: String           = "#redirectionUrl"
+  val credIdField: String                   = "authorityId"
+  val groupIdField: String                  = "groupIdentifier"
+  val frontEndDashboardUrl: String          = s"$rootUrl" + "pillar2-top-up-tax-home"
+  val frontEndASAUrl: String                = s"$rootUrl" + "asa/input-pillar-2-id"
   val enrolmentKeyField: String             = "enrolment[0].name"
   val identifierNameField: String           = "input-0-0-name"
   val identifierValueField: String          = "input-0-0-value"
@@ -96,11 +73,12 @@ object AuthLoginPage extends BrowserDriver with PageObject {
 
   def urlMatch(page: String): String = {
     page match {
-      case "asa"                 => s"${rootUrl}asa/input-pillar-2-id"
-      case "bta"                 => s"${rootUrl}bta/pillar2-id"
-      case "pillar2-frontend"    => TestConfiguration.url("pillar2-frontend")
-      case "rfm"                 => s"${rootUrl}replace-filing-member/security/enter-pillar2-id"
-      case "rfm-start"           => RFMStartPage.url
+      case "asa"              => s"${rootUrl}asa/input-pillar-2-id"
+      case "bta"              => s"${rootUrl}bta/pillar2-id"
+      case "pillar2-frontend" => TestConfiguration.url("pillar2-frontend")
+//      case "rfm"                 => s"${rootUrl}replace-filing-member/security/enter-pillar2-id"
+      case "rfm"                 => RFMStartPage.url
+      case "register"            => TaskListPage.url
       case "upe"                 => s"${rootUrl}business-matching/ultimate-parent/registered-in-uk"
       case "dashboard"           => s"${rootUrl}pillar2-top-up-tax-home"
       case "further-details-cya" => s"${rootUrl}further-details/check-answers"

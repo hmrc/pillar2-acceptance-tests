@@ -18,13 +18,12 @@ package uk.gov.hmrc.test.ui.specstepdef
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.cucumber.Check.{be, convertToAnyShouldWrapper, include}
-import uk.gov.hmrc.test.ui.cucumber.Input.getTextOf
+import uk.gov.hmrc.test.ui.cucumber.Check.convertToAnyShouldWrapper
 import uk.gov.hmrc.test.ui.cucumber.Nav.{isVisible, navigateTo}
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsPrimaryContactPage, ContactDetailsSummaryPage}
-import uk.gov.hmrc.test.ui.specpages.repayments.{RepaymentAmountPage, RepaymentCYAPage, RepaymentChangeAmountPage, RepaymentChangeMethodPage, RepaymentChangeNamePage, RepaymentConfirmationPage, RepaymentContactEmailPage, RepaymentContactPage, RepaymentGuidancePage, RepaymentMethodPage, RepaymentPhoneInputPage, RepaymentPhonePage, RepaymentReasonPage}
+import uk.gov.hmrc.test.ui.specpages.contactDetails.ContactDetailsSummaryPage
+import uk.gov.hmrc.test.ui.specpages.repayments._
 
 object CommonStepsSteps {
 
@@ -44,7 +43,7 @@ object CommonStepsSteps {
 
   // ^(I click on Continue button)
   def whenIClickOnContinueButton(negate: String): Unit = {
-    InitialGuidancePage.clickContinue()
+//    UPEInitialGuidancePage.clickContinue()
   }
 
   // ^I am on (.*) Page$
@@ -76,7 +75,7 @@ object CommonStepsSteps {
       case "Yes" => Input.clickById("value_0")
       case "No"  => Input.clickById("value_1")
     }
-    InitialGuidancePage.clickContinue()
+//    UPEInitialGuidancePage.clickContinue()
   }
 
   // ^I select (.*) option and continue to next$
@@ -85,7 +84,7 @@ object CommonStepsSteps {
       case "Yes" => Input.clickById("nominateFilingMember_0")
       case "No"  => Input.clickById("nominateFilingMember_1")
     }
-    InitialGuidancePage.clickContinue()
+//    UPEInitialGuidancePage.clickContinue()
   }
 
   // ^I click the browser back button$

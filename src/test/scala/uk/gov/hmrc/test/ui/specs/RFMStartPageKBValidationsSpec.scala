@@ -34,6 +34,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       )
 
       Then("The user will be on the unable to use this service page")
+      RFMStartPage.continueToNextPage()
       RFMIndividualKBPage.onPage()
     }
 
@@ -45,6 +46,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       )
 
       Then("The user will be on the unable to use this service page")
+      RFMStartPage.continueToNextPage()
       RFMKBAgentPage.onPage()
     }
 
@@ -57,6 +59,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       )
 
       Then("The user will be on the unable to use this service page")
+      RFMStartPage.continueToNextPage()
       RFMKBAssistantUserPage.onPage()
     }
 
@@ -75,6 +78,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       )
 
       Then("The user will be on the duplicate registration page")
+      RFMStartPage.continueToNextPage()
       RFMKBDuplicatePage.onPage()
     }
 
@@ -90,6 +94,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       )
 
       And("The user enters a registered PLRId")
+      RFMStartPage.continueToNextPage()
       RFMEnterPillar2IdPage.enterPLRId("XMPLR0123456789")
 
       Then("The user will be on the existing member page")

@@ -28,10 +28,16 @@ object TaskListPage extends BasePage {
   val taskItem    = ".app-task-list__item"
   val status      = ".hmrc-status-tag"
 
-  private val addFilingMember        = "a[href*='/nominate']"
-  private val addFurtherGroupDetails = "a[href*='/group-status']"
-  private val addContactDetails      = "a[href*='/contact-details']"
-  private val reviewAndSubmit        = "a[href*='/check-answers']"
+  private val addUltimateFilingMember = "a[href*='/match-hmrc-records']"
+  private val addFilingMember         = "a[href*='/nominate']"
+  private val addFurtherGroupDetails  = "a[href*='/group-status']"
+  private val addContactDetails       = "a[href*='/contact-details']"
+  private val reviewAndSubmit         = "a[href*='/check-answers']"
+
+  def clickAddUltimateFilingMember(): Unit = {
+    onPage()
+    click(By.cssSelector(addUltimateFilingMember))
+  }
 
   def clickAddFilingMemberLink(): Unit = {
     onPage()

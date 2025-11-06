@@ -18,25 +18,29 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
+import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.contactDetails._
 import uk.gov.hmrc.test.ui.specpages.furtherDetails._
 import uk.gov.hmrc.test.ui.specpages.nfm._
 import uk.gov.hmrc.test.ui.specpages.upe._
-import uk.gov.hmrc.test.ui.specpages.{RegistrationConfirmationPage, ReviewAnswersPage, TaskListPage}
-import uk.gov.hmrc.test.ui.tags.Tests
+import uk.gov.hmrc.test.ui.tags.{Tests, Wip}
 
-class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
+class FullRegistrationNoIdFlowSpec extends BaseSpec with Matchers {
 
   Feature("UPE NO ID journey") {
 
-    Scenario("User adds a Non-UK UPE and then makes amendments on the check your answers page", Tests) {
+    Scenario("Full registration journey with amendments made on check your answers pages", Tests, Wip) {
       Given("Organisation User logs in without enrollment")
       login(
         userType = "Organisation",
-        pageUrl = "upe"
+        pageUrl = "pillar2-frontend"
       )
 
+      And("The user is presented with the task list page")
+      TaskListPage.clickAddUltimateFilingMember()
+
       And("The user adds an Ultimate Parent Entity with a non-UK Address")
+      UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.registeredInUkNo()
       UPENamePage.enterName()
       UPEAddressPage.enterAddressNonUK()

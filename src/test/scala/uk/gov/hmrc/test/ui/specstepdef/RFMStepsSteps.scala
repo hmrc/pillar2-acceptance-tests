@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.specstepdef
 import uk.gov.hmrc.test.ui.cucumber.Input._
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.rfm.{RFMCYAPage, RFMContactDetailNamePage, RFMContactEmailPage, RFMContactInputPage, RFMCorpPositionPage, RFMEnterPillar2IdPage, RFMFinalReviewCYAPage, RFMNewNFMContactNamePage, RFMNoIDCYAPage, RFMSecondContactPhonePage, RFMStartPage}
+import uk.gov.hmrc.test.ui.specpages.rfm._
 import uk.gov.hmrc.test.ui.specpages.upe.UPEEntityTypePage
 
 object RFMStepsSteps {
@@ -134,7 +134,7 @@ object RFMStepsSteps {
   // ^I continue to RFM contact name Page
   def andIContinueToRFMContactNamePage(): Unit = {
     for (i <- 0 to 2) {
-      InitialGuidancePage.clickContinue()
+//      UPEInitialGuidancePage.clickContinue()
     }
   }
 

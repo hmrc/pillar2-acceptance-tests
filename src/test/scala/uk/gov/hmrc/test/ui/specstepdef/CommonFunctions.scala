@@ -26,6 +26,7 @@ import uk.gov.hmrc.test.ui.specpages.contactDetails._
 import uk.gov.hmrc.test.ui.specpages.nfm._
 import uk.gov.hmrc.test.ui.specpages.repayments._
 import uk.gov.hmrc.test.ui.specpages.rfm._
+import uk.gov.hmrc.test.ui.specpages.upe.UPEInitialGuidancePage
 
 object CommonFunctions
     extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
@@ -41,7 +42,6 @@ object CommonFunctions
       case "NFM guidance page"                          => NFMGuidancePage
       case "GGR guidance page"                          => GGRGuidancePage
       case "auth-login page"                            => AuthLoginPage
-      case "Initial guidance Page"                      => InitialGuidancePage
       case "UPE EQ page"                                => UPEEQPage
       case "Under Construction Page"                    => UnderConstructionPage
       case "Bookmark page"                              => BookMarkPage

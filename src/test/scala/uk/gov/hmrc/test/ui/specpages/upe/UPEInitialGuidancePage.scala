@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.upe
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object InitialGuidancePage extends PageObject {
-  val url: String = s"$rootUrl" + "business-matching/match-hmrc-records"
+object UPEInitialGuidancePage extends BasePage {
+  val url: String = s"$baseUrl" + "business-matching/match-hmrc-records"
 
-  val caption               = ".govuk-caption-l"
-  val continue              = ".govuk-button"
-  def clickContinue(): Unit = findByCss(continue).click()
+  def continueToNextPage(): Unit = {
+    onPage()
+    clickByClass(continue)
+  }
 }
