@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.specs.completed
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.nfm.{NFMEntityTypePage, NFMGRSRegistrationFailedErrorPage, NFMGRSRegistrationNotCalledErrorPage, NFMLLPGRSPage, NFMRegisteredInUkPage, NFMRegistrationPage, NFMUKCompanyGRSPage}
+import uk.gov.hmrc.test.ui.specpages.nfm._
 import uk.gov.hmrc.test.ui.specpages.upe._
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.specs.BaseSpec
 import uk.gov.hmrc.test.ui.tags.Tests
 
 class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {

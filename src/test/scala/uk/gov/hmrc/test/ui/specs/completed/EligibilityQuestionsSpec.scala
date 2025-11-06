@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.specs.completed
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.specpages.TaskListPage
 import uk.gov.hmrc.test.ui.specpages.eligibility._
+import uk.gov.hmrc.test.ui.specs.BaseSpec
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.tags.{Tests, Wip}
+import uk.gov.hmrc.test.ui.tags.Tests
 
 class EligibilityQuestionsSpec extends BaseSpec with Matchers {
 
   Feature("Eligibility Questions for Pillar 2") {
 
-    Scenario("1 - User navigates to next eligibility question page by selecting yes option", Tests) {
+    Scenario("1 - User navigates to confirmation page via the eligibility questions", Tests) {
       Given("I clear the cache")
       thenIClearTheCache()
 
@@ -86,7 +87,7 @@ class EligibilityQuestionsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - User navigates to service not suitable as under 750 million page via the eligibility questions", Tests) {
+    Scenario("4 - User navigates to service not suitable as under 750 million page via the eligibility questions", Tests) {
       Given("I clear the cache")
       thenIClearTheCache()
 

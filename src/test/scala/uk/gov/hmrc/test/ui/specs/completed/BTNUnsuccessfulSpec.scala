@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.specs.completed
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
+import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.{Enrolment, login}
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.asa._
 import uk.gov.hmrc.test.ui.specpages.btn._
+import uk.gov.hmrc.test.ui.specs.BaseSpec
 import uk.gov.hmrc.test.ui.tags.Tests
 
 class BTNUnsuccessfulSpec extends BaseSpec with Matchers {

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specs
+package uk.gov.hmrc.test.ui.specs.completed
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages.AuthLoginPage._
 import uk.gov.hmrc.test.ui.specpages.rfm._
+import uk.gov.hmrc.test.ui.specs.BaseSpec
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.tags.Tests
 
