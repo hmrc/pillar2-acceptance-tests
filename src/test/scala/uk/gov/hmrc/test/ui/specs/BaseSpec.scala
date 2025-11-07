@@ -23,7 +23,7 @@ import uk.gov.hmrc.selenium.webdriver.{Browser, Driver, ScreenshotOnFailure}
 import uk.gov.hmrc.test.ui.cucumber.Nav
 
 trait BaseSpec
-  extends AnyFeatureSpec
+    extends AnyFeatureSpec
     with GivenWhenThen
     with Matchers
     with BeforeAndAfterEach

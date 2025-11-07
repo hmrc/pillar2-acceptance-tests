@@ -17,8 +17,6 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.specstepdef.Hooks.{Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.thenIShouldBeRedirectedToGuidancePageInANewTab
@@ -29,44 +27,43 @@ class IDValidationPageSpec extends BaseSpec with Matchers {
 
     Scenario("1 - Validation page and guidance page for users with NO PLRID and error validation.") {
       Given("Organisation User logs in with BTA for Pillar2")
-        givenXLogsInWithBTAForPillar2("Organisation User")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      givenLogsInWithBTAForPillar2("Organisation User")
 
       Then("I should be on bta pillar2 ID check page")
-        thenIShouldBeOnX("bta pillar2 ID check page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("bta pillar2 ID check page")
 
       When("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      whenIClickOnContinueButton("I click on Continue button")
 
       When("I select option No and continue to next")
-        andISelectOptionXAndContinueToNext("No")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andISelectOptionAndContinueToNext("No")
 
       Then("I should navigate to bta register guidance page")
-        thenIShouldNavigateToX("bta register guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("bta register guidance page")
 
       When("I click Find out how to register to report Pillar 2 Top-up Taxes (opens in new tab) link")
-        andIClickXLink("Find out how to register to report Pillar 2 Top-up Taxes (opens in new tab)")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Find out how to register to report Pillar 2 Top-up Taxes (opens in new tab)")
 
       Then("I should be redirected to guidance page in a new tab")
-        thenIShouldBeRedirectedToGuidancePageInANewTab()  // auto-chosen (score=1.00, PaymentStepsSteps.scala)
+      thenIShouldBeRedirectedToGuidancePageInANewTab()
 
     }
 
     Scenario("2 - Confirmation page for users with PLRID") {
       Given("Organisation User logs in with BTA for Pillar2")
-        givenXLogsInWithBTAForPillar2("Organisation User")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      givenLogsInWithBTAForPillar2("Organisation User")
 
       Then("I should be on bta pillar2 ID check page")
-        thenIShouldBeOnX("bta pillar2 ID check page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("bta pillar2 ID check page")
 
       When("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      whenIClickOnContinueButton("I click on Continue button")
 
       When("I select option Yes and continue to next")
-        andISelectOptionXAndContinueToNext("Yes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andISelectOptionAndContinueToNext("Yes")
 
       Then("I should navigate to eacd page")
-        thenIShouldNavigateToX("eacd page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
+      thenIShouldNavigateTo("eacd page")
     }
   }
 }

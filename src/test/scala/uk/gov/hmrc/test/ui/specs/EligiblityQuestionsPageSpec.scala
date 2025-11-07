@@ -17,8 +17,6 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.specstepdef.Hooks.{Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 
@@ -28,161 +26,160 @@ class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
 
     Scenario("1 - User navigates to next eligibility question page by selecting yes option") {
       Given("I clear the cache")
-        thenIClearTheCache()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      thenIClearTheCache()
 
       Given("I am on UPE EQ Page")
-        givenIAmOnXPage("UPE EQ")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      givenIAmOnPage("UPE EQ")
 
       When("I continue without selecting an option")
-        continueAction("I continue without selecting an option")
+      continueAction("I continue without selecting an option")
 
       When("I choose Yes and continue")
-        andIChooseXAndContinue("Yes")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("Yes")
 
       Then("I should navigate to business EQ page")
-        thenIShouldNavigateToX("business EQ page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("business EQ page")
 
       When("I choose Yes and continue")
-        andIChooseXAndContinue("Yes")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("Yes")
 
       Then("I should navigate to Global gross revenue")
-        thenIShouldNavigateToX("Global gross revenue")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("Global gross revenue")
 
       When("I continue without selecting an option")
-        continueAction("I continue without selecting an option")
+      continueAction("I continue without selecting an option")
 
       When("I choose Yes and continue")
-        andIChooseXAndContinue("Yes")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("Yes")
 
       Then("I should navigate to confirmation page")
-        thenIShouldNavigateToX("confirmation page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("confirmation page")
 
       When("I click Report Pillar 2 Top-up Taxes link")
-        andIClickXLink("Report Pillar 2 Top-up Taxes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Report Pillar 2 Top-up Taxes")
 
       Then("I should navigate to guidance page")
-        thenIShouldNavigateToX("guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("guidance page")
 
       When("I click the browser back button")
-        andIClickTheBrowserBackButton()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickTheBrowserBackButton()
 
       Then("I should be on confirmation page")
-        thenIShouldBeOnX("confirmation page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("confirmation page")
 
       When("I continue")
       continueAction("I continue")
 
       Then("I should be on auth-login page")
-        thenIShouldBeOnX("auth-login page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("auth-login page")
 
     }
 
     Scenario("2 - User navigates to guidance page by selecting No option in eligibility questions") {
       Given("I clear the cache")
-        thenIClearTheCache()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      thenIClearTheCache()
 
       Given("I am on UPE EQ Page")
-        givenIAmOnXPage("UPE EQ")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      givenIAmOnPage("UPE EQ")
 
       When("I choose No and continue")
-        andIChooseXAndContinue("No")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("No")
 
       Then("I should navigate to NFM EQ page")
-        thenIShouldNavigateToX("NFM EQ page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("NFM EQ page")
 
       When("I choose Eligibility No NFM and continue")
-        andIChooseXAndContinue("Eligibility No NFM")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("Eligibility No NFM")
 
       Then("I should navigate to NFM guidance page")
-        thenIShouldNavigateToX("NFM guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("NFM guidance page")
 
       When("I click Find out more about who can use this service link")
-        andIClickXLink("Find out more about who can use this service")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Find out more about who can use this service")
 
       Then("I should navigate to guidance page")
-        thenIShouldNavigateToX("guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("guidance page")
 
       When("I click the browser back button")
-        andIClickTheBrowserBackButton()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickTheBrowserBackButton()
 
       Then("I should navigate to NFM guidance page")
-        thenIShouldNavigateToX("NFM guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("NFM guidance page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should navigate to NFM EQ page")
-        thenIShouldNavigateToX("NFM EQ page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("NFM EQ page")
 
       When("I choose Eligibility Yes NFM and continue")
-        andIChooseXAndContinue("Eligibility Yes NFM")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("Eligibility Yes NFM")
 
       Then("I am on Business activity EQ Page")
-        givenIAmOnXPage("Business activity EQ")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      givenIAmOnPage("Business activity EQ")
 
       When("I continue without selecting an option")
-        continueAction("I continue without selecting an option")
+      continueAction("I continue without selecting an option")
 
       When("I choose No and continue")
-        andIChooseXAndContinue("No")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("No")
 
       Then("I should navigate to BA guidance page")
-        thenIShouldNavigateToX("BA guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("BA guidance page")
 
       When("I click Find out more about who is eligible for Pillar 2 Top-up Taxes link")
-        andIClickXLink("Find out more about who is eligible for Pillar 2 Top-up Taxes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Find out more about who is eligible for Pillar 2 Top-up Taxes")
 
       Then("I should navigate to guidance page")
-        thenIShouldNavigateToX("guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("guidance page")
 
       When("I click the browser back button")
-        andIClickTheBrowserBackButton()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickTheBrowserBackButton()
 
       Then("I should navigate to BA guidance page")
-        thenIShouldNavigateToX("BA guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("BA guidance page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should navigate to business EQ page")
-        thenIShouldNavigateToX("business EQ page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("business EQ page")
 
       When("I choose Yes and continue")
-        andIChooseXAndContinue("Yes")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("Yes")
 
       Then("I am on Global gross revenue Page")
-        givenIAmOnXPage("Global gross revenue")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      givenIAmOnPage("Global gross revenue")
 
       When("I choose No and continue")
-        andIChooseXAndContinue("No")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andIChooseAndContinue("No")
 
       Then("I should navigate to GGR guidance page")
-        thenIShouldNavigateToX("GGR guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("GGR guidance page")
 
       When("I click Find out more about who is eligible for Pillar 2 Top-up Taxes link")
-        andIClickXLink("Find out more about who is eligible for Pillar 2 Top-up Taxes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Find out more about who is eligible for Pillar 2 Top-up Taxes")
 
       Then("I should navigate to guidance page")
-        thenIShouldNavigateToX("guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("guidance page")
 
       When("I click the browser back button")
-        andIClickTheBrowserBackButton()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickTheBrowserBackButton()
 
       Then("I should navigate to GGR guidance page")
-        thenIShouldNavigateToX("GGR guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("GGR guidance page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should navigate to Global gross revenue")
-        thenIShouldNavigateToX("Global gross revenue")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateTo("Global gross revenue")
 
       When("I click Report Pillar 2 Top-up Taxes link")
-        andIClickXLink("Report Pillar 2 Top-up Taxes")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Report Pillar 2 Top-up Taxes")
 
       Then("I should navigate to guidance page")
-        thenIShouldNavigateToX("guidance page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
+      thenIShouldNavigateTo("guidance page")
     }
   }
 }

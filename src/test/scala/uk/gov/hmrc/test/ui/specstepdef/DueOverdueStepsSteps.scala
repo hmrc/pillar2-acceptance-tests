@@ -24,38 +24,37 @@ import uk.gov.hmrc.test.ui.specpages._
 object DueOverdueStepsSteps {
 
   // I should see {int} accounting periods on Due Overdue Page
-  def andIShouldSeeXAccountingPeriodsOnDueOverduePage(accountingPeriods: Int): Unit = {
+  def andIShouldSeeAccountingPeriodsOnDueOverduePage(accountingPeriods: Int): Unit = {
     Wait.waitForElementToPresentByCssSelector(DueOverduePage.accountDetails)
-        assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.accountPeriodSections)).size() == accountingPeriods)
+    assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.accountPeriodSections)).size() == accountingPeriods)
   }
 
   // I should see {int} accounting periods on Sub History Page
   def andIShouldSeeXAccountingPeriodsOnSubHistoryPage(accountingPeriods: Int): Unit = {
     Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.accountDetails)
-        assert(Driver.instance.findElements(By.cssSelector(P2SubmissionHistoryPage.accountingPeriods)).size() == accountingPeriods)
+    assert(Driver.instance.findElements(By.cssSelector(P2SubmissionHistoryPage.accountingPeriods)).size() == accountingPeriods)
   }
 
   // I should see {int} section with status {string}
   def andIShouldSeeXSectionWithStatus(count: Int, dueType: String): Unit = {
     dueType match {
-          case "Due"     => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.dueSection)).size() == count)
-          case "Overdue" => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.overDueSection)).size() == count)
-        }
+      case "Due"     => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.dueSection)).size() == count)
+      case "Overdue" => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.overDueSection)).size() == count)
+    }
   }
 
   // ^I select option (.*) and continue on Pillar2 submission$
-  def andISelectOptionXAndContinueOnPillar2Submission(option: String): Unit = {
+  def andISelectOptionAndContinueOnPillar2Submission(option: String): Unit = {
     option match {
-          case "Yes" => Input.clickByCss("#value_0")
-          case "No"  => Input.clickByCss("#value_1")
-        }
-        BtnStartPage.clickContinue()
+      case "Yes" => Input.clickByCss("#value_0")
+      case "No"  => Input.clickByCss("#value_1")
+    }
+    BtnStartPage.clickContinue()
   }
 
   // ^I navigate back to BTN Return Submission KB Page$
   def andINavigateBackToBTNReturnSubmissionKBPage(): Unit = {
     Nav.browserBack()
-        clickByCss(BtnAgdKBPage.backLink)
+    clickByCss(BtnAgdKBPage.backLink)
   }
-
 }

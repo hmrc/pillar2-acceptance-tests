@@ -27,22 +27,22 @@ import uk.gov.hmrc.test.ui.specpages._
 object PaymentStepsSteps {
   // ^I should be navigated to new tab$
   def thenIShouldBeNavigatedToNewTab(): Unit = {
-    val handles = Driver.instance.getWindowHandles.toArray().toSeq
+    val handles   = Driver.instance.getWindowHandles.toArray().toSeq
     val newWindow = handles(1).toString
     Driver.instance.switchTo().window(newWindow)
   }
 
   // ^I should navigate back to main tab
   def thenIShouldNavigateBackToMainTab(): Unit = {
-    val handles = Driver.instance.getWindowHandles.toArray().toSeq
+    val handles    = Driver.instance.getWindowHandles.toArray().toSeq
     val mainWindow = handles.head.toString
     Driver.instance.switchTo().window(mainWindow)
   }
 
   // I should be redirected to guidance page in a new tab
   def thenIShouldBeRedirectedToGuidancePageInANewTab(): Unit = {
-    val handles = Driver.instance.getWindowHandles.toArray().toSeq
-    val newWindow = handles(1).toString
+    val handles    = Driver.instance.getWindowHandles.toArray().toSeq
+    val newWindow  = handles(1).toString
     val mainWindow = handles.head.toString
     Driver.instance.switchTo().window(newWindow)
     Wait.waitForElementToPresentByCssSelector(GGRGuidancePage.header)
@@ -63,16 +63,16 @@ object PaymentStepsSteps {
   }
 
   // ^I select repayment method as (.*)$
-  def andISelectRepaymentMethodAsX(option: String): Unit = {
+  def andISelectRepaymentMethodAs(option: String): Unit = {
     option match {
-      case "UK bank account" => Input.clickById("value_0")
+      case "UK bank account"     => Input.clickById("value_0")
       case "Non-UK bank account" => Input.clickById("value_1")
     }
     UPEEntityTypePage.clickContinue()
   }
 
   // ^I provide value for (.*) as (.*)$
-  def andIProvideValueForXAsX(field: String, name: String): Unit = {
+  def andIProvideValueForAs(field: String, name: String): Unit = {
     field match {
       case "Bank Name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -128,7 +128,7 @@ object PaymentStepsSteps {
     Input.sendKeysByCss(refundReason, RepaymentReasonPage.reasonTextField)
   }
 
-  //And("""^I should see bank account error message (.*) on the (.*) Element$
+  // And("""^I should see bank account error message (.*) on the (.*) Element$
 
   def IShouldSeeBankAccountErrorMessageXOnTheXElement(error: String, page: String): Unit = {
     page match {
@@ -221,7 +221,7 @@ object PaymentStepsSteps {
     clickByCss(RepaymentAmountPage.continue)
   }
 
-  //And("""^I provide Repayment contact (.*) as (.*)$
+  // And("""^I provide Repayment contact (.*) as (.*)$
 
   def IProvideRepaymentContactXAsX(page: String, Value: String): Unit = {
     page match {
@@ -245,7 +245,7 @@ object PaymentStepsSteps {
   // ^I should see the repayment method (.*) remain selected$
   def andIShouldSeeTheRepaymentMethodXRemainSelected(accountType: String): Unit = {
     accountType match {
-      case "UK bank account" => Find.findByCss("#value_0").isSelected
+      case "UK bank account"     => Find.findByCss("#value_0").isSelected
       case "Non-UK bank account" => Find.findByCss("#value_1").isSelected
     }
   }
@@ -293,7 +293,7 @@ object PaymentStepsSteps {
   }
 
   // ^I access (.*) payment page$
-  def andIAccessXPaymentPage(page: String): Unit = {
+  def andIAccessPaymentPage(page: String): Unit = {
     page match {
       case "Non UK" =>
         Nav.navigateTo(NonUKBankAccountPaymentPage.url)
@@ -303,10 +303,10 @@ object PaymentStepsSteps {
   }
 
   // ^I select option (.*) on partial name error page$
-  def andISelectOptionXOnPartialNameErrorPage(option: String): Unit = {
+  def andISelectOptionOnPartialNameErrorPage(option: String): Unit = {
     option match {
       case "Yes" => Input.clickById("confirmRepaymentAccountName_0")
-      case "No" => Input.clickById("confirmRepaymentAccountName_1")
+      case "No"  => Input.clickById("confirmRepaymentAccountName_1")
     }
     UKBankAccountPaymentPage.clickContinue()
   }
@@ -319,13 +319,13 @@ object PaymentStepsSteps {
   }
 
   // ^I enter UK Bank Account details as:$
-  def andIEnterUKBankAccountDetailsAs(details:Map[String,String]): Unit = {
+  def andIEnterUKBankAccountDetailsAs(details: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()
   }
 
-  //todo: commented overload Test and delete if required.
+  // todo: commented overload Test and delete if required.
 
   // Overload for ScalaTest (no DataTable, accepts varargs)
 //  def andIEnterUKBankAccountDetailsAs(links: (String, String)*): Unit = {
@@ -341,15 +341,14 @@ object PaymentStepsSteps {
 //    }
 //  }
 
-
   // ^I enter Non UK Bank Account details as:$
-  def andIEnterNonUKBankAccountDetailsAs(details: Map[String,String]): Unit = {
+  def andIEnterNonUKBankAccountDetailsAs(details: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
     UKBankAccountPaymentPage.clickContinue()
   }
 
-  //todo: commented overload Test and delete if required.
+  // todo: commented overload Test and delete if required.
 
   // Overload for ScalaTest (no DataTable, accepts varargs)
 //  def andIEnterNonUKBankAccountDetailsAs(links: (String, String)*): Unit = {

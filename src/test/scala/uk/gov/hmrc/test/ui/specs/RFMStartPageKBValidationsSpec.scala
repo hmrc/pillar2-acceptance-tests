@@ -17,8 +17,6 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.featurespec.AnyFeatureSpec
-import uk.gov.hmrc.test.ui.specstepdef.Hooks.{And, Given, Then, When}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps._
@@ -29,170 +27,175 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     Scenario("1 - Verify Individual RFM KB page") {
       Given("I access RFM start page")
-        givenIAccessRFMXPage("start")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      givenIAccessRFMXPage("start")
 
       Then("I should be on RFM start page")
-        thenIShouldBeOnX("RFM start page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("RFM start page")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      whenIClickOnContinueButton("I click on Continue button")
 
       When("Individual User logs in with rfm URL to Pillar2")
-        givenXLogsInWithRfmURLToPillar2("Individual User")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      givenXLogsInWithRfmURLToPillar2("Individual User")
 
       Then("I should be on Individual RFM KB Page")
-        thenIShouldBeOnX("Individual RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Individual RFM KB Page")
 
       When("I click sign in to Government Gateway with an organisation account link")
-        andIClickXLink("sign in to Government Gateway with an organisation account")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("sign in to Government Gateway with an organisation account")
 
       Then("I should be on auth-login page")
-        thenIShouldBeOnX("auth-login page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("auth-login page")
 
       When("I click the browser back button")
-        andIClickTheBrowserBackButton()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickTheBrowserBackButton()
 
       Then("I should be on Individual RFM KB Page")
-        thenIShouldBeOnX("Individual RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Individual RFM KB Page")
 
       When("I click Find out more about who can use this service link")
-        andIClickXLink("Find out more about who can use this service")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Find out more about who can use this service")
 
       Then("I should be on RFM start page")
-        thenIShouldBeOnX("RFM start page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("RFM start page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on Individual RFM KB Page")
-        thenIShouldBeOnX("Individual RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Individual RFM KB Page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on auth-login page")
-        thenIShouldBeOnX("auth-login page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("auth-login page")
 
     }
 
     Scenario("2 - Verify Agent RFM KB page") {
       Given("Agent User logs in with rfm URL to Pillar2")
-        givenXLogsInWithRfmURLToPillar2("Agent User")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      givenXLogsInWithRfmURLToPillar2("Agent User")
 
       Then("I should be on Agent RFM KB Page")
-        thenIShouldBeOnX("Agent RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Agent RFM KB Page")
 
       When("I click Find out more about who can use this service link")
-        andIClickXLink("Find out more about who can use this service")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Find out more about who can use this service")
 
       Then("I should be on RFM start page")
-        thenIShouldBeOnX("RFM start page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("RFM start page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on Agent RFM KB Page")
-        thenIShouldBeOnX("Agent RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Agent RFM KB Page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on auth-login page")
-        thenIShouldBeOnX("auth-login page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("auth-login page")
 
     }
 
     Scenario("3 - Verify Organisation Assistant User RFM KB page") {
       Given("Assistant User logs in with rfm URL to Pillar2")
-        givenXLogsInWithRfmURLToPillar2("Assistant User")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      givenXLogsInWithRfmURLToPillar2("Assistant User")
 
       Then("I should be on Assistant User RFM KB Page")
-        thenIShouldBeOnX("Assistant User RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Assistant User RFM KB Page")
 
       When("I click Find out more about who can use this service link")
-        andIClickXLink("Find out more about who can use this service")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Find out more about who can use this service")
 
       Then("I should be on RFM start page")
-        thenIShouldBeOnX("RFM start page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("RFM start page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on Assistant User RFM KB Page")
-        thenIShouldBeOnX("Assistant User RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Assistant User RFM KB Page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on auth-login page")
-        thenIShouldBeOnX("auth-login page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("auth-login page")
 
     }
 
     Scenario("4 - Verify already enrolled Organisation User KB page") {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 with rfm URL to Pillar2 service")
-        whenOrganisationUserLogsInWithExistingEntityGroupXXAndXWithRfmURLToPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      whenOrganisationUserLogsInWithExistingEntityGroupXXAndXWithRfmURLToPillar2Service(
+        "HMRC-PILLAR2-ORG",
+        "PLRID",
+        "XMPLR0012345674"
+      )
 
       Then("I should be on Duplicate RFM KB Page")
-        thenIShouldBeOnX("Duplicate RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Duplicate RFM KB Page")
 
       When("I click Find out more about who can use this service link")
-        andIClickXLink("Find out more about who can use this service")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("Find out more about who can use this service")
 
       Then("I should be on RFM start page")
-        thenIShouldBeOnX("RFM start page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("RFM start page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on Duplicate RFM KB Page")
-        thenIShouldBeOnX("Duplicate RFM KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("Duplicate RFM KB Page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on auth-login page")
-        thenIShouldBeOnX("auth-login page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("auth-login page")
 
     }
 
     Scenario("5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page") {
       Given("I clear the cache")
-        thenIClearTheCache()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      thenIClearTheCache()
 
       Given("Organisation User logs in and navigates to RFM start page without Pillar2 enrolment with groupId 879D6270-E9C2-4092-AC91-21C61B69D1E7")
-        givenXLogsInAndNavigatesToRFMStartPageWithoutPillar2EnrolmentWithGroupIdX("879D6270-E9C2-4092-AC91-21C61B69D1E7")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      givenLogsInAndNavigatesToRFMStartPageWithoutPillar2EnrolmentWithGroupId(
+        "879D6270-E9C2-4092-AC91-21C61B69D1E7"
+      )
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      whenIClickOnContinueButton("I click on Continue button")
 
       Then("I should be on RFM enter pillar2 id page")
-        thenIShouldBeOnX("RFM enter pillar2 id page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("RFM enter pillar2 id page")
 
       When("I provide RFM pillar2 id as XMPLR0123456789")
-        andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")  // auto-chosen (score=1.00, RFMStepsSteps.scala)
+      andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")
 
       Then("I should be on RFM Existing Member KB Page")
-        thenIShouldBeOnX("RFM Existing Member KB Page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("RFM Existing Member KB Page")
 
       When("I select back link")
-        andISelectBackLink()  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      andISelectBackLink()
 
       Then("I should be on RFM enter pillar2 id page")
-        thenIShouldBeOnX("RFM enter pillar2 id page")  // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOn("RFM enter pillar2 id page")
 
       And("I click on Continue button")
-        whenIClickOnContinueButton("I click on Continue button")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      whenIClickOnContinueButton("I click on Continue button")
 
       And("I click go to your business tax account link")
-        andIClickXLink("go to your business tax account")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickLink("go to your business tax account")
 
       When("I click the browser back button")
-        andIClickTheBrowserBackButton()  // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickTheBrowserBackButton()
 
       And("I click Sign out link")
-        andIClickXLink("Sign out")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
+      andIClickLink("Sign out")
     }
   }
 }

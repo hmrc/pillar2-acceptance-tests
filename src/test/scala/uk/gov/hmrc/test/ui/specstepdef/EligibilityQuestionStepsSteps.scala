@@ -16,72 +16,49 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import io.cucumber.datatable.DataTable
 import uk.gov.hmrc.test.ui.cucumber.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specstepdef.CommonFunctions._
 
-
 object EligibilityQuestionStepsSteps {
 
   // ^I choose (.*) and continue$
-  def andIChooseXAndContinue(option: String): Unit = {
+  def andIChooseAndContinue(option: String): Unit = {
     option match {
-          case "Yes"                 => Input.clickById("value_0")
-          case "No"                  => Input.clickById("value_1")
-          case "Eligibility Yes NFM" => Input.clickById("registeringNfmGroup_0")
-          case "Eligibility No NFM"  => Input.clickById("registeringNfmGroup_1")
-        }
-        BusinessActivityEQPage.clickContinue()
+      case "Yes"                 => Input.clickById("value_0")
+      case "No"                  => Input.clickById("value_1")
+      case "Eligibility Yes NFM" => Input.clickById("registeringNfmGroup_0")
+      case "Eligibility No NFM"  => Input.clickById("registeringNfmGroup_1")
+    }
+    BusinessActivityEQPage.clickContinue()
   }
 
   // ^I select back link$
   def andISelectBackLink(): Unit = {
     Wait.waitForElementToClickTagName("h1")
-        clickByCss(BusinessActivityEQPage.backLink)
+    clickByCss(BusinessActivityEQPage.backLink)
   }
 
   // ^I should navigate to (.*)
-  def thenIShouldNavigateToX(page: String): Unit = {
+  def thenIShouldNavigateTo(page: String): Unit = {
     Wait.waitForElementToClickTagName("h1")
-        assertNavigationToPage(pageMatch(page))
+    assertNavigationToPage(pageMatch(page))
   }
 
   // ^I enter Address as:
-  def thenIEnterAddressAs(address: Map[String,String]): Unit = {
+  def thenIEnterAddressAs(address: Map[String, String]): Unit = {
     Input.enterData(address)
-        UPEAddressPage.clickCountrySelected()
-        UPEEntityTypePage.clickContinue()
+    UPEAddressPage.clickCountrySelected()
+    UPEEntityTypePage.clickContinue()
   }
-
-  //todo: commented overload Test and delete if required.
-
-  // Overload for ScalaTest (no DataTable, accepts varargs)
-//  def thenIEnterAddressAs(links: (String, String)*): Unit = {
-//    links.foreach { case (text, url) =>
-//      val driverWait: WebDriverWait =
-//        new WebDriverWait(Driver.instance, Duration.ofSeconds(10), Duration.ofSeconds(1))
-//      driverWait.until(
-//        ExpectedConditions.elementToBeClickable(
-//          Driver.instance.findElement(By.id(url))
-//        )
-//      )
-//      verifyLinkById(url, text)
-//    }
-//  }
 
   // ^I should be on (.*)
-  def thenIShouldBeOnX(page: String): Unit = {
-    Wait.waitForElementToClickTagName("h1")
-        assertNavigationUrl(pageMatch(page))
+  def thenIShouldBeOn(page: String): Unit = {
+    // Wait.waitForElementToClickTagName("h1")
+    assertNavigationUrl(pageMatch(page))
   }
-
-  // ^I continue|I continue without selecting an option$
-//  def andIContinue|IContinueWithoutSelectingAnOption(): Unit = {
-//    BusinessActivityEQPage.clickContinue()
-//  }
 
   // ^I continue|I continue without selecting an option$
   def continueAction(action: String): Unit = {
@@ -93,13 +70,12 @@ object EligibilityQuestionStepsSteps {
     }
   }
 
-
   // ^I should be redirect to (.*)
-  def thenIShouldBeRedirectToX(page: String): Unit = {
+  def thenIShouldBeRedirectTo(page: String): Unit = {
     assertNavigationUrl(pageMatch(page))
-        Wait.waitForElementToPresentByCssSelector(RegistrationProcessingPage.loadingSpinner)
-        Wait.waitForElementToClickTagName("h1")
-        Wait.waitForCSSElementNotToPresent(RegistrationProcessingPage.loadingSpinner)
+    Wait.waitForElementToPresentByCssSelector(RegistrationProcessingPage.loadingSpinner)
+    Wait.waitForElementToClickTagName("h1")
+    Wait.waitForCSSElementNotToPresent(RegistrationProcessingPage.loadingSpinner)
 
   }
 }
