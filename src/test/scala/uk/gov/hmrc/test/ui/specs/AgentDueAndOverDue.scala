@@ -15,19 +15,18 @@
  */
 
 package uk.gov.hmrc.test.ui.specs
+
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps.{andIShouldSeeIntAccountingPeriodsOnSubHistoryPage, _}
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-
-
-
-
 class AgentDueAndOverDue extends BaseSpec with Matchers {
 
   Feature("Pillar2 Due & Overdue returns for Agent User Journey") {
 
-    Scenario("1 - Agent User navigates to Due & Overdue returns page with multiple accounting period") {
+    Scenario("1 - Agent User navigates to Due & Overdue returns page with multiple accounting period",
+      AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
@@ -285,5 +284,3 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
     }
   }
 }
-
-
