@@ -19,17 +19,26 @@ package uk.gov.hmrc.test.ui.specpages.repayments
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentPhoneInputPage extends BasePage {
-  val url: String = s"${baseUrl}repayment/contact-details/input-phone"
+object RepaymentBankAccountNonUKPage extends BasePage {
 
-  val contactPhone = "#phoneNumber"
+  override val url: String = s"${baseUrl}repayment/non-uk-details"
 
-  override val textInputField: By = By.id("phoneNumber")
-  private val phoneValue: String   = "01234 567890"
+  val bankNameInputField: By          = By.id("bankName")
+  val accountHolderNameInputField: By = By.id("nameOnBankAccount")
+  val bicOrSwiftInputField: By        = By.id("bic")
+  val ibanInputField: By              = By.id("iban")
 
-  def enterText(): Unit = {
+  val bankNameValue          = "HSBC"
+  val accountHolderNameValue = "HMRC Shipley"
+  val bicOrSwiftValue        = "HBUKGB4B"
+  val ibanValue              = "GB29NWBK60161331926819"
+
+  def enterBankDetails(): Unit = {
     onPage()
-    sendKeys(textInputField, phoneValue)
+    sendKeys(bankNameInputField, bankNameValue)
+    sendKeys(accountHolderNameInputField, accountHolderNameValue)
+    sendKeys(bicOrSwiftInputField, bicOrSwiftValue)
+    sendKeys(ibanInputField, ibanValue)
     clickByClass(continue)
   }
 }

@@ -16,8 +16,17 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentPartialNameErrorPage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/error/partial-name"
+object RepaymentPartialNameErrorPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/error/partial-name"
+
+  override val yesRadioId: By = By.id("confirmRepaymentAccountName_0")
+
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
 }

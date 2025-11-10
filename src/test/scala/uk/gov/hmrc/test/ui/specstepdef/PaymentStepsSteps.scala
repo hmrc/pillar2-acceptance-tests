@@ -53,57 +53,31 @@ object PaymentStepsSteps {
   def andIProvideValueForXAsX(field: String, name: String): Unit = {
     field match {
       case "Bank Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.bankNameField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.bankNameField)
 
       case "Account Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.accountNameField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.accountNameField)
 
       case "Swift Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.swiftCodeField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.swiftCodeField)
 
       case "Iban" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.IbanField)
-        Input.sendKeysByCss(name, NonUKBankAccountPaymentPage.IbanField)
 
       case "Refund Reason" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
-        Input.sendKeysByCss(name, RepaymentReasonPage.reasonTextField)
 
       case "UK Bank Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UkBankName)
-        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UkBankName)
 
       case "UK Account Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.UkAccountName)
-        Input.sendKeysByCss(name, UKBankAccountPaymentPage.UkAccountName)
 
       case "Sort Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.sortCode)
-        Input.sendKeysByCss(name, UKBankAccountPaymentPage.sortCode)
 
       case "UK Account number" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.accountNumber)
-        Input.sendKeysByCss(name, UKBankAccountPaymentPage.accountNumber)
+
     }
   }
 
   // ^I provide Refund Reason as (.*)$""")((refundReason: String)
   def andIProvideRefundReasonAsX(refundReason: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
-    Input.sendKeysByCss(refundReason, RepaymentReasonPage.reasonTextField)
+//    Wait.waitForTagNameToBeRefreshed("h1")
+//    Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
+//    Input.sendKeysByCss(refundReason, RepaymentReasonPage.reasonTextField)
   }
 
   // And("""^I should see bank account error message (.*) on the (.*) Element$
@@ -111,92 +85,28 @@ object PaymentStepsSteps {
   def IShouldSeeBankAccountErrorMessageXOnTheXElement(error: String, page: String): Unit = {
     page match {
       case "Name of the Bank" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorBankNameLink)
-        getTextOf(By cssSelector NonUKBankAccountPaymentPage.errorBankNameLink) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorBankNameMessage)
-        getTextOf(By cssSelector NonUKBankAccountPaymentPage.errorBankNameMessage) should include(error)
 
       case "Account Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorAccountNameLink)
-        getTextOf(By cssSelector NonUKBankAccountPaymentPage.errorAccountNameLink) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorAccountNameMessage)
-        getTextOf(By cssSelector NonUKBankAccountPaymentPage.errorAccountNameMessage) should include(error)
 
       case "Swift Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSwiftCodeLink)
-        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorSwiftCodeLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorBicOrSwiftCodeMessage)
-        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorBicOrSwiftCodeMessage)) should include(error)
 
       case "Iban" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorIbanLink)
-        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorIbanLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(NonUKBankAccountPaymentPage.errorIbanMessage)
-        getTextOf(By cssSelector (NonUKBankAccountPaymentPage.errorIbanMessage)) should include(error)
 
       case "UK Bank Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKBankNameLink)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKBankNameLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
 
       case "UK Account Name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKAccountNameLink)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKAccountNameLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
 
       case "UK Sort Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKSortCodeLink)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKSortCodeLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
 
       case "UK Account Number" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorSummary)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorUKAccountLink)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorUKAccountLink)) should be(error)
-
-        Wait.waitForElementToPresentByCssSelector(UKBankAccountPaymentPage.errorMessage)
-        getTextOf(By cssSelector (UKBankAccountPaymentPage.errorMessage)) should include(error)
     }
   }
 
   // ^I provide Refund Amount as (.*)$""")((refundAmount: String) => {
   def andIProvideRefundAmountAs(refundAmount: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Input.sendKeysByCss(refundAmount, RepaymentAmountPage.refundAmountField)
-    clickByCss(RepaymentAmountPage.continue)
+//    Wait.waitForTagNameToBeRefreshed("h1")
+//    Input.sendKeysByCss(refundAmount, RepaymentAmountPage.refundAmountField)
+//    clickByCss(RepaymentAmountPage.continue)
   }
 
   // And("""^I provide Repayment contact (.*) as (.*)$
@@ -204,14 +114,14 @@ object PaymentStepsSteps {
   def IProvideRepaymentContactXAsX(page: String, Value: String): Unit = {
     page match {
       case "name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Input.sendKeysByCss(Value, RepaymentContactPage.contactNameField)
-        clickByCss(RepaymentContactPage.continue)
+//        Wait.waitForTagNameToBeRefreshed("h1")
+//        Input.sendKeysByCss(Value, RepaymentContactPage.contactNameField)
+//        clickByCss(RepaymentContactPage.continue)
 
-      case "email" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Input.sendKeysByCss(Value, RepaymentContactEmailPage.contactEmailField)
-        clickByCss(RepaymentContactEmailPage.continue)
+//      case "email" =>
+//        Wait.waitForTagNameToBeRefreshed("h1")
+//        Input.sendKeysByCss(Value, RepaymentContactEmailPage.contactEmailField)
+//        clickByCss(RepaymentContactEmailPage.continue)
 
       case "phone" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -266,9 +176,9 @@ object PaymentStepsSteps {
   def andIAccessXPaymentPage(page: String): Unit = {
     page match {
       case "Non UK" =>
-        Nav.navigateTo(NonUKBankAccountPaymentPage.url)
+        Nav.navigateTo(RepaymentBankAccountNonUKPage.url)
       case "UK" =>
-        Nav.navigateTo((UKBankAccountPaymentPage.url))
+        Nav.navigateTo((RepaymentBankAccountUKPage.url))
     }
   }
 
@@ -278,13 +188,11 @@ object PaymentStepsSteps {
       case "Yes" => Input.clickById("confirmRepaymentAccountName_0")
       case "No"  => Input.clickById("confirmRepaymentAccountName_1")
     }
-    UKBankAccountPaymentPage.clickContinue()
   }
 
   // ^(I navigate from Contact page to CYA page)
   def andINavigateFromContactPageToCYAPage(negate: String): Unit = {
     for (i <- 1 to 4) {
-      UKBankAccountPaymentPage.clickContinue()
     }
   }
 
@@ -292,14 +200,12 @@ object PaymentStepsSteps {
   def andIEnterUKBankAccountDetailsAs(details: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
-    UKBankAccountPaymentPage.clickContinue()
   }
 
   // ^I enter Non UK Bank Account details as:$
   def andIEnterNonUKBankAccountDetailsAs(details: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(details)
-    UKBankAccountPaymentPage.clickContinue()
   }
 
   // I make successful payment

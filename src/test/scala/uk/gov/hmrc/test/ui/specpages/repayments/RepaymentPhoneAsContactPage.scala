@@ -16,10 +16,14 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentContactPage extends PageObject {
-  val url: String      = s"$rootUrl" + "repayment/contact-details/input-name"
-  val contactNameField = "#contactName"
-  val continue         = ".govuk-button"
+object RepaymentPhoneAsContactPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/contact-details/phone"
+
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    clickByClass(continue)
+  }
 }

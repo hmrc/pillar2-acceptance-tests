@@ -18,13 +18,11 @@ package uk.gov.hmrc.test.ui.specstepdef
 
 import uk.gov.hmrc.test.ui.cucumber.Input.clickByCss
 import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.contactDetails.{ContactDetailsCheckAnswersPage, ContactDetailsSummaryPage}
+import uk.gov.hmrc.test.ui.specpages.contactDetails.ContactDetailsCheckAnswersPage
 import uk.gov.hmrc.test.ui.specpages.furtherDetails.FDCheckYourAnswersPage
-import uk.gov.hmrc.test.ui.specpages.nfm.NFMCheckYourAnswersPage
 
 object CYAStepsSteps {
 
-  // ^I click on change hyperlink next to the (.*)
   def andIClickOnChangeHyperlinkNextToTheX(link: String): Unit = {
     link match {
       case "FD Group Status" =>
@@ -34,31 +32,12 @@ object CYAStepsSteps {
     }
   }
 
-  // ^I click on change link for (.*)
   def andIClickOnChangeLinkForX(link: String): Unit = {
     link match {
       case "Contact Name" =>
         clickByCss(ContactDetailsCheckAnswersPage.changePrimaryContactName)
-      case "Email address" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changePrimaryContactEmailAddress)
-      case "Phone number" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changePrimaryContactPhoneNumber)
-      case "Do you have a second contact?" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeSecondaryContact)
-      case "Second Contact Name" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeSecondaryContactName)
-      case "Second Contact Email" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeSecondaryContactEmailAddress)
-      case "Second Contact Phone number" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeSecondaryContactPhoneNumber)
-      case "Address" =>
-        clickByCss(ContactDetailsSummaryPage.changeAddress)
-      case "Dashboard Address" =>
-        clickByCss(ContactDetailsSummaryPage.dashboardAddressChange)
       case "Primary Contact" =>
         clickByCss(ReviewAnswersPage.changeUPEContact)
-      case _ =>
-        clickByCss(ContactDetailsCheckAnswersPage.changePrimaryContactName)
     }
   }
 

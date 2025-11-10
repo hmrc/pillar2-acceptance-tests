@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentJourneyRecoveryErrorPage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/error/answers-not-saved"
+object RepaymentJourneyRecoveryErrorPage extends BasePage {
+  val url: String = s"${baseUrl}repayment/error/answers-not-saved"
 }

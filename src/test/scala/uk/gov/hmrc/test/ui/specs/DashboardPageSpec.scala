@@ -173,82 +173,6 @@ class DashboardPageSpec extends BaseSpec with Matchers {
       And("I click Sign out link")
       andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
-//      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4040000000 for Pillar2 service")
-//      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-//        "Organisation",
-//        "HMRC-PILLAR2-ORG",
-//        "PLRID",
-//        "XEPLR4040000000"
-//      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      And("I should be on Dashboard page")
-//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click View transaction history link")
-//      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should be on Transaction History Empty Page")
-//      thenIShouldBeOnX("Transaction History Empty Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I select back link")
-//      andISelectBackLink() // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      Then("I should be on Dashboard page")
-//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click View transaction history link")
-//      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should be on Transaction History Empty Page")
-//      thenIShouldBeOnX("Transaction History Empty Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click Report Pillar 2 Top-up Taxes link")
-//      andIClickXLink("Report Pillar 2 Top-up Taxes") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should be on Dashboard page")
-//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      And("I click Sign out link")
-//      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
-//      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-//        "Organisation",
-//        "HMRC-PILLAR2-ORG",
-//        "PLRID",
-//        "XEPLR4000000000"
-//      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      And("I should be on Dashboard page")
-//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click View transaction history link")
-//      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should be on Transaction History Error Page")
-//      thenIShouldBeOnX("Transaction History Error Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click Return to your account homepage link")
-//      andIClickXLink("Return to your account homepage") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should be on Dashboard page")
-//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click View transaction history link")
-//      andIClickXLink("View transaction history") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should be on Transaction History Error Page")
-//      thenIShouldBeOnX("Transaction History Error Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I select back link")
-//      andISelectBackLink() // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      Then("I should be on Dashboard page")
-//      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      And("I click Sign out link")
-//      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
       Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR6666666666 for Pillar2 service")
       whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
         "Organisation",
@@ -285,47 +209,6 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
       Then("I should be on Transaction History Page")
       thenIShouldBeOnX("Transaction History Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-    }
-
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=contact details summary, page=contact details summary page]") {
-      Given("Organisation User logs in to register for Pillar2")
-      login(
-        userType = "Organisation",
-        pageUrl = "pillar2-frontend"
-      )
-
-      And("I should be on Task list page")
-      thenIShouldBeOnX("Task list page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I access the contact details summary page")
-      givenIAccessTheXPage("contact details summary") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Unauthorised Page")
-      thenIShouldBeOnX("Unauthorised Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I click Sign out link")
-      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      And("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
-      whenXUserLogsInWithExistingEntityGroupXXAndXForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674"
-      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      When("I access the contact details summary page")
-      givenIAccessTheXPage("contact details summary") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-
-      Then("I should be on contact details summary page")
-      thenIShouldBeOnX("contact details summary page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-
-      And("I click Sign out link")
-      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
     }
 

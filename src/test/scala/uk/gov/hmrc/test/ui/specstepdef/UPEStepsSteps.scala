@@ -43,11 +43,6 @@ object UPEStepsSteps {
         Input.sendKeysByCss(name, NFMContactNamePage.contactName)
         clickByCss(UPENamePage.continue)
 
-//      case "NFM Contact Email" =>
-//        Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
-//        Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
-//        clickByCss(UPENamePage.continue)
-
       case "NFM Phone Number" =>
         Wait.waitForElementToPresentByCssSelector(NFMPhoneInputPage.phoneNumber)
         Input.sendKeysByCss(name, NFMPhoneInputPage.phoneNumber)
@@ -76,24 +71,11 @@ object UPEStepsSteps {
     }
   }
 
-  // ^I should see the option (.*) remain selected$
-  def andIShouldSeeTheOptionXRemainSelected(answer: String): Unit = {
-    Check.checkOptionSelected(answer)
-  }
-
   // ^I select option (.*) and continue to GRS page$
   def andISelectOptionXAndContinueToGRSPage(option: String): Unit = {
     option match {
       case "UK limited company"            => Input.clickById("value_0")
       case "Limited liability partnership" => Input.clickById("value_1")
-    }
-    UPEEntityTypePage.clickContinue()
-  }
-
-  // ^I select option (.*) and continue to Name page$
-  def andISelectOptionXAndContinueToNamePage(option: String): Unit = {
-    option match {
-      case "Entity type not listed" => Input.clickById("value_2")
     }
     UPEEntityTypePage.clickContinue()
   }
@@ -110,9 +92,6 @@ object UPEStepsSteps {
   // ^I registered successfully with (.*)
   def andIRegisteredSuccessfullyWithX(option: String): Unit = {
     option match {
-      case "BV disabled" =>
-        Wait.waitForElement("registrationSuccessBvDisabled")
-        Input.clickById("registrationSuccessBvDisabled")
       case "BV enabled" =>
         Wait.waitForElement("registrationSuccessBvEnabled")
         Input.clickById("registrationSuccessBvEnabled")

@@ -16,12 +16,9 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.cucumber.Nav.navigateTo
 import uk.gov.hmrc.test.ui.cucumber._
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.contactDetails.ContactDetailsSummaryPage
-import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityUPEPage
 import uk.gov.hmrc.test.ui.specpages.repayments._
 
 object CommonStepsSteps {
@@ -43,24 +40,6 @@ object CommonStepsSteps {
   // ^(I click on Continue button)
   def whenIClickOnContinueButton(negate: String): Unit = {
 //    UPEInitialGuidancePage.clickContinue()
-  }
-
-  // ^I am on (.*) Page$
-  def givenIAmOnXPage(page: String): Unit = {
-    page match {
-      case "UPE EQ" =>
-        navigateTo(EligibilityUPEPage.url)
-//        Wait.waitForElementToPresentByCssSelector(EligibilityUPEPage.eqForm)
-//        isVisible(By.cssSelector(EligibilityUPEPage.eq)) shouldBe true
-//      case "Business activity EQ" =>
-//        navigateTo(EligibilityActiveInUkPage.url)
-//        Wait.waitForElementToPresentByCssSelector(EligibilityActiveInUkPage.eqForm)
-//        isVisible(By.cssSelector(EligibilityActiveInUkPage.eq)) shouldBe true
-//      case "Global gross revenue" =>
-//        navigateTo(EligibilityGlobalGrossRevenueEQPage.url)
-//        Wait.waitForElementToPresentByCssSelector(EligibilityGlobalGrossRevenueEQPage.eqForm)
-//        isVisible(By.cssSelector(EligibilityGlobalGrossRevenueEQPage.eq)) shouldBe true
-    }
   }
 
   // ^I click (.*) link$
@@ -108,21 +87,6 @@ object CommonStepsSteps {
     AuthLoginPage.addDelegatedEnrolmentOld(enrolmentKey, identifierName, identifierValue, authRule)
   }
 
-  // ^I refresh the page$
-  def whenIRefreshThePage(): Unit = {
-    Driver.instance.navigate().refresh()
-  }
-
-  // ^I refresh the registration in progress page$
-  def whenIRefreshTheRegistrationInProgressPage(): Unit = {
-    val count = 5
-    var i     = 0
-    while (i < count) {
-      Driver.instance.navigate().refresh()
-      i += 1
-    }
-  }
-
   // ^I access the (.*) page$
   def givenIAccessTheXPage(page: String): Unit = {
     page match {
@@ -141,15 +105,15 @@ object CommonStepsSteps {
       case "repayment method" =>
         Nav.navigateTo(RepaymentMethodPage.url)
       case "uk bank account" =>
-        Nav.navigateTo(UKBankAccountPaymentPage.url)
+        Nav.navigateTo(RepaymentBankAccountUKPage.url)
       case "non-uk bank account" =>
-        Nav.navigateTo(NonUKBankAccountPaymentPage.url)
+        Nav.navigateTo(RepaymentBankAccountNonUKPage.url)
       case "repayment contact name" =>
-        Nav.navigateTo(RepaymentContactPage.url)
+        Nav.navigateTo(RepaymentContactNamePage.url)
       case "repayment contact email" =>
         Nav.navigateTo(RepaymentContactEmailPage.url)
       case "repayment phone" =>
-        Nav.navigateTo(RepaymentPhonePage.url)
+        Nav.navigateTo(RepaymentPhoneAsContactPage.url)
       case "repayment phone input" =>
         Nav.navigateTo(RepaymentPhoneInputPage.url)
       case "repayment CYA" =>
@@ -164,12 +128,12 @@ object CommonStepsSteps {
         Nav.navigateTo(ManageGroupStatusPage.url)
       case "manage accounting period" =>
         Nav.navigateTo(ManageAccountPeriodPage.url)
-      case "repayment change amount" =>
-        Nav.navigateTo(RepaymentChangeAmountPage.url)
-      case "repayment change method" =>
-        Nav.navigateTo(RepaymentChangeMethodPage.url)
-      case "repayment change name" =>
-        Nav.navigateTo(RepaymentChangeNamePage.url)
+//      case "repayment change amount" =>
+//        Nav.navigateTo(RepaymentChangeAmountPage.url)
+//      case "repayment change method" =>
+//        Nav.navigateTo(RepaymentChangeMethodPage.url)
+//      case "repayment change name" =>
+//        Nav.navigateTo(RepaymentChangeNamePage.url)
       case "transaction history" =>
         Nav.navigateTo(TransactionHistoryPage.url)
 

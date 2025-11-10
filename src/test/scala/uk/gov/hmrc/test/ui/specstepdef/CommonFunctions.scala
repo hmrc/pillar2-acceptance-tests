@@ -23,7 +23,6 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.contactDetails._
-import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityNotSuitableAsUnder750MillionPage
 import uk.gov.hmrc.test.ui.specpages.repayments._
 import uk.gov.hmrc.test.ui.specpages.rfm._
 
@@ -32,7 +31,7 @@ object CommonFunctions
 
   def pageMatch(page: String): PageObject = {
     page match {
-      case "guidance page" => Pillar2GovUkGuidancePage
+      case "guidance page"                              => Pillar2GovUkGuidancePage
       case "auth-login page"                            => AuthLoginPage
       case "Under Construction Page"                    => UnderConstructionPage
       case "Bookmark page"                              => BookMarkPage
@@ -84,37 +83,14 @@ object CommonFunctions
       case "Amend API error Page for RFM"               => AmendAPIerrorPage_RFM
       case "RFM journey recovery page"                  => RFMJourneyRecoveryPage
       case "RFM incomplete task error page"             => RFMIncompleteErrorPage
-      case "Non UK Bank Account Payment Page"           => NonUKBankAccountPaymentPage
-      case "UK Bank Account Payment Page"               => UKBankAccountPaymentPage
-      case "Repayment Guidance Page"                    => RepaymentGuidancePage
-      case "Repayment Amount Page"                      => RepaymentAmountPage
-      case "Repayment Contact Page"                     => RepaymentContactPage
-      case "Repayment Contact Email Page"               => RepaymentContactEmailPage
-      case "Repayment Phone Page"                       => RepaymentPhonePage
-      case "Repayment Phone Input Page"                 => RepaymentPhoneInputPage
-      case "Reason For Refund Page"                     => RepaymentReasonPage
-      case "Repayment Method Page"                      => RepaymentMethodPage
-      case "Repayment CYA Page"                         => RepaymentCYAPage
-      case "Repayment Could Not Confirm Error Page"     => RepaymentCouldNotConfirmErrorPage
-      case "Repayment Bank Details Error Page"          => RepaymentBankDetailsErrorPage
-      case "Repayment Bars Error Page"                  => RepaymentBarsErrorPage
-      case "Repayment Partial Name Error Page"          => RepaymentPartialNameErrorPage
-      case "Repayment Incomplete Error Page"            => RepaymentIncompleteErrorPage
-      case "Repayment Journey Recovery Error Page"      => RepaymentJourneyRecoveryErrorPage
-      case "Repayment Confirmation Page"                => RepaymentConfirmationPage
-      case "Repayment Return Error Page"                => RepaymentReturnErrorPage
       case "Registration Duplication KB Page"           => RegistrationDuplicationKBPage
       case "Transaction History Page"                   => TransactionHistoryPage
       case "Transaction History Second Page"            => TransactionHistorySecondPage
       case "Transaction History Empty Page"             => TransactionHistoryEmptyPage
       case "Transaction History Error Page"             => TransactionHistoryErrorPage
       case "Registration processing page"               => RegistrationProcessingPage
-      case "Repayment processing page"                  => RepaymentProcessingPage
       case "RFM processing page"                        => RFMProcessingPage
       case "Unauthorised Page"                          => UnauthorisedPage
-      case "Repayment change amount Page"               => RepaymentChangeAmountPage
-      case "Repayment change method Page"               => RepaymentChangeMethodPage
-      case "Repayment change name Page"                 => RepaymentChangeNamePage
       case "Manage contact name Page"                   => ManageContactNamePage
       case "Manage second contact name"                 => ManageSecondContactNamePage
       case "Manage contact address Page"                => ManageContactAddressPage

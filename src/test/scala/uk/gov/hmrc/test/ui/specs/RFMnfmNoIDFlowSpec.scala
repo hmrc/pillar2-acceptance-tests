@@ -379,7 +379,6 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
       thenIShouldNavigateToX("RFM UK limited Company GRSPage") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I navigate back to RFM CYA Page from GRS Page")
-      thenINavigateBackToRFMCYAPageFromGRSPage() // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       Then("I should navigate to RFM Final Review Page")
       thenIShouldNavigateToX("RFM Final Review Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

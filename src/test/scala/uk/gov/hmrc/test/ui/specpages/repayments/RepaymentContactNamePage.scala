@@ -16,8 +16,18 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentChangeNamePage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/contact-details/change-input-name"
+object RepaymentContactNamePage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/contact-details/input-name"
+
+  override val textInputField: By = By.id("contactName")
+  private val nameValue: String   = "Contact Name"
+
+  def enterText(): Unit = {
+    onPage()
+    sendKeys(textInputField, nameValue)
+    clickByClass(continue)
+  }
 }

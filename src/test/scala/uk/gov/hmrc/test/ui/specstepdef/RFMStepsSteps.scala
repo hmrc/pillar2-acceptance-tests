@@ -69,26 +69,6 @@ object RFMStepsSteps {
 //        RFMStartPage.clickContinue()
   }
 
-  // ^Registration (.*) is entered as (.*)$
-  def andRegistrationXIsEnteredAsX(field: String, name: String): Unit = {
-//    field match {
-//      case "Day" =>
-//        Wait.waitForTagNameToBeRefreshed("h1")
-//        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regDay)
-//        Input.sendKeysById(RFMRegistrationDatePage.regDay, name)
-//
-//      case "Month" =>
-//        Wait.waitForTagNameToBeRefreshed("h1")
-//        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regMonth)
-//        Input.sendKeysById(RFMRegistrationDatePage.regMonth, name)
-//
-//      case "Year" =>
-//        Wait.waitForTagNameToBeRefreshed("h1")
-//        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
-//        Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
-//    }
-  }
-
   // ^I click change link for RFM (.*)
   def andIClickChangeLinkForRFMX(link: String): Unit = {
     link match {
@@ -124,40 +104,11 @@ object RFMStepsSteps {
 //        RFMStartPage.clickContinue()
   }
 
-  // ^I navigate back to RFM CYA Page from GRS Page
-  def thenINavigateBackToRFMCYAPageFromGRSPage(): Unit = {
-    for (i <- 1 to 5) {
-//      clickByCss(EligibilityActiveInUkPage.backLink)
-    }
-  }
-
-  // ^I continue to RFM contact name Page
-  def andIContinueToRFMContactNamePage(): Unit = {
-    for (i <- 0 to 2) {
-//      UPEInitialGuidancePage.clickContinue()
-    }
-  }
-
   // ^I enter registration date as:$
   def andIEnterRegistrationDateAs(registrationDate: Map[String, String]): Unit = {
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(registrationDate)
     UPEEntityTypePage.clickContinue()
   }
-
-  // todo: commented overload Test and delete if required.
-  // Overload for ScalaTest (no DataTable, accepts varargs)
-//  def andIEnterRegistrationDateAs(links: (String, String)*): Unit = {
-//    links.foreach { case (text, url) =>
-//      val driverWait: WebDriverWait =
-//        new WebDriverWait(Driver.instance, Duration.ofSeconds(10), Duration.ofSeconds(1))
-//      driverWait.until(
-//        ExpectedConditions.elementToBeClickable(
-//          Driver.instance.findElement(By.id(url))
-//        )
-//      )
-//      verifyLinkById(url, text)
-//    }
-//  }
 
 }

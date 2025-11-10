@@ -16,10 +16,11 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentCYAPage extends PageObject {
-  val url: String            = s"$rootUrl" + "repayment/check-answers"
+object RepaymentCYAPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/check-answers"
+
   val changeRefundAmount     = "a[href*='/change-amount']"
   val changeRefundReason     = "a[href*='/change-reason']"
   val changeRepaymentMethod  = "a[href*='/change-method']"
@@ -30,4 +31,5 @@ object RepaymentCYAPage extends PageObject {
   val changePhoneNumber      = "a[href*='/change-input-phone']"
   val changeUKBankDetails    = "a[href*='/change-uk-details']"
   val changeBankAccountType  = "a[href*='/change-method']"
+
 }

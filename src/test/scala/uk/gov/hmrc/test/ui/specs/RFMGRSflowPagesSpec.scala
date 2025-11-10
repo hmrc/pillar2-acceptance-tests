@@ -409,7 +409,6 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
       thenIShouldBeOnX("RFM UK based entity type page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I select option Entity type not listed and continue to Name page")
-      andISelectOptionXAndContinueToNamePage("Entity type not listed") // auto-chosen (score=1.00, UPEStepsSteps.scala)
 
       Then("I should be on RFM New NFM Contact Name Page")
       thenIShouldBeOnX("RFM New NFM Contact Name Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

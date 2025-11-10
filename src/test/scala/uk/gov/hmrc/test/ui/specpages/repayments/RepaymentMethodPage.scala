@@ -16,11 +16,24 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentMethodPage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/method"
+object RepaymentMethodPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/method"
 
-  val errorMessage = ".govuk-error-message"
-  val errorLink    = "[href*='#value_0']"
+  val typeOfAccountUK = "value_0"
+  val typeOfAccountNonUK = "value_1"
+
+  def clickTypeOfAccountUK(): Unit = {
+    onPage()
+    clickById(typeOfAccountUK)
+    clickByClass(continue)
+  }
+
+  def clickTypeOfAccountNonUK(): Unit = {
+    onPage()
+    clickById(typeOfAccountNonUK)
+    clickByClass(continue)
+  }
+
 }

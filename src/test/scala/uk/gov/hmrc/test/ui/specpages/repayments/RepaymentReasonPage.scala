@@ -16,13 +16,23 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentReasonPage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/reason"
+object RepaymentReasonPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/reason"
 
-  val errorMessage    = ".govuk-error-message"
-  val errorLink       = "[href='#value']"
-  val reasonTextField = "#value"
-  val charLimit       = ".govuk-character-count__status"
+  private val reasonValue: String        = "Reason for repayment"
+  private val reasonUpdatedValue: String = "Updated reason for repayment"
+
+  def enterText(): Unit = {
+    onPage()
+    sendKeys(textInputField, reasonValue)
+    clickByClass(continue)
+  }
+
+  def updateText(): Unit = {
+    onPage(s"$baseUrl" + "repayment/change-reason")
+    sendKeys(textInputField, reasonUpdatedValue)
+    clickByClass(continue)
+  }
 }

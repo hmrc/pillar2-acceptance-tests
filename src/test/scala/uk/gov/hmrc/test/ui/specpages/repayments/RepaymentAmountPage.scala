@@ -16,10 +16,23 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentAmountPage extends PageObject {
-  val url: String       = s"$rootUrl" + "repayment/amount"
-  val refundAmountField = ".govuk-input"
-  val continue          = ".govuk-button"
+object RepaymentAmountPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/amount"
+
+  private val amountValue: String        = "100"
+  private val amountUpdatedValue: String = "1000"
+
+  def enterAmount(): Unit = {
+    onPage()
+    sendKeys(textInputField, amountValue)
+    clickByClass(continue)
+  }
+
+  def updateAmount(): Unit = {
+    onPage(s"$baseUrl" + "repayment/change-amount")
+    sendKeys(textInputField, amountUpdatedValue)
+    clickByClass(continue)
+  }
 }

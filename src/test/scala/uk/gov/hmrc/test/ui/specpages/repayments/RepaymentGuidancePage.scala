@@ -16,8 +16,13 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentGuidancePage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/before-you-start"
+object RepaymentGuidancePage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/before-you-start"
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    clickByCss(continue)
+  }
 }

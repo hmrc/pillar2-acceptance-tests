@@ -16,8 +16,9 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentBarsErrorPage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/error/view"
+object RepaymentBarsErrorPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/error/view"
 }

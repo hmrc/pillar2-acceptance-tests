@@ -547,7 +547,6 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
       thenIShouldBeOnX("Registration In Progress page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("I refresh the registration in progress page")
-      whenIRefreshTheRegistrationInProgressPage() // auto-chosen (score=1.00, CommonStepsSteps.scala)
 
       Then("I should be on Dashboard page")
       thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)

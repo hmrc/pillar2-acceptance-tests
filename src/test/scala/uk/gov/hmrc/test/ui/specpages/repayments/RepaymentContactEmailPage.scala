@@ -16,10 +16,18 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentContactEmailPage extends PageObject {
-  val url: String       = s"$rootUrl" + "repayment/contact-details/input-email"
-  val contactEmailField = "#contactEmail"
-  val continue          = ".govuk-button"
+object RepaymentContactEmailPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/contact-details/input-email"
+
+  override val textInputField: By = By.id("contactEmail")
+  private val emailValue: String   = "abc@def.com"
+
+  def enterText(): Unit = {
+    onPage()
+    sendKeys(textInputField, emailValue)
+    clickByClass(continue)
+  }
 }

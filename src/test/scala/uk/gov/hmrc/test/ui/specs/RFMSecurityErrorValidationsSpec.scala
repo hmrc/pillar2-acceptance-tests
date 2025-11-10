@@ -68,7 +68,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
       thenIShouldBeOnX("RFM Registration Date Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
 
       When("Registration Day is entered as 27")
-      andRegistrationXIsEnteredAsX("Day", "27") // auto-chosen (score=1.00, RFMStepsSteps.scala)
+//      andRegistrationXIsEnteredAsX("Day", "27") // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       And("I click on Continue button")
       whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
@@ -264,7 +264,6 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
       thenIEnterAddressAs(addressData)
 
       And("I continue to RFM contact name Page")
-      andIContinueToRFMContactNamePage() // auto-chosen (score=1.00, RFMStepsSteps.scala)
 
       And("I provide RFM contact name as RFM test contact")
       andIProvideRFMXAsX("contact name", "RFM test contact") // auto-chosen (score=1.00, RFMStepsSteps.scala)

@@ -16,8 +16,16 @@
 
 package uk.gov.hmrc.test.ui.specpages.repayments
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RepaymentBankDetailsErrorPage extends PageObject {
-  val url: String = s"$rootUrl" + "repayment/error/bank-details"
+object RepaymentBankDetailsErrorPage extends BasePage {
+  override val url: String = s"${baseUrl}repayment/error/bank-details"
+
+  private val returnToBankDetailsLink = "a[href*='/uk-details']"
+
+  def clickReturnToBankDetailsLink(): Unit = {
+    onPage()
+    click(By.cssSelector(returnToBankDetailsLink))
+  }
 }
