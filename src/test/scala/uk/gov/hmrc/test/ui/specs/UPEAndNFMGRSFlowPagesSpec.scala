@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
@@ -26,7 +27,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
   Feature("Ultimate parent entity and Nominated Filling Member GRS journey") {
 
-    Scenario("1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page") {
+    Scenario("1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -53,7 +54,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - User registered as UkLimitedCompany successfully with BV enabled") {
+    Scenario("2 - User registered as UkLimitedCompany successfully with BV enabled",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -116,7 +117,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - User registered as UkLimitedCompany successfully with BV disabled") {
+    Scenario("3 - User registered as UkLimitedCompany successfully with BV disabled",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -179,7 +180,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - User registration as UkLimitedCompany failed with party type mismatch error") {
+    Scenario("4 - User registration as UkLimitedCompany failed with party type mismatch error",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -278,7 +279,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("5 - User registration as UkLimitedCompany failed with generic error") {
+    Scenario("5 - User registration as UkLimitedCompany failed with generic error",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -353,7 +354,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - User registration as UkLimitedCompany failed with identifiers do not match error") {
+    Scenario("6 - User registration as UkLimitedCompany failed with identifiers do not match error",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -452,7 +453,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("7 - User registration as UkLimitedCompany failed with BV failed error") {
+    Scenario("7 - User registration as UkLimitedCompany failed with BV failed error",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -668,7 +669,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 //
 //    }
 
-    Scenario("10 - User registration with LLP with different errors") {
+    Scenario("10 - User registration with LLP with different errors",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -812,7 +813,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("11 - User can navigate to Entity type not listed hyperlink on NFM Org type page") {
+    Scenario("11 - User can navigate to Entity type not listed hyperlink on NFM Org type page",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -869,7 +870,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("12 - UPE User error pages - ZAP-Accessibility Test") {
+    Scenario("12 - UPE User error pages - ZAP-Accessibility Test",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 

@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 
@@ -24,7 +25,7 @@ class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
 
   Feature("Eligibility Questions for Pillar 2") {
 
-    Scenario("1 - User navigates to next eligibility question page by selecting yes option") {
+    Scenario("1 - User navigates to next eligibility question page by selecting yes option", AcceptanceTests, ZapAccessibility) {
       Given("I clear the cache")
       thenIClearTheCache()
 
@@ -75,7 +76,7 @@ class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - User navigates to guidance page by selecting No option in eligibility questions") {
+    Scenario("2 - User navigates to guidance page by selecting No option in eligibility questions", AcceptanceTests, ZapAccessibility) {
       Given("I clear the cache")
       thenIClearTheCache()
 

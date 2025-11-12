@@ -17,23 +17,17 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{
-  andIAccessPaymentPage,
-  andIEnterUKBankAccountDetailsAs,
-  andIProvideRefundAmountAs,
-  andIProvideValueForAs,
-  andISelectOptionOnPartialNameErrorPage,
-  andISelectRepaymentMethodAs
-}
+import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{andIAccessPaymentPage, andIEnterUKBankAccountDetailsAs, andIProvideRefundAmountAs, andIProvideValueForAs, andISelectOptionOnPartialNameErrorPage, andISelectRepaymentMethodAs}
 
 class BarsErrorHandlingSpec extends BaseSpec with Matchers {
 
   Feature("Bars Handling") {
 
-    Scenario("1 - Organisation User bars integration validation") {
+    Scenario("1 - Organisation User bars integration validation", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -158,7 +152,7 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
       thenIShouldBeOn("UK Bank Account Payment Page")
     }
 
-    Scenario("2 - Agent User bars integration validation") {
+    Scenario("2 - Agent User bars integration validation", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 

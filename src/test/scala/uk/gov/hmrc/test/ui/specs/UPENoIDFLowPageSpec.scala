@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
@@ -26,7 +27,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
   Feature("UPE NO ID journey") {
 
-    Scenario("1 - UPE No Id journey navigation to check your answers page and verify if data is pre populated") {
+    Scenario("1 - UPE No Id journey navigation to check your answers page and verify if data is pre populated",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in as upe with credId UPENoIDJourney for Pillar2")
       givenLogsInAsUpeWithCredIdForPillar2("Organisation User", "UPENoIDJourney")
 
@@ -152,7 +153,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify task list status") {
+    Scenario("2 - Verify task list status",AcceptanceTests) {
       Given("Organisation User logs in to subscribe for Pillar2")
       givenLogsInToSubscribeForPillar2("Organisation User")
 
@@ -242,7 +243,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Validate different error messages for UPE no ID journey pages") {
+    Scenario("3 - Validate different error messages for UPE no ID journey pages",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in to subscribe for Pillar2")
       givenLogsInToSubscribeForPillar2("Organisation User")
 
@@ -326,7 +327,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
     }
 
-//    Scenario("4 - Change UPE fields from UPE check your answers page") {
+//    Scenario("4 - Change UPE fields from UPE check your answers page",AcceptanceTests,ZapAccessibility) {
 //      Given("Organisation User navigates to UPE check your answer page with credId UPENoIDJourney")
 //      givenOrganisationUserNavigatesToCheckYourAnswerPageWithCredId("UPE", "UPENoIDJourney")
 //
@@ -413,7 +414,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 //
 //    }
 
-    Scenario("5 - Status update for Enter ultimate parent’s details task") {
+    Scenario("5 - Status update for Enter ultimate parent’s details task",AcceptanceTests) {
       Given("Organisation User logs in to subscribe for Pillar2")
       givenLogsInToSubscribeForPillar2("Organisation User")
 

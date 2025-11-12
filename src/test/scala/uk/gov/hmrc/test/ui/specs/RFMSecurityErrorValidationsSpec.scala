@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps._
@@ -26,7 +27,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
   Feature("RFM check your answers page") {
 
-    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey") {
+    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Organisation User")
 
@@ -109,7 +110,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey") {
+    Scenario("2 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -204,7 +205,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Verify Incomplete data error") {
+    Scenario("3 - Verify Incomplete data error",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -305,7 +306,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Verify Security questions are not pre populated for RFM journey") {
+    Scenario("4 - Verify Security questions are not pre populated for RFM journey",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2")
       givenXLogsInToRFMWithCredIdXForPillar2("Organisation User", "RFMSaveProgress")
 

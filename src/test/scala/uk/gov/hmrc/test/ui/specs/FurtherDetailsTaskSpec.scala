@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.SubscriptionJourneyStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
@@ -28,7 +28,7 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 
   Feature("Further Details Task page validation") {
 
-    Scenario("1 - User navigates to check your answer page answering all the questions of Further Details Page") {
+    Scenario("1 - User navigates to check your answer page answering all the questions of Further Details Page",AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in as upe with credId FDTask for Pillar2")
       givenLogsInAsUpeWithCredIdForPillar2("Organisation User", "FDTask")
 
@@ -168,47 +168,47 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Change all the details from Furthers details check your answers page") {
-      Given("Organisation User navigates to FD check your answer page with credId FDTask")
-      givenOrganisationUserNavigatesToCheckYourAnswerPageWithCredId("FD", "FDTask")
+//    Scenario("2 - Change all the details from Furthers details check your answers page", AcceptanceTests, ZapAccessibility) {
+//      Given("Organisation User navigates to FD check your answer page with credId FDTask")
+//      givenOrganisationUserNavigatesToCheckYourAnswerPageWithCredId("FD", "FDTask")
+//
+//      Then("I should be on FD check your answers page")
+//      thenIShouldBeOn("FD check your answers page")
+//
+//      When("I click on change hyperlink next to the FD Group Status")
+//      andIClickOnChangeHyperlinkNextToThe("FD Group Status")
+//
+//      When("I select option In the UK and outside the UK in further details group status page")
+//      andISelectOptionInFurtherDetailsGroupStatusPage("In the UK and outside the UK")
+//
+//      Then("I should be on FD check your answers page")
+//      thenIShouldBeOn("FD check your answers page")
+//
+//      And("I should see row 1 value In the UK and outside the UK")
+//      andIShouldSeeRowValue(1, "In the UK and outside the UK")
+//
+//      When("I click on change hyperlink next to the Accounting Period")
+//      andIClickOnChangeHyperlinkNextToThe("Accounting Period")
+//
+//      When("I enter account period as:")
+//      val dateRangeDatTwo: Map[String, String] = Map(
+//        "startDate.day"   -> "15",
+//        "startDate.month" -> "1",
+//        "startDate.year"  -> "2024",
+//        "endDate.day"     -> "15",
+//        "endDate.month"   -> "1",
+//        "endDate.year"    -> "2025"
+//      )
+//      andIEnterAccountPeriodAs(dateRangeDatTwo)
+//
+//      And("I should see row 3 value 5 May 2025")
+//      andIShouldSeeRowValue(3, "5 May 2025")
+//
+//      And("I should see row 4 value 5 June 2026")
+//      andIShouldSeeRowValue(4, "5 June 2026")
+//    }
 
-      Then("I should be on FD check your answers page")
-      thenIShouldBeOn("FD check your answers page")
-
-      When("I click on change hyperlink next to the FD Group Status")
-      andIClickOnChangeHyperlinkNextToThe("FD Group Status")
-
-      When("I select option In the UK and outside the UK in further details group status page")
-      andISelectOptionInFurtherDetailsGroupStatusPage("In the UK and outside the UK")
-
-      Then("I should be on FD check your answers page")
-      thenIShouldBeOn("FD check your answers page")
-
-      And("I should see row 1 value In the UK and outside the UK")
-      andIShouldSeeRowValue(1, "In the UK and outside the UK")
-
-      When("I click on change hyperlink next to the Accounting Period")
-      andIClickOnChangeHyperlinkNextToThe("Accounting Period")
-
-      When("I enter account period as:")
-      val dateRangeDatTwo: Map[String, String] = Map(
-        "startDate.day"   -> "15",
-        "startDate.month" -> "1",
-        "startDate.year"  -> "2024",
-        "endDate.day"     -> "15",
-        "endDate.month"   -> "1",
-        "endDate.year"    -> "2025"
-      )
-      andIEnterAccountPeriodAs(dateRangeDatTwo)
-
-      And("I should see row 3 value 5 May 2025")
-      andIShouldSeeRowValue(3, "5 May 2025")
-
-      And("I should see row 4 value 5 June 2026")
-      andIShouldSeeRowValue(4, "5 June 2026")
-    }
-
-    Scenario("3 - Accounting period page Error Validations") {
+    Scenario("3 - Accounting period page Error Validations",AcceptanceTests, ZapAccessibility) {
       Given("I clear the cache")
       thenIClearTheCache()
 

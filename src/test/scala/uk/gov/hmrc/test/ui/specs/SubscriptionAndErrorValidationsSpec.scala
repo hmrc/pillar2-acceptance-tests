@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
@@ -28,7 +29,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
 
   Feature("Create a new registration and subscription") {
 
-    Scenario("1 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.") {
+    Scenario("1 - User redirected to a placeholder error page, for a duplicate subscription on UPE No ID flow,UPE as DFM path.",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in to subscribe for Pillar2")
       givenLogsInToSubscribeForPillar2("Organisation User")
 
@@ -135,7 +136,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - User redirected to a placeholder error page, for an incomplete data submission during registration") {
+    Scenario("2 - User redirected to a placeholder error page, for an incomplete data submission during registration",AcceptanceTests,ZapAccessibility) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -281,7 +282,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - User redirected to a placeholder error page, for an invalid request during registration.") {
+    Scenario("3 - User redirected to a placeholder error page, for an invalid request during registration.",AcceptanceTests) {
       Given("Organisation User logs in to subscribe for Pillar2")
       givenLogsInToSubscribeForPillar2("Organisation User")
 
@@ -415,7 +416,7 @@ class SubscriptionAndErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Verify the link on page can't be found page") {
+    Scenario("4 - Verify the link on page can't be found page",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 

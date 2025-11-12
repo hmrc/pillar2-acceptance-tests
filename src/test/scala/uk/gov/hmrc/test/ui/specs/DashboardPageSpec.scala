@@ -17,15 +17,12 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{
-  thenIGoTillGetReadyToApproveYourPaymentPage,
-  thenIMakeSuccessfulPayment,
-  thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage
-}
+import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{thenIGoTillGetReadyToApproveYourPaymentPage, thenIMakeSuccessfulPayment, thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage}
 import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps.thenIShouldBeRedirectedTo
 import uk.gov.hmrc.test.ui.specstepdef.SubscriptionJourneyStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
@@ -34,7 +31,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
   Feature("Dashboard Page") {
 
-    Scenario("1 - User navigates to Dashboard page and validates the links") {
+    Scenario("1 - User navigates to Dashboard page and validates the links", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -101,7 +98,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
       andIAmOnFeedbackSurveyPage()
     }
 
-    Scenario("2 - User navigates to group details page and validates the data") {
+    Scenario("2 - User navigates to group details page and validates the data", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -152,7 +149,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
       thenIShouldBeOn("Dashboard page")
     }
 
-    Scenario("3 - User navigates to amend contact details page and validates the data") {
+    Scenario("3 - User navigates to amend contact details page and validates the data", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -250,7 +247,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API") {
+    Scenario("4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -291,7 +288,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("5 - Verify Transaction History pages for Org user") {
+    Scenario("5 - Verify Transaction History pages for Org user", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0000000122 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -457,7 +454,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=contact details summary, page=contact details summary page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=contact details summary, page=contact details summary page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -495,7 +492,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=account summary, page=accounts summary page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=account summary, page=accounts summary page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -533,7 +530,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=MakePayment, page=Make a payment page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=MakePayment, page=Make a payment page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -571,7 +568,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment guidance, page=Repayment Guidance Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment guidance, page=Repayment Guidance Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -609,7 +606,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment amount, page=Repayment Amount Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment amount, page=Repayment Amount Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -647,7 +644,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment reason, page=Reason For Refund Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment reason, page=Reason For Refund Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -685,7 +682,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment method, page=Repayment Method Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment method, page=Repayment Method Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -723,7 +720,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=uk bank account, page=UK Bank Account Payment Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=uk bank account, page=UK Bank Account Payment Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -761,7 +758,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=non-uk bank account, page=Non UK Bank Account Payment Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=non-uk bank account, page=Non UK Bank Account Payment Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -799,7 +796,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment contact name, page=Repayment Contact Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment contact name, page=Repayment Contact Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -837,7 +834,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment contact email, page=Repayment Journey Recovery Error Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment contact email, page=Repayment Journey Recovery Error Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -875,7 +872,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment phone, page=Repayment Journey Recovery Error Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment phone, page=Repayment Journey Recovery Error Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -913,7 +910,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment phone input, page=Repayment Journey Recovery Error Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment phone input, page=Repayment Journey Recovery Error Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -951,7 +948,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment CYA, page=Repayment CYA Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment CYA, page=Repayment CYA Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -989,7 +986,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change amount, page=Repayment change amount Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change amount, page=Repayment change amount Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1027,7 +1024,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change method, page=Repayment change method Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change method, page=Repayment change method Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1065,7 +1062,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change name, page=Repayment change name Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=repayment change name, page=Repayment change name Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1103,7 +1100,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=transaction history, page=Transaction History Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=transaction history, page=Transaction History Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1141,7 +1138,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage contact name, page=Manage contact name Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage contact name, page=Manage contact name Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1179,7 +1176,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage second contact name, page=Manage second contact name]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage second contact name, page=Manage second contact name]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1217,7 +1214,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage contact address, page=Manage contact address Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage contact address, page=Manage contact address Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1255,7 +1252,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage group status, page=Manage group status Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage group status, page=Manage group status Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1293,7 +1290,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage accounting period, page=Manage accounting period Page]") {
+    Scenario("6 - Verify Unauthorised access of payment,repayment,view transactions, amend contact & group details pages [page name=manage accounting period, page=Manage accounting period Page]", AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Organisation User")
 
@@ -1331,7 +1328,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("7 - Make successful payment as Organisation user") {
+    Scenario("7 - Make successful payment as Organisation user", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -1366,7 +1363,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("8 - Make successful payment as Agent") {
+    Scenario("8 - Make successful payment as Agent", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -1424,7 +1421,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("9 - Back journey from Get ready to approve your payment page") {
+    Scenario("9 - Back journey from Get ready to approve your payment page", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -1453,7 +1450,6 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
       Then("I should navigate to Outstanding Payment Page")
       thenIShouldNavigateTo("Outstanding Payment Page")
-
     }
   }
 }

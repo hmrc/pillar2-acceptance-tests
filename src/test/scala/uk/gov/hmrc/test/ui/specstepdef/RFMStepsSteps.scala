@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specstepdef
 
-import io.cucumber.datatable.DataTable
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.cucumber.Check.assertNavigationUrl

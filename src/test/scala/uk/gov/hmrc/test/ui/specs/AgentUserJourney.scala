@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
@@ -29,7 +30,7 @@ class AgentUserJourney extends BaseSpec with Matchers {
 
   Feature("Agent user journeys") {
 
-    Scenario("1 - Agent user capturing Pillar2 ID") {
+    Scenario("1 - Agent user capturing Pillar2 ID", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
@@ -115,7 +116,7 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldNavigateTo("Dashboard page")
     }
 
-    Scenario("2 - Agent user accessing dashboard features after login") {
+    Scenario("2 - Agent user accessing dashboard features after login", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
@@ -201,7 +202,7 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldNavigateTo("Dashboard page")
     }
 
-    Scenario("3 - Agent user API failure scenarios and service banner navigation") {
+    Scenario("3 - Agent user API failure scenarios and service banner navigation", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
@@ -275,7 +276,7 @@ class AgentUserJourney extends BaseSpec with Matchers {
       andIClickLink("Sign out")
     }
 
-    Scenario("4 - Verify Agent service account user unauthorised pages") {
+    Scenario("4 - Verify Agent service account user unauthorised pages", AcceptanceTests, ZapAccessibility) {
       Given("Individual User logs in to register for Pillar2 Agent service")
       givenLogsInToRegisterForPillar2AgentService("Individual User")
 
@@ -325,7 +326,7 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldBeOn("auth-login page")
     }
 
-    Scenario("5 - Verify Agent service account user unauthorised pages") {
+    Scenario("5 - Verify Agent service account user unauthorised pages", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in to register for Pillar2 Agent service")
       givenLogsInToRegisterForPillar2AgentService("Organisation User")
 
@@ -381,7 +382,7 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldBeOn("ASA Organisation KB Page")
     }
 
-    Scenario("6 - Agent user Not Authorised Page") {
+    Scenario("6 - Agent user Not Authorised Page", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
@@ -422,7 +423,7 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldNavigateTo("ASA Home Page")
     }
 
-    Scenario("7 - Verify Transaction History pages for Agent user") {
+    Scenario("7 - Verify Transaction History pages for Agent user", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 

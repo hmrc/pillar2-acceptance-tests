@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.thenIShouldBeRedirectedToGuidancePageInANewTab
@@ -25,7 +26,7 @@ class IDValidationPageSpec extends BaseSpec with Matchers {
 
   Feature("BTA user registration for Pillar 2 service") {
 
-    Scenario("1 - Validation page and guidance page for users with NO PLRID and error validation.") {
+    Scenario("1 - Validation page and guidance page for users with NO PLRID and error validation.",AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with BTA for Pillar2")
       givenLogsInWithBTAForPillar2("Organisation User")
 
@@ -49,7 +50,7 @@ class IDValidationPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Confirmation page for users with PLRID") {
+    Scenario("2 - Confirmation page for users with PLRID", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with BTA for Pillar2")
       givenLogsInWithBTAForPillar2("Organisation User")
 

@@ -79,7 +79,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       thenIShouldNavigateTo("Due & Over Due Page")
     }
 
-    Scenario("2 - Agent User navigates to Due & Overdue returns page with no accounting period") {
+    Scenario("2 - Agent User navigates to Due & Overdue returns page with no accounting period", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -127,7 +127,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
     }
 
-    Scenario("3 -  Agent User navigates to Due & Overdue returns page with single accounting period") {
+    Scenario("3 -  Agent User navigates to Due & Overdue returns page with single accounting period", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -181,7 +181,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
     }
 
-    Scenario("4 - Agent User navigates to Due & Overdue returns page with all fulfilled submissions") {
+    Scenario("4 - Agent User navigates to Due & Overdue returns page with all fulfilled submissions", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -229,7 +229,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
     }
 
-    Scenario("5 - Agent User navigates to Due & Overdue returns page with some fulfilled submissions") {
+    Scenario("5 - Agent User navigates to Due & Overdue returns page with some fulfilled submissions", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",

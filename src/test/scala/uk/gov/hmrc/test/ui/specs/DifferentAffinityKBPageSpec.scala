@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
 
@@ -24,7 +25,7 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
   Feature("Failure scenarios with different Affinity groups") {
 
-    Scenario("1 - User logins as organisation user and standard role") {
+    Scenario("1 - User logins as organisation user and standard role", AcceptanceTests, ZapAccessibility) {
       Given("Assistant User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Assistant User")
 
@@ -51,7 +52,7 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - User logins as Agent") {
+    Scenario("2 - User logins as Agent", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Agent User")
 
@@ -102,7 +103,7 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - User logins as Individual User") {
+    Scenario("3 - User logins as Individual User", AcceptanceTests, ZapAccessibility) {
       Given("Individual User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Individual User")
 
@@ -141,7 +142,7 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - User logins as organisation user and standard role - ZAP-Accessibility Tests") {
+    Scenario("4 - User logins as organisation user and standard role - ZAP-Accessibility Tests", AcceptanceTests, ZapAccessibility) {
       Given("Assistant User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Assistant User")
 
@@ -150,7 +151,7 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("5 - User logins as Agent") {
+    Scenario("5 - User logins as Agent", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in to register for Pillar2")
       givenLogsInToRegisterForPillar2("Agent User")
 
