@@ -16,19 +16,20 @@
 
 package uk.gov.hmrc.test.ui.specpages.rfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMContactInputPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/contact-details/input-phone"
+object RFMContactSecondaryByPhonePage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/contact-details/second-phone"
 
-  val caption        = ".govuk-caption-l"
-  val continue       = ".govuk-button"
-  val header: String = "h1.govuk-heading-l"
-  val hintText       = ".govuk-hint"
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
 
-  val errorMessage = ".govuk-error-message"
-  val errorLink    = "[href='#phoneNumber']"
-  val errorSummary = ".govuk-error-summary__list"
-  val phoneField   = "#phoneNumber"
-
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    click(submitButtonId)
+  }
 }

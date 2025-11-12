@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.specpages.rfm
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMContactAddressPage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/contact-details/address/input"
+object RFMNFMAddressPage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/input-address"
 
   override val countryDropdown: By = By.id("countryCode")
   override val countryOption: By   = By.id("countryCode__option--0")
@@ -42,8 +42,8 @@ object RFMContactAddressPage extends BasePage {
     clickButtonByText(buttonSaveAndContinue)
   }
 
-  def updateAddressUK(): Unit = {
-    onPage(s"${baseUrl}replace-filing-member/contact-details/address/change-input")
+  def updateAddressNonUK(): Unit = {
+    onPage(s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/change-input-address")
     sendKeys(city, "Updated Test City")
     clickButtonByText(buttonSaveAndContinue)
   }

@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specpages.AuthLoginPage.login
-import uk.gov.hmrc.test.ui.specpages._
-import uk.gov.hmrc.test.ui.specpages.rfm.{RFMCYAPage, RFMEnterPillar2IdPage, RFMRegistrationDatePage, RFMSavingProgressPage, RFMStartPage}
+import uk.gov.hmrc.test.ui.specpages.DashboardPage
+import uk.gov.hmrc.test.ui.specpages.rfm._
 import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
@@ -27,11 +27,11 @@ import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps._
 import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
 import uk.gov.hmrc.test.ui.tags.Wip
 
-class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
+class RFMNFMNoIDFlowSpec extends BaseSpec with Matchers {
 
-  Feature("RFM CYA - NFM No ID flow") {
+  Feature("RFM - No ID flow") {
 
-    Scenario("1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated") {
+    Scenario("1 - Org User submits RFM journey for NFM No Id flow", Wip) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       login(
         userType = "Organisation",
@@ -43,84 +43,42 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
       RFMEnterPillar2IdPage.enterPLRId("XMPLR0123456789")
       RFMRegistrationDatePage.enterDates("31", "01", "2024")
       RFMCYAPage.continueToNextPage()
+
+      And("The user confirms the NFM entity type is not listed")
       RFMSavingProgressPage.continueToNextPage()
+      RFMCorpPositionPage.clickNewNominatedFilingMember()
+      RFMNFMGuidancePage.continueToNextPage()
+      RFMRegisteredInUKPage.selectYes()
+      RFMGRSEntityTypePage.selectEntityTypeNotListed()
 
+      And("The user enters the NFM details")
+      RFMNFMNamePage.enterName()
+      RFMNFMAddressPage.enterAddressUK()
+      RFMNoIDCYAPage.continueToNextPage()
 
+      And("The user enters the NFM primary contact details")
+      RFMContactGuidancePage.continueToNextPage()
+      RFMContactPrimaryNamePage.enterName()
+      RFMContactPrimaryEmailPage.enterEmail()
+      RFMContactPrimaryByPhonePage.selectYes()
+      RFMContactPrimaryPhoneNumberPage.enterPhoneNumber()
 
+      And("The user enters the NFM secondary contact details")
+      RFMContactSecondaryAddPage.selectYes()
+      RFMContactSecondaryNamePage.enterName()
+      RFMContactSecondaryEmailPage.enterEmail()
+      RFMContactSecondaryByPhonePage.selectYes()
+      RFMContactSecondaryPhoneNumberPage.enterPhoneNumber()
 
-//
-//      Then("I should be on RFM Corp Position Page")
-//      thenIShouldBeOnX("RFM Corp Position Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      And("I click on Continue button")
-//      whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      When("I select corp position as NFM")
-//      andISelectCorpPositionAsX("NFM") // auto-chosen (score=1.00, RFMStepsSteps.scala)
-//
-//      Then("I should be on New NFM guidance page")
-//      thenIShouldBeOnX("New NFM guidance page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click on Continue button")
-//      whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should be on RFM registered in UK page")
-//      thenIShouldBeOnX("RFM registered in UK page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I select option No and continue to next")
-//      andISelectOptionXAndContinueToNext("No") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should navigate to RFM New NFM Contact Name Page")
-//      thenIShouldNavigateToX("RFM New NFM Contact Name Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I provide RFM New NFM Name as Test CYA")
-//      andIProvideRFMXAsX("New NFM Name", "Test CYA") // auto-chosen (score=1.00, RFMStepsSteps.scala)
-//
-//      Then("I should navigate to RFM New NFM Contact Address Page")
-//      thenIShouldNavigateToX("RFM New NFM Contact Address Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      And("I enter Address Line 1 as Address Line 1 CYA")
-//      andIEnterXAsX("Address Line 1", "Address Line 1 CYA") // auto-chosen (score=1.00, UPEStepsSteps.scala)
-//
-//      And("I enter City as City CYA")
-//      andIEnterXAsX("City", "City CYA") // auto-chosen (score=1.00, UPEStepsSteps.scala)
-//
-//      And("I enter Postal Code as EH5 5WY")
-//      andIEnterXAsX("Postal Code", "EH5 5WY") // auto-chosen (score=1.00, UPEStepsSteps.scala)
-//
-//      And("I enter Country as Australia")
-//      andIEnterXAsX("Country", "Australia") // auto-chosen (score=1.00, UPEStepsSteps.scala)
-//
-//      And("I click on Country selected")
-////        whenIClickOnCountrySelected("I click on Country selected")  // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      And("I click on Continue button")
-//      whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should be on RFM No ID CYA Page")
-//      thenIShouldBeOnX("RFM No ID CYA Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click change link for RFM New NFM Name")
-//      andIClickChangeLinkForRFMX("New NFM Name") // auto-chosen (score=1.00, RFMStepsSteps.scala)
-//
-//      Then("I should navigate to RFM New NFM Contact Name Change")
-//      thenIShouldNavigateToX("RFM New NFM Contact Name Change") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I provide RFM New NFM Name as New NFM Name Change")
-//      andIProvideRFMXAsX("New NFM Name", "New NFM Name Change") // auto-chosen (score=1.00, RFMStepsSteps.scala)
-//
-//      Then("I should navigate to RFM No ID Change CYA Page")
-//      thenIShouldNavigateToX("RFM No ID Change CYA Page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      When("I click on Continue button")
-//      whenIClickOnContinueButton("I click on Continue button") // auto-chosen (score=1.00, CommonStepsSteps.scala)
-//
-//      Then("I should navigate to RFM Contact Guidance page")
-//      thenIShouldNavigateToX("RFM Contact Guidance page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
-//
-//      And("I click Sign out link")
-//      andIClickXLink("Sign out") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      And("The user enters the NFM contact address")
+      RFMContactAddressPage.enterAddressUK()
 
+      And("The user submits the RFM")
+      RFMFinalReviewCYAPage.onPageSubmitById()
+
+      When("The user is taken to the confirmation screen")
+      RFMConfirmationPage.clickHomePageLink()
+      DashboardPage.onPage()
     }
 
     Scenario("2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey") {
@@ -539,7 +497,6 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
       val addressChangeData: Map[String, String] = Map(
         "Address" -> "Address Line 1 Change\nCity Change\nEH75WK"
       )
-
 
       When("I click change link for RFM Corporate Position")
       andIClickChangeLinkForRFMX("Corporate Position") // auto-chosen (score=1.00, RFMStepsSteps.scala)

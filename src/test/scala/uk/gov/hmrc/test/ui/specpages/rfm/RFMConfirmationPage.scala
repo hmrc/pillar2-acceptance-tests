@@ -16,8 +16,16 @@
 
 package uk.gov.hmrc.test.ui.specpages.rfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMConfirmationPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/review-submit/confirmation"
+object RFMConfirmationPage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/review-submit/confirmation"
+
+  val homePageLink  = "a[href*='/pillar2-top-up-tax-home']"
+
+  def clickHomePageLink(): Unit = {
+    onPage()
+    click(By.cssSelector(homePageLink))
+  }
 }

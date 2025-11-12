@@ -37,28 +37,28 @@ class DashboardPageSpec extends BaseSpec with Matchers {
         "HMRC-PILLAR2-ORG",
         "PLRID",
         "XMPLR0012345676"
-      ) // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      )
 
       Then("I should be on Dashboard page")
-      thenIShouldBeOnX("Dashboard page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldBeOnX("Dashboard page")
 
       When("I click Manage group details link")
-      andIClickXLink("Manage group details") // auto-chosen (score=1.00, CommonStepsSteps.scala)
+      andIClickXLink("Manage group details")
 
       Then("I should navigate to accounts summary page")
-      thenIShouldNavigateToX("accounts summary page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateToX("accounts summary page")
 
       When("I click on change hyperlink next to the FD Group Status")
-      andIClickOnChangeHyperlinkNextToTheX("FD Group Status") // auto-chosen (score=1.00, CYAStepsSteps.scala)
+      andIClickOnChangeHyperlinkNextToTheX("FD Group Status")
 
       When("I select option Only in the UK in further details group status page")
-      andISelectOptionXInFurtherDetailsGroupStatusPage("Only in the UK") // auto-chosen (score=1.00, UPEStepsSteps.scala)
+      andISelectOptionXInFurtherDetailsGroupStatusPage("Only in the UK")
 
       Then("I should navigate to accounts summary page")
-      thenIShouldNavigateToX("accounts summary page") // auto-chosen (score=1.00, EligibilityQuestionStepsSteps.scala)
+      thenIShouldNavigateToX("accounts summary page")
 
       When("I click on change hyperlink next to the Accounting Period")
-      andIClickOnChangeHyperlinkNextToTheX("Accounting Period") // auto-chosen (score=1.00, CYAStepsSteps.scala)
+      andIClickOnChangeHyperlinkNextToTheX("Accounting Period")
 
       When("I enter account period as:")
       val dateRangeData: Map[String, String] = Map(

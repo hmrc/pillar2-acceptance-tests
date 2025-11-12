@@ -16,8 +16,20 @@
 
 package uk.gov.hmrc.test.ui.specpages.rfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMSecondContactQuestionPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/contact-details/second-contact"
+object RFMContactSecondaryAddPage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/contact-details/second-contact"
+
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    click(submitButtonId)
+  }
 }

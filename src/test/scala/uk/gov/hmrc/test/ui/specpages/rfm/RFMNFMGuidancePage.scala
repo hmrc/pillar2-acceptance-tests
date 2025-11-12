@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.specpages
+package uk.gov.hmrc.test.ui.specpages.rfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object NewNFMGuidancePage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/business-matching/content"
+object RFMNFMGuidancePage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/business-matching/content"
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(continueButtonId)
+  }
 }

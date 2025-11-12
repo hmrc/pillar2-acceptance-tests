@@ -16,8 +16,19 @@
 
 package uk.gov.hmrc.test.ui.specpages.rfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMContactNumberPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/contact-details/phone"
+object RFMContactPrimaryEmailPage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/contact-details/input-email"
+
+  override val textInputField: By = By.id("emailAddress")
+  private val emailValue: String  = "abc@def.com"
+  private val emailUpdatedValue: String  = "def@abc.com"
+
+  def enterEmail(): Unit = {
+    onPage()
+    sendKeys(textInputField, emailValue)
+    clickByClass(continue)
+  }
 }

@@ -16,9 +16,17 @@
 
 package uk.gov.hmrc.test.ui.specpages.rfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMContactDetailNamePage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/contact-details/input-name"
-  val nameField   = "#value"
+object RFMContactSecondaryNamePage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/contact-details/second-input-name"
+
+  private val nameValue: String        = "NFM Contact Name"
+  private val nameUpdatedValue: String = "New Entity Name"
+
+  def enterName(): Unit = {
+    onPage()
+    sendKeys(textInputField, nameValue)
+    clickByClass(continue)
+  }
 }

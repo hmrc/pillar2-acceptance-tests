@@ -18,5 +18,20 @@ package uk.gov.hmrc.test.ui.specpages.rfm
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object RFMCorpPositionPage extends BasePage {
-  val url: String = s"$baseUrl" + "replace-filing-member/corporate-position"
+  override val url: String = s"${baseUrl}replace-filing-member/corporate-position"
+
+  private val newNominatedFilingMember = "value_1"
+  private val ultimateParentEntity = "value_0"
+
+  def clickNewNominatedFilingMember(): Unit = {
+    onPage()
+    clickById(newNominatedFilingMember)
+    clickByClass(continue)
+  }
+
+  def clickUltimateParentEntity(): Unit = {
+    onPage()
+    clickById(ultimateParentEntity)
+    clickByClass(continue)
+  }
 }

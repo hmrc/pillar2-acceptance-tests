@@ -16,8 +16,13 @@
 
 package uk.gov.hmrc.test.ui.specpages.rfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMContactGuidancePage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/contact-details/content"
+object RFMContactGuidancePage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/contact-details/content"
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    clickByCss(continue)
+  }
 }

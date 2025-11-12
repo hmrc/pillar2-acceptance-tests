@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object UPECheckYourAnswersPage extends BasePage {
-  val url: String        = s"$baseUrl" + "business-matching/ultimate-parent/no-id/check-answers"
+  override val url: String        = s"${baseUrl}business-matching/ultimate-parent/no-id/check-answers"
 
   val changeName         = "a[href*='/change-input-name']"
   val changeAddress      = "a[href*='/change-input-address']"

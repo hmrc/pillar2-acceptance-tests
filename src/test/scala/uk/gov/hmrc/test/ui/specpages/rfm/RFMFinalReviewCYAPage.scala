@@ -16,10 +16,13 @@
 
 package uk.gov.hmrc.test.ui.specpages.rfm
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMFinalReviewCYAPage extends PageObject {
-  val url: String                   = s"$rootUrl" + "replace-filing-member/review-submit/check-answers"
+object RFMFinalReviewCYAPage extends BasePage {
+  override val url: String        = s"${baseUrl}replace-filing-member/review-submit/check-answers"
+  override val submitButtonId: By = By.id("send")
+
   val valueList                     = ".govuk-summary-list__value"
   val changeCorporatePosition       = "a[href*='/change-corporate-position']"
   val changeCompany                 = "a[href*='/change-registered-in-uk']"
@@ -28,4 +31,5 @@ object RFMFinalReviewCYAPage extends PageObject {
   val changeAddress                 = "[href*='address/change-input']"
   val changePhoneContact            = "a[href*='/change-phone']"
   val changeSecondContactPreference = "[href*='change-second-contact']"
+
 }

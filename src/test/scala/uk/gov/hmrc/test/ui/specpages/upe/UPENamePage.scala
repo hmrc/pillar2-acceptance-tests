@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.specpages.upe
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
 object UPENamePage extends BasePage {
-  override val url: String      = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-name"
+  override val url: String = s"${baseUrl}business-matching/ultimate-parent/no-id/input-name"
 
-  private val nameValue: String = "Entity Name"
+  private val nameValue: String        = "Entity Name"
   private val nameUpdatedValue: String = "New Entity Name"
 
   def enterName(): Unit = {

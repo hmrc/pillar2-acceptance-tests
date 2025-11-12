@@ -19,19 +19,22 @@ package uk.gov.hmrc.test.ui.specpages.rfm
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.specpages.BasePage
 
-object RFMNoIDCYAPage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/check-answers"
+object RFMContactSecondaryPhoneNumberPage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/contact-details/second-input-phone"
 
-  val changeName         = "a[href*='/change-input-name']"
-  val changeAddress      = "a[href*='/change-input-address']"
+  override val textInputField: By             = By.id("phoneNumber")
+  private val phoneNumberValue: String        = "01234 567890"
+  private val phoneNumberUpdatedValue: String = "09876 543210"
 
-  def clickChangeLink(changeLink: String): Unit = {
+  def enterPhoneNumber(): Unit = {
     onPage()
-    clickByCss(changeLink)
+    sendKeys(textInputField, phoneNumberValue)
+    clickByClass(continue)
   }
 
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickByCss(continue)
+  def updatePhoneNumber(): Unit = {
+    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-phone")
+    sendKeys(textInputField, phoneNumberUpdatedValue)
+    clickByClass(continue)
   }
 }

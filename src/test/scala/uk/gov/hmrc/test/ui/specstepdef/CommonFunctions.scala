@@ -23,7 +23,6 @@ import uk.gov.hmrc.test.ui.cucumber.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.specpages._
 import uk.gov.hmrc.test.ui.specpages.contactDetails._
-import uk.gov.hmrc.test.ui.specpages.repayments._
 import uk.gov.hmrc.test.ui.specpages.rfm._
 
 object CommonFunctions
@@ -52,34 +51,15 @@ object CommonFunctions
       case "Registration API error page"                => RegistrationAPIerrorPage
       case "Registration In Progress page"              => RegistrationInProgressPage
       case "Incomplete Data Submission Error Page"      => IncompleteDataSubmissionErrorPage
-      case "New NFM guidance page"                      => NewNFMGuidancePage
-      case "RFM registered in UK page"                  => RFMRegisteredInUKPage
-      case "RFM Contact Guidance page"                  => RFMContactGuidancePage
-      case "RFM Contact Detail Page"                    => RFMContactDetailNamePage
-      case "RFM Contact Email Page"                     => RFMContactEmailPage
-      case "RFM Contact Number Page"                    => RFMContactNumberPage
-      case "RFM Contact Input Page"                     => RFMContactInputPage
-      case "RFM New NFM Contact Name Page"              => RFMNewNFMContactNamePage
-      case "RFM New NFM Contact Address Page"           => RFMNewNFMContactAddressInputPage
-      case "RFM No ID CYA Page"                         => RFMNoIDCYAPage
       case "RFM New NFM Contact Name Change"            => RFMNewNFMContactNameChangePage
       case "RFM No ID Change CYA Page"                  => RFMNoIDChangeCYAPage
-      case "RFM Second Contact Question Page"           => RFMSecondContactQuestionPage
-      case "RFM second contact name page"               => RFMSecondContactNamePage
-      case "RFM second contact email page"              => RFMSecondContactEmailPage
-      case "RFM second contact phone question page"     => RFMSecondContactPhoneQuestionPage
-      case "RFM second contact phone page"              => RFMSecondContactPhonePage
-      case "RFM UK based entity type page"              => RFMGRSEntityTypePage
       case "RFM UK limited Company GRSPage"             => RFMUKLimitedCompanyGRSPage
       case "RFM LLP GRS page"                           => RFMLLPGRSPage
       case "RFM GRS Registration Not Called Error Page" => RFMGRSRegistrationNotCalledErrorPage
       case "RFM GRS Registration Mismatch Error Page"   => RFMGRSRegistrationMismatchErrorPage
-      case "RFM Contact Address Page"                   => RFMContactAddressPage
-      case "RFM Final Review Page"                      => RFMFinalReviewCYAPage
       case "RFM No record Match Error Page"             => RFMNoMatchErrorPage
       case "ASA Home Page"                              => ASAHomePage
       case "RFM No Return Back Error Page"              => RFMNoReturnBackErrorPage
-      case "RFM Confirmation Page"                      => RFMConfirmationPage
       case "Amend API error Page for RFM"               => AmendAPIerrorPage_RFM
       case "RFM journey recovery page"                  => RFMJourneyRecoveryPage
       case "RFM incomplete task error page"             => RFMIncompleteErrorPage

@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.specpages
 import org.openqa.selenium.By
 
 object DashboardPage extends BasePage {
-  override val url: String = s"$baseUrl" + "pillar2-top-up-tax-home"
+  override val url: String = s"${baseUrl}pillar2-top-up-tax-home"
 
   private val ASALink              = "a[href*='/asa/home']"
   private val dueAndOverdueReturns = "a[href*='/due-and-overdue-returns']"
