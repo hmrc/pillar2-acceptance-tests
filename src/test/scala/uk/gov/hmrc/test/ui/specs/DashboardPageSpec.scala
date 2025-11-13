@@ -98,56 +98,59 @@ class DashboardPageSpec extends BaseSpec with Matchers {
       andIAmOnFeedbackSurveyPage()
     }
 
-    Scenario("2 - User navigates to group details page and validates the data", AcceptanceTests, ZapAccessibility) {
-      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345676"
-      )
+    //TODO PIL-2519  MNE restricted need to be revisited after review.
 
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
 
-      When("I click Manage group details link")
-      andIClickLink("Manage group details")
-
-      Then("I should navigate to accounts summary page")
-      thenIShouldNavigateTo("accounts summary page")
-
-      When("I click on change hyperlink next to the FD Group Status")
-      andIClickOnChangeHyperlinkNextToThe("FD Group Status")
-
-      When("I select option Only in the UK in further details group status page")
-      andISelectOptionInFurtherDetailsGroupStatusPage("Only in the UK")
-
-      Then("I should navigate to accounts summary page")
-      thenIShouldNavigateTo("accounts summary page")
-
-      When("I click on change hyperlink next to the Accounting Period")
-      andIClickOnChangeHyperlinkNextToThe("Accounting Period")
-
-      When("I enter account period as:")
-      val dateRangeData: Map[String, String] = Map(
-        "startDate.day"   -> "5",
-        "startDate.month" -> "5",
-        "startDate.year"  -> "2025",
-        "endDate.day"     -> "5",
-        "endDate.month"   -> "6",
-        "endDate.year"    -> "2026"
-      )
-      andIEnterAccountPeriodAs(dateRangeData)
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should be redirected to Manage Account processing Page or Dashboard page")
-      thenIShouldBeRedirectedTo("Manage Account processing Page", "Dashboard page")
-
-      And("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-    }
+    //    Scenario("2 - User navigates to group details page and validates the data", AcceptanceTests, ZapAccessibility) {
+//      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
+//      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
+//        "Organisation",
+//        "HMRC-PILLAR2-ORG",
+//        "PLRID",
+//        "XMPLR0012345676"
+//      )
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//      When("I click Manage group details link")
+//      andIClickLink("Manage group details")
+//
+//      Then("I should navigate to accounts summary page")
+//      thenIShouldNavigateTo("accounts summary page")
+//
+//      When("I click on change hyperlink next to the FD Group Status")
+//      andIClickOnChangeHyperlinkNextToThe("FD Group Status")
+//
+//      When("I select option Only in the UK in further details group status page")
+//      andISelectOptionInFurtherDetailsGroupStatusPage("Only in the UK")
+//
+//      Then("I should navigate to accounts summary page")
+//      thenIShouldNavigateTo("accounts summary page")
+//
+//      When("I click on change hyperlink next to the Accounting Period")
+//      andIClickOnChangeHyperlinkNextToThe("Accounting Period")
+//
+//      When("I enter account period as:")
+//      val dateRangeData: Map[String, String] = Map(
+//        "startDate.day"   -> "5",
+//        "startDate.month" -> "5",
+//        "startDate.year"  -> "2025",
+//        "endDate.day"     -> "5",
+//        "endDate.month"   -> "6",
+//        "endDate.year"    -> "2026"
+//      )
+//      andIEnterAccountPeriodAs(dateRangeData)
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should be redirected to Manage Account processing Page or Dashboard page")
+//      thenIShouldBeRedirectedTo("Manage Account processing Page", "Dashboard page")
+//
+//      And("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//    }
 
     Scenario("3 - User navigates to amend contact details page and validates the data", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
@@ -288,6 +291,8 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
+    //TODO PIL-2449 logic has changed so XEPLR4000000000 will not go to dashboard, need to be deleted after review.
+
     Scenario("5 - Verify Transaction History pages for Org user", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0000000122 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
@@ -377,43 +382,43 @@ class DashboardPageSpec extends BaseSpec with Matchers {
       And("I click Sign out link")
       andIClickLink("Sign out")
 
-      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR4000000000"
-      )
-
-      And("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click View transaction history link")
-      andIClickLink("View transaction history")
-
-      Then("I should be on Transaction History Error Page")
-      thenIShouldBeOn("Transaction History Error Page")
-
-      When("I click Return to your account homepage link")
-      andIClickLink("Return to your account homepage")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click View transaction history link")
-      andIClickLink("View transaction history")
-
-      Then("I should be on Transaction History Error Page")
-      thenIShouldBeOn("Transaction History Error Page")
-
-      When("I select back link")
-      andISelectBackLink()
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      And("I click Sign out link")
-      andIClickLink("Sign out")
+//      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
+//      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
+//        "Organisation",
+//        "HMRC-PILLAR2-ORG",
+//        "PLRID",
+//        "XEPLR4000000000"
+//      )
+//
+//      And("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//      When("I click View transaction history link")
+//      andIClickLink("View transaction history")
+//
+//      Then("I should be on Transaction History Error Page")
+//      thenIShouldBeOn("Transaction History Error Page")
+//
+//      When("I click Return to your account homepage link")
+//      andIClickLink("Return to your account homepage")
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//      When("I click View transaction history link")
+//      andIClickLink("View transaction history")
+//
+//      Then("I should be on Transaction History Error Page")
+//      thenIShouldBeOn("Transaction History Error Page")
+//
+//      When("I select back link")
+//      andISelectBackLink()
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//      And("I click Sign out link")
+//      andIClickLink("Sign out")
 
       Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR6666666666 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(

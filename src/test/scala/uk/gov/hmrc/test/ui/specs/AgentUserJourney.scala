@@ -423,6 +423,8 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldNavigateTo("ASA Home Page")
     }
 
+    //TODO PIL-2449 logic has changed so XEPLR4000000000 will not go to dashboard, need to be deleted after review.
+
     Scenario("7 - Verify Transaction History pages for Agent user", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
@@ -535,56 +537,56 @@ class AgentUserJourney extends BaseSpec with Matchers {
       And("I click Sign out link")
       andIClickLink("Sign out")
 
-      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
-
-      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR4000000000 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR4000000000", "pillar2-auth")
-
-      Then("I should be on ASA Pillar2 Input Page")
-      thenIShouldBeOn("ASA Pillar2 Input Page")
-
-      And("I provide ASA Pillar2 ID as XEPLR4000000000")
-      andIProvideASAAs("Pillar2 ID", "XEPLR4000000000")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to ASA Confirmation Page")
-      thenIShouldNavigateTo("ASA Confirmation Page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Dashboard page")
-      thenIShouldNavigateTo("Dashboard page")
-
-      When("I click View transaction history link")
-      andIClickLink("View transaction history")
-
-      Then("I should be on Transaction History Error Page")
-      thenIShouldBeOn("Transaction History Error Page")
-
-      When("I click Return to your account homepage link")
-      andIClickLink("Return to your account homepage")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click View transaction history link")
-      andIClickLink("View transaction history")
-
-      Then("I should be on Transaction History Error Page")
-      thenIShouldBeOn("Transaction History Error Page")
-
-      When("I select back link")
-      andISelectBackLink()
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      And("I click Sign out link")
-      andIClickLink("Sign out")
+//      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
+//      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
+//
+//      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR4000000000 and pillar2-auth for Pillar2 service")
+//      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR4000000000", "pillar2-auth")
+//
+//      Then("I should be on ASA Pillar2 Input Page")
+//      thenIShouldBeOn("ASA Pillar2 Input Page")
+//
+//      And("I provide ASA Pillar2 ID as XEPLR4000000000")
+//      andIProvideASAAs("Pillar2 ID", "XEPLR4000000000")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to ASA Confirmation Page")
+//      thenIShouldNavigateTo("ASA Confirmation Page")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to Dashboard page")
+//      thenIShouldNavigateTo("Dashboard page")
+//
+//      When("I click View transaction history link")
+//      andIClickLink("View transaction history")
+//
+//      Then("I should be on Transaction History Error Page")
+//      thenIShouldBeOn("Transaction History Error Page")
+//
+//      When("I click Return to your account homepage link")
+//      andIClickLink("Return to your account homepage")
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//      When("I click View transaction history link")
+//      andIClickLink("View transaction history")
+//
+//      Then("I should be on Transaction History Error Page")
+//      thenIShouldBeOn("Transaction History Error Page")
+//
+//      When("I select back link")
+//      andISelectBackLink()
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//      And("I click Sign out link")
+//      andIClickLink("Sign out")
 
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
