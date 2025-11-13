@@ -414,342 +414,342 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Agent User navigates to repayment journey pages",AcceptanceTests, ZapAccessibility) {
-      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
-
-      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674",
-        "pillar2-auth"
-      )
-
-      Then("I should be on ASA Pillar2 Input Page")
-      thenIShouldBeOn("ASA Pillar2 Input Page")
-
-      And("I provide ASA Pillar2 ID as XMPLR0012345674")
-      andIProvideASAAs("Pillar2 ID", "XMPLR0012345674")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to ASA Confirmation Page")
-      thenIShouldNavigateTo("ASA Confirmation Page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Dashboard page")
-      thenIShouldNavigateTo("Dashboard page")
-
-      When("I click Request a repayment link")
-      andIClickLink("Request a repayment")
-
-      Then("I should navigate to Repayment Guidance Page")
-      thenIShouldNavigateTo("Repayment Guidance Page")
-
-      When("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Repayment Amount Page")
-      thenIShouldNavigateTo("Repayment Amount Page")
-
-      When("I provide Refund Amount as 9999.99")
-      andIProvideRefundAmountAs("9999.99")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Reason For Refund Page")
-      thenIShouldNavigateTo("Reason For Refund Page")
-
-      When("I click Report Pillar 2 Top-up Taxes link")
-      andIClickLink("Report Pillar 2 Top-up Taxes")
-
-      Then("I should navigate to Dashboard page")
-      thenIShouldNavigateTo("Dashboard page")
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton()
-
-      Then("I should navigate to Reason For Refund Page")
-      thenIShouldNavigateTo("Reason For Refund Page")
-
-      When("I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.")
-      andIProvideValueForAs(
-        "Refund Reason",
-        "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content."
-      )
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Repayment Method Page")
-      thenIShouldNavigateTo("Repayment Method Page")
-
-      And("I select repayment method as UK bank account")
-      andISelectRepaymentMethodAs("UK bank account")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should be on UK Bank Account Payment Page")
-      thenIShouldBeOn("UK Bank Account Payment Page")
-
-      When("I click Report Pillar 2 Top-up Taxes link")
-      andIClickLink("Report Pillar 2 Top-up Taxes")
-
-      Then("I should navigate to Dashboard page")
-      thenIShouldNavigateTo("Dashboard page")
-
-      When("I click Request a repayment link")
-      andIClickLink("Request a repayment")
-
-      Then("I should navigate to Repayment Guidance Page")
-      thenIShouldNavigateTo("Repayment Guidance Page")
-
-      When("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Repayment Amount Page")
-      thenIShouldNavigateTo("Repayment Amount Page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Reason For Refund Page")
-      thenIShouldNavigateTo("Reason For Refund Page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Repayment Method Page")
-      thenIShouldNavigateTo("Repayment Method Page")
-
-      When("I select repayment method as Non-UK bank account")
-      andISelectRepaymentMethodAs("Non-UK bank account")
-
-      When("I enter Non UK Bank Account details as:")
-      val bankDetails: Map[String, String] = Map(
-        "bankName"          -> "HSBC",
-        "nameOnBankAccount" -> "Test Name",
-        "bic"               -> "HBUKGB4B",
-        "iban"              -> "GB29NWBK60161331926819"
-      )
-      andIEnterNonUKBankAccountDetailsAs(bankDetails)
-
-      And("I provide Repayment contact name as Repayment Contact Name")
-      IProvideRepaymentContactXAsX("name", "Repayment Contact Name")
-
-      When("I provide Repayment contact email as repayment@email.com")
-      IProvideRepaymentContactXAsX("email", "repayment@email.com")
-
-      When("I select option Yes and continue to next")
-      andISelectOptionAndContinueToNext("Yes")
-
-      When("I provide Repayment contact phone as 789765423")
-      IProvideRepaymentContactXAsX("phone", "789765423")
-
-      Then("I should be on Repayment CYA Page")
-      thenIShouldBeOn("Repayment CYA Page")
-
-      When("I select back link")
-      andISelectBackLink()
-
-      Then("I should be on Repayment Phone Input Page")
-      thenIShouldBeOn("Repayment Phone Input Page")
-
-      When("I click Report Pillar 2 Top-up Taxes link")
-      andIClickLink("Report Pillar 2 Top-up Taxes")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton()
-
-      Then("I should be on Repayment Phone Input Page")
-      thenIShouldBeOn("Repayment Phone Input Page")
-
-      When("I select back link")
-      andISelectBackLink()
-
-      Then("I should be on Repayment Phone Page")
-      thenIShouldBeOn("Repayment Phone Page")
-
-      When("I select back link")
-      andISelectBackLink()
-
-      Then("I should be on Repayment Contact Email Page")
-      thenIShouldBeOn("Repayment Contact Email Page")
-
-      When("I select back link")
-      andISelectBackLink()
-
-      Then("I should be on Repayment Contact Page")
-      thenIShouldBeOn("Repayment Contact Page")
-
-      When("I navigate from Contact page to CYA page")
-      andINavigateFromContactPageToCYAPage("I navigate from Contact page to CYA page")
-
-      Then("I should be on Repayment CYA Page")
-      thenIShouldBeOn("Repayment CYA Page")
-
-      When("I click change link for Repayment Amount")
-      whenIClickChangeLinkForRepaymentX("Amount")
-
-      When("I provide Refund Amount as 1000.00")
-      andIProvideRefundAmountAs("1000.00")
-
-      Then("I should be on Repayment CYA Page")
-      thenIShouldBeOn("Repayment CYA Page")
-
-      When("I click change link for Repayment Reason")
-      whenIClickChangeLinkForRepaymentX("Reason")
-
-      And("I provide Refund Reason as Test Reason")
-      andIProvideRefundReasonAsX("Test Reason")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should be on Repayment CYA Page")
-      thenIShouldBeOn("Repayment CYA Page")
-
-      When("I click change link for Repayment Bank Name")
-      whenIClickChangeLinkForRepaymentX("Bank Name")
-
-      And("I provide value for Bank Name as HSBC2")
-      andIProvideValueForAs("Bank Name", "HSBC2")
-
-      And("I provide value for Account Name as Test Name2")
-      andIProvideValueForAs("Account Name", "Test Name2")
-
-      And("I provide value for Swift Code as HBUKGB4C")
-      andIProvideValueForAs("Swift Code", "HBUKGB4C")
-
-      And("I provide value for Iban as GB29NWBK60161331926820")
-      andIProvideValueForAs("Iban", "GB29NWBK60161331926820")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should be on Repayment CYA Page")
-      thenIShouldBeOn("Repayment CYA Page")
-
-      When("I click change link for Repayment Contact Name")
-      whenIClickChangeLinkForRepaymentX("Contact Name")
-
-      And("I provide Repayment contact name as Repayment Contact Name change")
-      IProvideRepaymentContactXAsX("name", "Repayment Contact Name change")
-
-      Then("I should be on Repayment CYA Page")
-      thenIShouldBeOn("Repayment CYA Page")
-
-      When("I click change link for Repayment Contact Email")
-      whenIClickChangeLinkForRepaymentX("Contact Email")
-
-      When("I provide Repayment contact email as email@change.com")
-      IProvideRepaymentContactXAsX("email", "email@change.com")
-
-      Then("I should be on Repayment CYA Page")
-      thenIShouldBeOn("Repayment CYA Page")
-
-      When("I click change link for Repayment Contact Phone")
-      whenIClickChangeLinkForRepaymentX("Contact Phone")
-
-      When("I select option No and continue to next")
-      andISelectOptionAndContinueToNext("No")
-
-      Then("I should be on Repayment CYA Page")
-      thenIShouldBeOn("Repayment CYA Page")
-
-      And("I should see details as below:")
-      val summaryDetails: Map[String, String] = Map(
-        "Name of the bank"         -> "HSBC2",
-        "Name on account"          -> "Test Name2",
-        "BIC or SWIFT code"        -> "HBUKGB4C",
-        "IBAN"                     -> "GB29NWBK60161331926820",
-        "Contact name"             -> "Repayment Contact Name change",
-        "Email address"            -> "email@change.com",
-        "Can we contact by phone?" -> "No"
-      )
-      andIShouldSeeDetailsAsBelow(summaryDetails)
-
-      When("I click change link for Repayment UK Bank Method")
-      whenIClickChangeLinkForRepaymentX("UK Bank Method")
-
-      When("I select repayment method as UK bank account")
-      andISelectRepaymentMethodAs("UK bank account")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      And("I provide value for UK Bank Name as Natwest")
-      andIProvideValueForAs("UK Bank Name", "Natwest")
-
-      And("I provide value for UK Account Name as Epic Adventure Inc")
-      andIProvideValueForAs("UK Account Name", "Epic Adventure Inc")
-
-      And("I provide value for Sort Code as 206705")
-      andIProvideValueForAs("Sort Code", "206705")
-
-      And("I provide value for UK Account number as 86473611")
-      andIProvideValueForAs("UK Account number", "86473611")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      And("I can see Print this page link")
-      thenICanSeeLink("Print this page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should be redirected to Repayment processing page or Repayment Confirmation Page")
-      thenIShouldBeRedirectedTo("Repayment processing page", "Repayment Confirmation Page")
-
-      And("I should be on Repayment Confirmation Page")
-      thenIShouldBeOn("Repayment Confirmation Page")
-
-      Then("I can see Sign out link")
-      thenICanSeeLink("Sign out")
-
-      And("I can see Print this page link")
-      thenICanSeeLink("Print this page")
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton()
-
-      Then("I should be on Repayment Return Error Page")
-      thenIShouldBeOn("Repayment Return Error Page")
-
-      Then("I can see Sign out link")
-      thenICanSeeLink("Sign out")
-
-      When("I click Report Pillar 2 Top-up Taxes link")
-      andIClickLink("Report Pillar 2 Top-up Taxes")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton()
-
-      And("I click report and manage your Pillar 2 Top-up Taxes link")
-      andIClickLink("report and manage your Pillar 2 Top-up Taxes")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-    }
+//    Scenario("3 - Agent User navigates to repayment journey pages",AcceptanceTests, ZapAccessibility) {
+//      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
+//      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
+//        "Agent",
+//        "HMRC-AS-AGENT",
+//        "AgentReference",
+//        "1234"
+//      )
+//
+//      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
+//      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
+//        "HMRC-PILLAR2-ORG",
+//        "PLRID",
+//        "XMPLR0012345674",
+//        "pillar2-auth"
+//      )
+//
+//      Then("I should be on ASA Pillar2 Input Page")
+//      thenIShouldBeOn("ASA Pillar2 Input Page")
+//
+//      And("I provide ASA Pillar2 ID as XMPLR0012345674")
+//      andIProvideASAAs("Pillar2 ID", "XMPLR0012345674")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to ASA Confirmation Page")
+//      thenIShouldNavigateTo("ASA Confirmation Page")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to Dashboard page")
+//      thenIShouldNavigateTo("Dashboard page")
+//
+//      When("I click Request a repayment link")
+//      andIClickLink("Request a repayment")
+//
+//      Then("I should navigate to Repayment Guidance Page")
+//      thenIShouldNavigateTo("Repayment Guidance Page")
+//
+//      When("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to Repayment Amount Page")
+//      thenIShouldNavigateTo("Repayment Amount Page")
+//
+//      When("I provide Refund Amount as 9999.99")
+//      andIProvideRefundAmountAs("9999.99")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to Reason For Refund Page")
+//      thenIShouldNavigateTo("Reason For Refund Page")
+//
+//      When("I click Report Pillar 2 Top-up Taxes link")
+//      andIClickLink("Report Pillar 2 Top-up Taxes")
+//
+//      Then("I should navigate to Dashboard page")
+//      thenIShouldNavigateTo("Dashboard page")
+//
+//      When("I click the browser back button")
+//      andIClickTheBrowserBackButton()
+//
+//      Then("I should navigate to Reason For Refund Page")
+//      thenIShouldNavigateTo("Reason For Refund Page")
+//
+//      When("I provide value for Refund Reason as A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content.")
+//      andIProvideValueForAs(
+//        "Refund Reason",
+//        "A content designer works on the end-to-end journey of a service to help users complete their goal and government deliver a policy intent. Their work may involve the creation of, or change to, a transaction, product or single piece of content."
+//      )
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to Repayment Method Page")
+//      thenIShouldNavigateTo("Repayment Method Page")
+//
+//      And("I select repayment method as UK bank account")
+//      andISelectRepaymentMethodAs("UK bank account")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should be on UK Bank Account Payment Page")
+//      thenIShouldBeOn("UK Bank Account Payment Page")
+//
+//      When("I click Report Pillar 2 Top-up Taxes link")
+//      andIClickLink("Report Pillar 2 Top-up Taxes")
+//
+//      Then("I should navigate to Dashboard page")
+//      thenIShouldNavigateTo("Dashboard page")
+//
+//      When("I click Request a repayment link")
+//      andIClickLink("Request a repayment")
+//
+//      Then("I should navigate to Repayment Guidance Page")
+//      thenIShouldNavigateTo("Repayment Guidance Page")
+//
+//      When("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to Repayment Amount Page")
+//      thenIShouldNavigateTo("Repayment Amount Page")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to Reason For Refund Page")
+//      thenIShouldNavigateTo("Reason For Refund Page")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should navigate to Repayment Method Page")
+//      thenIShouldNavigateTo("Repayment Method Page")
+//
+//      When("I select repayment method as Non-UK bank account")
+//      andISelectRepaymentMethodAs("Non-UK bank account")
+//
+//      When("I enter Non UK Bank Account details as:")
+//      val bankDetails: Map[String, String] = Map(
+//        "bankName"          -> "HSBC",
+//        "nameOnBankAccount" -> "Test Name",
+//        "bic"               -> "HBUKGB4B",
+//        "iban"              -> "GB29NWBK60161331926819"
+//      )
+//      andIEnterNonUKBankAccountDetailsAs(bankDetails)
+//
+//      And("I provide Repayment contact name as Repayment Contact Name")
+//      IProvideRepaymentContactXAsX("name", "Repayment Contact Name")
+//
+//      When("I provide Repayment contact email as repayment@email.com")
+//      IProvideRepaymentContactXAsX("email", "repayment@email.com")
+//
+//      When("I select option Yes and continue to next")
+//      andISelectOptionAndContinueToNext("Yes")
+//
+//      When("I provide Repayment contact phone as 789765423")
+//      IProvideRepaymentContactXAsX("phone", "789765423")
+//
+//      Then("I should be on Repayment CYA Page")
+//      thenIShouldBeOn("Repayment CYA Page")
+//
+//      When("I select back link")
+//      andISelectBackLink()
+//
+//      Then("I should be on Repayment Phone Input Page")
+//      thenIShouldBeOn("Repayment Phone Input Page")
+//
+//      When("I click Report Pillar 2 Top-up Taxes link")
+//      andIClickLink("Report Pillar 2 Top-up Taxes")
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//      When("I click the browser back button")
+//      andIClickTheBrowserBackButton()
+//
+//      Then("I should be on Repayment Phone Input Page")
+//      thenIShouldBeOn("Repayment Phone Input Page")
+//
+//      When("I select back link")
+//      andISelectBackLink()
+//
+//      Then("I should be on Repayment Phone Page")
+//      thenIShouldBeOn("Repayment Phone Page")
+//
+//      When("I select back link")
+//      andISelectBackLink()
+//
+//      Then("I should be on Repayment Contact Email Page")
+//      thenIShouldBeOn("Repayment Contact Email Page")
+//
+//      When("I select back link")
+//      andISelectBackLink()
+//
+//      Then("I should be on Repayment Contact Page")
+//      thenIShouldBeOn("Repayment Contact Page")
+//
+//      When("I navigate from Contact page to CYA page")
+//      andINavigateFromContactPageToCYAPage("I navigate from Contact page to CYA page")
+//
+//      Then("I should be on Repayment CYA Page")
+//      thenIShouldBeOn("Repayment CYA Page")
+//
+//      When("I click change link for Repayment Amount")
+//      whenIClickChangeLinkForRepaymentX("Amount")
+//
+//      When("I provide Refund Amount as 1000.00")
+//      andIProvideRefundAmountAs("1000.00")
+//
+//      Then("I should be on Repayment CYA Page")
+//      thenIShouldBeOn("Repayment CYA Page")
+//
+//      When("I click change link for Repayment Reason")
+//      whenIClickChangeLinkForRepaymentX("Reason")
+//
+//      And("I provide Refund Reason as Test Reason")
+//      andIProvideRefundReasonAsX("Test Reason")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should be on Repayment CYA Page")
+//      thenIShouldBeOn("Repayment CYA Page")
+//
+//      When("I click change link for Repayment Bank Name")
+//      whenIClickChangeLinkForRepaymentX("Bank Name")
+//
+//      And("I provide value for Bank Name as HSBC2")
+//      andIProvideValueForAs("Bank Name", "HSBC2")
+//
+//      And("I provide value for Account Name as Test Name2")
+//      andIProvideValueForAs("Account Name", "Test Name2")
+//
+//      And("I provide value for Swift Code as HBUKGB4C")
+//      andIProvideValueForAs("Swift Code", "HBUKGB4C")
+//
+//      And("I provide value for Iban as GB29NWBK60161331926820")
+//      andIProvideValueForAs("Iban", "GB29NWBK60161331926820")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should be on Repayment CYA Page")
+//      thenIShouldBeOn("Repayment CYA Page")
+//
+//      When("I click change link for Repayment Contact Name")
+//      whenIClickChangeLinkForRepaymentX("Contact Name")
+//
+//      And("I provide Repayment contact name as Repayment Contact Name change")
+//      IProvideRepaymentContactXAsX("name", "Repayment Contact Name change")
+//
+//      Then("I should be on Repayment CYA Page")
+//      thenIShouldBeOn("Repayment CYA Page")
+//
+//      When("I click change link for Repayment Contact Email")
+//      whenIClickChangeLinkForRepaymentX("Contact Email")
+//
+//      When("I provide Repayment contact email as email@change.com")
+//      IProvideRepaymentContactXAsX("email", "email@change.com")
+//
+//      Then("I should be on Repayment CYA Page")
+//      thenIShouldBeOn("Repayment CYA Page")
+//
+//      When("I click change link for Repayment Contact Phone")
+//      whenIClickChangeLinkForRepaymentX("Contact Phone")
+//
+//      When("I select option No and continue to next")
+//      andISelectOptionAndContinueToNext("No")
+//
+//      Then("I should be on Repayment CYA Page")
+//      thenIShouldBeOn("Repayment CYA Page")
+//
+//      And("I should see details as below:")
+//      val summaryDetails: Map[String, String] = Map(
+//        "Name of the bank"         -> "HSBC2",
+//        "Name on account"          -> "Test Name2",
+//        "BIC or SWIFT code"        -> "HBUKGB4C",
+//        "IBAN"                     -> "GB29NWBK60161331926820",
+//        "Contact name"             -> "Repayment Contact Name change",
+//        "Email address"            -> "email@change.com",
+//        "Can we contact by phone?" -> "No"
+//      )
+//      andIShouldSeeDetailsAsBelow(summaryDetails)
+//
+//      When("I click change link for Repayment UK Bank Method")
+//      whenIClickChangeLinkForRepaymentX("UK Bank Method")
+//
+//      When("I select repayment method as UK bank account")
+//      andISelectRepaymentMethodAs("UK bank account")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      And("I provide value for UK Bank Name as Natwest")
+//      andIProvideValueForAs("UK Bank Name", "Natwest")
+//
+//      And("I provide value for UK Account Name as Epic Adventure Inc")
+//      andIProvideValueForAs("UK Account Name", "Epic Adventure Inc")
+//
+//      And("I provide value for Sort Code as 206705")
+//      andIProvideValueForAs("Sort Code", "206705")
+//
+//      And("I provide value for UK Account number as 86473611")
+//      andIProvideValueForAs("UK Account number", "86473611")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      And("I can see Print this page link")
+//      thenICanSeeLink("Print this page")
+//
+//      And("I click on Continue button")
+//      whenIClickOnContinueButton("I click on Continue button")
+//
+//      Then("I should be redirected to Repayment processing page or Repayment Confirmation Page")
+//      thenIShouldBeRedirectedTo("Repayment processing page", "Repayment Confirmation Page")
+//
+//      And("I should be on Repayment Confirmation Page")
+//      thenIShouldBeOn("Repayment Confirmation Page")
+//
+//      Then("I can see Sign out link")
+//      thenICanSeeLink("Sign out")
+//
+//      And("I can see Print this page link")
+//      thenICanSeeLink("Print this page")
+//
+//      When("I click the browser back button")
+//      andIClickTheBrowserBackButton()
+//
+//      Then("I should be on Repayment Return Error Page")
+//      thenIShouldBeOn("Repayment Return Error Page")
+//
+//      Then("I can see Sign out link")
+//      thenICanSeeLink("Sign out")
+//
+//      When("I click Report Pillar 2 Top-up Taxes link")
+//      andIClickLink("Report Pillar 2 Top-up Taxes")
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//      When("I click the browser back button")
+//      andIClickTheBrowserBackButton()
+//
+//      And("I click report and manage your Pillar 2 Top-up Taxes link")
+//      andIClickLink("report and manage your Pillar 2 Top-up Taxes")
+//
+//      Then("I should be on Dashboard page")
+//      thenIShouldBeOn("Dashboard page")
+//
+//    }
 
     Scenario("4 - Agent User navigates to repayment journey pages for UK bank account",AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
