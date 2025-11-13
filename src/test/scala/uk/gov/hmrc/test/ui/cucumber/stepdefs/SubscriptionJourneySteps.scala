@@ -16,14 +16,13 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.datatable.DataTable
 import uk.gov.hmrc.test.ui.cucumber.Input.getAttributeOfId
 import uk.gov.hmrc.test.ui.cucumber.{Input, Wait}
 import uk.gov.hmrc.test.ui.pages._
 
 class SubscriptionJourneySteps extends CommonFunctions {
 
-  And("""^I enter account period as:$""") { (accountPeriod: DataTable) =>
+  And("""^I enter account period as:$""") { (accountPeriod: Map[String,String]) =>
     Wait.waitForTagNameToBeRefreshed("h1")
     Input.enterData(accountPeriod)
     UPEEntityTypePage.clickContinue()

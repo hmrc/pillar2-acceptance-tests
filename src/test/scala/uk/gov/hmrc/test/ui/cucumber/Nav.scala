@@ -21,9 +21,13 @@ import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 object Nav extends BrowserDriver {
 
-  def navigateTo(url: String): Unit =
-    driver.navigate.to(url)
+//  def navigateTo(url: String): Unit =
+//    driver.navigate.to(url)
 
+  def navigateTo(url: String): Unit = {
+    println(s"Nav.navigateTo called with url=$url, driver=$driver")
+    driver.navigate.to(url)
+  }
   def browserBack(): Unit = {
     driver.navigate().back()
   }

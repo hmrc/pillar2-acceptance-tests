@@ -116,7 +116,7 @@ Feature: UPE NO ID journey
     When I enter UPE Email address as testteam@email.com
     Then I should navigate to UPE Phone page
 
-  @batch1 @zap_accessibility
+  @batch1 @zap_accessibility @tests1
   Scenario: 4 - Change UPE fields from UPE check your answers page
     Given Organisation User navigates to UPE check your answer page with credId UPENoIDJourney
     Then I should be on Check your answers page

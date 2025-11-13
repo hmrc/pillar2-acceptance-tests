@@ -331,7 +331,9 @@ object AuthLoginPage extends BrowserDriver with PageObject {
   }
 
   def agentLoginWithExistingEntity(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
+    println(s"Current url: $url, browser: ${System.getProperty("browser")}")
     Nav.navigateTo(url)
+
     Input.sendKeysByName(frontEndASAUrl, redirectUrlField)
     Input.sendKeysById(enrolmentKeyField, enrolmentKey)
     Input.sendKeysById(identifierNameField, identifierName)
