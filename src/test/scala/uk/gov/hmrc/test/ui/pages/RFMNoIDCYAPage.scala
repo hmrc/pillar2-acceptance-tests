@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object RFMNoIDCYAPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/business-matching/filing-member/no-id/check-answers"

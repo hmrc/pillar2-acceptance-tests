@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object GGRGuidancePage extends PageObject {
   val url: String    = s"$rootUrl" + "eligibility/service-not-suitable/under-750-million"

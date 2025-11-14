@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object BTAPillar2IDCheckPage extends PageObject {
   val url: String  = s"$rootUrl" + "bta/pillar2-id"

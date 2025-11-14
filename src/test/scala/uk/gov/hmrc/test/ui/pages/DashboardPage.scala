@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object DashboardPage extends PageObject {
   val url: String = s"$rootUrl" + "pillar2-top-up-tax-home"

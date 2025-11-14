@@ -18,13 +18,13 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.CYAStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.PaymentStepsSteps.{IProvideRepaymentContactXAsX, IShouldSeeBankAccountErrorMessageXOnTheXElement, andIAccessPaymentPage, andIEnterNonUKBankAccountDetailsAs, andIEnterUKBankAccountDetailsAs, andINavigateFromContactPageToCYAPage, andIProvideRefundAmountAs, andIProvideRefundReasonAsX, andIProvideValueForAs, andISelectRepaymentMethodAs, givenIAccessRepaymentContactEmailPage, thenTheCharacterLimitTextShouldDisplayX, whenIAccessRepaymentCYAPage, whenIClickChangeLinkForRepaymentX}
-import uk.gov.hmrc.test.ui.specstepdef.RFMStepsSteps.thenIShouldBeRedirectedTo
-import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps.andIAmOnFeedbackSurveyPage
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.PaymentStepsSteps.{IProvideRepaymentContactXAsX, IShouldSeeBankAccountErrorMessageXOnTheXElement, andIAccessPaymentPage, andIEnterNonUKBankAccountDetailsAs, andIEnterUKBankAccountDetailsAs, andINavigateFromContactPageToCYAPage, andIProvideRefundAmountAs, andIProvideRefundReasonAsX, andIProvideValueForAs, andISelectRepaymentMethodAs, givenIAccessRepaymentContactEmailPage, thenTheCharacterLimitTextShouldDisplayX, whenIAccessRepaymentCYAPage, whenIClickChangeLinkForRepaymentX}
+import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.thenIShouldBeRedirectedTo
+import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.andIAmOnFeedbackSurveyPage
 
 class RepaymentJourneysSpec extends BaseSpec with Matchers {
 

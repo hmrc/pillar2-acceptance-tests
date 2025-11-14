@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.Find.findByCss
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object UPEEntityTypePage extends PageObject {
   val url: String = s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"

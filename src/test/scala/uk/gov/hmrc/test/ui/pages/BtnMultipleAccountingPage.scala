@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findById
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.Find.findById
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object BtnMultipleAccountingPage extends PageObject {
   val url: String                           = s"$rootUrl" + "below-threshold-notification/choose-accounting-period"

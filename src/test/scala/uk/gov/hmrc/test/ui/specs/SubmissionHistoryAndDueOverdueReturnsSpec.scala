@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps.{andIShouldSeeIntAccountingPeriodsOnDueOverduePage, andIShouldSeeIntAccountingPeriodsOnSubHistoryPage, andIShouldSeeIntSectionWithStatusString}
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps.{thenIShouldBeOn, thenIShouldNavigateTo}
+import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps.{andIShouldSeeIntAccountingPeriodsOnDueOverduePage, andIShouldSeeIntAccountingPeriodsOnSubHistoryPage, andIShouldSeeIntSectionWithStatusString}
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.{thenIShouldBeOn, thenIShouldNavigateTo}
 
 class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
 

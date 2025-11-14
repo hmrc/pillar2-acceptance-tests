@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 
 class EligiblityQuestionsPageSpec extends BaseSpec with Matchers {
 

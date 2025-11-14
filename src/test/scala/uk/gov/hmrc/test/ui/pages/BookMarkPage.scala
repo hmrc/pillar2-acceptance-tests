@@ -15,7 +15,7 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object BookMarkPage extends PageObject {
   val url: String = s"$rootUrl" + "error/restart-error"

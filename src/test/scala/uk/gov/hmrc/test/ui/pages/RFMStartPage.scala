@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findByCss
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.Find.findByCss
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object RFMStartPage extends PageObject {
   val url: String = s"$rootUrl" + "replace-filing-member/start"

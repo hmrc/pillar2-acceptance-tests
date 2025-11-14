@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.ASAStepsSteps.{andIShouldSeeIntAccountingPeriodsOnSubHistoryPage, _}
-import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 class AgentDueAndOverDue extends BaseSpec with Matchers {
 
   Feature("Pillar2 Due & Overdue returns for Agent User Journey") {

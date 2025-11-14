@@ -17,13 +17,14 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.WebElement
-import uk.gov.hmrc.test.ui.cucumber.Find._
-import uk.gov.hmrc.test.ui.cucumber.{Input, PageObject, Wait}
+import uk.gov.hmrc.selenium.webdriver.Driver
+import uk.gov.hmrc.test.ui.helper.Find._
+import uk.gov.hmrc.test.ui.helper.{Input, PageObject, Wait}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 object OnlinePaymentPages extends PageObject with BrowserDriver {
 
-  val url: String              = driver.getCurrentUrl
+  val url: String              = Driver.instance.getCurrentUrl
   val paymentInput: WebElement = findById("amountToPay")
   val continueButton           = ".govuk-button"
 

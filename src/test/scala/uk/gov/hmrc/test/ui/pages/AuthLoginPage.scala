@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.cucumber._
+import uk.gov.hmrc.test.ui.helper._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 object AuthLoginPage extends BrowserDriver with PageObject {
@@ -331,9 +331,7 @@ object AuthLoginPage extends BrowserDriver with PageObject {
   }
 
   def agentLoginWithExistingEntity(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
-    println(s"Current url: $url, browser: ${System.getProperty("browser")}")
     Nav.navigateTo(url)
-
     Input.sendKeysByName(frontEndASAUrl, redirectUrlField)
     Input.sendKeysById(enrolmentKeyField, enrolmentKey)
     Input.sendKeysById(identifierNameField, identifierName)

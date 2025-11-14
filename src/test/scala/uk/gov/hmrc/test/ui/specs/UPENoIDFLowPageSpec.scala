@@ -18,10 +18,10 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specstepdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.TaskListStepsSteps._
-import uk.gov.hmrc.test.ui.specstepdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.TaskListStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
 
 class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
