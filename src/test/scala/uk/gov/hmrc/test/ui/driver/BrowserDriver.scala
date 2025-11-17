@@ -20,13 +20,6 @@ import com.typesafe.scalalogging.LazyLogging
 import org.openqa.selenium.WebDriver
 import uk.gov.hmrc.selenium.webdriver.Driver
 
-//trait BrowserDriver extends LazyLogging {
-//  logger.info(
-//    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-//  )
-//
-//  implicit def driver: WebDriver = Driver.instance
-//}
 trait BrowserDriver extends LazyLogging {
   implicit def driver: WebDriver = {
     if (Driver.instance == null) {
@@ -34,9 +27,6 @@ trait BrowserDriver extends LazyLogging {
       logger.error(msg)
       throw new IllegalStateException(msg)
     }
-    logger.info(
-      s"Using Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-    )
     Driver.instance
   }
 }
