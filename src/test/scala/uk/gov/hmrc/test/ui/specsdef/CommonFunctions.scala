@@ -203,7 +203,7 @@ object CommonFunctions
       case "BTN Confirmation Page"                      => BtnConfirmationPage
       case "BTN Cannot Return Page"                     => BtnCannotReturnPage
       case "BTN Problem with service Page"              => BtnProblemWithServicePage
-      case "BTN Under Enquiry Page"                     => BtnUnderEnquiryPage
+     // case "BTN Under Enquiry Page"                     => BtnUnderEnquiryPage
     }
   }
 }
