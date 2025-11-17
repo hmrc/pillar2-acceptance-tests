@@ -24,7 +24,6 @@ import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.PaymentStepsSteps.{thenIGoTillGetReadyToApproveYourPaymentPage, thenIMakeSuccessfulPayment, thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage}
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.thenIShouldBeRedirectedTo
-import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
 
 class DashboardPageSpec extends BaseSpec with Matchers {

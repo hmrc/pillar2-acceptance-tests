@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specsdef
 
-import io.cucumber.scala.{EN, ScalaDsl}
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.helper.PageObject
@@ -24,7 +23,7 @@ import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.pages._
 
 object CommonFunctions
-    extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
+    extends BrowserDriver with Eventually with Matchers {
 
   def pageMatch(page: String): PageObject = {
     page match {

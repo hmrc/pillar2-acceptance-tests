@@ -18,5 +18,4 @@ package uk.gov.hmrc.test.ui.specs.tags
 
 import org.scalatest.Tag
 
-//object ZapAccessibility extends Tag("ZapAccessibility")
-object ZapAccessibility extends Tag("Batch")
+object ZapAccessibility extends Tag("ZapAccessibility")
