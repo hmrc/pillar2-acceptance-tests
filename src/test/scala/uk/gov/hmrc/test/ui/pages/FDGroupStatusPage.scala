@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object FDGroupStatusPage extends PageObject {
   val url: String = s"$rootUrl" + "further-details/group-status"

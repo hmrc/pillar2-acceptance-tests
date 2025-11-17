@@ -16,21 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.Find.findById
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.Find.findById
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object BtnMultipleAccountingPage extends PageObject {
-  val url: String = s"$rootUrl" + "below-threshold-notification/choose-accounting-period"
+  val url: String                           = s"$rootUrl" + "below-threshold-notification/choose-accounting-period"
+  val CurrentAccountingPeriod               = "radio_0"
+  val PreviousAccountingPeriod              = "radio_1"
+  val PreviousAccountingPeriodUKTRSubmitted = "radio_2"
+  val PreviousAccountingPeriodBTnSubmitted  = "radio_3"
 
-  def selectAccountingPeriod(accountingPeriod: String): Unit = {
-    if (accountingPeriod == "CurrentAccountingPeriod") {
-      findById("radio_0").click()
-    } else if (accountingPeriod == "PreviousAccountingPeriod") {
-      findById("radio_1").click()
-    } else if (accountingPeriod == "PreviousAccountingPeriodUKTRSubmitted") {
-      findById("radio_2").click()
-    } else if (accountingPeriod == "PreviousAccountingPeriodBTNSubmitted") {
-      findById("radio_3").click()
-    }
-  }
+  def selectCurrentAccountingPeriod(): Unit               = findById(CurrentAccountingPeriod).click()
+  def selectPreviousAccountingPeriod(): Unit              = findById(PreviousAccountingPeriod).click()
+  def selectPreviousAccountingPeriodBTNSubmitted(): Unit  = findById(PreviousAccountingPeriodBTnSubmitted).click()
+  def selectPreviousAccountingPeriodUKTRSubmitted(): Unit = findById(PreviousAccountingPeriodUKTRSubmitted).click()
 }

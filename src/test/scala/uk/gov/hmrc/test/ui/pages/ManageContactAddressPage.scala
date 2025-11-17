@@ -15,7 +15,7 @@
  */
 
 package uk.gov.hmrc.test.ui.pages
-import uk.gov.hmrc.test.ui.cucumber.PageObject
+import uk.gov.hmrc.test.ui.helper.PageObject
 
 object ManageContactAddressPage extends PageObject {
   val url: String = s"$rootUrl" + "manage-account/contact-details/address/change-input"
