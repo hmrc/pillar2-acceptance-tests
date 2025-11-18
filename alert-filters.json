@@ -1,69 +1,69 @@
-{
-  "add": [
-    {
-      "reason": "This is outside our scope.",
-      "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
-      "ruleId": 10202
-    },
-    {
-      "reason": "This is not in scope.",
-      "url": "http://localhost:10050/report-pillar2-top-up-taxes/under-construction",
-      "ruleId": 10023
-    },
-    {
-      "reason": "Guidance Page is outside our scope.",
-      "url": "https:\\/\\/www.gov.uk\\/guidance\\/.*",
-      "ruleId": 10202,
-      "urlIsRegex": "true"
-    },
-    {
-      "reason": "Govt Pages are outside our scope.",
-      "url": "https:\\/\\/www.gov.uk\\/.*",
-      "ruleId": 10021,
-      "urlIsRegex": "true"
-    },
-    {
-      "reason": "Govt Assets Pages are outside our scope.",
-      "url": "https:\\/\\/www.gov.uk\\/assets\\/.*",
-      "ruleId": 10098,
-      "urlIsRegex": "true"
-    },
-    {
-      "reason": "Govt Publications Pages are outside our scope.",
-      "url": "https://www.gov.uk/government/publications/introduction-of-the-new-multinational-top-up-tax/multinational-top-up-tax-uk-adoption-of-organisation-for-economic-co-operation-and-development-pillar-2",
-      "ruleId": 10202
-    },
-    {
-      "reason": "Pillar2 service guidance page is outside our scope.",
-      "url": "https://www.gov.uk/guidance/check-if-you-need-to-report-pillar-2-top-up-taxes",
-      "ruleId": 10038
-    },
-    {
-      "reason": "Stub implementation for FM - outside our control",
-      "url": "http://localhost:10050/report-pillar2-top-up-taxes/test-only/stub-grs-journey-data?continueUrl=normalmode/fm&entityType=ukLimitedCompany",
-      "ruleId": 90022
-    },
-    {
-      "reason": "Stub implementation for UPE - outside our control",
-      "url": "http://localhost:10050/report-pillar2-top-up-taxes/test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=ukLimitedCompany",
-      "ruleId": 90022
-    },
-    {
-      "reason": "Invalid alert for Personally Identifiable Information",
-      "url": "http://localhost:10050/report-pillar2-top-up-taxes/business-matching/filing-member/no-id/input-email",
-      "ruleId": 10062
-    },
-    {
-      "reason": "Pay by bank paths are OPS service - alert out of scope for pillar2 service",
-      "url": "http://localhost:7802/pay-by-bank/.*",
-      "ruleId": 10038,
-      "urlIsRegex": "true"
-    },
-    {
-      "reason": "Payment stubs are OPS service - alert out of scope for pillar2 service",
-      "url": "http://localhost:9975/payments-stubs/open-banking/stub-bank/.*",
-      "ruleId": 10020,
-      "urlIsRegex": "true"
-    }
-  ]
-}
+//{
+//  "add": [
+//    {
+//      "reason": "This is outside our scope.",
+//      "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
+//      "ruleId": 10202
+//    },
+//    {
+//      "reason": "This is not in scope.",
+//      "url": "http://localhost:10050/report-pillar2-top-up-taxes/under-construction",
+//      "ruleId": 10023
+//    },
+//    {
+//      "reason": "Guidance Page is outside our scope.",
+//      "url": "https:\\/\\/www.gov.uk\\/guidance\\/.*",
+//      "ruleId": 10202,
+//      "urlIsRegex": "true"
+//    },
+//    {
+//      "reason": "Govt Pages are outside our scope.",
+//      "url": "https:\\/\\/www.gov.uk\\/.*",
+//      "ruleId": 10021,
+//      "urlIsRegex": "true"
+//    },
+//    {
+//      "reason": "Govt Assets Pages are outside our scope.",
+//      "url": "https:\\/\\/www.gov.uk\\/assets\\/.*",
+//      "ruleId": 10098,
+//      "urlIsRegex": "true"
+//    },
+//    {
+//      "reason": "Govt Publications Pages are outside our scope.",
+//      "url": "https://www.gov.uk/government/publications/introduction-of-the-new-multinational-top-up-tax/multinational-top-up-tax-uk-adoption-of-organisation-for-economic-co-operation-and-development-pillar-2",
+//      "ruleId": 10202
+//    },
+//    {
+//      "reason": "Pillar2 service guidance page is outside our scope.",
+//      "url": "https://www.gov.uk/guidance/check-if-you-need-to-report-pillar-2-top-up-taxes",
+//      "ruleId": 10038
+//    },
+//    {
+//      "reason": "Stub implementation for FM - outside our control",
+//      "url": "http://localhost:10050/report-pillar2-top-up-taxes/test-only/stub-grs-journey-data?continueUrl=normalmode/fm&entityType=ukLimitedCompany",
+//      "ruleId": 90022
+//    },
+//    {
+//      "reason": "Stub implementation for UPE - outside our control",
+//      "url": "http://localhost:10050/report-pillar2-top-up-taxes/test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=ukLimitedCompany",
+//      "ruleId": 90022
+//    },
+//    {
+//      "reason": "Invalid alert for Personally Identifiable Information",
+//      "url": "http://localhost:10050/report-pillar2-top-up-taxes/business-matching/filing-member/no-id/input-email",
+//      "ruleId": 10062
+//    },
+//    {
+//      "reason": "Pay by bank paths are OPS service - alert out of scope for pillar2 service",
+//      "url": "http://localhost:7802/pay-by-bank/.*",
+//      "ruleId": 10038,
+//      "urlIsRegex": "true"
+//    },
+//    {
+//      "reason": "Payment stubs are OPS service - alert out of scope for pillar2 service",
+//      "url": "http://localhost:9975/payments-stubs/open-banking/stub-bank/.*",
+//      "ruleId": 10020,
+//      "urlIsRegex": "true"
+//    }
+//  ]
+//}
