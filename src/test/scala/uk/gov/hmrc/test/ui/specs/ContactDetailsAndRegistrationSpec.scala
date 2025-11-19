@@ -441,7 +441,7 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 //      thenIShouldBeOn("Review answers page")
 //    }
 
-    Scenario("3 - Contact details pages Error validations and Registration Confirmation Page Validations",AcceptanceTests, ZapAccessibility) {
+    Scenario("3 - Contact details pages Error validations and Registration Confirmation Page Validations", AcceptanceTests, ZapAccessibility) {
       Given("I clear the cache")
       thenIClearTheCache()
 
@@ -676,7 +676,11 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
       andIClickTheBrowserBackButton()
     }
 
-    Scenario("4 - Validate subscription journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.", AcceptanceTests, ZapAccessibility) {
+    Scenario(
+      "4 - Validate subscription journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.",
+      AcceptanceTests,
+      ZapAccessibility
+    ) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -830,7 +834,10 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
       thenIShouldBeOn("Dashboard page")
     }
 
-    Scenario("5 - Validate Yes journey from knock back page for duplicate details on registration for UPE and NFM GRS flows", AcceptanceTests, ZapAccessibility) {
+    Scenario(
+      "5 - Validate Yes journey from knock back page for duplicate details on registration for UPE and NFM GRS flows",
+      AcceptanceTests,
+      ZapAccessibility) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -1018,7 +1025,7 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - UPE No Id journey navigation to registration in progress page",AcceptanceTests, ZapAccessibility) {
+    Scenario("6 - UPE No Id journey navigation to registration in progress page", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 

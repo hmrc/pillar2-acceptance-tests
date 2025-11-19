@@ -51,7 +51,6 @@ object EligibilityQuestionStepsSteps {
   }
 
   def thenIShouldBeOn(page: String): Unit = {
-    // Wait.waitForElementToClickTagName("h1")
     assertNavigationUrl(pageMatch(page))
   }
 

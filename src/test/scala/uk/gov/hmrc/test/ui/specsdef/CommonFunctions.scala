@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.specsdef
 
 import org.scalatest.concurrent.Eventually
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.helper.PageObject
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.helper.PageObject
 import uk.gov.hmrc.test.ui.pages._
 
 object CommonFunctions
@@ -203,7 +203,8 @@ object CommonFunctions
       case "BTN Confirmation Page"                      => BtnConfirmationPage
       case "BTN Cannot Return Page"                     => BtnCannotReturnPage
       case "BTN Problem with service Page"              => BtnProblemWithServicePage
-     // case "BTN Under Enquiry Page"                     => BtnUnderEnquiryPage
+      case "MTT to DTT kb page"                         => MttToDttPage
+      // case "BTN Under Enquiry Page"                     => BtnUnderEnquiryPage
     }
   }
 }
