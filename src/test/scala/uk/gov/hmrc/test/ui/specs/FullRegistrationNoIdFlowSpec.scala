@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.pages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.contactDetails._
 import uk.gov.hmrc.test.ui.pages.furtherDetails._
 import uk.gov.hmrc.test.ui.pages.nfm._
