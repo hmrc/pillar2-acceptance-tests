@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.helper._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-object AuthLoginPage extends BrowserDriver with PageObject {
+object AuthLoginOldPage extends BrowserDriver with PageObject {
   val url: String                           = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
   val frontEndUrl: String                   = TestConfiguration.url("pillar2-frontend")
   val incorrectUrl: String                  = TestConfiguration.url("pillar2-frontend") + "randomUrl"

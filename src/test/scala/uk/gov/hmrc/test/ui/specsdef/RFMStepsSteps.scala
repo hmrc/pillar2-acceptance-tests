@@ -30,10 +30,10 @@ object RFMStepsSteps {
 
   def givenXLogsInWithRfmURLToPillar2(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginWithUserToRFM(name)
-      case "Individual User"   => AuthLoginPage.loginAsIndToRFM(name)
-      case "Agent User"        => AuthLoginPage.loginAsAgentToRFM(name)
-      case "Assistant User"    => AuthLoginPage.loginAssistantToRFM(name)
+      case "Organisation User" => AuthLoginOldPage.loginWithUserToRFM(name)
+      case "Individual User"   => AuthLoginOldPage.loginAsIndToRFM(name)
+      case "Agent User"        => AuthLoginOldPage.loginAsAgentToRFM(name)
+      case "Assistant User"    => AuthLoginOldPage.loginAssistantToRFM(name)
 
     }
   }
@@ -111,8 +111,8 @@ object RFMStepsSteps {
       enrolmentKey: String,
       identifierName: String,
       identifierValue: String): Unit = {
-    AuthLoginPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
-    AuthLoginPage.loginWithExistingEntityWithRFM(enrolmentKey, identifierName, identifierValue)
+    AuthLoginOldPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
+    AuthLoginOldPage.loginWithExistingEntityWithRFM(enrolmentKey, identifierName, identifierValue)
   }
 
   def andIClickChangeLinkForRFMX(link: String): Unit = {
@@ -155,8 +155,8 @@ object RFMStepsSteps {
 
   def givenXLogsInToRFMWithCredIdXForPillar2(name: String, credId: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
-      case _                   => AuthLoginPage.loginWithUserToRFMWithCredId(name, credId)
+      case "Organisation User" => AuthLoginOldPage.loginWithUserToRFMWithCredId(name, credId)
+      case _                   => AuthLoginOldPage.loginWithUserToRFMWithCredId(name, credId)
     }
   }
 

@@ -28,105 +28,105 @@ object CommonStepsSteps {
 
   def givenLogsInToRegisterForPillar2(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginWithUser(name)
-      case "Individual User"   => AuthLoginPage.loginAsInd(name)
-      case "Agent User"        => AuthLoginPage.loginAsAgent(name)
-      case "Assistant User"    => AuthLoginPage.loginAssistant(name)
+      case "Organisation User" => AuthLoginOldPage.loginWithUser(name)
+      case "Individual User"   => AuthLoginOldPage.loginAsInd(name)
+      case "Agent User"        => AuthLoginOldPage.loginAsAgent(name)
+      case "Assistant User"    => AuthLoginOldPage.loginAssistant(name)
     }
   }
 
   def givenLogsInToRegisterForPillar2AgentService(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginAsOrgToASA(name)
-      case "Individual User"   => AuthLoginPage.loginAsIndToASA(name)
-      case "Assistant User"    => AuthLoginPage.loginAsAssistantToASA(name)
+      case "Organisation User" => AuthLoginOldPage.loginAsOrgToASA(name)
+      case "Individual User"   => AuthLoginOldPage.loginAsIndToASA(name)
+      case "Assistant User"    => AuthLoginOldPage.loginAsAssistantToASA(name)
 
     }
   }
 
   def givenLogsInToSubscribeForPillar2(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToSubscribe(name)
-      case _                   => AuthLoginPage.loginToSubscribe(name)
+      case "Organisation User" => AuthLoginOldPage.loginToSubscribe(name)
+      case _                   => AuthLoginOldPage.loginToSubscribe(name)
     }
   }
 
   def givenLogsInWithBTAForPillar2(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginUsingBta(name)
-      case _                   => AuthLoginPage.loginToSubscribe(name)
+      case "Organisation User" => AuthLoginOldPage.loginUsingBta(name)
+      case _                   => AuthLoginOldPage.loginToSubscribe(name)
     }
   }
 
   def givenLogsInWithoutPillar2Enrolment(): Unit = {
-    AuthLoginPage.loginToUPE()
+    AuthLoginOldPage.loginToUPE()
   }
 
   def givenLogsInAndNavigatesToRFMStartPageWithoutPillar2EnrolmentWithGroupId(groupId: String): Unit = {
-    AuthLoginPage.loginToRFMWithGroupId(groupId)
+    AuthLoginOldPage.loginToRFMWithGroupId(groupId)
   }
 
   def givenLogsInAsUpeWithCredIdForPillar2(name: String, credId: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToUPEWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToUPEWithCredID(name, credId)
+      case "Organisation User" => AuthLoginOldPage.loginToUPEWithCredID(name, credId)
+      case _                   => AuthLoginOldPage.loginToUPEWithCredID(name, credId)
     }
   }
 
   def givenLogsInWithCredIdForPillar2(name: String, credId: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginAsUserWithCredId(name, credId)
-      case _                   => AuthLoginPage.loginAsUserWithCredId(name, credId)
+      case "Organisation User" => AuthLoginOldPage.loginAsUserWithCredId(name, credId)
+      case _                   => AuthLoginOldPage.loginAsUserWithCredId(name, credId)
     }
   }
 
   // TODO remove as it's not used.
   def givenXLogsInToUpeOrgPageWithCredIDXForPillar2(name: String, credId: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToOrgWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToOrgWithCredID(name, credId)
+      case "Organisation User" => AuthLoginOldPage.loginToOrgWithCredID(name, credId)
+      case _                   => AuthLoginOldPage.loginToOrgWithCredID(name, credId)
     }
   }
 
   // TODO remove as it's not used.
   def givenXLogsInToNfmOrgPageWithCredIDXForPillar2(name: String, credId: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToNfmOrgWithCredID(name, credId)
+      case "Organisation User" => AuthLoginOldPage.loginToNfmOrgWithCredID(name, credId)
+      case _                   => AuthLoginOldPage.loginToNfmOrgWithCredID(name, credId)
     }
   }
 
   // TODO remove as it's not used.
   def givenXLogsInToUpeRegisteredInUKPageWithCredIDXForPillar2(name: String, credId: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToRegWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToRegWithCredID(name, credId)
+      case "Organisation User" => AuthLoginOldPage.loginToRegWithCredID(name, credId)
+      case _                   => AuthLoginOldPage.loginToRegWithCredID(name, credId)
     }
   }
 
   // TODO remove as it's not used.
   def givenXLogsInToUpeNamePageWithCredIDXForPillar2(name: String, credId: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToUPEName(name, credId)
-      case _                   => AuthLoginPage.loginToUPEName(name, credId)
+      case "Organisation User" => AuthLoginOldPage.loginToUPEName(name, credId)
+      case _                   => AuthLoginOldPage.loginToUPEName(name, credId)
     }
   }
 
   // TODO remove as it's not used.
   def givenXLogsInToNfmNamePageWithCredIDXForPillar2(name: String, credId: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
-      case _                   => AuthLoginPage.loginToNFMNameWithCredID(name, credId)
+      case "Organisation User" => AuthLoginOldPage.loginToNFMNameWithCredID(name, credId)
+      case _                   => AuthLoginOldPage.loginToNFMNameWithCredID(name, credId)
     }
   }
 
   def givenOrganisationUserNavigatesToCheckYourAnswerPageWithCredId(name: String, credId: String): Unit = {
     name match {
-      case "UPE"                      => AuthLoginPage.loginToCA(name, credId)
-      case "NFM"                      => AuthLoginPage.loginToNFMCA(name, credId)
-      case "FD"                       => AuthLoginPage.loginToFDCA(name, credId)
-      case "Contact Details"          => AuthLoginPage.loginToCDCA(name, credId)
-      case "Final Check Your Answers" => AuthLoginPage.loginToFinalCA(name, credId)
+      case "UPE"                      => AuthLoginOldPage.loginToCA(name, credId)
+      case "NFM"                      => AuthLoginOldPage.loginToNFMCA(name, credId)
+      case "FD"                       => AuthLoginOldPage.loginToFDCA(name, credId)
+      case "Contact Details"          => AuthLoginOldPage.loginToCDCA(name, credId)
+      case "Final Check Your Answers" => AuthLoginOldPage.loginToFinalCA(name, credId)
     }
   }
 
@@ -493,13 +493,13 @@ object CommonStepsSteps {
       identifierName: String,
       identifierValue: String): Unit = {
     userType match {
-      case "Organisation" => AuthLoginPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
-      case "Agent"        => AuthLoginPage.agentLoginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
+      case "Organisation" => AuthLoginOldPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
+      case "Agent"        => AuthLoginOldPage.agentLoginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
     }
   }
 
   def whenIAddDelegatedEnrolmentWithAndForPillar2Service(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
-    AuthLoginPage.addDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
+    AuthLoginOldPage.addDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
   }
 
   def whenIRefreshThePage(): Unit = {
@@ -516,7 +516,7 @@ object CommonStepsSteps {
   }
 
   def givenIAccessRandomPage(): Unit = {
-    Nav.navigateTo(AuthLoginPage.incorrectUrl)
+    Nav.navigateTo(AuthLoginOldPage.incorrectUrl)
   }
 
   def thenICanSeeLink(linkText: String): Unit = {

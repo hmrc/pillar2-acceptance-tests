@@ -22,29 +22,29 @@ object NFMStepsSteps {
 
   def givenXLogsInNFMNamePageForPillar2(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMName(name)
-      case _                   => AuthLoginPage.loginToNFMName(name)
+      case "Organisation User" => AuthLoginOldPage.loginToNFMName(name)
+      case _                   => AuthLoginOldPage.loginToNFMName(name)
     }
   }
 
   def givenXLogsInNFMAddressPageForPillar2(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMAddress(name)
-      case _                   => AuthLoginPage.loginToNFMAddress(name)
+      case "Organisation User" => AuthLoginOldPage.loginToNFMAddress(name)
+      case _                   => AuthLoginOldPage.loginToNFMAddress(name)
     }
   }
 
   def givenXLogsInNFMContactNamePageForPillar2(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMContactName(name)
-      case _                   => AuthLoginPage.loginToNFMContactName(name)
+      case "Organisation User" => AuthLoginOldPage.loginToNFMContactName(name)
+      case _                   => AuthLoginOldPage.loginToNFMContactName(name)
     }
   }
 
   def givenXLogsInNFMContactEmailPageForPillar2(name: String): Unit = {
     name match {
-      case "Organisation User" => AuthLoginPage.loginToNFMContactEmail(name)
-      case _                   => AuthLoginPage.loginToNFMContactEmail(name)
+      case "Organisation User" => AuthLoginOldPage.loginToNFMContactEmail(name)
+      case _                   => AuthLoginOldPage.loginToNFMContactEmail(name)
     }
   }
 }
