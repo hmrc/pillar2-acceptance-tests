@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
@@ -28,7 +28,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
 
   Feature("RFM CYA - NFM No ID flow") {
 
-    Scenario("1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated",AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated",AcceptanceTests) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Organisation User")
 

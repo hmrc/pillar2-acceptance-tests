@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps._
@@ -28,7 +28,7 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
   Feature("Contact details for the filing member") {
 
-    Scenario("1 - Create a new subscription with UPE NoID Flow and NFM No Id flow to validate Contact Details", AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - Create a new subscription with UPE NoID Flow and NFM No Id flow to validate Contact Details", AcceptanceTests) {
       Given("Organisation User logs in as upe with credId ContactDetails for Pillar2")
       givenLogsInAsUpeWithCredIdForPillar2("Organisation User", "ContactDetails")
 
@@ -441,7 +441,7 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 //      thenIShouldBeOn("Review answers page")
 //    }
 
-    Scenario("3 - Contact details pages Error validations and Registration Confirmation Page Validations", AcceptanceTests, ZapAccessibility) {
+    Scenario("3 - Contact details pages Error validations and Registration Confirmation Page Validations", AcceptanceTests) {
       Given("I clear the cache")
       thenIClearTheCache()
 
@@ -678,8 +678,7 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     Scenario(
       "4 - Validate subscription journey from knock back page for duplicate details on registration for UPE and NFM GRS flows, verify registration confirmation page.",
-      AcceptanceTests,
-      ZapAccessibility
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
@@ -836,8 +835,7 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     Scenario(
       "5 - Validate Yes journey from knock back page for duplicate details on registration for UPE and NFM GRS flows",
-      AcceptanceTests,
-      ZapAccessibility) {
+      AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -1025,7 +1023,7 @@ class ContactDetailsAndRegistrationSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - UPE No Id journey navigation to registration in progress page", AcceptanceTests, ZapAccessibility) {
+    Scenario("6 - UPE No Id journey navigation to registration in progress page", AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 

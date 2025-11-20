@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
@@ -28,7 +28,7 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
 
   Feature("NFM NO ID journey") {
 
-    Scenario("1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated", AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - NFM No Id journey navigation to check your answers page and verify if data is pre populated", AcceptanceTests) {
       Given("Organisation User logs in as upe with credId NFMCYA for Pillar2")
       givenLogsInAsUpeWithCredIdForPillar2("Organisation User", "NFMCYA")
 
@@ -140,7 +140,7 @@ class NFMNoIDFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Validate different error messages for NFM no ID journey pages", AcceptanceTests, ZapAccessibility) {
+    Scenario("2 - Validate different error messages for NFM no ID journey pages", AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 

@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
@@ -168,7 +168,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Organisation User navigates to repayment pages",AcceptanceTests, ZapAccessibility) {
+    Scenario("2 - Organisation User navigates to repayment pages",AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -413,7 +413,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
     }
 
-//    Scenario("3 - Agent User navigates to repayment journey pages",AcceptanceTests, ZapAccessibility) {
+//    Scenario("3 - Agent User navigates to repayment journey pages",AcceptanceTests) {
 //      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
 //      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
 //        "Agent",
@@ -750,7 +750,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 //
 //    }
 
-    Scenario("4 - Agent User navigates to repayment journey pages for UK bank account",AcceptanceTests, ZapAccessibility) {
+    Scenario("4 - Agent User navigates to repayment journey pages for UK bank account",AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -910,7 +910,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("5 - Organisation User navigates to repayment journey pages for UK bank account",AcceptanceTests, ZapAccessibility) {
+    Scenario("5 - Organisation User navigates to repayment journey pages for UK bank account",AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -1026,7 +1026,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Organisation User navigates to error page when repayment submission API fails to submit data to ETMP",AcceptanceTests, ZapAccessibility) {
+    Scenario("6 - Organisation User navigates to error page when repayment submission API fails to submit data to ETMP",AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -1112,7 +1112,7 @@ class RepaymentJourneysSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("7 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP",AcceptanceTests, ZapAccessibility) {
+    Scenario("7 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP",AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",

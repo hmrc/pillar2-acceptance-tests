@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps._
@@ -27,7 +27,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
   Feature("RFM check your answers page") {
 
-    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey",AcceptanceTests,ZapAccessibility) {
+    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey",AcceptanceTests) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Organisation User")
 
@@ -306,7 +306,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Verify Security questions are not pre populated for RFM journey",AcceptanceTests,ZapAccessibility) {
+    Scenario("4 - Verify Security questions are not pre populated for RFM journey",AcceptanceTests) {
       Given("Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2")
       givenXLogsInToRFMWithCredIdXForPillar2("Organisation User", "RFMSaveProgress")
 

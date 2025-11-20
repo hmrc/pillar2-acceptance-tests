@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.TaskListStepsSteps._
@@ -27,7 +27,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
   Feature("Ultimate parent entity and Nominated Filling Member GRS journey") {
 
-    Scenario("1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page",AcceptanceTests,ZapAccessibility) {
+    Scenario("1 - Validate Error scenario and Entity type not listed hyperlink on UPE Org type page",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -54,7 +54,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - User registered as UkLimitedCompany successfully with BV enabled",AcceptanceTests,ZapAccessibility) {
+    Scenario("2 - User registered as UkLimitedCompany successfully with BV enabled",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -870,7 +870,7 @@ class UPEAndNFMGRSFlowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("12 - UPE User error pages - ZAP-Accessibility Test",AcceptanceTests,ZapAccessibility) {
+    Scenario("12 - UPE User error pages - ZAP-Accessibility Test",AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 

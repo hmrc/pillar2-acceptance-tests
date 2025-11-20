@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.TaskListStepsSteps._
@@ -27,7 +27,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
   Feature("UPE NO ID journey") {
 
-    Scenario("1 - UPE No Id journey navigation to check your answers page and verify if data is pre populated",AcceptanceTests,ZapAccessibility) {
+    Scenario("1 - UPE No Id journey navigation to check your answers page and verify if data is pre populated",AcceptanceTests) {
       Given("Organisation User logs in as upe with credId UPENoIDJourney for Pillar2")
       givenLogsInAsUpeWithCredIdForPillar2("Organisation User", "UPENoIDJourney")
 
@@ -243,7 +243,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Validate different error messages for UPE no ID journey pages",AcceptanceTests,ZapAccessibility) {
+    Scenario("3 - Validate different error messages for UPE no ID journey pages",AcceptanceTests) {
       Given("Organisation User logs in to subscribe for Pillar2")
       givenLogsInToSubscribeForPillar2("Organisation User")
 
@@ -327,7 +327,7 @@ class UPENoIDFLowPageSpec extends BaseSpec with Matchers {
 
     }
 
-//    Scenario("4 - Change UPE fields from UPE check your answers page",AcceptanceTests,ZapAccessibility) {
+//    Scenario("4 - Change UPE fields from UPE check your answers page",AcceptanceTests) {
 //      Given("Organisation User navigates to UPE check your answer page with credId UPENoIDJourney")
 //      givenOrganisationUserNavigatesToCheckYourAnswerPageWithCredId("UPE", "UPENoIDJourney")
 //

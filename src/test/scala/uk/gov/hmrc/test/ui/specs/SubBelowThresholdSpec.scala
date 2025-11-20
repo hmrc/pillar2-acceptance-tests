@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
@@ -29,7 +29,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 submission Below threshold notification user journey") {
 
-    Scenario("1 - Org User navigates to below threshold notification pages", AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - Org User navigates to below threshold notification pages", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -115,7 +115,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Agent User navigates to below threshold notification pages", AcceptanceTests, ZapAccessibility) {
+    Scenario("2 - Agent User navigates to below threshold notification pages", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -202,7 +202,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       andIAmOnFeedbackSurveyPage()
     }
 
-    Scenario("3 - Org User navigates to BTN Accounting Period Page", AcceptanceTests, ZapAccessibility) {
+    Scenario("3 - Org User navigates to BTN Accounting Period Page", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -250,7 +250,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
 //TODO ADD 4 LINES - PIL-2323
 
-//    Scenario("4 - Agent User navigates to BTN Accounting Period Page",AcceptanceTests,ZapAccessibility) {
+//    Scenario("4 - Agent User navigates to BTN Accounting Period Page",AcceptanceTests) {
 //      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
 //      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
 //        "Agent",
@@ -310,7 +310,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 //      whenIClickOnContinueButton("I click on Continue button")
 //    }
 
-    Scenario("5 - Agent User navigates to below threshold notification CYA page and change pages", AcceptanceTests, ZapAccessibility) {
+    Scenario("5 - Agent User navigates to below threshold notification CYA page and change pages", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -383,7 +383,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Agent User navigates to below threshold notification CYA page and change pages with KB pages", AcceptanceTests, ZapAccessibility) {
+    Scenario("6 - Agent User navigates to below threshold notification CYA page and change pages with KB pages", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -465,7 +465,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("7 - Org User navigates to below threshold notification CYA page and change pages", AcceptanceTests, ZapAccessibility) {
+    Scenario("7 - Org User navigates to below threshold notification CYA page and change pages", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -515,7 +515,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("8 - Org User navigates to below threshold notification CYA page and change pages with KB pages", AcceptanceTests, ZapAccessibility) {
+    Scenario("8 - Org User navigates to below threshold notification CYA page and change pages with KB pages", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -583,7 +583,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("9 - Org User navigates to KB page, if user click browser back after successful BTN submission", AcceptanceTests, ZapAccessibility) {
+    Scenario("9 - Org User navigates to KB page, if user click browser back after successful BTN submission", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999991 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -642,7 +642,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("10 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests, ZapAccessibility) {
+    Scenario("10 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4220000000 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -687,7 +687,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
     }
     // TODO - XEPLR4000000000,XEPLR5000000000(need to deleted, check PIL-2449)
 
-//    Scenario("10 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]",AcceptanceTests,ZapAccessibility) {
+//    Scenario("10 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]",AcceptanceTests) {
 //      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
 //      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
 //        "Organisation",
@@ -731,7 +731,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 //
 //    }
 //
-//    Scenario("10 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests,ZapAccessibility) {
+//    Scenario("10 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests) {
 //      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5000000000 for Pillar2 service")
 //      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
 //        "Organisation",
@@ -775,7 +775,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 //
 //    }
 
-    Scenario("11 - Agent User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests, ZapAccessibility) {
+    Scenario("11 - Agent User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -844,7 +844,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     // TODO - XEPLR4000000000,XEPLR5000000000(need to deleted, check PIL-2449)
 
-//    Scenario("11 - Agent User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests,ZapAccessibility) {
+//    Scenario("11 - Agent User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests) {
 //      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
 //      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
 //        "Agent",
@@ -911,7 +911,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 //
 //    }
 //
-//    Scenario("11 - Agent User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests,ZapAccessibility) {
+//    Scenario("11 - Agent User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests) {
 //      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
 //      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
 //        "Agent",
@@ -980,8 +980,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     Scenario(
       "12 - Agent User navigates to BTN multiple accounting period for current accounting period to check amend group details",
-      AcceptanceTests,
-      ZapAccessibility
+      AcceptanceTests
     ) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
@@ -1076,7 +1075,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("13 - Agent User navigates to submit BTN multiple accounting period for current accounting period", AcceptanceTests, ZapAccessibility) {
+    Scenario("13 - Agent User navigates to submit BTN multiple accounting period for current accounting period", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -1158,7 +1157,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("14 - Agent User navigates to BTN multiple accounting period for previous accounting period", AcceptanceTests, ZapAccessibility) {
+    Scenario("14 - Agent User navigates to BTN multiple accounting period for previous accounting period", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -1291,7 +1290,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("15- Agent User navigates to BTN Two accounting period for previous and current period.", AcceptanceTests, ZapAccessibility) {
+    Scenario("15- Agent User navigates to BTN Two accounting period for previous and current period.", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",

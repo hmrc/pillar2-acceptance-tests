@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
@@ -26,7 +26,7 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
 
   Feature("Pillar2 Submission History Agent User Journey") {
 
-    Scenario("1 - Agent User navigates to Submission History for no accounting period", AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - Agent User navigates to Submission History for no accounting period", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -65,7 +65,7 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
     }
 
-    Scenario("2 -  Agent User navigates to Submission History for one accounting period", AcceptanceTests, ZapAccessibility) {
+    Scenario("2 -  Agent User navigates to Submission History for one accounting period", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -104,7 +104,7 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(1)
     }
 
-    Scenario("3 - Agent User navigates to Submission History for multiple accounting period", AcceptanceTests, ZapAccessibility) {
+    Scenario("3 - Agent User navigates to Submission History for multiple accounting period", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",

@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps.{andIShouldSeeIntAccountingPeriodsOnDueOverduePage, andIShouldSeeIntAccountingPeriodsOnSubHistoryPage, andIShouldSeeIntSectionWithStatusString}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.{thenIShouldBeOn, thenIShouldNavigateTo}
@@ -26,7 +26,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 Due & Overdue returns And Submission History User Journey") {
 
-    Scenario("1 - Org User navigates to Due & Overdue returns and Submission History for multiple accounting period", ZapAccessibility) {
+    Scenario("1 - Org User navigates to Due & Overdue returns and Submission History for multiple accounting period") {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR1111111111 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -63,7 +63,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
       thenIShouldNavigateTo("Due & Over Due Page")
     }
 
-    Scenario("2 - Org User navigates to Due & Overdue returns and Submission History pages for no accounting period",AcceptanceTests,ZapAccessibility) {
+    Scenario("2 - Org User navigates to Due & Overdue returns and Submission History pages for no accounting period",AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR2222222222 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -89,7 +89,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 -  Org User navigates to due & Due & Overdue returns and Submission History pages for single accounting period", AcceptanceTests,ZapAccessibility) {
+    Scenario("3 -  Org User navigates to due & Due & Overdue returns and Submission History pages for single accounting period", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR3333333333 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -121,7 +121,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Org User navigates to Due & Overdue returns and Submission History pages for all fulfilled submissions",AcceptanceTests,ZapAccessibility) {
+    Scenario("4 - Org User navigates to Due & Overdue returns and Submission History pages for all fulfilled submissions",AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4444444444 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -147,7 +147,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("5 - Org User navigates to Due & Overdue returns and Submission History pages for some fulfilled submissions",AcceptanceTests,ZapAccessibility) {
+    Scenario("5 - Org User navigates to Due & Overdue returns and Submission History pages for some fulfilled submissions",AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5555555555 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -179,7 +179,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Org User navigates to Due & Overdue returns and Submission History for one accounting period",AcceptanceTests,ZapAccessibility) {
+    Scenario("6 - Org User navigates to Due & Overdue returns and Submission History for one accounting period",AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR7777777777 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",

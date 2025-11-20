@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
@@ -28,7 +28,7 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 submission Agent User Journey") {
 
-    Scenario("1 - Agent user capturing Pillar2 ID",AcceptanceTests,ZapAccessibility) {
+    Scenario("1 - Agent user capturing Pillar2 ID",AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -146,7 +146,7 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify Agent service account user unauthorised pages",AcceptanceTests,ZapAccessibility) {
+    Scenario("2 - Verify Agent service account user unauthorised pages",AcceptanceTests) {
       Given("Individual User logs in to register for Pillar2 Agent service")
       givenLogsInToRegisterForPillar2AgentService("Individual User")
 
@@ -191,7 +191,7 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Verify Agent service account user unauthorised pages",AcceptanceTests,ZapAccessibility) {
+    Scenario("3 - Verify Agent service account user unauthorised pages",AcceptanceTests) {
       Given("Organisation User logs in to register for Pillar2 Agent service")
       givenLogsInToRegisterForPillar2AgentService("Organisation User")
 

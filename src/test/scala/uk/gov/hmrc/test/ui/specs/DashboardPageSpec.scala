@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
@@ -98,7 +98,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
       andIAmOnFeedbackSurveyPage()
     }
 
-    Scenario("2 - User navigates to group details page validates the data and MTT to DTT Kb page", AcceptanceTests, ZapAccessibility) {
+    Scenario("2 - User navigates to group details page validates the data and MTT to DTT Kb page", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -161,7 +161,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
       thenIShouldBeOn("Dashboard page")
     }
 
-    Scenario("3 - User navigates to amend contact details page and validates the data", AcceptanceTests, ZapAccessibility) {
+    Scenario("3 - User navigates to amend contact details page and validates the data", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",

@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests}
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
@@ -25,7 +25,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
 
   Feature("Pillar2 Due & Overdue returns for Agent User Journey") {
 
-    Scenario("1 - Agent User navigates to Due & Overdue returns page with multiple accounting period", AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - Agent User navigates to Due & Overdue returns page with multiple accounting period", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
@@ -78,7 +78,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       thenIShouldNavigateTo("Due & Over Due Page")
     }
 
-    Scenario("2 - Agent User navigates to Due & Overdue returns page with no accounting period", AcceptanceTests, ZapAccessibility) {
+    Scenario("2 - Agent User navigates to Due & Overdue returns page with no accounting period", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -126,7 +126,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
     }
 
-    Scenario("3 -  Agent User navigates to Due & Overdue returns page with single accounting period", AcceptanceTests, ZapAccessibility) {
+    Scenario("3 -  Agent User navigates to Due & Overdue returns page with single accounting period", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -180,7 +180,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
     }
 
-    Scenario("4 - Agent User navigates to Due & Overdue returns page with all fulfilled submissions", AcceptanceTests, ZapAccessibility) {
+    Scenario("4 - Agent User navigates to Due & Overdue returns page with all fulfilled submissions", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
@@ -228,7 +228,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
     }
 
-    Scenario("5 - Agent User navigates to Due & Overdue returns page with some fulfilled submissions", AcceptanceTests, ZapAccessibility) {
+    Scenario("5 - Agent User navigates to Due & Overdue returns page with some fulfilled submissions", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Agent",
