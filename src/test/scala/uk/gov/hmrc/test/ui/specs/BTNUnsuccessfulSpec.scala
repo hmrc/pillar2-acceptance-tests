@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{Enrolment, login}
+import uk.gov.hmrc.test.ui.pages.DashboardPage
 import uk.gov.hmrc.test.ui.pages.btn._
 import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 
