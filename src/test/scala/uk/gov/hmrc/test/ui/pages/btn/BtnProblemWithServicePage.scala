@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.btn
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object DashboardPage extends PageObject {
-  val url: String = s"$rootUrl" + "pillar2-top-up-tax-home"
-  val ASALink     = "a[href*='/asa/home']"
+object BtnProblemWithServicePage extends BasePage {
+  override val url: String = s"${baseUrl}below-threshold-notification/problem-with-service"
+
 }

@@ -525,8 +525,8 @@ object CommonStepsSteps {
         Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printThisPage)
         assert(Driver.instance.findElement(By.cssSelector(RegistrationConfirmationPage.printThisPage)).getText.contains(linkText))
       case "Agent Services Account" =>
-        Wait.waitForElementToPresentByCssSelector(DashboardPage.ASALink)
-        assert(Driver.instance.findElement(By.cssSelector(DashboardPage.ASALink)).getText.contains(linkText))
+        Wait.waitForElementToPresentByCssSelector(DashboardOldPage.ASALink)
+        assert(Driver.instance.findElement(By.cssSelector(DashboardOldPage.ASALink)).getText.contains(linkText))
       case "Sign out" =>
         Wait.waitForElementToPresentByCssSelector(RepaymentConfirmationPage.signOut)
         assert(Driver.instance.findElement(By.cssSelector(RepaymentConfirmationPage.signOut)).getText.contains(linkText))
