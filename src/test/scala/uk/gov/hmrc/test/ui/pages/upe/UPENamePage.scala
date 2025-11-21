@@ -23,6 +23,7 @@ object UPENamePage extends BasePage {
 
   private val nameValue: String        = "Entity Name"
   private val nameUpdatedValue: String = "New Entity Name"
+  private val registrationInProgressValue: String = "Medium Processing Corp"
 
   def enterName(): Unit = {
     onPage()
@@ -31,8 +32,14 @@ object UPENamePage extends BasePage {
   }
 
   def updateName(): Unit = {
-    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-name")
+    onPage(s"${baseUrl}business-matching/ultimate-parent/no-id/change-input-name")
     sendKeys(textInputField, nameUpdatedValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def registrationInProgress(): Unit = {
+    onPage()
+    sendKeys(textInputField, registrationInProgressValue)
     clickButtonByText(buttonSaveAndContinue)
   }
 }

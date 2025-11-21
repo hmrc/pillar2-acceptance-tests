@@ -19,5 +19,12 @@ package uk.gov.hmrc.test.ui.pages.registration
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RegistrationConfirmationPage extends BasePage {
-  override val url: String   = s"${baseUrl}review-submit/confirmation"
+  override val url: String = s"${baseUrl}review-submit/confirmation"
+
+  private val homePageLink = "a[href*='/pillar2-top-up-tax-home']"
+
+  def clickHomePageLink(): Unit = {
+    onPage()
+    clickByCss(homePageLink)
+  }
 }

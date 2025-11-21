@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.pages.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.contactDetails._
 import uk.gov.hmrc.test.ui.pages.furtherDetails._
@@ -25,9 +24,9 @@ import uk.gov.hmrc.test.ui.pages.registration._
 import uk.gov.hmrc.test.ui.pages.upe._
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 
-class FullRegistrationNoIdFlowSpec extends BaseSpec with Matchers {
+class FullRegistrationNoIdFlowSpec extends BaseSpec {
 
-  Feature("UPE NO ID journey") {
+  Feature("Full registration with no ID") {
 
     Scenario("Full registration journey with amendments made on check your answers pages", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in without enrollment")

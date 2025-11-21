@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.contactDetails
+package uk.gov.hmrc.test.ui.pages.registration
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ContactDetailsPrimaryContactPage extends BasePage {
-  override val url: String  = s"${baseUrl}contact-details/primary-contact"
-
-  def selectYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    clickByClass(continue)
-  }
-
-  def selectNo(): Unit = {
-    onPage()
-    click(noRadioId)
-    clickByClass(continue)
-  }
+object RegistrationInProgressPage extends BasePage {
+  override val url: String = s"${baseUrl}review-submit/registration-in-progress/XEPLR0000000002"
 }
