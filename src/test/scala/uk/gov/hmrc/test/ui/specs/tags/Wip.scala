@@ -14,22 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.contactDetails
+package uk.gov.hmrc.test.ui.specs.tags
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import org.scalatest.Tag
 
-object ContactDetailsPrimaryContactPage extends BasePage {
-  override val url: String  = s"${baseUrl}contact-details/primary-contact"
-
-  def selectYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    clickByClass(continue)
-  }
-
-  def selectNo(): Unit = {
-    onPage()
-    click(noRadioId)
-    clickByClass(continue)
-  }
-}
+object Wip extends Tag("Wip")

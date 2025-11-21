@@ -26,4 +26,10 @@ object ContactDetailsPrimaryPhoneAsContactPage extends BasePage {
     click(yesRadioId)
     click(submitButtonId)
   }
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    click(submitButtonId)
+  }
 }
