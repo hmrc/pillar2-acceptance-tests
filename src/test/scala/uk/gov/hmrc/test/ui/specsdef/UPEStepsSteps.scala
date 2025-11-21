@@ -188,7 +188,7 @@ object UPEStepsSteps {
       case "Second Contact Input" =>
         assert(getAttributeOf(SecondContactInputPage.contactPhone, "value").equals(name))
       case "Redirect URL" =>
-        assert(getAttributeOf(AuthLoginPage.redirectionUrlField, "value").contains(name))
+        assert(getAttributeOf(AuthLoginOldPage.redirectionUrlField, "value").contains(name))
       case "PLRID" =>
         assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
       case "UK Bank Name" =>

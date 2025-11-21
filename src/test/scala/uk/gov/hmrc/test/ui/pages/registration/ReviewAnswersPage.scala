@@ -14,11 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.registration
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object MttToDttPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/account-details/mtt-to-dtt"
+object ReviewAnswersPage extends BasePage {
+  override val url: String = s"$baseUrl" + "review-submit/check-answers"
 
+  // UPE Section
+  val changeUPEContact = "a[href*='/change-phone']"
+
+  // Contact Address Section
+  val changeContactAddress = "a[href*='address/change-input']"
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    onPageSubmitById()
+  }
 }

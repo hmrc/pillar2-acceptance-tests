@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.rfm
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object MttToDttPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/account-details/mtt-to-dtt"
-
+object RFMNoMatchErrorPage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/error/no-match"
 }

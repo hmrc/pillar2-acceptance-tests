@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.upe
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object MttToDttPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/account-details/mtt-to-dtt"
+object UPEGRSRegistrationNotCalledErrorPage extends BasePage {
+  override val url: String = s"${baseUrl}business-matching/ultimate-parent/uk-based/error/unable-to-confirm-details"
 
+  private val goBackToEntityType        = "a[href*='/entity-type']"
+
+  def clickGoBackToEntityTypeLink(): Unit = {
+    onPage()
+    click(By.cssSelector(goBackToEntityType))
+  }
 }

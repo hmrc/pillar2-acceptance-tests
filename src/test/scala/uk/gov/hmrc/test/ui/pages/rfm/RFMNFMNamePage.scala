@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.rfm
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object MttToDttPage extends PageObject {
-  val url: String = s"$rootUrl" + "manage-account/account-details/mtt-to-dtt"
+object RFMNFMNamePage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/input-name"
 
+  private val nameValue: String        = "Replacement NFM Name"
+  private val nameUpdatedValue: String = "New Entity Name"
+
+  def enterName(): Unit = {
+    onPage()
+    sendKeys(textInputField, nameValue)
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }
