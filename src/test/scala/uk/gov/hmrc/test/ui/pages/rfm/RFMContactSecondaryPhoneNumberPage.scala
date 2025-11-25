@@ -29,12 +29,12 @@ object RFMContactSecondaryPhoneNumberPage extends BasePage {
   def enterPhoneNumber(): Unit = {
     onPage()
     sendKeys(textInputField, phoneNumberValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 
   def updatePhoneNumber(): Unit = {
     onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-phone")
     sendKeys(textInputField, phoneNumberUpdatedValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

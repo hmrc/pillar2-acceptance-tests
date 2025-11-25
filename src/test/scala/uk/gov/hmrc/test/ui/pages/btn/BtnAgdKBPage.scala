@@ -20,5 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnAgdKBPage extends BasePage {
   override val url: String = s"${baseUrl}below-threshold-notification/amend-group-details"
-
 }

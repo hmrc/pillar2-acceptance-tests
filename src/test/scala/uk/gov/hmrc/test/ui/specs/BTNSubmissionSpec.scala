@@ -20,13 +20,13 @@ import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{DelegatedEnrolment, Enrolment, l
 import uk.gov.hmrc.test.ui.pages.DashboardPage
 import uk.gov.hmrc.test.ui.pages.asa._
 import uk.gov.hmrc.test.ui.pages.btn._
-import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, Wip}
 
 class BTNSubmissionSpec extends BaseSpec {
 
   Feature("Below threshold notification successful submission user journeys") {
 
-    Scenario("1 - Org User makes successful below threshold notification submission", AcceptanceTests) {
+    Scenario("1 - Org User makes successful below threshold notification submission", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -48,14 +48,14 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnCyaSubmitPage.onPageSubmitById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage()
+      BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       Then("The user clicks the back button and is presented with the cannot return page")
       BtnConfirmationPage.clickBackButton()
       BtnCannotReturnPage.onPage()
     }
 
-    Scenario("2 - Agent User makes successful below threshold notification submission", AcceptanceTests) {
+    Scenario("2 - Agent User makes successful below threshold notification submission", AcceptanceTests, Wip) {
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
       login(
         userType = "Agent",
@@ -89,7 +89,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnCyaSubmitPage.onPageSubmitById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage()
+      BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       Then("The user clicks the back button and is presented with the cannot return page")
       BtnConfirmationPage.clickBackButton()

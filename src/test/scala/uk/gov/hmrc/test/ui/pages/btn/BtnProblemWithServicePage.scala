@@ -20,5 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnProblemWithServicePage extends BasePage {
   override val url: String = s"${baseUrl}below-threshold-notification/problem-with-service"
-
 }

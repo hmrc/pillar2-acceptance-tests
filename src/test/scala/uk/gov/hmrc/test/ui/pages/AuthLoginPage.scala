@@ -73,15 +73,16 @@ object AuthLoginPage extends BrowserDriver with BasePage {
 
   def urlMatch(page: String): String = {
     page match {
-//      case "asa"                 => ASAPillar2InputPage.url
+      case "asa"                 => ASAPillar2InputPage.url
 //      case "bta"                 => BTAPillar2IDCheckPage.url
-//      case "btn"                 => BtnStartPage.url
+      case "btn"                 => BtnStartPage.url
+      case "dashboard"           => DashboardPage.url
 //      case "eligibility"         => EligibilityUPEPage.url
       case "pillar2-frontend" => TestConfiguration.url("pillar2-frontend")
 //      case "rfm"                 => RFMStartPage.url
 //      case "register"            => TaskListPage.url
 //      case "upe"                 => UPERegisteredInUkPage.url
-//      case "dashboard"           => RFMConfirmationPage.url
+
     }
   }
 

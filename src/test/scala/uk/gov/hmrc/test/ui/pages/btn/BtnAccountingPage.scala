@@ -32,7 +32,7 @@ object BtnAccountingPage extends BasePage {
 
   def continueToNextPage(): Unit = {
     onPage()
-    findByClass(continueButton).click()
+    clickByClassName(continueButton)
   }
 
   def clickAccountDetailsSummaryLink(): Unit = {

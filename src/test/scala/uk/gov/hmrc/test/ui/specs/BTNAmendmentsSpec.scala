@@ -16,87 +16,17 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
+import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.DashboardPage
-import uk.gov.hmrc.test.ui.pages.asa._
 import uk.gov.hmrc.test.ui.pages.btn._
-import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
+import uk.gov.hmrc.test.ui.pages.manage._
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, Wip}
 
 class BTNAmendmentsSpec extends BaseSpec {
 
   Feature("Below threshold notification amendments user journeys") {
 
-    Scenario("1 - Org User makes successful below threshold notification submission", AcceptanceTests) {
-      Given("Organisation User logs in to Pillar2 service")
-      login(
-        userType = "Organisation",
-        pageUrl = "dashboard",
-        enrolment = Some(
-          Enrolment(
-            "HMRC-PILLAR2-ORG",
-            "PLRID",
-            "XEPLR9999999991"
-          )
-        )
-      )
-
-      Then("The user submits a below threshold notification")
-      DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
-      BtnCyaSubmitPage.onPageSubmitById()
-
-      When("The user is the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage()
-
-      Then("The user clicks the back button and is presented with the cannot return page")
-      BtnConfirmationPage.clickBackButton()
-      BtnCannotReturnPage.onPage()
-    }
-
-    Scenario("2 - Agent User makes successful below threshold notification submission", AcceptanceTests) {
-      Given("Agent User logs in to Pillar2 service with delegated enrolment")
-      login(
-        userType = "Agent",
-        pageUrl = "asa",
-        enrolment = Some(
-          Enrolment(
-            enrolmentKey = "HMRC-AS-AGENT",
-            identifierName = "AgentReference",
-            identifierValue = "1234"
-          )
-        ),
-        delegatedEnrolment = Some(
-          DelegatedEnrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR9999999991",
-            authRule = "pillar2-auth"
-          )
-        )
-      )
-
-      Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999991")
-      ASAConfirmationPage.continueToNextPage()
-
-      Then("The agent submits a below threshold notification")
-      DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
-      BtnCyaSubmitPage.onPageSubmitById()
-
-      When("The user is the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage()
-
-      Then("The user clicks the back button and is presented with the cannot return page")
-      BtnConfirmationPage.clickBackButton()
-      BtnCannotReturnPage.onPage()
-    }
-
-    Scenario("3 - Org User updates below threshold notification accounting period dates", AcceptanceTests) {
+    Scenario("1 - Org User updates below threshold notification accounting period dates", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -116,15 +46,15 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnAccountingPage.clickAccountDetailsSummaryLink()
 
       And("The user updates the dates of the accounting period")
-      AccountsSummaryPage.clickChangeAccountingPeriodLink()
+      ManageAccountsSummaryPage.clickChangeAccountingPeriodLink()
       BtnAccountingPage.updateDates()
-      AccountsSummaryPage.continueToNextPage()
+      ManageAccountsSummaryPage.continueToNextPage()
 
       When("The user is taken back to the dashboard")
       DashboardPage.onPage()
     }
 
-    Scenario("4 - Org User changes below threshold notification entity location and gets KB page", AcceptanceTests) {
+    Scenario("2 - Org User changes below threshold notification entity location and gets KB page", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -148,7 +78,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnAgdKBPage.onPage()
     }
 
-    Scenario("5 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests) {
+    Scenario("3 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -173,7 +103,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnProblemWithServicePage.onPage()
     }
 
-    Scenario("6 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests) {
+    Scenario("4 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -191,7 +121,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnProblemWithServicePage.onPage()
     }
 
-    Scenario("7 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests) {
+    Scenario("5 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",

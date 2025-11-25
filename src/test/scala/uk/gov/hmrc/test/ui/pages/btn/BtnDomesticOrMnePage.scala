@@ -20,17 +20,16 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnDomesticOrMnePage extends BasePage {
   override val url: String = s"${baseUrl}below-threshold-notification/domestic-or-multinational"
-  private val continueButton       = "govuk-button"
 
   def entityInAndOutUkYes(): Unit = {
     onPage()
     click(yesRadioId)
-    findByClass(continueButton).click()
+    clickByClassName(continue)
   }
 
   def entityInAndOutUkNo(): Unit = {
     onPage()
     click(noRadioId)
-    findByClass(continueButton).click()
+    clickByClassName(continue)
   }
 }

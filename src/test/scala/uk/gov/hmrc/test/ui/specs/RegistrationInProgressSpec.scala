@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.furtherDetails._
 import uk.gov.hmrc.test.ui.pages.nfm._
 import uk.gov.hmrc.test.ui.pages.registration._
 import uk.gov.hmrc.test.ui.pages.upe._
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, Wip, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 
 class RegistrationInProgressSpec extends BaseSpec {
 

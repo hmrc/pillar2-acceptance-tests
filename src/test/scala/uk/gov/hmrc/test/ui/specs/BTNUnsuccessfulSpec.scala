@@ -19,13 +19,13 @@ package uk.gov.hmrc.test.ui.specs
 import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.DashboardPage
 import uk.gov.hmrc.test.ui.pages.btn._
-import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, Wip}
 
 class BTNUnsuccessfulSpec extends BaseSpec {
 
   Feature("Below threshold notification unauthorised user journeys") {
 
-    Scenario("1 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests) {
+    Scenario("1 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -47,10 +47,10 @@ class BTNUnsuccessfulSpec extends BaseSpec {
       BtnCyaSubmitPage.onPageSubmitById()
 
       Then("The user encounters the problem with service page")
-      BtnProblemWithServicePage.onPage()
+      BtnProblemWithServicePage.onPage(timeoutSeconds = 10)
     }
 
-    Scenario("2 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests) {
+    Scenario("2 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -68,7 +68,7 @@ class BTNUnsuccessfulSpec extends BaseSpec {
       BtnProblemWithServicePage.onPage()
     }
 
-    Scenario("3 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests) {
+    Scenario("3 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests, Wip) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",

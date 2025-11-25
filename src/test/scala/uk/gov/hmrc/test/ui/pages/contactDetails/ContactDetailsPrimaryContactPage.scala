@@ -24,12 +24,12 @@ object ContactDetailsPrimaryContactPage extends BasePage {
   def selectYes(): Unit = {
     onPage()
     click(yesRadioId)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 
   def selectNo(): Unit = {
     onPage()
     click(noRadioId)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

@@ -16,18 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.btn
 
-import uk.gov.hmrc.test.ui.helper.Find._
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnStartPage extends BasePage {
   override val url: String   = s"${baseUrl}below-threshold-notification/start"
-  override val continue      = "button.govuk-button"
-  private val continueButton = "govuk-button"
 
   def continueToNextPage(): Unit = {
     onPage()
-    findByClass(continueButton).click()
+    clickByClassName(continue)
   }
-
-  def clickContinue(): Unit = findByCss(continue).click()
 }

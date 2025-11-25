@@ -22,7 +22,7 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.selenium.component.PageObject
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.helper.Find.{findByCss, findById}
+import uk.gov.hmrc.test.ui.helper.Find.{findByClassName, findByCss, findById}
 import uk.gov.hmrc.test.ui.helper.Nav
 
 import java.time.Duration
@@ -43,7 +43,7 @@ trait BasePage extends Matchers with PageObject {
   val buttonSaveAndContinue    = "Save and continue"
   val buttonConfirmAndContinue = "Confirm and continue"
 
-  val continue  = ".govuk-button"
+  val continue  = "govuk-button"
   val nameField = "#value"
 
   private def fluentWait(timeoutSeconds: Long = 3): Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
@@ -84,12 +84,12 @@ trait BasePage extends Matchers with PageObject {
   }
 
   def clickButtonByClass(buttonClass: String): Unit = {
-    clickByClass(buttonClass)
+    clickByClassName(buttonClass)
   }
 
   def clickByCss(text: String): Unit = findByCss(text).click()
 
-  def clickByClass(text: String): Unit = findByCss(text).click()
+  def clickByClassName(text: String): Unit = findByClassName(text).click()
 
   def clickById(text: String): Unit = findById(text).click()
 }
