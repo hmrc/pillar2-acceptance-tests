@@ -20,19 +20,20 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object EligibilityNFMPage extends BasePage {
-  override val url: String   = s"${baseUrl}eligibility/nfm"
+  override val url: String = s"${baseUrl}eligibility/nfm"
+
   override val yesRadioId: By = By.id("registeringNfmGroup_0")
-  override val noRadioId: By = By.id("registeringNfmGroup_1")
+  override val noRadioId: By  = By.id("registeringNfmGroup_1")
 
   def selectYes(): Unit = {
     onPage()
     click(yesRadioId)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 
   def selectNo(): Unit = {
     onPage()
     click(noRadioId)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

@@ -16,15 +16,17 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage.login
+import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
+import uk.gov.hmrc.test.ui.pages.eligibility._
+import uk.gov.hmrc.test.ui.pages.registration.TaskListPage
+import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.thenIClearTheCache
 
-class EligibilityQuestionsSpec extends BaseSpec with Matchers {
+class EligibilityQuestionsSpec extends BaseSpec {
 
   Feature("Eligibility Questions for Pillar 2") {
 
-    Scenario("1 - User navigates to confirmation page via the eligibility questions", Tests) {
+    Scenario("1 - User navigates to confirmation page via the eligibility questions", AcceptanceTests) {
       Given("I clear the cache")
       thenIClearTheCache()
 
@@ -43,7 +45,7 @@ class EligibilityQuestionsSpec extends BaseSpec with Matchers {
       TaskListPage.onPage()
     }
 
-    Scenario("2 - User navigates to service not suitable as entity not upe or nfm page via the eligibility questions", Tests) {
+    Scenario("2 - User navigates to service not suitable as entity not upe or nfm page via the eligibility questions", AcceptanceTests) {
       Given("I clear the cache")
       thenIClearTheCache()
 
@@ -60,7 +62,7 @@ class EligibilityQuestionsSpec extends BaseSpec with Matchers {
       EligibilityNotSuitableAsNotUPEOrNFMPage.onPage()
     }
 
-    Scenario("3 - User navigates to service not suitable as entity not active in the uk page via the eligibility questions", Tests) {
+    Scenario("3 - User navigates to service not suitable as entity not active in the uk page via the eligibility questions", AcceptanceTests) {
       Given("I clear the cache")
       thenIClearTheCache()
 
@@ -83,7 +85,7 @@ class EligibilityQuestionsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - User navigates to service not suitable as under 750 million page via the eligibility questions", Tests) {
+    Scenario("4 - User navigates to service not suitable as under 750 million page via the eligibility questions", AcceptanceTests) {
       Given("I clear the cache")
       thenIClearTheCache()
 

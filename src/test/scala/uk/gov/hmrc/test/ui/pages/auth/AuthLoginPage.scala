@@ -25,10 +25,10 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.pages.asa.ASAPillar2InputPage
 import uk.gov.hmrc.test.ui.pages.btn.BtnStartPage
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
+import uk.gov.hmrc.test.ui.pages.eligibility.EligibilityUPEPage
 
 //import uk.gov.hmrc.test.ui.specpages.asa.ASAPillar2InputPage
 //import uk.gov.hmrc.test.ui.specpages.btn.BtnStartPage
-//import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityUPEPage
 //import uk.gov.hmrc.test.ui.specpages.rfm.{RFMConfirmationPage, RFMStartPage}
 //import uk.gov.hmrc.test.ui.specpages.upe.UPERegisteredInUkPage
 
@@ -78,11 +78,11 @@ object AuthLoginPage extends BrowserDriver with BasePage {
 
   def urlMatch(page: String): String = {
     page match {
-      case "asa"                 => ASAPillar2InputPage.url
+      case "asa" => ASAPillar2InputPage.url
 //      case "bta"                 => BTAPillar2IDCheckPage.url
-      case "btn"                 => BtnStartPage.url
-      case "dashboard"           => DashboardPage.url
-//      case "eligibility"         => EligibilityUPEPage.url
+      case "btn"              => BtnStartPage.url
+      case "dashboard"        => DashboardPage.url
+      case "eligibility"      => EligibilityUPEPage.url
       case "pillar2-frontend" => TestConfiguration.url("pillar2-frontend")
 //      case "rfm"                 => RFMStartPage.url
 //      case "register"            => TaskListPage.url
