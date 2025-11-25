@@ -29,12 +29,12 @@ object ContactDetailsSecondaryEmailPage extends BasePage {
   def enterEmail(): Unit = {
     onPage()
     sendKeys(textInputField, emailValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 
   def updateEmail(): Unit = {
     onPage(s"${baseUrl}contact-details/change-second-input-email")
     sendKeys(textInputField, emailUpdatedValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

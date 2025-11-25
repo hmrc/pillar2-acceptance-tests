@@ -23,6 +23,6 @@ object RFMSavingProgressPage extends BasePage {
 
   def continueToNextPage(): Unit = {
     onPage()
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

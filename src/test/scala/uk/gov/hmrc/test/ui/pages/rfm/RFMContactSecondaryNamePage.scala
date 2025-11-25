@@ -27,6 +27,6 @@ object RFMContactSecondaryNamePage extends BasePage {
   def enterName(): Unit = {
     onPage()
     sendKeys(textInputField, nameValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

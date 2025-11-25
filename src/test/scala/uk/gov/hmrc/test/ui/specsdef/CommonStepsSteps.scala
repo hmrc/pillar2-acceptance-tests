@@ -488,10 +488,10 @@ object CommonStepsSteps {
   }
 
   def whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-      userType: String,
-      enrolmentKey: String,
-      identifierName: String,
-      identifierValue: String): Unit = {
+                                                                 userType: String,
+                                                                 enrolmentKey: String,
+                                                                 identifierName: String,
+                                                                 identifierValue: String): Unit = {
     userType match {
       case "Organisation" => AuthLoginOldPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
       case "Agent"        => AuthLoginOldPage.agentLoginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
@@ -524,12 +524,6 @@ object CommonStepsSteps {
       case "Print this page" =>
         Wait.waitForElementToPresentByCssSelector(RegistrationConfirmationPage.printThisPage)
         assert(Driver.instance.findElement(By.cssSelector(RegistrationConfirmationPage.printThisPage)).getText.contains(linkText))
-      case "Agent Services Account" =>
-        Wait.waitForElementToPresentByCssSelector(DashboardPage.ASALink)
-        assert(Driver.instance.findElement(By.cssSelector(DashboardPage.ASALink)).getText.contains(linkText))
-      case "Sign out" =>
-        Wait.waitForElementToPresentByCssSelector(RepaymentConfirmationPage.signOut)
-        assert(Driver.instance.findElement(By.cssSelector(RepaymentConfirmationPage.signOut)).getText.contains(linkText))
     }
   }
 

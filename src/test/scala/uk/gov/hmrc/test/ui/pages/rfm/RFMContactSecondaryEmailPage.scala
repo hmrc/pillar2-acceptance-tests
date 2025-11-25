@@ -29,6 +29,6 @@ object RFMContactSecondaryEmailPage extends BasePage {
   def enterEmail(): Unit = {
     onPage()
     sendKeys(textInputField, emailValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

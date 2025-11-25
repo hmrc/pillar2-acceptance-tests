@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.rfm
+package uk.gov.hmrc.test.ui.pages.asa
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
+object ASAPillar2InputPage extends BasePage {
+  override val url: String = s"${baseUrl}asa/input-pillar-2-id"
 
-object RFMContactPrimaryNamePage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/contact-details/input-name"
-
-  private val nameValue: String = "NFM Contact Name"
-  private val nameUpdatedValue: String = "New Entity Name"
-
-  def enterName(): Unit = {
+  def enterPLR2Id(pLRId: String): Unit = {
     onPage()
-    sendKeys(textInputField, nameValue)
-    clickByClassName(continue)
+    sendKeys(textInputField, pLRId)
+    clickButtonByText(buttonContinue)
   }
 }

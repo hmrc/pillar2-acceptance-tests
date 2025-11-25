@@ -14,20 +14,29 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.rfm
+package uk.gov.hmrc.test.ui.pages.manage
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
+object ManageAccountsSummaryPage extends BasePage {
+  override val url: String = s"${baseUrl}manage-account/account-details/summary"
 
-object RFMContactPrimaryNamePage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/contact-details/input-name"
+  private val changeGroupStatus      = "a[href*='/change-group-status']"
+  private val changeAccountingPeriod = "a[href*='/change-accounting-period']"
 
-  private val nameValue: String = "NFM Contact Name"
-  private val nameUpdatedValue: String = "New Entity Name"
-
-  def enterName(): Unit = {
+  def clickChangeGroupStatusLink(): Unit = {
     onPage()
-    sendKeys(textInputField, nameValue)
-    clickByClassName(continue)
+    click(By.cssSelector(changeGroupStatus))
+  }
+
+  def clickChangeAccountingPeriodLink(): Unit = {
+    onPage()
+    click(By.cssSelector(changeAccountingPeriod))
+  }
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    click(submitButtonId)
   }
 }

@@ -27,12 +27,12 @@ object RFMCorpPositionPage extends BasePage {
   def clickNewNominatedFilingMember(): Unit = {
     onPage()
     clickById(newNominatedFilingMember)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 
   def clickUltimateParentEntity(): Unit = {
     onPage()
     clickById(ultimateParentEntity)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }
