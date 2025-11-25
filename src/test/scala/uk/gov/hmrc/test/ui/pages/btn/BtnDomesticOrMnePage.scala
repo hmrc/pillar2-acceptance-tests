@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.rfm
+package uk.gov.hmrc.test.ui.pages.btn
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
+object BtnDomesticOrMnePage extends BasePage {
+  override val url: String = s"${baseUrl}below-threshold-notification/domestic-or-multinational"
 
-object RFMContactPrimaryNamePage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/contact-details/input-name"
-
-  private val nameValue: String = "NFM Contact Name"
-  private val nameUpdatedValue: String = "New Entity Name"
-
-  def enterName(): Unit = {
+  def entityInAndOutUkYes(): Unit = {
     onPage()
-    sendKeys(textInputField, nameValue)
+    click(yesRadioId)
+    clickByClassName(continue)
+  }
+
+  def entityInAndOutUkNo(): Unit = {
+    onPage()
+    click(noRadioId)
     clickByClassName(continue)
   }
 }

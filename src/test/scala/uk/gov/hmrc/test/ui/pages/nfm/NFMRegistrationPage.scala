@@ -23,7 +23,7 @@ object NFMRegistrationPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/filing-member/nominate"
 
   private val filingMemberYes: By = By.id("nominateFilingMember_0")
-  private val filingMemberNo: By = By.id("nominateFilingMember_1")
+  private val filingMemberNo: By  = By.id("nominateFilingMember_1")
 
   def nominatedFilingMemberYes(): Unit = {
     onPage()
