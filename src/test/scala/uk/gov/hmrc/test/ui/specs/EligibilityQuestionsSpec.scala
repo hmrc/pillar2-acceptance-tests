@@ -30,6 +30,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       Given("I clear the cache")
       thenIClearTheCache()
 
+      And("An organisation User logs in without enrollment")
       login(
         "Organisation",
         "eligibility"
@@ -49,6 +50,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       Given("I clear the cache")
       thenIClearTheCache()
 
+      And("An organisation User logs in without enrollment")
       login(
         "Organisation",
         "eligibility"
@@ -66,6 +68,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       Given("I clear the cache")
       thenIClearTheCache()
 
+      And("An organisation User logs in without enrollment")
       login(
         "Organisation",
         "eligibility"
@@ -89,6 +92,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       Given("I clear the cache")
       thenIClearTheCache()
 
+      And("An organisation User logs in without enrollment")
       login(
         "Organisation",
         "eligibility"
