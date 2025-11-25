@@ -20,13 +20,13 @@ import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.DashboardPage
 import uk.gov.hmrc.test.ui.pages.btn._
 import uk.gov.hmrc.test.ui.pages.manage._
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, Wip}
+import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 
 class BTNAmendmentsSpec extends BaseSpec {
 
   Feature("Below threshold notification amendments user journeys") {
 
-    Scenario("1 - Org User updates below threshold notification accounting period dates", AcceptanceTests, Wip) {
+    Scenario("1 - Org User updates below threshold notification accounting period dates", AcceptanceTests) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -54,7 +54,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       DashboardPage.onPage()
     }
 
-    Scenario("2 - Org User changes below threshold notification entity location and gets KB page", AcceptanceTests, Wip) {
+    Scenario("2 - Org User changes below threshold notification entity location and gets KB page", AcceptanceTests) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -78,7 +78,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnAgdKBPage.onPage()
     }
 
-    Scenario("3 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests, Wip) {
+    Scenario("3 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4220000000]", AcceptanceTests) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -103,7 +103,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnProblemWithServicePage.onPage()
     }
 
-    Scenario("4 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests, Wip) {
+    Scenario("4 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -121,7 +121,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnProblemWithServicePage.onPage()
     }
 
-    Scenario("5 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests, Wip) {
+    Scenario("5 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR5000000000]", AcceptanceTests) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",

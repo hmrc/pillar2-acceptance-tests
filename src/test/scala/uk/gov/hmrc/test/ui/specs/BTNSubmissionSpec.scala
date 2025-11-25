@@ -20,13 +20,13 @@ import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{DelegatedEnrolment, Enrolment, l
 import uk.gov.hmrc.test.ui.pages.DashboardPage
 import uk.gov.hmrc.test.ui.pages.asa._
 import uk.gov.hmrc.test.ui.pages.btn._
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, Wip}
+import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 
 class BTNSubmissionSpec extends BaseSpec {
 
   Feature("Below threshold notification successful submission user journeys") {
 
-    Scenario("1 - Org User makes successful below threshold notification submission", AcceptanceTests, Wip) {
+    Scenario("1 - Org User makes successful below threshold notification submission", AcceptanceTests) {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
@@ -55,7 +55,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnCannotReturnPage.onPage()
     }
 
-    Scenario("2 - Agent User makes successful below threshold notification submission", AcceptanceTests, Wip) {
+    Scenario("2 - Agent User makes successful below threshold notification submission", AcceptanceTests) {
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
       login(
         userType = "Agent",
