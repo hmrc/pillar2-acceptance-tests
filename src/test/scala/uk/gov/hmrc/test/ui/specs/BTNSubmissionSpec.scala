@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
-import uk.gov.hmrc.test.ui.pages.DashboardPage
+import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.asa._
 import uk.gov.hmrc.test.ui.pages.btn._
+import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 
 class BTNSubmissionSpec extends BaseSpec {

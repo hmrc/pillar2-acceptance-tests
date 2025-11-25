@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.dashboard
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.BasePage
 
 object DashboardPage extends BasePage {
   override val url: String = s"${baseUrl}pillar2-top-up-tax-home"

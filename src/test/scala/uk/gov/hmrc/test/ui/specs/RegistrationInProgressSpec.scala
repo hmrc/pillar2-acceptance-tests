@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage.login
+import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.contactDetails._
 import uk.gov.hmrc.test.ui.pages.furtherDetails._
 import uk.gov.hmrc.test.ui.pages.nfm._

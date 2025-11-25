@@ -14,13 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.auth
 
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.helper.Input._
 import uk.gov.hmrc.test.ui.helper.{Find, Input, Nav}
+import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.asa.ASAPillar2InputPage
+import uk.gov.hmrc.test.ui.pages.btn.BtnStartPage
+import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
+
 //import uk.gov.hmrc.test.ui.specpages.asa.ASAPillar2InputPage
 //import uk.gov.hmrc.test.ui.specpages.btn.BtnStartPage
 //import uk.gov.hmrc.test.ui.specpages.eligibility.EligibilityUPEPage
