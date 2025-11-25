@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.helper.PageObject
 
-object DashboardOldPage extends PageObject {
+object DashboardPage extends PageObject {
   val url: String = s"$rootUrl" + "pillar2-top-up-tax-home"
   val ASALink     = "a[href*='/asa/home']"
 }

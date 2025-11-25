@@ -82,7 +82,7 @@ object CommonFunctions
       case "Bookmark page"                              => BookMarkPage
       case "Contact address input page"                 => ContactAddressInputPage
       case "Registration confirmation page"             => RegistrationConfirmationPage
-      case "Dashboard page"                             => DashboardOldPage
+      case "Dashboard page"                             => DashboardPage
       case "Draft guidance page"                        => DraftGuidancePage
       case "Review answers page"                        => ReviewAnswersPage
       case "UPE registration failed error page"         => UPEGRSRegistrationFailedErrorPage
