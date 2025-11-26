@@ -21,13 +21,21 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentContactEmailPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/contact-details/input-email"
+  val changeUrl: String    = s"${baseUrl}repayment/contact-details/change-input-email"
 
   override val textInputField: By = By.id("contactEmail")
-  private val emailValue: String   = "abc@def.com"
+  private val emailValue: String  = "abc@def.com"
+  private val emailUpdatedValue: String  = "abc@def.com"
 
   def enterText(): Unit = {
     onPage()
     sendKeys(textInputField, emailValue)
+    clickByClassName(continue)
+  }
+
+  def updateText(): Unit = {
+    onPage(changeUrl)
+    sendKeys(textInputField, emailUpdatedValue)
     clickByClassName(continue)
   }
 }

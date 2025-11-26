@@ -26,8 +26,8 @@ import uk.gov.hmrc.test.ui.specs.tags._
 class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
   Feature("Repayment Journey") {
-    Scenario("1 - Org User successfully submits repayment journey with a UK bank account", AcceptanceTests) {
-      Given("Org User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
+    Scenario("1 - Org User successfully submits repayment journey with a UK bank account and uses change links", AcceptanceTests) {
+      Given("Org User logs in with existing entity group")
       login(
         userType = "Organisation",
         pageUrl = "dashboard",
@@ -54,6 +54,26 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentPhoneAsContactPage.selectYes()
       RepaymentPhoneInputPage.enterText()
 
+      And("The user amends refund amount via the Check your answers page")
+      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeRefundAmount)
+      RepaymentAmountPage.updateAmount()
+
+      And("The user amends refund reason via the Check your answers page")
+      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeRefundReason)
+      RepaymentReasonPage.updateText()
+
+      And("The user amends contact name via the Check your answers page")
+      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeContactName)
+      RepaymentContactNamePage.updateText()
+
+      And("The user amends contact email via the Check your answers page")
+      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeContactEmail)
+      RepaymentContactEmailPage.updateText()
+
+      And("The user amends contact phone number via the Check your answers page")
+      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changePhoneNumber)
+      RepaymentPhoneInputPage.updateText()
+
       And("The user submits the request for repayment")
       RepaymentCYAPage.onPageSubmitById()
 
@@ -62,7 +82,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
     }
 
     Scenario("2 - Org User successfully submits repayment journey with a Non-UK bank account", AcceptanceTests) {
-      Given("Org User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
+      Given("Org User logs in with existing entity group")
       login(
         userType = "Organisation",
         pageUrl = "dashboard",

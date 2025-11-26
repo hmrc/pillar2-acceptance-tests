@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentReasonPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/reason"
+  val changeUrl: String = s"${baseUrl}repayment/change-reason"
 
   private val reasonValue: String        = "Reason for repayment"
   private val reasonUpdatedValue: String = "Updated reason for repayment"
@@ -31,7 +32,7 @@ object RepaymentReasonPage extends BasePage {
   }
 
   def updateText(): Unit = {
-    onPage(s"$baseUrl" + "repayment/change-reason")
+    onPage(changeUrl)
     sendKeys(textInputField, reasonUpdatedValue)
     clickByClassName(continue)
   }

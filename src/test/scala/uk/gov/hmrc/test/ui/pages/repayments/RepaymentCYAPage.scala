@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.repayments
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentCYAPage extends BasePage {
@@ -23,13 +24,12 @@ object RepaymentCYAPage extends BasePage {
 
   val changeRefundAmount     = "a[href*='/change-amount']"
   val changeRefundReason     = "a[href*='/change-reason']"
-  val changeRepaymentMethod  = "a[href*='/change-method']"
-  val changeNonUKBankDetails = "a[href*='/change-non-uk-details']"
   val changeContactName      = "a[href*='/change-input-name']"
   val changeContactEmail     = "a[href*='/change-input-email']"
-  val changePhone            = "a[href*='/change-phone']"
   val changePhoneNumber      = "a[href*='/change-input-phone']"
-  val changeUKBankDetails    = "a[href*='/change-uk-details']"
-  val changeBankAccountType  = "a[href*='/change-method']"
 
+  def clickChangeLink(changeLink: String): Unit = {
+    onPage()
+    click(By.cssSelector(changeLink))
+  }
 }

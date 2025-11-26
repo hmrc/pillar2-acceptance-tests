@@ -21,13 +21,21 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentPhoneInputPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/contact-details/input-phone"
+  val changeUrl: String    = s"${baseUrl}repayment/contact-details/change-input-phone"
 
-  override val textInputField: By = By.id("phoneNumber")
-  private val phoneValue: String   = "01234 567890"
+  override val textInputField: By       = By.id("phoneNumber")
+  private val phoneValue: String        = "01234 567890"
+  private val phoneUpdatedValue: String = "09876 543210"
 
   def enterText(): Unit = {
     onPage()
     sendKeys(textInputField, phoneValue)
+    clickByClassName(continue)
+  }
+
+  def updateText(): Unit = {
+    onPage(changeUrl)
+    sendKeys(textInputField, phoneUpdatedValue)
     clickByClassName(continue)
   }
 }
