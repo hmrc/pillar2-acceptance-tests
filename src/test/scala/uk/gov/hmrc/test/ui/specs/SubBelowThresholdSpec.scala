@@ -716,6 +716,203 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       Then("I should navigate to BTN Accounting Period Page")
       thenIShouldNavigateTo("BTN Accounting Period Page")
     }
+
+    Scenario("16 - Org user navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true", AcceptanceTests, ZapAccessibility) {
+      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR9999999995 for Pillar2 service")
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
+        "Organisation",
+        "HMRC-PILLAR2-ORG",
+        "PLRID",
+        "XEPLR9999999995"
+      )
+
+      Then("I should navigate to Dashboard page")
+      thenIShouldNavigateTo("Dashboard page")
+
+      And("I click Submit a Below-Threshold Notification link")
+      andIClickLink("Submit a Below-Threshold Notification")
+
+      When("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Multiple Accounting Period Page")
+      thenIShouldNavigateTo("BTN Multiple Accounting Period Page")
+
+      And("I select CurrentAccountingPeriod")
+      whenISelectCurrentAccountingPeriod()
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Accounting Period Page")
+      thenIShouldNavigateTo("BTN Accounting Period Page")
+
+      When("I click Select different accounting period link")
+      andIClickLink("Select different accounting period")
+
+      Then("I should navigate to BTN Multiple Accounting Period Page")
+      thenIShouldNavigateTo("BTN Multiple Accounting Period Page")
+
+      And("I select PreviousAccountingPeriod")
+      thenISelectPreviousAccountingPeriod()
+
+      When("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Under Enquiry Page")
+      thenIShouldNavigateTo("BTN Under Enquiry Page")
+
+      And("I select back link")
+      andISelectBackLink()
+
+      And("I select PreviousAccountingPeriodUKTRSubmitted")
+      whenISelectPreviousAccountingPeriodUKTRSubmitted()
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Under Enquiry Page")
+      thenIShouldNavigateTo("BTN Under Enquiry Page")
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Accounting Period Page")
+      thenIShouldNavigateTo("BTN Accounting Period Page")
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Domestic or MNE Page")
+      thenIShouldNavigateTo("BTN Domestic or MNE Page")
+
+      When("I select option Yes and continue on Pillar2 submission")
+      andISelectOptionAndContinueOnPillar2Submission("Yes")
+
+      Then("I should navigate to BTN CYA Submit Page")
+      thenIShouldNavigateTo("BTN CYA Submit Page")
+
+      When("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Confirmation Page")
+      thenIShouldNavigateTo("BTN Confirmation Page")
+
+      When("I click Back to group’s homepage link")
+      andIClickLink("Back to group’s homepage")
+
+      Then("I should be on Dashboard page")
+      thenIShouldBeOn("Dashboard page")
+
+
+    }
+
+    Scenario("17 - Agent user navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true", AcceptanceTests, ZapAccessibility) {
+      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
+        "Agent",
+        "HMRC-AS-AGENT",
+        "AgentReference",
+        "1234"
+      )
+
+      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999994 and pillar2-auth for Pillar2 service")
+      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
+        "HMRC-PILLAR2-ORG",
+        "PLRID",
+        "XEPLR9999999995",
+        "pillar2-auth"
+      )
+
+      Then("I should be on ASA Pillar2 Input Page")
+      thenIShouldBeOn("ASA Pillar2 Input Page")
+
+      And("I provide ASA Pillar2 ID as XEPLR9999999995")
+      andIProvideASAAs("Pillar2 ID", "XEPLR9999999995")
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to ASA Confirmation Page")
+      thenIShouldNavigateTo("ASA Confirmation Page")
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to Dashboard page")
+      thenIShouldNavigateTo("Dashboard page")
+
+      And("I click Submit a Below-Threshold Notification link")
+      andIClickLink("Submit a Below-Threshold Notification")
+
+      When("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Multiple Accounting Period Page")
+      thenIShouldNavigateTo("BTN Multiple Accounting Period Page")
+
+      And("I select CurrentAccountingPeriod")
+      whenISelectCurrentAccountingPeriod()
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Accounting Period Page")
+      thenIShouldNavigateTo("BTN Accounting Period Page")
+
+      When("I click Select different accounting period link")
+      andIClickLink("Select different accounting period")
+
+      Then("I should navigate to BTN Multiple Accounting Period Page")
+      thenIShouldNavigateTo("BTN Multiple Accounting Period Page")
+
+      And("I select PreviousAccountingPeriod")
+      thenISelectPreviousAccountingPeriod()
+
+      When("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Under Enquiry Page")
+      thenIShouldNavigateTo("BTN Under Enquiry Page")
+
+      And("I select back link")
+      andISelectBackLink()
+
+      And("I select PreviousAccountingPeriodUKTRSubmitted")
+      whenISelectPreviousAccountingPeriodUKTRSubmitted()
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Under Enquiry Page")
+      thenIShouldNavigateTo("BTN Under Enquiry Page")
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Accounting Period Page")
+      thenIShouldNavigateTo("BTN Accounting Period Page")
+
+      And("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Domestic or MNE Page")
+      thenIShouldNavigateTo("BTN Domestic or MNE Page")
+
+      When("I select option Yes and continue on Pillar2 submission")
+      andISelectOptionAndContinueOnPillar2Submission("Yes")
+
+      Then("I should navigate to BTN CYA Submit Page")
+      thenIShouldNavigateTo("BTN CYA Submit Page")
+
+      When("I click on Continue button")
+      whenIClickOnContinueButton("I click on Continue button")
+
+      Then("I should navigate to BTN Confirmation Page")
+      thenIShouldNavigateTo("BTN Confirmation Page")
+
+
+    }
   }
 
 }
