@@ -23,6 +23,6 @@ object RepaymentGuidancePage extends BasePage {
 
   def continueToNextPage(): Unit = {
     onPage()
-    clickByCss(continue)
+    clickByClassName(continue)
   }
 }

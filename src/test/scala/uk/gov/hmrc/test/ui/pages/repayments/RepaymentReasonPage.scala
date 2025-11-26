@@ -27,12 +27,12 @@ object RepaymentReasonPage extends BasePage {
   def enterText(): Unit = {
     onPage()
     sendKeys(textInputField, reasonValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 
   def updateText(): Unit = {
     onPage(s"$baseUrl" + "repayment/change-reason")
     sendKeys(textInputField, reasonUpdatedValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

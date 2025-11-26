@@ -28,6 +28,6 @@ object RepaymentContactEmailPage extends BasePage {
   def enterText(): Unit = {
     onPage()
     sendKeys(textInputField, emailValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

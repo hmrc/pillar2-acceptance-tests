@@ -27,13 +27,13 @@ object RepaymentMethodPage extends BasePage {
   def clickTypeOfAccountUK(): Unit = {
     onPage()
     clickById(typeOfAccountUK)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 
   def clickTypeOfAccountNonUK(): Unit = {
     onPage()
     clickById(typeOfAccountNonUK)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 
 }

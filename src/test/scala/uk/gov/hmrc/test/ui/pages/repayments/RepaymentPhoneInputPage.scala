@@ -28,6 +28,6 @@ object RepaymentPhoneInputPage extends BasePage {
   def enterText(): Unit = {
     onPage()
     sendKeys(textInputField, phoneValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

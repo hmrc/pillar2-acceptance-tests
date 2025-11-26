@@ -39,6 +39,6 @@ object RepaymentBankAccountNonUKPage extends BasePage {
     sendKeys(accountHolderNameInputField, accountHolderNameValue)
     sendKeys(bicOrSwiftInputField, bicOrSwiftValue)
     sendKeys(ibanInputField, ibanValue)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }

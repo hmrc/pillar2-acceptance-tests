@@ -16,8 +16,9 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.asa._
+import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
+import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.repayments.RepaymentBankAccountUKPage._
 import uk.gov.hmrc.test.ui.pages.repayments._
 import uk.gov.hmrc.test.ui.specs.tags._
@@ -96,7 +97,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
     }
 
     Scenario("3 - Agent User successfully submits repayment journey with a UK bank account", AcceptanceTests) {
-      Given("Agent User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
+      Given("Agent User logs in with existing entity group")
       login(
         userType = "Agent",
         pageUrl = "asa",

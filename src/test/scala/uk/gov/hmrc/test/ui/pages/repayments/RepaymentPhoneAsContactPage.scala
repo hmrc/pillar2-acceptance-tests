@@ -24,6 +24,6 @@ object RepaymentPhoneAsContactPage extends BasePage {
   def selectYes(): Unit = {
     onPage()
     click(yesRadioId)
-    clickByClass(continue)
+    clickByClassName(continue)
   }
 }
