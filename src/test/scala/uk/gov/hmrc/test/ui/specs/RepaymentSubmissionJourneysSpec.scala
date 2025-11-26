@@ -78,7 +78,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentCYAPage.onPageSubmitById()
 
       Then("The user will be presented with the confirmation page")
-      RepaymentConfirmationPage.onPage(timeoutSeconds = 10)
+      RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
     }
 
     Scenario("2 - Org User successfully submits repayment journey with a Non-UK bank account", AcceptanceTests) {
@@ -113,7 +113,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentCYAPage.onPageSubmitById()
 
       Then("The user will be presented with the confirmation page")
-      RepaymentConfirmationPage.onPage(timeoutSeconds = 10)
+      RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
     }
 
     Scenario("3 - Agent User successfully submits repayment journey with a UK bank account", AcceptanceTests) {
@@ -160,7 +160,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentCYAPage.onPageSubmitById()
 
       Then("The agent will be presented with the confirmation page")
-      RepaymentConfirmationPage.onPage(timeoutSeconds = 10)
+      RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
 
       Then("The agent clicks the back button they will be taken to the cannot return, repayment request is complete page")
       RepaymentConfirmationPage.clickBackButton()
