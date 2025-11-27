@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,21 @@ package uk.gov.hmrc.test.ui.pages.btn
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object BtnConfirmationPage extends BasePage {
-  override val url: String = s"${baseUrl}below-threshold-notification/confirmation"
+object BtnMultipleAccountingPage extends BasePage {
+  override val url: String = s"${baseUrl}below-threshold-notification/choose-accounting-period"
 
-  private val returnToHomepageLink = "a[href*='/pillar2-top-up-tax-home']"
+  private val CurrentAccountingPeriod  = "radio_0"
+  private val PreviousAccountingPeriod = "radio_1"
 
-  def clickReturnToHomepageLink(): Unit = {
+  def selectCurrentAccountingPeriod(): Unit = {
     onPage()
-    clickByCss(returnToHomepageLink)
+    clickById(CurrentAccountingPeriod)
+    clickByClassName(continue)
+  }
+
+  def selectPreviousAccountingPeriod(): Unit = {
+    onPage()
+    clickById(PreviousAccountingPeriod)
+    clickByClassName(continue)
   }
 }

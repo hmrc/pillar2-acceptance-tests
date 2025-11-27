@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,11 @@ package uk.gov.hmrc.test.ui.pages.btn
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object BtnConfirmationPage extends BasePage {
-  override val url: String = s"${baseUrl}below-threshold-notification/confirmation"
+object BtnUnderEnquiryPage extends BasePage {
+  override val url: String = s"${baseUrl}below-threshold-notification/under-enquiry-warning"
 
-  private val returnToHomepageLink = "a[href*='/pillar2-top-up-tax-home']"
-
-  def clickReturnToHomepageLink(): Unit = {
+  def continueToNextPage(): Unit = {
     onPage()
-    clickByCss(returnToHomepageLink)
+    clickByClassName(continue)
   }
 }
