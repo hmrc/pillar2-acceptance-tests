@@ -804,7 +804,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
       Then("I should be on Dashboard page")
       thenIShouldBeOn("Dashboard page")
 
-
     }
 
     Scenario("17 - Agent user navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true", AcceptanceTests, ZapAccessibility) {
@@ -816,7 +815,7 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         "1234"
       )
 
-      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999994 and pillar2-auth for Pillar2 service")
+      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999995 and pillar2-auth for Pillar2 service")
       whenIAddDelegatedEnrolmentWithAndForPillar2Service(
         "HMRC-PILLAR2-ORG",
         "PLRID",
@@ -910,9 +909,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
       Then("I should navigate to BTN Confirmation Page")
       thenIShouldNavigateTo("BTN Confirmation Page")
-
-
     }
   }
-
 }
