@@ -48,4 +48,9 @@ object ASAStepsSteps {
     Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.accountDetails)
     assert(Driver.instance.findElements(By.cssSelector(P2SubmissionHistoryPage.accountingPeriods)).size() == accountingPeriods)
   }
+
+  def VerifyCorrectClientDetails(plrId: String): Unit = {
+    Wait.waitForElementToPresentByCssSelector(DashboardPage.plrIdText)
+    assert(Driver.instance.findElement(By.cssSelector(DashboardPage.plrIdText)).getText.contains(plrId))
+  }
 }
