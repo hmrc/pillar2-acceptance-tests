@@ -19,19 +19,7 @@ import uk.gov.hmrc.test.ui.pages.asa._
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.btn._
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps.andIProvideASAAs
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.{
-  andIClickLink,
-  thenISelectPreviousAccountingPeriod,
-  whenIAddDelegatedEnrolmentWithAndForPillar2Service,
-  whenIClickOnContinueButton,
-  whenISelectCurrentAccountingPeriod,
-  whenISelectPreviousAccountingPeriodUKTRSubmitted,
-  whenUserLogsInWithExistingEntityGroupAndForPillar2Service
-}
-import uk.gov.hmrc.test.ui.specsdef.DueOverdueStepsSteps.andISelectOptionAndContinueOnPillar2Submission
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.{andISelectBackLink, thenIShouldBeOn, thenIShouldNavigateTo}
+import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 
 class BTNSubmissionSpec extends BaseSpec {
 
