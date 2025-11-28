@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage._
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
@@ -33,12 +34,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("1 - User navigates to Dashboard page and validates the links", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674")
 
       Then("I should be on Dashboard page")
       thenIShouldBeOn("Dashboard page")
@@ -100,12 +96,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("2 - User navigates to group details page validates the data and MTT to DTT Kb page", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345676"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345676")
 
       Then("I should be on Dashboard page")
       thenIShouldBeOn("Dashboard page")
@@ -163,12 +154,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("3 - User navigates to amend contact details page and validates the data", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345676"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345676")
 
       Then("I should be on Dashboard page")
       thenIShouldBeOn("Dashboard page")
@@ -1413,12 +1399,7 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("7 - Make successful payment as Organisation user", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674")
 
       Then("I should be on Dashboard page")
       thenIShouldBeOn("Dashboard page")
@@ -1448,20 +1429,16 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     Scenario("8 - Make successful payment as Agent", AcceptanceTests) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
+
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674",
-        "pillar2-auth"
-      )
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")

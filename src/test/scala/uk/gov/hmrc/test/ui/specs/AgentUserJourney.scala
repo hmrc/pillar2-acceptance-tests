@@ -17,10 +17,11 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage._
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.thenIShouldBeRedirectedTo
 import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps._
@@ -34,8 +35,14 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -120,8 +127,14 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -206,8 +219,14 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -386,8 +405,14 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -423,14 +448,20 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldNavigateTo("ASA Home Page")
     }
 
-    //TODO PIL-2449 logic has changed so XEPLR4000000000 will not go to dashboard, need to be deleted after review.
+    // TODO PIL-2449 logic has changed so XEPLR4000000000 will not go to dashboard, need to be deleted after review.
 
     Scenario("7 - Verify Transaction History pages for Agent user", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0000000122 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0000000122", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0000000122", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -498,8 +529,14 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR4040000000 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR4040000000", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XEPLR4040000000", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -591,8 +628,14 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR6666666666 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR6666666666", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XEPLR6666666666", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -624,8 +667,14 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR5555551111 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XEPLR5555551111", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XEPLR5555551111", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -651,5 +700,70 @@ class AgentUserJourney extends BaseSpec with Matchers {
       Then("I should be on Transaction History Page")
       thenIShouldBeOn("Transaction History Page")
     }
+  }
+
+  Scenario("8 - Verify Agent can switch clients", AcceptanceTests) {
+    Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
+    whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
+
+    Then("I click Add Delegated Enrolment button")
+    clickAddDelegatedEnrolmentCTA()
+
+    And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0000000122 and pillar2-auth for Pillar2 service")
+    addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0000000122", "pillar2-auth")
+
+    Then("I click Add Delegated Enrolment button")
+    clickAddDelegatedEnrolmentCTA()
+
+    And("Add delegated enrolment for first client with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth ")
+    addSecondClientDelegatedEnrolment("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+
+    And("I Click Submit button")
+    clickSubmitButton()
+
+    Then("I should be on ASA Pillar2 Input Page")
+    thenIShouldBeOn("ASA Pillar2 Input Page")
+
+    And("I provide ASA Pillar2 ID as XMPLR0000000122")
+    andIProvideASAAs("Pillar2 ID", "XMPLR0000000122")
+
+    And("I click on Continue button")
+    whenIClickOnContinueButton("I click on Continue button")
+
+    Then("I should navigate to ASA Confirmation Page")
+    thenIShouldNavigateTo("ASA Confirmation Page")
+
+    And("I click on Continue button")
+    whenIClickOnContinueButton("I click on Continue button")
+
+    Then("I should navigate to Dashboard page")
+    thenIShouldNavigateTo("Dashboard page")
+
+    And("I verify logged in client's plrId is displayed")
+    VerifyCorrectClientDetails("XMPLR0000000122")
+
+    And("I click Change client link")
+    andIClickLink("Change client")
+
+    Then("I should be on ASA Pillar2 Input Page")
+    thenIShouldBeOn("ASA Pillar2 Input Page")
+
+    And("I provide ASA Pillar2 ID as XMPLR0012345674")
+    andIProvideASAAs("Pillar2 ID", "XMPLR0012345674")
+
+    And("I click on Continue button")
+    whenIClickOnContinueButton("I click on Continue button")
+
+    Then("I should navigate to ASA Confirmation Page")
+    thenIShouldNavigateTo("ASA Confirmation Page")
+
+    And("I click on Continue button")
+    whenIClickOnContinueButton("I click on Continue button")
+
+    Then("I should navigate to Dashboard page")
+    thenIShouldNavigateTo("Dashboard page")
+
+    And("I verify logged in client's plrId is displayed")
+    VerifyCorrectClientDetails("XMPLR0012345674")
   }
 }
