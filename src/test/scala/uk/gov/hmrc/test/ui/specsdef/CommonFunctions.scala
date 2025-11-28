@@ -21,6 +21,7 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.helper.PageObject
 import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pages.btn.BtnUnderEnquiryPage
 
 object CommonFunctions
     extends BrowserDriver with Eventually with Matchers {
@@ -204,7 +205,7 @@ object CommonFunctions
       case "BTN Cannot Return Page"                     => BtnCannotReturnPage
       case "BTN Problem with service Page"              => BtnProblemWithServicePage
       case "MTT to DTT kb page"                         => MttToDttPage
-      // case "BTN Under Enquiry Page"                     => BtnUnderEnquiryPage
+   //   case "BTN Under Enquiry Page"                     => BtnUnderEnquiryPage
     }
   }
 }
