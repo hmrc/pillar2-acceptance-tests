@@ -17,9 +17,9 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage._
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.DueOverdueStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
@@ -330,13 +330,19 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         "1234"
       )
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999994 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
+      addDelegatedEnrolments(
         "HMRC-PILLAR2-ORG",
         "PLRID",
         "XEPLR9999999994",
         "pillar2-auth"
       )
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -424,13 +430,19 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         "1234"
       )
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999994 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
+      addDelegatedEnrolments(
         "HMRC-PILLAR2-ORG",
         "PLRID",
         "XEPLR9999999994",
         "pillar2-auth"
       )
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -506,13 +518,19 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         "1234"
       )
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999994 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
+      addDelegatedEnrolments(
         "HMRC-PILLAR2-ORG",
         "PLRID",
         "XEPLR9999999994",
         "pillar2-auth"
       )
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -639,13 +657,19 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
         "1234"
       )
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999992 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
+      addDelegatedEnrolments(
         "HMRC-PILLAR2-ORG",
         "PLRID",
         "XEPLR9999999992",
         "pillar2-auth"
       )
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")

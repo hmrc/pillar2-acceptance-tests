@@ -18,50 +18,54 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.helper._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.helper._
 
 object AuthLoginOldPage extends BrowserDriver with PageObject {
-  val url: String                           = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val frontEndUrl: String                   = TestConfiguration.url("pillar2-frontend")
-  val incorrectUrl: String                  = TestConfiguration.url("pillar2-frontend") + "randomUrl"
-  val frontEndSubscribeUrl: String          = s"$rootUrl" + "check-progress/register-your-group"
-  val frontEndBtaUrl: String                = s"$rootUrl" + "bta/pillar2-id"
-  val frontEndUPEUrl: String                = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
-  val frontEndUPEOrgTypeUrl: String         = s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
-  val redirectUrlField: String              = "redirectionUrl"
-  val redirectionUrlField: String           = "#redirectionUrl"
-  val credIdField: String                   = "authorityId"
-  val groupIdField: String                  = "groupIdentifier"
-  val frontEndNameUrl: String               = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-name"
-  val frontEndCAUrl: String                 = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
-  val frontEndUPERegTypeUrl: String         = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
-  val frontEndNFMNameUrl: String            = s"$rootUrl" + "business-matching/filing-member/no-id/input-name"
-  val frontEndNFMOrgTypeUrl: String         = s"$rootUrl" + "business-matching/filing-member/uk-based/entity-type"
-  val frontEndNFMAddressUrl: String         = s"$rootUrl" + "business-matching/filing-member/no-id/input-address "
-  val frontEndNFMContactNameUrl: String     = s"$rootUrl" + "business-matching/filing-member/no-id/input-business-name"
-  val frontEndNFMContactEmailUrl: String    = s"$rootUrl" + "business-matching/filing-member/no-id/input-email"
-  val frontEndNFMTelephoneUrl: String       = s"$rootUrl" + "business-matching/filing-member/no-id/phone"
-  val frontEndNFMTelephoneInputUrl: String  = s"$rootUrl" + "business-matching/filing-member/no-id/input-phone"
-  val frontEndFDGroupStatusUrl: String      = s"$rootUrl" + "further-details/group-status"
-  val frontEndFDAccountPeriod: String       = s"$rootUrl" + "further-details/accounting-period"
-  val frontEndCDAddressUrl: String          = s"$rootUrl" + "contact-details/address/input"
-  val frontEndNFMCAUrl: String              = s"$rootUrl" + "business-matching/filing-member/no-id/check-answers"
-  val frontEndFDCAUrl: String               = s"$rootUrl" + "further-details/check-answers"
-  val frontEndCDCAUrl: String               = s"$rootUrl" + "contact-details/check-answers"
-  val frontEndFinalReviewCAUrl: String      = s"$rootUrl" + "review-submit/check-answers"
-  val frontEndSubUrl: String                = s"$rootUrl" + "review-submit/confirmation"
-  val frontEndDashboardUrl: String          = s"$rootUrl" + "pillar2-top-up-tax-home"
-  val frontEndASAUrl: String                = s"$rootUrl" + "asa/input-pillar-2-id"
-  val rfmUrl: String                        = s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
-  val enrolmentKeyField: String             = "enrolment[0].name"
-  val identifierNameField: String           = "input-0-0-name"
-  val identifierValueField: String          = "input-0-0-value"
-  val delegatedEnrolmentKeyField: String    = "delegatedEnrolment[0].key"
-  val delegatedIdentifierNameField: String  = "input-delegated-0-0-name"
-  val delegatedIdentifierValueField: String = "input-delegated-0-0-value"
-  val delegatedAuthRuleField: String        = "delegatedEnrolment[0].delegatedAuthRule"
-  val addDelegatedEnrolmentCTA: String      = "#js-add-delegated-enrolment"
+  val url: String                            = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  val frontEndUrl: String                    = TestConfiguration.url("pillar2-frontend")
+  val incorrectUrl: String                   = TestConfiguration.url("pillar2-frontend") + "randomUrl"
+  val frontEndSubscribeUrl: String           = s"$rootUrl" + "check-progress/register-your-group"
+  val frontEndBtaUrl: String                 = s"$rootUrl" + "bta/pillar2-id"
+  val frontEndUPEUrl: String                 = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
+  val frontEndUPEOrgTypeUrl: String          = s"$rootUrl" + "business-matching/ultimate-parent/uk-based/entity-type"
+  val redirectUrlField: String               = "redirectionUrl"
+  val redirectionUrlField: String            = "#redirectionUrl"
+  val credIdField: String                    = "authorityId"
+  val groupIdField: String                   = "groupIdentifier"
+  val frontEndNameUrl: String                = s"$rootUrl" + "business-matching/ultimate-parent/no-id/input-name"
+  val frontEndCAUrl: String                  = s"$rootUrl" + "business-matching/ultimate-parent/no-id/check-answers"
+  val frontEndUPERegTypeUrl: String          = s"$rootUrl" + "business-matching/ultimate-parent/registered-in-uk"
+  val frontEndNFMNameUrl: String             = s"$rootUrl" + "business-matching/filing-member/no-id/input-name"
+  val frontEndNFMOrgTypeUrl: String          = s"$rootUrl" + "business-matching/filing-member/uk-based/entity-type"
+  val frontEndNFMAddressUrl: String          = s"$rootUrl" + "business-matching/filing-member/no-id/input-address "
+  val frontEndNFMContactNameUrl: String      = s"$rootUrl" + "business-matching/filing-member/no-id/input-business-name"
+  val frontEndNFMContactEmailUrl: String     = s"$rootUrl" + "business-matching/filing-member/no-id/input-email"
+  val frontEndNFMTelephoneUrl: String        = s"$rootUrl" + "business-matching/filing-member/no-id/phone"
+  val frontEndNFMTelephoneInputUrl: String   = s"$rootUrl" + "business-matching/filing-member/no-id/input-phone"
+  val frontEndFDGroupStatusUrl: String       = s"$rootUrl" + "further-details/group-status"
+  val frontEndFDAccountPeriod: String        = s"$rootUrl" + "further-details/accounting-period"
+  val frontEndCDAddressUrl: String           = s"$rootUrl" + "contact-details/address/input"
+  val frontEndNFMCAUrl: String               = s"$rootUrl" + "business-matching/filing-member/no-id/check-answers"
+  val frontEndFDCAUrl: String                = s"$rootUrl" + "further-details/check-answers"
+  val frontEndCDCAUrl: String                = s"$rootUrl" + "contact-details/check-answers"
+  val frontEndFinalReviewCAUrl: String       = s"$rootUrl" + "review-submit/check-answers"
+  val frontEndSubUrl: String                 = s"$rootUrl" + "review-submit/confirmation"
+  val frontEndDashboardUrl: String           = s"$rootUrl" + "pillar2-top-up-tax-home"
+  val frontEndASAUrl: String                 = s"$rootUrl" + "asa/input-pillar-2-id"
+  val rfmUrl: String                         = s"$rootUrl" + "replace-filing-member/security/enter-pillar2-id"
+  val enrolmentKeyField: String              = "enrolment[0].name"
+  val identifierNameField: String            = "input-0-0-name"
+  val identifierValueField: String           = "input-0-0-value"
+  val delegatedEnrolmentKeyField: String     = "delegatedEnrolment[0].key"
+  val delegatedIdentifierNameField: String   = "input-delegated-0-0-name"
+  val delegatedIdentifierValueField: String  = "input-delegated-0-0-value"
+  val delegatedAuthRuleField: String         = "delegatedEnrolment[0].delegatedAuthRule"
+  val delegatedEnrolmentKeyField2: String    = "delegatedEnrolment[1].key"
+  val delegatedIdentifierNameField2: String  = "input-delegated-1-0-name"
+  val delegatedIdentifierValueField2: String = "input-delegated-1-0-value"
+  val delegatedAuthRuleField2: String        = "delegatedEnrolment[1].delegatedAuthRule"
+  val addDelegatedEnrolmentCTA: String       = "#js-add-delegated-enrolment"
 
   def loginWithUser(name: String): Unit = {
     Nav.navigateTo(url)
@@ -350,14 +354,18 @@ object AuthLoginOldPage extends BrowserDriver with PageObject {
   }
 
   def addDelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
-    clickAddDelegatedEnrolmentCTA()
     Input.sendKeysByName(enrolmentKey, delegatedEnrolmentKeyField)
     Input.sendKeysById(delegatedIdentifierNameField, identifierName)
     Input.sendKeysById(delegatedIdentifierValueField, identifierValue)
     Input.sendKeysById(delegatedAuthRuleField, authRule)
-    clickSubmitButton()
   }
 
   def clickAddDelegatedEnrolmentCTA(): Unit = Find.findByCss(addDelegatedEnrolmentCTA).click()
 
+  def addClientDelegatedEnrolmentSecondRow(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
+    Input.sendKeysByName(enrolmentKey, delegatedEnrolmentKeyField2)
+    Input.sendKeysById(delegatedIdentifierNameField2, identifierName)
+    Input.sendKeysById(delegatedIdentifierValueField2, identifierValue)
+    Input.sendKeysById(delegatedAuthRuleField2, authRule)
+  }
 }

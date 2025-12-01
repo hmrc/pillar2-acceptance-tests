@@ -487,19 +487,19 @@ object CommonStepsSteps {
     assert(Driver.instance.findElement(By.cssSelector(UPEPage.sendYourFeedback)).getText.contains(text))
   }
 
-  def whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-                                                                 userType: String,
-                                                                 enrolmentKey: String,
-                                                                 identifierName: String,
-                                                                 identifierValue: String): Unit = {
+  def whenUserLogsInWithExistingEntityGroupAndForPillar2Service(userType: String, enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
     userType match {
       case "Organisation" => AuthLoginOldPage.loginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
       case "Agent"        => AuthLoginOldPage.agentLoginWithExistingEntity(enrolmentKey, identifierName, identifierValue)
     }
   }
 
-  def whenIAddDelegatedEnrolmentWithAndForPillar2Service(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
+  def addDelegatedEnrolments(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
     AuthLoginOldPage.addDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
+  }
+
+  def addSecondClientDelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
+    AuthLoginOldPage.addClientDelegatedEnrolmentSecondRow(enrolmentKey, identifierName, identifierValue, authRule)
   }
 
   def whenIRefreshThePage(): Unit = {

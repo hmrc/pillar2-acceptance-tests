@@ -21,4 +21,6 @@ import uk.gov.hmrc.test.ui.helper.PageObject
 object DashboardPage extends PageObject {
   val url: String = s"$rootUrl" + "pillar2-top-up-tax-home"
   val ASALink     = "a[href*='/asa/home']"
+  val plrIdText   = ".govuk-body.homepage-title span:nth-of-type(2)"
+
 }

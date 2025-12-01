@@ -17,11 +17,12 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage._
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.PaymentStepsSteps.{andIAccessPaymentPage, andIEnterUKBankAccountDetailsAs, andIProvideRefundAmountAs, andIProvideValueForAs, andISelectOptionOnPartialNameErrorPage, andISelectRepaymentMethodAs}
+import uk.gov.hmrc.test.ui.specsdef.PaymentStepsSteps._
 
 class BarsErrorHandlingSpec extends BaseSpec with Matchers {
 
@@ -29,12 +30,7 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
 
     Scenario("1 - Organisation User bars integration validation", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345676"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345676")
 
       Then("I should be on Dashboard page")
       thenIShouldBeOn("Dashboard page")
@@ -156,8 +152,14 @@ class BarsErrorHandlingSpec extends BaseSpec with Matchers {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
+
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
