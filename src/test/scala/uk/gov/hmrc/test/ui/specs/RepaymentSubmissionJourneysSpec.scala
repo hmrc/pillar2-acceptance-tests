@@ -160,8 +160,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentCYAPage.onPageSubmitById()
 
       Then("The agent will be presented with the confirmation page")
-      RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
-      RepaymentConfirmationPage.refreshPage()
+      RepaymentConfirmationPage.waitRefreshThenCheckOnPage(initialWaitSeconds = 10)
 
       Then("The agent clicks the back button they will be taken to the cannot return, repayment request is complete page")
       RepaymentConfirmationPage.clickBackButton()
