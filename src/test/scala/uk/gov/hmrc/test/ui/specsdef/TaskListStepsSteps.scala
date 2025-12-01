@@ -30,12 +30,6 @@ object TaskListStepsSteps {
     assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskSection)).size() == 3)
   }
 
-  def andIShouldSeeTheTaskNameXOnBusinessDetailsSection(taskName: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
-    assert(Driver.instance.findElement(By.cssSelector(TaskListPage.taskItems)).getText.contains(taskName))
-  }
-
   def andTheTaskStatusShouldBe(taskName: String, status: String): Unit = {
     taskName match {
       case "Add Ultimate Parent Entity details" =>
@@ -98,36 +92,6 @@ object TaskListStepsSteps {
         assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(4).getText.contains(taskName))
         assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(4).getText.contains(status))
 
-    }
-  }
-
-  def thenINavigateBackToTaskListPageFromXPage(page: String): Unit = {
-    page match {
-      case "Name" =>
-        for (i <- 1 to 3) {
-          clickByCss(BusinessActivityEQPage.backLink)
-        }
-
-      case "GRS" =>
-        for (i <- 1 to 4) {
-          clickByCss(BusinessActivityEQPage.backLink)
-        }
-
-      case "Phone" =>
-        for (i <- 1 to 8) {
-          clickByCss(BusinessActivityEQPage.backLink)
-        }
-
-      case "Phone Input" =>
-        for (i <- 1 to 9) {
-          clickByCss(BusinessActivityEQPage.backLink)
-        }
-    }
-  }
-
-  def thenINavigateToPhoneQuestionPageFromInitialGuidancePage(): Unit = {
-    for (i <- 1 to 6) {
-      InitialGuidancePage.clickContinue()
     }
   }
 }

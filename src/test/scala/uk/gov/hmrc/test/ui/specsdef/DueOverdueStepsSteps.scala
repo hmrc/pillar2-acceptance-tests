@@ -15,30 +15,10 @@
  */
 
 package uk.gov.hmrc.test.ui.specsdef
-import org.openqa.selenium.By
-import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.helper.Input.clickByCss
-import uk.gov.hmrc.test.ui.helper.{Input, Nav, Wait}
+import uk.gov.hmrc.test.ui.helper.Input
 import uk.gov.hmrc.test.ui.pages._
 
 object DueOverdueStepsSteps {
-
-  def andIShouldSeeAccountingPeriodsOnDueOverduePage(accountingPeriods: Int): Unit = {
-    Wait.waitForElementToPresentByCssSelector(DueOverduePage.accountDetails)
-    assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.accountPeriodSections)).size() == accountingPeriods)
-  }
-
-  def andIShouldSeeXAccountingPeriodsOnSubHistoryPage(accountingPeriods: Int): Unit = {
-    Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.accountDetails)
-    assert(Driver.instance.findElements(By.cssSelector(P2SubmissionHistoryPage.accountingPeriods)).size() == accountingPeriods)
-  }
-
-  def andIShouldSeeXSectionWithStatus(count: Int, dueType: String): Unit = {
-    dueType match {
-      case "Due"     => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.dueSection)).size() == count)
-      case "Overdue" => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.overDueSection)).size() == count)
-    }
-  }
 
   def andISelectOptionAndContinueOnPillar2Submission(option: String): Unit = {
     option match {
@@ -48,8 +28,4 @@ object DueOverdueStepsSteps {
     BtnStartPage.clickContinue()
   }
 
-  def andINavigateBackToBTNReturnSubmissionKBPage(): Unit = {
-    Nav.browserBack()
-    clickByCss(BtnAgdKBPage.backLink)
-  }
 }
