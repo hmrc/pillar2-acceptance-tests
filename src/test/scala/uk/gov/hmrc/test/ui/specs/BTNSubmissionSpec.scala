@@ -15,9 +15,8 @@
  */
 
 package uk.gov.hmrc.test.ui.specs
-
-import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.asa._
+import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.btn._
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
@@ -94,6 +93,105 @@ class BTNSubmissionSpec extends BaseSpec {
       Then("The user clicks the back button and is presented with the cannot return page")
       BtnConfirmationPage.clickBackButton()
       BtnCannotReturnPage.onPage()
+    }
+
+    Scenario("3 - Org user navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true", AcceptanceTests) {
+
+      Given("Organisation User logs in to Pillar2 service")
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            "HMRC-PILLAR2-ORG",
+            "PLRID",
+            "XEPLR9999999995"
+          )
+        )
+      )
+
+      Then("The user starts a below threshold notification")
+      DashboardPage.clickSubmitBTNLink()
+      BtnStartPage.continueToNextPage()
+
+      And("The user selects the current accounting period")
+      BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
+
+      And("The user returns to the accounting period and selects previous accounting period and reaches BTN under enquiry page")
+      BtnAccountingPage.clickOnBackLink()
+      BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
+
+      And("The user returns to the multiple accounting period and select PreviousAccountingPeriodUKTRSubmitted")
+      BtnUnderEnquiryPage.clickBackButton()
+      BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
+
+      Then("The user reaches the BTN under enquiry page and continues BTN submission")
+      BtnUnderEnquiryPage.continueToNextPage()
+      BtnAccountingPage.continueToNextPage()
+      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnCyaSubmitPage.onPageSubmitById()
+
+      And("The user is on the Below-Threshold Notification successful confirmation page")
+      BtnConfirmationPage.onPage(timeoutSeconds = 10)
+
+      When("The user returns to the dashboard")
+      BtnConfirmationPage.clickReturnToHomepageLink()
+      DashboardPage.onPage()
+    }
+
+    Scenario("4 - Agent user navigates to Under Enquiry Page when BTN submission is attempted with enquiry flag true", AcceptanceTests) {
+      Given("Agent User logs in with existing entity group")
+      login(
+        userType = "Agent",
+        pageUrl = "asa",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-AS-AGENT",
+            identifierName = "AgentReference",
+            identifierValue = "1234"
+          )
+        ),
+        delegatedEnrolment = Some(
+          DelegatedEnrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XEPLR9999999995",
+            authRule = "pillar2-auth"
+          )
+        )
+      )
+
+      Then("The agent confirms client PLRId")
+      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999995")
+      ASAConfirmationPage.continueToNextPage()
+
+      Then("The agent starts a below threshold notification")
+      DashboardPage.clickSubmitBTNLink()
+      BtnStartPage.continueToNextPage()
+
+      And("The agent selects the current accounting period")
+      BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
+
+      And("The agent returns to the multiple accounting period and selects previous accounting period and reached BtnUnderEnquiryPage")
+      BtnAccountingPage.clickOnBackLink()
+      BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
+
+      And("The agent returns to the multiple accounting periord and select PreviousAccountingPeriodUKTRSubmitted")
+      BtnUnderEnquiryPage.clickBackButton()
+      BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
+
+      And("The agent continue from BtnUnderEnquiryPage ")
+      BtnUnderEnquiryPage.continueToNextPage()
+      BtnAccountingPage.continueToNextPage()
+      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnCyaSubmitPage.onPageSubmitById()
+
+      And("The agent is on the Below-Threshold Notification successful confirmation page")
+      BtnConfirmationPage.onPage(timeoutSeconds = 10)
+
+      When("The agent returns to the dashboard")
+      BtnConfirmationPage.clickReturnToHomepageLink()
+      DashboardPage.onPage()
     }
   }
 }
