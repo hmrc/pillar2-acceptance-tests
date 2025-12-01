@@ -92,4 +92,16 @@ trait BasePage extends Matchers with PageObject {
   def clickByClassName(text: String): Unit = findByClassName(text).click()
 
   def clickById(text: String): Unit = findById(text).click()
+
+  def refreshPage(): Unit =
+    Driver.instance.navigate().refresh()
+
+  def waitRefreshThenCheckOnPage(
+      initialWaitSeconds: Long = 2,
+      postRefreshWaitSeconds: Long = 3
+  ): Unit = {
+    fluentWait(initialWaitSeconds)
+    refreshPage()
+    onPage(timeoutSeconds = postRefreshWaitSeconds)
+  }
 }

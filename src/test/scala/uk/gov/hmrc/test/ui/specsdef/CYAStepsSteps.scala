@@ -31,11 +31,6 @@ object CYAStepsSteps {
     assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
   }
 
-  def andIShouldSeeRowWithKeyAndValue(row: Int, key: String, value: String): Unit = {
-    assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.keyList)).get(row - 1).getText.contains(key))
-    assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
-  }
-
   def andIShouldSeeDetailsAsBelow(detailsMap: Map[String, String]): Unit = {
     detailsMap.foreach { case (key, expectedValue) =>
       val labelElement = Driver.instance.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
@@ -53,36 +48,10 @@ object CYAStepsSteps {
 
   def andIClickOnChangeHyperlinkNextToThe(link: String): Unit = {
     link match {
-      case "UPE Name" =>
-        clickByCss(UPECheckYourAnswersPage.changeName)
-      case "UPE Address" =>
-        clickByCss(UPECheckYourAnswersPage.changeAddress)
-      case "UPE Contact Name" =>
-        clickByCss(UPECheckYourAnswersPage.changeContactName)
-      case "UPE Email Address" =>
-        clickByCss(UPECheckYourAnswersPage.changeEmailAddress)
-      case "UPE Phone Contact" =>
-        clickByCss(UPECheckYourAnswersPage.changePhoneContact)
-      case "UPE Phone Number" =>
-        clickByCss(UPECheckYourAnswersPage.changePhoneNumber)
-      case "NFM Name" =>
-        clickByCss(NFMCheckYourAnswersPage.changeName)
-      case "NFM Address" =>
-        clickByCss(NFMCheckYourAnswersPage.changeAddress)
-      case "NFM Contact Name" =>
-        clickByCss(NFMCheckYourAnswersPage.changeContactName)
-      case "NFM Email Address" =>
-        clickByCss(NFMCheckYourAnswersPage.changeEmailAddress)
-      case "NFM Phone Contact" =>
-        clickByCss(NFMCheckYourAnswersPage.changePhoneContact)
-      case "NFM Phone Number" =>
-        clickByCss(NFMCheckYourAnswersPage.changePhoneNumber)
       case "FD Group Status" =>
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
       case "Accounting Period" =>
         clickByCss(FurtherDetailsCheckYourAnswersPage.changeAccountingPeriod)
-      case "Domestic or Mne" =>
-        clickByCss(BtnChangeDomesticOrMnePage.changeDomesticOrMne)
     }
   }
 
@@ -96,14 +65,6 @@ object CYAStepsSteps {
         clickByCss(ContactDetailsCheckAnswersPage.changeContactNumber)
       case "Do you have a second contact?" =>
         clickByCss(ContactDetailsCheckAnswersPage.secondContact)
-      case "Second Contact Name" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeSecondName)
-      case "Second Contact Email" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeSecondEmail)
-      case "Second Contact Phone number" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeSecondPhone)
-      case "Address" =>
-        clickByCss(ContactDetailsSummaryPage.changeAddress)
       case "Dashboard Address" =>
         clickByCss(ContactDetailsSummaryPage.dashboardAddressChange)
       case "Primary Contact" =>

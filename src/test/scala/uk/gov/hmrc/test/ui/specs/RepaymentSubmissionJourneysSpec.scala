@@ -25,7 +25,7 @@ import uk.gov.hmrc.test.ui.specs.tags._
 
 class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
-  Feature("Repayment Journey") {
+  Feature("Repayment Journeys") {
     Scenario("1 - Org User successfully submits repayment journey with a UK bank account and uses change links", AcceptanceTests) {
       Given("Org User logs in with existing entity group")
       login(
@@ -160,7 +160,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentCYAPage.onPageSubmitById()
 
       Then("The agent will be presented with the confirmation page")
-      RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
+      RepaymentConfirmationPage.waitRefreshThenCheckOnPage(initialWaitSeconds = 10)
 
       Then("The agent clicks the back button they will be taken to the cannot return, repayment request is complete page")
       RepaymentConfirmationPage.clickBackButton()
