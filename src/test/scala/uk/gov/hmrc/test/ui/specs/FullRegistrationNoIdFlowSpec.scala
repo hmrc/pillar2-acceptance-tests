@@ -22,13 +22,13 @@ import uk.gov.hmrc.test.ui.pages.furtherDetails._
 import uk.gov.hmrc.test.ui.pages.nfm._
 import uk.gov.hmrc.test.ui.pages.registration._
 import uk.gov.hmrc.test.ui.pages.upe._
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags._
 
 class FullRegistrationNoIdFlowSpec extends BaseSpec {
 
   Feature("Full registration with no ID") {
 
-    Scenario("Full registration journey with amendments made on check your answers pages", AcceptanceTests, ZapAccessibility) {
+    Scenario("Full registration journey with amendments made on check your answers pages", AcceptanceTests) {
       Given("Organisation User logs in without enrollment")
       login(
         userType = "Organisation",
@@ -103,13 +103,23 @@ class FullRegistrationNoIdFlowSpec extends BaseSpec {
       NFMCheckYourAnswersPage.clickChangeLink(NFMCheckYourAnswersPage.changePhoneNumber)
       NFMPhoneInputPage.updatePhoneNumber()
 
-      Then("The user continues to the task list")
+      Then("The user continues from NFM to the task list")
       NFMCheckYourAnswersPage.continueToNextPage()
-      TaskListPage.clickAddFurtherGroupDetailsLink()
 
       And("The user adds further details")
+      TaskListPage.clickAddFurtherGroupDetailsLink()
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
+
+      And("The user amends group status via the Check your answers page")
+      FDCheckYourAnswersPage.clickChangeGroupStatusLink()
+      FDGroupStatusPage.selectUkAndNonUk()
+
+      And("The user amends the accounting period via the Check your answers page")
+      FDCheckYourAnswersPage.clickChangeAccountingPeriodLink()
+      FDGroupAccountingPeriodPage.updateDates()
+
+      Then("The user continues from further details to the task list")
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")

@@ -23,10 +23,17 @@ object FDGroupStatusPage extends BasePage {
   override val url: String = s"${baseUrl}further-details/group-status"
 
   private val onlyUk: By = By.id("value_0")
+  private val ukAndNonUk: By = By.id("value_1")
 
   def selectOnlyUk(): Unit = {
     onPage()
     click(onlyUk)
+    clickButtonByText(buttonSaveAndContinue)
+  }
+
+  def selectUkAndNonUk(): Unit = {
+    onPage(s"${baseUrl}further-details/change-group-status")
+    click(ukAndNonUk)
     clickButtonByText(buttonSaveAndContinue)
   }
 }

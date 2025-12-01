@@ -20,11 +20,24 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object FDCheckYourAnswersPage extends BasePage {
   override val url: String   = s"${baseUrl}further-details/check-answers"
-  val changeGroupStatus      = "a[href*='/change-group-status']"
-  val changeAccountingPeriod = "a[href*='/change-accounting-period']"
+
+  private val changeGroupStatus      = "a[href*='/change-group-status']"
+  private val changeAccountingPeriod = "a[href*='/change-accounting-period']"
+
+  def clickChangeGroupStatusLink(): Unit = {
+    onPage()
+    clickByCss(changeGroupStatus)
+  }
+
+  def clickChangeAccountingPeriodLink(): Unit = {
+    onPage()
+    clickByCss(changeAccountingPeriod)
+  }
 
   def continueToNextPage(): Unit = {
     onPage()
     click(continueButtonId)
   }
+
+
 }

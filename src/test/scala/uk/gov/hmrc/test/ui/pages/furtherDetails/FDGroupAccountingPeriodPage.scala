@@ -39,4 +39,15 @@ object FDGroupAccountingPeriodPage extends BasePage {
     sendKeys(endYearId, "2025")
     clickButtonByText(buttonSaveAndContinue)
   }
+
+  def updateDates(): Unit = {
+    onPage(s"${baseUrl}further-details/change-accounting-period")
+    sendKeys(startDayId, "01")
+    sendKeys(startMonthId, "02")
+    sendKeys(startYearId, "2024")
+    sendKeys(endDayId, "31")
+    sendKeys(endMonthId, "01")
+    sendKeys(endYearId, "2025")
+    clickButtonByText(buttonSaveAndContinue)
+  }
 }

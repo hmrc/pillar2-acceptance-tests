@@ -18,8 +18,7 @@ package uk.gov.hmrc.test.ui.specsdef
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.helper.Check.{be, convertToAnyShouldWrapper, include}
-import uk.gov.hmrc.test.ui.helper.Input.{clickByCss, getTextOf}
+import uk.gov.hmrc.test.ui.helper.Input.clickByCss
 import uk.gov.hmrc.test.ui.helper._
 import uk.gov.hmrc.test.ui.pages._
 
