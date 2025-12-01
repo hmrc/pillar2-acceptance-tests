@@ -177,8 +177,12 @@ object CommonStepsSteps {
     }
   }
 
-  def whenIAddDelegatedEnrolmentWithAndForPillar2Service(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
+  def addDelegatedEnrolments(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
     AuthLoginOldPage.addDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
+  }
+
+  def addSecondClientDelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
+    AuthLoginOldPage.addClientDelegatedEnrolmentSecondRow(enrolmentKey, identifierName, identifierValue, authRule)
   }
 
   def givenIAccessRandomPage(): Unit = {

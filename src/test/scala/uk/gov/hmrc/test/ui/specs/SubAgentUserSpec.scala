@@ -17,9 +17,10 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage._
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.andIShouldSeeTheFieldIsPrepopulatedWith
@@ -28,22 +29,18 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 submission Agent User Journey") {
 
-    Scenario("1 - Agent user capturing Pillar2 ID",AcceptanceTests,ZapAccessibility) {
+    Scenario("1 - Agent user capturing Pillar2 ID", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
+
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674",
-        "pillar2-auth"
-      )
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should navigate to ASA Pillar2 Input Page")
       thenIShouldNavigateTo("ASA Pillar2 Input Page")
@@ -146,7 +143,7 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify Agent service account user unauthorised pages",AcceptanceTests,ZapAccessibility) {
+    Scenario("2 - Verify Agent service account user unauthorised pages", AcceptanceTests, ZapAccessibility) {
       Given("Individual User logs in to register for Pillar2 Agent service")
       givenLogsInToRegisterForPillar2AgentService("Individual User")
 
@@ -191,7 +188,7 @@ class SubAgentUserSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Verify Agent service account user unauthorised pages",AcceptanceTests,ZapAccessibility) {
+    Scenario("3 - Verify Agent service account user unauthorised pages", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in to register for Pillar2 Agent service")
       givenLogsInToRegisterForPillar2AgentService("Organisation User")
 

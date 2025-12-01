@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
@@ -28,7 +28,11 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
 
   Feature("RFM CYA - NFM No ID flow") {
 
-    Scenario("1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated",AcceptanceTests, ZapAccessibility) {
+    Scenario(
+      "1 - Verify RFM journey for NFM No Id flow until check your answers page and validate that previously entered data is pre populated",
+      AcceptanceTests,
+      ZapAccessibility
+    ) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Organisation User")
 
@@ -132,10 +136,9 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
 
       And("I click Sign out link")
       andIClickLink("Sign out")
-
     }
 
-    Scenario("2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey",AcceptanceTests) {
+    Scenario("2 - Validating RFM final submission for RFM as selecting UPE then changed to NFM No ID journey", AcceptanceTests) {
       Given("I clear the cache")
       thenIClearTheCache()
 
@@ -309,7 +312,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Validating RFM Check your answers page navigations",AcceptanceTests) {
+    Scenario("3 - Validating RFM Check your answers page navigations", AcceptanceTests) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Organisation User")
 
@@ -422,7 +425,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Validating RFM Check your answers page for UPE/NFM journey Responses",AcceptanceTests) {
+    Scenario("4 - Validating RFM Check your answers page for UPE/NFM journey Responses", AcceptanceTests) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Organisation User")
 
@@ -629,7 +632,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("5 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account",AcceptanceTests) {
+    Scenario("5 - Verify that New NFM can replace existing FM through NO ID flow on the Pillar 2 account", AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -724,7 +727,7 @@ class RFMnfmNoIDFlowSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("6 - Verify that UPE can replace existing FM on the Pillar 2 account",AcceptanceTests) {
+    Scenario("6 - Verify that UPE can replace existing FM on the Pillar 2 account", AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 

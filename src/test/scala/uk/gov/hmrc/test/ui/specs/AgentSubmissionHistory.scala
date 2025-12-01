@@ -17,9 +17,10 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage._
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
 
 class AgentSubmissionHistory extends BaseSpec with Matchers {
@@ -28,20 +29,16 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
 
     Scenario("1 - Agent User navigates to Submission History for no accounting period", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
+
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR2222222222 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR2222222222",
-        "pillar2-auth"
-      )
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XEPLR2222222222", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -67,20 +64,16 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
 
     Scenario("2 -  Agent User navigates to Submission History for one accounting period", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
+
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR7777777777 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR7777777777",
-        "pillar2-auth"
-      )
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XEPLR7777777777", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
@@ -106,20 +99,16 @@ class AgentSubmissionHistory extends BaseSpec with Matchers {
 
     Scenario("3 - Agent User navigates to Submission History for multiple accounting period", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Agent",
-        "HMRC-AS-AGENT",
-        "AgentReference",
-        "1234"
-      )
+      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
+
+      Then("I click Add Delegated Enrolment button")
+      clickAddDelegatedEnrolmentCTA()
 
       And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR4444444444 and pillar2-auth for Pillar2 service")
-      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XEPLR4444444444",
-        "pillar2-auth"
-      )
+      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XEPLR4444444444", "pillar2-auth")
+
+      And("I Click Submit button")
+      clickSubmitButton()
 
       Then("I should be on ASA Pillar2 Input Page")
       thenIShouldBeOn("ASA Pillar2 Input Page")
