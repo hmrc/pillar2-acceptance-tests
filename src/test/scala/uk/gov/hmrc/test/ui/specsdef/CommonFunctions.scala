@@ -100,9 +100,9 @@ object CommonFunctions
       case "contact details summary page"               => ContactDetailsSummaryPage
       case "duplicate ack ref error page"               => DuplicateAckRefErrorPage
       case "Make a payment page"                        => MakePaymentPage
-      case "bta pillar2 ID check page"                  => BTAPillar2IDCheckPage
-      case "eacd page"                                  => EACDPage
-      case "bta register guidance page"                 => BTARegisterGuidancePage
+//      case "bta pillar2 ID check page"                  => BTAPillar2IDCheckPage
+//      case "eacd page"                                  => EACDPage
+//      case "bta register guidance page"                 => BTARegisterGuidancePage
       case "Subscription API error page"                => SubscriptionAPIerrorPage
       case "Registration API error page"                => RegistrationAPIerrorPage
       case "Registration In Progress page"              => RegistrationInProgressPage

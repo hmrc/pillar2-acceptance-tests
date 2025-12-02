@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.bta
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object BTARegisterGuidancePage extends PageObject {
-  val url: String = s"$rootUrl" + "bta/register"
+object BTARegisterGuidancePage extends BasePage {
+  override val url: String = s"${baseUrl}bta/register"
 }

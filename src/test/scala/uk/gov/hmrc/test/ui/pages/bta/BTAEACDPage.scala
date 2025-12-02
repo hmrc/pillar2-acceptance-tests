@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.bta
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object BTAPillar2IDCheckPage extends PageObject {
-  val url: String  = s"$rootUrl" + "bta/pillar2-id"
-  val errorLink    = "[href='#value_0']"
-  val errorMessage = ".govuk-error-message"
+object BTAEACDPage extends BasePage {
+  override val url: String = s"${baseUrl}bta/eacd"
 }

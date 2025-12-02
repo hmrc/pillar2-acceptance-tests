@@ -14,10 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.bta
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object EACDPage extends PageObject {
-  val url: String = s"$rootUrl" + "bta/eacd"
+object BTAPillar2IDCheckPage extends BasePage {
+  override val url: String = s"${baseUrl}bta/pillar2-id"
+
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    click(submitButtonId)
+  }
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    click(submitButtonId)
+  }
 }
