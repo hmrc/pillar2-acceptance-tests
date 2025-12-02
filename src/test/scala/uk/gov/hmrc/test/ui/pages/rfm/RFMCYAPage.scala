@@ -24,8 +24,4 @@ object RFMCYAPage extends BasePage {
   val changePID              = "a[href*='/change-enter-pillar-2-id']"
   val changeRegistrationDate = "a[href*='/change-registration-date']"
 
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickButtonByText(buttonConfirmAndContinue)
-  }
 }

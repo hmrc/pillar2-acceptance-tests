@@ -29,8 +29,8 @@ object RFMNoIDCYAPage extends BasePage {
     clickByCss(changeLink)
   }
 
-  def continueToNextPage(): Unit = {
+  override def continueToNextPage(): Unit = {
     onPage()
-    clickByCss(continue)
+    clickByClassName(continue)
   }
 }

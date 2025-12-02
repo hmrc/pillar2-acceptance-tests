@@ -20,9 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMStartPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/start"
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickByCss(continue)
-  }
 }

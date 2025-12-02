@@ -39,12 +39,21 @@ object RFMNFMAddressPage extends BasePage {
     sendKeys(region, "Test Region")
     sendKeys(postcode, "AA1 1AA")
     countryAutoSelect("United Kingdom")
-    clickButtonByText(buttonSaveAndContinue)
+    clickByClassName(continue)  }
+
+  def enterAddressNonUK(): Unit = {
+    onPage()
+    sendKeys(addressLine1, "Test Street")
+    sendKeys(addressLine2, "Test Town")
+    sendKeys(city, "Test City")
+    sendKeys(region, "Test Region")
+    sendKeys(postcode, "1234 ABC")
+    countryAutoSelect("Chile")
+    clickByClassName(continue)
   }
 
   def updateAddressNonUK(): Unit = {
     onPage(s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/change-input-address")
     sendKeys(city, "Updated Test City")
-    clickButtonByText(buttonSaveAndContinue)
-  }
+    clickByClassName(continue)  }
 }
