@@ -19,14 +19,10 @@ package uk.gov.hmrc.test.ui.pages.rfm
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMNFMNamePage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/input-name"
+  override val url: String       = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/input-name"
+  override val changeUrl: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/change-input-name"
 
-  private val nameValue: String        = "Replacement NFM Name"
-  private val nameUpdatedValue: String = "New Entity Name"
+  override val textValue: String       = "Replacement NFM Name"
+  override val textUpdateValue: String = "New Entity Name"
 
-  def enterName(): Unit = {
-    onPage()
-    sendKeys(textInputField, nameValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
 }

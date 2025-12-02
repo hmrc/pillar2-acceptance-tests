@@ -23,14 +23,4 @@ object RFMNoIDCYAPage extends BasePage {
 
   val changeName    = "a[href*='/change-input-name']"
   val changeAddress = "a[href*='/change-input-address']"
-
-  def clickChangeLink(changeLink: String): Unit = {
-    onPage()
-    clickByCss(changeLink)
-  }
-
-  override def continueToNextPage(): Unit = {
-    onPage()
-    clickByClassName(continue)
-  }
 }

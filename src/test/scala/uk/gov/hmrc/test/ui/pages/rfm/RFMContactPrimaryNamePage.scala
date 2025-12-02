@@ -21,13 +21,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMContactPrimaryNamePage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/contact-details/input-name"
+  override val changeUrl: String = s"${baseUrl}replace-filing-member/contact-details/change-input-name"
 
-  private val nameValue: String = "NFM Contact Name"
-  private val nameUpdatedValue: String = "New Entity Name"
-
-  def enterName(): Unit = {
-    onPage()
-    sendKeys(textInputField, nameValue)
-    clickByClassName(continue)
-  }
+  override val textValue: String = "RFM Contact Name"
+  override val textUpdateValue: String = "New RFM Contact Name"
 }

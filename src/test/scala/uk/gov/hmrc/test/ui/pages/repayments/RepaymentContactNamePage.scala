@@ -20,22 +20,10 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentContactNamePage extends BasePage {
-  override val url: String = s"${baseUrl}repayment/contact-details/input-name"
-  val changeUrl: String    = s"${baseUrl}repayment/contact-details/change-input-name"
+  override val url: String       = s"${baseUrl}repayment/contact-details/input-name"
+  override val changeUrl: String = s"${baseUrl}repayment/contact-details/change-input-name"
 
   override val textInputField: By      = By.id("contactName")
-  private val nameValue: String        = "Contact Name"
-  private val nameUpdatedValue: String = "Updated Contact Name"
-
-  def enterText(): Unit = {
-    onPage()
-    sendKeys(textInputField, nameValue)
-    clickByClassName(continue)
-  }
-
-  def updateText(): Unit = {
-    onPage(changeUrl)
-    sendKeys(textInputField, nameUpdatedValue)
-    clickByClassName(continue)
-  }
+  override val textValue: String       = "Contact Name"
+  override val textUpdateValue: String = "Updated Contact Name"
 }

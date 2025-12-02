@@ -20,10 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object NFMPhoneAsContactPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/filing-member/no-id/phone"
-
-  def selectYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    click(submitButtonId)
-  }
 }

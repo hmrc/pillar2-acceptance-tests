@@ -34,9 +34,4 @@ object ManageAccountsSummaryPage extends BasePage {
     onPage()
     click(By.cssSelector(changeAccountingPeriod))
   }
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    click(submitButtonId)
-  }
 }

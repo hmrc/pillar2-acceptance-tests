@@ -20,9 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPEInitialGuidancePage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/match-hmrc-records"
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickByClassName(continue)
-  }
 }

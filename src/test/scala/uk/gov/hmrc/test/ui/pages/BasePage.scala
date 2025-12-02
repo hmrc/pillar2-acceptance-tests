@@ -30,6 +30,10 @@ import java.time.Duration
 trait BasePage extends Matchers with PageObject {
 
   val url: String
+  val changeUrl: String = url
+  val textValue: String = ""
+  val textUpdateValue: String = ""
+
   val baseUrl: String          = TestConfiguration.url("pillar2-frontend")
   val submitButtonId: By       = By.id("submit")
   val continueButtonId: By     = By.id("continue")
@@ -61,6 +65,43 @@ trait BasePage extends Matchers with PageObject {
   def onPageSubmitById(): Unit = {
     onPage()
     click(submitButtonId)
+  }
+
+  def continueToNextPage(): Unit = {
+    onPage()
+    clickByClassName(continue)
+  }
+
+  def enterText(): Unit = {
+    onPage()
+    sendKeys(textInputField, textValue)
+    clickByClassName(continue)
+  }
+
+  def updateText(): Unit = {
+    require(changeUrl.nonEmpty, s"changeUrl must be set for ${this.getClass.getSimpleName}")
+    require(textUpdateValue.nonEmpty, s"textUpdateValue must be set for ${this.getClass.getSimpleName}")
+
+    onPage(changeUrl)
+    sendKeys(textInputField, textUpdateValue)
+    clickByClassName(continue)
+  }
+
+  def selectYes(): Unit = {
+    onPage()
+    click(yesRadioId)
+    clickByClassName(continue)
+  }
+
+  def selectNo(): Unit = {
+    onPage()
+    click(noRadioId)
+    clickByClassName(continue)
+  }
+
+  def clickLink(link: String): Unit = {
+    onPage()
+    click(By.cssSelector(link))
   }
 
   def clickOnBackLink(): Unit = {

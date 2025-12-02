@@ -21,9 +21,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ContactDetailsGuidancePage extends BasePage {
   override val url: String = s"${baseUrl}contact-details"
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    click(By.partialLinkText("Continue"))
-  }
 }

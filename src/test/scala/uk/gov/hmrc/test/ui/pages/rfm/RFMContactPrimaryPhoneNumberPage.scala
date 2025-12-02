@@ -20,21 +20,11 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMContactPrimaryPhoneNumberPage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/contact-details/input-phone"
+  override val url: String       = s"${baseUrl}replace-filing-member/contact-details/input-phone"
+  override val changeUrl: String = s"${baseUrl}replace-filing-member/contact-details/change-input-phone"
 
-  override val textInputField: By             = By.id("phoneNumber")
-  private val phoneNumberValue: String        = "01234 567890"
-  private val phoneNumberUpdatedValue: String = "09876 543210"
+  override val textInputField: By      = By.id("phoneNumber")
+  override val textValue: String       = "01234 567890"
+  override val textUpdateValue: String = "09876 543210"
 
-  def enterPhoneNumber(): Unit = {
-    onPage()
-    sendKeys(textInputField, phoneNumberValue)
-    clickByClassName(continue)
-  }
-
-  def updatePhoneNumber(): Unit = {
-    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-phone")
-    sendKeys(textInputField, phoneNumberUpdatedValue)
-    clickByClassName(continue)
-  }
 }
