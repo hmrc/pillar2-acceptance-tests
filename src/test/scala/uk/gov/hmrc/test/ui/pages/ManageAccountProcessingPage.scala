@@ -19,5 +19,5 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.helper.PageObject
 
 object ManageAccountProcessingPage extends PageObject {
-  val url: String = s"$rootUrl" + "submission-in-progress/manage-contact"
+  val url: String = s"$rootUrl" + "manage-account/details/waiting-room"
 }
