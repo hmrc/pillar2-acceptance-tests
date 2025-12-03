@@ -116,7 +116,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
     }
 
-    Scenario("3 - Agent User successfully submits repayment journey with a UK bank account", AcceptanceTests) {
+    Scenario("3 - Agent User successfully submits repayment journey with a UK bank account") {
       Given("Agent User logs in with existing entity group")
       login(
         userType = "Agent",
