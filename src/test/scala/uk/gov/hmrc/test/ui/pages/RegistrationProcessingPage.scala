@@ -18,6 +18,6 @@ package uk.gov.hmrc.test.ui.pages
 import uk.gov.hmrc.test.ui.helper.PageObject
 
 object RegistrationProcessingPage extends PageObject {
-  val url: String    = s"$rootUrl" + "submission-in-progress/registration"
+  val url: String    = s"$rootUrl" + "review-submit/processing-registration"
   val loadingSpinner = ".hods-loading-spinner__spinner"
 }
