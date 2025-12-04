@@ -21,8 +21,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object ASAConfirmationPage extends BasePage {
   override val url: String = s"${baseUrl}asa/confirm"
 
-  def continueToNextPage(): Unit = {
-    onPage()
-    click(continueButtonId)
-  }
 }

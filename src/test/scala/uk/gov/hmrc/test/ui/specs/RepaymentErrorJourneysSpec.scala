@@ -104,7 +104,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentIncompleteErrorPage.onPage()
     }
 
-    Scenario("3 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP", AcceptanceTests, Wip) {
+    Scenario("3 - Agent User navigates to error page when repayment submission API fails to submit data to ETMP", AcceptanceTests) {
       Given("Agent User logs in with existing entity group")
       login(
         userType = "Agent",

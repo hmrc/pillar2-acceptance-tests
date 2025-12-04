@@ -20,10 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPEPhoneAsContactPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/ultimate-parent/no-id/phone"
-
-  def selectYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    click(submitButtonId)
-  }
 }

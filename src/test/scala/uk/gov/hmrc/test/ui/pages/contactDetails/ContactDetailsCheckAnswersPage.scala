@@ -35,9 +35,4 @@ object ContactDetailsCheckAnswersPage extends BasePage {
     onPage()
     click(By.cssSelector(changeLink))
   }
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    click(continueButtonId)
-  }
 }

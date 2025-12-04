@@ -20,9 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentGuidancePage extends BasePage {
   override val url: String = s"${baseUrl}repayment/before-you-start"
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickByClassName(continue)
-  }
 }

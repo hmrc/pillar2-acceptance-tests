@@ -20,15 +20,10 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMContactSecondaryEmailPage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/contact-details/second-input-email"
+  override val url: String       = s"${baseUrl}replace-filing-member/contact-details/second-input-email"
+  override val changeUrl: String = s"${baseUrl}replace-filing-member/contact-details/change-second-input-email"
 
-  override val textInputField: By = By.id("emailAddress")
-  private val emailValue: String  = "abc@def.com"
-  private val emailUpdatedValue: String  = "def@abc.com"
-
-  def enterEmail(): Unit = {
-    onPage()
-    sendKeys(textInputField, emailValue)
-    clickByClassName(continue)
-  }
+  override val textInputField: By      = By.id("emailAddress")
+  override val textValue: String       = "abc@def.com"
+  override val textUpdateValue: String = "def@abc.com"
 }

@@ -21,15 +21,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RFMContactSecondaryByPhonePage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/contact-details/second-phone"
 
-  def selectYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    click(submitButtonId)
-  }
-
-  def selectNo(): Unit = {
-    onPage()
-    click(noRadioId)
-    click(submitButtonId)
-  }
 }

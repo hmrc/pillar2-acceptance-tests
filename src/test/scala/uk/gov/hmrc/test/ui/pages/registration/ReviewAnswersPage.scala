@@ -26,9 +26,4 @@ object ReviewAnswersPage extends BasePage {
 
   // Contact Address Section
   val changeContactAddress = "a[href*='address/change-input']"
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    onPageSubmitById()
-  }
 }

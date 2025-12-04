@@ -23,13 +23,15 @@ object RFMFinalReviewCYAPage extends BasePage {
   override val url: String        = s"${baseUrl}replace-filing-member/review-submit/check-answers"
   override val submitButtonId: By = By.id("send")
 
-  val valueList                     = ".govuk-summary-list__value"
-  val changeCorporatePosition       = "a[href*='/change-corporate-position']"
-  val changeCompany                 = "a[href*='/change-registered-in-uk']"
-  val changeInputName               = "a[href*='/change-input-name']"
-  val changeInputAddress            = "a[href*='/change-input-address']"
-  val changeAddress                 = "[href*='address/change-input']"
-  val changePhoneContact            = "a[href*='/change-phone']"
+  val changePrimaryContactName          = "a[href*='/contact-details/change-input-name']"
+  val changePrimaryContactEmail         = "a[href*='/contact-details/change-input-email']"
+  val changePrimaryContactPhoneNumber   = "a[href*='/contact-details/change-input-phone']"
+  val changeSecondaryContactName        = "a[href*='/contact-details/change-second-input-name']"
+  val changeSecondaryContactEmail       = "a[href*='/contact-details/change-second-input-email']"
+  val changeSecondaryContactPhoneNumber = "a[href*='/contact-details/change-second-input-phone']"
+  val changeInputAddress                = "a[href*='/change-input-address']"
+  val changeAddress                     = "[href*='address/change-input']"
+
   val changeSecondContactPreference = "[href*='change-second-contact']"
 
 }
