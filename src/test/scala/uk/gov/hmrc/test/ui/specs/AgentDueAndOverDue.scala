@@ -73,7 +73,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntSectionWithStatusString(3, "Overdue")
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
@@ -123,7 +123,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
@@ -173,7 +173,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntSectionWithStatusString(0, "Overdue")
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
@@ -217,7 +217,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 2 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
@@ -267,7 +267,7 @@ class AgentDueAndOverDue extends BaseSpec with Matchers {
       andIShouldSeeIntSectionWithStatusString(2, "Overdue")
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 2 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)

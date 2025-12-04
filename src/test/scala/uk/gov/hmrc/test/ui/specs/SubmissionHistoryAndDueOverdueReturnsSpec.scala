@@ -51,7 +51,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
       andIShouldSeeIntSectionWithStatusString(3, "Overdue")
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
@@ -63,7 +63,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
       thenIShouldNavigateTo("Due & Over Due Page")
     }
 
-    Scenario("2 - Org User navigates to Due & Overdue returns and Submission History pages for no accounting period",AcceptanceTests,ZapAccessibility) {
+    Scenario("2 - Org User navigates to Due & Overdue returns and Submission History pages for no accounting period", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR2222222222 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -82,14 +82,14 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
     }
 
-    Scenario("3 -  Org User navigates to due & Due & Overdue returns and Submission History pages for single accounting period", AcceptanceTests,ZapAccessibility) {
+    Scenario("3 -  Org User navigates to due & Due & Overdue returns and Submission History pages for single accounting period", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR3333333333 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -114,14 +114,14 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
       andIShouldSeeIntSectionWithStatusString(0, "Overdue")
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 0 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(0)
 
     }
 
-    Scenario("4 - Org User navigates to Due & Overdue returns and Submission History pages for all fulfilled submissions",AcceptanceTests,ZapAccessibility) {
+    Scenario("4 - Org User navigates to Due & Overdue returns and Submission History pages for all fulfilled submissions", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4444444444 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -140,14 +140,14 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 2 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
 
     }
 
-    Scenario("5 - Org User navigates to Due & Overdue returns and Submission History pages for some fulfilled submissions",AcceptanceTests,ZapAccessibility) {
+    Scenario("5 - Org User navigates to Due & Overdue returns and Submission History pages for some fulfilled submissions", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR5555555555 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -172,14 +172,14 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
       andIShouldSeeIntSectionWithStatusString(2, "Overdue")
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 2 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(2)
 
     }
 
-    Scenario("6 - Org User navigates to Due & Overdue returns and Submission History for one accounting period",AcceptanceTests,ZapAccessibility) {
+    Scenario("6 - Org User navigates to Due & Overdue returns and Submission History for one accounting period", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR7777777777 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
         "Organisation",
@@ -198,7 +198,7 @@ class SubmissionHistoryAndDueOverdueReturnsSpec extends BaseSpec with Matchers {
       andIShouldSeeIntAccountingPeriodsOnDueOverduePage(0)
 
       When("I click submission history link")
-      andIClickLink("submission history")
+      andIClickLink("View submission history")
 
       And("I should see 1 accounting periods on Sub History Page")
       andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(1)
