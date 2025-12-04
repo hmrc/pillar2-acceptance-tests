@@ -286,8 +286,6 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
     }
 
-    // TODO PIL-2449 logic has changed so XEPLR4000000000 will not go to dashboard, need to be deleted after review.
-
     Scenario("5 - Verify Transaction History pages for Org user", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0000000122 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
@@ -376,44 +374,6 @@ class DashboardPageSpec extends BaseSpec with Matchers {
 
       And("I click Sign out link")
       andIClickLink("Sign out")
-
-//      Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR4000000000 for Pillar2 service")
-//      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-//        "Organisation",
-//        "HMRC-PILLAR2-ORG",
-//        "PLRID",
-//        "XEPLR4000000000"
-//      )
-//
-//      And("I should be on Dashboard page")
-//      thenIShouldBeOn("Dashboard page")
-//
-//      When("I click View transaction history link")
-//      andIClickLink("View transaction history")
-//
-//      Then("I should be on Transaction History Error Page")
-//      thenIShouldBeOn("Transaction History Error Page")
-//
-//      When("I click Return to your account homepage link")
-//      andIClickLink("Return to your account homepage")
-//
-//      Then("I should be on Dashboard page")
-//      thenIShouldBeOn("Dashboard page")
-//
-//      When("I click View transaction history link")
-//      andIClickLink("View transaction history")
-//
-//      Then("I should be on Transaction History Error Page")
-//      thenIShouldBeOn("Transaction History Error Page")
-//
-//      When("I select back link")
-//      andISelectBackLink()
-//
-//      Then("I should be on Dashboard page")
-//      thenIShouldBeOn("Dashboard page")
-//
-//      And("I click Sign out link")
-//      andIClickLink("Sign out")
 
       Then("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XEPLR6666666666 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
