@@ -17,13 +17,13 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
-import uk.gov.hmrc.test.ui.pages.rfm._
-import uk.gov.hmrc.test.ui.specs.tags._
-import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.pages.rfm.*
+import uk.gov.hmrc.test.ui.specs.tags.*
+import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class RFMNoIDFlowSpec extends BaseSpec {
 

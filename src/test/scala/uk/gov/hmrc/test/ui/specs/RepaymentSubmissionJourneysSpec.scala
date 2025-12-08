@@ -16,12 +16,12 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.asa._
+import uk.gov.hmrc.test.ui.pages.asa.*
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
-import uk.gov.hmrc.test.ui.pages.repayments.RepaymentBankAccountUKPage._
-import uk.gov.hmrc.test.ui.pages.repayments._
-import uk.gov.hmrc.test.ui.specs.tags._
+import uk.gov.hmrc.test.ui.pages.repayments.*
+import uk.gov.hmrc.test.ui.pages.repayments.RepaymentBankAccountUKPage.*
+import uk.gov.hmrc.test.ui.specs.tags.*
 
 class RepaymentSubmissionJourneysSpec extends BaseSpec {
 

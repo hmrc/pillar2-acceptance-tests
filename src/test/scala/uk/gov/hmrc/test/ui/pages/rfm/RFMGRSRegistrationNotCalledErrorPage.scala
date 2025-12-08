@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages.rfm
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages.UPEPage.rootUrl
 
 object RFMGRSRegistrationNotCalledErrorPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/uk-based/error/fail"

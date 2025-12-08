@@ -34,11 +34,11 @@ object RepaymentBankAccountUKPage extends BasePage {
       accountNumber: String
   )
 
-  val validBankDetails: BankDetails = BankDetails("Natwest", "Epic Adventure Inc", "206705", "86473611")
+  val validBankDetails: BankDetails           = BankDetails("Natwest", "Epic Adventure Inc", "206705", "86473611")
   val couldNotConfirmBankDetails: BankDetails = BankDetails("Test", "Eco Focus", "206705", "56945688")
-  val bankDetailsError: BankDetails = BankDetails("Test", "Innovation Arch", "206705", "56523611")
-  val barsError: BankDetails = BankDetails("Test", "Flux Water Gear", "207102", "86473611")
-  val partialNameError: BankDetails = BankDetails("Test", "Epic", "206705", "86473611")
+  val bankDetailsError: BankDetails           = BankDetails("Test", "Innovation Arch", "206705", "56523611")
+  val barsError: BankDetails                  = BankDetails("Test", "Flux Water Gear", "207102", "86473611")
+  val partialNameError: BankDetails           = BankDetails("Test", "Epic", "206705", "86473611")
 
   def enterBankDetails(details: BankDetails): Unit = {
     onPage()

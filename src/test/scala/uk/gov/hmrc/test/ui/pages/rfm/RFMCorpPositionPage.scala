@@ -22,7 +22,7 @@ object RFMCorpPositionPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/corporate-position"
 
   private val newNominatedFilingMember = "value_1"
-  private val ultimateParentEntity = "value_0"
+  private val ultimateParentEntity     = "value_0"
 
   def clickNewNominatedFilingMember(): Unit = {
     onPage()

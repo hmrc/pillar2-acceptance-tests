@@ -18,17 +18,17 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
   Feature("RFM Ultimate Parent Entity and New nominated Filling Member GRS journey") {
 
-    Scenario("1 - Verify RFM GRS journey when New NFM is based in UK - UK limited company",AcceptanceTests) {
+    Scenario("1 - Verify RFM GRS journey when New NFM is based in UK - UK limited company", AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -112,7 +112,11 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations",AcceptanceTests, ZapAccessibility) {
+    Scenario(
+      "2 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations",
+      AcceptanceTests,
+      ZapAccessibility
+    ) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -275,7 +279,7 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - User registration as Limited liability partnership failed with party type mismatch error",AcceptanceTests) {
+    Scenario("3 - User registration as Limited liability partnership failed with party type mismatch error", AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -343,7 +347,11 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - User registration as UK limited company failed with identifiers mismatch error and entity type page validation",AcceptanceTests, ZapAccessibility) {
+    Scenario(
+      "4 - User registration as UK limited company failed with identifiers mismatch error and entity type page validation",
+      AcceptanceTests,
+      ZapAccessibility
+    ) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 

@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RepaymentMethodPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/method"
 
-  val typeOfAccountUK = "value_0"
+  val typeOfAccountUK    = "value_0"
   val typeOfAccountNonUK = "value_1"
 
   def clickTypeOfAccountUK(): Unit = {

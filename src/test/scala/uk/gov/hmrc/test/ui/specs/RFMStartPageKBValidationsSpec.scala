@@ -18,15 +18,15 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
 
 class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
   Feature("RFM Start page") {
 
-    Scenario("1 - Verify Individual RFM KB page",AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - Verify Individual RFM KB page", AcceptanceTests, ZapAccessibility) {
       Given("I access RFM start page")
       givenIAccessRFMXPage("start")
 
@@ -74,7 +74,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify Agent RFM KB page",AcceptanceTests,ZapAccessibility) {
+    Scenario("2 - Verify Agent RFM KB page", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Agent User")
 
@@ -101,7 +101,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Verify Organisation Assistant User RFM KB page",AcceptanceTests,ZapAccessibility) {
+    Scenario("3 - Verify Organisation Assistant User RFM KB page", AcceptanceTests, ZapAccessibility) {
       Given("Assistant User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Assistant User")
 
@@ -128,7 +128,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Verify already enrolled Organisation User KB page",AcceptanceTests,ZapAccessibility) {
+    Scenario("4 - Verify already enrolled Organisation User KB page", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 with rfm URL to Pillar2 service")
       whenOrganisationUserLogsInWithExistingEntityGroupXXAndXWithRfmURLToPillar2Service(
         "HMRC-PILLAR2-ORG",
@@ -159,7 +159,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page",AcceptanceTests,ZapAccessibility) {
+    Scenario("5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page", AcceptanceTests, ZapAccessibility) {
       Given("I clear the cache")
       thenIClearTheCache()
 

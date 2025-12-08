@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object NFMContactEmailPage extends BasePage {
-  override val url: String                       = s"${baseUrl}business-matching/filing-member/no-id/input-email"
+  override val url: String = s"${baseUrl}business-matching/filing-member/no-id/input-email"
 
   override val textInputField: By       = By.id("emailAddress")
   private val emailValue: String        = "abc@def.com"

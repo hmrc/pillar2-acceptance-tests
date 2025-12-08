@@ -19,5 +19,5 @@ package uk.gov.hmrc.test.ui.pages.contactDetails
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ContactDetailsPrimaryContactPage extends BasePage {
-  override val url: String  = s"${baseUrl}contact-details/primary-contact"
+  override val url: String = s"${baseUrl}contact-details/primary-contact"
 }

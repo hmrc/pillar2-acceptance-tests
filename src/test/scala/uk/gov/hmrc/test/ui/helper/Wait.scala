@@ -42,12 +42,12 @@ object Wait extends BrowserDriver {
 
   def waitForUrlToBeVisible(url: String): Boolean = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(8))
-    driverWait.until(ExpectedConditions.urlToBe(url))
+    driverWait.until(ExpectedConditions.urlToBe(url)).booleanValue()
   }
 
   def waitForUrl(url: String): Boolean = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
-    driverWait.until(ExpectedConditions.urlContains(url))
+    driverWait.until(ExpectedConditions.urlContains(url)).booleanValue()
   }
 
   def waitForElementToPresentByCssSelector(cssSelector: String): WebElement = {
@@ -67,6 +67,6 @@ object Wait extends BrowserDriver {
 
   def waitForCSSElementNotToPresent(css: String): Boolean = {
     val driverWait: WebDriverWait = new WebDriverWait(driver, Duration.ofSeconds(15))
-    driverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(css)))
+    driverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(css))).booleanValue()
   }
 }

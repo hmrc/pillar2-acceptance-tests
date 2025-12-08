@@ -17,12 +17,12 @@
 package uk.gov.hmrc.test.ui.specsdef
 
 import org.openqa.selenium.By
-import org.scalatest.matchers.should.Matchers._
+import org.scalatest.matchers.should.Matchers.*
 import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.helper.Check.{contain, convertToAnyShouldWrapper}
+import uk.gov.hmrc.test.ui.helper.Check.contain
 import uk.gov.hmrc.test.ui.helper.Input.clickByCss
 import uk.gov.hmrc.test.ui.helper.Wait
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pages.*
 
 object CYAStepsSteps {
 
@@ -35,7 +35,7 @@ object CYAStepsSteps {
     detailsMap.foreach { case (key, expectedValue) =>
       val labelElement = Driver.instance.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
       val valueElement = labelElement.findElement(By.xpath("following-sibling::dd"))
-      if (key == "Address") {
+      if key == "Address" then {
         val actualValueLines = valueElement.getText.split("\n").map(_.trim)
         expectedValue.split("\n").foreach { expectedLine =>
           actualValueLines should contain(expectedLine)

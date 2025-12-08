@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.helper._
+import uk.gov.hmrc.test.ui.helper.*
 
 object AuthLoginOldPage extends BrowserDriver with PageObject {
   val url: String                            = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"

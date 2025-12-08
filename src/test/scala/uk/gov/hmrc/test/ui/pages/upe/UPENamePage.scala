@@ -21,8 +21,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object UPENamePage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/ultimate-parent/no-id/input-name"
 
-  private val nameValue: String        = "Entity Name"
-  private val nameUpdatedValue: String = "New Entity Name"
+  private val nameValue: String                   = "Entity Name"
+  private val nameUpdatedValue: String            = "New Entity Name"
   private val registrationInProgressValue: String = "Medium Processing Corp"
 
   def enterName(): Unit = {

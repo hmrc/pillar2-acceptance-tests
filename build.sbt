@@ -11,7 +11,7 @@ lazy val testSuite = (project in file("."))
   .settings(
     name         := "pillar2-acceptance-tests",
     version      := "0.1.0",
-    scalaVersion := "2.13.16",
+    scalaVersion := "3.3.5",
     scalacOptions ++= Seq("-feature"),
     libraryDependencies ++= Dependencies.test,
     scalafixSettings

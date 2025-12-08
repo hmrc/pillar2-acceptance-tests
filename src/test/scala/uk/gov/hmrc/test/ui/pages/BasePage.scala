@@ -30,8 +30,8 @@ import java.time.Duration
 trait BasePage extends Matchers with PageObject {
 
   val url: String
-  val changeUrl: String = url
-  val textValue: String = ""
+  val changeUrl: String       = url
+  val textValue: String       = ""
   val textUpdateValue: String = ""
 
   val baseUrl: String          = TestConfiguration.url("pillar2-frontend")

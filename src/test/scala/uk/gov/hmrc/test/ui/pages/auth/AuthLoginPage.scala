@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages.auth
 import org.openqa.selenium.support.ui.Select
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.helper.Input._
+import uk.gov.hmrc.test.ui.helper.Input.*
 import uk.gov.hmrc.test.ui.helper.{Find, Input, Nav}
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.pages.asa.ASAPillar2InputPage
@@ -77,13 +77,13 @@ object AuthLoginPage extends BrowserDriver with BasePage {
 
   def urlMatch(page: String): String = {
     page match {
-      case "asa"                 => ASAPillar2InputPage.url
-      case "bta"                 => BTAPillar2IDCheckPage.url
-      case "btn"                 => BtnStartPage.url
-      case "dashboard"           => DashboardPage.url
+      case "asa"       => ASAPillar2InputPage.url
+      case "bta"       => BTAPillar2IDCheckPage.url
+      case "btn"       => BtnStartPage.url
+      case "dashboard" => DashboardPage.url
 //      case "eligibility"         => EligibilityUPEPage.url
       case "pillar2-frontend" => TestConfiguration.url("pillar2-frontend")
-      case "rfm"                 => RFMStartPage.url
+      case "rfm"              => RFMStartPage.url
 //      case "register"            => TaskListPage.url
 //      case "upe"                 => UPERegisteredInUkPage.url
 

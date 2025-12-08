@@ -17,15 +17,15 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage._
+import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage.*
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.thenIShouldBeRedirectedTo
-import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class AgentUserJourney extends BaseSpec with Matchers {
 

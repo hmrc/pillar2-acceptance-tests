@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.specsdef
 import uk.gov.hmrc.test.ui.helper.Check.{assertNavigationToPage, assertNavigationUrl}
 import uk.gov.hmrc.test.ui.helper.Input.clickByCss
 import uk.gov.hmrc.test.ui.helper.{Input, Wait}
-import uk.gov.hmrc.test.ui.pages._
-import uk.gov.hmrc.test.ui.specsdef.CommonFunctions._
+import uk.gov.hmrc.test.ui.pages.*
+import uk.gov.hmrc.test.ui.specsdef.CommonFunctions.*
 
 object EligibilityQuestionStepsSteps {
 

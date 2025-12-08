@@ -18,13 +18,14 @@ package uk.gov.hmrc.test.ui.specsdef
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
+import uk.gov.hmrc.test.ui.helper.*
 import uk.gov.hmrc.test.ui.helper.Check.assertNavigationUrl
 import uk.gov.hmrc.test.ui.helper.Find.findURL
-import uk.gov.hmrc.test.ui.helper.Input._
-import uk.gov.hmrc.test.ui.helper._
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.helper.Input.*
+import uk.gov.hmrc.test.ui.pages.*
+import uk.gov.hmrc.test.ui.specsdef.CommonFunctions.*
+
 import scala.util.Try
-import uk.gov.hmrc.test.ui.specsdef.CommonFunctions._
 
 object RFMStepsSteps {
 
@@ -161,13 +162,13 @@ object RFMStepsSteps {
   }
 
   def thenINavigateBackToRFMCYAPageFromGRSPage(): Unit = {
-    for (i <- 1 to 5) {
+    for i <- 1 to 5 do {
       clickByCss(BusinessActivityEQPage.backLink)
     }
   }
 
   def andIContinueToRFMContactNamePage(): Unit = {
-    for (i <- 0 to 2) {
+    for i <- 0 to 2 do {
       InitialGuidancePage.clickContinue()
     }
   }

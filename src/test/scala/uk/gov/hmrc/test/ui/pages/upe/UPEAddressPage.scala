@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPEAddressPage extends BasePage {
 
-  override val url: String = s"${baseUrl}business-matching/ultimate-parent/no-id/input-address"
+  override val url: String         = s"${baseUrl}business-matching/ultimate-parent/no-id/input-address"
   override val countryDropdown: By = By.id("countryCode")
   override val countryOption: By   = By.id("countryCode__option--0")
 

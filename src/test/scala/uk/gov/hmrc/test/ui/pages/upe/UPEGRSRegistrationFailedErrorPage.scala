@@ -20,9 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPEGRSRegistrationFailedErrorPage extends BasePage {
-  override val url: String    = s"${baseUrl}business-matching/ultimate-parent/uk-based/error/mismatching-details"
+  override val url: String = s"${baseUrl}business-matching/ultimate-parent/uk-based/error/mismatching-details"
 
-  private val goBackToEntityType        = "a[href*='/entity-type']"
+  private val goBackToEntityType = "a[href*='/entity-type']"
 
   def clickGoBackToEntityTypeLink(): Unit = {
     onPage()

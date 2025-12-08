@@ -18,16 +18,20 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
   Feature("RFM check your answers page") {
 
-    Scenario("1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey",AcceptanceTests,ZapAccessibility) {
+    Scenario(
+      "1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey",
+      AcceptanceTests,
+      ZapAccessibility
+    ) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Organisation User")
 
@@ -110,7 +114,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey",AcceptanceTests) {
+    Scenario("2 - Verify that system throws an error on generic failure from ETMP when calling Amend API in replacing rfm journey", AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -205,7 +209,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Verify Incomplete data error",AcceptanceTests) {
+    Scenario("3 - Verify Incomplete data error", AcceptanceTests) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -306,7 +310,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Verify Security questions are not pre populated for RFM journey",AcceptanceTests,ZapAccessibility) {
+    Scenario("4 - Verify Security questions are not pre populated for RFM journey", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2")
       givenXLogsInToRFMWithCredIdXForPillar2("Organisation User", "RFMSaveProgress")
 

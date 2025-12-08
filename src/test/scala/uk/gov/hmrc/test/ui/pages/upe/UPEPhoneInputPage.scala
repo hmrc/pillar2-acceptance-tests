@@ -20,7 +20,7 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPEPhoneInputPage extends BasePage {
-  override val url: String                    = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-phone"
+  override val url: String = s"$baseUrl" + "business-matching/ultimate-parent/no-id/input-phone"
 
   override val textInputField: By             = By.id("phoneNumber")
   private val phoneNumberValue: String        = "01234 567890"

@@ -15,8 +15,6 @@
  */
 
 package uk.gov.hmrc.test.ui.pages.contactDetails
-
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ContactDetailsGuidancePage extends BasePage {
