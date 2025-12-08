@@ -23,8 +23,9 @@ import uk.gov.hmrc.test.ui.helper.Find.findURL
 import uk.gov.hmrc.test.ui.helper.Input._
 import uk.gov.hmrc.test.ui.helper._
 import uk.gov.hmrc.test.ui.pages._
-import scala.util.Try
 import uk.gov.hmrc.test.ui.specsdef.CommonFunctions._
+
+import scala.util.Try
 
 object RFMStepsSteps {
 
@@ -106,8 +107,7 @@ object RFMStepsSteps {
     }
   }
 
-  // ^Organisation User logs in with existing entity group (.*), (.*) and (.*) with rfm URL to Pillar2 service$
-  def whenOrganisationUserLogsInWithExistingEntityGroupXXAndXWithRfmURLToPillar2Service(
+  def whenOrganisationUserLogsInWithExistingEntityGroupAndWithRfmURL(
       enrolmentKey: String,
       identifierName: String,
       identifierValue: String): Unit = {
