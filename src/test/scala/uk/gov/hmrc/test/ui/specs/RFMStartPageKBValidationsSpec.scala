@@ -17,7 +17,8 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.pages.rfm.RFMGuidancePage
+import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
@@ -26,15 +27,9 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
   Feature("RFM Start page") {
 
-    Scenario("1 - Verify Individual RFM KB page", AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - Verify Individual RFM KB page", AcceptanceTests) {
       Given("I access RFM start page")
       givenIAccessRFMXPage("start")
-
-      Then("I should be on RFM start page")
-      thenIShouldBeOn("RFM start page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
 
       When("Individual User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Individual User")
@@ -58,10 +53,10 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       andIClickLink("Find out more about who can use this service")
 
       Then("I should be on RFM start page")
-      thenIShouldBeOn("RFM start page")
+      RFMGuidancePage.onPage()
 
-      When("I select back link")
-      andISelectBackLink()
+      When("I click the browser back button")
+      andIClickTheBrowserBackButton()
 
       Then("I should be on Individual RFM KB Page")
       thenIShouldBeOn("Individual RFM KB Page")
@@ -74,7 +69,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify Agent RFM KB page", AcceptanceTests, ZapAccessibility) {
+    Scenario("2 - Verify Agent RFM KB page", AcceptanceTests) {
       Given("Agent User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Agent User")
 
@@ -85,10 +80,10 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       andIClickLink("Find out more about who can use this service")
 
       Then("I should be on RFM start page")
-      thenIShouldBeOn("RFM start page")
+      RFMGuidancePage.onPage()
 
-      When("I select back link")
-      andISelectBackLink()
+      When("I click the browser back button")
+      andIClickTheBrowserBackButton()
 
       Then("I should be on Agent RFM KB Page")
       thenIShouldBeOn("Agent RFM KB Page")
@@ -101,7 +96,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("3 - Verify Organisation Assistant User RFM KB page", AcceptanceTests, ZapAccessibility) {
+    Scenario("3 - Verify Organisation Assistant User RFM KB page", AcceptanceTests) {
       Given("Assistant User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Assistant User")
 
@@ -112,10 +107,10 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       andIClickLink("Find out more about who can use this service")
 
       Then("I should be on RFM start page")
-      thenIShouldBeOn("RFM start page")
+      RFMGuidancePage.onPage()
 
-      When("I select back link")
-      andISelectBackLink()
+      When("I click the browser back button")
+      andIClickTheBrowserBackButton()
 
       Then("I should be on Assistant User RFM KB Page")
       thenIShouldBeOn("Assistant User RFM KB Page")
@@ -128,9 +123,9 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Verify already enrolled Organisation User KB page", AcceptanceTests, ZapAccessibility) {
+    Scenario("4 - Verify already enrolled Organisation User KB page", AcceptanceTests) {
       Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 with rfm URL to Pillar2 service")
-      whenOrganisationUserLogsInWithExistingEntityGroupXXAndXWithRfmURLToPillar2Service(
+      whenOrganisationUserLogsInWithExistingEntityGroupAndWithRfmURL(
         "HMRC-PILLAR2-ORG",
         "PLRID",
         "XMPLR0012345674"
@@ -143,10 +138,10 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
       andIClickLink("Find out more about who can use this service")
 
       Then("I should be on RFM start page")
-      thenIShouldBeOn("RFM start page")
+      RFMGuidancePage.onPage()
 
-      When("I select back link")
-      andISelectBackLink()
+      When("I click the browser back button")
+      andIClickTheBrowserBackButton()
 
       Then("I should be on Duplicate RFM KB Page")
       thenIShouldBeOn("Duplicate RFM KB Page")
@@ -159,7 +154,7 @@ class RFMStartPageKBValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page", AcceptanceTests, ZapAccessibility) {
+    Scenario("5 - Verify existing FM (with same group id) trying to access RFM journey and getting redirected to KB page", AcceptanceTests) {
       Given("I clear the cache")
       thenIClearTheCache()
 

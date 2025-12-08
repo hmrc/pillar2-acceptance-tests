@@ -37,7 +37,6 @@ class RFMNoIDFlowSpec extends BaseSpec {
       )
 
       When("The user enters PLRId and dates")
-      RFMStartPage.continueToNextPage()
       RFMEnterPillar2IdPage.enterPLRId("XMPLR0123456789")
       RFMRegistrationDatePage.enterDates("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
@@ -118,9 +117,6 @@ class RFMNoIDFlowSpec extends BaseSpec {
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
 
       When("I provide RFM pillar2 id as XMPLR0123456789")
       andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")

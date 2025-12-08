@@ -19,5 +19,5 @@ package uk.gov.hmrc.test.ui.pages.rfm
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMStartPage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/start"
+  override val url: String = s"${baseUrl}replace-filing-member/authenticate"
 }

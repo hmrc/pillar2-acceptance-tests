@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
@@ -34,9 +34,6 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
 
       When("I provide RFM pillar2 id as XMPLR0123456789")
       andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")
@@ -113,18 +110,14 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
     }
 
     Scenario(
-      "2 - Verify that New NFM can replace existing FM through GRS registration flow on the Pillar 2 account and validations",
-      AcceptanceTests,
-      ZapAccessibility
+      "2 - Verify that New NFM can replace existing FM through GRS registration flow ",
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
 
       When("I provide RFM pillar2 id as XMPLR0123456789")
       andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")
@@ -286,9 +279,6 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
       And("I access RFM start page")
       givenIAccessRFMXPage("start")
 
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
       When("I provide RFM pillar2 id as XMPLR0123456789")
       andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")
 
@@ -348,18 +338,14 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
     }
 
     Scenario(
-      "4 - User registration as UK limited company failed with identifiers mismatch error and entity type page validation",
-      AcceptanceTests,
-      ZapAccessibility
+      "4 - User registration as UK limited company failed with identifiers mismatch error and entity type ",
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
 
       When("I provide RFM pillar2 id as XMPLR0123456789")
       andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")

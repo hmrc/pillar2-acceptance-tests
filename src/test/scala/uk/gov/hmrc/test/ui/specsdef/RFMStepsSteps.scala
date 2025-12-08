@@ -107,8 +107,7 @@ object RFMStepsSteps {
     }
   }
 
-  // ^Organisation User logs in with existing entity group (.*), (.*) and (.*) with rfm URL to Pillar2 service$
-  def whenOrganisationUserLogsInWithExistingEntityGroupXXAndXWithRfmURLToPillar2Service(
+  def whenOrganisationUserLogsInWithExistingEntityGroupAndWithRfmURL(
       enrolmentKey: String,
       identifierName: String,
       identifierValue: String): Unit = {

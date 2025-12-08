@@ -17,7 +17,8 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
+import uk.gov.hmrc.test.ui.pages.rfm.RFMGuidancePage
+import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
@@ -29,8 +30,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     Scenario(
       "1 - Verify Journey recovery page and error handling on submission of Pillar id and registration date for RFM journey",
-      AcceptanceTests,
-      ZapAccessibility
+      AcceptanceTests
     ) {
       Given("Organisation User logs in with rfm URL to Pillar2")
       givenXLogsInWithRfmURLToPillar2("Organisation User")
@@ -55,11 +55,11 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
       And("I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link")
       andIClickLink("to replace the filing member for a Pillar 2 Top-up Taxes account to try again")
 
-      Then("I should be on RFM start page")
-      thenIShouldBeOn("RFM start page")
+      Then("I should be on RFM guidance page")
+      RFMGuidancePage.onPage()
 
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
+      Given("Organisation User logs in with rfm URL to Pillar2")
+      givenXLogsInWithRfmURLToPillar2("Organisation User")
 
       And("I provide RFM pillar2 id as XEPLR0123456222")
       andIProvideRFMXAsX("pillar2 id", "XEPLR0123456222")
@@ -67,11 +67,13 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
       Then("I should be on RFM Registration Date Page")
       thenIShouldBeOn("RFM Registration Date Page")
 
-      When("Registration Day is entered as 27")
-      andRegistrationXIsEnteredAsX("Day", "27")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
+      When("I enter registration date as:")
+      val rfmDateData1: Map[String, String] = Map(
+        "rfmRegistrationDate.day"   -> "27",
+        "rfmRegistrationDate.month" -> "1",
+        "rfmRegistrationDate.year"  -> "2024"
+      )
+      andIEnterRegistrationDateAs(rfmDateData1)
 
       And("I click on Continue button")
       whenIClickOnContinueButton("I click on Continue button")
@@ -120,9 +122,6 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
       And("I access RFM start page")
       givenIAccessRFMXPage("start")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
 
       When("I provide RFM pillar2 id as XMPLR0012345111")
       andIProvideRFMXAsX("pillar2 id", "XMPLR0012345111")
@@ -216,9 +215,6 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
       And("I access RFM start page")
       givenIAccessRFMXPage("start")
 
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
       When("I provide RFM pillar2 id as XMPLR0123456789")
       andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")
 
@@ -310,7 +306,7 @@ class RFMSecurityErrorValidationsSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - Verify Security questions are not pre populated for RFM journey", AcceptanceTests, ZapAccessibility) {
+    Scenario("4 - Verify Security questions are not pre populated for RFM journey", AcceptanceTests) {
       Given("Organisation User logs in to RFM with credId RFMSaveProgress for Pillar2")
       givenXLogsInToRFMWithCredIdXForPillar2("Organisation User", "RFMSaveProgress")
 

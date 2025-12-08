@@ -31,24 +31,6 @@ object ASAStepsSteps {
     }
   }
 
-  def andIShouldSeeIntAccountingPeriodsOnDueOverduePage(accountingPeriods: Int): Unit = {
-    Wait.waitForElementToPresentByCssSelector(DueOverduePage.accountDetails)
-    assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.accountPeriodSections)).size() == accountingPeriods)
-    println(s"Verified presence of $accountingPeriods periods.")
-  }
-
-  def andIShouldSeeIntSectionWithStatusString(count: Int, dueType: String): Unit = {
-    dueType match {
-      case "Due"     => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.dueSection)).size() == count)
-      case "Overdue" => assert(Driver.instance.findElements(By.cssSelector(DueOverduePage.overDueSection)).size() == count)
-    }
-  }
-
-  def andIShouldSeeIntAccountingPeriodsOnSubHistoryPage(accountingPeriods: Int): Unit = {
-    Wait.waitForElementToPresentByCssSelector(P2SubmissionHistoryPage.accountDetails)
-    assert(Driver.instance.findElements(By.cssSelector(P2SubmissionHistoryPage.accountingPeriods)).size() == accountingPeriods)
-  }
-
   def VerifyCorrectClientDetails(plrId: String): Unit = {
     Wait.waitForElementToPresentByCssSelector(DashboardPage.plrIdText)
     assert(Driver.instance.findElement(By.cssSelector(DashboardPage.plrIdText)).getText.contains(plrId))
