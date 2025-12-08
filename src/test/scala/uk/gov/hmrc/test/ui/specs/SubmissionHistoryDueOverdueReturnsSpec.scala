@@ -27,7 +27,7 @@ class SubmissionHistoryDueOverdueReturnsSpec extends BaseSpec {
 
   Feature("Pillar2 Due & Overdue returns And Submission History User Journey") {
 
-    Scenario("1 - Org User navigates to Due & Overdue returns and Submission History", AcceptanceTests, Wip) {
+    Scenario("1 - Org User navigates to Due & Overdue returns and Submission History", AcceptanceTests) {
 
       Given("Organisation User logs in with existing entity group")
 
@@ -52,7 +52,7 @@ class SubmissionHistoryDueOverdueReturnsSpec extends BaseSpec {
       SubmissionHistoryPage.onPage()
     }
 
-    Scenario("2 - Agent User navigates to Submission History and Due & Overdue returns", AcceptanceTests, Wip) {
+    Scenario("2 - Agent User navigates to Submission History and Due & Overdue returns", AcceptanceTests) {
 
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
       login(
