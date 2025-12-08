@@ -49,9 +49,4 @@ object BtnMultipleAccountingPage extends BasePage {
     clickById(PreviousAccountingPeriodBTnSubmitted)
     clickByClassName(continue)
   }
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickByClassName(continue)
-  }
 }

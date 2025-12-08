@@ -194,7 +194,6 @@ object CommonFunctions
       case "Manage Account processing Page"             => ManageAccountProcessingPage
       case "Manage Contact processing Page"             => ManageContactProcessingPage
       case "Outstanding Payment Page"                   => OutstandingPaymentsPage
-      case "Due & Over Due Page"                        => DueOverduePage
       case "BTN Accounting Period Page"                 => BtnAccountingPage
       case "BTN Multiple Accounting Period Page"        => BtnMultipleAccountingPage
       case "BTN Start Page"                             => BtnStartPage

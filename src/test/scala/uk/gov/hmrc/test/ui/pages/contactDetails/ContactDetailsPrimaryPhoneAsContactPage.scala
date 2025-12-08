@@ -20,16 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ContactDetailsPrimaryPhoneAsContactPage extends BasePage {
   override val url: String = s"${baseUrl}contact-details/phone"
-
-  def selectYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    click(submitButtonId)
-  }
-
-  def selectNo(): Unit = {
-    onPage()
-    click(noRadioId)
-    click(submitButtonId)
-  }
 }

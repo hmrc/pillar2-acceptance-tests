@@ -30,11 +30,6 @@ object BtnAccountingPage extends BasePage {
   private val endMonthId            = By.id("endDate.month")
   private val endYearId             = By.id("endDate.year")
 
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickByClassName(continueButton)
-  }
-
   def clickAccountDetailsSummaryLink(): Unit = {
     onPage()
     click(By.cssSelector(accountDetailsSummary))

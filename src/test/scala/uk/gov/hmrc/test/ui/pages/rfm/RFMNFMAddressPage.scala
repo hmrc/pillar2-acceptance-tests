@@ -20,7 +20,8 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMNFMAddressPage extends BasePage {
-  override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/input-address"
+  override val url: String       = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/input-address"
+  override val changeUrl: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/change-input-address"
 
   override val countryDropdown: By = By.id("countryCode")
   override val countryOption: By   = By.id("countryCode__option--0")
@@ -39,12 +40,23 @@ object RFMNFMAddressPage extends BasePage {
     sendKeys(region, "Test Region")
     sendKeys(postcode, "AA1 1AA")
     countryAutoSelect("United Kingdom")
-    clickButtonByText(buttonSaveAndContinue)
+    clickByClassName(continue)
+  }
+
+  def enterAddressNonUK(): Unit = {
+    onPage()
+    sendKeys(addressLine1, "Test Street")
+    sendKeys(addressLine2, "Test Town")
+    sendKeys(city, "Test City")
+    sendKeys(region, "Test Region")
+    sendKeys(postcode, "1234 ABC")
+    countryAutoSelect("Chile")
+    clickByClassName(continue)
   }
 
   def updateAddressNonUK(): Unit = {
-    onPage(s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/change-input-address")
+    onPage(changeUrl)
     sendKeys(city, "Updated Test City")
-    clickButtonByText(buttonSaveAndContinue)
+    clickByClassName(continue)
   }
 }

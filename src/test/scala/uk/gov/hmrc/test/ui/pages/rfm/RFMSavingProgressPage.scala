@@ -20,9 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMSavingProgressPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/security/saving-progress"
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickByClassName(continue)
-  }
 }

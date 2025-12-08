@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.helper.Find.findByCss
 import uk.gov.hmrc.test.ui.helper.PageObject
 
 object RFMStartPage extends PageObject {
-  val url: String = s"$rootUrl" + "replace-filing-member/start"
+  val url: String = s"$rootUrl" + "replace-filing-member/authenticate"
 
   val continue              = ".govuk-button"
   def clickContinue(): Unit = findByCss(continue).click()

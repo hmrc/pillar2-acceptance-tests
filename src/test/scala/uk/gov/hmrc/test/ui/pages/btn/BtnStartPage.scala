@@ -20,9 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnStartPage extends BasePage {
   override val url: String   = s"${baseUrl}below-threshold-notification/start"
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    clickByClassName(continue)
-  }
 }

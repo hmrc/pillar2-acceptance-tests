@@ -20,16 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BTAPillar2IDCheckPage extends BasePage {
   override val url: String = s"${baseUrl}bta/pillar2-id"
-
-  def selectYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    click(submitButtonId)
-  }
-
-  def selectNo(): Unit = {
-    onPage()
-    click(noRadioId)
-    click(submitButtonId)
-  }
 }

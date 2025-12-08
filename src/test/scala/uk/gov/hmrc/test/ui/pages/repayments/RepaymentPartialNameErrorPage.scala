@@ -23,10 +23,4 @@ object RepaymentPartialNameErrorPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/error/partial-name"
 
   override val yesRadioId: By = By.id("confirmRepaymentAccountName_0")
-
-  def selectYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    click(submitButtonId)
-  }
 }

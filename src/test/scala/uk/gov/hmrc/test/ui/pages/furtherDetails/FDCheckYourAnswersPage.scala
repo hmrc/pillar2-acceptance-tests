@@ -33,11 +33,4 @@ object FDCheckYourAnswersPage extends BasePage {
     onPage()
     clickByCss(changeAccountingPeriod)
   }
-
-  def continueToNextPage(): Unit = {
-    onPage()
-    click(continueButtonId)
-  }
-
-
 }

@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.dueAndOverdueReturns
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object DueOverduePage extends PageObject {
-  val url: String = s"$rootUrl" + "due-and-overdue-returns"
+object DueAndOverdueReturnsPage extends BasePage {
+  override val url: String = s"${baseUrl}due-and-overdue-returns"
 
-  val accountPeriodSections = ".govuk-grid-column-full"
-  val dueSection            = ".govuk-tag--blue"
-  val overDueSection        = ".govuk-tag--red"
-  val accountDetails        = ".govuk-grid-row"
+  val submissionHistoryLink = "a[href*='/submission-history']"
 }

@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.pages.UPEPage.rootUrl
 
 object RFMGRSRegistrationNotCalledErrorPage extends BasePage {
-  override val url: String = s"${rootUrl}replace-filing-member/business-matching/filing-member/uk-based/error/fail"
+  override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/uk-based/error/fail"
 
   private val returnToEntityTypeLink = "a[href*='/org-type']"
 
