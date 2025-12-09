@@ -21,8 +21,8 @@ import org.openqa.selenium.WebDriver
 import uk.gov.hmrc.selenium.webdriver.Driver
 
 trait BrowserDriver extends LazyLogging {
-  implicit def driver: WebDriver = {
-    if (Driver.instance == null) {
+  def driver: WebDriver = {
+    if Driver.instance == null then {
       val msg = "WebDriver (Driver.instance) is null! Make sure startBrowser() was called before using driver."
       logger.error(msg)
       throw new IllegalStateException(msg)

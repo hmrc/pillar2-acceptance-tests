@@ -17,9 +17,9 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{Enrolment, login}
-import uk.gov.hmrc.test.ui.pages.btn._
+import uk.gov.hmrc.test.ui.pages.btn.*
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
-import uk.gov.hmrc.test.ui.pages.manage._
+import uk.gov.hmrc.test.ui.pages.manage.*
 import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 
 class BTNAmendmentsSpec extends BaseSpec {

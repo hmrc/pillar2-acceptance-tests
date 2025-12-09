@@ -16,12 +16,12 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.asa._
+import uk.gov.hmrc.test.ui.pages.asa.*
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
-import uk.gov.hmrc.test.ui.pages.dueAndOverdueReturns._
-import uk.gov.hmrc.test.ui.pages.submissionHistory._
-import uk.gov.hmrc.test.ui.specs.tags._
+import uk.gov.hmrc.test.ui.pages.dueAndOverdueReturns.*
+import uk.gov.hmrc.test.ui.pages.submissionHistory.*
+import uk.gov.hmrc.test.ui.specs.tags.*
 
 class SubmissionHistoryDueOverdueReturnsSpec extends BaseSpec {
 

@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.helper
 
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.{By, WebElement}
-import uk.gov.hmrc.test.ui.helper.Wait.fluentWait
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.helper.Wait.fluentWait
 
 object Find extends BrowserDriver {
 

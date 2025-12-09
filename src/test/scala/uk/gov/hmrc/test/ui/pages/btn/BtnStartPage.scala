@@ -19,5 +19,5 @@ package uk.gov.hmrc.test.ui.pages.btn
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnStartPage extends BasePage {
-  override val url: String   = s"${baseUrl}below-threshold-notification/start"
+  override val url: String = s"${baseUrl}below-threshold-notification/start"
 }

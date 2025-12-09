@@ -32,9 +32,9 @@ object StepDefToScalaFunctionConverter {
 
   private def unquote(rawPattern: String): String = {
     val trimmed = rawPattern.trim
-    if (trimmed.startsWith("\"\"\"") && trimmed.endsWith("\"\"\"")) {
+    if trimmed.startsWith("\"\"\"") && trimmed.endsWith("\"\"\"") then {
       trimmed.substring(3, trimmed.length - 3)
-    } else if (trimmed.startsWith("\"") && trimmed.endsWith("\"")) {
+    } else if trimmed.startsWith("\"") && trimmed.endsWith("\"") then {
       trimmed.substring(1, trimmed.length - 1)
     } else {
       trimmed
@@ -44,13 +44,13 @@ object StepDefToScalaFunctionConverter {
   private def findMatchingBrace(s: String, openIndex: Int): Int = {
     var i     = openIndex + 1
     var depth = 1
-    while (i < s.length) {
+    while i < s.length do {
       s.charAt(i) match {
         case '{' => depth += 1
         case '}' =>
           depth -= 1
-          if (depth == 0) return i
-        case _   =>
+          if depth == 0 then return i
+        case _ =>
       }
       i += 1
     }
@@ -62,14 +62,14 @@ object StepDefToScalaFunctionConverter {
     paramArrowRegex.findFirstMatchIn(body) match {
       case Some(m) =>
         val params = m.group(1).trim
-        (body.substring(m.end).trim, if (params.nonEmpty) Some(params) else None)
-      case None    =>
+        (body.substring(m.end).trim, if params.nonEmpty then Some(params) else None)
+      case None =>
         (body.trim, None)
     }
 
   private def stepTextToMethodName(stepType: String, stepText: String): String = {
     val cleaned = stepText
-      .replaceAll("""[\^$":]""", "") // remove regex markers and colons
+      .replaceAll("""[\^$":]""", "")   // remove regex markers and colons
       .replaceAll("""\(\.\*\)""", "X") // replace (.*) with X
       .replaceAll("""\s+""", " ")
       .trim
@@ -126,7 +126,7 @@ object StepDefToScalaFunctionConverter {
     val helperDefs = extractHelperDefs(inputStr, firstHeaderIdx)
 
     val headers = headerPattern.findAllMatchIn(inputStr).toList
-    if (headers.isEmpty) {
+    if headers.isEmpty then {
       println(s"⚠️ Skipping ${inputFile.getName} - No step patterns found.")
       return
     }
@@ -136,7 +136,7 @@ object StepDefToScalaFunctionConverter {
     val specBuilder = new StringBuilder
 
     // Start with imports
-    if (importLines.nonEmpty) {
+    if importLines.nonEmpty then {
       specBuilder ++= importLines + "\n\n"
     }
 
@@ -146,12 +146,12 @@ object StepDefToScalaFunctionConverter {
          |""".stripMargin
 
     // Add preserved vals/vars
-    if (topLevelDefs.nonEmpty) {
+    if topLevelDefs.nonEmpty then {
       specBuilder ++= topLevelDefs + "\n\n"
     }
 
     // Add helper defs
-    if (helperDefs.nonEmpty) {
+    if helperDefs.nonEmpty then {
       specBuilder ++= helperDefs + "\n\n"
     }
 
@@ -163,7 +163,7 @@ object StepDefToScalaFunctionConverter {
       val openBraceIndex = m.end - 1
       val closeIndex     = findMatchingBrace(inputStr, openBraceIndex)
 
-      if (closeIndex == -1) {
+      if closeIndex == -1 then {
         println(s"⚠️ Could not find matching closing brace in ${inputFile.getName}; skipping step [$stepTextRaw].")
       } else {
         val rawBody                   = inputStr.substring(openBraceIndex + 1, closeIndex)
@@ -185,7 +185,7 @@ object StepDefToScalaFunctionConverter {
 
         // If DataTable step -> generate overload
         paramsOpt.foreach { paramsStr =>
-          if (paramsStr.contains("DataTable")) {
+          if paramsStr.contains("DataTable") then {
             val overloadBody =
               s"""    links.foreach { case (text, url) =>
                  |      val driverWait: WebDriverWait =
@@ -221,11 +221,11 @@ object StepDefToScalaFunctionConverter {
 
   def convertFolder(inputDir: String, outputDir: File): Unit = {
     val in = new File(inputDir)
-    if (!in.exists() || !in.isDirectory) {
+    if !in.exists() || !in.isDirectory then {
       println(s"ERROR: Input directory $inputDir not found or not a directory.")
       System.exit(2)
     }
-    if (!outputDir.exists()) outputDir.mkdirs()
+    if !outputDir.exists() then outputDir.mkdirs()
 
     in.listFiles().filter(f => f.isFile && f.getName.endsWith(".scala")).foreach { file =>
       convertFile(file, outputDir)
@@ -233,7 +233,7 @@ object StepDefToScalaFunctionConverter {
   }
 
   def main(args: Array[String]): Unit = {
-    if (args.length != 2) {
+    if args.length != 2 then {
       println("Usage: StepDefToScalaFunctionConverter <stepdefs_folder> <target_folder>")
       System.exit(1)
     }

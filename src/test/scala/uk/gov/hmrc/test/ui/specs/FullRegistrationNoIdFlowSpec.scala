@@ -17,12 +17,12 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
-import uk.gov.hmrc.test.ui.pages.contactDetails._
-import uk.gov.hmrc.test.ui.pages.furtherDetails._
-import uk.gov.hmrc.test.ui.pages.nfm._
-import uk.gov.hmrc.test.ui.pages.registration._
-import uk.gov.hmrc.test.ui.pages.upe._
-import uk.gov.hmrc.test.ui.specs.tags._
+import uk.gov.hmrc.test.ui.pages.contactDetails.*
+import uk.gov.hmrc.test.ui.pages.furtherDetails.*
+import uk.gov.hmrc.test.ui.pages.nfm.*
+import uk.gov.hmrc.test.ui.pages.registration.*
+import uk.gov.hmrc.test.ui.pages.upe.*
+import uk.gov.hmrc.test.ui.specs.tags.*
 
 class FullRegistrationNoIdFlowSpec extends BaseSpec {
 

@@ -17,12 +17,11 @@
 package uk.gov.hmrc.test.ui.specsdef
 
 import org.openqa.selenium.By
+import org.scalatest.matchers.should.Matchers.shouldBe
 import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.helper.Check.{be, convertToAnyShouldWrapper, include}
-import uk.gov.hmrc.test.ui.helper.Input.getTextOf
+import uk.gov.hmrc.test.ui.helper.*
 import uk.gov.hmrc.test.ui.helper.Nav.{isVisible, navigateTo}
-import uk.gov.hmrc.test.ui.helper._
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pages.*
 
 object CommonStepsSteps {
 
@@ -83,7 +82,6 @@ object CommonStepsSteps {
   def thenIClearTheCache(): Unit = {
     Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/eligibility/clear-session")
   }
-
 
   def whenIClickOnContinueButton(negate: String): Unit = {
     InitialGuidancePage.clickContinue()

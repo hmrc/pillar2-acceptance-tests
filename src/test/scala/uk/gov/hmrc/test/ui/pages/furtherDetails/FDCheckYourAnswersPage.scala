@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages.furtherDetails
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object FDCheckYourAnswersPage extends BasePage {
-  override val url: String   = s"${baseUrl}further-details/check-answers"
+  override val url: String = s"${baseUrl}further-details/check-answers"
 
   private val changeGroupStatus      = "a[href*='/change-group-status']"
   private val changeAccountingPeriod = "a[href*='/change-accounting-period']"

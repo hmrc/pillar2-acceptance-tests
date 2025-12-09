@@ -18,17 +18,17 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.TaskListStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.TaskListStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 
   Feature("Further Details Task page validation") {
 
-    Scenario("1 - User navigates to check your answer page answering all the questions of Further Details Page",AcceptanceTests, ZapAccessibility) {
+    Scenario("1 - User navigates to check your answer page answering all the questions of Further Details Page", AcceptanceTests, ZapAccessibility) {
       Given("Organisation User logs in as upe with credId FDTask for Pillar2")
       givenLogsInAsUpeWithCredIdForPillar2("Organisation User", "FDTask")
 
@@ -208,7 +208,7 @@ class FurtherDetailsTaskSpec extends BaseSpec with Matchers {
 //      andIShouldSeeRowValue(4, "5 June 2026")
 //    }
 
-    Scenario("3 - Accounting period page Error Validations",AcceptanceTests, ZapAccessibility) {
+    Scenario("3 - Accounting period page Error Validations", AcceptanceTests, ZapAccessibility) {
       Given("I clear the cache")
       thenIClearTheCache()
 

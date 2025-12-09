@@ -63,13 +63,13 @@ object FeatureToScalaSpecConverter {
 
     def flushScenario(): Unit = {
       currentScenario.foreach { t =>
-        if (outlineHeaders.nonEmpty && outlineExamples.nonEmpty) {
+        if outlineHeaders.nonEmpty && outlineExamples.nonEmpty then {
           // Expand Scenario Outline
           outlineExamples.foreach { row =>
             val expandedSteps = currentSteps.map { case (kw, text) =>
               kw -> substitutePlaceholders(text, outlineHeaders, row)
             }
-            val titleSuffix   = outlineHeaders.zip(row).map { case (h, v) => s"$h=$v" }.mkString(", ")
+            val titleSuffix = outlineHeaders.zip(row).map { case (h, v) => s"$h=$v" }.mkString(", ")
             scenarios += (s"$t [$titleSuffix]" -> expandedSteps)
           }
         } else {
@@ -98,12 +98,12 @@ object FeatureToScalaSpecConverter {
       case stepPattern(keyword, text) =>
         currentSteps = currentSteps :+ (keyword.capitalize -> cleanStepText(text))
 
-      case examplesPattern()          =>
+      case examplesPattern() =>
         inExamplesBlock = true
 
       case examplesRowPattern(row) if inExamplesBlock =>
         val cells = row.split("\\|").map(_.trim).filter(_.nonEmpty).toSeq
-        if (outlineHeaders.isEmpty) outlineHeaders = cells
+        if outlineHeaders.isEmpty then outlineHeaders = cells
         else outlineExamples :+= cells
 
       case _ =>
@@ -112,7 +112,7 @@ object FeatureToScalaSpecConverter {
     flushScenario()
 
     val baseName   = inputFile.getName.stripSuffix(".feature").replaceAll("[^A-Za-z0-9]", "")
-    val className  = if (baseName.endsWith("Spec")) baseName else baseName + "Spec"
+    val className  = if baseName.endsWith("Spec") then baseName else baseName + "Spec"
     val outputFile = new File(outputDir, className + ".scala")
 
     val sb = new StringBuilder
@@ -125,13 +125,13 @@ object FeatureToScalaSpecConverter {
          |  Feature("$featureTitle") {
          |""".stripMargin
 
-    for ((scenarioTitle, steps) <- scenarios) {
+    for (scenarioTitle, steps) <- scenarios do {
       sb ++=
         s"""
            |    Scenario("$scenarioTitle") {
            |""".stripMargin
 
-      for ((kw, text) <- steps)
+      for (kw, text) <- steps do
         sb ++= s"""      $kw("$text")\n"""
 
       sb ++= "    }\n"
@@ -149,17 +149,17 @@ object FeatureToScalaSpecConverter {
   def convertFolder(inputDir: String, outputDir: String): Unit = {
     val inDir  = new File(inputDir)
     val outDir = new File(outputDir)
-    if (!outDir.exists()) outDir.mkdirs()
+    if !outDir.exists() then outDir.mkdirs()
 
     inDir.listFiles().filter(_.isFile).foreach { file =>
-      if (file.getName.endsWith(".feature")) {
+      if file.getName.endsWith(".feature") then {
         convertFile(file, outDir)
       }
     }
   }
 
   def main(args: Array[String]): Unit = {
-    if (args.length != 2) {
+    if args.length != 2 then {
       println("Usage: FeatureToScalaSpecConverter <features_folder> <specs_folder>")
       System.exit(1)
     }

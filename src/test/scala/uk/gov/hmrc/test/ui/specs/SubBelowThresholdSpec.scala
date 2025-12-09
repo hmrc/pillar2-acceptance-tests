@@ -17,12 +17,12 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage._
+import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage.*
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, ZapAccessibility}
-import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.DueOverdueStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.DueOverdueStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.andIAmOnFeedbackSurveyPage
 
 class SubBelowThresholdSpec extends BaseSpec with Matchers {
@@ -90,7 +90,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 //      When("I click on Continue button")
 //      whenIClickOnContinueButton("I click on Continue button")
 //    }
-
 
     Scenario(
       "12 - Agent User navigates to BTN multiple accounting period for current accounting period to check amend group details",

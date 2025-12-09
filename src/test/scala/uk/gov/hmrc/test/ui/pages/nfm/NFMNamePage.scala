@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object NFMNamePage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/filing-member/no-id/input-name"
 
-  private val nameValue: String = "Member Name"
+  private val nameValue: String        = "Member Name"
   private val nameUpdatedValue: String = "New Member Name"
 
   def enterName(): Unit = {

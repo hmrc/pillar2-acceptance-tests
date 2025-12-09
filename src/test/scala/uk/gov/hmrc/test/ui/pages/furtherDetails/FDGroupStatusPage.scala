@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object FDGroupStatusPage extends BasePage {
   override val url: String = s"${baseUrl}further-details/group-status"
 
-  private val onlyUk: By = By.id("value_0")
+  private val onlyUk: By     = By.id("value_0")
   private val ukAndNonUk: By = By.id("value_1")
 
   def selectOnlyUk(): Unit = {

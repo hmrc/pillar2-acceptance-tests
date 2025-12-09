@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RepaymentCouldNotConfirmErrorPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/error/could-not-confirm"
 
-  private val returnToBankDetailsLink       = "a[href*='/uk-details']"
+  private val returnToBankDetailsLink = "a[href*='/uk-details']"
 
   def clickReturnToBankDetailsLink(): Unit = {
     onPage()

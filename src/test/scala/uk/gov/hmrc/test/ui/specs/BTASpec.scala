@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
-import uk.gov.hmrc.test.ui.pages.bta._
-import uk.gov.hmrc.test.ui.specs.tags._
+import uk.gov.hmrc.test.ui.pages.bta.*
+import uk.gov.hmrc.test.ui.specs.tags.*
 
 class BTASpec extends BaseSpec {
 

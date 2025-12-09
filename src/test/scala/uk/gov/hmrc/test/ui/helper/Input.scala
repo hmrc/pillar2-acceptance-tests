@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.helper
 
-import org.openqa.selenium._
-import uk.gov.hmrc.test.ui.helper.Find._
+import org.openqa.selenium.*
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.helper.Find.*
 
 object Input extends BrowserDriver {
 
@@ -28,7 +28,7 @@ object Input extends BrowserDriver {
 
   def clickByCss(css: String): Unit = findByCss(css).click()
 
-  //val enterData: DataTable => Unit = iterator(sendKeysById)
+  // val enterData: DataTable => Unit = iterator(sendKeysById)
 //  def enterData(data: DataTable): Unit = {
 //    iterator(sendKeysById)(data)
 //  }

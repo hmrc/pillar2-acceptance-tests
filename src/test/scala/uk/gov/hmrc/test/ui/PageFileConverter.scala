@@ -32,9 +32,9 @@ object PageFileConverter {
 
     // Replace driver → Driver.instance safely
     val output = input.zipWithIndex.map { case (line, idx) =>
-      if (line.contains("driver")) {
+      if line.contains("driver") then {
         // skip if it's a match/case usage
-        if (line.contains("match") || line.trim.startsWith("case")) {
+        if line.contains("match") || line.trim.startsWith("case") then {
           println(s"⚠️  [Manual check] ${inputFile.getName}:${idx + 1} -> $line")
           line // leave unchanged
         } else {
@@ -56,17 +56,17 @@ object PageFileConverter {
   def convertFolder(inputDir: String, outputDir: String): Unit = {
     val inDir  = new File(inputDir)
     val outDir = new File(outputDir)
-    if (!outDir.exists()) outDir.mkdirs()
+    if !outDir.exists() then outDir.mkdirs()
 
     inDir.listFiles().filter(_.isFile).foreach { file =>
-      if (file.getName.endsWith(".scala")) {
+      if file.getName.endsWith(".scala") then {
         convertFile(file, outDir)
       }
     }
   }
 
   def main(args: Array[String]): Unit = {
-    if (args.length != 2) {
+    if args.length != 2 then {
       println("Usage: PageFileConverter <cucumber_pages_folder> <scalatest_pages_folder>")
       System.exit(1)
     }

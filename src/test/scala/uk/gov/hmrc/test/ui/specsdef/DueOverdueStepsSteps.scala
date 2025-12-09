@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specsdef
 import uk.gov.hmrc.test.ui.helper.Input
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.pages.*
 
 object DueOverdueStepsSteps {
 

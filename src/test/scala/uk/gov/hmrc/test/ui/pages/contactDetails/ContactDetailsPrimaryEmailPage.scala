@@ -22,9 +22,9 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object ContactDetailsPrimaryEmailPage extends BasePage {
   override val url: String = s"${baseUrl}contact-details/input-email"
 
-  override val textInputField: By = By.id("emailAddress")
-  private val emailValue: String  = "abc@def.com"
-  private val emailUpdatedValue: String  = "xyz@tuv.com"
+  override val textInputField: By       = By.id("emailAddress")
+  private val emailValue: String        = "abc@def.com"
+  private val emailUpdatedValue: String = "xyz@tuv.com"
 
   def enterEmail(): Unit = {
     onPage()

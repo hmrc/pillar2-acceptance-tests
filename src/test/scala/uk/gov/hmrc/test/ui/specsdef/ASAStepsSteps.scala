@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.specsdef
 import org.openqa.selenium.By
 import uk.gov.hmrc.selenium.webdriver.Driver
-import uk.gov.hmrc.test.ui.helper._
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.helper.*
+import uk.gov.hmrc.test.ui.pages.*
 
 object ASAStepsSteps {
 

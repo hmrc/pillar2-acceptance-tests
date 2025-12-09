@@ -35,10 +35,10 @@ object InjectStepDefsIntoSpecs {
 
   // === MODEL ===
   case class StepDef(
-    patternRaw: String,
-    method: String,
-    params: Seq[String],
-    sourceFile: String
+      patternRaw: String,
+      method: String,
+      params: Seq[String],
+      sourceFile: String
   ) {
     // normalized pattern for token matching (remove anchors, wildcards, quotes)
     lazy val normalizedPattern: String =
@@ -72,17 +72,18 @@ object InjectStepDefsIntoSpecs {
         .replaceAll("X", " x ") // keep separators if placeholders exist
         .replaceAll("\\s+", " ")
         .trim
-      if (cleaned.isEmpty) ""
+      if cleaned.isEmpty then ""
       else cleaned
     }
 
-    def buildPattern(raw: String): Option[Pattern] = try {
-      val stripped = raw.replaceAll("""^\^|\$$""", "")
-      val replaced = stripped.replaceAll("""\(\.\*\)|\(\.\+\)""", "(.+?)")
-      Some(Pattern.compile("^" + replaced + "$", Pattern.CASE_INSENSITIVE))
-    } catch {
-      case _: Throwable => None
-    }
+    def buildPattern(raw: String): Option[Pattern] =
+      try {
+        val stripped = raw.replaceAll("""^\^|\$$""", "")
+        val replaced = stripped.replaceAll("""\(\.\*\)|\(\.\+\)""", "(.+?)")
+        Some(Pattern.compile("^" + replaced + "$", Pattern.CASE_INSENSITIVE))
+      } catch {
+        case _: Throwable => None
+      }
   }
 
   // === UTILITIES ===
@@ -105,7 +106,7 @@ object InjectStepDefsIntoSpecs {
 
   private def tokenScore(a: String, b: String): Double = {
     val aTokens = normalize(a).split(" ").filter(_.nonEmpty)
-    if (aTokens.isEmpty) return 0.0
+    if aTokens.isEmpty then return 0.0
     val bNorm   = normalize(b)
     val matches = aTokens.count(tok => bNorm.contains(tok))
     matches.toDouble / aTokens.length
@@ -113,22 +114,22 @@ object InjectStepDefsIntoSpecs {
 
   private def fuzzyNameScore(a: String, b: String): Double = {
     // split on 'x' placeholder tokens (like original behaviour)
-    val parts  = a.toLowerCase.split("x").map(_.trim).filter(_.nonEmpty)
-    if (parts.isEmpty) return 0.0
+    val parts = a.toLowerCase.split("x").map(_.trim).filter(_.nonEmpty)
+    if parts.isEmpty then return 0.0
     val bLower = b.toLowerCase
     val hits   = parts.count(p => p.nonEmpty && bLower.contains(p))
     hits.toDouble / parts.length
   }
 
   private def extractGroups(m: Matcher): Seq[String] =
-    if (m == null) Seq.empty else (1 to m.groupCount()).map(i => Option(m.group(i)).getOrElse("").trim)
+    if m == null then Seq.empty else (1 to m.groupCount()).map(i => Option(m.group(i)).getOrElse("").trim)
 
   private def placeholderForParam(param: String): String = {
     val parts = param.split(":").map(_.trim)
-    if (parts.length >= 2) {
+    if parts.length >= 2 then {
       val t = parts(1).toLowerCase
-      if (t.contains("string")) "\"\""
-      else if (t.contains("int") || t.contains("long") || t.contains("double")) "0"
+      if t.contains("string") then "\"\""
+      else if t.contains("int") || t.contains("long") || t.contains("double") then "0"
       else "null"
     } else "\"\""
   }
@@ -138,19 +139,17 @@ object InjectStepDefsIntoSpecs {
     val regexMatch = sd.compiledPattern.exists(_.matcher(stepText).matches())
     val tokenSim   = tokenScore(sd.normalizedPattern, stepText)
     val nameSim    = fuzzyNameScore(sd.xName, stepText)
-    val base       = (if (regexMatch) 1.0 else tokenSim) * 0.7 + nameSim * 0.3
+    val base       = (if regexMatch then 1.0 else tokenSim) * 0.7 + nameSim * 0.3
     // small boost if name appears inside step
-    if (
-      base < 0.6 && sd.xName.nonEmpty &&
-      stepText.toLowerCase.replaceAll("\\s+", "").contains(sd.xName.replaceAll("\\s+", ""))
-    )
+    if base < 0.6 && sd.xName.nonEmpty &&
+      stepText.toLowerCase.replaceAll("\\s+", "").contains(sd.xName.replaceAll("\\s+", "")) then
       0.85
     else base
   }
 
   // === LOADING STEP DEFS ===
   def loadStepDefs(stepDefsDir: File): Seq[StepDef] = {
-    if (!stepDefsDir.exists() || !stepDefsDir.isDirectory) return Seq.empty
+    if !stepDefsDir.exists() || !stepDefsDir.isDirectory then return Seq.empty
 
     // scan files (non-recursive to match old behaviour; change if you want recursion)
 //    val files = Option(stepDefsDir.listFiles()).map(ArraySeq.unsafeWrapArray).getOrElse(ArraySeq.empty[File])
@@ -166,7 +165,7 @@ object InjectStepDefsIntoSpecs {
           val paramsSeq = Option(paramsRaw).map(_.split(",").map(_.trim).filter(_.nonEmpty).toSeq).getOrElse(Seq.empty)
           defs += StepDef(currentPattern.get, name, paramsSeq, file.getName)
           currentPattern = None
-        case _                                                         =>
+        case _ =>
       }
       defs.toSeq
     }
@@ -180,49 +179,50 @@ object InjectStepDefsIntoSpecs {
     val lines = Using.resource(Source.fromFile(specFile))(_.getLines().toList)
     val out   = new StringBuilder
 
-    for (line <- lines) line match {
-      case stepLinePattern(indent, kw, text) =>
-        out ++= line + "\n"
+    for line <- lines do
+      line match {
+        case stepLinePattern(indent, kw, text) =>
+          out ++= line + "\n"
 
-        val scored = stepDefs
-          .map(sd => (sd, matchScore(sd, text)))
-          .filter(_._2 >= matchThreshold)
-          .sortBy(-_._2)
+          val scored = stepDefs
+            .map(sd => (sd, matchScore(sd, text)))
+            .filter(_._2 >= matchThreshold)
+            .sortBy(-_._2)
 
-        if (scored.isEmpty) {
-          out ++= s"$indent  // ⚠️ No step-def match found for: $text\n\n"
-        } else {
-          val best       = scored.head
-          val regexOpt   = best._1.compiledPattern
-          val matcherOpt = regexOpt.map(_.matcher(text)).filter(_.matches())
-          val args       = matcherOpt.map(extractGroups).getOrElse(Seq.empty)
+          if scored.isEmpty then {
+            out ++= s"$indent  // ⚠️ No step-def match found for: $text\n\n"
+          } else {
+            val best       = scored.head
+            val regexOpt   = best._1.compiledPattern
+            val matcherOpt = regexOpt.map(_.matcher(text)).filter(_.matches())
+            val args       = matcherOpt.map(extractGroups).getOrElse(Seq.empty)
 
-          val call =
-            if (best._1.params.isEmpty) s"${best._1.method}()"
-            else if (args.nonEmpty) s"${best._1.method}(${args.map(a => "\"" + a + "\"").mkString(", ")})"
-            else s"${best._1.method}(${best._1.params.map(placeholderForParam).mkString(", ")})"
+            val call =
+              if best._1.params.isEmpty then s"${best._1.method}()"
+              else if args.nonEmpty then s"${best._1.method}(${args.map(a => "\"" + a + "\"").mkString(", ")})"
+              else s"${best._1.method}(${best._1.params.map(placeholderForParam).mkString(", ")})"
 
-          if (autoChooseBest)
-            out ++= s"$indent  $call  // auto-chosen (score=${"%.2f".format(best._2)}, ${best._1.sourceFile})\n"
-          else
-            out ++= s"$indent  // Possible match (best=${"%.2f".format(best._2)})\n$indent  $call\n"
+            if autoChooseBest then
+              out ++= s"$indent  $call  // auto-chosen (score=${"%.2f".format(best._2)}, ${best._1.sourceFile})\n"
+            else
+              out ++= s"$indent  // Possible match (best=${"%.2f".format(best._2)})\n$indent  $call\n"
 
-          // show other candidate matches for review
-          val others = scored.tail
-          if (others.nonEmpty) {
-            out ++= s"$indent  // --- Other possible matches ---\n"
-            others.foreach { case (cand, score) =>
-              out ++= s"$indent  // ${cand.method}() [${"%.2f".format(score)}] (${cand.sourceFile}) pattern: ${cand.patternRaw}\n"
+            // show other candidate matches for review
+            val others = scored.tail
+            if others.nonEmpty then {
+              out ++= s"$indent  // --- Other possible matches ---\n"
+              others.foreach { case (cand, score) =>
+                out ++= s"$indent  // ${cand.method}() [${"%.2f".format(score)}] (${cand.sourceFile}) pattern: ${cand.patternRaw}\n"
+              }
             }
+            out ++= "\n"
           }
-          out ++= "\n"
-        }
 
-      case other =>
-        out ++= other + "\n"
-    }
+        case other =>
+          out ++= other + "\n"
+      }
 
-    if (!outputDir.exists()) outputDir.mkdirs()
+    if !outputDir.exists() then outputDir.mkdirs()
     val outFile = new File(outputDir, specFile.getName)
     Using.resource(new PrintWriter(outFile)) { pw =>
       pw.write(out.toString)
@@ -232,12 +232,12 @@ object InjectStepDefsIntoSpecs {
 
   // === PROCESS DIRECTORY ===
   def processFolder(specDir: String, stepDefsDir: String, outputDir: String): Unit = {
-    val in      = new File(specDir)
-    val out     = new File(outputDir)
-    if (!out.exists()) out.mkdirs()
+    val in  = new File(specDir)
+    val out = new File(outputDir)
+    if !out.exists() then out.mkdirs()
     val stepDir = new File(stepDefsDir)
     // use non-recursive listing to match the previous script; change as needed
-    val list    = Option(in.listFiles()).map(ArraySeq.unsafeWrapArray).getOrElse(ArraySeq.empty[File])
+    val list = Option(in.listFiles()).map(ArraySeq.unsafeWrapArray).getOrElse(ArraySeq.empty[File])
     list.filter(_.getName.endsWith(".scala")).foreach { f =>
       processSpecFile(f, stepDir, out)
     }
@@ -245,7 +245,7 @@ object InjectStepDefsIntoSpecs {
 
   // === CLI ENTRYPOINT ===
   def main(args: Array[String]): Unit = {
-    if (args.length < 3) {
+    if args.length < 3 then {
       println(
         "Usage: InjectStepDefsIntoSpecs <spec_folder> <stepdefs_folder> <output_folder> [--threshold 0.7] [--auto-choose-best]"
       )
@@ -258,15 +258,15 @@ object InjectStepDefsIntoSpecs {
 
     // parse optional args: --threshold <value>, --auto-choose-best
     var i = 3
-    while (i < args.length)
+    while i < args.length do
       args(i) match {
         case "--threshold" if i + 1 < args.length && args(i + 1).matches("[0-9.]+") =>
           matchThreshold = args(i + 1).toDouble
           i += 2
-        case "--auto-choose-best"                                                   =>
+        case "--auto-choose-best" =>
           autoChooseBest = true
           i += 1
-        case other                                                                  =>
+        case other =>
           println(s"Unknown arg: $other")
           i += 1
       }

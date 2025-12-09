@@ -18,11 +18,11 @@ package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
-import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps._
-import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps._
+import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
+import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
@@ -109,7 +109,10 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("2 - Verify that New NFM can replace existing FM through GRS registration flow", AcceptanceTests) {
+    Scenario(
+      "2 - Verify that New NFM can replace existing FM through GRS registration flow ",
+      AcceptanceTests
+    ) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
@@ -334,7 +337,10 @@ class RFMGRSflowPagesSpec extends BaseSpec with Matchers {
 
     }
 
-    Scenario("4 - User registration as UK limited company failed with identifiers mismatch error and entity type", AcceptanceTests) {
+    Scenario(
+      "4 - User registration as UK limited company failed with identifiers mismatch error and entity type ",
+      AcceptanceTests
+    ) {
       Given("Organisation User logs in without Pillar2 enrolment")
       givenLogsInWithoutPillar2Enrolment()
 
