@@ -82,30 +82,4 @@ object PaymentStepsSteps {
     UKBankAccountPaymentPage.clickContinue()
   }
 
-  def thenIMakeSuccessfulPayment(): Unit = {
-    OnlinePaymentPages.enterAmountAncClickContinueOnEnterPaymentAmountPage()
-    OnlinePaymentPages.clickContinueOnChooseOpenBankingOrBacsPage()
-    OnlinePaymentPages.enterBankNameAndClickContinueOnChooseBankPage()
-    OnlinePaymentPages.enterEmailAndClickContinueOnEmailPage()
-    OnlinePaymentPages.clickContinueOnCheckYourDetailsPage()
-    OnlinePaymentPages.clickContinueOnGetReadyApproveThisPaymentPage()
-    OnlinePaymentPages.selectBankLoginOptionAndClickContinue()
-    OnlinePaymentPages.clickSubmitOnStubBankPaymentPage()
-    OnlinePaymentPages.verifyPaymentAndClickHmrcOnlineAccountLinkOnPaymentCompletePage()
-  }
-
-  def thenIGoTillGetReadyToApproveYourPaymentPage(): Unit = {
-    OnlinePaymentPages.enterAmountAncClickContinueOnEnterPaymentAmountPage()
-    OnlinePaymentPages.clickContinueOnChooseOpenBankingOrBacsPage()
-    OnlinePaymentPages.enterBankNameAndClickContinueOnChooseBankPage()
-    OnlinePaymentPages.enterEmailAndClickContinueOnEmailPage()
-    OnlinePaymentPages.clickContinueOnCheckYourDetailsPage()
-  }
-
-  def thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage(): Unit = {
-    Nav.browserBack()
-    for i <- 1 to 7 do {
-      clickByCss(BtnAgdKBPage.backLink)
-    }
-  }
 }

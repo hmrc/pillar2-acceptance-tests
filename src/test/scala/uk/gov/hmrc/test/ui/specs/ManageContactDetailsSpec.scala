@@ -16,20 +16,15 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.helper.Nav
-import uk.gov.hmrc.test.ui.pages.AuthLoginOldPage.*
-
 import uk.gov.hmrc.test.ui.specs.tags.*
-import uk.gov.hmrc.test.ui.specsdef.ASAStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
-import uk.gov.hmrc.test.ui.specsdef.PaymentStepsSteps.{thenIGoTillGetReadyToApproveYourPaymentPage, thenIMakeSuccessfulPayment, thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage}
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.thenIShouldBeRedirectedTo
 import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps.andIEnterAccountPeriodAs
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
-class DashboardPageSpec extends BaseSpec {
+class ManageContactDetailsSpec extends BaseSpec {
 
   Feature("Dashboard Page") {
 
@@ -223,126 +218,6 @@ class DashboardPageSpec extends BaseSpec {
       Then("I should be on Dashboard page")
       thenIShouldBeOn("Dashboard page")
 
-    }
-
-
-
-
-    
-
-    Scenario("7 - Make successful payment as Organisation user", AcceptanceTests) {
-      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click View outstanding payments link")
-      andIClickLink("View outstanding payments")
-
-      Then("I should navigate to Outstanding Payment Page")
-      thenIShouldNavigateTo("Outstanding Payment Page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I make successful payment")
-      thenIMakeSuccessfulPayment()
-
-      And("I should navigate to Transaction History Page")
-      thenIShouldNavigateTo("Transaction History Page")
-
-      When("I click Report Pillar 2 Top-up Taxes link")
-      andIClickLink("Report Pillar 2 Top-up Taxes")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-    }
-
-    Scenario("8 - Make successful payment as Agent", AcceptanceTests) {
-      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
-
-      Then("I click Add Delegated Enrolment button")
-      clickAddDelegatedEnrolmentCTA()
-
-      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XMPLR0012345674 and pillar2-auth for Pillar2 service")
-      addDelegatedEnrolments("HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345674", "pillar2-auth")
-
-      And("I Click Submit button")
-      clickSubmitButton()
-
-      Then("I should be on ASA Pillar2 Input Page")
-      thenIShouldBeOn("ASA Pillar2 Input Page")
-
-      And("I provide ASA Pillar2 ID as XMPLR0012345674")
-      andIProvideASAAs("Pillar2 ID", "XMPLR0012345674")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to ASA Confirmation Page")
-      thenIShouldNavigateTo("ASA Confirmation Page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to Dashboard page")
-      thenIShouldNavigateTo("Dashboard page")
-
-      When("I click View outstanding payments link")
-      andIClickLink("View outstanding payments")
-
-      Then("I should navigate to Outstanding Payment Page")
-      thenIShouldNavigateTo("Outstanding Payment Page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I make successful payment")
-      thenIMakeSuccessfulPayment()
-
-      And("I should navigate to Transaction History Page")
-      thenIShouldNavigateTo("Transaction History Page")
-
-      When("I click Report Pillar 2 Top-up Taxes link")
-      andIClickLink("Report Pillar 2 Top-up Taxes")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-    }
-
-    Scenario("9 - Back journey from Get ready to approve your payment page", AcceptanceTests) {
-      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345674 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345674"
-      )
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click View outstanding payments link")
-      andIClickLink("View outstanding payments")
-
-      Then("I should navigate to Outstanding Payment Page")
-      thenIShouldNavigateTo("Outstanding Payment Page")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      And("I go till Get ready to approve your payment page")
-      thenIGoTillGetReadyToApproveYourPaymentPage()
-
-      And("I should be able to navigate back to outstanding payment page")
-      thenIShouldBeAbleToNavigateBackToOutstandingPaymentPage()
-
-      Then("I should navigate to Outstanding Payment Page")
-      thenIShouldNavigateTo("Outstanding Payment Page")
     }
   }
 }

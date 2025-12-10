@@ -27,8 +27,7 @@ class TransactionHistorySpec extends BaseSpec {
 
     Scenario(
       "1 - Access Transaction History pages as an Org user",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
 
       Given("Organisation User logs in to Pillar2 service")
@@ -52,8 +51,7 @@ class TransactionHistorySpec extends BaseSpec {
 
     Scenario(
       "2 - Access empty transaction history page as an Org user",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
 
       Given("Organisation User logs in to Pillar2 service")
