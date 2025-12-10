@@ -18,8 +18,7 @@ package uk.gov.hmrc.test.ui.pages.transactionHistory
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object TransactionHistoryPage extends BasePage {
-  override val url: String = s"${baseUrl}payment/history"
+object TransactionHistorySecondPage extends BasePage {
+  override val url: String = s"${baseUrl}payment/history?page=2"
 
-  val pageTwoLink = "a[href*='history?page=2']"
 }

@@ -32,8 +32,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "1 - Unauthorised access of account summary page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -53,8 +52,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "2 - Unauthorised access of make a payment page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -74,8 +72,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "3 - Unauthorised access of repayment guidance page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -95,8 +92,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "4 - Unauthorised access of repayment guidance page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -116,8 +112,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "5 - Unauthorised access of repayment reason page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -138,8 +133,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "6 - Unauthorised access of repayment method page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -159,8 +153,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "7 - Unauthorised access of UK bank account page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -180,8 +173,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "8 - Unauthorised access of non-UK bank account page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -201,8 +193,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "9 - Unauthorised access of repayment contact name page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -222,8 +213,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "10 - Unauthorised access of repayment contact email page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -243,8 +233,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "11 - Unauthorised access of repayment phone as contact page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -264,8 +253,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "12 - Unauthorised access of repayment phone input page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -285,8 +273,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "13 - Unauthorised access of repayment check your answers page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -306,8 +293,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "14 - Unauthorised access of manage primary contact name page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -327,8 +313,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "15 - Unauthorised access of manage secondary contact name page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -348,8 +333,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "16 - Unauthorised access of manage contact address page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -369,8 +353,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "17 - Unauthorised access of manage group status page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -390,8 +373,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "18 - Unauthorised access of manage accounting period page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
@@ -411,8 +393,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
     Scenario(
       "19 - Unauthorised access of transaction history page",
-      AcceptanceTests,
-      Wip
+      AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
       login(
