@@ -76,7 +76,7 @@ trait BasePage extends Matchers with PageObject {
     clickByClassName(continue)
   }
 
-  def enterText(): Unit = {
+  def enterText(textValue: String = textValue): Unit = {
     onPage()
     sendKeys(textInputField, textValue)
     clickByClassName(continue)

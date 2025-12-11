@@ -16,8 +16,24 @@
 
 package uk.gov.hmrc.test.ui.pages.manage
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ManageGroupStatusPage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/account-details/change-group-status"
+
+  private val onlyUk: By     = By.id("value_0")
+  private val ukAndNonUk: By = By.id("value_1")
+
+  def selectOnlyUk(): Unit = {
+    onPage()
+    click(onlyUk)
+    clickByClassName(continue)
+  }
+
+  def selectUkAndNonUk(): Unit = {
+    onPage(s"${baseUrl}further-details/change-group-status")
+    click(ukAndNonUk)
+    clickByClassName(continue)
+  }
 }

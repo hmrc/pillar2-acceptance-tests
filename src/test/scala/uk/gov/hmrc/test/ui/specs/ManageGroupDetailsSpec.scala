@@ -1,0 +1,89 @@
+/*
+ * Copyright 2025 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.hmrc.test.ui.specs
+
+import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{Enrolment, login}
+import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
+import uk.gov.hmrc.test.ui.pages.manage.*
+import uk.gov.hmrc.test.ui.specs.tags.*
+
+class ManageGroupDetailsSpec extends BaseSpec {
+
+  Feature("Manage Group Details") {
+
+    Scenario(
+      "1 - Org user amends group details accounting period via manage pages",
+      AcceptanceTests
+    ) {
+
+      Given("Organisation User logs in to Pillar2 service")
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            "HMRC-PILLAR2-ORG",
+            "PLRID",
+            "XMPLR0012345676"
+          )
+        )
+      )
+
+      When("The user is on the dashboard and navigates to manage group details")
+      DashboardPage.clickManageGroupDetailsLink()
+
+      And("The user amends accounting period")
+      ManageAccountsSummaryPage.clickLink(ManageAccountsSummaryPage.changeAccountingPeriodLink)
+      ManageAccountPeriodPage.updateDates()
+
+      When("The user saves the changes")
+      ManageAccountsSummaryPage.onPageSubmitById()
+
+      Then("The user is taken to the dashboard")
+      DashboardPage.onPage(timeoutSeconds = 5)
+    }
+
+    Scenario(
+      "2 - Org user tries to amend entity locations and is taken to MTT to DTT Kb page",
+      AcceptanceTests
+    ) {
+
+      Given("Organisation User logs in to Pillar2 service")
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            "HMRC-PILLAR2-ORG",
+            "PLRID",
+            "XMPLR0012345676"
+          )
+        )
+      )
+
+      When("The user is on the dashboard and navigates to manage group details")
+      DashboardPage.clickManageGroupDetailsLink()
+
+      And("The user amends entity locations")
+      ManageAccountsSummaryPage.clickLink(ManageAccountsSummaryPage.changeGroupStatusLink)
+      ManageGroupStatusPage.selectOnlyUk()
+
+      Then("The user is taken to the MTT to DTT kb page")
+      ManageMttToDttPage.onPage()
+    }
+  }
+}

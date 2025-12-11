@@ -16,208 +16,104 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{Enrolment, login}
+import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
+import uk.gov.hmrc.test.ui.pages.errorPages.ErrorAPISubscriptionPage
+import uk.gov.hmrc.test.ui.pages.manage.*
 import uk.gov.hmrc.test.ui.specs.tags.*
-import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps.*
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
-import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.thenIShouldBeRedirectedTo
-import uk.gov.hmrc.test.ui.specsdef.SubscriptionJourneyStepsSteps.andIEnterAccountPeriodAs
-import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class ManageContactDetailsSpec extends BaseSpec {
 
-  Feature("Dashboard Page") {
+  Feature("Manage Contact Details") {
 
-    Scenario("2 - User navigates to group details page validates the data and MTT to DTT Kb page", AcceptanceTests) {
-      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345676")
+    Scenario(
+      "1 - Org user amends contact details via manage",
+      AcceptanceTests
+    ) {
 
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click Manage group details link")
-      andIClickLink("Manage group details")
-
-      Then("I should navigate to accounts summary page")
-      thenIShouldNavigateTo("accounts summary page")
-
-      When("I click on change hyperlink next to the FD Group Status")
-      andIClickOnChangeHyperlinkNextToThe("FD Group Status")
-
-      When("I select option Only in the UK in further details group status page")
-      andISelectOptionInFurtherDetailsGroupStatusPage("Only in the UK")
-
-      Then("I should be on the MTT to DTT kb page")
-      thenIShouldNavigateTo("MTT to DTT kb page")
-
-      And("I select back link")
-      andISelectBackLink()
-
-      Then("I should be on Manage group status Page")
-      thenIShouldBeOn("Manage group status Page")
-
-      And("I select option In the UK and outside the UK in further details group status page")
-      andISelectOptionInFurtherDetailsGroupStatusPage("In the UK and outside the UK")
-
-      Then("I should navigate to accounts summary page")
-      thenIShouldNavigateTo("accounts summary page")
-
-      When("I click on change hyperlink next to the Accounting Period")
-      andIClickOnChangeHyperlinkNextToThe("Accounting Period")
-
-      When("I enter account period as:")
-      val dateRangeData: Map[String, String] = Map(
-        "startDate.day"   -> "5",
-        "startDate.month" -> "5",
-        "startDate.year"  -> "2025",
-        "endDate.day"     -> "5",
-        "endDate.month"   -> "6",
-        "endDate.year"    -> "2026"
-      )
-      andIEnterAccountPeriodAs(dateRangeData)
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should be redirected to Manage Account processing Page or Dashboard page")
-      thenIShouldBeRedirectedTo("Manage Account processing Page", "Dashboard page")
-
-      And("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-    }
-
-    Scenario("3 - User navigates to amend contact details page and validates the data", AcceptanceTests) {
-      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Organisation", "HMRC-PILLAR2-ORG", "PLRID", "XMPLR0012345676")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-      When("I click Manage contact details link")
-      andIClickLink("Manage contact details")
-
-      Then("I should navigate to contact details summary page")
-      thenIShouldNavigateTo("contact details summary page")
-
-      When("I click on change link for Contact Name")
-      andIClickOnChangeLinkFor("Contact Name")
-
-      When("I enter Contact Name as Contact Name Test #")
-      andIEnterAs("Contact Name", "Contact Name Test #")
-
-      Then("I should navigate to contact details summary page")
-      thenIShouldNavigateTo("contact details summary page")
-
-      When("I click on change link for Email address")
-      andIClickOnChangeLinkFor("Email address")
-
-      When("I enter Contact Email as contact*@email.com")
-      andIEnterAs("Contact Email", "contact*@email.com")
-
-      When("I click on change link for Phone number")
-      andIClickOnChangeLinkFor("Phone number")
-
-      When("I enter Phone Number as 123456789")
-      andIEnterAs("Phone Number", "123456789")
-
-      When("I click on change link for Do you have a second contact?")
-      andIClickOnChangeLinkFor("Do you have a second contact?")
-
-      When("I select option No and continue to next")
-      andISelectOptionAndContinueToNext("No")
-
-      When("I click on change link for Do you have a second contact?")
-      andIClickOnChangeLinkFor("Do you have a second contact?")
-
-      When("I select option Yes and continue to next")
-      andISelectOptionAndContinueToNext("Yes")
-
-      When("I enter Second Contact Name as Second Contact £ Name Test")
-      andIEnterAs("Second Contact Name", "Second Contact £ Name Test")
-
-      When("I enter Second Contact Email as second&Contact@email.com")
-      andIEnterAs("Second Contact Email", "second&Contact@email.com")
-
-      When("I select option Yes and continue to next")
-      andISelectOptionAndContinueToNext("Yes")
-
-      When("I enter Second Contact Input as 1234554878")
-      andIEnterAs("Second Contact Input", "1234554878")
-
-      When("I click on change link for Dashboard Address")
-      andIClickOnChangeLinkFor("Dashboard Address")
-
-      When("I enter Address Line 1 as Test Address Line 1")
-      andIEnterAs("Address Line 1", "Test Address Line 1")
-
-      When("I enter Address Line 2 as Test Address Line 2")
-      andIEnterAs("Address Line 2", "Test Address Line 2")
-
-      And("I enter City as Test City")
-      andIEnterAs("City", "Test City")
-
-      And("I enter Region as Test Region")
-      andIEnterAs("Region", "Test Region")
-
-      And("I enter Postal Code as EH5 5WY")
-      andIEnterAs("Postal Code", "EH5 5WY")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should navigate to contact details summary page")
-      thenIShouldNavigateTo("contact details summary page")
-
-      When("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should be redirected to Manage Contact processing Page or Dashboard page")
-      thenIShouldBeRedirectedTo("Manage Contact processing Page", "Dashboard page")
-
-      And("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
-
-    }
-
-    Scenario("4 - Verify that user is navigated to an error page, when ETMP returns Error when connecting to amend subscription API", AcceptanceTests) {
-      Given("Organisation User logs in with existing entity group HMRC-PILLAR2-ORG, PLRID and XMPLR0012345676 for Pillar2 service")
-      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-        "Organisation",
-        "HMRC-PILLAR2-ORG",
-        "PLRID",
-        "XMPLR0012345676"
+      Given("Organisation User logs in to Pillar2 service")
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            "HMRC-PILLAR2-ORG",
+            "PLRID",
+            "XMPLR0012345676"
+          )
+        )
       )
 
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
+      When("The user is on the dashboard and navigates to manage contact details")
+      DashboardPage.clickManageContactDetailsLink()
+      ManageContactDetailsSummaryPage.onPage()
 
-      When("I click Manage contact details link")
-      andIClickLink("Manage contact details")
+      And("The user amends primary contact name")
+      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactName)
+      ManageContactDetailsPrimaryNamePage.enterText()
 
-      Then("I should navigate to contact details summary page")
-      thenIShouldNavigateTo("contact details summary page")
+      And("The user amends primary contact email address")
+      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactEmail)
+      ManageContactDetailsPrimaryEmailPage.enterText()
 
-      When("I click on change link for Contact Name")
-      andIClickOnChangeLinkFor("Contact Name")
+      And("The user amends primary contact phone number")
+      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactPhoneNumber)
+      ManageContactDetailsPrimaryPhoneInputPage.enterText()
 
-      When("I enter Contact Name as 400")
-      andIEnterAs("Contact Name", "400")
+      And("The user amends secondary contact name")
+      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changeSecondaryContactName)
+      ManageContactDetailsSecondaryNamePage.enterText()
 
-      Then("I should navigate to contact details summary page")
-      thenIShouldNavigateTo("contact details summary page")
+      And("The user amends secondary contact email address")
+      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changeSecondaryContactEmail)
+      ManageContactDetailsSecondaryEmailPage.enterText()
 
-      When("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
+      And("The user amends secondary contact phone number")
+      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changeSecondaryContactPhoneNumber)
+      ManageContactDetailsSecondaryPhoneInputPage.enterText()
 
-      Then("I should be on Subscription API error page")
-      thenIShouldBeOn("Subscription API error page")
+      And("The user amends contact address")
+      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changeAddress)
+      ManageContactDetailsAddressPage.updateAddressUK()
 
-      When("I click Return to your account homepage to try again link")
-      andIClickLink("Return to your account homepage to try again")
+      When("The user saves the changes")
+      ManageContactDetailsSummaryPage.onPageSubmitById()
 
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
+      Then("The user is taken to the dashboard")
+      DashboardPage.onPage(timeoutSeconds = 5)
+    }
 
+    Scenario(
+      "2 - Org user amends contact details via manage, but is taken to ETMP error page",
+      AcceptanceTests
+    ) {
+
+      Given("Organisation User logs in to Pillar2 service")
+      login(
+        userType = "Organisation",
+        pageUrl = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            "HMRC-PILLAR2-ORG",
+            "PLRID",
+            "XMPLR0012345676"
+          )
+        )
+      )
+
+      When("The user is on the dashboard and navigates to manage contact details")
+      DashboardPage.clickManageContactDetailsLink()
+      ManageContactDetailsSummaryPage.onPage()
+
+      And("The user amends primary contact name")
+      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactName)
+      ManageContactDetailsPrimaryNamePage.enterText(ManageContactDetailsPrimaryNamePage.textValueETMPError)
+
+      When("The user saves the changes")
+      ManageContactDetailsSummaryPage.onPageSubmitById()
+
+      Then("The user is taken to the error page")
+      ErrorAPISubscriptionPage.onPage()
     }
   }
 }

@@ -16,10 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages.manage
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ManageContactDetailsSecondaryNamePage extends BasePage {
-  override val url: String = s"${baseUrl}manage-account/contact-details/change-second-input-name"
-  
-  override val textValue: String = "Updated Secondary Contact"
+object ManageContactDetailsPrimaryPhoneInputPage extends BasePage {
+  override val url: String = s"${baseUrl}manage-account/contact-details/change-input-phone"
+
+  override val textInputField: By = By.id("phoneNumber")
+  override val textValue: String  = "01234 567890"
 }

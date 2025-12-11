@@ -20,4 +20,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ManageContactDetailsPrimaryNamePage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/contact-details/change-input-name"
+
+  override val textValue: String = "Updated Primary Contact"
+  val textValueETMPError: String = "400"
 }
