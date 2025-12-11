@@ -16,7 +16,8 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{Enrolment, login}
+import uk.gov.hmrc.test.ui.pages.asa.*
+import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.transactionHistory.*
 import uk.gov.hmrc.test.ui.specs.tags.*
@@ -26,11 +27,11 @@ class TransactionHistorySpec extends BaseSpec {
   Feature("Transaction History") {
 
     Scenario(
-      "1 - Access Transaction History pages as an Org user",
+      "1 - Org user accesses Transaction History pages",
       AcceptanceTests
     ) {
 
-      Given("Organisation User logs in to Pillar2 service")
+      Given("Org user logs in to Pillar2 service")
       login(
         userType = "Organisation",
         pageUrl = "dashboard",
@@ -50,11 +51,11 @@ class TransactionHistorySpec extends BaseSpec {
     }
 
     Scenario(
-      "2 - Access empty transaction history page as an Org user",
+      "2 - Org user accesses empty transaction history page",
       AcceptanceTests
     ) {
 
-      Given("Organisation User logs in to Pillar2 service")
+      Given("Org user logs in to Pillar2 service")
       login(
         userType = "Organisation",
         pageUrl = "dashboard",
@@ -70,6 +71,42 @@ class TransactionHistorySpec extends BaseSpec {
       Then("The user accesses transaction history and is taken to the history empty page")
       DashboardPage.clickPaymentHistoryLink()
       TransactionHistoryEmptyPage.onPage()
+    }
+
+    Scenario(
+      "3 - Agent accesses Transaction History pages",
+      AcceptanceTests
+    ) {
+
+      Given("Agent User logs in to Pillar2 service with delegated enrollment")
+      login(
+        userType = "Agent",
+        pageUrl = "asa",
+        enrolment = Some(
+          Enrolment(
+            enrolmentKey = "HMRC-AS-AGENT",
+            identifierName = "AgentReference",
+            identifierValue = "1234"
+          )
+        ),
+        delegatedEnrolment = Some(
+          DelegatedEnrolment(
+            enrolmentKey = "HMRC-PILLAR2-ORG",
+            identifierName = "PLRID",
+            identifierValue = "XMPLR0000000122",
+            authRule = "pillar2-auth"
+          )
+        )
+      )
+
+      Then("The agent confirms client PLRId")
+      ASAPillar2InputPage.enterPLR2Id("XMPLR0000000122")
+      ASAConfirmationPage.continueToNextPage()
+
+      Then("The agent accesses transaction history and checks two different pages")
+      DashboardPage.clickPaymentHistoryLink()
+      TransactionHistoryPage.clickLink(TransactionHistoryPage.pageTwoLink)
+      TransactionHistorySecondPage.onPage()
     }
   }
 }

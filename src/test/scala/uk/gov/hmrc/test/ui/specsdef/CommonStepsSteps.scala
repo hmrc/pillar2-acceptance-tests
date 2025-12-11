@@ -50,13 +50,6 @@ object CommonStepsSteps {
     }
   }
 
-  def givenLogsInWithBTAForPillar2(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginOldPage.loginUsingBta(name)
-      case _                   => AuthLoginOldPage.loginToSubscribe(name)
-    }
-  }
-
   def givenLogsInWithoutPillar2Enrolment(): Unit = {
     AuthLoginOldPage.loginToUPE()
   }
@@ -101,10 +94,6 @@ object CommonStepsSteps {
 
   def thenISelectPreviousAccountingPeriod(): Unit = {
     BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
-  }
-
-  def whenIClickOnCountrySelected(negate: String): Unit = {
-    UPEAddressPage.clickCountrySelected()
   }
 
   def givenIAmOnPage(page: String): Unit = {
@@ -193,24 +182,6 @@ object CommonStepsSteps {
         Wait.waitForTagNameToBeRefreshed("h1")
         Wait.waitForElementToPresentByCssSelector(ReviewAnswersPage.printThisPage)
         assert(Driver.instance.findElement(By.cssSelector(ReviewAnswersPage.printThisPage)).getText.contains(linkText))
-    }
-  }
-
-  def thenIShouldSeeCTA(pageNumber: String): Unit = {
-    pageNumber match {
-      case "Next" =>
-        assert(Driver.instance.findElement(By.cssSelector(TransactionHistoryPage.nextPageCTA)).isDisplayed)
-      case "Previous" =>
-        assert(Driver.instance.findElement(By.cssSelector(TransactionHistorySecondPage.previousPageCTA)).isDisplayed)
-    }
-  }
-
-  def whenIClickCTA(pageNumber: String): Unit = {
-    pageNumber match {
-      case "Next" =>
-        TransactionHistoryPage.clickNext()
-      case "Previous" =>
-        TransactionHistorySecondPage.clickPrevious()
     }
   }
 }

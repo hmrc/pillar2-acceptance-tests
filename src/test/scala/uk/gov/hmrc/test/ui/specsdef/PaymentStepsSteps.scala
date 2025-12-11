@@ -24,16 +24,6 @@ import uk.gov.hmrc.test.ui.pages.*
 
 object PaymentStepsSteps {
 
-  def thenIShouldBeRedirectedToGuidancePageInANewTab(): Unit = {
-    val handles    = Driver.instance.getWindowHandles.toArray().toSeq
-    val newWindow  = handles(1).toString
-    val mainWindow = handles.head.toString
-    Driver.instance.switchTo().window(newWindow)
-    Wait.waitForElementToPresentByCssSelector(GGRGuidancePage.header)
-    assert(Driver.instance.findElement(By.cssSelector(GGRGuidancePage.header)).isDisplayed)
-    Driver.instance.close()
-    Driver.instance.switchTo().window(mainWindow)
-  }
 
   def andISelectRepaymentMethodAs(option: String): Unit = {
     option match {

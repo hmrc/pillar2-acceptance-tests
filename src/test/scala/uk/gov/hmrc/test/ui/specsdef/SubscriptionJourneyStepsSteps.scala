@@ -28,40 +28,6 @@ object SubscriptionJourneyStepsSteps {
     UPEEntityTypePage.clickContinue()
   }
 
-  def andAccountingPeriodIsEnteredAs(field: String, name: String): Unit = {
-    field match {
-      case "Start Day" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startDay)
-        Input.sendKeysById(GroupAccountingPeriodPage.startDay, name)
-
-      case "Start Month" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startMonth)
-        Input.sendKeysById(GroupAccountingPeriodPage.startMonth, name)
-
-      case "Start Year" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(GroupAccountingPeriodPage.startYear)
-        Input.sendKeysById(GroupAccountingPeriodPage.startYear, name)
-
-      case "End Day" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endDay)
-        Input.sendKeysById(GroupAccountingPeriodPage.endDay, name)
-
-      case "End Month" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endMonth)
-        Input.sendKeysById(GroupAccountingPeriodPage.endMonth, name)
-
-      case "End Year" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(GroupAccountingPeriodPage.endYear)
-        Input.sendKeysById(GroupAccountingPeriodPage.endYear, name)
-    }
-  }
-
   def andIShouldSeeDateFieldXIsPrepopulatedWithX(field: String, name: String): Unit = {
     field match {
       case "Start Day" =>
