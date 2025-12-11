@@ -24,64 +24,6 @@ import uk.gov.hmrc.test.ui.pages.*
 
 object PaymentStepsSteps {
 
-  def thenIShouldBeRedirectedToGuidancePageInANewTab(): Unit = {
-    val handles    = Driver.instance.getWindowHandles.toArray().toSeq
-    val newWindow  = handles(1).toString
-    val mainWindow = handles.head.toString
-    Driver.instance.switchTo().window(newWindow)
-    Wait.waitForElementToPresentByCssSelector(GGRGuidancePage.header)
-    assert(Driver.instance.findElement(By.cssSelector(GGRGuidancePage.header)).isDisplayed)
-    Driver.instance.close()
-    Driver.instance.switchTo().window(mainWindow)
-  }
-
-  def andISelectRepaymentMethodAs(option: String): Unit = {
-    option match {
-      case "UK bank account"     => Input.clickById("value_0")
-      case "Non-UK bank account" => Input.clickById("value_1")
-    }
-    UPEEntityTypePage.clickContinue()
-  }
-
-  def andIProvideValueForAs(field: String, name: String): Unit = {
-    field match {
-
-      case "Refund Reason" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(RepaymentReasonPage.reasonTextField)
-        Input.sendKeysByCss(name, RepaymentReasonPage.reasonTextField)
-    }
-  }
-
-  def andIProvideRefundAmountAs(refundAmount: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Input.sendKeysByCss(refundAmount, RepaymentAmountPage.refundAmountField)
-    clickByCss(RepaymentAmountPage.continue)
-  }
-
-  def andIAccessPaymentPage(page: String): Unit = {
-    page match {
-      case "Non UK" =>
-        Nav.navigateTo(NonUKBankAccountPaymentPage.url)
-      case "UK" =>
-        Nav.navigateTo((UKBankAccountPaymentPage.url))
-    }
-  }
-
-  def andISelectOptionOnPartialNameErrorPage(option: String): Unit = {
-    option match {
-      case "Yes" => Input.clickById("confirmRepaymentAccountName_0")
-      case "No"  => Input.clickById("confirmRepaymentAccountName_1")
-    }
-    UKBankAccountPaymentPage.clickContinue()
-  }
-
-  def andIEnterUKBankAccountDetailsAs(details: Map[String, String]): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Input.enterData(details)
-    UKBankAccountPaymentPage.clickContinue()
-  }
-
   def thenIMakeSuccessfulPayment(): Unit = {
     OnlinePaymentPages.enterAmountAncClickContinueOnEnterPaymentAmountPage()
     OnlinePaymentPages.clickContinueOnChooseOpenBankingOrBacsPage()
