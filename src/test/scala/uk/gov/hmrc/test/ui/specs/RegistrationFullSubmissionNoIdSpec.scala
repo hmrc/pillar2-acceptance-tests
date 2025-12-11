@@ -24,7 +24,7 @@ import uk.gov.hmrc.test.ui.pages.registration.*
 import uk.gov.hmrc.test.ui.pages.upe.*
 import uk.gov.hmrc.test.ui.specs.tags.*
 
-class FullRegistrationNoIdFlowSpec extends BaseSpec {
+class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
   Feature("Full registration with no ID") {
 
