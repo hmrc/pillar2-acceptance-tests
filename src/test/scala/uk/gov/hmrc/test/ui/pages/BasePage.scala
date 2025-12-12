@@ -72,9 +72,9 @@ trait BasePage extends Matchers with PageObject {
     clickByClassName(continue)
   }
 
-  def enterText(): Unit = {
+  def enterText(value: String = textValue): Unit = {
     onPage()
-    sendKeys(textInputField, textValue)
+    sendKeys(textInputField, value)
     clickByClassName(continue)
   }
 
@@ -87,14 +87,14 @@ trait BasePage extends Matchers with PageObject {
     clickByClassName(continue)
   }
 
-  def selectYes(): Unit = {
-    onPage()
+  def selectYes(url: String = this.url): Unit = {
+    onPage(url)
     click(yesRadioId)
     clickByClassName(continue)
   }
 
-  def selectNo(): Unit = {
-    onPage()
+  def selectNo(url: String = this.url): Unit = {
+    onPage(url)
     click(noRadioId)
     clickByClassName(continue)
   }
@@ -104,8 +104,8 @@ trait BasePage extends Matchers with PageObject {
     click(By.cssSelector(link))
   }
 
-  def clickOnBackLink(): Unit = {
-    onPage()
+  def clickOnBackLink(url: String = this.url): Unit = {
+    onPage(url)
     click(backLinkText)
   }
 
