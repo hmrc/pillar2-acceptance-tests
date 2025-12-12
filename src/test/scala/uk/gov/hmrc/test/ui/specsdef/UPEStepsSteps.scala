@@ -136,10 +136,6 @@ object UPEStepsSteps {
     Check.checkH1("Give feedback")
   }
 
-  def andIShouldSeeTheAnswerXRemainSelected(answer: String): Unit = {
-    Check.checkAnswerSelection(answer)
-  }
-
   def andIShouldSeeTheOptionXRemainSelected(answer: String): Unit = {
     Check.checkOptionSelected(answer)
   }
@@ -245,10 +241,6 @@ object UPEStepsSteps {
         Wait.waitForElement("registrationFailedGeneric")
         Input.clickById("registrationNotCalledBvFailed")
     }
-  }
-
-  def thenTheJsonResponseBodyShouldContainTheStatusX(text: String): Unit = {
-    Check.checkBodyText(text)
   }
 
   def andIClickOnSaveContinueButton(): Unit = {

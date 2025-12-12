@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages.manage
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ManageAccountsSummaryPage extends BasePage {
-  override val url: String = s"${baseUrl}manage-account/account-details/summary"
-
-  val changeGroupStatusLink      = "a[href*='/change-group-status']"
-  val changeAccountingPeriodLink = "a[href*='/change-accounting-period']"
-
-  def clickChangeGroupStatusLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeGroupStatusLink))
-  }
-
-  def clickChangeAccountingPeriodLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeAccountingPeriodLink))
-  }
+object ManageMttToDttPage extends BasePage {
+  override val url: String = s"${baseUrl}manage-account/account-details/mtt-to-dtt"
 }

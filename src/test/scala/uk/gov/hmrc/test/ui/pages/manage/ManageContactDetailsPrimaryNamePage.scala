@@ -16,22 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.manage
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ManageAccountsSummaryPage extends BasePage {
-  override val url: String = s"${baseUrl}manage-account/account-details/summary"
+object ManageContactDetailsPrimaryNamePage extends BasePage {
+  override val url: String = s"${baseUrl}manage-account/contact-details/change-input-name"
 
-  val changeGroupStatusLink      = "a[href*='/change-group-status']"
-  val changeAccountingPeriodLink = "a[href*='/change-accounting-period']"
-
-  def clickChangeGroupStatusLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeGroupStatusLink))
-  }
-
-  def clickChangeAccountingPeriodLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeAccountingPeriodLink))
-  }
+  override val textValue: String = "Updated Primary Contact"
+  val textValueETMPError: String = "400"
 }

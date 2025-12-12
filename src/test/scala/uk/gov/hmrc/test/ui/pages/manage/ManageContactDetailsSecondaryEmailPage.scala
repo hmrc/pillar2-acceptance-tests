@@ -19,19 +19,9 @@ package uk.gov.hmrc.test.ui.pages.manage
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ManageAccountsSummaryPage extends BasePage {
-  override val url: String = s"${baseUrl}manage-account/account-details/summary"
-
-  val changeGroupStatusLink      = "a[href*='/change-group-status']"
-  val changeAccountingPeriodLink = "a[href*='/change-accounting-period']"
-
-  def clickChangeGroupStatusLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeGroupStatusLink))
-  }
-
-  def clickChangeAccountingPeriodLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeAccountingPeriodLink))
-  }
+object ManageContactDetailsSecondaryEmailPage extends BasePage {
+  override val url: String = s"${baseUrl}manage-account/contact-details/change-second-input-email"
+  
+  override val textInputField: By = By.id("emailAddress")
+  override val textValue: String = "abc@def.com"
 }

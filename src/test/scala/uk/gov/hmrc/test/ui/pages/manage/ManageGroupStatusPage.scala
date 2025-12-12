@@ -19,19 +19,21 @@ package uk.gov.hmrc.test.ui.pages.manage
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ManageAccountsSummaryPage extends BasePage {
-  override val url: String = s"${baseUrl}manage-account/account-details/summary"
+object ManageGroupStatusPage extends BasePage {
+  override val url: String = s"${baseUrl}manage-account/account-details/change-group-status"
 
-  val changeGroupStatusLink      = "a[href*='/change-group-status']"
-  val changeAccountingPeriodLink = "a[href*='/change-accounting-period']"
+  private val onlyUk: By     = By.id("value_0")
+  private val ukAndNonUk: By = By.id("value_1")
 
-  def clickChangeGroupStatusLink(): Unit = {
+  def selectOnlyUk(): Unit = {
     onPage()
-    click(By.cssSelector(changeGroupStatusLink))
+    click(onlyUk)
+    clickByClassName(continue)
   }
 
-  def clickChangeAccountingPeriodLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeAccountingPeriodLink))
+  def selectUkAndNonUk(): Unit = {
+    onPage(s"${baseUrl}further-details/change-group-status")
+    click(ukAndNonUk)
+    clickByClassName(continue)
   }
 }
