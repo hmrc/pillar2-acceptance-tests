@@ -22,4 +22,6 @@ object DueAndOverdueReturnsPage extends BasePage {
   override val url: String = s"${baseUrl}due-and-overdue-returns"
 
   val submissionHistoryLink = "a[href*='/submission-history']"
+
+  val pillar2TopupTaxesLink = "a[href*='how-to-report-pillar-2-top-up-taxes']"
 }
