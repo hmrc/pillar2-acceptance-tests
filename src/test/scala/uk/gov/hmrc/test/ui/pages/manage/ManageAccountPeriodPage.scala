@@ -19,19 +19,24 @@ package uk.gov.hmrc.test.ui.pages.manage
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ManageAccountsSummaryPage extends BasePage {
-  override val url: String = s"${baseUrl}manage-account/account-details/summary"
+object ManageAccountPeriodPage extends BasePage {
+  override val url: String = s"${baseUrl}manage-account/account-details/change-accounting-period"
 
-  val changeGroupStatusLink      = "a[href*='/change-group-status']"
-  val changeAccountingPeriodLink = "a[href*='/change-accounting-period']"
+  private val startDayId = By.id("startDate.day")
+  private val startMonthId = By.id("startDate.month")
+  private val startYearId = By.id("startDate.year")
+  private val endDayId = By.id("endDate.day")
+  private val endMonthId = By.id("endDate.month")
+  private val endYearId = By.id("endDate.year")
 
-  def clickChangeGroupStatusLink(): Unit = {
+  def updateDates(): Unit = {
     onPage()
-    click(By.cssSelector(changeGroupStatusLink))
-  }
-
-  def clickChangeAccountingPeriodLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeAccountingPeriodLink))
+    sendKeys(startDayId, "01")
+    sendKeys(startMonthId, "02")
+    sendKeys(startYearId, "2024")
+    sendKeys(endDayId, "31")
+    sendKeys(endMonthId, "01")
+    sendKeys(endYearId, "2025")
+    clickByClassName(continue)
   }
 }

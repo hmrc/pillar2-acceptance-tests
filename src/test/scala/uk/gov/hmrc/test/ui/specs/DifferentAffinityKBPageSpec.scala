@@ -172,5 +172,61 @@ class DifferentAffinityKBPageSpec extends BaseSpec with Matchers {
       Then("I should be on Individual affinity KB page")
       thenIShouldBeOn("Individual affinity KB page")
     }
+
+    Scenario("5 - Verify Agent service account user unauthorised pages", AcceptanceTests, ZapAccessibility) {
+      Given("Organisation User logs in to register for Pillar2 Agent service")
+      givenLogsInToRegisterForPillar2AgentService("Organisation User")
+
+      Then("I should be on ASA Organisation KB Page")
+      thenIShouldBeOn("ASA Organisation KB Page")
+
+      When("I click sign in via agent services link")
+      andIClickLink("sign in via agent services")
+
+      Then("I should navigate to agent services account page")
+      thenIShouldNavigateTo("agent services account page")
+
+      When("I click the browser back button")
+      andIClickTheBrowserBackButton()
+
+      Then("I should be on ASA Organisation KB Page")
+      thenIShouldBeOn("ASA Organisation KB Page")
+
+      When("I click request authorisation on agent services link")
+      andIClickLink("request authorisation on agent services")
+
+      Then("I should navigate to Agent services account page2")
+      thenIShouldNavigateTo("Agent services account page2")
+
+      When("I click the browser back button")
+      andIClickTheBrowserBackButton()
+
+      Then("I should be on ASA Organisation KB Page")
+      thenIShouldBeOn("ASA Organisation KB Page")
+
+      And("I click Find out more about who can report for Pillar 2 Top-up Taxes link")
+      andIClickLink("Find out more about who can report for Pillar 2 Top-up Taxes")
+
+      Then("I should navigate to guidance page")
+      thenIShouldNavigateTo("guidance page")
+
+      When("I click the browser back button")
+      andIClickTheBrowserBackButton()
+
+      Then("I should navigate to ASA Organisation KB Page")
+      thenIShouldNavigateTo("ASA Organisation KB Page")
+
+      When("I select back link")
+      andISelectBackLink()
+
+      Then("I should be on auth-login page")
+      thenIShouldBeOn("auth-login page")
+
+      When("Assistant User logs in to register for Pillar2 Agent service")
+      givenLogsInToRegisterForPillar2AgentService("Assistant User")
+
+      Then("I should be on ASA Organisation KB Page")
+      thenIShouldBeOn("ASA Organisation KB Page")
+    }
   }
 }
