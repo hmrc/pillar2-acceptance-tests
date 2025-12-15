@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.asa
+package uk.gov.hmrc.test.ui.pages.eligibility
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ASANotAuthorisedPage extends BasePage {
-  override val url: String = s"${baseUrl}asa/error/not-authorised"
-
-  val requestAuthLink = "a[href*='/asa/home']"
+object EligibilityConfirmationPage extends BasePage {
+  override val url: String = s"${baseUrl}eligibility/confirmation"
 }

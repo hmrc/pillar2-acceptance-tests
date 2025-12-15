@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.asa
+package uk.gov.hmrc.test.ui.pages.eligibility
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ASANotAuthorisedPage extends BasePage {
-  override val url: String = s"${baseUrl}asa/error/not-authorised"
+object EligibilityNFMPage extends BasePage {
+  override val url: String = s"${baseUrl}eligibility/nfm"
 
-  val requestAuthLink = "a[href*='/asa/home']"
+  override val yesRadioId: By = By.id("registeringNfmGroup_0")
+  override val noRadioId: By  = By.id("registeringNfmGroup_1")
 }

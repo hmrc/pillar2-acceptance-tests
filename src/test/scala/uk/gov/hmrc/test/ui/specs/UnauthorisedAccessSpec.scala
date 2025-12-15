@@ -37,7 +37,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -57,7 +57,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -77,7 +77,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -97,7 +97,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -117,7 +117,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -138,7 +138,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -158,7 +158,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -178,7 +178,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -198,7 +198,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -218,7 +218,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -238,7 +238,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -258,7 +258,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -278,7 +278,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -298,7 +298,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -318,7 +318,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -338,7 +338,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -358,7 +358,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -378,7 +378,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
@@ -398,7 +398,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       Given("Organisation User logs in without enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user is presented with the task list page")
