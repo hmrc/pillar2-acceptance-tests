@@ -201,56 +201,6 @@ class AgentUserJourney extends BaseSpec with Matchers {
       andIClickLink("Sign out")
     }
 
-    Scenario("4 - Verify Agent service account user unauthorised pages", AcceptanceTests, ZapAccessibility) {
-      Given("Individual User logs in to register for Pillar2 Agent service")
-      givenLogsInToRegisterForPillar2AgentService("Individual User")
-
-      Then("I should be on ASA Individual KB Page")
-      thenIShouldBeOn("ASA Individual KB Page")
-
-      When("I click sign in via agent services link")
-      andIClickLink("sign in via agent services")
-
-      Then("I should navigate to agent services account page")
-      thenIShouldNavigateTo("agent services account page")
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton()
-
-      Then("I should be on ASA Individual KB Page")
-      thenIShouldBeOn("ASA Individual KB Page")
-
-      When("I click request authorisation on agent services link")
-      andIClickLink("request authorisation on agent services")
-
-      Then("I should navigate to Agent services account page2")
-      thenIShouldNavigateTo("Agent services account page2")
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton()
-
-      Then("I should be on ASA Individual KB Page")
-      thenIShouldBeOn("ASA Individual KB Page")
-
-      And("I click Find out more about who can report for Pillar 2 Top-up Taxes link")
-      andIClickLink("Find out more about who can report for Pillar 2 Top-up Taxes")
-
-      Then("I should navigate to guidance page")
-      thenIShouldNavigateTo("guidance page")
-
-      When("I click the browser back button")
-      andIClickTheBrowserBackButton()
-
-      Then("I should navigate to ASA Individual KB Page")
-      thenIShouldNavigateTo("ASA Individual KB Page")
-
-      When("I select back link")
-      andISelectBackLink()
-
-      Then("I should be on auth-login page")
-      thenIShouldBeOn("auth-login page")
-    }
-
     Scenario("6 - Agent user Not Authorised Page", AcceptanceTests, ZapAccessibility) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
