@@ -26,8 +26,8 @@ import uk.gov.hmrc.test.ui.pages.asa.ASAPillar2InputPage
 import uk.gov.hmrc.test.ui.pages.bta.BTAPillar2IDCheckPage
 import uk.gov.hmrc.test.ui.pages.btn.BtnStartPage
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
+import uk.gov.hmrc.test.ui.pages.eligibility.EligibilityUPEPage
 import uk.gov.hmrc.test.ui.pages.rfm.RFMStartPage
-
 
 object AuthLoginPage extends BrowserDriver with BasePage {
 
@@ -59,6 +59,7 @@ object AuthLoginPage extends BrowserDriver with BasePage {
     "bta"              -> BTAPillar2IDCheckPage.url,
     "btn"              -> BtnStartPage.url,
     "dashboard"        -> DashboardPage.url,
+    "eligibility"      -> EligibilityUPEPage.url,
     "rfm"              -> RFMStartPage.url,
     "pillar2-frontend" -> frontEndUrl
   )
