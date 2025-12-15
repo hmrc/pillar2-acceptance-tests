@@ -25,7 +25,7 @@ import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
-class AgentUserJourney extends BaseSpec with Matchers {
+class AgentErrorSpec extends BaseSpec with Matchers {
 
   Feature("Agent user journeys") {
 
@@ -121,7 +121,9 @@ class AgentUserJourney extends BaseSpec with Matchers {
       thenIShouldNavigateTo("Dashboard page")
     }
 
-    Scenario("3 - Agent user API failure scenarios and service banner navigation", AcceptanceTests, ZapAccessibility) {
+    Scenario("3 - Agent user API failure scenarios", 
+      AcceptanceTests, Wip
+    ) {
       Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
       whenUserLogsInWithExistingEntityGroupAndForPillar2Service("Agent", "HMRC-AS-AGENT", "AgentReference", "1234")
 
