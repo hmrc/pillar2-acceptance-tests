@@ -36,12 +36,12 @@ class OutstandingPaymentsSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            "HMRC-PILLAR2-ORG",
-            "PLRID",
-            "XMPLR0012345674"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XMPLR0012345674"
           )
         )
       )
@@ -66,19 +66,19 @@ class OutstandingPaymentsSpec extends BaseSpec {
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
       login(
         userType = "Agent",
-        pageUrl = "asa",
+        page = "asa",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-AS-AGENT",
-            identifierName = "AgentReference",
-            identifierValue = "1234"
+            key = "HMRC-AS-AGENT",
+            name = "AgentReference",
+            value = "1234"
           )
         ),
-        delegatedEnrolment = Some(
+        delegatedEnrolments = Seq(
           DelegatedEnrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XMPLR0012345674",
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XMPLR0012345674",
             authRule = "pillar2-auth"
           )
         )

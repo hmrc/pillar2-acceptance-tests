@@ -33,7 +33,7 @@ class RFMNoIDFlowSpec extends BaseSpec {
       Given("Organisation User logs into RFM")
       login(
         userType = "Organisation",
-        pageUrl = "rfm"
+        page = "rfm"
       )
 
       When("The user enters PLRId and dates")

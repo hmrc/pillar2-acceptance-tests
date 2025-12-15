@@ -29,7 +29,7 @@ class BTNSubmissionSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
             "HMRC-PILLAR2-ORG",
@@ -58,19 +58,19 @@ class BTNSubmissionSpec extends BaseSpec {
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
       login(
         userType = "Agent",
-        pageUrl = "asa",
+        page = "asa",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-AS-AGENT",
-            identifierName = "AgentReference",
-            identifierValue = "1234"
+            key = "HMRC-AS-AGENT",
+            name = "AgentReference",
+            value = "1234"
           )
         ),
-        delegatedEnrolment = Some(
+        delegatedEnrolments = Seq(
           DelegatedEnrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR9999999991",
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR9999999991",
             authRule = "pillar2-auth"
           )
         )
@@ -100,7 +100,7 @@ class BTNSubmissionSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
             "HMRC-PILLAR2-ORG",
@@ -143,19 +143,19 @@ class BTNSubmissionSpec extends BaseSpec {
       Given("Agent User logs in with existing entity group")
       login(
         userType = "Agent",
-        pageUrl = "asa",
+        page = "asa",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-AS-AGENT",
-            identifierName = "AgentReference",
-            identifierValue = "1234"
+            key = "HMRC-AS-AGENT",
+            name = "AgentReference",
+            value = "1234"
           )
         ),
-        delegatedEnrolment = Some(
+        delegatedEnrolments = Seq(
           DelegatedEnrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR9999999995",
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR9999999995",
             authRule = "pillar2-auth"
           )
         )

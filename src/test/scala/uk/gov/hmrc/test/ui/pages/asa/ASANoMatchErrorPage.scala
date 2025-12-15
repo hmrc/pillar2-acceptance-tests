@@ -20,4 +20,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ASANoMatchErrorPage extends BasePage {
   override val url: String = s"${baseUrl}asa/error/no-match"
+  
+  val pLRIDLink = "a[href*='/asa/input-pillar-2-id']"
+  
 }
