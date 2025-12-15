@@ -176,7 +176,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnAccountingPage.clickOnBackLink()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
 
-      And("The agent returns to the multiple accounting periord and select PreviousAccountingPeriodUKTRSubmitted")
+      And("The agent returns to the multiple accounting period and select PreviousAccountingPeriodUKTRSubmitted")
       BtnUnderEnquiryPage.clickBackButton()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
 
