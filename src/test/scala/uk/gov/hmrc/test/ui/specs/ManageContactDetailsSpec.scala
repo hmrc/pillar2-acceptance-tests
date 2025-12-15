@@ -34,12 +34,12 @@ class ManageContactDetailsSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            "HMRC-PILLAR2-ORG",
-            "PLRID",
-            "XMPLR0012345676"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XMPLR0012345676"
           )
         )
       )
@@ -91,12 +91,12 @@ class ManageContactDetailsSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            "HMRC-PILLAR2-ORG",
-            "PLRID",
-            "XMPLR0012345676"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XMPLR0012345676"
           )
         )
       )

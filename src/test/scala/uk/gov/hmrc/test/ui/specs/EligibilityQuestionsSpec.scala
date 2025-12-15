@@ -28,14 +28,14 @@ class EligibilityQuestionsSpec extends BaseSpec {
 
     Scenario(
       "1 - User navigates to confirmation page via the eligibility questions",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("The cache is cleared and an org user signs in to eligibility without enrolment")
       TestOnlyHelpers.clearSession()
       login(
         userType = "Organisation",
-        pageUrl = "eligibility"
+        page = "eligibility"
       )
 
       And("The user answers yes to all eligibility questions")
@@ -50,14 +50,14 @@ class EligibilityQuestionsSpec extends BaseSpec {
 
     Scenario(
       "2 - User navigates to service not suitable as entity not upe or nfm page via the eligibility questions",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("The cache is cleared and an org user signs in to eligibility without enrolment")
       TestOnlyHelpers.clearSession()
       login(
         userType = "Organisation",
-        pageUrl = "eligibility"
+        page = "eligibility"
       )
 
       And("The user answers no to eligibility questions")
@@ -70,14 +70,14 @@ class EligibilityQuestionsSpec extends BaseSpec {
 
     Scenario(
       "3 - User navigates to service not suitable as entity not active in the uk page via the eligibility questions",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("The cache is cleared and an org user signs in to eligibility without enrolment")
       TestOnlyHelpers.clearSession()
       login(
         userType = "Organisation",
-        pageUrl = "eligibility"
+        page = "eligibility"
       )
 
       And("The user answers no to UPE eligibility question")
@@ -96,14 +96,14 @@ class EligibilityQuestionsSpec extends BaseSpec {
 
     Scenario(
       "4 - User navigates to service not suitable as under 750 million page via the eligibility questions",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("The cache is cleared and an org user signs in to eligibility without enrolment")
       TestOnlyHelpers.clearSession()
       login(
         userType = "Organisation",
-        pageUrl = "eligibility"
+        page = "eligibility"
       )
 
       And("The user answers yes to UPE eligibility question")

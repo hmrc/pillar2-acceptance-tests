@@ -34,12 +34,12 @@ class TransactionHistorySpec extends BaseSpec {
       Given("Org user logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            "HMRC-PILLAR2-ORG",
-            "PLRID",
-            "XMPLR0000000122"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XMPLR0000000122"
           )
         )
       )
@@ -58,12 +58,12 @@ class TransactionHistorySpec extends BaseSpec {
       Given("Org user logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            "HMRC-PILLAR2-ORG",
-            "PLRID",
-            "XEPLR4040000000"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR4040000000"
           )
         )
       )
@@ -81,19 +81,19 @@ class TransactionHistorySpec extends BaseSpec {
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
       login(
         userType = "Agent",
-        pageUrl = "asa",
+        page = "asa",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-AS-AGENT",
-            identifierName = "AgentReference",
-            identifierValue = "1234"
+            key = "HMRC-AS-AGENT",
+            name = "AgentReference",
+            value = "1234"
           )
         ),
-        delegatedEnrolment = Some(
+        delegatedEnrolments = Seq(
           DelegatedEnrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XMPLR0000000122",
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XMPLR0000000122",
             authRule = "pillar2-auth"
           )
         )

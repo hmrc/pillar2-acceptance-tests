@@ -29,82 +29,89 @@ import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.eligibility.EligibilityUPEPage
 import uk.gov.hmrc.test.ui.pages.rfm.RFMStartPage
 
-//import uk.gov.hmrc.test.ui.specpages.upe.UPERegisteredInUkPage
-
 object AuthLoginPage extends BrowserDriver with BasePage {
-  val url: String                           = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
-  val frontEndUrl: String                   = TestConfiguration.url("pillar2-frontend")
-  val incorrectUrl: String                  = TestConfiguration.url("pillar2-frontend") + "randomUrl"
-  val redirectUrlField: String              = "redirectionUrl"
-  val credIdField: String                   = "authorityId"
-  val groupIdField: String                  = "groupIdentifier"
-  val enrolmentKeyField: String             = "enrolment[0].name"
-  val identifierNameField: String           = "input-0-0-name"
-  val identifierValueField: String          = "input-0-0-value"
-  val delegatedEnrolmentKeyField: String    = "delegatedEnrolment[0].key"
-  val delegatedIdentifierNameField: String  = "input-delegated-0-0-name"
-  val delegatedIdentifierValueField: String = "input-delegated-0-0-value"
-  val delegatedAuthRuleField: String        = "delegatedEnrolment[0].delegatedAuthRule"
-  val addDelegatedEnrolmentCTA: String      = "#js-add-delegated-enrolment"
 
-  case class Enrolment(enrolmentKey: String, identifierName: String, identifierValue: String)
-  case class DelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String)
+  val url: String         = s"${TestConfiguration.url("auth-login-stub")}/gg-sign-in"
+  val frontEndUrl: String = TestConfiguration.url("pillar2-frontend")
+
+  object Fields {
+    val redirectUrl = "redirectionUrl"
+    val credId      = "authorityId"
+    val groupId     = "groupIdentifier"
+
+    val enrolmentKey    = "enrolment[0].name"
+    val identifierName  = "input-0-0-name"
+    val identifierValue = "input-0-0-value"
+
+    def delegatedKey(i: Int)      = s"delegatedEnrolment[$i].key"
+    def delegatedName(i: Int)     = s"input-delegated-$i-0-name"
+    def delegatedValue(i: Int)    = s"input-delegated-$i-0-value"
+    def delegatedAuthRule(i: Int) = s"delegatedEnrolment[$i].delegatedAuthRule"
+  }
+
+  val addDelegatedEnrolmentCTA = "#js-add-delegated-enrolment"
+
+  case class Enrolment(key: String, name: String, value: String)
+  case class DelegatedEnrolment(key: String, name: String, value: String, authRule: String)
+
+  private val redirectUrls: Map[String, String] = Map(
+    "asa"              -> ASAPillar2InputPage.url,
+    "bta"              -> BTAPillar2IDCheckPage.url,
+    "btn"              -> BtnStartPage.url,
+    "dashboard"        -> DashboardPage.url,
+    "eligibility"      -> EligibilityUPEPage.url,
+    "rfm"              -> RFMStartPage.url,
+    "pillar2-frontend" -> frontEndUrl
+  )
+
+  private def resolveRedirect(page: String): String = {
+    redirectUrls.getOrElse(
+      page,
+      throw new IllegalArgumentException(s"Unknown redirect page: $page")
+    )
+  }
 
   def login(
       userType: String,
-      pageUrl: String,
+      page: String,
       enrolment: Option[Enrolment] = None,
-      delegatedEnrolment: Option[DelegatedEnrolment] = None,
+      delegatedEnrolments: Seq[DelegatedEnrolment] = Seq.empty,
       credId: String = "",
       credRole: String = "User",
       groupId: String = ""
   ): Unit = {
-    val matchedUrl = urlMatch(pageUrl)
+
     Nav.navigateTo(url)
-    Input.sendKeysByName(credId, credIdField)
-    Input.sendKeysByName(matchedUrl, redirectUrlField)
+
+    Input.sendKeysByName(credId, Fields.credId)
+    Input.sendKeysByName(resolveRedirect(page), Fields.redirectUrl)
+
     selectAffinityGroup(userType)
     selectCredRole(credRole)
-    addGroupId(groupId)
-    enrolment.foreach { e =>
-      addEnrolment(e.enrolmentKey, e.identifierName, e.identifierValue)
+    Input.sendKeysById(Fields.groupId, groupId)
+
+    enrolment.foreach(addEnrolment)
+
+    delegatedEnrolments.zipWithIndex.foreach {
+      case (e, i) => addDelegatedEnrolment(e, i)
     }
-    delegatedEnrolment.foreach { e =>
-      addDelegatedEnrolment(e.enrolmentKey, e.identifierName, e.identifierValue, e.authRule)
-    }
+
     clickSubmitButton()
   }
 
-  def urlMatch(page: String): String = {
-    page match {
-      case "asa"              => ASAPillar2InputPage.url
-      case "bta"              => BTAPillar2IDCheckPage.url
-      case "btn"              => BtnStartPage.url
-      case "dashboard"        => DashboardPage.url
-      case "eligibility"      => EligibilityUPEPage.url
-      case "pillar2-frontend" => TestConfiguration.url("pillar2-frontend")
-      case "rfm"              => RFMStartPage.url
-//      case "register"            => TaskListPage.url
-//      case "upe"                 => UPERegisteredInUkPage.url
-
-    }
+  private def addEnrolment(e: Enrolment): Unit = {
+    sendKeysById(Fields.enrolmentKey, e.key)
+    sendKeysById(Fields.identifierName, e.name)
+    sendKeysById(Fields.identifierValue, e.value)
   }
 
-  def addEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String): Unit = {
-    sendKeysById(enrolmentKeyField, enrolmentKey)
-    sendKeysById(identifierNameField, identifierName)
-    sendKeysById(identifierValueField, identifierValue)
-  }
-
-  def addDelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
+  private def addDelegatedEnrolment(e: DelegatedEnrolment, index: Int): Unit = {
     clickAddDelegatedEnrolmentCTA()
-    sendKeysByName(enrolmentKey, delegatedEnrolmentKeyField)
-    sendKeysById(delegatedIdentifierNameField, identifierName)
-    sendKeysById(delegatedIdentifierValueField, identifierValue)
-    sendKeysById(delegatedAuthRuleField, authRule)
+    sendKeysByName(e.key, Fields.delegatedKey(index))
+    sendKeysById(Fields.delegatedName(index), e.name)
+    sendKeysById(Fields.delegatedValue(index), e.value)
+    sendKeysById(Fields.delegatedAuthRule(index), e.authRule)
   }
-
-  private def addGroupId(groupId: String): Unit = { Input.sendKeysById(groupIdField, groupId) }
 
   private def selectAffinityGroup(userType: String): Unit = new Select(findAffinityGroup()).selectByVisibleText(userType)
 
