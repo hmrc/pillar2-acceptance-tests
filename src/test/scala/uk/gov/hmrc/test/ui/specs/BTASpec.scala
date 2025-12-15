@@ -28,7 +28,7 @@ class BTASpec extends BaseSpec {
       Given("Organisation User logs in with BTA for Pillar2")
       login(
         userType = "Organisation",
-        pageUrl = "bta"
+        page = "bta"
       )
 
       When("The user is on the BTA have Pillar2 id page and selects yes")
@@ -42,7 +42,7 @@ class BTASpec extends BaseSpec {
       Given("Organisation User logs in with BTA for Pillar2")
       login(
         userType = "Organisation",
-        pageUrl = "bta"
+        page = "bta"
       )
 
       When("The user is on the BTA have Pillar2 id page and selects no ")
