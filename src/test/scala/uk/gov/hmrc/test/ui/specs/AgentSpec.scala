@@ -55,7 +55,7 @@ class AgentSpec extends BaseSpec {
       ASAPillar2InputPage.enterPLR2Id("XEPLR0123456500")
 
       Then("The agent is presented with the no match error page and returns to PLRId page")
-      ASANoMatchErrorPage.clickLink(ASANoMatchErrorPage.pLRIDLink)
+      ASANoMatchErrorPage.clickLink(ASANoMatchErrorPage.plrIDLink)
       ASAPillar2InputPage.onPage()
     }
 
