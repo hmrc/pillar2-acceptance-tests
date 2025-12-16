@@ -29,68 +29,6 @@ class SubBelowThresholdSpec extends BaseSpec with Matchers {
 
   Feature("Pillar2 submission Below threshold notification user journey") {
 
-//TODO ADD 4 LINES - PIL-2323
-
-//    Scenario("4 - Agent User navigates to BTN Accounting Period Page",AcceptanceTests,ZapAccessibility) {
-//      Given("Agent User logs in with existing entity group HMRC-AS-AGENT, AgentReference and 1234 for Pillar2 service")
-//      whenUserLogsInWithExistingEntityGroupAndForPillar2Service(
-//        "Agent",
-//        "HMRC-AS-AGENT",
-//        "AgentReference",
-//        "1234"
-//      )
-//
-//      And("I add delegated enrolment with HMRC-PILLAR2-ORG, PLRID, XEPLR9999999991 and pillar2-auth for Pillar2 service")
-//      whenIAddDelegatedEnrolmentWithAndForPillar2Service(
-//        "HMRC-PILLAR2-ORG",
-//        "PLRID",
-//        "XEPLR9999999991",
-//        "pillar2-auth"
-//      )
-//
-//      Then("I should be on ASA Pillar2 Input Page")
-//      thenIShouldBeOn("ASA Pillar2 Input Page")
-//
-//      And("I provide ASA Pillar2 ID as XEPLR9999999991")
-//      andIProvideASAAs("Pillar2 ID", "XEPLR9999999991")
-//
-//      And("I click on Continue button")
-//      whenIClickOnContinueButton("I click on Continue button")
-//
-//      Then("I should navigate to ASA Confirmation Page")
-//      thenIShouldNavigateTo("ASA Confirmation Page")
-//
-//      And("I click on Continue button")
-//      whenIClickOnContinueButton("I click on Continue button")
-//
-//      Then("I should be on Dashboard page")
-//      thenIShouldBeOn("Dashboard page")
-//
-//      And("I click Submit a Below-Threshold Notification link")
-//      andIClickLink("Submit a Below-Threshold Notification")
-//
-//      When("I click on Continue button")
-//      whenIClickOnContinueButton("I click on Continue button")
-//
-//      Then("I should navigate to BTN Accounting Period Page")
-//      thenIShouldNavigateTo("BTN Accounting Period Page")
-//
-////      TODO: Need to clarify correct navigation based on outcome of PIL-2323
-////        When I click Report Pillar 2 Top-up Taxes link
-////        Then I should be navigated to P2 ASA Home Page of Pillar2 Submission
-////        When I select back link
-////        Then I should be navigated to BTN Accounting Period Page of Pillar2 Submission
-//
-//      When("I click Sign out link")
-//      andIClickLink("Sign out")
-//
-//      Then("I am on feedback survey page")
-//      andIAmOnFeedbackSurveyPage()
-//
-//      When("I click on Continue button")
-//      whenIClickOnContinueButton("I click on Continue button")
-//    }
-
     Scenario(
       "12 - Agent User navigates to BTN multiple accounting period for current accounting period to check amend group details",
       AcceptanceTests,
