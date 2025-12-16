@@ -20,4 +20,6 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMNoMatchErrorPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/error/no-match"
+
+  val returnToStartPageLink = "a[href*='/security/enter-pillar2-id']"
 }
