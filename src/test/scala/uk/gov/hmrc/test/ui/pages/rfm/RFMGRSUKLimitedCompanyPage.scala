@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages.rfm
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object RFMUKLimitedCompanyGRSPage extends BasePage {
+object RFMGRSUKLimitedCompanyPage extends BasePage {
   override val url: String = s"${baseUrl}test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=ukLimitedCompany"
 
   private val registrationSuccessBvDisabled: By           = By.id("registrationSuccessBvDisabled")

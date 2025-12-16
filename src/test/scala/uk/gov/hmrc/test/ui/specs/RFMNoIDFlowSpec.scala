@@ -27,7 +27,7 @@ import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class RFMNoIDFlowSpec extends BaseSpec {
 
-  Feature("RFM No ID flow") {
+  Feature("RFM No ID flow journeys") {
 
     Scenario("1 - RFM submission journey for NFM No Id flow with changes on check your answers pages", AcceptanceTests) {
       Given("Organisation User logs into RFM")
