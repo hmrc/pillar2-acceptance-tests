@@ -25,66 +25,16 @@ object TaskListStepsSteps {
   
   def andTheTaskStatusShouldBe(taskName: String, status: String): Unit = {
     taskName match {
-      case "Add Ultimate Parent Entity details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
 
       case "Edit Ultimate Parent Entity details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(0).getText.contains(taskName))
         assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(0).getText.contains(status))
 
-      case "Filing member details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
-
-      case "Add filing member details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
-
       case "Edit filing member details" =>
         Wait.waitForTagNameToBeRefreshed("h1")
         assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(1).getText.contains(taskName))
         assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(1).getText.contains(status))
-
-      case "Further group details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
-
-      case "Add further group details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
-
-      case "Edit further group details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(2).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(2).getText.contains(status))
-
-      case "Contact details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
-
-      case "Add contact details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
-
-      case "Edit contact details" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(3).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(3).getText.contains(status))
-
-      case "Check your answers" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskItem)).get(4).getText.contains(taskName))
-        assert(Driver.instance.findElements(By.cssSelector(TaskListPage.status)).get(4).getText.contains(status))
-
     }
   }
 }

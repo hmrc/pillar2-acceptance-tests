@@ -19,10 +19,8 @@ package uk.gov.hmrc.test.ui.specs
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.rfm.*
 import uk.gov.hmrc.test.ui.specs.tags.*
-import uk.gov.hmrc.test.ui.specsdef.CYAStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
-import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class RFMSubmissionNoIDSpec extends BaseSpec {

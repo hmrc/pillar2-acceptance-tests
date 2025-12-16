@@ -66,10 +66,6 @@ object UPEStepsSteps {
     Check.checkH1("Give feedback")
   }
 
-  def andIShouldSeeTheOptionXRemainSelected(answer: String): Unit = {
-    Check.checkOptionSelected(answer)
-  }
-
   def andISelectOptionAndContinueToGRSPage(option: String): Unit = {
     option match {
       case "UK limited company"            => Input.clickById("value_0")

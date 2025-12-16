@@ -25,49 +25,8 @@ import uk.gov.hmrc.test.ui.pages.*
 
 object CommonStepsSteps {
 
-  def givenLogsInToRegisterForPillar2(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginOldPage.loginWithUser(name)
-      case "Individual User"   => AuthLoginOldPage.loginAsInd(name)
-      case "Agent User"        => AuthLoginOldPage.loginAsAgent(name)
-      case "Assistant User"    => AuthLoginOldPage.loginAssistant(name)
-    }
-  }
-
-  def givenLogsInToRegisterForPillar2AgentService(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginOldPage.loginAsOrgToASA(name)
-      case "Individual User"   => AuthLoginOldPage.loginAsIndToASA(name)
-      case "Assistant User"    => AuthLoginOldPage.loginAsAssistantToASA(name)
-
-    }
-  }
-
-
   def givenLogsInWithoutPillar2Enrolment(): Unit = {
     AuthLoginOldPage.loginToUPE()
-  }
-
-  def givenLogsInAndNavigatesToRFMStartPageWithoutPillar2EnrolmentWithGroupId(groupId: String): Unit = {
-    AuthLoginOldPage.loginToRFMWithGroupId(groupId)
-  }
-
-  def givenLogsInAsUpeWithCredIdForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginOldPage.loginToUPEWithCredID(name, credId)
-      case _                   => AuthLoginOldPage.loginToUPEWithCredID(name, credId)
-    }
-  }
-
-  def givenLogsInWithCredIdForPillar2(name: String, credId: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginOldPage.loginAsUserWithCredId(name, credId)
-      case _                   => AuthLoginOldPage.loginAsUserWithCredId(name, credId)
-    }
-  }
-
-  def thenIClearTheCache(): Unit = {
-    Nav.navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/eligibility/clear-session")
   }
 
   def whenIClickOnContinueButton(negate: String): Unit = {
@@ -148,14 +107,5 @@ object CommonStepsSteps {
 
   def addDelegatedEnrolments(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
     AuthLoginOldPage.addDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
-  }
-
-  def andIShouldSeeLinkOn(linkText: String, page: String): Unit = {
-    page match {
-      case "Review answers page" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(ReviewAnswersPage.printThisPage)
-        assert(Driver.instance.findElement(By.cssSelector(ReviewAnswersPage.printThisPage)).getText.contains(linkText))
-    }
   }
 }
