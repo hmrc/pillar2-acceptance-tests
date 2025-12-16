@@ -30,12 +30,12 @@ class BTNAmendmentsSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR9999999991"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR9999999991"
           )
         )
       )
@@ -58,12 +58,12 @@ class BTNAmendmentsSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR9999999991"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR9999999991"
           )
         )
       )
@@ -82,12 +82,12 @@ class BTNAmendmentsSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR4220000000"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR4220000000"
           )
         )
       )
@@ -107,12 +107,12 @@ class BTNAmendmentsSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "btn",
+        page = "btn",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR4000000000"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR4000000000"
           )
         )
       )
@@ -125,12 +125,12 @@ class BTNAmendmentsSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "btn",
+        page = "btn",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR5000000000"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR5000000000"
           )
         )
       )

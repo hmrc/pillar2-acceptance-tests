@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.manage
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object DuplicateAckRefErrorPage extends PageObject {
-  val url: String = s"$rootUrl" + "error/subscription-failure"
+object ManageContactDetailsSecondaryNamePage extends BasePage {
+  override val url: String = s"${baseUrl}manage-account/contact-details/change-second-input-name"
+  
+  override val textValue: String = "Updated Secondary Contact"
 }

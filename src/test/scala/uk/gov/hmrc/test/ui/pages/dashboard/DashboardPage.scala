@@ -17,12 +17,13 @@
 package uk.gov.hmrc.test.ui.pages.dashboard
 
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.helper.Find.findByCss
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object DashboardPage extends BasePage {
   override val url: String = s"${baseUrl}pillar2-top-up-tax-home"
 
-  private val ASALink              = "a[href*='/asa/home']"
+  private val changeClientLink     = "a[href*='/asa/input-pillar-2-id']"
   private val dueAndOverdueReturns = "a[href*='/due-and-overdue-returns']"
   private val submissionHistory    = "a[href*='/submission-history']"
   private val paymentHistory       = "a[href*='/payment/history']"
@@ -32,9 +33,9 @@ object DashboardPage extends BasePage {
   private val manageGroupDetails   = "a[href*='/account-details/summary']"
   private val submitBTN            = "a[href*='/below-threshold-notification/start']"
 
-  def clickASALink(): Unit = {
+  def clickChangeClientLink(): Unit = {
     onPage()
-    click(By.cssSelector(ASALink))
+    click(By.cssSelector(changeClientLink))
   }
 
   def clickDueAndOverdueReturnsLink(): Unit = {
@@ -75,5 +76,16 @@ object DashboardPage extends BasePage {
   def clickSubmitBTNLink(): Unit = {
     onPage()
     click(By.cssSelector(submitBTN))
+  }
+
+  val clientIdText: String = ".homepage-title span:nth-of-type(2)"
+
+  def displayedClientId: String =
+    val fullText = findByCss(clientIdText).getText
+      fullText.replace("ID:", "").trim
+
+  def shouldShowClientId(plrId: String): Unit = {
+    onPage()
+    displayedClientId.shouldBe(plrId)
   }
 }

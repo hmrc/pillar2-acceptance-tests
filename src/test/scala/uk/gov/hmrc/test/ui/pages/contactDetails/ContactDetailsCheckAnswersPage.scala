@@ -25,6 +25,7 @@ object ContactDetailsCheckAnswersPage extends BasePage {
   val changePrimaryContactName           = "a[href*='/change-input-name']"
   val changePrimaryContactEmailAddress   = "a[href*='/change-input-email']"
   val changePrimaryContactPhoneNumber    = "a[href*='/change-input-phone']"
+  val changePrimaryContactByPhone        = "a[href*='/change-phone']"
   val changeSecondaryContact             = "a[href*='/change-second-contact']"
   val changeSecondaryContactName         = "a[href*='/change-second-input-name']"
   val changeSecondaryContactEmailAddress = "a[href*='/change-second-input-email']"

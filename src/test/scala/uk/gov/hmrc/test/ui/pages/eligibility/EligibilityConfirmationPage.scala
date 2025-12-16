@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.eligibility
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object IncompleteDataSubmissionErrorPage extends PageObject {
-  val url: String = s"$rootUrl" + "error/incomplete"
+object EligibilityConfirmationPage extends BasePage {
+  override val url: String = s"${baseUrl}eligibility/confirmation"
 }

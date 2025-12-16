@@ -20,4 +20,6 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ASANotAuthorisedPage extends BasePage {
   override val url: String = s"${baseUrl}asa/error/not-authorised"
+
+  val requestAuthLink = "a[href*='/asa/home']"
 }

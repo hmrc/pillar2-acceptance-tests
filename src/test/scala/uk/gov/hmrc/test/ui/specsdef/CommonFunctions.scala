@@ -94,13 +94,11 @@ object CommonFunctions
       case "Agent services account page2"           => AgentServicesAccountPage2
       case "Registration return error page"         => RegistrationReturnErrorPage
       case "contact details summary page"           => ContactDetailsSummaryPage
-      case "duplicate ack ref error page"           => DuplicateAckRefErrorPage
       case "Make a payment page"                    => MakePaymentPage
 //      case "bta pillar2 ID check page"                  => BTAPillar2IDCheckPage
 //      case "eacd page"                                  => EACDPage
 //      case "bta register guidance page"                 => BTARegisterGuidancePage
       case "Subscription API error page"                => SubscriptionAPIerrorPage
-      case "Registration API error page"                => RegistrationAPIerrorPage
       case "Registration In Progress page"              => RegistrationInProgressPage
       case "RFM start page"                             => RFMStartPage
       case "Individual RFM KB Page"                     => IndividualRFMKBPage
@@ -109,7 +107,6 @@ object CommonFunctions
       case "Assistant User RFM KB Page"                 => AssistantUserRFMKBPage
       case "Duplicate RFM KB Page"                      => DuplicateRFMKBPage
       case "RFM Registration Date Page"                 => RFMRegistrationDatePage
-      case "Incomplete Data Submission Error Page"      => IncompleteDataSubmissionErrorPage
       case "RFM CYA Page"                               => RFMCYAPage
       case "RFM Corp Position Page"                     => RFMCorpPositionPage
       case "New NFM guidance page"                      => NewNFMGuidancePage

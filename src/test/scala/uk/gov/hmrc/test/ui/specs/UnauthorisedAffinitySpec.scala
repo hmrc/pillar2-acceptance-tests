@@ -32,7 +32,7 @@ class UnauthorisedAffinitySpec extends BaseSpec {
       Given("Assistant logs in to register for Pillar2")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend",
+        page = "pillar2-frontend",
         credRole = "Assistant"
       )
 
@@ -49,7 +49,7 @@ class UnauthorisedAffinitySpec extends BaseSpec {
       Given("Agent logs in to register for Pillar2")
       login(
         userType = "Agent",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user should be taken to the Agent unauthorised page")
@@ -64,7 +64,7 @@ class UnauthorisedAffinitySpec extends BaseSpec {
       Given("Individual logs in to register for Pillar2")
       login(
         userType = "Individual",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       Then("The user should be taken to the Individual unauthorised page")
@@ -79,7 +79,7 @@ class UnauthorisedAffinitySpec extends BaseSpec {
       Given("Individual User logs in to Pillar2 Agent service")
       login(
         userType = "Individual",
-        pageUrl = "asa"
+        page = "asa"
       )
 
       Then("The user should be taken to the ASA Individual unauthorised Page")
@@ -94,7 +94,7 @@ class UnauthorisedAffinitySpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 Agent service")
       login(
         userType = "Organisation",
-        pageUrl = "asa"
+        page = "asa"
       )
 
       Then("The user should be taken to the ASA Organisation unauthorised Page")
