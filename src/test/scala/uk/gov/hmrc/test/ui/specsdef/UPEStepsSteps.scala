@@ -24,10 +24,6 @@ object UPEStepsSteps {
 
   def andIEnterAs(field: String, name: String): Unit = {
     field match {
-      case "UPE name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Input.sendKeysByCss(name, InputUPENamePage.nameField)
-        clickByCss(InputUPENamePage.continue)
 
       case "NFM name" =>
         Wait.waitForTagNameToBeRefreshed("h1")
@@ -39,46 +35,6 @@ object UPEStepsSteps {
         Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine1)
         Input.sendKeysByCss(name, UPEAddressPage.addressLine1)
 
-      case "Address Line 2" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.addressLine2)
-        Input.sendKeysByCss(name, UPEAddressPage.addressLine2)
-
-      case "City" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.townOrCity)
-        Input.sendKeysByCss(name, UPEAddressPage.townOrCity)
-
-      case "Region" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.region)
-        Input.sendKeysByCss(name, UPEAddressPage.region)
-
-      case "Postal Code" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.postalCode)
-        Input.sendKeysByCss(name, UPEAddressPage.postalCode)
-
-      case "Country" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentByCssSelector(UPEAddressPage.country)
-        Input.sendKeysByCss(name, UPEAddressPage.country)
-
-      case "UPE Person/Team name" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Input.sendKeysById(UPEContactNamePage.contactName, name)
-        clickByCss(InputUPENamePage.continue)
-
-      case "UPE Email address" =>
-        Wait.waitForElementToPresentById(UPEContactEmailPage.emailField)
-        Input.sendKeysById(UPEContactEmailPage.emailField, name)
-        clickByCss(InputUPENamePage.continue)
-
-      case "Phone Number" =>
-        Wait.waitForElementToPresentByCssSelector(InputUPEPhonePage.phoneNumber)
-        Input.sendKeysByCss(name, InputUPEPhonePage.phoneNumber)
-        clickByCss(InputUPENamePage.continue)
-
       case "NFM Contact name" =>
         Wait.waitForElementToPresentByCssSelector(NFMContactNamePage.contactName)
         Input.sendKeysByCss(name, NFMContactNamePage.contactName)
@@ -87,16 +43,6 @@ object UPEStepsSteps {
       case "NFM Contact Email" =>
         Wait.waitForElementToPresentByCssSelector(NFMContactEmailPage.contactEmail)
         Input.sendKeysByCss(name, NFMContactEmailPage.contactEmail)
-        clickByCss(InputUPENamePage.continue)
-
-      case "NFM Phone Number" =>
-        Wait.waitForElementToPresentByCssSelector(InputNFMPhonePage.phoneNumber)
-        Input.sendKeysByCss(name, InputNFMPhonePage.phoneNumber)
-        clickByCss(InputUPENamePage.continue)
-
-      case "Contact Details Name" =>
-        Wait.waitForElementToPresentByCssSelector(ContactDetailsInputNamePage.contactName)
-        Input.sendKeysByCss(name, ContactDetailsInputNamePage.contactName)
         clickByCss(InputUPENamePage.continue)
 
       case "Contact Name" =>
@@ -113,22 +59,6 @@ object UPEStepsSteps {
         Wait.waitForElementToPresentByCssSelector(ContactDetailsInputPhonePage.contactPhone)
         Input.sendKeysByCss(name, ContactDetailsInputPhonePage.contactPhone)
         clickByCss(InputUPENamePage.continue)
-
-      case "Second Contact Name" =>
-        Wait.waitForElementToPresentByCssSelector(SecondContactNamePage.contactName)
-        Input.sendKeysByCss(name, SecondContactNamePage.contactName)
-        clickByCss(InputUPENamePage.continue)
-
-      case "Second Contact Email" =>
-        Wait.waitForElementToPresentByCssSelector(SecondContactEmailPage.contactEmail)
-        Input.sendKeysByCss(name, SecondContactEmailPage.contactEmail)
-        clickByCss(InputUPENamePage.continue)
-
-      case "Second Contact Input" =>
-        Wait.waitForElementToPresentByCssSelector(SecondContactInputPage.contactPhone)
-        Input.sendKeysByCss(name, SecondContactInputPage.contactPhone)
-        clickByCss(InputUPENamePage.continue)
-
     }
   }
 
@@ -138,58 +68,6 @@ object UPEStepsSteps {
 
   def andIShouldSeeTheOptionXRemainSelected(answer: String): Unit = {
     Check.checkOptionSelected(answer)
-  }
-
-  def andIShouldSeeTheFieldIsPrepopulatedWith(field: String, name: String): Unit = {
-    field match {
-      case "UPE name" =>
-        assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
-      case "NFM name" =>
-        assert(getAttributeOf(InputUPENamePage.nameField, "value").equals(name))
-      case "Address Line 1" =>
-        assert(getAttributeOf(UPEAddressPage.addressLine1, "value").equals(name))
-      case "Address Line 2" =>
-        assert(getAttributeOf(UPEAddressPage.addressLine2, "value").equals(name))
-      case "City" =>
-        assert(getAttributeOf(UPEAddressPage.townOrCity, "value").equals(name))
-      case "Region" =>
-        assert(getAttributeOf(UPEAddressPage.region, "value").equals(name))
-        UPEEntityTypePage.clickContinue()
-      case "Postal Code" =>
-        assert(getAttributeOf(UPEAddressPage.postalCode, "value").equals(name))
-      case "Country" =>
-        assert(getAttributeOf(UPEAddressPage.country, "value").equals(name))
-      case "UPE Person/Team name" =>
-        assert(getAttributeOfId(UPEContactNamePage.contactName, "value").equals(name))
-      case "UPE Email address" =>
-        assert(getAttributeOfId(UPEContactEmailPage.emailField, "value").equals(name))
-      case "Phone number" =>
-        assert(getAttributeOf(InputUPEPhonePage.phoneNumber, "value").equals(name))
-      case "NFM Contact name" =>
-        assert(getAttributeOf(NFMContactNamePage.contactName, "value").equals(name))
-      case "NFM Contact Email" =>
-        assert(getAttributeOf(NFMContactEmailPage.contactEmail, "value").equals(name))
-      case "NFM Phone number" =>
-        assert(getAttributeOf(InputNFMPhonePage.phoneNumber, "value").equals(name))
-      case "Contact Name" =>
-        assert(getAttributeOf(ContactDetailsInputNamePage.contactName, "value").equals(name))
-      case "Contact Email" =>
-        assert(getAttributeOf(ContactDetailsInputEmailPage.contactEmail, "value").equals(name))
-      case "Contact Phone" =>
-        assert(getAttributeOf(ContactDetailsInputPhonePage.contactPhone, "value").equals(name))
-      case "Second Contact Name" =>
-        assert(getAttributeOf(SecondContactNamePage.contactName, "value").equals(name))
-      case "Second Contact Email" =>
-        assert(getAttributeOf(SecondContactEmailPage.contactEmail, "value").equals(name))
-      case "Second Contact Input" =>
-        assert(getAttributeOf(SecondContactInputPage.contactPhone, "value").equals(name))
-      case "Redirect URL" =>
-        assert(getAttributeOf(AuthLoginOldPage.redirectionUrlField, "value").contains(name))
-      case "PLRID" =>
-        assert(getAttributeOf(ASAPillar2InputPage.pillar2IDField, "value").equals(name))
-      case "UK Bank Name" =>
-        assert(getAttributeOf(UKBankAccountPaymentPage.UkBankName, "value").equals(name))
-    }
   }
 
   def andISelectOptionAndContinueToGRSPage(option: String): Unit = {

@@ -43,12 +43,6 @@ object CommonStepsSteps {
     }
   }
 
-  def givenLogsInToSubscribeForPillar2(name: String): Unit = {
-    name match {
-      case "Organisation User" => AuthLoginOldPage.loginToSubscribe(name)
-      case _                   => AuthLoginOldPage.loginToSubscribe(name)
-    }
-  }
 
   def givenLogsInWithoutPillar2Enrolment(): Unit = {
     AuthLoginOldPage.loginToUPE()
@@ -98,18 +92,6 @@ object CommonStepsSteps {
 
   def givenIAmOnPage(page: String): Unit = {
     page match {
-      case "UPE EQ" =>
-        navigateTo(UPEEQPage.url)
-        Wait.waitForElementToPresentByCssSelector(UPEEQPage.eqForm)
-        isVisible(By.cssSelector(UPEEQPage.eq)) shouldBe true
-      case "Business activity EQ" =>
-        navigateTo(BusinessActivityEQPage.url)
-        Wait.waitForElementToPresentByCssSelector(BusinessActivityEQPage.eqForm)
-        isVisible(By.cssSelector(BusinessActivityEQPage.eq)) shouldBe true
-      case "Global gross revenue" =>
-        navigateTo(GlobalGrossRevenueEQPage.url)
-        Wait.waitForElementToPresentByCssSelector(GlobalGrossRevenueEQPage.eqForm)
-        isVisible(By.cssSelector(GlobalGrossRevenueEQPage.eq)) shouldBe true
       case "NFM registration failed error" =>
         navigateTo(NFMGRSRegistrationFailedErrorPage.url)
         Wait.waitForElementToPresentByCssSelector(NFMGRSRegistrationFailedErrorPage.content)
@@ -166,14 +148,6 @@ object CommonStepsSteps {
 
   def addDelegatedEnrolments(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
     AuthLoginOldPage.addDelegatedEnrolment(enrolmentKey, identifierName, identifierValue, authRule)
-  }
-
-  def addSecondClientDelegatedEnrolment(enrolmentKey: String, identifierName: String, identifierValue: String, authRule: String): Unit = {
-    AuthLoginOldPage.addClientDelegatedEnrolmentSecondRow(enrolmentKey, identifierName, identifierValue, authRule)
-  }
-
-  def givenIAccessRandomPage(): Unit = {
-    Nav.navigateTo(AuthLoginOldPage.incorrectUrl)
   }
 
   def andIShouldSeeLinkOn(linkText: String, page: String): Unit = {

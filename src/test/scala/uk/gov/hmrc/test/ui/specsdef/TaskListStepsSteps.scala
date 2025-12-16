@@ -22,13 +22,7 @@ import uk.gov.hmrc.test.ui.helper.Wait
 import uk.gov.hmrc.test.ui.pages.*
 
 object TaskListStepsSteps {
-
-  def andIShouldSeeTaskListSections(): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    Wait.waitForElementToPresentByCssSelector(TaskListPage.taskList)
-    assert(Driver.instance.findElements(By.cssSelector(TaskListPage.taskSection)).size() == 3)
-  }
-
+  
   def andTheTaskStatusShouldBe(taskName: String, status: String): Unit = {
     taskName match {
       case "Add Ultimate Parent Entity details" =>
