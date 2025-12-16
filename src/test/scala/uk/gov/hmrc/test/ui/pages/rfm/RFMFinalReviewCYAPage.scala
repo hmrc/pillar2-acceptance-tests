@@ -26,12 +26,10 @@ object RFMFinalReviewCYAPage extends BasePage {
   val changePrimaryContactName          = "a[href*='/contact-details/change-input-name']"
   val changePrimaryContactEmail         = "a[href*='/contact-details/change-input-email']"
   val changePrimaryContactPhoneNumber   = "a[href*='/contact-details/change-input-phone']"
+  val changeSecondaryContact            = "a[href*='/contact-details/change-second-contact']"
   val changeSecondaryContactName        = "a[href*='/contact-details/change-second-input-name']"
   val changeSecondaryContactEmail       = "a[href*='/contact-details/change-second-input-email']"
   val changeSecondaryContactPhoneNumber = "a[href*='/contact-details/change-second-input-phone']"
   val changeInputAddress                = "a[href*='/change-input-address']"
   val changeAddress                     = "[href*='address/change-input']"
-
-  val changeSecondContactPreference = "[href*='change-second-contact']"
-
 }

@@ -25,12 +25,15 @@ import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
-class RFMNoIDFlowSpec extends BaseSpec {
+class RFMSubmissionNoIDSpec extends BaseSpec {
 
-  Feature("RFM No ID flow") {
+  Feature("RFM No ID flow journeys") {
 
-    Scenario("1 - RFM submission journey for NFM No Id flow with changes on check your answers pages", AcceptanceTests) {
-      Given("Organisation User logs into RFM")
+    Scenario("1 - RFM submission journey for NFM No Id flow with changes on check your answers pages",
+      AcceptanceTests
+    ) {
+
+      Given("Org User logs into RFM")
       login(
         userType = "Organisation",
         page = "rfm"
@@ -111,116 +114,38 @@ class RFMNoIDFlowSpec extends BaseSpec {
       RFMNoReturnBackErrorPage.onPage()
     }
 
-    Scenario("2 - RFM submission journey for UPE No Id flow with changes on check your answers pages", AcceptanceTests) {
-      Given("Organisation User logs in without Pillar2 enrolment")
-      givenLogsInWithoutPillar2Enrolment()
+    Scenario("2 - RFM submission journey for UPE No Id flow",
+      AcceptanceTests
+    ) {
 
-      And("I access RFM start page")
-      givenIAccessRFMXPage("start")
-
-      When("I provide RFM pillar2 id as XMPLR0123456789")
-      andIProvideRFMXAsX("pillar2 id", "XMPLR0123456789")
-
-      When("I enter registration date as:")
-      val rfmDateData: Map[String, String] = Map(
-        "rfmRegistrationDate.day"   -> "31",
-        "rfmRegistrationDate.month" -> "1",
-        "rfmRegistrationDate.year"  -> "2024"
+      Given("Org User logs into RFM")
+      login(
+        userType = "Organisation",
+        page = "rfm"
       )
-      andIEnterRegistrationDateAs(rfmDateData)
 
-      When("I click on Save&Continue button")
-      andIClickOnSaveContinueButton()
+      When("The user enters PLRId and dates")
+      RFMEnterPillar2IdPage.enterPLRId("XMPLR0123456789")
+      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMCYAPage.continueToNextPage()
 
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
+      And("The user selects a new UPE and enters details")
+      RFMSavingProgressPage.continueToNextPage()
+      RFMCorpPositionPage.clickUltimateParentEntity()
 
-      When("I select corp position as UPE")
-      andISelectCorpPositionAsX("UPE")
+      And("The user adds primary contact details")
+      RFMContactGuidancePage.continueToNextPage()
+      RFMContactPrimaryNamePage.enterText()
+      RFMContactPrimaryEmailPage.enterText()
+      RFMContactPrimaryByPhonePage.selectNo()
+      RFMContactSecondaryAddPage.selectNo()
+      RFMContactAddressPage.enterAddressUK()
 
-      When("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
+      When("The user reviews and submits")
+      RFMFinalReviewCYAPage.onPageSubmitById()
 
-      When("I provide RFM contact name as RFM test contact")
-      andIProvideRFMXAsX("contact name", "RFM test contact")
-
-      When("I provide RFM contact email as rfm@email.com")
-      andIProvideRFMXAsX("contact email", "rfm@email.com")
-
-      And("I select option Yes and continue to next")
-      andISelectOptionAndContinueToNext("Yes")
-
-      When("I provide RFM contact number as 01632960001")
-      andIProvideRFMXAsX("contact number", "01632960001")
-
-      And("I select option Yes and continue to next")
-      andISelectOptionAndContinueToNext("Yes")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      When("I provide RFM contact name as RFM second test contact")
-      andIProvideRFMXAsX("contact name", "RFM second test contact")
-
-      When("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      When("I provide RFM contact email as rfmsecondcontact@email.com")
-      andIProvideRFMXAsX("contact email", "rfmsecondcontact@email.com")
-
-      Then("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      When("I select option Yes and continue to next")
-      andISelectOptionAndContinueToNext("Yes")
-
-      When("I provide RFM second contact number as 09872960001")
-      andIProvideRFMXAsX("second contact number", "09872960001")
-
-      When("I enter Address as:")
-      val addressDataOne: Map[String, String] = Map(
-        "addressLine1" -> "Address Line 1 CYA",
-        "addressLine3" -> "City CYA",
-        "postalCode"   -> "EH5 5WY",
-        "countryCode"  -> "Australia"
-      )
-      thenIEnterAddressAs(addressDataOne)
-
-      When("I click on change link for Contact Name")
-      andIClickOnChangeLinkFor("Contact Name")
-
-      When("I enter Contact Name as 400")
-      andIEnterAs("Contact Name", "400")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      Then("I should be redirected to RFM processing page or Amend API error Page for RFM")
-      thenIShouldBeRedirectedTo("RFM processing page", "Amend API error Page for RFM")
-
-      When("I click to replace the filing member for a Pillar 2 Top-up Taxes account to try again link")
-      andIClickLink("to replace the filing member for a Pillar 2 Top-up Taxes account to try again")
-
-      Then("I should navigate to RFM Final Review Page")
-      thenIShouldNavigateTo("RFM Final Review Page")
-
-      When("I click on change link for Contact Name")
-      andIClickOnChangeLinkFor("Contact Name")
-
-      When("I enter Contact Name as test name")
-      andIEnterAs("Contact Name", "test name")
-
-      And("I click on Continue button")
-      whenIClickOnContinueButton("I click on Continue button")
-
-      And("I should navigate to RFM Confirmation Page")
-      thenIShouldNavigateTo("RFM Confirmation Page")
-
-      When("I click report and manage your group's Pillar 2 Top-up Taxes link")
-      andIClickLink("report and manage your group's Pillar 2 Top-up Taxes")
-
-      Then("I should be on Dashboard page")
-      thenIShouldBeOn("Dashboard page")
+      And("The user is presented with the confirmation page")
+      RFMConfirmationPage.onPage()
     }
   }
 }
