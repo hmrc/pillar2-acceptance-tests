@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,8 @@ package uk.gov.hmrc.test.ui.pages.rfm
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object RFMLLPGRSPage extends BasePage {
-  //  TODO - Journey to add as part of PIL-2580
-  override val url: String = s"${baseUrl}test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=limitedLiabilityPartnership"
+object RFMAmendAPIErrorPage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/error/amend-API-failure"
+
+  val returnToCheckYourAnswersLink = "a[href*='/review-submit/check-answers']"
 }
