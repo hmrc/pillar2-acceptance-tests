@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import uk.gov.hmrc.test.ui.helper.TestOnlyHelpers
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.rfm.*
 import uk.gov.hmrc.test.ui.specs.tags.*
@@ -99,10 +100,8 @@ class RFMKBSpec extends BaseSpec {
       AcceptanceTests
     ) {
 
-      Given("I clear the cache")
-      thenIClearTheCache()
-
-      And("Organisation User logs in with a groupId")
+      Given("The cache is cleared and an org user signs in to rfm with groupId")
+      TestOnlyHelpers.clearSession()
       login(
         userType = "Organisation",
         page = "rfm",
