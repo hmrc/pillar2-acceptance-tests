@@ -24,4 +24,5 @@ object RFMContactPrimaryNamePage extends BasePage {
 
   override val textValue: String       = "RFM Contact Name"
   override val textUpdateValue: String = "New RFM Contact Name"
+  val aPIErrorValue: String            = "500"
 }

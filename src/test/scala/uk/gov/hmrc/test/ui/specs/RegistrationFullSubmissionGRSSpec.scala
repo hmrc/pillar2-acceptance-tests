@@ -29,13 +29,13 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
   Feature("Full registration using GRS") {
 
     Scenario("1 - User registers a UK Limited Company UPE successfully",
-      AcceptanceTests
+      AcceptanceTests, Wip
     ) {
 
-      Given("Organisation User logs in without Pillar2 enrolment")
+      Given("Org User logs in without Pillar2 enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       And("The user is presented with the task list page")
@@ -77,13 +77,13 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
     }
 
     Scenario("2 - User registers a UK Limited Company as ",
-      AcceptanceTests
+      AcceptanceTests, Wip
     ) {
 
-      Given("Organisation User logs in without Pillar2 enrolment")
+      Given("Org User logs in without Pillar2 enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       And("The user is presented with the task list page")

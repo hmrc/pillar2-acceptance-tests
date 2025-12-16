@@ -24,6 +24,8 @@ object UPENamePage extends BasePage {
   private val nameValue: String                   = "Entity Name"
   private val nameUpdatedValue: String            = "New Entity Name"
   private val registrationInProgressValue: String = "Medium Processing Corp"
+  val nameSubscriptionFailureValue: String        = "XMPLR0009999999"
+  val nameAPIErrorValue: String                   = "regNoIDInvalidRequest"
 
   def enterName(): Unit = {
     onPage()

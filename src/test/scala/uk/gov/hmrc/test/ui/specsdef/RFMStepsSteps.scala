@@ -88,25 +88,6 @@ object RFMStepsSteps {
     RFMStartPage.clickContinue()
   }
 
-  def andRegistrationXIsEnteredAsX(field: String, name: String): Unit = {
-    field match {
-      case "Day" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regDay)
-        Input.sendKeysById(RFMRegistrationDatePage.regDay, name)
-
-      case "Month" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regMonth)
-        Input.sendKeysById(RFMRegistrationDatePage.regMonth, name)
-
-      case "Year" =>
-        Wait.waitForTagNameToBeRefreshed("h1")
-        Wait.waitForElementToPresentById(RFMRegistrationDatePage.regYear)
-        Input.sendKeysById(RFMRegistrationDatePage.regYear, name)
-    }
-  }
-
   def whenOrganisationUserLogsInWithExistingEntityGroupAndWithRfmURL(
       enrolmentKey: String,
       identifierName: String,
@@ -157,12 +138,6 @@ object RFMStepsSteps {
     name match {
       case "Organisation User" => AuthLoginOldPage.loginWithUserToRFMWithCredId(name, credId)
       case _                   => AuthLoginOldPage.loginWithUserToRFMWithCredId(name, credId)
-    }
-  }
-
-  def thenINavigateBackToRFMCYAPageFromGRSPage(): Unit = {
-    for i <- 1 to 5 do {
-      clickByCss(BusinessActivityEQPage.backLink)
     }
   }
 

@@ -54,8 +54,12 @@ trait BasePage extends Matchers with PageObject {
     .withTimeout(Duration.ofSeconds(timeoutSeconds))
     .pollingEvery(Duration.ofMillis(200))
 
-  def onPage(url: String = this.url, timeoutSeconds: Long = 3): Unit = fluentWait(timeoutSeconds).until(ExpectedConditions.urlToBe(url))
+  def onPage(url: String = this.url, timeoutSeconds: Long = 3): Unit = 
+    fluentWait(timeoutSeconds).until(ExpectedConditions.urlToBe(url))
 
+  def onPageContains(partialUrl: String, timeoutSeconds: Long = 3): Unit =
+    fluentWait(timeoutSeconds).until(ExpectedConditions.urlContains(partialUrl))
+  
   def countryAutoSelect(countryName: String): Unit = {
     click(countryDropdown)
     sendKeys(countryDropdown, countryName)
@@ -72,7 +76,7 @@ trait BasePage extends Matchers with PageObject {
     clickByClassName(continue)
   }
 
-  def enterText(): Unit = {
+  def enterText(textValue: String = textValue): Unit = {
     onPage()
     sendKeys(textInputField, textValue)
     clickByClassName(continue)
@@ -87,14 +91,14 @@ trait BasePage extends Matchers with PageObject {
     clickByClassName(continue)
   }
 
-  def selectYes(): Unit = {
-    onPage()
+  def selectYes(url: String = this.url): Unit = {
+    onPage(url)
     click(yesRadioId)
     clickByClassName(continue)
   }
 
-  def selectNo(): Unit = {
-    onPage()
+  def selectNo(url: String = this.url): Unit = {
+    onPage(url)
     click(noRadioId)
     clickByClassName(continue)
   }
@@ -104,8 +108,8 @@ trait BasePage extends Matchers with PageObject {
     click(By.cssSelector(link))
   }
 
-  def clickOnBackLink(): Unit = {
-    onPage()
+  def clickOnBackLink(url: String = this.url): Unit = {
+    onPage(url)
     click(backLinkText)
   }
 
@@ -133,6 +137,8 @@ trait BasePage extends Matchers with PageObject {
   def clickByClassName(text: String): Unit = findByClassName(text).click()
 
   def clickById(text: String): Unit = findById(text).click()
+  
+  def sendKeysById(key: String = "value", value: String): Unit = sendKeys(By.id(key), value)
 
   def refreshPage(): Unit =
     Driver.instance.navigate().refresh()

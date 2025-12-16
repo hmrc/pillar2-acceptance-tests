@@ -29,12 +29,12 @@ class BTNUnsuccessfulSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "dashboard",
+        page = "dashboard",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR4220000000"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR4220000000"
           )
         )
       )
@@ -54,12 +54,12 @@ class BTNUnsuccessfulSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "btn",
+        page = "btn",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR4000000000"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR4000000000"
           )
         )
       )
@@ -72,12 +72,12 @@ class BTNUnsuccessfulSpec extends BaseSpec {
       Given("Organisation User logs in to Pillar2 service")
       login(
         userType = "Organisation",
-        pageUrl = "btn",
+        page = "btn",
         enrolment = Some(
           Enrolment(
-            enrolmentKey = "HMRC-PILLAR2-ORG",
-            identifierName = "PLRID",
-            identifierValue = "XEPLR5000000000"
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XEPLR5000000000"
           )
         )
       )

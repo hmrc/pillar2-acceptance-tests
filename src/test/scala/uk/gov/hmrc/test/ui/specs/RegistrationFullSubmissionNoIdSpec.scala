@@ -32,7 +32,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       Given("Organisation User logs in without enrollment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       And("The user is presented with the task list page")

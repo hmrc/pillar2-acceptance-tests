@@ -26,11 +26,6 @@ import uk.gov.hmrc.test.ui.pages.*
 
 object CYAStepsSteps {
 
-  def andIShouldSeeRowValue(row: Int, value: String): Unit = {
-    Wait.waitForTagNameToBeRefreshed("h1")
-    assert(Driver.instance.findElements(By.cssSelector(UPECheckYourAnswersPage.valueList)).get(row - 1).getText.contains(value))
-  }
-
   def andIShouldSeeDetailsAsBelow(detailsMap: Map[String, String]): Unit = {
     detailsMap.foreach { case (key, expectedValue) =>
       val labelElement = Driver.instance.findElement(By.xpath(s"//dt[contains(text(), '$key')]"))
@@ -46,27 +41,10 @@ object CYAStepsSteps {
     }
   }
 
-  def andIClickOnChangeHyperlinkNextToThe(link: String): Unit = {
-    link match {
-      case "FD Group Status" =>
-        clickByCss(FurtherDetailsCheckYourAnswersPage.changeGroupStatus)
-      case "Accounting Period" =>
-        clickByCss(FurtherDetailsCheckYourAnswersPage.changeAccountingPeriod)
-    }
-  }
-
   def andIClickOnChangeLinkFor(link: String): Unit = {
     link match {
       case "Contact Name" =>
         clickByCss(ContactDetailsCheckAnswersPage.changeName)
-      case "Email address" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeEmail)
-      case "Phone number" =>
-        clickByCss(ContactDetailsCheckAnswersPage.changeContactNumber)
-      case "Do you have a second contact?" =>
-        clickByCss(ContactDetailsCheckAnswersPage.secondContact)
-      case "Dashboard Address" =>
-        clickByCss(ContactDetailsSummaryPage.dashboardAddressChange)
       case "Primary Contact" =>
         clickByCss(ReviewAnswersPage.changeUPEContact)
       case _ =>

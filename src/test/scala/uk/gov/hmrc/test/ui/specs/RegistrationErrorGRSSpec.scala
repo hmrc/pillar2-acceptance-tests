@@ -24,16 +24,16 @@ import uk.gov.hmrc.test.ui.specs.tags.*
 
 class RegistrationErrorGRSSpec extends BaseSpec {
 
-  Feature("Ultimate parent entity and Nominated Filling Member GRS journey") {
+  Feature("Registration GRS Error journeys") {
 
-    Scenario("1 - User registration as UkLimitedCompany failed with party type mismatch error",
+    Scenario("1 - User registration as Uk Limited Company failed with party type mismatch error",
       AcceptanceTests
     ) {
 
-      Given("Organisation User logs in without Pillar2 enrolment")
+      Given("Org User logs in without Pillar2 enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       And("The user is presented with the task list page")
@@ -71,10 +71,10 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       AcceptanceTests
     ) {
 
-      Given("Organisation User logs in without Pillar2 enrolment")
+      Given("Org User logs in without Pillar2 enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       And("The user is presented with the task list page")
@@ -112,10 +112,10 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       AcceptanceTests
     ) {
 
-      Given("Organisation User logs in without Pillar2 enrolment")
+      Given("Org User logs in without Pillar2 enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       And("The user is presented with the task list page")
@@ -149,14 +149,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       NFMGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
     }
 
-    Scenario("4 - User registration as UkLimitedCompany failed with BV failed error",
+    Scenario("4 - User registration as Uk Limited Company failed with BV failed error",
       AcceptanceTests
     ) {
 
-      Given("Organisation User logs in without Pillar2 enrolment")
+      Given("Org User logs in without Pillar2 enrolment")
       login(
         userType = "Organisation",
-        pageUrl = "pillar2-frontend"
+        page = "pillar2-frontend"
       )
 
       And("The user is presented with the task list page")
