@@ -25,7 +25,7 @@ import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.RFMStepsSteps.*
 import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
-class RFMNoIDFlowSpec extends BaseSpec {
+class RFMSubmissionNoIDSpec extends BaseSpec {
 
   Feature("RFM No ID flow journeys") {
 

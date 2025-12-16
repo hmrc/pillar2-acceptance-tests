@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.rfm._
 import uk.gov.hmrc.test.ui.specs.tags._
 
-class RFMGRSSubmissionSpec extends BaseSpec {
+class RFMSubmissionGRSSpec extends BaseSpec {
 
   Feature("RFM Ultimate Parent Entity and New nominated Filling Member GRS journey") {
 
