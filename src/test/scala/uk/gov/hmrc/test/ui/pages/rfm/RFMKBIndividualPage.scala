@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.rfm
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object IndividualAffinityKBPage extends PageObject {
-  val url: String = s"$rootUrl" + "unauthorised/individual"
+object RFMKBIndividualPage extends BasePage {
+  override val url: String = s"${baseUrl}replace-filing-member/error/individual"
 }
