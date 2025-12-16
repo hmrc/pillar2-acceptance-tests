@@ -16,8 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.rfm
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object RFMIndividualKBPage extends BasePage {
+object RFMKBIndividualPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/error/individual"
 }

@@ -25,7 +25,7 @@ class RFMGRSSubmissionSpec extends BaseSpec {
   Feature("RFM Ultimate Parent Entity and New nominated Filling Member GRS journey") {
 
     Scenario("1 - RFM GRS journey with New NFM as UK limited company and BV Enabled", 
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
       
       Given("Organisation User logs into RFM")
@@ -66,7 +66,7 @@ class RFMGRSSubmissionSpec extends BaseSpec {
     }
 
     Scenario("2 - RFM GRS journey with New NFM as UK limited company and BV Disabled",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("Organisation User logs into RFM")
