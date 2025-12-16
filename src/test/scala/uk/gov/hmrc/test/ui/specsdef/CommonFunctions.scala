@@ -90,11 +90,8 @@ object CommonFunctions
       case "NFM registration failed error page"     => NFMGRSRegistrationFailedErrorPage
       case "NFM registration not called error page" => NFMGRSRegistrationNotCalledErrorPage
       case "accounts summary page"                  => AccountsSummaryPage
-      case "Assistant role KB page"                 => AssistantRoleKBPage
-      case "Agent affinity KB page"                 => AgentAffinityKBPage
       case "agent services account page"            => AgentServicesAccountPage
       case "Agent services account page2"           => AgentServicesAccountPage2
-      case "Individual affinity KB page"            => IndividualAffinityKBPage
       case "Registration return error page"         => RegistrationReturnErrorPage
       case "contact details summary page"           => ContactDetailsSummaryPage
       case "Make a payment page"                    => MakePaymentPage

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.unauthorisedAffinity
 
-import uk.gov.hmrc.test.ui.helper.PageObject
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object AssistantRoleKBPage extends PageObject {
-  val url: String = s"$rootUrl" + "unauthorised/standard-user"
+object UnauthorisedAffinityASAIndividualPage extends BasePage {
+  override val url: String = s"${baseUrl}asa/error/individual"
 }
