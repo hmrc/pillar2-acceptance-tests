@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package uk.gov.hmrc.test.ui.pages.outstandingPayments
+
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object OutstandingPaymentsPage extends BasePage {
