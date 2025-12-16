@@ -27,26 +27,4 @@ object SubscriptionJourneyStepsSteps {
     Input.enterData(accountPeriod)
     UPEEntityTypePage.clickContinue()
   }
-
-  def andIShouldSeeDateFieldXIsPrepopulatedWithX(field: String, name: String): Unit = {
-    field match {
-      case "Start Day" =>
-        assert(getAttributeOfId(GroupAccountingPeriodPage.startDay, "value").equals(name))
-
-      case "Start Month" =>
-        assert(getAttributeOfId(GroupAccountingPeriodPage.startMonth, "value").equals(name))
-
-      case "Start Year" =>
-        assert(getAttributeOfId(GroupAccountingPeriodPage.startYear, "value").equals(name))
-
-      case "End Day" =>
-        assert(getAttributeOfId(GroupAccountingPeriodPage.endDay, "value").equals(name))
-
-      case "End Month" =>
-        assert(getAttributeOfId(GroupAccountingPeriodPage.endMonth, "value").equals(name))
-
-      case "End Year" =>
-        assert(getAttributeOfId(GroupAccountingPeriodPage.endYear, "value").equals(name))
-    }
-  }
 }

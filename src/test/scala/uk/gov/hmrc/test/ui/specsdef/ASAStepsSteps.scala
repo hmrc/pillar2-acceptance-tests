@@ -30,9 +30,4 @@ object ASAStepsSteps {
         Input.sendKeysByCss(value, ASAPillar2InputPage.pillar2IDField)
     }
   }
-
-  def VerifyCorrectClientDetails(plrId: String): Unit = {
-    Wait.waitForElementToPresentByCssSelector(DashboardPage.plrIdText)
-    assert(Driver.instance.findElement(By.cssSelector(DashboardPage.plrIdText)).getText.contains(plrId))
-  }
 }
