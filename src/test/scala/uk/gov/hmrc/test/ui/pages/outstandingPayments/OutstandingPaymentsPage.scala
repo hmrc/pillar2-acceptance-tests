@@ -18,5 +18,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object OutstandingPaymentsPage extends BasePage {
   override val url: String = s"${baseUrl}payment/outstanding"
-
 }
