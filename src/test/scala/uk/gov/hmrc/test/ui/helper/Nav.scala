@@ -16,13 +16,9 @@
 
 package uk.gov.hmrc.test.ui.helper
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 object Nav extends BrowserDriver {
-
-//  def navigateTo(url: String): Unit =
-//    driver.navigate.to(url)
 
   def navigateTo(url: String): Unit = {
     println(s"Nav.navigateTo called with url=$url, driver=$driver")
@@ -31,12 +27,4 @@ object Nav extends BrowserDriver {
   def browserBack(): Unit = {
     driver.navigate().back()
   }
-
-  def clearCollections(): Unit = {
-    navigateTo("http://localhost:10050/report-pillar2-top-up-taxes/test-only/clear-all")
-  }
-
-  def isVisible(by: By): Boolean =
-    driver.findElements(by).size() != 0
-
 }

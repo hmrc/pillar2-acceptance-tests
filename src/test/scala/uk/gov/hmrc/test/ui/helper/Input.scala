@@ -16,39 +16,10 @@
 
 package uk.gov.hmrc.test.ui.helper
 
-import org.openqa.selenium.*
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import uk.gov.hmrc.test.ui.helper.Find.*
 
 object Input extends BrowserDriver {
-
-  def clickById(id: String): Unit = findById(id).click()
-
-  def clickByLinkText(text: String): Unit = findByLinkText(text).click()
-
-  def clickByCss(css: String): Unit = findByCss(css).click()
-
-  // val enterData: DataTable => Unit = iterator(sendKeysById)
-//  def enterData(data: DataTable): Unit = {
-//    iterator(sendKeysById)(data)
-//  }
-//  def iterator(f: (String, String) => Any)(data: DataTable): Unit = {
-//    val row = data.asMaps(classOf[String], classOf[String]).iterator()
-//    while (row.hasNext) {
-//      val map = row.next()
-//      f(map.get("KEY"), map.get("VALUE"))
-//    }
-//  }
-
-  def enterData(data: Map[String, String]): Unit = {
-    data.foreach { case (key, value) =>
-      sendKeysById(key, value)
-    }
-  }
-
-  def clickSubmit(): Unit = findById("submit").click()
-
-  def clickByXpath(id: String): Unit = findByXpath(id).click()
 
   def sendKeysById(id: String, value: String): Unit = {
     findById(id)
@@ -56,24 +27,9 @@ object Input extends BrowserDriver {
     findById(id).sendKeys(value)
   }
 
-  def sendKeysByCss(value: String, css: String): Unit = {
-    findByCss(css)
-    findByCss(css).clear()
-    findByCss(css).sendKeys(value)
-  }
-
   def sendKeysByName(value: String, name: String): Unit = {
     findByName(name)
     findByName(name).clear()
     findByName(name).sendKeys(value)
   }
-
-  def getTextOf(by: By): String =
-    driver.findElement(by).getText
-
-  def getAttributeOf(locator: String, attributeName: String): String =
-    driver.findElement(By.cssSelector(locator)).getAttribute(attributeName)
-
-  def getAttributeOfId(locator: String, attributeName: String): String =
-    driver.findElement(By.id(locator)).getAttribute(attributeName)
 }

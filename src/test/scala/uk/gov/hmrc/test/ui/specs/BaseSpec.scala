@@ -20,7 +20,7 @@ import org.scalatest.featurespec.AnyFeatureSpec
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, GivenWhenThen}
 import uk.gov.hmrc.selenium.webdriver.{Browser, Driver, ScreenshotOnFailure}
-import uk.gov.hmrc.test.ui.helper.Nav
+import uk.gov.hmrc.test.ui.helper.TestOnlyHelpers
 
 trait BaseSpec
     extends AnyFeatureSpec
@@ -34,7 +34,7 @@ trait BaseSpec
   override def beforeAll(): Unit = {
     startBrowser()
     Driver.instance.manage().deleteAllCookies()
-    Nav.clearCollections()
+    TestOnlyHelpers.clearSession()
   }
 
   override def afterAll(): Unit = {

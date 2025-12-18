@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.helper.TestOnlyHelpers
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.rfm.*
 import uk.gov.hmrc.test.ui.specs.tags.*
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
 
 class RFMKBSpec extends BaseSpec {
 
@@ -96,7 +95,8 @@ class RFMKBSpec extends BaseSpec {
       RFMKBDuplicatePage.onPage()
     }
 
-    Scenario("5 - Existing FM (with same group id) accesses RFM journey and is redirected to KB page",
+    Scenario(
+      "5 - Existing FM (with same group id) accesses RFM journey and is redirected to KB page",
       AcceptanceTests
     ) {
 
