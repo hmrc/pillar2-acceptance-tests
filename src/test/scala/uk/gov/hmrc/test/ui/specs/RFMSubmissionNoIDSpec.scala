@@ -19,15 +19,13 @@ package uk.gov.hmrc.test.ui.specs
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.rfm.*
 import uk.gov.hmrc.test.ui.specs.tags.*
-import uk.gov.hmrc.test.ui.specsdef.CommonStepsSteps.*
-import uk.gov.hmrc.test.ui.specsdef.EligibilityQuestionStepsSteps.*
-import uk.gov.hmrc.test.ui.specsdef.UPEStepsSteps.*
 
 class RFMSubmissionNoIDSpec extends BaseSpec {
 
   Feature("RFM No ID flow journeys") {
 
-    Scenario("1 - RFM submission journey for NFM No Id flow with changes on check your answers pages",
+    Scenario(
+      "1 - RFM submission journey for NFM No Id flow with changes on check your answers pages",
       AcceptanceTests
     ) {
 
@@ -112,7 +110,8 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMNoReturnBackErrorPage.onPage()
     }
 
-    Scenario("2 - RFM submission journey for UPE No Id flow",
+    Scenario(
+      "2 - RFM submission journey for UPE No Id flow",
       AcceptanceTests
     ) {
 
