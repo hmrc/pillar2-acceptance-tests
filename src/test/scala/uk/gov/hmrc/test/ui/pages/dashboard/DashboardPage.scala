@@ -77,7 +77,7 @@ object DashboardPage extends BasePage {
     click(By.cssSelector(submitBTN))
   }
 
-  val clientIdText: By = By.id(".homepage-title span:nth-of-type(2)")
+  val clientIdText: By = By.cssSelector(".homepage-title span:nth-of-type(2)")
 
   def displayedClientId: String = getText(clientIdText).replace("ID:", "").trim
 

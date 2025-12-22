@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.asa.*
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.dueAndOverdueReturns.*
+import uk.gov.hmrc.test.ui.pages.guidance.*
 import uk.gov.hmrc.test.ui.pages.submissionHistory.*
 import uk.gov.hmrc.test.ui.specs.tags.*
 
@@ -51,7 +52,7 @@ class SubmissionHistoryDueOverdueReturnsSpec extends BaseSpec {
       DueAndOverdueReturnsPage.clickLink(DueAndOverdueReturnsPage.submissionHistoryLink)
       SubmissionHistoryPage.browserBack()
       DueAndOverdueReturnsPage.clickLink(DueAndOverdueReturnsPage.pillar2TopupTaxesLink)
-      SubmissionHistoryPage.browserBack()
+      GuidanceHowToReportPage.browserBack()
       DueAndOverdueReturnsPage.onPage()
     }
 
@@ -80,7 +81,7 @@ class SubmissionHistoryDueOverdueReturnsSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       Then("The agent successfully checks submission history")
       DashboardPage.clickSubmissionHistoryLink()

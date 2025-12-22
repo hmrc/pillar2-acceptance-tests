@@ -42,7 +42,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
       And("The user requests a repayment using a UK bank account")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continue()
+      RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterAmount()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountUK()
@@ -97,7 +97,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
       And("The user requests a repayment using a Non-UK bank account")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continue()
+      RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterAmount()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountNonUK()
@@ -140,11 +140,11 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       And("The agent requests a repayment using a UK bank account")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continue()
+      RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterAmount()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountUK()

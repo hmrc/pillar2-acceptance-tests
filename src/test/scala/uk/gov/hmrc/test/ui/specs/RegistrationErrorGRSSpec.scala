@@ -40,7 +40,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       TaskListPage.clickAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Failed Party Type Mismatch")
-      UPEInitialGuidancePage.continue()
+      UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.registeredInUkYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationFailedPartyTypeMismatch()
@@ -81,7 +81,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       TaskListPage.clickAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Generic Error")
-      UPEInitialGuidancePage.continue()
+      UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.registeredInUkYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationFailedGeneric()
@@ -122,7 +122,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       TaskListPage.clickAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Identifiers Mismatch")
-      UPEInitialGuidancePage.continue()
+      UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.registeredInUkYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationNotCalledIdentifierMismatch()
@@ -163,7 +163,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       TaskListPage.clickAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV failed")
-      UPEInitialGuidancePage.continue()
+      UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.registeredInUkYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationNotCalledBvFailed()

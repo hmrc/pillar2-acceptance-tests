@@ -43,7 +43,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
 
       Then("The user starts a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
+      BtnStartPage.continueToNextPage()
 
       And("The user selects the current accounting period")
       BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
@@ -57,8 +57,8 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
 
       Then("The user reaches the BTN under enquiry page and continues BTN submission")
-      BtnUnderEnquiryPage.continue()
-      BtnAccountingPage.continue()
+      BtnUnderEnquiryPage.continueToNextPage()
+      BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
@@ -94,11 +94,11 @@ class BTNUnderEnquirySpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XEPLR9999999995")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
+      BtnStartPage.continueToNextPage()
 
       And("The agent selects the current accounting period")
       BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
@@ -112,8 +112,8 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
 
       And("The agent continue from BtnUnderEnquiryPage ")
-      BtnUnderEnquiryPage.continue()
-      BtnAccountingPage.continue()
+      BtnUnderEnquiryPage.continueToNextPage()
+      BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 

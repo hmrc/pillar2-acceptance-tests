@@ -30,7 +30,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
     Scenario(
       "1 - Make successful payment as an Org user",
-      AcceptanceTests
+      AcceptanceTests, Wip
     ) {
 
       Given("Organisation User logs in to Pillar2 service")
@@ -51,7 +51,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
       OutstandingPaymentsPage.onPage()
 
       When("The user makes a successful payment")
-      OutstandingPaymentsPage.continue()
+      OutstandingPaymentsPage.continueToNextPage()
       makeSuccessfulPayment()
 
       Then("The user is taken to the transaction history page")
@@ -86,14 +86,14 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       And("The agent views outstanding payments")
       DashboardPage.clickPaymentOutstandingLink()
       OutstandingPaymentsPage.onPage()
 
       When("The agent makes a successful payment")
-      OutstandingPaymentsPage.continue()
+      OutstandingPaymentsPage.continueToNextPage()
       makeSuccessfulPayment()
 
       Then("The agent is taken to the transaction history page")

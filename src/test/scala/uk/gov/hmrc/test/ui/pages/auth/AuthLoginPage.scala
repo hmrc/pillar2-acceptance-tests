@@ -33,9 +33,9 @@ object AuthLoginPage extends BrowserDriver with BasePage {
   val frontEndUrl: String = TestConfiguration.url("pillar2-frontend")
 
   object Fields {
-    val addDelegatedEnrolmentCTA: By  = By.id("#js-add-delegated-enrolment")
-    val affinityGroup: By             = By.id("affinityGroup")
-    val credentialRole: By            = By.id("credentialRole")
+    val addDelegatedEnrolmentCTA: By  = By.id("js-add-delegated-enrolment")
+    val affinityGroup: By             = By.id("affinityGroupSelect")
+    val credentialRole: By            = By.id("credential-role-select")
     val credId: By                    = By.id("authorityId")
     val enrolmentKey: By              = By.id("enrolment[0].name")
     val groupId: By                   = By.id("groupIdentifier")
@@ -82,7 +82,6 @@ object AuthLoginPage extends BrowserDriver with BasePage {
 
     sendKeys(Fields.credId, credId)
     sendKeys(Fields.redirectUrl, resolveRedirect(page))
-
     selectByValue(Fields.affinityGroup, userType)
     selectByValue(Fields.credentialRole, credRole)
     sendKeys(Fields.groupId, groupId)

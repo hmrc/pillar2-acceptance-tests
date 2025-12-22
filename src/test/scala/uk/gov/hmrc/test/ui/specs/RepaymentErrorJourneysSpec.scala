@@ -43,7 +43,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continue()
+      RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterAmount()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountUK()
@@ -92,7 +92,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continue()
+      RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterAmount()
 
       And("The user redirects to the check your answers page after one question and tries to submit")
@@ -127,11 +127,11 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       And("The agent starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continue()
+      RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterAmount()
 
       And("The agent redirects to the check your answers page after one question and tries to submit")
@@ -158,7 +158,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continue()
+      RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterAmount()
 
       And("The user changes the url to redirect to the contact email page without answering prior questions")
@@ -192,11 +192,11 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       And("The agent starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continue()
+      RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterAmount()
 
       And("The agent changes the url to redirect to the contact email page without answering prior questions")

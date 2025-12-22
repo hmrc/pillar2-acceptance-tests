@@ -44,8 +44,8 @@ class BTNSubmissionSpec extends BaseSpec {
 
       Then("The user submits a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
-      BtnAccountingPage.continue()
+      BtnStartPage.continueToNextPage()
+      BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
@@ -84,12 +84,12 @@ class BTNSubmissionSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XEPLR9999999991")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       Then("The agent submits a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
-      BtnAccountingPage.continue()
+      BtnStartPage.continueToNextPage()
+      BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
@@ -129,15 +129,15 @@ class BTNSubmissionSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XEPLR9999999994")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
+      BtnStartPage.continueToNextPage()
 
       And("The agent selects the current accounting period")
       BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
-      BtnAccountingPage.continue()
+      BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
@@ -173,15 +173,15 @@ class BTNSubmissionSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XEPLR9999999994")
-      ASAConfirmationPage.continue()
+      ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
+      BtnStartPage.continueToNextPage()
 
       And("The agent selects the previous accounting period")
       BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
-      BtnAccountingPage.continue()
+      BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 

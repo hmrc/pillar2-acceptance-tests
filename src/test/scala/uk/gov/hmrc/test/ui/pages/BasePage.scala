@@ -24,6 +24,7 @@ import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 import java.time.Duration
+import scala.jdk.CollectionConverters.*
 
 trait BasePage extends Matchers with PageObject {
 
@@ -59,6 +60,7 @@ trait BasePage extends Matchers with PageObject {
     fluentWait(timeoutSeconds).until(ExpectedConditions.urlContains(partialUrl))
 
   def countryAutoSelect(countryName: String): Unit = {
+    assertLocatorPresent(countryDropdown)
     click(countryDropdown)
     sendKeys(countryDropdown, countryName)
     click(countryOption)
@@ -66,16 +68,24 @@ trait BasePage extends Matchers with PageObject {
 
   def onPageSubmitById(): Unit = {
     onPage()
+    assertLocatorPresent(submitButtonId)
     click(submitButtonId)
   }
 
   def continue(): Unit = {
+    assertLocatorPresent(continueClassName)
+    click(continueClassName)
+  }
+
+  def continueToNextPage(): Unit = {
     onPage()
+    assertLocatorPresent(continueClassName)
     click(continueClassName)
   }
 
   def enterText(textValue: String = textValue): Unit = {
     onPage()
+    assertLocatorPresent(textInputField)
     sendKeys(textInputField, textValue)
     continue()
   }
@@ -85,18 +95,21 @@ trait BasePage extends Matchers with PageObject {
     require(textUpdateValue.nonEmpty, s"textUpdateValue must be set for ${this.getClass.getSimpleName}")
 
     onPage(changeUrl)
+    assertLocatorPresent(textInputField)
     sendKeys(textInputField, textUpdateValue)
     continue()
   }
 
   def selectYes(url: String = this.url): Unit = {
     onPage(url)
+    assertLocatorPresent(yesRadioId)
     click(yesRadioId)
     continue()
   }
 
   def selectNo(url: String = this.url): Unit = {
     onPage(url)
+    assertLocatorPresent(noRadioId)
     click(noRadioId)
     continue()
   }
@@ -123,9 +136,10 @@ trait BasePage extends Matchers with PageObject {
 
   def clickButtonByText(buttonText: String): Unit = {
     val button = By.xpath(s"//button[normalize-space()='$buttonText']")
+    assertLocatorPresent(button)
     click(button)
   }
-  
+
   def refreshPage(): Unit =
     Driver.instance.navigate().refresh()
 
@@ -140,5 +154,13 @@ trait BasePage extends Matchers with PageObject {
 
   def navigateTo(url: String): Unit = {
     Driver.instance.navigate.to(url)
+  }
+
+  protected def assertLocatorPresent(locator: By): Unit = {
+    val elements = Driver.instance.findElements(locator).asScala
+    require(
+      elements.nonEmpty,
+      s"Expected element with locator [$locator] to be present, but none was found"
+    )
   }
 }

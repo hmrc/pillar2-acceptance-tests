@@ -39,7 +39,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       TaskListPage.clickAddUltimateFilingMember()
 
       And("The user adds an Ultimate Parent Entity with a non-UK Address")
-      UPEInitialGuidancePage.continue()
+      UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.registeredInUkNo()
       UPENamePage.enterName()
       UPEAddressPage.enterAddressNonUK()
@@ -69,7 +69,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       UPEPhoneInputPage.updatePhoneNumber()
 
       Then("The user continues to the task list")
-      UPECheckYourAnswersPage.continue()
+      UPECheckYourAnswersPage.continueToNextPage()
       TaskListPage.clickAddFilingMemberLink()
 
       When("The user adds a Nominated Filing Member with a UK Address")
@@ -104,7 +104,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       NFMPhoneInputPage.updatePhoneNumber()
 
       Then("The user continues from NFM to the task list")
-      NFMCheckYourAnswersPage.continue()
+      NFMCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
@@ -120,11 +120,11 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       FDGroupAccountingPeriodPage.updateDates()
 
       Then("The user continues from further details to the task list")
-      FDCheckYourAnswersPage.continue()
+      FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
       TaskListPage.clickAddContactDetailsLink()
-      ContactDetailsGuidancePage.continue()
+      ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectNo()
       ContactDetailsPrimaryNamePage.enterName()
       ContactDetailsPrimaryEmailPage.enterEmail()
@@ -168,11 +168,11 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       And("The user amends contact Address town via the Check your answers page")
       ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changeContactAddress)
       ContactAddressInputPage.updateAddressUK()
-      ContactDetailsCheckAnswersPage.continue()
+      ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
       TaskListPage.clickReviewAndSubmitLink()
-      ReviewAnswersPage.continue()
+      ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)

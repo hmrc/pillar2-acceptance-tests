@@ -42,13 +42,13 @@ class BTNAmendmentsSpec extends BaseSpec {
 
       Then("The user navigates to the summary page")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
+      BtnStartPage.continueToNextPage()
       BtnAccountingPage.clickAccountDetailsSummaryLink()
 
       And("The user updates the dates of the accounting period")
       ManageAccountsSummaryPage.clickChangeAccountingPeriodLink()
       BtnAccountingPage.updateDates()
-      ManageAccountsSummaryPage.continue()
+      ManageAccountsSummaryPage.continueToNextPage()
 
       When("The user is taken back to the dashboard")
       DashboardPage.onPage()
@@ -70,8 +70,8 @@ class BTNAmendmentsSpec extends BaseSpec {
 
       Then("The user changes the below threshold notification entity to being based only in the UK")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
-      BtnAccountingPage.continue()
+      BtnStartPage.continueToNextPage()
+      BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.entityInAndOutUkNo()
 
       When("The user is presented with the amend group details page")
@@ -94,8 +94,8 @@ class BTNAmendmentsSpec extends BaseSpec {
 
       Then("The user submits a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continue()
-      BtnAccountingPage.continue()
+      BtnStartPage.continueToNextPage()
+      BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
