@@ -38,12 +38,12 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterPLRId("XMPLR0123456789")
       RFMRegistrationDatePage.enterDates("31", "1", "2024")
-      RFMCYAPage.continueToNextPage()
+      RFMCYAPage.continue()
 
       And("The user selects a new NFM and enters details")
-      RFMSavingProgressPage.continueToNextPage()
+      RFMSavingProgressPage.continue()
       RFMCorpPositionPage.clickNewNominatedFilingMember()
-      RFMNFMGuidancePage.continueToNextPage()
+      RFMNFMGuidancePage.continue()
       RFMRegisteredInUKPage.selectNo()
       RFMNFMNamePage.enterText()
       RFMNFMAddressPage.enterAddressNonUK()
@@ -57,10 +57,10 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMNFMAddressPage.updateAddressNonUK()
 
       Then("The user continues to contact details")
-      RFMNoIDCYAPage.continueToNextPage()
+      RFMNoIDCYAPage.continue()
 
       And("The user adds primary contact details")
-      RFMContactGuidancePage.continueToNextPage()
+      RFMContactGuidancePage.continue()
       RFMContactPrimaryNamePage.enterText()
       RFMContactPrimaryEmailPage.enterText()
       RFMContactPrimaryByPhonePage.selectYes()
@@ -104,7 +104,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageSubmitById()
 
       And("The user is presented with the confirmation page and clicks the back button")
-      RFMConfirmationPage.clickBackButton()
+      RFMConfirmationPage.browserBack()
 
       Then("The user is presented with the no return page")
       RFMNoReturnBackErrorPage.onPage()
@@ -124,14 +124,14 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterPLRId("XMPLR0123456789")
       RFMRegistrationDatePage.enterDates("31", "1", "2024")
-      RFMCYAPage.continueToNextPage()
+      RFMCYAPage.continue()
 
       And("The user selects a new UPE and enters details")
-      RFMSavingProgressPage.continueToNextPage()
+      RFMSavingProgressPage.continue()
       RFMCorpPositionPage.clickUltimateParentEntity()
 
       And("The user adds primary contact details")
-      RFMContactGuidancePage.continueToNextPage()
+      RFMContactGuidancePage.continue()
       RFMContactPrimaryNamePage.enterText()
       RFMContactPrimaryEmailPage.enterText()
       RFMContactPrimaryByPhonePage.selectNo()

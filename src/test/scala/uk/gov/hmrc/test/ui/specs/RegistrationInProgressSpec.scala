@@ -39,7 +39,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       TaskListPage.clickAddUltimateFilingMember()
 
       And("The user adds Medium Processing Corp as Ultimate Parent Entity")
-      UPEInitialGuidancePage.continueToNextPage()
+      UPEInitialGuidancePage.continue()
       UPERegisteredInUkPage.registeredInUkNo()
       UPENamePage.registrationInProgress()
       UPEAddressPage.enterAddressNonUK()
@@ -49,7 +49,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       UPEPhoneInputPage.enterPhoneNumber()
 
       Then("The user continues to the task list")
-      UPECheckYourAnswersPage.continueToNextPage()
+      UPECheckYourAnswersPage.continue()
       TaskListPage.clickAddFilingMemberLink()
 
       When("The user doesn't add a Nominated Filing Member")
@@ -61,19 +61,19 @@ class RegistrationInProgressSpec extends BaseSpec {
       And("The user adds further details")
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
-      FDCheckYourAnswersPage.continueToNextPage()
+      FDCheckYourAnswersPage.continue()
 
       And("The user adds UPE as primary contact")
       TaskListPage.clickAddContactDetailsLink()
-      ContactDetailsGuidancePage.continueToNextPage()
+      ContactDetailsGuidancePage.continue()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
       ContactAddressInputPage.enterAddressUK()
-      ContactDetailsCheckAnswersPage.continueToNextPage()
+      ContactDetailsCheckAnswersPage.continue()
 
       Then("The user reviews and submits")
       TaskListPage.clickReviewAndSubmitLink()
-      ReviewAnswersPage.continueToNextPage()
+      ReviewAnswersPage.continue()
 
       When("The user is now on the registration complete page and tries to go to the home page")
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)

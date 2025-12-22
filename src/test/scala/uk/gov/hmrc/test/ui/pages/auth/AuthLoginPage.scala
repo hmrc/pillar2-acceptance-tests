@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.auth
 
-import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.helper.Input.*
-import uk.gov.hmrc.test.ui.helper.{Find, Input, Nav}
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.pages.asa.ASAPillar2InputPage
 import uk.gov.hmrc.test.ui.pages.bta.BTAPillar2IDCheckPage
@@ -35,21 +33,20 @@ object AuthLoginPage extends BrowserDriver with BasePage {
   val frontEndUrl: String = TestConfiguration.url("pillar2-frontend")
 
   object Fields {
-    val redirectUrl = "redirectionUrl"
-    val credId      = "authorityId"
-    val groupId     = "groupIdentifier"
-
-    val enrolmentKey    = "enrolment[0].name"
-    val identifierName  = "input-0-0-name"
-    val identifierValue = "input-0-0-value"
-
-    def delegatedKey(i: Int)      = s"delegatedEnrolment[$i].key"
-    def delegatedName(i: Int)     = s"input-delegated-$i-0-name"
-    def delegatedValue(i: Int)    = s"input-delegated-$i-0-value"
-    def delegatedAuthRule(i: Int) = s"delegatedEnrolment[$i].delegatedAuthRule"
+    val addDelegatedEnrolmentCTA: By  = By.id("#js-add-delegated-enrolment")
+    val affinityGroup: By             = By.id("affinityGroup")
+    val credentialRole: By            = By.id("credentialRole")
+    val credId: By                    = By.id("authorityId")
+    val enrolmentKey: By              = By.id("enrolment[0].name")
+    val groupId: By                   = By.id("groupIdentifier")
+    val identifierName: By            = By.id("input-0-0-name")
+    val identifierValue: By           = By.id("input-0-0-value")
+    val redirectUrl: By               = By.id("redirectionUrl")
+    def delegatedKey(i: Int): By      = By.id(s"delegatedEnrolment[$i].key")
+    def delegatedName(i: Int): By     = By.id(s"input-delegated-$i-0-name")
+    def delegatedValue(i: Int): By    = By.id(s"input-delegated-$i-0-value")
+    def delegatedAuthRule(i: Int): By = By.id(s"delegatedEnrolment[$i].delegatedAuthRule")
   }
-
-  val addDelegatedEnrolmentCTA = "#js-add-delegated-enrolment"
 
   case class Enrolment(key: String, name: String, value: String)
   case class DelegatedEnrolment(key: String, name: String, value: String, authRule: String)
@@ -81,14 +78,14 @@ object AuthLoginPage extends BrowserDriver with BasePage {
       groupId: String = ""
   ): Unit = {
 
-    Nav.navigateTo(url)
+    navigateTo(url)
 
-    Input.sendKeysByName(credId, Fields.credId)
-    Input.sendKeysByName(resolveRedirect(page), Fields.redirectUrl)
+    sendKeys(Fields.credId, credId)
+    sendKeys(Fields.redirectUrl, resolveRedirect(page))
 
-    selectAffinityGroup(userType)
-    selectCredRole(credRole)
-    Input.sendKeysById(Fields.groupId, groupId)
+    selectByValue(Fields.affinityGroup, userType)
+    selectByValue(Fields.credentialRole, credRole)
+    sendKeys(Fields.groupId, groupId)
 
     enrolment.foreach(addEnrolment)
 
@@ -96,32 +93,20 @@ object AuthLoginPage extends BrowserDriver with BasePage {
       case (e, i) => addDelegatedEnrolment(e, i)
     }
 
-    clickSubmitButton()
+    continue()
   }
 
   private def addEnrolment(e: Enrolment): Unit = {
-    sendKeysById(Fields.enrolmentKey, e.key)
-    sendKeysById(Fields.identifierName, e.name)
-    sendKeysById(Fields.identifierValue, e.value)
+    sendKeys(Fields.enrolmentKey, e.key)
+    sendKeys(Fields.identifierName, e.name)
+    sendKeys(Fields.identifierValue, e.value)
   }
 
   private def addDelegatedEnrolment(e: DelegatedEnrolment, index: Int): Unit = {
-    clickAddDelegatedEnrolmentCTA()
-    sendKeysByName(e.key, Fields.delegatedKey(index))
-    sendKeysById(Fields.delegatedName(index), e.name)
-    sendKeysById(Fields.delegatedValue(index), e.value)
-    sendKeysById(Fields.delegatedAuthRule(index), e.authRule)
+    click(Fields.addDelegatedEnrolmentCTA)
+    sendKeys(Fields.delegatedKey(index), e.key)
+    sendKeys(Fields.delegatedName(index), e.name)
+    sendKeys(Fields.delegatedValue(index), e.value)
+    sendKeys(Fields.delegatedAuthRule(index), e.authRule)
   }
-
-  private def selectAffinityGroup(userType: String): Unit = new Select(findAffinityGroup()).selectByVisibleText(userType)
-
-  private def selectCredRole(role: String): Unit = new Select(findCredentialRole()).selectByVisibleText(role)
-
-  private def findAffinityGroup() = Find.findByName("affinityGroup")
-
-  private def findCredentialRole() = Find.findByName("credentialRole")
-
-  private def clickAddDelegatedEnrolmentCTA(): Unit = Find.findByCss(addDelegatedEnrolmentCTA).click()
-
-  def clickSubmitButton(): Unit = Find.findById("submit").click()
 }

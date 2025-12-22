@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.helper
 
+import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 object TestOnlyHelpers {
@@ -24,6 +25,5 @@ object TestOnlyHelpers {
     s"${TestConfiguration.url("pillar2-frontend")}/test-only/eligibility/clear-session"
 
   def clearSession(): Unit =
-    Nav.navigateTo(clearSessionUrl)
-
+    Driver.instance.navigate.to(clearSessionUrl)
 }

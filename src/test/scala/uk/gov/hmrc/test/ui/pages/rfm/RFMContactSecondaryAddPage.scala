@@ -25,6 +25,6 @@ object RFMContactSecondaryAddPage extends BasePage {
   def changeToYes(url: String = this.url): Unit = {
     onPage(changeUrl)
     click(yesRadioId)
-    clickByClassName(continue)
+    continue()
   }
 }

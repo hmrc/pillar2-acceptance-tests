@@ -41,8 +41,8 @@ class BTNUnsuccessfulSpec extends BaseSpec {
 
       Then("The user submits a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
+      BtnStartPage.continue()
+      BtnAccountingPage.continue()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 

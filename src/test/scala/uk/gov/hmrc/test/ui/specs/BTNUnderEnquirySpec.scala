@@ -43,22 +43,22 @@ class BTNUnderEnquirySpec extends BaseSpec {
 
       Then("The user starts a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
+      BtnStartPage.continue()
 
       And("The user selects the current accounting period")
       BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
 
       And("The user returns to the accounting period and selects previous accounting period and reaches BTN under enquiry page")
-      BtnAccountingPage.clickOnBackLink()
+      BtnAccountingPage.clickBackLink()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
 
       And("The user returns to the multiple accounting period and select PreviousAccountingPeriodUKTRSubmitted")
-      BtnUnderEnquiryPage.clickBackButton()
+      BtnUnderEnquiryPage.browserBack()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
 
       Then("The user reaches the BTN under enquiry page and continues BTN submission")
-      BtnUnderEnquiryPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
+      BtnUnderEnquiryPage.continue()
+      BtnAccountingPage.continue()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
@@ -94,26 +94,26 @@ class BTNUnderEnquirySpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XEPLR9999999995")
-      ASAConfirmationPage.continueToNextPage()
+      ASAConfirmationPage.continue()
 
       Then("The agent starts a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
+      BtnStartPage.continue()
 
       And("The agent selects the current accounting period")
       BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
 
       And("The agent returns to the multiple accounting period and selects previous accounting period and reached BtnUnderEnquiryPage")
-      BtnAccountingPage.clickOnBackLink()
+      BtnAccountingPage.clickBackLink()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
 
       And("The agent returns to the multiple accounting period and select PreviousAccountingPeriodUKTRSubmitted")
-      BtnUnderEnquiryPage.clickBackButton()
+      BtnUnderEnquiryPage.browserBack()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
 
       And("The agent continue from BtnUnderEnquiryPage ")
-      BtnUnderEnquiryPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
+      BtnUnderEnquiryPage.continue()
+      BtnAccountingPage.continue()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 

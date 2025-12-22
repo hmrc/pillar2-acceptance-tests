@@ -42,7 +42,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
       And("The user requests a repayment using a UK bank account")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continueToNextPage()
+      RepaymentGuidancePage.continue()
       RepaymentAmountPage.enterAmount()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountUK()
@@ -97,7 +97,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
       And("The user requests a repayment using a Non-UK bank account")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continueToNextPage()
+      RepaymentGuidancePage.continue()
       RepaymentAmountPage.enterAmount()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountNonUK()
@@ -140,11 +140,11 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
-      ASAConfirmationPage.continueToNextPage()
+      ASAConfirmationPage.continue()
 
       And("The agent requests a repayment using a UK bank account")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continueToNextPage()
+      RepaymentGuidancePage.continue()
       RepaymentAmountPage.enterAmount()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountUK()
@@ -163,7 +163,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentConfirmationPage.waitRefreshThenCheckOnPage(initialWaitSeconds = 10)
 
       Then("The agent clicks the back button they will be taken to the cannot return, repayment request is complete page")
-      RepaymentConfirmationPage.clickBackButton()
+      RepaymentConfirmationPage.browserBack()
       RepaymentReturnErrorPage.onPage()
     }
   }

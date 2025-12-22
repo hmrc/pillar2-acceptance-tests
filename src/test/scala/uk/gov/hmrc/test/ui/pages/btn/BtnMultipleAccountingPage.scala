@@ -16,37 +16,38 @@
 
 package uk.gov.hmrc.test.ui.pages.btn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnMultipleAccountingPage extends BasePage {
   override val url: String = s"${baseUrl}below-threshold-notification/choose-accounting-period"
 
-  private val CurrentAccountingPeriod               = "radio_0"
-  private val PreviousAccountingPeriod              = "radio_1"
-  private val PreviousAccountingPeriodUKTRSubmitted = "radio_2"
-  private val PreviousAccountingPeriodBTnSubmitted  = "radio_3"
+  private val CurrentAccountingPeriod : By           = By.id("radio_0")
+  private val PreviousAccountingPeriod             : By           = By.id("radio_1")
+  private val PreviousAccountingPeriodUKTRSubmitted : By           = By.id("radio_2")
+  private val PreviousAccountingPeriodBTnSubmitted : By           = By.id("radio_3")
 
   def selectCurrentAccountingPeriod(): Unit = {
     onPage()
-    clickById(CurrentAccountingPeriod)
-    clickByClassName(continue)
+    click(CurrentAccountingPeriod)
+    continue()
   }
 
   def selectPreviousAccountingPeriod(): Unit = {
     onPage()
-    clickById(PreviousAccountingPeriod)
-    clickByClassName(continue)
+    click(PreviousAccountingPeriod)
+    continue()
   }
 
   def selectPreviousAccountingPeriodUKTRSubmitted(): Unit = {
     onPage()
-    clickById(PreviousAccountingPeriodUKTRSubmitted)
-    clickByClassName(continue)
+    click(PreviousAccountingPeriodUKTRSubmitted)
+    continue()
   }
 
   def selectPreviousAccountingPeriodBTNSubmitted(): Unit = {
     onPage()
-    clickById(PreviousAccountingPeriodBTnSubmitted)
-    clickByClassName(continue)
+    click(PreviousAccountingPeriodBTnSubmitted)
+    continue()
   }
 }

@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.helper.Nav
 import uk.gov.hmrc.test.ui.pages.asa.*
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
@@ -44,7 +43,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continueToNextPage()
+      RepaymentGuidancePage.continue()
       RepaymentAmountPage.enterAmount()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountUK()
@@ -65,7 +64,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentBankAccountUKPage.enterBankDetails(barsError)
 
       When("The user is taken to the bars error page")
-      RepaymentBarsErrorPage.clickOnBackLink()
+      RepaymentBarsErrorPage.clickBackLink()
 
       Then("The user returns to the UK bank account screen and submits wrong bank details (partialNameError)")
       RepaymentBankAccountUKPage.enterBankDetails(partialNameError)
@@ -93,11 +92,11 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continueToNextPage()
+      RepaymentGuidancePage.continue()
       RepaymentAmountPage.enterAmount()
 
       And("The user redirects to the check your answers page after one question and tries to submit")
-      Nav.navigateTo(RepaymentCYAPage.url)
+      navigateTo(RepaymentCYAPage.url)
       RepaymentCYAPage.onPageSubmitById()
 
       Then("The user will be presented with the repayment request has missing information page")
@@ -128,15 +127,15 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
-      ASAConfirmationPage.continueToNextPage()
+      ASAConfirmationPage.continue()
 
       And("The agent starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continueToNextPage()
+      RepaymentGuidancePage.continue()
       RepaymentAmountPage.enterAmount()
 
       And("The agent redirects to the check your answers page after one question and tries to submit")
-      Nav.navigateTo(RepaymentCYAPage.url)
+      navigateTo(RepaymentCYAPage.url)
       RepaymentCYAPage.onPageSubmitById()
 
       Then("The agent will be presented with the repayment request has missing information page")
@@ -159,11 +158,11 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continueToNextPage()
+      RepaymentGuidancePage.continue()
       RepaymentAmountPage.enterAmount()
 
       And("The user changes the url to redirect to the contact email page without answering prior questions")
-      Nav.navigateTo(RepaymentContactEmailPage.url)
+      navigateTo(RepaymentContactEmailPage.url)
 
       Then("The user will be presented with the your answers were not saved page")
       RepaymentJourneyRecoveryErrorPage.onPage()
@@ -193,15 +192,15 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
-      ASAConfirmationPage.continueToNextPage()
+      ASAConfirmationPage.continue()
 
       And("The agent starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
-      RepaymentGuidancePage.continueToNextPage()
+      RepaymentGuidancePage.continue()
       RepaymentAmountPage.enterAmount()
 
       And("The agent changes the url to redirect to the contact email page without answering prior questions")
-      Nav.navigateTo(RepaymentContactEmailPage.url)
+      navigateTo(RepaymentContactEmailPage.url)
 
       Then("The agent will be presented with the your answers were not saved page")
       RepaymentJourneyRecoveryErrorPage.onPage()

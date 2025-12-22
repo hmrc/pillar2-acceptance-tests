@@ -44,8 +44,8 @@ class BTNSubmissionSpec extends BaseSpec {
 
       Then("The user submits a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
+      BtnStartPage.continue()
+      BtnAccountingPage.continue()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
@@ -53,7 +53,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       Then("The user clicks the back button and is presented with the cannot return page")
-      BtnConfirmationPage.clickBackButton()
+      BtnConfirmationPage.browserBack()
       BtnCannotReturnPage.onPage()
     }
 
@@ -84,12 +84,12 @@ class BTNSubmissionSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XEPLR9999999991")
-      ASAConfirmationPage.continueToNextPage()
+      ASAConfirmationPage.continue()
 
       Then("The agent submits a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
-      BtnAccountingPage.continueToNextPage()
+      BtnStartPage.continue()
+      BtnAccountingPage.continue()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
@@ -97,7 +97,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       Then("The user clicks the back button and is presented with the cannot return page")
-      BtnConfirmationPage.clickBackButton()
+      BtnConfirmationPage.browserBack()
       BtnCannotReturnPage.onPage()
     }
 
@@ -129,15 +129,15 @@ class BTNSubmissionSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XEPLR9999999994")
-      ASAConfirmationPage.continueToNextPage()
+      ASAConfirmationPage.continue()
 
       Then("The agent starts a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
+      BtnStartPage.continue()
 
       And("The agent selects the current accounting period")
       BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
-      BtnAccountingPage.continueToNextPage()
+      BtnAccountingPage.continue()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 
@@ -173,15 +173,15 @@ class BTNSubmissionSpec extends BaseSpec {
 
       Then("The agent confirms client PLRId")
       ASAPillar2InputPage.enterPLR2Id("XEPLR9999999994")
-      ASAConfirmationPage.continueToNextPage()
+      ASAConfirmationPage.continue()
 
       Then("The agent starts a below threshold notification")
       DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
+      BtnStartPage.continue()
 
       And("The agent selects the previous accounting period")
       BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
-      BtnAccountingPage.continueToNextPage()
+      BtnAccountingPage.continue()
       BtnDomesticOrMnePage.entityInAndOutUkYes()
       BtnCyaSubmitPage.onPageSubmitById()
 

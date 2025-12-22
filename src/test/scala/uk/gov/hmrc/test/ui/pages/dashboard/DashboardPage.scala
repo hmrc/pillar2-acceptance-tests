@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages.dashboard
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.helper.Find.findByCss
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object DashboardPage extends BasePage {
@@ -78,11 +77,9 @@ object DashboardPage extends BasePage {
     click(By.cssSelector(submitBTN))
   }
 
-  val clientIdText: String = ".homepage-title span:nth-of-type(2)"
+  val clientIdText: By = By.id(".homepage-title span:nth-of-type(2)")
 
-  def displayedClientId: String =
-    val fullText = findByCss(clientIdText).getText
-      fullText.replace("ID:", "").trim
+  def displayedClientId: String = getText(clientIdText).replace("ID:", "").trim
 
   def shouldShowClientId(plrId: String): Unit = {
     onPage()

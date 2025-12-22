@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.outstandingPayments
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object OnlinePaymentPages extends BasePage {
@@ -24,46 +25,46 @@ object OnlinePaymentPages extends BasePage {
 
   def enterPaymentAmountPage(): Unit = {
     onPageContains("http://localhost:9056/pay/enter-payment-amount?traceId=")
-    sendKeysById("amountToPay", "348")
-    clickByClassName(continue)
+    sendKeys(By.id("amountToPay"), "348")
+    continue()
   }
 
   def openBankingOrBACSPage(): Unit = {
     onPageContains("http://localhost:9056/pay/choose-open-banking-or-bacs?traceId=")
-    clickByClassName(continue)
+    continue()
   }
 
   def enterBankNamePage(): Unit = {
     onPage("http://localhost:7802/pay-by-bank/choose-bank")
-    sendKeysById("selectedBankId", "Chase")
-    clickByClassName(continue)
+    sendKeys(By.id("selectedBankId"), "Chase")
+    continue()
   }
 
   def enterEmailPage(): Unit = {
     onPage("http://localhost:7802/pay-by-bank/email")
-    sendKeysById("email", "payment_test@gmail.com")
-    clickByClassName(continue)
+    sendKeys(By.id("email"), "payment_test@gmail.com")
+    continue()
   }
 
   def checkYourDetailsPage(): Unit = {
     onPage("http://localhost:7802/pay-by-bank/check-your-details")
-    clickByClassName(continue)
+    continue()
   }
 
   def readyApprovePaymentPage(): Unit = {
     onPage("http://localhost:7802/pay-by-bank/get-ready-approve-this-payment")
-    clickByClassName(continue)
+    continue()
   }
 
   def selectBankLoginOption(): Unit = {
     onPage("http://localhost:7802/pay-by-bank/choose-bank-login")
-    clickById("bankLoginOption_2")
-    clickByClassName(continue)
+    click(By.id("bankLoginOption_2"))
+    continue()
   }
 
   def submitStubBankPaymentPage(): Unit = {
     onPageContains("http://localhost:9975/payments-stubs/open-banking/stub-bank/")
-    clickByClassName(continue)
+    continue()
   }
 
   def paymentCompletePage(): Unit = {

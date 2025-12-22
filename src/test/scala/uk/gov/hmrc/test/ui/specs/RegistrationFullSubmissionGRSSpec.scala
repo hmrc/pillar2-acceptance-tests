@@ -42,7 +42,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       TaskListPage.clickAddUltimateFilingMember()
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
-      UPEInitialGuidancePage.continueToNextPage()
+      UPEInitialGuidancePage.continue()
       UPERegisteredInUkPage.registeredInUkYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
@@ -56,21 +56,21 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       TaskListPage.clickAddFurtherGroupDetailsLink()
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
-      FDCheckYourAnswersPage.continueToNextPage()
+      FDCheckYourAnswersPage.continue()
 
       And("The user adds primary contact details")
       TaskListPage.clickAddContactDetailsLink()
-      ContactDetailsGuidancePage.continueToNextPage()
+      ContactDetailsGuidancePage.continue()
       ContactDetailsPrimaryNamePage.enterName()
       ContactDetailsPrimaryEmailPage.enterEmail()
       ContactDetailsPrimaryPhoneAsContactPage.selectNo()
       ContactDetailsSecondaryContactAddPage.selectNo()
       ContactAddressInputPage.enterAddressUK()
-      ContactDetailsCheckAnswersPage.continueToNextPage()
+      ContactDetailsCheckAnswersPage.continue()
 
       Then("The user reviews and submits")
       TaskListPage.clickReviewAndSubmitLink()
-      ReviewAnswersPage.continueToNextPage()
+      ReviewAnswersPage.continue()
 
       When("The user is presented with the Registration Complete page")
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
@@ -90,7 +90,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       TaskListPage.clickAddUltimateFilingMember()
 
       And("The user manually adds an Ultimate Parent Entity with a non-UK Address")
-      UPEInitialGuidancePage.continueToNextPage()
+      UPEInitialGuidancePage.continue()
       UPERegisteredInUkPage.registeredInUkNo()
       UPENamePage.enterName()
       UPEAddressPage.enterAddressNonUK()
@@ -98,7 +98,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       UPEEmailPage.enterEmail()
       UPEPhoneAsContactPage.selectYes()
       UPEPhoneInputPage.enterPhoneNumber()
-      UPECheckYourAnswersPage.continueToNextPage()
+      UPECheckYourAnswersPage.continue()
 
       And("The user adds a UK Limited Company as a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
@@ -113,19 +113,19 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       FDGroupAccountingPeriodPage.enterDates()
 
       Then("The user continues from further details to the task list")
-      FDCheckYourAnswersPage.continueToNextPage()
+      FDCheckYourAnswersPage.continue()
 
       And("The user adds primary contact details")
       TaskListPage.clickAddContactDetailsLink()
-      ContactDetailsGuidancePage.continueToNextPage()
+      ContactDetailsGuidancePage.continue()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
       ContactAddressInputPage.enterAddressUK()
-      ContactDetailsCheckAnswersPage.continueToNextPage()
+      ContactDetailsCheckAnswersPage.continue()
 
       Then("The user reviews and submits")
       TaskListPage.clickReviewAndSubmitLink()
-      ReviewAnswersPage.continueToNextPage()
+      ReviewAnswersPage.continue()
 
       When("The user is presented with the Registration Complete page")
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)

@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages.upe
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.helper.Find.findByCss
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPEEntityTypePage extends BasePage {
@@ -30,20 +29,18 @@ object UPEEntityTypePage extends BasePage {
   def selectEntityTypeUkLimitedCompany(): Unit = {
     onPage()
     click(By.id(ukLimitedCompany))
-    clickButtonByText(buttonSaveAndContinue)
+    continue()
   }
 
   def selectEntityTypeLimitedLiabilityPartnership(): Unit = {
     onPage()
     click(By.id(limitedLiabilityPartnership))
-    clickButtonByText(buttonSaveAndContinue)
+    continue()
   }
 
   def selectEntityTypeCompanyTypeNotListed(): Unit = {
     onPage()
     click(By.id(companyTypeNotListed))
-    clickButtonByText(buttonSaveAndContinue)
+    continue()
   }
-
-  def clickContinue(): Unit = findByCss(continue).click()
 }

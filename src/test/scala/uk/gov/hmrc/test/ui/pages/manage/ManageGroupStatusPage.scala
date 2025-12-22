@@ -28,12 +28,12 @@ object ManageGroupStatusPage extends BasePage {
   def selectOnlyUk(): Unit = {
     onPage()
     click(onlyUk)
-    clickByClassName(continue)
+    continue()
   }
 
   def selectUkAndNonUk(): Unit = {
     onPage(s"${baseUrl}further-details/change-group-status")
     click(ukAndNonUk)
-    clickByClassName(continue)
+    continue()
   }
 }

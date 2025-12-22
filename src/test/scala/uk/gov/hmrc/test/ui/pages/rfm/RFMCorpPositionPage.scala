@@ -16,23 +16,24 @@
 
 package uk.gov.hmrc.test.ui.pages.rfm
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMCorpPositionPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/corporate-position"
 
-  private val newNominatedFilingMember = "value_1"
-  private val ultimateParentEntity     = "value_0"
+  private val newNominatedFilingMember: By = By.id("value_1")
+  private val ultimateParentEntity: By     = By.id("value_0")
 
   def clickNewNominatedFilingMember(): Unit = {
     onPage()
-    clickById(newNominatedFilingMember)
-    clickByClassName(continue)
+    click(newNominatedFilingMember)
+    continue()
   }
 
   def clickUltimateParentEntity(): Unit = {
     onPage()
-    clickById(ultimateParentEntity)
-    clickByClassName(continue)
+    click(ultimateParentEntity)
+    continue()
   }
 }
