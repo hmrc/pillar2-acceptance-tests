@@ -36,7 +36,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       )
 
       When("The user enters PLRId and dates")
-      RFMEnterPillar2IdPage.enterPLRId("XMPLR0123456789")
+      RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
       RFMRegistrationDatePage.enterDates("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
@@ -122,7 +122,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       )
 
       When("The user enters PLRId and dates")
-      RFMEnterPillar2IdPage.enterPLRId("XMPLR0123456789")
+      RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
       RFMRegistrationDatePage.enterDates("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 

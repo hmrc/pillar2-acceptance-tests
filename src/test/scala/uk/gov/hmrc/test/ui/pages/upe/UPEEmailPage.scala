@@ -20,21 +20,10 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPEEmailPage extends BasePage {
-  override val url: String = s"${baseUrl}business-matching/ultimate-parent/no-id/input-email"
+  override val url: String       = s"${baseUrl}business-matching/ultimate-parent/no-id/input-email"
+  override val changeUrl: String = s"${baseUrl}business-matching/ultimate-parent/no-id/change-input-email"
 
-  override val textInputField: By       = By.id("emailAddress")
-  private val emailValue: String        = "abc@def.com"
-  private val emailUpdatedValue: String = "def@abc.com"
-
-  def enterEmail(): Unit = {
-    onPage()
-    sendKeys(textInputField, emailValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def updateEmail(): Unit = {
-    onPage(s"$baseUrl" + "business-matching/ultimate-parent/no-id/change-input-email")
-    sendKeys(textInputField, emailUpdatedValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
+  override val textInputField: By      = By.id("emailAddress")
+  override val textValue: String       = "abc@def.com"
+  override val textUpdateValue: String = "def@abc.com"
 }

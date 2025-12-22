@@ -43,7 +43,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       And("The user requests a repayment using a UK bank account")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountUK()
       RepaymentBankAccountUKPage.enterBankDetails(validBankDetails)
@@ -56,7 +56,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
 
       And("The user amends refund amount via the Check your answers page")
       RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeRefundAmount)
-      RepaymentAmountPage.updateAmount()
+      RepaymentAmountPage.updateText()
 
       And("The user amends refund reason via the Check your answers page")
       RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeRefundReason)
@@ -98,7 +98,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       And("The user requests a repayment using a Non-UK bank account")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountNonUK()
       RepaymentBankAccountNonUKPage.enterBankDetails()
@@ -139,13 +139,13 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
+      ASAPillar2InputPage.enterText("XMPLR0012345674")
       ASAConfirmationPage.continueToNextPage()
 
       And("The agent requests a repayment using a UK bank account")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.clickTypeOfAccountUK()
       RepaymentBankAccountUKPage.enterBankDetails(validBankDetails)

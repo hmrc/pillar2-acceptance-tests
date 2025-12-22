@@ -93,7 +93,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999995")
+      ASAPillar2InputPage.enterText("XEPLR9999999995")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")

@@ -19,20 +19,9 @@ package uk.gov.hmrc.test.ui.pages.contactDetails
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ContactDetailsPrimaryNamePage extends BasePage {
-  override val url: String = s"${baseUrl}contact-details/input-name"
+  override val url: String       = s"${baseUrl}contact-details/input-name"
+  override val changeUrl: String = s"${baseUrl}contact-details/change-input-name"
 
-  private val nameValue: String        = "Contact Name"
-  private val nameUpdatedValue: String = "Updated Contact Name"
-
-  def enterName(): Unit = {
-    onPage()
-    sendKeys(textInputField, nameValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def updateName(): Unit = {
-    onPage(s"${baseUrl}contact-details/change-input-name")
-    sendKeys(textInputField, nameUpdatedValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
+  override val textValue: String       = "Contact Name"
+  override val textUpdateValue: String = "Updated Contact Name"
 }

@@ -83,7 +83,7 @@ class BTNSubmissionSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999991")
+      ASAPillar2InputPage.enterText("XEPLR9999999991")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent submits a below threshold notification")
@@ -128,7 +128,7 @@ class BTNSubmissionSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999994")
+      ASAPillar2InputPage.enterText("XEPLR9999999994")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")
@@ -172,7 +172,7 @@ class BTNSubmissionSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999994")
+      ASAPillar2InputPage.enterText("XEPLR9999999994")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")

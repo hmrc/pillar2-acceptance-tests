@@ -88,7 +88,7 @@ class RFMErrorSpec extends BaseSpec {
 
       Then("The user adds contact details")
       RFMContactGuidancePage.continueToNextPage()
-      RFMContactPrimaryNamePage.enterText(RFMContactPrimaryNamePage.aPIErrorValue)
+      RFMContactPrimaryNamePage.enterTextAPIError()
       RFMContactPrimaryEmailPage.enterText()
       RFMContactPrimaryByPhonePage.selectNo()
       RFMContactSecondaryAddPage.selectNo()

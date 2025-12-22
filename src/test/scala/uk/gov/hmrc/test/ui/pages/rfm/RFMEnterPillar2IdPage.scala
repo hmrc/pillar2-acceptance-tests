@@ -20,11 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMEnterPillar2IdPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/security/enter-pillar2-id"
-  val pillar2TopUpTaxId    = "#value"
-
-  def enterPLRId(pLRIdValue: String): Unit = {
-    onPage()
-    sendKeys(textInputField, pLRIdValue)
-    clickButtonByText(buttonContinue)
-  }
 }

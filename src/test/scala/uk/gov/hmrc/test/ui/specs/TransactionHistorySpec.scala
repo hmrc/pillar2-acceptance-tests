@@ -100,7 +100,7 @@ class TransactionHistorySpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XMPLR0000000122")
+      ASAPillar2InputPage.enterText("XMPLR0000000122")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent accesses transaction history and checks two different pages")

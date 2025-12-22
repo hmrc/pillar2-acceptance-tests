@@ -107,7 +107,7 @@ class ManageContactDetailsSpec extends BaseSpec {
 
       And("The user amends primary contact name")
       ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactName)
-      ManageContactDetailsPrimaryNamePage.enterText(ManageContactDetailsPrimaryNamePage.textValueETMPError)
+      ManageContactDetailsPrimaryNamePage.enterTextETMPError()
 
       When("The user saves the changes")
       ManageContactDetailsSummaryPage.onPageSubmitById()
