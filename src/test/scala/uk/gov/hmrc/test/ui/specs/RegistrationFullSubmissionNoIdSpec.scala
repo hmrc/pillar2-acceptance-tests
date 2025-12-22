@@ -73,8 +73,8 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       TaskListPage.clickAddFilingMemberLink()
 
       When("The user adds a Nominated Filing Member with a UK Address")
-      NFMRegistrationPage.nominatedFilingMemberYes()
-      NFMRegisteredInUkPage.registeredInUkYes()
+      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeNotListed()
       NFMNamePage.enterName()
       NFMAddressPage.enterAddressUK()
@@ -113,7 +113,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
       And("The user amends group status via the Check your answers page")
       FDCheckYourAnswersPage.clickChangeGroupStatusLink()
-      FDGroupStatusPage.selectUkAndNonUk()
+      FDGroupStatusPage.updateToUkAndNonUk()
 
       And("The user amends the accounting period via the Check your answers page")
       FDCheckYourAnswersPage.clickChangeAccountingPeriodLink()

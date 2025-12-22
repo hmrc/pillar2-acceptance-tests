@@ -25,15 +25,6 @@ object ManageGroupStatusPage extends BasePage {
   private val onlyUk: By     = By.id("value_0")
   private val ukAndNonUk: By = By.id("value_1")
 
-  def selectOnlyUk(): Unit = {
-    onPage()
-    click(onlyUk)
-    continue()
-  }
-
-  def selectUkAndNonUk(): Unit = {
-    onPage(s"${baseUrl}further-details/change-group-status")
-    click(ukAndNonUk)
-    continue()
-  }
+  def selectOnlyUk(): Unit     = selectRadio(onlyUk)
+  def selectUkAndNonUk(): Unit = selectRadio(ukAndNonUk)
 }

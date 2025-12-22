@@ -80,7 +80,7 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as new NFM")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.clickNewNominatedFilingMember()
+      RFMCorpPositionPage.selectNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
@@ -121,7 +121,7 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user selects a new NFM and enters details")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.clickNewNominatedFilingMember()
+      RFMCorpPositionPage.selectNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectNo()
       RFMNFMNamePage.enterText()
@@ -176,7 +176,7 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user selects a Limited Liability Partnership as new NFM with Type Mismatch")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.clickNewNominatedFilingMember()
+      RFMCorpPositionPage.selectNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeLimitedLiabilityPartnership()
@@ -203,7 +203,7 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user selects a Limited Liability Partnership as new NFM with Type Mismatch")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.clickNewNominatedFilingMember()
+      RFMCorpPositionPage.selectNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeLimitedLiabilityPartnership()

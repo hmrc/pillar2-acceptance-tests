@@ -26,21 +26,7 @@ object RFMGRSEntityTypePage extends BasePage {
   private val limitedLiabilityPartnership: By = By.id("value_1")
   private val companyTypeNotListed: By        = By.id("value_2")
 
-  def selectEntityTypeUkLimitedCompany(): Unit = {
-    onPage()
-    click(ukLimitedCompany)
-    continue()
-  }
-
-  def selectEntityTypeLimitedLiabilityPartnership(): Unit = {
-    onPage()
-    click(limitedLiabilityPartnership)
-    continue()
-  }
-
-  def selectEntityTypeNotListed(): Unit = {
-    onPage()
-    click(companyTypeNotListed)
-    continue()
-  }
+  def selectEntityTypeUkLimitedCompany(): Unit            = selectRadio(ukLimitedCompany)
+  def selectEntityTypeLimitedLiabilityPartnership(): Unit = selectRadio(limitedLiabilityPartnership)
+  def selectEntityTypeNotListed(): Unit                   = selectRadio(companyTypeNotListed)
 }

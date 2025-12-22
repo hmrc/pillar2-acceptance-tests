@@ -55,8 +55,8 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Failed Party Type Mismatch")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberYes()
-      NFMRegisteredInUkPage.registeredInUkYes()
+      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickRegistrationFailedPartyTypeMismatch()
 
@@ -96,8 +96,8 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Generic Error")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberYes()
-      NFMRegisteredInUkPage.registeredInUkYes()
+      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickRegistrationFailedGeneric()
 
@@ -137,8 +137,8 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Identifiers Mismatch")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberYes()
-      NFMRegisteredInUkPage.registeredInUkYes()
+      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickRegistrationNotCalledIdentifierMismatch()
 
@@ -178,8 +178,8 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with BV failed")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberYes()
-      NFMRegisteredInUkPage.registeredInUkYes()
+      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickRegistrationNotCalledBvFailed()
 

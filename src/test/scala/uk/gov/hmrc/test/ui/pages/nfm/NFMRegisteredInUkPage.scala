@@ -20,10 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object NFMRegisteredInUkPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/filing-member/registered-in-uk"
-
-  def registeredInUkYes(): Unit = {
-    onPage()
-    click(yesRadioId)
-    click(submitButtonId)
-  }
 }

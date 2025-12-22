@@ -41,7 +41,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
 
       And("The user selects a UK Limited Company as new NFM with BV Enabled")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.clickNewNominatedFilingMember()
+      RFMCorpPositionPage.selectNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
@@ -82,7 +82,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
 
       And("The user selects a UK Limited Company as new NFM with BV Disabled")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.clickNewNominatedFilingMember()
+      RFMCorpPositionPage.selectNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()

@@ -22,25 +22,11 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object NFMEntityTypePage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/filing-member/uk-based/entity-type"
 
-  private val ukLimitedCompany            = "value_0"
-  private val limitedLiabilityPartnership = "value_1"
-  private val companyTypeNotListed        = "value_2"
+  private val ukLimitedCompany            = By.id("value_0")
+  private val limitedLiabilityPartnership = By.id("value_1")
+  private val companyTypeNotListed        = By.id("value_2")
 
-  def enterEntityTypeUkLimitedCompany(): Unit = {
-    onPage()
-    click(By.id(ukLimitedCompany))
-    clickButtonByText(buttonContinue)
-  }
-
-  def enterEntityTypeLimitedLiabilityPartnership(): Unit = {
-    onPage()
-    click(By.id(limitedLiabilityPartnership))
-    clickButtonByText(buttonContinue)
-  }
-
-  def enterEntityTypeNotListed(): Unit = {
-    onPage()
-    click(By.id(companyTypeNotListed))
-    clickButtonByText(buttonContinue)
-  }
+  def enterEntityTypeUkLimitedCompany(): Unit            = selectRadio(ukLimitedCompany)
+  def enterEntityTypeLimitedLiabilityPartnership(): Unit = selectRadio(limitedLiabilityPartnership)
+  def enterEntityTypeNotListed(): Unit                   = selectRadio(companyTypeNotListed)
 }

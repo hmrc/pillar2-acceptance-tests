@@ -19,6 +19,5 @@ package uk.gov.hmrc.test.ui.pages.rfm
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMNoReturnBackErrorPage extends BasePage {
-  //  TODO - Journey to add as part of PIL-2580
   override val url: String = s"${baseUrl}replace-filing-member/error/cannot-return"
 }

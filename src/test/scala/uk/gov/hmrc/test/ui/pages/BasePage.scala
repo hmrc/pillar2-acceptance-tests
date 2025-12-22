@@ -114,6 +114,13 @@ trait BasePage extends Matchers with PageObject {
     continue()
   }
 
+  def selectRadio(radioButton: By, url: String = this.url): Unit = {
+    onPage(url)
+    assertLocatorPresent(radioButton)
+    click(radioButton)
+    continue()
+  }
+
   def clickLink(link: String): Unit = {
     onPage()
     click(By.cssSelector(link))

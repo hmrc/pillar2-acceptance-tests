@@ -49,7 +49,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberNo()
+      NFMRegistrationPage.selectNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
@@ -102,8 +102,8 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberYes()
-      NFMRegisteredInUkPage.registeredInUkYes()
+      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickRegistrationSuccessBvEnabled()
 

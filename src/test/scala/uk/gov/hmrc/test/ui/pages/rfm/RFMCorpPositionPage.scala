@@ -25,15 +25,6 @@ object RFMCorpPositionPage extends BasePage {
   private val newNominatedFilingMember: By = By.id("value_1")
   private val ultimateParentEntity: By     = By.id("value_0")
 
-  def clickNewNominatedFilingMember(): Unit = {
-    onPage()
-    click(newNominatedFilingMember)
-    continue()
-  }
-
-  def clickUltimateParentEntity(): Unit = {
-    onPage()
-    click(ultimateParentEntity)
-    continue()
-  }
+  def selectNewNominatedFilingMember(): Unit = selectRadio(newNominatedFilingMember)
+  def selectUltimateParentEntity(): Unit     = selectRadio(ultimateParentEntity)
 }

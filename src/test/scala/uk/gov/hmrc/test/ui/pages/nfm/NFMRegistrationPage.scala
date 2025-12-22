@@ -25,15 +25,6 @@ object NFMRegistrationPage extends BasePage {
   private val filingMemberYes: By = By.id("nominateFilingMember_0")
   private val filingMemberNo: By  = By.id("nominateFilingMember_1")
 
-  def nominatedFilingMemberYes(): Unit = {
-    onPage()
-    click(filingMemberYes)
-    click(submitButtonId)
-  }
-
-  def nominatedFilingMemberNo(): Unit = {
-    onPage()
-    click(filingMemberNo)
-    click(submitButtonId)
-  }
+  def selectNominatedFilingMemberYes(): Unit = selectRadio(filingMemberYes)
+  def selectNominatedFilingMemberNo(): Unit  = selectRadio(filingMemberNo)
 }

@@ -55,7 +55,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberNo()
+      NFMRegistrationPage.selectNominatedFilingMemberNo()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
@@ -101,7 +101,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberNo()
+      NFMRegistrationPage.selectNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
@@ -163,7 +163,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberNo()
+      NFMRegistrationPage.selectNominatedFilingMemberNo()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()

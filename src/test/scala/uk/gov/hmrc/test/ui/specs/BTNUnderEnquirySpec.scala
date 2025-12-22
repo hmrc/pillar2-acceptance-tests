@@ -59,7 +59,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       Then("The user reaches the BTN under enquiry page and continues BTN submission")
       BtnUnderEnquiryPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnDomesticOrMnePage.selectEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       And("The user is on the Below-Threshold Notification successful confirmation page")
@@ -114,7 +114,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       And("The agent continue from BtnUnderEnquiryPage ")
       BtnUnderEnquiryPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnDomesticOrMnePage.selectEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       And("The agent is on the Below-Threshold Notification successful confirmation page")

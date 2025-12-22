@@ -25,16 +25,6 @@ object RepaymentMethodPage extends BasePage {
   val typeOfAccountUK: By    = By.id("value_0")
   val typeOfAccountNonUK: By = By.id("value_1")
 
-  def clickTypeOfAccountUK(): Unit = {
-    onPage()
-    click(typeOfAccountUK)
-    continue()
-  }
-
-  def clickTypeOfAccountNonUK(): Unit = {
-    onPage()
-    click(typeOfAccountNonUK)
-    continue()
-  }
-
+  def clickTypeOfAccountUK(): Unit    = selectRadio(typeOfAccountUK)
+  def clickTypeOfAccountNonUK(): Unit = selectRadio(typeOfAccountNonUK)
 }
