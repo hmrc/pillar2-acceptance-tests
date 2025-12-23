@@ -66,7 +66,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       When("The user returns to the dashboard")
-      BtnConfirmationPage.clickReturnToHomepageLink()
+      BtnConfirmationPage.clickLinkReturnToHomepage()
       DashboardPage.onPage()
     }
 
@@ -121,7 +121,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       When("The agent returns to the dashboard")
-      BtnConfirmationPage.clickReturnToHomepageLink()
+      BtnConfirmationPage.clickLinkReturnToHomepage()
       DashboardPage.onPage()
     }
   }

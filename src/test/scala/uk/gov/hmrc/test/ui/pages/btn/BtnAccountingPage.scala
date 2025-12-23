@@ -21,7 +21,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnAccountingPage extends BasePage {
   override val url: String          = s"${baseUrl}below-threshold-notification/accounting-period"
-  private val accountDetailsSummary = "a[href*='/account-details/summary']"
+  
+  private val accountDetailsSummary = By.cssSelector("a[href*='/account-details/summary']")
 
   private val startDayId   = By.id("startDate.day")
   private val startMonthId = By.id("startDate.month")
@@ -30,10 +31,7 @@ object BtnAccountingPage extends BasePage {
   private val endMonthId   = By.id("endDate.month")
   private val endYearId    = By.id("endDate.year")
 
-  def clickAccountDetailsSummaryLink(): Unit = {
-    onPage()
-    click(By.cssSelector(accountDetailsSummary))
-  }
+  def clickLinkAccountDetailsSummary(): Unit = clickLink(accountDetailsSummary)
 
   def updateDates(): Unit = {
     onPage(s"$baseUrl" + "manage-account/account-details/change-accounting-period")

@@ -22,14 +22,15 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object UPECheckYourAnswersPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/ultimate-parent/no-id/check-answers"
 
-  val changeName         = "a[href*='/change-input-name']"
-  val changeAddress      = "a[href*='/change-input-address']"
-  val changeContactName  = "a[href*='/change-input-business-name']"
-  val changeEmailAddress = "a[href*='/change-input-email']"
-  val changePhoneNumber  = "a[href*='/change-input-phone']"
+  private val changeNameLink: By         = By.cssSelector("a[href*='/change-input-name']")
+  private val changeAddressLink: By      = By.cssSelector("a[href*='/change-input-address']")
+  private val changeContactNameLink: By  = By.cssSelector("a[href*='/change-input-business-name']")
+  private val changeEmailAddressLink: By = By.cssSelector("a[href*='/change-input-email']")
+  private val changePhoneNumberLink: By  = By.cssSelector("a[href*='/change-input-phone']")
 
-  def clickChangeLink(changeLink: String): Unit = {
-    onPage()
-    click(By.cssSelector(changeLink))
-  }
+  def clickLinkChangeName(): Unit         = clickLink(changeNameLink)
+  def clickLinkChangeAddress(): Unit      = clickLink(changeAddressLink)
+  def clickLinkChangeContactName(): Unit  = clickLink(changeContactNameLink)
+  def clickLinkChangeEmailAddress(): Unit = clickLink(changeEmailAddressLink)
+  def clickLinkChangePhoneNumber(): Unit  = clickLink(changePhoneNumberLink)
 }

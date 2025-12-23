@@ -22,14 +22,15 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RepaymentCYAPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/check-answers"
 
-  val changeRefundAmount = "a[href*='/change-amount']"
-  val changeRefundReason = "a[href*='/change-reason']"
-  val changeContactName  = "a[href*='/change-input-name']"
-  val changeContactEmail = "a[href*='/change-input-email']"
-  val changePhoneNumber  = "a[href*='/change-input-phone']"
+  private val changeRefundAmountLink: By = By.cssSelector("a[href*='/change-amount']")
+  private val changeRefundReasonLink: By = By.cssSelector("a[href*='/change-reason']")
+  private val changeContactNameLink: By  = By.cssSelector("a[href*='/change-input-name']")
+  private val changeContactEmailLink: By = By.cssSelector("a[href*='/change-input-email']")
+  private val changePhoneNumberLink: By  = By.cssSelector("a[href*='/change-input-phone']")
 
-  def clickChangeLink(changeLink: String): Unit = {
-    onPage()
-    click(By.cssSelector(changeLink))
-  }
+  def clickLinkChangeRefundAmount(): Unit = clickLink(changeRefundAmountLink)
+  def clickLinkChangeRefundReason(): Unit = clickLink(changeRefundReasonLink)
+  def clickLinkChangeContactName(): Unit  = clickLink(changeContactNameLink)
+  def clickLinkChangeContactEmail(): Unit = clickLink(changeContactEmailLink)
+  def clickLinkChangePhoneNumber(): Unit  = clickLink(changePhoneNumberLink)
 }

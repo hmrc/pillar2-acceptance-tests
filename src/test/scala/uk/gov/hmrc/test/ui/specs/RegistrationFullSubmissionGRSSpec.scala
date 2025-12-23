@@ -39,7 +39,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
@@ -48,18 +48,18 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
 
       And("The user doesn't add a Nominated Filing Member")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryNamePage.enterText()
       ContactDetailsPrimaryEmailPage.enterText()
@@ -69,7 +69,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")
@@ -87,7 +87,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user manually adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
@@ -101,14 +101,14 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       UPECheckYourAnswersPage.continueToNextPage()
 
       And("The user adds a UK Limited Company as a Nominated Filing Member")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickRegistrationSuccessBvEnabled()
 
       And("The user adds further details")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
 
@@ -116,7 +116,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
@@ -124,7 +124,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")

@@ -121,9 +121,10 @@ trait BasePage extends Matchers with PageObject {
     continue()
   }
 
-  def clickLink(link: String): Unit = {
+  def clickLink(link: By): Unit = {
     onPage()
-    click(By.cssSelector(link))
+    assertLocatorPresent(link)
+    click(link)
   }
 
   def clickBackLink(url: String = this.url): Unit = {

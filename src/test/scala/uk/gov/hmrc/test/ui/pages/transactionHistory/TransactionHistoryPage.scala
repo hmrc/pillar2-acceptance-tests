@@ -16,10 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.transactionHistory
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object TransactionHistoryPage extends BasePage {
   override val url: String = s"${baseUrl}payment/history"
 
-  val pageTwoLink = "a[href*='history?page=2']"
+  private val pageTwoLink: By = By.cssSelector("a[href*='history?page=2']")
+
+  def clickLinkPageTwo(): Unit = clickLink(pageTwoLink)
 }

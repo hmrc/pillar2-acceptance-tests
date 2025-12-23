@@ -46,7 +46,7 @@ class TransactionHistorySpec extends BaseSpec {
 
       Then("The user accesses transaction history and checks two different pages")
       DashboardPage.clickPaymentHistoryLink()
-      TransactionHistoryPage.clickLink(TransactionHistoryPage.pageTwoLink)
+      TransactionHistoryPage.clickLinkPageTwo()
       TransactionHistorySecondPage.onPage()
     }
 
@@ -105,7 +105,7 @@ class TransactionHistorySpec extends BaseSpec {
 
       Then("The agent accesses transaction history and checks two different pages")
       DashboardPage.clickPaymentHistoryLink()
-      TransactionHistoryPage.clickLink(TransactionHistoryPage.pageTwoLink)
+      TransactionHistoryPage.clickLinkPageTwo()
       TransactionHistorySecondPage.onPage()
     }
   }

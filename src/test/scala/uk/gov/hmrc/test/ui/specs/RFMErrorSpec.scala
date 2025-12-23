@@ -59,7 +59,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMCYAPage.continueToNextPage()
 
       Then("The user is taken to the no match error page and returns to the PLRId page")
-      RFMNoMatchErrorPage.clickLink(RFMNoMatchErrorPage.returnToStartPageLink)
+      RFMNoMatchErrorPage.clickLinkReturnToStartPage()
       RFMEnterPillar2IdPage.onPage()
     }
 
@@ -100,7 +100,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageSubmitById()
 
       Then("The user is presented with the API Error page and returns to CYA")
-      RFMAmendAPIErrorPage.clickLink(RFMAmendAPIErrorPage.returnToCheckYourAnswersLink)
+      RFMAmendAPIErrorPage.clickLinkReturnToCheckYourAnswers()
       RFMFinalReviewCYAPage.onPage()
     }
 
@@ -144,7 +144,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMContactAddressPage.enterAddressUK()
 
       Then("The selects yes to adding a secondary contact via the check your answers page")
-      RFMFinalReviewCYAPage.clickLink(RFMFinalReviewCYAPage.changeSecondaryContact)
+      RFMFinalReviewCYAPage.clickLinkChangeSecondaryContact()
       RFMContactSecondaryAddPage.changeToYes()
 
       And("The user returns to the check your answers page without entering secondary contact details")
@@ -155,7 +155,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageSubmitById()
 
       Then("The user is presented with the incomplete task page and returns to CYA")
-      RFMIncompleteErrorPage.clickLink(RFMIncompleteErrorPage.returnToCheckYourAnswersLink)
+      RFMIncompleteErrorPage.clickLinkReturnToCheckYourAnswers()
       RFMFinalReviewCYAPage.onPage()
     }
 

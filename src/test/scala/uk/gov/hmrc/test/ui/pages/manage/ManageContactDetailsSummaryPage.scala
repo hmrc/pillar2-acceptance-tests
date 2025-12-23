@@ -16,19 +16,32 @@
 
 package uk.gov.hmrc.test.ui.pages.manage
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.manage.ManageAccountsSummaryPage.{changeGroupStatusLink, clickLink}
 
 object ManageContactDetailsSummaryPage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/contact-details/summary"
 
-  val changePrimaryContactName             = "a[href*='/change-input-name']"
-  val changePrimaryContactEmail            = "a[href*='/change-input-email']"
-  val changePrimaryContactPhoneAsContact   = "a[href*='/change-phone']"
-  val changePrimaryContactPhoneNumber      = "a[href*='/change-input-phone']"
-  val changeSecondaryContact               = "a[href*='/change-second-contact']"
-  val changeSecondaryContactName           = "a[href*='/change-second-input-name']"
-  val changeSecondaryContactEmail          = "a[href*='/change-second-input-email']"
-  val changeSecondaryContactPhoneAsContact = "a[href*='/change-second-phone']"
-  val changeSecondaryContactPhoneNumber    = "a[href*='/change-second-input-phone']"
-  val changeAddress                        = "a[href*='/address/change-input']"
+  private val changePrimaryContactNameLink: By             = By.cssSelector("a[href*='/change-input-name']")
+  private val changePrimaryContactEmailLink: By            = By.cssSelector("a[href*='/change-input-email']")
+  private val changePrimaryContactPhoneAsContactLink: By   = By.cssSelector("a[href*='/change-phone']")
+  private val changePrimaryContactPhoneNumberLink: By      = By.cssSelector("a[href*='/change-input-phone']")
+  private val changeSecondaryContactLink: By               = By.cssSelector("a[href*='/change-second-contact']")
+  private val changeSecondaryContactNameLink: By           = By.cssSelector("a[href*='/change-second-input-name']")
+  private val changeSecondaryContactEmailLink: By          = By.cssSelector("a[href*='/change-second-input-email']")
+  private val changeSecondaryContactPhoneAsContactLink: By = By.cssSelector("a[href*='/change-second-phone']")
+  private val changeSecondaryContactPhoneNumberLink: By    = By.cssSelector("a[href*='/change-second-input-phone']")
+  private val changeAddressLink: By                        = By.cssSelector("a[href*='/address/change-input']")
+
+  def clickLinkChangePrimaryContactName(): Unit             = clickLink(changePrimaryContactNameLink)
+  def clickLinkChangePrimaryContactEmail(): Unit            = clickLink(changePrimaryContactEmailLink)
+  def clickLinkChangePrimaryContactPhoneAsContact(): Unit   = clickLink(changePrimaryContactPhoneAsContactLink)
+  def clickLinkChangePrimaryContactPhoneNumber(): Unit      = clickLink(changePrimaryContactPhoneNumberLink)
+  def clickLinkChangeSecondaryContact(): Unit               = clickLink(changeSecondaryContactLink)
+  def clickLinkChangeSecondaryContactName(): Unit           = clickLink(changeSecondaryContactNameLink)
+  def clickLinkChangeSecondaryContactEmail(): Unit          = clickLink(changeSecondaryContactEmailLink)
+  def clickLinkChangeSecondaryContactPhoneAsContact(): Unit = clickLink(changeSecondaryContactPhoneAsContactLink)
+  def clickLinkChangeSecondaryContactPhoneNumber(): Unit    = clickLink(changeSecondaryContactPhoneNumberLink)
+  def clickLinkChangeAddress(): Unit                        = clickLink(changeAddressLink)
 }

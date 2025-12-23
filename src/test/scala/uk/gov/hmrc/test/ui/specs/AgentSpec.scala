@@ -55,7 +55,7 @@ class AgentSpec extends BaseSpec {
       ASAPillar2InputPage.enterText("XEPLR0123456500")
 
       Then("The agent is presented with the no match error page and returns to PLRId page")
-      ASANoMatchErrorPage.clickLink(ASANoMatchErrorPage.plrIDLink)
+      ASANoMatchErrorPage.clickLinkPlrID()
       ASAPillar2InputPage.onPage()
     }
 
@@ -90,7 +90,7 @@ class AgentSpec extends BaseSpec {
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent is presented with the not authorised error page")
-      ASANotAuthorisedPage.clickLink(ASANotAuthorisedPage.requestAuthLink)
+      ASANotAuthorisedPage.clickLinkRequestAuth()
       ASAHomePage.onPage()
     }
 

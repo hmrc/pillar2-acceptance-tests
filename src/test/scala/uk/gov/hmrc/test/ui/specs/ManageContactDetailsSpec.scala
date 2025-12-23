@@ -49,31 +49,31 @@ class ManageContactDetailsSpec extends BaseSpec {
       ManageContactDetailsSummaryPage.onPage()
 
       And("The user amends primary contact name")
-      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactName)
+      ManageContactDetailsSummaryPage.clickLinkChangePrimaryContactName()
       ManageContactDetailsPrimaryNamePage.enterText()
 
       And("The user amends primary contact email address")
-      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactEmail)
+      ManageContactDetailsSummaryPage.clickLinkChangePrimaryContactEmail()
       ManageContactDetailsPrimaryEmailPage.enterText()
 
       And("The user amends primary contact phone number")
-      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactPhoneNumber)
+      ManageContactDetailsSummaryPage.clickLinkChangePrimaryContactPhoneNumber()
       ManageContactDetailsPrimaryPhoneInputPage.enterText()
 
       And("The user amends secondary contact name")
-      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changeSecondaryContactName)
+      ManageContactDetailsSummaryPage.clickLinkChangeSecondaryContactName()
       ManageContactDetailsSecondaryNamePage.enterText()
 
       And("The user amends secondary contact email address")
-      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changeSecondaryContactEmail)
+      ManageContactDetailsSummaryPage.clickLinkChangeSecondaryContactEmail()
       ManageContactDetailsSecondaryEmailPage.enterText()
 
       And("The user amends secondary contact phone number")
-      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changeSecondaryContactPhoneNumber)
+      ManageContactDetailsSummaryPage.clickLinkChangeSecondaryContactPhoneNumber()
       ManageContactDetailsSecondaryPhoneInputPage.enterText()
 
       And("The user amends contact address")
-      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changeAddress)
+      ManageContactDetailsSummaryPage.clickLinkChangeAddress()
       ManageContactDetailsAddressPage.updateAddressUK()
 
       When("The user saves the changes")
@@ -106,7 +106,7 @@ class ManageContactDetailsSpec extends BaseSpec {
       ManageContactDetailsSummaryPage.onPage()
 
       And("The user amends primary contact name")
-      ManageContactDetailsSummaryPage.clickLink(ManageContactDetailsSummaryPage.changePrimaryContactName)
+      ManageContactDetailsSummaryPage.clickLinkChangePrimaryContactName()
       ManageContactDetailsPrimaryNamePage.enterTextETMPError()
 
       When("The user saves the changes")

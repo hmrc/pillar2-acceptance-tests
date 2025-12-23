@@ -22,10 +22,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RFMConfirmationPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/review-submit/confirmation"
 
-  private val homePageLink = "a[href*='/pillar2-top-up-tax-home']"
+  private val homePageLink: By = By.cssSelector("a[href*='/pillar2-top-up-tax-home']")
 
-  def clickHomePageLink(): Unit = {
-    onPage()
-    click(By.cssSelector(homePageLink))
-  }
+  def clickLinkHomePage(): Unit = clickLink(homePageLink)
 }

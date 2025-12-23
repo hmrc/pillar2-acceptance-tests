@@ -40,7 +40,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
@@ -54,17 +54,17 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       UPECheckYourAnswersPage.continueToNextPage()
 
       And("The user doesn't add a Nominated Filing Member")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectNominatedFilingMemberNo()
 
       And("The user adds further details")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
@@ -72,7 +72,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Subscription Failure error page")
@@ -91,7 +91,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
@@ -100,18 +100,18 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
 
       And("The user doesn't add a Nominated Filing Member")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryNamePage.enterText()
       ContactDetailsPrimaryEmailPage.enterText()
@@ -120,7 +120,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       ContactAddressInputPage.enterAddressUK()
 
       And("The user amends the Primary contact as having a phone number via the Check your answers page")
-      ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changePrimaryContactByPhone)
+      ContactDetailsCheckAnswersPage.clickLinkChangePrimaryContactByPhone()
       ContactDetailsPrimaryPhoneAsContactPage.selectYes(ContactDetailsPrimaryPhoneAsContactPage.changeUrl)
 
       And("The user leaves check your answers without adding a phone number")
@@ -129,7 +129,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Incomplete Data Submission error page")
@@ -148,7 +148,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
@@ -162,17 +162,17 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       UPECheckYourAnswersPage.continueToNextPage()
 
       And("The user doesn't add a Nominated Filing Member")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectNominatedFilingMemberNo()
 
       And("The user adds further details")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
@@ -180,7 +180,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the API error page")

@@ -52,13 +52,13 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentBankAccountUKPage.enterBankDetails(couldNotConfirmBankDetails)
 
       When("The user is taken to the could not confirm bank details error page")
-      RepaymentCouldNotConfirmErrorPage.clickReturnToBankDetailsLink()
+      RepaymentCouldNotConfirmErrorPage.clickLinkReturnToBankDetails()
 
       Then("The user returns to the UK bank account screen and submits wrong bank details (bankDetailsError)")
       RepaymentBankAccountUKPage.enterBankDetails(bankDetailsError)
 
       When("The user is taken to the bank details error page")
-      RepaymentBankDetailsErrorPage.clickReturnToBankDetailsLink()
+      RepaymentBankDetailsErrorPage.clickLinkReturnToBankDetails()
 
       Then("The user returns to the UK bank account screen and submits wrong bank details (barsError)")
       RepaymentBankAccountUKPage.enterBankDetails(barsError)

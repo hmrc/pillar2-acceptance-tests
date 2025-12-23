@@ -55,23 +55,23 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentPhoneInputPage.enterText()
 
       And("The user amends refund amount via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeRefundAmount)
+      RepaymentCYAPage.clickLinkChangeRefundAmount()
       RepaymentAmountPage.updateText()
 
       And("The user amends refund reason via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeRefundReason)
+      RepaymentCYAPage.clickLinkChangeRefundReason()
       RepaymentReasonPage.updateText()
 
       And("The user amends contact name via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeContactName)
+      RepaymentCYAPage.clickLinkChangeContactName()
       RepaymentContactNamePage.updateText()
 
       And("The user amends contact email via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeContactEmail)
+      RepaymentCYAPage.clickLinkChangeContactEmail()
       RepaymentContactEmailPage.updateText()
 
       And("The user amends contact phone number via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changePhoneNumber)
+      RepaymentCYAPage.clickLinkChangePhoneNumber()
       RepaymentPhoneInputPage.updateText()
 
       And("The user submits the request for repayment")

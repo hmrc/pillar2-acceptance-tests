@@ -36,7 +36,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
@@ -49,28 +49,28 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       UPEPhoneInputPage.enterText()
 
       And("The user amends UPE Entity name via the Check your answers page")
-      UPECheckYourAnswersPage.clickChangeLink(UPECheckYourAnswersPage.changeName)
+      UPECheckYourAnswersPage.clickLinkChangeName()
       UPENamePage.updateText()
 
       And("The user amends UPE Address town via the Check your answers page")
-      UPECheckYourAnswersPage.clickChangeLink(UPECheckYourAnswersPage.changeAddress)
+      UPECheckYourAnswersPage.clickLinkChangeAddress()
       UPEAddressPage.updateAddressNonUK()
 
       And("The user amends UPE contact name via the Check your answers page")
-      UPECheckYourAnswersPage.clickChangeLink(UPECheckYourAnswersPage.changeContactName)
+      UPECheckYourAnswersPage.clickLinkChangeContactName()
       UPEContactNamePage.updateText()
 
       And("The user amends UPE email address via the Check your answers page")
-      UPECheckYourAnswersPage.clickChangeLink(UPECheckYourAnswersPage.changeEmailAddress)
+      UPECheckYourAnswersPage.clickLinkChangeEmailAddress()
       UPEEmailPage.updateText()
 
       And("The user amends UPE contact phone number via the Check your answers page")
-      UPECheckYourAnswersPage.clickChangeLink(UPECheckYourAnswersPage.changePhoneNumber)
+      UPECheckYourAnswersPage.clickLinkChangePhoneNumber()
       UPEPhoneInputPage.updateText()
 
       Then("The user continues to the task list")
       UPECheckYourAnswersPage.continueToNextPage()
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
 
       When("The user adds a Nominated Filing Member with a UK Address")
       NFMRegistrationPage.selectNominatedFilingMemberYes()
@@ -84,46 +84,46 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       NFMPhoneInputPage.enterText()
 
       And("The user amends NFM Entity name via the Check your answers page")
-      NFMCheckYourAnswersPage.clickChangeLink(NFMCheckYourAnswersPage.changeName)
+      NFMCheckYourAnswersPage.clickLinkChangeName()
       NFMNamePage.updateText()
 
       And("The user amends NFM Address town via the Check your answers page")
-      NFMCheckYourAnswersPage.clickChangeLink(NFMCheckYourAnswersPage.changeAddress)
+      NFMCheckYourAnswersPage.clickLinkChangeAddress()
       NFMAddressPage.updateAddressUK()
 
       And("The user amends NFM contact name via the Check your answers page")
-      NFMCheckYourAnswersPage.clickChangeLink(NFMCheckYourAnswersPage.changeContactName)
+      NFMCheckYourAnswersPage.clickLinkChangeContactName()
       NFMContactNamePage.updateText()
 
       And("The user amends NFM email address via the Check your answers page")
-      NFMCheckYourAnswersPage.clickChangeLink(NFMCheckYourAnswersPage.changeEmailAddress)
+      NFMCheckYourAnswersPage.clickLinkChangeEmailAddress()
       NFMContactEmailPage.updateText()
 
       And("The user amends NFM contact phone number via the Check your answers page")
-      NFMCheckYourAnswersPage.clickChangeLink(NFMCheckYourAnswersPage.changePhoneNumber)
+      NFMCheckYourAnswersPage.clickLinkChangePhoneNumber()
       NFMPhoneInputPage.updateText()
 
       Then("The user continues from NFM to the task list")
       NFMCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds further details")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
 
       And("The user amends group status via the Check your answers page")
-      FDCheckYourAnswersPage.clickChangeGroupStatusLink()
+      FDCheckYourAnswersPage.clickLinkChangeGroupStatus()
       FDGroupStatusPage.updateToUkAndNonUk()
 
       And("The user amends the accounting period via the Check your answers page")
-      FDCheckYourAnswersPage.clickChangeAccountingPeriodLink()
+      FDCheckYourAnswersPage.clickLinkChangeAccountingPeriod()
       FDGroupAccountingPeriodPage.updateDates()
 
       Then("The user continues from further details to the task list")
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectNo()
       ContactDetailsPrimaryNamePage.enterText()
@@ -142,36 +142,36 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       ContactAddressInputPage.enterAddressUK()
 
       And("The user amends Primary contact name via the Check your answers page")
-      ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changePrimaryContactName)
+      ContactDetailsCheckAnswersPage.clickLinkChangePrimaryContactName()
       ContactDetailsPrimaryNamePage.updateText()
 
       And("The user amends Primary contact email address via the Check your answers page")
-      ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changePrimaryContactEmailAddress)
+      ContactDetailsCheckAnswersPage.clickLinkChangePrimaryContactEmailAddress()
       ContactDetailsPrimaryEmailPage.updateText()
 
       And("The user amends Primary contact phone number via the Check your answers page")
-      ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changePrimaryContactPhoneNumber)
+      ContactDetailsCheckAnswersPage.clickLinkChangePrimaryContactPhoneNumber()
       ContactDetailsPrimaryPhonePage.updateText()
 
       And("The user amends Secondary contact name via the Check your answers page")
-      ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changeSecondaryContactName)
+      ContactDetailsCheckAnswersPage.clickLinkChangeSecondaryContactName()
       ContactDetailsSecondaryNamePage.updateText()
 
       And("The user amends Secondary contact email address via the Check your answers page")
-      ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changeSecondaryContactEmailAddress)
+      ContactDetailsCheckAnswersPage.clickLinkChangeSecondaryContactEmailAddress()
       ContactDetailsSecondaryEmailPage.updateText()
 
       And("The user amends Secondary contact phone number via the Check your answers page")
-      ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changeSecondaryContactPhoneNumber)
+      ContactDetailsCheckAnswersPage.clickLinkChangeSecondaryContactPhoneNumber()
       ContactDetailsSecondaryPhoneInputPage.updateText()
 
       And("The user amends contact Address town via the Check your answers page")
-      ContactDetailsCheckAnswersPage.clickChangeLink(ContactDetailsCheckAnswersPage.changeContactAddress)
+      ContactDetailsCheckAnswersPage.clickLinkChangeContactAddress()
       ContactAddressInputPage.updateAddressUK()
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")

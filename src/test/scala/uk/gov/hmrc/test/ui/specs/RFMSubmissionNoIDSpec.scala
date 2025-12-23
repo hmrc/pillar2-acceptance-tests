@@ -49,11 +49,11 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMNFMAddressPage.enterAddressNonUK()
 
       And("The user amends NFM name via the Check your answers page")
-      RFMNoIDCYAPage.clickLink(RFMNoIDCYAPage.changeName)
+      RFMNoIDCYAPage.clickLinkChangeName()
       RFMNFMNamePage.updateText()
 
       And("The user amends NFM address via the Check your answers page")
-      RFMNoIDCYAPage.clickLink(RFMNoIDCYAPage.changeAddress)
+      RFMNoIDCYAPage.clickLinkChangeAddress()
       RFMNFMAddressPage.updateAddressNonUK()
 
       Then("The user continues to contact details")
@@ -77,27 +77,27 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMContactAddressPage.enterAddressUK()
 
       Then("The user amends Primary contact name via the Check your answers page")
-      RFMFinalReviewCYAPage.clickLink(RFMFinalReviewCYAPage.changePrimaryContactName)
+      RFMFinalReviewCYAPage.clickLinkChangePrimaryContactName()
       RFMContactPrimaryNamePage.updateText()
 
       And("The user amends Primary contact email address via the Check your answers page")
-      RFMFinalReviewCYAPage.clickLink(RFMFinalReviewCYAPage.changePrimaryContactEmail)
+      RFMFinalReviewCYAPage.clickLinkChangePrimaryContactEmail()
       RFMContactPrimaryEmailPage.updateText()
 
       And("The user amends Primary contact phone number via the Check your answers page")
-      RFMFinalReviewCYAPage.clickLink(RFMFinalReviewCYAPage.changePrimaryContactPhoneNumber)
+      RFMFinalReviewCYAPage.clickLinkChangePrimaryContactPhoneNumber()
       RFMContactPrimaryPhoneNumberPage.updateText()
 
       And("The user amends Secondary contact name via the Check your answers page")
-      RFMFinalReviewCYAPage.clickLink(RFMFinalReviewCYAPage.changeSecondaryContactName)
+      RFMFinalReviewCYAPage.clickLinkChangeSecondaryContactName()
       RFMContactSecondaryNamePage.updateText()
 
       And("The user amends Secondary contact email address via the Check your answers page")
-      RFMFinalReviewCYAPage.clickLink(RFMFinalReviewCYAPage.changeSecondaryContactEmail)
+      RFMFinalReviewCYAPage.clickLinkChangeSecondaryContactEmail()
       RFMContactSecondaryEmailPage.updateText()
 
       And("The user amends Secondary contact phone number via the Check your answers page")
-      RFMFinalReviewCYAPage.clickLink(RFMFinalReviewCYAPage.changeSecondaryContactPhoneNumber)
+      RFMFinalReviewCYAPage.clickLinkChangeSecondaryContactPhoneNumber()
       RFMContactSecondaryPhoneNumberPage.updateText()
 
       When("The user reviews and submits")
