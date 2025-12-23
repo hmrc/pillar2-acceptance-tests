@@ -16,33 +16,31 @@
 
 package uk.gov.hmrc.test.ui.pages.rfm
 
-import uk.gov.hmrc.test.ui.helper.Find.findByCss
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMGRSEntityTypePage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/uk-based/org-type"
 
-  private val ukLimitedCompany            = "value_0"
-  private val limitedLiabilityPartnership = "value_1"
-  private val companyTypeNotListed        = "value_2"
+  private val ukLimitedCompany: By            = By.id("value_0")
+  private val limitedLiabilityPartnership: By = By.id("value_1")
+  private val companyTypeNotListed: By        = By.id("value_2")
 
   def selectEntityTypeUkLimitedCompany(): Unit = {
     onPage()
-    clickById(ukLimitedCompany)
-    clickButtonByText(buttonSaveAndContinue)
+    click(ukLimitedCompany)
+    continue()
   }
 
   def selectEntityTypeLimitedLiabilityPartnership(): Unit = {
     onPage()
-    clickById(limitedLiabilityPartnership)
-    clickButtonByText(buttonSaveAndContinue)
+    click(limitedLiabilityPartnership)
+    continue()
   }
 
   def selectEntityTypeNotListed(): Unit = {
     onPage()
-    clickById(companyTypeNotListed)
-    clickButtonByText(buttonSaveAndContinue)
+    click(companyTypeNotListed)
+    continue()
   }
-
-  def clickContinue(): Unit = findByCss(continue).click()
 }

@@ -40,7 +40,7 @@ object RFMNFMAddressPage extends BasePage {
     sendKeys(region, "Test Region")
     sendKeys(postcode, "AA1 1AA")
     countryAutoSelect("United Kingdom")
-    clickByClassName(continue)
+    continue()
   }
 
   def enterAddressNonUK(): Unit = {
@@ -51,12 +51,12 @@ object RFMNFMAddressPage extends BasePage {
     sendKeys(region, "Test Region")
     sendKeys(postcode, "1234 ABC")
     countryAutoSelect("Chile")
-    clickByClassName(continue)
+    continue()
   }
 
   def updateAddressNonUK(): Unit = {
     onPage(changeUrl)
     sendKeys(city, "Updated Test City")
-    clickByClassName(continue)
+    continue()
   }
 }

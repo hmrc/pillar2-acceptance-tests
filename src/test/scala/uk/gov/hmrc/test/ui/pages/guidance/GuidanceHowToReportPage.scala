@@ -14,17 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.helper
+package uk.gov.hmrc.test.ui.pages.guidance
 
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object Nav extends BrowserDriver {
-
-  def navigateTo(url: String): Unit = {
-    println(s"Nav.navigateTo called with url=$url, driver=$driver")
-    driver.navigate.to(url)
-  }
-  def browserBack(): Unit = {
-    driver.navigate().back()
-  }
+object GuidanceHowToReportPage extends BasePage {
+  override val url: String = "https://www.gov.uk/guidance/how-to-report-pillar-2-top-up-taxes"
 }

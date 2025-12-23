@@ -16,21 +16,22 @@
 
 package uk.gov.hmrc.test.ui.pages.furtherDetails
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object FDCheckYourAnswersPage extends BasePage {
   override val url: String = s"${baseUrl}further-details/check-answers"
 
-  private val changeGroupStatus      = "a[href*='/change-group-status']"
-  private val changeAccountingPeriod = "a[href*='/change-accounting-period']"
+  private val changeGroupStatus: By      = By.cssSelector("a[href*='/change-group-status']")
+  private val changeAccountingPeriod: By = By.cssSelector("a[href*='/change-accounting-period']")
 
   def clickChangeGroupStatusLink(): Unit = {
     onPage()
-    clickByCss(changeGroupStatus)
+    click(changeGroupStatus)
   }
 
   def clickChangeAccountingPeriodLink(): Unit = {
     onPage()
-    clickByCss(changeAccountingPeriod)
+    click(changeAccountingPeriod)
   }
 }

@@ -16,11 +16,11 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.helper.Nav
 import uk.gov.hmrc.test.ui.pages.asa.*
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.dueAndOverdueReturns.*
+import uk.gov.hmrc.test.ui.pages.guidance.*
 import uk.gov.hmrc.test.ui.pages.submissionHistory.*
 import uk.gov.hmrc.test.ui.specs.tags.*
 
@@ -50,10 +50,9 @@ class SubmissionHistoryDueOverdueReturnsSpec extends BaseSpec {
 
       Then("The user can view and click on view submission history and the Pillar2 Top-up Taxes guidance link ")
       DueAndOverdueReturnsPage.clickLink(DueAndOverdueReturnsPage.submissionHistoryLink)
-      SubmissionHistoryPage.onPage()
-      Nav.browserBack()
+      SubmissionHistoryPage.browserBack()
       DueAndOverdueReturnsPage.clickLink(DueAndOverdueReturnsPage.pillar2TopupTaxesLink)
-      Nav.browserBack()
+      GuidanceHowToReportPage.browserBack()
       DueAndOverdueReturnsPage.onPage()
     }
 
@@ -91,12 +90,6 @@ class SubmissionHistoryDueOverdueReturnsSpec extends BaseSpec {
       Then("The agent successfully checks all due and overdue returns")
       SubmissionHistoryPage.clickLink(SubmissionHistoryPage.dueAndOverdueReturnsLink)
       DueAndOverdueReturnsPage.onPage()
-
-      Then("The agent can view and click on the Pillar2 Top-up Taxes guidance link on Due and overdue returns")
-      DueAndOverdueReturnsPage.clickLink(DueAndOverdueReturnsPage.pillar2TopupTaxesLink)
-      Nav.browserBack()
-      DueAndOverdueReturnsPage.onPage()
-
     }
   }
 }

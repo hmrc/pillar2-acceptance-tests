@@ -27,6 +27,6 @@ object ManageContactDetailsAddressPage extends BasePage {
   def updateAddressUK(): Unit = {
     onPage()
     sendKeys(city, "Updated Test City")
-    clickByClassName(continue)
+    continue()
   }
 }

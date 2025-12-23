@@ -46,6 +46,6 @@ object RepaymentBankAccountUKPage extends BasePage {
     sendKeys(accountHolderNameInputField, details.accountHolderName)
     sendKeys(sortCodeInputField, details.sortCode)
     sendKeys(accountNumberInputField, details.accountNumber)
-    clickByClassName(continue)
+    continue()
   }
 }

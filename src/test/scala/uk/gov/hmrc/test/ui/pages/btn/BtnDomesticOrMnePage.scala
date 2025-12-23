@@ -24,12 +24,12 @@ object BtnDomesticOrMnePage extends BasePage {
   def entityInAndOutUkYes(): Unit = {
     onPage()
     click(yesRadioId)
-    clickByClassName(continue)
+    continue()
   }
 
   def entityInAndOutUkNo(): Unit = {
     onPage()
     click(noRadioId)
-    clickByClassName(continue)
+    continue()
   }
 }

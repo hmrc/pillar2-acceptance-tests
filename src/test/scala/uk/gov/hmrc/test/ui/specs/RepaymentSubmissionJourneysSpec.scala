@@ -163,7 +163,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentConfirmationPage.waitRefreshThenCheckOnPage(initialWaitSeconds = 10)
 
       Then("The agent clicks the back button they will be taken to the cannot return, repayment request is complete page")
-      RepaymentConfirmationPage.clickBackButton()
+      RepaymentConfirmationPage.browserBack()
       RepaymentReturnErrorPage.onPage()
     }
   }

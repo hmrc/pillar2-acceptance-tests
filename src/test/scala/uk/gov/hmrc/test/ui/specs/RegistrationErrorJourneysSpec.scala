@@ -124,8 +124,8 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       ContactDetailsPrimaryPhoneAsContactPage.selectYes(ContactDetailsPrimaryPhoneAsContactPage.changeUrl)
 
       And("The user leaves check your answers without adding a phone number")
-      ContactDetailsPrimaryPhonePage.clickOnBackLink(ContactDetailsPrimaryPhonePage.changeUrl)
-      ContactDetailsPrimaryPhoneAsContactPage.clickOnBackLink(ContactDetailsPrimaryPhoneAsContactPage.changeUrl)
+      ContactDetailsPrimaryPhonePage.clickBackLink(ContactDetailsPrimaryPhonePage.changeUrl)
+      ContactDetailsPrimaryPhoneAsContactPage.clickBackLink(ContactDetailsPrimaryPhoneAsContactPage.changeUrl)
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")

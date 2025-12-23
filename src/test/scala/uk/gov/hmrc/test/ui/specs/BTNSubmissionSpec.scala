@@ -53,7 +53,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       Then("The user clicks the back button and is presented with the cannot return page")
-      BtnConfirmationPage.clickBackButton()
+      BtnConfirmationPage.browserBack()
       BtnCannotReturnPage.onPage()
     }
 
@@ -97,7 +97,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       Then("The user clicks the back button and is presented with the cannot return page")
-      BtnConfirmationPage.clickBackButton()
+      BtnConfirmationPage.browserBack()
       BtnCannotReturnPage.onPage()
     }
 

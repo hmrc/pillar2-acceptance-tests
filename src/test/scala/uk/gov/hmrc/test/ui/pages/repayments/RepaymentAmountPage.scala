@@ -28,12 +28,12 @@ object RepaymentAmountPage extends BasePage {
   def enterAmount(): Unit = {
     onPage()
     sendKeys(textInputField, amountValue)
-    clickByClassName(continue)
+    continue()
   }
 
   def updateAmount(): Unit = {
     onPage(changeUrl)
     sendKeys(textInputField, amountUpdatedValue)
-    clickByClassName(continue)
+    continue()
   }
 }

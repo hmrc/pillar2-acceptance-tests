@@ -16,15 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages.registration
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RegistrationConfirmationPage extends BasePage {
   override val url: String = s"${baseUrl}review-submit/confirmation"
 
-  private val homePageLink = "a[href*='/pillar2-top-up-tax-home']"
+  private val homePageLink: By = By.cssSelector("a[href*='/pillar2-top-up-tax-home']")
 
   def clickHomePageLink(): Unit = {
     onPage()
-    clickByCss(homePageLink)
+    click(homePageLink)
   }
 }

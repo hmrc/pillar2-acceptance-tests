@@ -148,8 +148,8 @@ class RFMErrorSpec extends BaseSpec {
       RFMContactSecondaryAddPage.changeToYes()
 
       And("The user returns to the check your answers page without entering secondary contact details")
-      RFMContactSecondaryNamePage.clickOnBackLink(RFMContactSecondaryNamePage.changeUrl)
-      RFMContactSecondaryAddPage.clickOnBackLink(RFMContactSecondaryAddPage.changeUrl)
+      RFMContactSecondaryNamePage.clickBackLink(RFMContactSecondaryNamePage.changeUrl)
+      RFMContactSecondaryAddPage.clickBackLink(RFMContactSecondaryAddPage.changeUrl)
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageSubmitById()

@@ -104,7 +104,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageSubmitById()
 
       And("The user is presented with the confirmation page and clicks the back button")
-      RFMConfirmationPage.clickBackButton()
+      RFMConfirmationPage.browserBack()
 
       Then("The user is presented with the no return page")
       RFMNoReturnBackErrorPage.onPage()

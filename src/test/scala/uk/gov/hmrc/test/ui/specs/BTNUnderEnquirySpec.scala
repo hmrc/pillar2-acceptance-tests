@@ -49,11 +49,11 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
 
       And("The user returns to the accounting period and selects previous accounting period and reaches BTN under enquiry page")
-      BtnAccountingPage.clickOnBackLink()
+      BtnAccountingPage.clickBackLink()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
 
       And("The user returns to the multiple accounting period and select PreviousAccountingPeriodUKTRSubmitted")
-      BtnUnderEnquiryPage.clickBackButton()
+      BtnUnderEnquiryPage.browserBack()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
 
       Then("The user reaches the BTN under enquiry page and continues BTN submission")
@@ -104,11 +104,11 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
 
       And("The agent returns to the multiple accounting period and selects previous accounting period and reached BtnUnderEnquiryPage")
-      BtnAccountingPage.clickOnBackLink()
+      BtnAccountingPage.clickBackLink()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
 
       And("The agent returns to the multiple accounting period and select PreviousAccountingPeriodUKTRSubmitted")
-      BtnUnderEnquiryPage.clickBackButton()
+      BtnUnderEnquiryPage.browserBack()
       BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
 
       And("The agent continue from BtnUnderEnquiryPage ")

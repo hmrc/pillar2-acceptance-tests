@@ -37,6 +37,6 @@ object ManageAccountPeriodPage extends BasePage {
     sendKeys(endDayId, "31")
     sendKeys(endMonthId, "01")
     sendKeys(endYearId, "2025")
-    clickByClassName(continue)
+    continue()
   }
 }

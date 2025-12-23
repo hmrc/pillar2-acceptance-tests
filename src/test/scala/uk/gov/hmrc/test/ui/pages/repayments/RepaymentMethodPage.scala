@@ -16,24 +16,25 @@
 
 package uk.gov.hmrc.test.ui.pages.repayments
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentMethodPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/method"
 
-  val typeOfAccountUK    = "value_0"
-  val typeOfAccountNonUK = "value_1"
+  val typeOfAccountUK: By    = By.id("value_0")
+  val typeOfAccountNonUK: By = By.id("value_1")
 
   def clickTypeOfAccountUK(): Unit = {
     onPage()
-    clickById(typeOfAccountUK)
-    clickByClassName(continue)
+    click(typeOfAccountUK)
+    continue()
   }
 
   def clickTypeOfAccountNonUK(): Unit = {
     onPage()
-    clickById(typeOfAccountNonUK)
-    clickByClassName(continue)
+    click(typeOfAccountNonUK)
+    continue()
   }
 
 }
