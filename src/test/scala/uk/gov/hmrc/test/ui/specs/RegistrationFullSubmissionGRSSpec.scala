@@ -29,7 +29,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
   Feature("Full registration using GRS") {
 
     Scenario("1 - User registers a UK Limited Company UPE successfully",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("Org User logs in without Pillar2 enrolment")
@@ -77,7 +77,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
     }
 
     Scenario("2 - User registers a UK Limited Company as ",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("Org User logs in without Pillar2 enrolment")

@@ -112,6 +112,7 @@ trait BasePage extends Matchers with PageObject {
     assertLocatorPresent(noRadioId)
     click(noRadioId)
     continue()
+    continue()
   }
 
   def selectRadio(radioButton: By, url: String = this.url): Unit = {
