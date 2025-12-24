@@ -41,9 +41,9 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Failed Party Type Mismatch")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkYes()
+      UPERegisteredInUkPage.selectYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationFailedPartyTypeMismatch()
+      UPECompanyUkGRSPage.clickButtonRegistrationFailedPartyTypeMismatch()
 
       When("The user is presented with the mismatching-details error page")
       UPEGRSRegistrationFailedErrorPage.onPage()
@@ -51,14 +51,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
+      UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Failed Party Type Mismatch")
       TaskListPage.clickAddFilingMemberLink()
       NFMRegistrationPage.selectNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
-      NFMUKCompanyGRSPage.clickRegistrationFailedPartyTypeMismatch()
+      NFMUKCompanyGRSPage.clickButtonRegistrationFailedPartyTypeMismatch()
 
       When("The user is presented with the mismatching-details error page")
       NFMGRSRegistrationFailedErrorPage.onPage()
@@ -82,9 +82,9 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Generic Error")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkYes()
+      UPERegisteredInUkPage.selectYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationFailedGeneric()
+      UPECompanyUkGRSPage.clickButtonRegistrationFailedGeneric()
 
       When("The user is presented with the mismatching-details error page")
       UPEGRSRegistrationFailedErrorPage.onPage()
@@ -92,14 +92,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
+      UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Generic Error")
       TaskListPage.clickAddFilingMemberLink()
       NFMRegistrationPage.selectNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
-      NFMUKCompanyGRSPage.clickRegistrationFailedGeneric()
+      NFMUKCompanyGRSPage.clickButtonRegistrationFailedGeneric()
 
       When("The user is presented with the mismatching-details error page")
       NFMGRSRegistrationFailedErrorPage.onPage()
@@ -123,9 +123,9 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Identifiers Mismatch")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkYes()
+      UPERegisteredInUkPage.selectYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationNotCalledIdentifierMismatch()
+      UPECompanyUkGRSPage.clickButtonRegistrationNotCalledIdentifierMismatch()
 
       When("The user is presented with the Identifiers Mismatch error page")
       UPEGRSRegistrationNotCalledErrorPage.onPage()
@@ -133,14 +133,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
+      UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Identifiers Mismatch")
       TaskListPage.clickAddFilingMemberLink()
       NFMRegistrationPage.selectNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
-      NFMUKCompanyGRSPage.clickRegistrationNotCalledIdentifierMismatch()
+      NFMUKCompanyGRSPage.clickButtonRegistrationNotCalledIdentifierMismatch()
 
       When("The user is presented with the Identifiers Mismatch error page")
       NFMGRSRegistrationNotCalledErrorPage.onPage()
@@ -164,9 +164,9 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV failed")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkYes()
+      UPERegisteredInUkPage.selectYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationNotCalledBvFailed()
+      UPECompanyUkGRSPage.clickButtonRegistrationNotCalledBvFailed()
 
       When("The user is presented with the BV failed error page")
       UPEGRSRegistrationNotCalledErrorPage.onPage()
@@ -174,14 +174,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
+      UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with BV failed")
       TaskListPage.clickAddFilingMemberLink()
       NFMRegistrationPage.selectNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
-      NFMUKCompanyGRSPage.clickRegistrationNotCalledBvFailed()
+      NFMUKCompanyGRSPage.clickButtonRegistrationNotCalledBvFailed()
 
       When("The user is presented with the BV failed error page")
       NFMGRSRegistrationNotCalledErrorPage.onPage()

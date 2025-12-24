@@ -22,17 +22,17 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object NFMLLPGRSPage extends BasePage {
   override val url: String = s"${baseUrl}test-only/stub-grs-journey-data?continueUrl=normalmode/fm&entityType=limitedLiabilityPartnership"
 
-  private val registrationSuccessBvDisabled: By           = By.id("registrationSuccessBvDisabled")
-  private val registrationSuccessBvEnabled: By            = By.id("registrationSuccessBvEnabled")
-  private val registrationFailedPartyTypeMismatch: By     = By.id("registrationFailedPartyTypeMismatch")
-  private val registrationFailedGeneric: By               = By.id("registrationFailedGeneric")
-  private val registrationNotCalledIdentifierMismatch: By = By.id("registrationNotCalledIdentifierMismatch")
-  private val registrationNotCalledBvFailed: By           = By.id("registrationNotCalledBvFailed")
+  private val registrationSuccessBvDisabledButton: By           = By.id("registrationSuccessBvDisabled")
+  private val registrationSuccessBvEnabledButton: By            = By.id("registrationSuccessBvEnabled")
+  private val registrationFailedPartyTypeMismatchButton: By     = By.id("registrationFailedPartyTypeMismatch")
+  private val registrationFailedGenericButton: By               = By.id("registrationFailedGeneric")
+  private val registrationNotCalledIdentifierMismatchButton: By = By.id("registrationNotCalledIdentifierMismatch")
+  private val registrationNotCalledBvFailedButton: By           = By.id("registrationNotCalledBvFailed")
 
-  def clickRegistrationSuccessBvDisabled(): Unit           = selectRadio(registrationSuccessBvDisabled)
-  def clickRegistrationSuccessBvEnabled(): Unit            = selectRadio(registrationSuccessBvEnabled)
-  def clickRegistrationFailedPartyTypeMismatch(): Unit     = selectRadio(registrationFailedPartyTypeMismatch)
-  def clickRegistrationFailedGeneric(): Unit               = selectRadio(registrationFailedGeneric)
-  def clickRegistrationNotCalledIdentifierMismatch(): Unit = selectRadio(registrationNotCalledIdentifierMismatch)
-  def clickRegistrationNotCalledBvFailed(): Unit           = selectRadio(registrationNotCalledBvFailed)
+  def clickButtonRegistrationSuccessBvDisabled(): Unit           = clickButton(registrationSuccessBvDisabledButton)
+  def clickButtonRegistrationSuccessBvEnabled(): Unit            = clickButton(registrationSuccessBvEnabledButton)
+  def clickButtonRegistrationFailedPartyTypeMismatch(): Unit     = clickButton(registrationFailedPartyTypeMismatchButton)
+  def clickButtonRegistrationFailedGeneric(): Unit               = clickButton(registrationFailedGenericButton)
+  def clickButtonRegistrationNotCalledIdentifierMismatch(): Unit = clickButton(registrationNotCalledIdentifierMismatchButton)
+  def clickButtonRegistrationNotCalledBvFailed(): Unit           = clickButton(registrationNotCalledBvFailedButton)
 }

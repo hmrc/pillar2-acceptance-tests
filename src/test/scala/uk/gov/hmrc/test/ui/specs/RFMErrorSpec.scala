@@ -84,7 +84,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
-      RFMGRSUKLimitedCompanyPage.clickRegistrationSuccessBvEnabled()
+      RFMGRSUKLimitedCompanyPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds contact details")
       RFMContactGuidancePage.continueToNextPage()
@@ -180,7 +180,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeLimitedLiabilityPartnership()
-      RFMGRSLimitedLiabilityPartnershipPage.clickRegistrationFailedPartyTypeMismatch()
+      RFMGRSLimitedLiabilityPartnershipPage.clickButtonRegistrationFailedPartyTypeMismatch()
 
       Then("The user is presented with the type mismatch page")
       RFMGRSRegistrationMismatchErrorPage
@@ -207,7 +207,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeLimitedLiabilityPartnership()
-      RFMGRSLimitedLiabilityPartnershipPage.clickRegistrationNotCalledIdentifierMismatch()
+      RFMGRSLimitedLiabilityPartnershipPage.clickButtonRegistrationNotCalledIdentifierMismatch()
 
       Then("The user is presented with the identifiers mismatch error page")
       RFMGRSRegistrationNotCalledErrorPage.onPage()

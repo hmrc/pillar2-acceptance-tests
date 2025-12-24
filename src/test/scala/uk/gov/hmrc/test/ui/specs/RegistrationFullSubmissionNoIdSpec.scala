@@ -40,7 +40,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
       And("The user adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.enterName()
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterName()

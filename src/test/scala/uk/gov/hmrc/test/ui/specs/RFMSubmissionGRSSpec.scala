@@ -46,7 +46,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
-      RFMGRSUKLimitedCompanyPage.clickRegistrationSuccessBvEnabled()
+      RFMGRSUKLimitedCompanyPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user adds primary contact details")
       RFMContactGuidancePage.continueToNextPage()
@@ -88,7 +88,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
       RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
-      RFMGRSUKLimitedCompanyPage.clickRegistrationSuccessBvDisabled()
+      RFMGRSUKLimitedCompanyPage.clickButtonRegistrationSuccessBvDisabled()
 
       And("The user adds primary contact details")
       RFMContactGuidancePage.continueToNextPage()

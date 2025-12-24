@@ -40,7 +40,7 @@ class RegistrationInProgressSpec extends BaseSpec {
 
       And("The user adds Medium Processing Corp as Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.registrationInProgress()
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.registrationInProgress()

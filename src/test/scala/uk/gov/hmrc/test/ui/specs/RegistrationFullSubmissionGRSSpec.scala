@@ -43,9 +43,9 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkYes()
+      UPERegisteredInUkPage.selectYes()
       UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
+      UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
@@ -91,7 +91,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user manually adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.enterName()
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterName()
@@ -105,7 +105,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       NFMRegistrationPage.selectNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
-      NFMUKCompanyGRSPage.clickRegistrationSuccessBvEnabled()
+      NFMUKCompanyGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
