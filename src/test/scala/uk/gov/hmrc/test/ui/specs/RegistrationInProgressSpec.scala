@@ -40,7 +40,7 @@ class RegistrationInProgressSpec extends BaseSpec {
 
       And("The user adds Medium Processing Corp as Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.enterTextRegistrationInProgress()
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterTextRegistrationInProgress()
@@ -53,13 +53,13 @@ class RegistrationInProgressSpec extends BaseSpec {
       TaskListPage.clickLinkAddFilingMember()
 
       When("The user doesn't add a Nominated Filing Member")
-      NFMRegistrationPage.selectNominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
 
       Then("The user continues to the task list")
       TaskListPage.clickLinkAddFurtherGroupDetails()
 
       And("The user adds further details")
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 

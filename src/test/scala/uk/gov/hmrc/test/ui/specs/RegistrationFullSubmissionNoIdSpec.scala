@@ -40,7 +40,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
       And("The user adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.enterText()
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterText()
@@ -73,9 +73,9 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       TaskListPage.clickLinkAddFilingMember()
 
       When("The user adds a Nominated Filing Member with a UK Address")
-      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
-      NFMEntityTypePage.enterEntityTypeNotListed()
+      NFMEntityTypePage.selectRadioEntityTypeNotListed()
       NFMNamePage.enterText()
       NFMAddressPage.enterAddressUK()
       NFMContactNamePage.enterText()
@@ -108,12 +108,12 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
       And("The user adds further details")
       TaskListPage.clickLinkAddFurtherGroupDetails()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
 
       And("The user amends group status via the Check your answers page")
       FDCheckYourAnswersPage.clickLinkChangeGroupStatus()
-      FDGroupStatusPage.updateToUkAndNonUk()
+      FDGroupStatusPage.selectRadioUpdateToUkAndNonUk()
 
       And("The user amends the accounting period via the Check your answers page")
       FDCheckYourAnswersPage.clickLinkChangeAccountingPeriod()

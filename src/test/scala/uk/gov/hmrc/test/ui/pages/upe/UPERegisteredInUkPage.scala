@@ -20,7 +20,4 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPERegisteredInUkPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/ultimate-parent/registered-in-uk"
-
-  def registeredInUkYes(): Unit = selectRadio(yesRadioId)
-  def registeredInUkNo(): Unit  = selectRadio(noRadioId)
 }

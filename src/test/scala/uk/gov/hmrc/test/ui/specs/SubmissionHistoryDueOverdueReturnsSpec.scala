@@ -90,6 +90,11 @@ class SubmissionHistoryDueOverdueReturnsSpec extends BaseSpec {
       Then("The agent successfully checks all due and overdue returns")
       SubmissionHistoryPage.clickLinkDueAndOverdueReturns()
       DueAndOverdueReturnsPage.onPage()
+
+      Then("The agent can view and click on the Pillar2 Top-up Taxes guidance link on Due and overdue returns")
+      DueAndOverdueReturnsPage.clickLinkPillar2TopUpTaxes()
+      GuidanceHowToReportPage.browserBack()
+      DueAndOverdueReturnsPage.onPage()
     }
   }
 }

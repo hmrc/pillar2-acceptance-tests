@@ -24,7 +24,7 @@ object FDCheckYourAnswersPage extends BasePage {
 
   private val changeGroupStatusLink: By      = By.cssSelector("a[href*='/change-group-status']")
   private val changeAccountingPeriodLink: By = By.cssSelector("a[href*='/change-accounting-period']")
-  
+
   def clickLinkChangeGroupStatus(): Unit      = clickLink(changeGroupStatusLink)
   def clickLinkChangeAccountingPeriod(): Unit = clickLink(changeAccountingPeriodLink)
 }

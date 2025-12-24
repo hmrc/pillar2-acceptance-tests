@@ -33,21 +33,19 @@ trait BasePage extends Matchers with PageObject {
   val textValue: String       = ""
   val textUpdateValue: String = ""
 
-  val baseUrl: String          = TestConfiguration.url("pillar2-frontend")
-  val submitButtonId: By       = By.id("submit")
-  val continueButtonId: By     = By.id("continue")
-  val yesRadioId: By           = By.id("value_0")
-  val noRadioId: By            = By.id("value_1")
-  val countryDropdown: By      = By.id("country")
-  val countryOption: By        = By.id("country__option--0")
-  val backLinkText: By         = By.linkText("Back")
-  val textInputField: By       = By.id("value")
-  val buttonContinue           = "Continue"
-  val buttonSaveAndContinue    = "Save and continue"
-  val buttonConfirmAndContinue = "Confirm and continue"
-
+  val baseUrl: String       = TestConfiguration.url("pillar2-frontend")
+  val submitButtonId: By    = By.id("submit")
+  val yesRadioId: By        = By.id("value_0")
+  val noRadioId: By         = By.id("value_1")
+  val countryDropdown: By   = By.id("country")
+  val countryOption: By     = By.id("country__option--0")
+  val backLinkText: By      = By.linkText("Back")
+  val textInputField: By    = By.id("value")
   val continueClassName: By = By.className("govuk-button")
-  val nameField             = "#value"
+  val buttonContinue        = "Continue"
+  val buttonSaveAndContinue = "Save and continue"
+
+  def byText(text: String): By = By.xpath(s"//button[normalize-space()='$text']")
 
   private def fluentWait(timeoutSeconds: Long = 3): Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
     .withTimeout(Duration.ofSeconds(timeoutSeconds))
@@ -72,9 +70,9 @@ trait BasePage extends Matchers with PageObject {
     click(submitButtonId)
   }
 
-  def continue(): Unit = {
-    assertLocatorPresent(continueClassName)
-    click(continueClassName)
+  def continue(locator: By = continueClassName): Unit = {
+    assertLocatorPresent(locator)
+    click(locator)
   }
 
   def continueToNextPage(): Unit = {
@@ -119,6 +117,17 @@ trait BasePage extends Matchers with PageObject {
     assertLocatorPresent(radioButton)
     click(radioButton)
     continue()
+  }
+
+  def clickButton(
+      button: By,
+      buttonText: String = buttonSaveAndContinue,
+      url: String = this.url
+  ): Unit = {
+    onPage(url)
+    assertLocatorPresent(button)
+    click(button)
+    continue(byText(buttonText))
   }
 
   def clickLink(link: By): Unit = {

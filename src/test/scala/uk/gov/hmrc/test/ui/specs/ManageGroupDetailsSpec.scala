@@ -80,7 +80,7 @@ class ManageGroupDetailsSpec extends BaseSpec {
 
       And("The user amends entity locations")
       ManageAccountsSummaryPage.clickLinkChangeGroupStatus()
-      ManageGroupStatusPage.selectOnlyUk()
+      ManageGroupStatusPage.selectRadioOnlyUk()
 
       Then("The user is taken to the MTT to DTT kb page")
       ManageMttToDttPage.onPage()

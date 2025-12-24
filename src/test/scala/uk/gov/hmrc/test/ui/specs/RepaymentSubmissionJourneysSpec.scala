@@ -45,7 +45,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
-      RepaymentMethodPage.clickTypeOfAccountUK()
+      RepaymentMethodPage.selectRadioTypeOfAccountUK()
       RepaymentBankAccountUKPage.enterBankDetails(validBankDetails)
 
       And("The user adds contact details")
@@ -100,7 +100,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
-      RepaymentMethodPage.clickTypeOfAccountNonUK()
+      RepaymentMethodPage.selectRadioTypeOfAccountNonUK()
       RepaymentBankAccountNonUKPage.enterBankDetails()
 
       And("The user adds contact details")
@@ -147,7 +147,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
-      RepaymentMethodPage.clickTypeOfAccountUK()
+      RepaymentMethodPage.selectRadioTypeOfAccountUK()
       RepaymentBankAccountUKPage.enterBankDetails(validBankDetails)
 
       And("The agent adds contact details")

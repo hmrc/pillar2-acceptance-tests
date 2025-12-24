@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages.manage
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages.manage.ManageAccountsSummaryPage.{changeGroupStatusLink, clickLink}
 
 object ManageContactDetailsSummaryPage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/contact-details/summary"

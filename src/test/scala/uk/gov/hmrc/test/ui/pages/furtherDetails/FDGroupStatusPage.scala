@@ -23,10 +23,10 @@ object FDGroupStatusPage extends BasePage {
   override val url: String       = s"${baseUrl}further-details/group-status"
   override val changeUrl: String = s"${baseUrl}further-details/change-group-status"
 
-  private val onlyUk: By     = By.id("value_0")
-  private val ukAndNonUk: By = By.id("value_1")
+  private val onlyUkRadio: By     = By.id("value_0")
+  private val ukAndNonUkRadio: By = By.id("value_1")
 
-  def selectOnlyUk(): Unit       = selectRadio(onlyUk)
-  def selectUkAndNonUk(): Unit   = selectRadio(ukAndNonUk)
-  def updateToUkAndNonUk(): Unit = selectRadio(ukAndNonUk, changeUrl)
+  def selectRadioOnlyUk(): Unit             = selectRadio(onlyUkRadio)
+  def selectRadioUkAndNonUk(): Unit         = selectRadio(ukAndNonUkRadio)
+  def selectRadioUpdateToUkAndNonUk(): Unit = selectRadio(ukAndNonUkRadio, changeUrl)
 }
