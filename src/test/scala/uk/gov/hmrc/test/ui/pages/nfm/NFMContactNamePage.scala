@@ -19,20 +19,9 @@ package uk.gov.hmrc.test.ui.pages.nfm
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object NFMContactNamePage extends BasePage {
-  override val url: String = s"${baseUrl}business-matching/filing-member/no-id/input-business-name"
+  override val url: String       = s"${baseUrl}business-matching/filing-member/no-id/input-business-name"
+  override val changeUrl: String = s"${baseUrl}business-matching/filing-member/no-id/change-input-business-name"
 
-  private val nameValue        = "Contact Name"
-  private val nameUpdatedValue = "Updated Contact Name"
-
-  def enterName(): Unit = {
-    onPage()
-    sendKeys(textInputField, nameValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def updateName(): Unit = {
-    onPage(s"$baseUrl" + "business-matching/filing-member/no-id/change-input-business-name")
-    sendKeys(textInputField, nameUpdatedValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
+  override val textValue       = "Contact Name"
+  override val textUpdateValue = "Updated Contact Name"
 }

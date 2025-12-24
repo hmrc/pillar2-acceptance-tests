@@ -22,8 +22,6 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object UPECompanyUkGRSPage extends BasePage {
   override val url: String = s"${baseUrl}test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=ukLimitedCompany"
   
-  
-
   private val registrationSuccessBvDisabledButton: By           = By.id("registrationSuccessBvDisabled")
   private val registrationSuccessBvEnabledButton: By            = By.id("registrationSuccessBvEnabled")
   private val registrationFailedPartyTypeMismatchButton: By     = By.id("registrationFailedPartyTypeMismatch")

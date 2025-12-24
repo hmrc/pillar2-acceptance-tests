@@ -22,10 +22,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object BtnConfirmationPage extends BasePage {
   override val url: String = s"${baseUrl}below-threshold-notification/confirmation"
 
-  val returnToHomepageLink: By = By.cssSelector("a[href*='/pillar2-top-up-tax-home']")
+  private val returnToHomepageLink: By = By.cssSelector("a[href*='/pillar2-top-up-tax-home']")
 
-  def clickReturnToHomepageLink(): Unit = {
-    onPage()
-    click(returnToHomepageLink)
-  }
+  def clickLinkReturnToHomepage(): Unit = clickLink(returnToHomepageLink)
 }

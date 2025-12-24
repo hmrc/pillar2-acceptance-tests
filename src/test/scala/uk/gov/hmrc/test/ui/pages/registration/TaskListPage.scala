@@ -22,34 +22,15 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object TaskListPage extends BasePage {
   override val url: String = s"${baseUrl}check-progress/register-your-group"
 
-  private val addUltimateFilingMember = "a[href*='/match-hmrc-records']"
-  private val addFilingMember         = "a[href*='/nominate']"
-  private val addFurtherGroupDetails  = "a[href*='/group-status']"
-  private val addContactDetails       = "a[href*='/contact-details']"
-  private val reviewAndSubmit         = "a[href*='/check-answers']"
+  private val addUltimateFilingMemberLink: By = By.cssSelector("a[href*='/match-hmrc-records']")
+  private val addFilingMemberLink: By         = By.cssSelector("a[href*='/nominate']")
+  private val addFurtherGroupDetailsLink: By  = By.cssSelector("a[href*='/group-status']")
+  private val addContactDetailsLink: By       = By.cssSelector("a[href*='/contact-details']")
+  private val reviewAndSubmitLink: By         = By.cssSelector("a[href*='/check-answers']")
 
-  def clickAddUltimateFilingMember(): Unit = {
-    onPage()
-    click(By.cssSelector(addUltimateFilingMember))
-  }
-
-  def clickAddFilingMemberLink(): Unit = {
-    onPage()
-    click(By.cssSelector(addFilingMember))
-  }
-
-  def clickAddFurtherGroupDetailsLink(): Unit = {
-    onPage()
-    click(By.cssSelector(addFurtherGroupDetails))
-  }
-
-  def clickAddContactDetailsLink(): Unit = {
-    onPage()
-    click(By.cssSelector(addContactDetails))
-  }
-
-  def clickReviewAndSubmitLink(): Unit = {
-    onPage()
-    click(By.cssSelector(reviewAndSubmit))
-  }
+  def clickLinkAddUltimateFilingMember(): Unit = clickLink(addUltimateFilingMemberLink)
+  def clickLinkAddFilingMember(): Unit         = clickLink(addFilingMemberLink)
+  def clickLinkAddFurtherGroupDetails(): Unit  = clickLink(addFurtherGroupDetailsLink)
+  def clickLinkAddContactDetails(): Unit       = clickLink(addContactDetailsLink)
+  def clickLinkReviewAndSubmit(): Unit         = clickLink(reviewAndSubmitLink)
 }

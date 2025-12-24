@@ -69,7 +69,7 @@ object OnlinePaymentPages extends BasePage {
 
   def paymentCompletePage(): Unit = {
     onPage("http://localhost:7802/pay-by-bank/payment-complete")
-    clickLink("a[href*='payment/history']")
+    clickLink(By.cssSelector("a[href*='payment/history']"))
   }
 
   def makeSuccessfulPayment(): Unit = {

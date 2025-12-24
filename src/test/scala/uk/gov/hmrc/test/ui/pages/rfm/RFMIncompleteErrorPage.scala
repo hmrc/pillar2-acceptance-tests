@@ -16,10 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.rfm
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMIncompleteErrorPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/error/incomplete-task"
 
-  val returnToCheckYourAnswersLink = "a[href*='/review-submit/check-answers']"
+  private val returnToCheckYourAnswersLink: By = By.cssSelector("a[href*='/review-submit/check-answers']")
+
+  def clickLinkReturnToCheckYourAnswers(): Unit = clickLink(returnToCheckYourAnswersLink)
 }

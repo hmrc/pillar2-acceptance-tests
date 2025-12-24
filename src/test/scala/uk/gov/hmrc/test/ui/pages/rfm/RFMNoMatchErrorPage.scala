@@ -16,10 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages.rfm
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.rfm.RFMNoIDCYAPage.clickLink
 
 object RFMNoMatchErrorPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/error/no-match"
 
-  val returnToStartPageLink = "a[href*='/security/enter-pillar2-id']"
+  private val returnToStartPageLink: By = By.cssSelector("a[href*='/security/enter-pillar2-id']")
+
+  def clickLinkReturnToStartPage(): Unit = clickLink(returnToStartPageLink)
 }

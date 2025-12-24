@@ -16,11 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.rfm
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMNoIDCYAPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/check-answers"
 
-  val changeName    = "a[href*='/change-input-name']"
-  val changeAddress = "a[href*='/change-input-address']"
+  private val changeNameLink: By    = By.cssSelector("a[href*='/change-input-name']")
+  private val changeAddressLink: By = By.cssSelector("a[href*='/change-input-address']")
+
+  def clickLinkChangeName(): Unit    = clickLink(changeNameLink)
+  def clickLinkChangeAddress(): Unit = clickLink(changeAddressLink)
 }

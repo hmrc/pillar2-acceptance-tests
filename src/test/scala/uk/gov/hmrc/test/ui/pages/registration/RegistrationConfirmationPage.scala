@@ -24,8 +24,5 @@ object RegistrationConfirmationPage extends BasePage {
 
   private val homePageLink: By = By.cssSelector("a[href*='/pillar2-top-up-tax-home']")
 
-  def clickHomePageLink(): Unit = {
-    onPage()
-    click(homePageLink)
-  }
+  def clickLinkHomePage(): Unit = clickLink(homePageLink)
 }

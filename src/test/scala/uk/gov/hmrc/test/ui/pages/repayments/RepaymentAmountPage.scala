@@ -22,18 +22,6 @@ object RepaymentAmountPage extends BasePage {
   override val url: String       = s"${baseUrl}repayment/amount"
   override val changeUrl: String = s"${baseUrl}repayment/change-amount"
 
-  private val amountValue: String        = "100"
-  private val amountUpdatedValue: String = "1000"
-
-  def enterAmount(): Unit = {
-    onPage()
-    sendKeys(textInputField, amountValue)
-    continue()
-  }
-
-  def updateAmount(): Unit = {
-    onPage(changeUrl)
-    sendKeys(textInputField, amountUpdatedValue)
-    continue()
-  }
+  override val textValue: String       = "100"
+  override val textUpdateValue: String = "1000"
 }

@@ -22,62 +22,26 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object DashboardPage extends BasePage {
   override val url: String = s"${baseUrl}pillar2-top-up-tax-home"
 
-  private val changeClientLink     = "a[href*='/asa/input-pillar-2-id']"
-  private val dueAndOverdueReturns = "a[href*='/due-and-overdue-returns']"
-  private val submissionHistory    = "a[href*='/submission-history']"
-  private val paymentHistory       = "a[href*='/payment/history']"
-  private val paymentOutstanding   = "a[href*='/payment/outstanding']"
-  private val requestRepayment     = "a[href*='/repayment/before-you-start']"
-  private val manageContactDetails = "a[href*='/contact-details/summary']"
-  private val manageGroupDetails   = "a[href*='/account-details/summary']"
-  private val submitBTN            = "a[href*='/below-threshold-notification/start']"
+  private val changeClientLink: By     = By.cssSelector("a[href*='/asa/input-pillar-2-id']")
+  private val dueAndOverdueReturns: By = By.cssSelector("a[href*='/due-and-overdue-returns']")
+  private val submissionHistory: By    = By.cssSelector("a[href*='/submission-history']")
+  private val paymentHistory: By       = By.cssSelector("a[href*='/payment/history']")
+  private val paymentOutstanding: By   = By.cssSelector("a[href*='/payment/outstanding']")
+  private val requestRepayment: By     = By.cssSelector("a[href*='/repayment/before-you-start']")
+  private val manageContactDetails: By = By.cssSelector("a[href*='/contact-details/summary']")
+  private val manageGroupDetails: By   = By.cssSelector("a[href*='/account-details/summary']")
+  private val submitBTN: By            = By.cssSelector("a[href*='/below-threshold-notification/start']")
+  private val clientIdText: By         = By.cssSelector(".homepage-title span:nth-of-type(2)")
 
-  def clickChangeClientLink(): Unit = {
-    onPage()
-    click(By.cssSelector(changeClientLink))
-  }
-
-  def clickDueAndOverdueReturnsLink(): Unit = {
-    onPage()
-    clickOnByPartialLinkText(By.cssSelector(dueAndOverdueReturns))
-  }
-
-  def clickSubmissionHistoryLink(): Unit = {
-    onPage()
-    click(By.cssSelector(submissionHistory))
-  }
-
-  def clickPaymentHistoryLink(): Unit = {
-    onPage()
-    click(By.cssSelector(paymentHistory))
-  }
-
-  def clickPaymentOutstandingLink(): Unit = {
-    onPage()
-    click(By.cssSelector(paymentOutstanding))
-  }
-
-  def clickRequestRepaymentLink(): Unit = {
-    onPage()
-    click(By.cssSelector(requestRepayment))
-  }
-
-  def clickManageContactDetailsLink(): Unit = {
-    onPage()
-    click(By.cssSelector(manageContactDetails))
-  }
-
-  def clickManageGroupDetailsLink(): Unit = {
-    onPage()
-    click(By.cssSelector(manageGroupDetails))
-  }
-
-  def clickSubmitBTNLink(): Unit = {
-    onPage()
-    click(By.cssSelector(submitBTN))
-  }
-
-  val clientIdText: By = By.cssSelector(".homepage-title span:nth-of-type(2)")
+  def clickChangeClientLink(): Unit         = clickLink(changeClientLink)
+  def clickDueAndOverdueReturnsLink(): Unit = clickLink(dueAndOverdueReturns)
+  def clickSubmissionHistoryLink(): Unit    = clickLink(submissionHistory)
+  def clickPaymentHistoryLink(): Unit       = clickLink(paymentHistory)
+  def clickPaymentOutstandingLink(): Unit   = clickLink(paymentOutstanding)
+  def clickRequestRepaymentLink(): Unit     = clickLink(requestRepayment)
+  def clickManageContactDetailsLink(): Unit = clickLink(manageContactDetails)
+  def clickManageGroupDetailsLink(): Unit   = clickLink(manageGroupDetails)
+  def clickSubmitBTNLink(): Unit            = clickLink(submitBTN)
 
   def displayedClientId: String = getText(clientIdText).replace("ID:", "").trim
 

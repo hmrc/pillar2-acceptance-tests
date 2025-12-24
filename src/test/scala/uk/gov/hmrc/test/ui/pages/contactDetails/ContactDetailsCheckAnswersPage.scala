@@ -22,18 +22,23 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object ContactDetailsCheckAnswersPage extends BasePage {
   override val url: String = s"${baseUrl}contact-details/check-answers"
 
-  val changePrimaryContactName           = "a[href*='/change-input-name']"
-  val changePrimaryContactEmailAddress   = "a[href*='/change-input-email']"
-  val changePrimaryContactPhoneNumber    = "a[href*='/change-input-phone']"
-  val changePrimaryContactByPhone        = "a[href*='/change-phone']"
-  val changeSecondaryContact             = "a[href*='/change-second-contact']"
-  val changeSecondaryContactName         = "a[href*='/change-second-input-name']"
-  val changeSecondaryContactEmailAddress = "a[href*='/change-second-input-email']"
-  val changeSecondaryContactPhoneNumber  = "a[href*='/change-second-input-phone']"
-  val changeContactAddress               = "a[href*='/change-input-address']"
+  private val changePrimaryContactNameLink: By           = By.cssSelector("a[href*='/change-input-name']")
+  private val changePrimaryContactEmailAddressLink: By   = By.cssSelector("a[href*='/change-input-email']")
+  private val changePrimaryContactPhoneNumberLink: By    = By.cssSelector("a[href*='/change-input-phone']")
+  private val changePrimaryContactByPhoneLink: By        = By.cssSelector("a[href*='/change-phone']")
+  private val changeSecondaryContactLink: By             = By.cssSelector("a[href*='/change-second-contact']")
+  private val changeSecondaryContactNameLink: By         = By.cssSelector("a[href*='/change-second-input-name']")
+  private val changeSecondaryContactEmailAddressLink: By = By.cssSelector("a[href*='/change-second-input-email']")
+  private val changeSecondaryContactPhoneNumberLink: By  = By.cssSelector("a[href*='/change-second-input-phone']")
+  private val changeContactAddressLink: By               = By.cssSelector("a[href*='/change-input-address']")
 
-  def clickChangeLink(changeLink: String): Unit = {
-    onPage()
-    click(By.cssSelector(changeLink))
-  }
+  def clickLinkChangePrimaryContactName(): Unit           = clickLink(changePrimaryContactNameLink)
+  def clickLinkChangePrimaryContactEmailAddress(): Unit   = clickLink(changePrimaryContactEmailAddressLink)
+  def clickLinkChangePrimaryContactPhoneNumber(): Unit    = clickLink(changePrimaryContactPhoneNumberLink)
+  def clickLinkChangePrimaryContactByPhone(): Unit        = clickLink(changePrimaryContactByPhoneLink)
+  def clickLinkChangeSecondaryContact(): Unit             = clickLink(changeSecondaryContactLink)
+  def clickLinkChangeSecondaryContactName(): Unit         = clickLink(changeSecondaryContactNameLink)
+  def clickLinkChangeSecondaryContactEmailAddress(): Unit = clickLink(changeSecondaryContactEmailAddressLink)
+  def clickLinkChangeSecondaryContactPhoneNumber(): Unit  = clickLink(changeSecondaryContactPhoneNumberLink)
+  def clickLinkChangeContactAddress(): Unit               = clickLink(changeContactAddressLink)
 }

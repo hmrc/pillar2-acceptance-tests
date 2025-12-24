@@ -39,7 +39,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
@@ -48,28 +48,28 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user doesn't add a Nominated Filing Member")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
-      ContactDetailsPrimaryNamePage.enterName()
-      ContactDetailsPrimaryEmailPage.enterEmail()
+      ContactDetailsPrimaryNamePage.enterText()
+      ContactDetailsPrimaryEmailPage.enterText()
       ContactDetailsPrimaryPhoneAsContactPage.selectNo()
       ContactDetailsSecondaryContactAddPage.selectNo()
       ContactAddressInputPage.enterAddressUK()
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")
@@ -87,28 +87,28 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user manually adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectNo()
-      UPENamePage.enterName()
+      UPENamePage.enterText()
       UPEAddressPage.enterAddressNonUK()
-      UPEContactNamePage.enterName()
-      UPEEmailPage.enterEmail()
+      UPEContactNamePage.enterText()
+      UPEEmailPage.enterText()
       UPEPhoneAsContactPage.selectYes()
-      UPEPhoneInputPage.enterPhoneNumber()
+      UPEPhoneInputPage.enterText()
       UPECheckYourAnswersPage.continueToNextPage()
 
       And("The user adds a UK Limited Company as a Nominated Filing Member")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user adds further details")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
 
@@ -116,7 +116,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
@@ -124,7 +124,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")

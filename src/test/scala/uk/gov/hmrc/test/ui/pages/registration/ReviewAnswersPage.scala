@@ -16,14 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.registration
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ReviewAnswersPage extends BasePage {
-  override val url: String = s"$baseUrl" + "review-submit/check-answers"
+  override val url: String = s"${baseUrl}review-submit/check-answers"
 
-  // UPE Section
-  val changeUPEContact = "a[href*='/change-phone']"
+  private val changeUPEContactLink: By     = By.cssSelector("a[href*='/change-phone']")
+  private val changeContactAddressLink: By = By.cssSelector("a[href*='address/change-input']")
 
-  // Contact Address Section
-  val changeContactAddress = "a[href*='address/change-input']"
+  def clickLinkChangeUPEContact(): Unit     = clickLink(changeUPEContactLink)
+  def clickLinkChangeContactAddress(): Unit = clickLink(changeContactAddressLink)
 }

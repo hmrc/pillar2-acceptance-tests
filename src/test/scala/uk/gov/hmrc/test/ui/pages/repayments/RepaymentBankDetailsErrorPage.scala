@@ -22,10 +22,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RepaymentBankDetailsErrorPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/error/bank-details"
 
-  private val returnToBankDetailsLink = "a[href*='/uk-details']"
+  private val returnToBankDetailsLink: By = By.cssSelector("a[href*='/uk-details']")
 
-  def clickReturnToBankDetailsLink(): Unit = {
-    onPage()
-    click(By.cssSelector(returnToBankDetailsLink))
-  }
+  def clickLinkReturnToBankDetails(): Unit = clickLink(returnToBankDetailsLink)
 }

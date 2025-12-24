@@ -19,29 +19,16 @@ package uk.gov.hmrc.test.ui.pages.upe
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPENamePage extends BasePage {
-  override val url: String = s"${baseUrl}business-matching/ultimate-parent/no-id/input-name"
+  override val url: String       = s"${baseUrl}business-matching/ultimate-parent/no-id/input-name"
+  override val changeUrl: String = s"${baseUrl}business-matching/ultimate-parent/no-id/change-input-name"
 
-  private val nameValue: String                   = "Entity Name"
-  private val nameUpdatedValue: String            = "New Entity Name"
+  override val textValue: String                  = "Entity Name"
+  override val textUpdateValue: String            = "New Entity Name"
   private val registrationInProgressValue: String = "Medium Processing Corp"
-  val nameSubscriptionFailureValue: String        = "XMPLR0009999999"
-  val nameAPIErrorValue: String                   = "regNoIDInvalidRequest"
+  private val subscriptionFailureValue: String    = "XMPLR0009999999"
+  private val aPIErrorValue: String               = "regNoIDInvalidRequest"
 
-  def enterName(): Unit = {
-    onPage()
-    sendKeys(textInputField, nameValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def updateName(): Unit = {
-    onPage(s"${baseUrl}business-matching/ultimate-parent/no-id/change-input-name")
-    sendKeys(textInputField, nameUpdatedValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def registrationInProgress(): Unit = {
-    onPage()
-    sendKeys(textInputField, registrationInProgressValue)
-    clickButtonByText(buttonSaveAndContinue)
-  }
+  def enterTextRegistrationInProgress(): Unit = enterText(registrationInProgressValue)
+  def enterTextSubscriptionFailure(): Unit    = enterText(subscriptionFailureValue)
+  def enterTextAPIError(): Unit               = enterText(aPIErrorValue)
 }

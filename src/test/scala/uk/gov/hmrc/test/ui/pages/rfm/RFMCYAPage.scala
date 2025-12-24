@@ -16,12 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.rfm
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMCYAPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/security/check-answers"
 
-  val changePID              = "a[href*='/change-enter-pillar-2-id']"
-  val changeRegistrationDate = "a[href*='/change-registration-date']"
+  private val changePIDLink: By              = By.cssSelector("a[href*='/change-enter-pillar-2-id']")
+  private val changeRegistrationDateLink: By = By.cssSelector("a[href*='/change-registration-date']")
 
+  def clickLinkChangePID(): Unit              = clickLink(changePIDLink)
+  def clickLinkChangeRegistrationDate(): Unit = clickLink(changeRegistrationDateLink)
 }

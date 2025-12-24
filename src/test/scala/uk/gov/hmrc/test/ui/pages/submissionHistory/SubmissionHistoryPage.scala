@@ -16,10 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.submissionHistory
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object SubmissionHistoryPage extends BasePage {
   override val url: String = s"${baseUrl}submission-history"
 
-  val dueAndOverdueReturnsLink = "a[href*='/due-and-overdue-returns']"
+  private val dueAndOverdueReturnsLink: By = By.cssSelector("a[href*='/due-and-overdue-returns']")
+
+  def clickLinkDueAndOverdueReturns(): Unit = clickLink(dueAndOverdueReturnsLink)
 }

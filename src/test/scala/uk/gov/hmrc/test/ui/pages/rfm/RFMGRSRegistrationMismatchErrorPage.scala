@@ -22,10 +22,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RFMGRSRegistrationMismatchErrorPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/uk-based/error/no-match"
 
-  private val returnToEntityTypeLink = "a[href*='/org-type']"
+  private val returnToEntityTypeLink: By = By.cssSelector("a[href*='/org-type']")
 
-  def clickReturnToEntityTypeLink(): Unit = {
-    onPage()
-    click(By.cssSelector(returnToEntityTypeLink))
-  }
+  def clickLinkReturnToEntityType(): Unit = clickLink(returnToEntityTypeLink)
 }

@@ -16,12 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.dueAndOverdueReturns
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object DueAndOverdueReturnsPage extends BasePage {
   override val url: String = s"${baseUrl}due-and-overdue-returns"
 
-  val submissionHistoryLink = "a[href*='/submission-history']"
+  private val submissionHistoryLink: By = By.cssSelector("a[href*='/submission-history']")
+  private val pillar2TopUpTaxesLink: By = By.cssSelector("a[href*='how-to-report-pillar-2-top-up-taxes']")
 
-  val pillar2TopupTaxesLink = "a[href*='how-to-report-pillar-2-top-up-taxes']"
+  def clickLinkSubmissionHistory(): Unit = clickLink(submissionHistoryLink)
+  def clickLinkPillar2TopUpTaxes(): Unit = clickLink(pillar2TopUpTaxesLink)
 }
