@@ -20,11 +20,5 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMContactGuidancePage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/contact-details/content"
-  def printPage(): Unit    = {
-    println("************************************")
-    println("************************************")
-    println(url)
-    println("************************************")
-    println("************************************")
-  }
+
 }

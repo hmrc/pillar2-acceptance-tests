@@ -53,13 +53,13 @@ class RegistrationInProgressSpec extends BaseSpec {
       TaskListPage.clickAddFilingMemberLink()
 
       When("The user doesn't add a Nominated Filing Member")
-      NFMRegistrationPage.selectNominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
 
       Then("The user continues to the task list")
       TaskListPage.clickAddFurtherGroupDetailsLink()
 
       And("The user adds further details")
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 

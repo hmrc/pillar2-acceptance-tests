@@ -55,11 +55,11 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
@@ -96,17 +96,17 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectYes()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
@@ -163,11 +163,11 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 

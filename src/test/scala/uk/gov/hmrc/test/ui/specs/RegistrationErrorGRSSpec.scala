@@ -42,7 +42,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Failed Party Type Mismatch")
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectYes()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationFailedPartyTypeMismatch()
 
       When("The user is presented with the mismatching-details error page")
@@ -50,14 +50,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Failed Party Type Mismatch")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
-      NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
+      NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickButtonRegistrationFailedPartyTypeMismatch()
 
       When("The user is presented with the mismatching-details error page")
@@ -83,7 +83,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Generic Error")
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectYes()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationFailedGeneric()
 
       When("The user is presented with the mismatching-details error page")
@@ -91,14 +91,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Generic Error")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
-      NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
+      NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickButtonRegistrationFailedGeneric()
 
       When("The user is presented with the mismatching-details error page")
@@ -124,7 +124,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Identifiers Mismatch")
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectYes()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationNotCalledIdentifierMismatch()
 
       When("The user is presented with the Identifiers Mismatch error page")
@@ -132,14 +132,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Identifiers Mismatch")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
-      NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
+      NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickButtonRegistrationNotCalledIdentifierMismatch()
 
       When("The user is presented with the Identifiers Mismatch error page")
@@ -165,7 +165,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV failed")
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectYes()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationNotCalledBvFailed()
 
       When("The user is presented with the BV failed error page")
@@ -173,14 +173,14 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
       And("The user goes back to entity type page and enters valid details")
       UPEGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with BV failed")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
-      NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
+      NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       NFMUKCompanyGRSPage.clickButtonRegistrationNotCalledBvFailed()
 
       When("The user is presented with the BV failed error page")

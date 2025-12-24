@@ -42,10 +42,10 @@ class RFMSubmissionGRSSpec extends BaseSpec {
 
       And("The user selects a UK Limited Company as new NFM with BV Enabled")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
-      RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
+      RFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       RFMGRSUKLimitedCompanyPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user adds primary contact details")
@@ -84,10 +84,10 @@ class RFMSubmissionGRSSpec extends BaseSpec {
 
       And("The user selects a UK Limited Company as new NFM with BV Disabled")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
-      RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
+      RFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       RFMGRSUKLimitedCompanyPage.clickButtonRegistrationSuccessBvDisabled()
 
       And("The user adds primary contact details")
