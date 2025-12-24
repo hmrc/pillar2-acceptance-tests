@@ -46,20 +46,20 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
 
       And("The user selects the current accounting period")
-      BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
+      BtnMultipleAccountingPage.selectRadioCurrentAccountingPeriod()
 
       And("The user returns to the accounting period and selects previous accounting period and reaches BTN under enquiry page")
       BtnAccountingPage.clickBackLink()
-      BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
+      BtnMultipleAccountingPage.selectRadioPreviousAccountingPeriod()
 
       And("The user returns to the multiple accounting period and select PreviousAccountingPeriodUKTRSubmitted")
       BtnUnderEnquiryPage.browserBack()
-      BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
+      BtnMultipleAccountingPage.selectRadioPreviousAccountingPeriodUKTRSubmitted()
 
       Then("The user reaches the BTN under enquiry page and continues BTN submission")
       BtnUnderEnquiryPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.selectEntityMultinational()
+      BtnDomesticOrMnePage.selectRadioEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       And("The user is on the Below-Threshold Notification successful confirmation page")
@@ -101,20 +101,20 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
 
       And("The agent selects the current accounting period")
-      BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
+      BtnMultipleAccountingPage.selectRadioCurrentAccountingPeriod()
 
       And("The agent returns to the multiple accounting period and selects previous accounting period and reached BtnUnderEnquiryPage")
       BtnAccountingPage.clickBackLink()
-      BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
+      BtnMultipleAccountingPage.selectRadioPreviousAccountingPeriod()
 
       And("The agent returns to the multiple accounting period and select PreviousAccountingPeriodUKTRSubmitted")
       BtnUnderEnquiryPage.browserBack()
-      BtnMultipleAccountingPage.selectPreviousAccountingPeriodUKTRSubmitted()
+      BtnMultipleAccountingPage.selectRadioPreviousAccountingPeriodUKTRSubmitted()
 
       And("The agent continue from BtnUnderEnquiryPage ")
       BtnUnderEnquiryPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.selectEntityMultinational()
+      BtnDomesticOrMnePage.selectRadioEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       And("The agent is on the Below-Threshold Notification successful confirmation page")

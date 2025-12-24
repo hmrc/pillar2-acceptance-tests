@@ -42,7 +42,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
 
       And("The user selects a new NFM and enters details")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectNo()
       RFMNFMNamePage.enterText()
@@ -128,7 +128,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
 
       And("The user selects a new UPE and enters details")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectUltimateParentEntity()
+      RFMCorpPositionPage.selectRadioUltimateParentEntity()
 
       And("The user adds primary contact details")
       RFMContactGuidancePage.continueToNextPage()

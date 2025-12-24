@@ -17,17 +17,18 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
-import uk.gov.hmrc.test.ui.pages.rfm._
-import uk.gov.hmrc.test.ui.specs.tags._
+import uk.gov.hmrc.test.ui.pages.rfm.*
+import uk.gov.hmrc.test.ui.specs.tags.*
 
 class RFMSubmissionGRSSpec extends BaseSpec {
 
   Feature("RFM Ultimate Parent Entity and New nominated Filling Member GRS journey") {
 
-    Scenario("1 - RFM GRS journey with New NFM as UK limited company and BV Enabled", 
+    Scenario(
+      "1 - RFM GRS journey with New NFM as UK limited company and BV Enabled",
       AcceptanceTests
     ) {
-      
+
       Given("Organisation User logs into RFM")
       login(
         userType = "Organisation",
@@ -41,11 +42,11 @@ class RFMSubmissionGRSSpec extends BaseSpec {
 
       And("The user selects a UK Limited Company as new NFM with BV Enabled")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
-      RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
-      RFMGRSUKLimitedCompanyPage.clickRegistrationSuccessBvEnabled()
+      RFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
+      RFMGRSUKLimitedCompanyPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user adds primary contact details")
       RFMContactGuidancePage.continueToNextPage()
@@ -62,10 +63,11 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageSubmitById()
 
       Then("The user is presented with the confirmation page")
-      RFMConfirmationPage.onPage()
+      RFMConfirmationPage.onPage(timeoutSeconds = 10)
     }
 
-    Scenario("2 - RFM GRS journey with New NFM as UK limited company and BV Disabled",
+    Scenario(
+      "2 - RFM GRS journey with New NFM as UK limited company and BV Disabled",
       AcceptanceTests
     ) {
 
@@ -82,11 +84,11 @@ class RFMSubmissionGRSSpec extends BaseSpec {
 
       And("The user selects a UK Limited Company as new NFM with BV Disabled")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
-      RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
-      RFMGRSUKLimitedCompanyPage.clickRegistrationSuccessBvDisabled()
+      RFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
+      RFMGRSUKLimitedCompanyPage.clickButtonRegistrationSuccessBvDisabled()
 
       And("The user adds primary contact details")
       RFMContactGuidancePage.continueToNextPage()

@@ -46,7 +46,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentGuidancePage.continueToNextPage()
       RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
-      RepaymentMethodPage.clickTypeOfAccountUK()
+      RepaymentMethodPage.selectRadioTypeOfAccountUK()
 
       And("The user gets to the UK bank account screen and submits wrong bank details (couldNotConfirmBankDetails)")
       RepaymentBankAccountUKPage.enterBankDetails(couldNotConfirmBankDetails)

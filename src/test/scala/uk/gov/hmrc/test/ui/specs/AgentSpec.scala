@@ -94,53 +94,53 @@ class AgentSpec extends BaseSpec {
       ASAHomePage.onPage()
     }
 
-  }
 
-  Scenario(
-    "3 - Verify Agent can switch clients",
-    AcceptanceTests
-  ) {
+    Scenario(
+      "3 - Verify Agent can switch clients",
+      AcceptanceTests
+    ) {
 
-    Given("Agent User logs in with existing entity group")
-    login(
-      userType = "Agent",
-      page = "asa",
-      enrolment = Some(
-        Enrolment(
-          key = "HMRC-AS-AGENT",
-          name = "AgentReference",
-          value = "1234"
-        )
-      ),
-      delegatedEnrolments = Seq(
-        DelegatedEnrolment(
-          key = "HMRC-PILLAR2-ORG",
-          name = "PLRID",
-          value = "XMPLR0000000122",
-          authRule = "pillar2-auth"
+      Given("Agent User logs in with existing entity group")
+      login(
+        userType = "Agent",
+        page = "asa",
+        enrolment = Some(
+          Enrolment(
+            key = "HMRC-AS-AGENT",
+            name = "AgentReference",
+            value = "1234"
+          )
         ),
-        DelegatedEnrolment(
-          key = "HMRC-PILLAR2-ORG",
-          name = "PLRID",
-          value = "XMPLR0012345674",
-          authRule = "pillar2-auth"
+        delegatedEnrolments = Seq(
+          DelegatedEnrolment(
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XMPLR0000000122",
+            authRule = "pillar2-auth"
+          ),
+          DelegatedEnrolment(
+            key = "HMRC-PILLAR2-ORG",
+            name = "PLRID",
+            value = "XMPLR0012345674",
+            authRule = "pillar2-auth"
+          )
         )
       )
-    )
 
-    Then("The agent provides a client PLRId")
-    ASAPillar2InputPage.enterText("XMPLR0000000122")
-    ASAConfirmationPage.continueToNextPage()
+      Then("The agent provides a client PLRId")
+      ASAPillar2InputPage.enterText("XMPLR0000000122")
+      ASAConfirmationPage.continueToNextPage()
 
-    Then("The agent checks the client PLRId")
-    DashboardPage.shouldShowClientId("XMPLR0000000122")
+      Then("The agent checks the client PLRId")
+      DashboardPage.shouldShowClientId("XMPLR0000000122")
 
-    And("The agent provides a different client PLRId")
-    DashboardPage.clickChangeClientLink()
-    ASAPillar2InputPage.enterText("XMPLR0012345674")
-    ASAConfirmationPage.continueToNextPage()
+      And("The agent provides a different client PLRId")
+      DashboardPage.clickChangeClientLink()
+      ASAPillar2InputPage.enterText("XMPLR0012345674")
+      ASAConfirmationPage.continueToNextPage()
 
-    Then("The agent checks the new client PLRId is correct")
-    DashboardPage.shouldShowClientId("XMPLR0012345674")
+      Then("The agent checks the new client PLRId is correct")
+      DashboardPage.shouldShowClientId("XMPLR0012345674")
+    }
   }
 }

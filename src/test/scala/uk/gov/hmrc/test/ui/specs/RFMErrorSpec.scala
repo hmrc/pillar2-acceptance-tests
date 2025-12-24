@@ -80,11 +80,11 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as new NFM")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
-      RFMGRSEntityTypePage.selectEntityTypeUkLimitedCompany()
-      RFMGRSUKLimitedCompanyPage.clickRegistrationSuccessBvEnabled()
+      RFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
+      RFMGRSUKLimitedCompanyPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds contact details")
       RFMContactGuidancePage.continueToNextPage()
@@ -121,7 +121,7 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user selects a new NFM and enters details")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectNo()
       RFMNFMNamePage.enterText()
@@ -145,7 +145,7 @@ class RFMErrorSpec extends BaseSpec {
 
       Then("The selects yes to adding a secondary contact via the check your answers page")
       RFMFinalReviewCYAPage.clickLink(RFMFinalReviewCYAPage.changeSecondaryContact)
-      RFMContactSecondaryAddPage.changeToYes()
+      RFMContactSecondaryAddPage.selectRadioChangeToYes()
 
       And("The user returns to the check your answers page without entering secondary contact details")
       RFMContactSecondaryNamePage.clickBackLink(RFMContactSecondaryNamePage.changeUrl)
@@ -176,11 +176,11 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user selects a Limited Liability Partnership as new NFM with Type Mismatch")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
-      RFMGRSEntityTypePage.selectEntityTypeLimitedLiabilityPartnership()
-      RFMGRSLimitedLiabilityPartnershipPage.clickRegistrationFailedPartyTypeMismatch()
+      RFMEntityTypePage.selectRadioEntityTypeLimitedLiabilityPartnership()
+      RFMGRSLimitedLiabilityPartnershipPage.clickButtonRegistrationFailedPartyTypeMismatch()
 
       Then("The user is presented with the type mismatch page")
       RFMGRSRegistrationMismatchErrorPage
@@ -203,11 +203,11 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user selects a Limited Liability Partnership as new NFM with Type Mismatch")
       RFMSavingProgressPage.continueToNextPage()
-      RFMCorpPositionPage.selectNewNominatedFilingMember()
+      RFMCorpPositionPage.selectRadioNewNominatedFilingMember()
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectYes()
-      RFMGRSEntityTypePage.selectEntityTypeLimitedLiabilityPartnership()
-      RFMGRSLimitedLiabilityPartnershipPage.clickRegistrationNotCalledIdentifierMismatch()
+      RFMEntityTypePage.selectRadioEntityTypeLimitedLiabilityPartnership()
+      RFMGRSLimitedLiabilityPartnershipPage.clickButtonRegistrationNotCalledIdentifierMismatch()
 
       Then("The user is presented with the identifiers mismatch error page")
       RFMGRSRegistrationNotCalledErrorPage.onPage()

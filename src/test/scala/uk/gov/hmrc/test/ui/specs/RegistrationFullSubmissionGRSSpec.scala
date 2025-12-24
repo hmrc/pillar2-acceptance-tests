@@ -29,7 +29,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
   Feature("Full registration using GRS") {
 
     Scenario("1 - User registers a UK Limited Company UPE successfully",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("Org User logs in without Pillar2 enrolment")
@@ -43,18 +43,18 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
+      UPERegisteredInUkPage.selectYes()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
+      UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
@@ -77,7 +77,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
     }
 
     Scenario("2 - User registers a UK Limited Company as ",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("Org User logs in without Pillar2 enrolment")
@@ -91,7 +91,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user manually adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.enterText()
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterText()
@@ -102,14 +102,14 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.selectNominatedFilingMemberYes()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
-      NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
-      NFMUKCompanyGRSPage.clickRegistrationSuccessBvEnabled()
+      NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
+      NFMUKCompanyGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
 
       Then("The user continues from further details to the task list")

@@ -22,11 +22,11 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object UPEEntityTypePage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/ultimate-parent/uk-based/entity-type"
 
-  private val ukLimitedCompany            = By.id("value_0")
-  private val limitedLiabilityPartnership = By.id("value_1")
-  private val companyTypeNotListed        = By.id("value_2")
+  private val ukLimitedCompanyRadio            = By.id("value_0")
+  private val limitedLiabilityPartnershipRadio = By.id("value_1")
+  private val companyTypeNotListedRadio        = By.id("value_2")
 
-  def selectEntityTypeUkLimitedCompany(): Unit            = selectRadio(ukLimitedCompany)
-  def selectEntityTypeLimitedLiabilityPartnership(): Unit = selectRadio(limitedLiabilityPartnership)
-  def selectEntityTypeCompanyTypeNotListed(): Unit        = selectRadio(companyTypeNotListed)
+  def selectRadioEntityTypeUkLimitedCompany(): Unit            = selectRadio(ukLimitedCompanyRadio)
+  def selectRadioEntityTypeLimitedLiabilityPartnership(): Unit = selectRadio(limitedLiabilityPartnershipRadio)
+  def selectRadioEntityTypeCompanyTypeNotListed(): Unit        = selectRadio(companyTypeNotListedRadio)
 }

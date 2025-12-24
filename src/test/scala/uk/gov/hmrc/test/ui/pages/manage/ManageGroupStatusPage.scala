@@ -22,9 +22,9 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object ManageGroupStatusPage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/account-details/change-group-status"
 
-  private val onlyUk: By     = By.id("value_0")
-  private val ukAndNonUk: By = By.id("value_1")
+  private val onlyUkRadio: By     = By.id("value_0")
+  private val ukAndNonUkRadio: By = By.id("value_1")
 
-  def selectOnlyUk(): Unit     = selectRadio(onlyUk)
-  def selectUkAndNonUk(): Unit = selectRadio(ukAndNonUk)
+  def selectRadioOnlyUk(): Unit     = selectRadio(onlyUkRadio)
+  def selectRadioUkAndNonUk(): Unit = selectRadio(ukAndNonUkRadio)
 }
