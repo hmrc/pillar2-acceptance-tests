@@ -43,18 +43,18 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
+      UPERegisteredInUkPage.selectYes()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
+      UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
@@ -91,7 +91,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user manually adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.enterName()
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterName()
@@ -102,14 +102,14 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberYes()
-      NFMRegisteredInUkPage.registeredInUkYes()
-      NFMEntityTypePage.enterEntityTypeUkLimitedCompany()
-      NFMUKCompanyGRSPage.clickRegistrationSuccessBvEnabled()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
+      NFMRegisteredInUkPage.selectYes()
+      NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
+      NFMUKCompanyGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
 
       Then("The user continues from further details to the task list")

@@ -43,7 +43,7 @@ class BTNUnsuccessfulSpec extends BaseSpec {
       DashboardPage.clickSubmitBTNLink()
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnDomesticOrMnePage.selectRadioEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       Then("The user encounters the problem with service page")

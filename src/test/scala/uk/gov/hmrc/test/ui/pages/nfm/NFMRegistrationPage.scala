@@ -22,18 +22,9 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object NFMRegistrationPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/filing-member/nominate"
 
-  private val filingMemberYes: By = By.id("nominateFilingMember_0")
-  private val filingMemberNo: By  = By.id("nominateFilingMember_1")
+  private val filingMemberYesRadio: By = By.id("nominateFilingMember_0")
+  private val filingMemberNoRadio: By  = By.id("nominateFilingMember_1")
 
-  def nominatedFilingMemberYes(): Unit = {
-    onPage()
-    click(filingMemberYes)
-    click(submitButtonId)
-  }
-
-  def nominatedFilingMemberNo(): Unit = {
-    onPage()
-    click(filingMemberNo)
-    click(submitButtonId)
-  }
+  def selectRadioNominatedFilingMemberYes(): Unit = selectRadio(filingMemberYesRadio)
+  def selectRadioNominatedFilingMemberNo(): Unit  = selectRadio(filingMemberNoRadio)
 }

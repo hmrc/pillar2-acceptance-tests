@@ -19,28 +19,14 @@ package uk.gov.hmrc.test.ui.pages.rfm
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object RFMGRSEntityTypePage extends BasePage {
+object RFMEntityTypePage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/uk-based/org-type"
 
-  private val ukLimitedCompany: By            = By.id("value_0")
-  private val limitedLiabilityPartnership: By = By.id("value_1")
-  private val companyTypeNotListed: By        = By.id("value_2")
+  private val ukLimitedCompanyRadio: By            = By.id("value_0")
+  private val limitedLiabilityPartnershipRadio: By = By.id("value_1")
+  private val companyTypeNotListedRadio: By        = By.id("value_2")
 
-  def selectEntityTypeUkLimitedCompany(): Unit = {
-    onPage()
-    click(ukLimitedCompany)
-    continue()
-  }
-
-  def selectEntityTypeLimitedLiabilityPartnership(): Unit = {
-    onPage()
-    click(limitedLiabilityPartnership)
-    continue()
-  }
-
-  def selectEntityTypeNotListed(): Unit = {
-    onPage()
-    click(companyTypeNotListed)
-    continue()
-  }
+  def selectRadioEntityTypeUkLimitedCompany(): Unit            = selectRadio(ukLimitedCompanyRadio)
+  def selectRadioEntityTypeLimitedLiabilityPartnership(): Unit = selectRadio(limitedLiabilityPartnershipRadio)
+  def selectRadioEntityTypeNotListed(): Unit                   = selectRadio(companyTypeNotListedRadio)
 }

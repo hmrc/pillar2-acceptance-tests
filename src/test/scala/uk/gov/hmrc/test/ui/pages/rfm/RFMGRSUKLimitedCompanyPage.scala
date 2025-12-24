@@ -22,46 +22,17 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RFMGRSUKLimitedCompanyPage extends BasePage {
   override val url: String = s"${baseUrl}test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=ukLimitedCompany"
 
-  private val registrationSuccessBvDisabled: By           = By.id("registrationSuccessBvDisabled")
-  private val registrationSuccessBvEnabled: By            = By.id("registrationSuccessBvEnabled")
-  private val registrationFailedPartyTypeMismatch: By     = By.id("registrationFailedPartyTypeMismatch")
-  private val registrationFailedGeneric: By               = By.id("registrationFailedGeneric")
-  private val registrationNotCalledIdentifierMismatch: By = By.id("registrationNotCalledIdentifierMismatch")
-  private val registrationNotCalledBvFailed: By           = By.id("registrationNotCalledBvFailed")
+  private val registrationSuccessBvDisabledButton: By           = By.id("registrationSuccessBvDisabled")
+  private val registrationSuccessBvEnabledButton: By            = By.id("registrationSuccessBvEnabled")
+  private val registrationFailedPartyTypeMismatchButton: By     = By.id("registrationFailedPartyTypeMismatch")
+  private val registrationFailedGenericButton: By               = By.id("registrationFailedGeneric")
+  private val registrationNotCalledIdentifierMismatchButton: By = By.id("registrationNotCalledIdentifierMismatch")
+  private val registrationNotCalledBvFailedButton: By           = By.id("registrationNotCalledBvFailed")
 
-  def clickRegistrationSuccessBvDisabled(): Unit = {
-    onPage()
-    click(registrationSuccessBvDisabled)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def clickRegistrationSuccessBvEnabled(): Unit = {
-    onPage()
-    click(registrationSuccessBvEnabled)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def clickRegistrationFailedPartyTypeMismatch(): Unit = {
-    onPage()
-    click(registrationFailedPartyTypeMismatch)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def clickRegistrationFailedGeneric(): Unit = {
-    onPage()
-    click(registrationFailedGeneric)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def clickRegistrationNotCalledIdentifierMismatch(): Unit = {
-    onPage()
-    click(registrationNotCalledIdentifierMismatch)
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def clickRegistrationNotCalledBvFailed(): Unit = {
-    onPage()
-    click(registrationNotCalledBvFailed)
-    clickButtonByText(buttonSaveAndContinue)
-  }
+  def clickButtonRegistrationSuccessBvDisabled(): Unit           = clickButton(registrationSuccessBvDisabledButton)
+  def clickButtonRegistrationSuccessBvEnabled(): Unit            = clickButton(registrationSuccessBvEnabledButton)
+  def clickButtonRegistrationFailedPartyTypeMismatch(): Unit     = clickButton(registrationFailedPartyTypeMismatchButton)
+  def clickButtonRegistrationFailedGeneric(): Unit               = clickButton(registrationFailedGenericButton)
+  def clickButtonRegistrationNotCalledIdentifierMismatch(): Unit = clickButton(registrationNotCalledIdentifierMismatchButton)
+  def clickButtonRegistrationNotCalledBvFailed(): Unit           = clickButton(registrationNotCalledBvFailedButton)
 }

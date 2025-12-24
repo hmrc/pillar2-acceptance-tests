@@ -44,7 +44,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.enterText(UPENamePage.nameSubscriptionFailureValue)
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterName()
@@ -55,11 +55,11 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
@@ -95,18 +95,18 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkYes()
-      UPEEntityTypePage.selectEntityTypeUkLimitedCompany()
-      UPECompanyUkGRSPage.clickRegistrationSuccessBvEnabled()
+      UPERegisteredInUkPage.selectYes()
+      UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
+      UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
       TaskListPage.onPage()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 
@@ -152,7 +152,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user adds a UK Limited Company as an Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
-      UPERegisteredInUkPage.registeredInUkNo()
+      UPERegisteredInUkPage.selectNo()
       UPENamePage.enterText(UPENamePage.nameAPIErrorValue)
       UPEAddressPage.enterAddressNonUK()
       UPEContactNamePage.enterName()
@@ -163,11 +163,11 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
 
       And("The user doesn't add a Nominated Filing Member")
       TaskListPage.clickAddFilingMemberLink()
-      NFMRegistrationPage.nominatedFilingMemberNo()
+      NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
 
       And("The user adds further details")
       TaskListPage.clickAddFurtherGroupDetailsLink()
-      FDGroupStatusPage.selectOnlyUk()
+      FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
       FDCheckYourAnswersPage.continueToNextPage()
 

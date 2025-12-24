@@ -22,9 +22,5 @@ object RFMContactSecondaryAddPage extends BasePage {
   override val url: String       = s"${baseUrl}replace-filing-member/contact-details/second-contact"
   override val changeUrl: String = s"${baseUrl}replace-filing-member/contact-details/change-second-contact"
 
-  def changeToYes(): Unit = {
-    onPage(changeUrl)
-    click(yesRadioId)
-    continue()
-  }
+  def selectRadioChangeToYes(): Unit = selectRadio(yesRadioId, changeUrl)
 }

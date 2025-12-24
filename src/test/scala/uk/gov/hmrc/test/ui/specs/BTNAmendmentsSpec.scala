@@ -72,7 +72,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       DashboardPage.clickSubmitBTNLink()
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkNo()
+      BtnDomesticOrMnePage.selectRadioEntityDomestic()
 
       When("The user is presented with the amend group details page")
       BtnAgdKBPage.onPage()
@@ -96,7 +96,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       DashboardPage.clickSubmitBTNLink()
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnDomesticOrMnePage.selectRadioEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       Then("The user encounters the problem with service page")

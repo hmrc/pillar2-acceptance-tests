@@ -22,32 +22,13 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object BtnMultipleAccountingPage extends BasePage {
   override val url: String = s"${baseUrl}below-threshold-notification/choose-accounting-period"
 
-  private val CurrentAccountingPeriod : By           = By.id("radio_0")
-  private val PreviousAccountingPeriod             : By           = By.id("radio_1")
-  private val PreviousAccountingPeriodUKTRSubmitted : By           = By.id("radio_2")
-  private val PreviousAccountingPeriodBTnSubmitted : By           = By.id("radio_3")
+  private val CurrentAccountingPeriodRadio: By               = By.id("radio_0")
+  private val PreviousAccountingPeriodRadio: By              = By.id("radio_1")
+  private val PreviousAccountingPeriodUKTRSubmittedRadio: By = By.id("radio_2")
+  private val PreviousAccountingPeriodBTnSubmittedRadio: By  = By.id("radio_3")
 
-  def selectCurrentAccountingPeriod(): Unit = {
-    onPage()
-    click(CurrentAccountingPeriod)
-    continue()
-  }
-
-  def selectPreviousAccountingPeriod(): Unit = {
-    onPage()
-    click(PreviousAccountingPeriod)
-    continue()
-  }
-
-  def selectPreviousAccountingPeriodUKTRSubmitted(): Unit = {
-    onPage()
-    click(PreviousAccountingPeriodUKTRSubmitted)
-    continue()
-  }
-
-  def selectPreviousAccountingPeriodBTNSubmitted(): Unit = {
-    onPage()
-    click(PreviousAccountingPeriodBTnSubmitted)
-    continue()
-  }
+  def selectRadioCurrentAccountingPeriod(): Unit               = selectRadio(CurrentAccountingPeriodRadio)
+  def selectRadioPreviousAccountingPeriod(): Unit              = selectRadio(PreviousAccountingPeriodRadio)
+  def selectRadioPreviousAccountingPeriodUKTRSubmitted(): Unit = selectRadio(PreviousAccountingPeriodUKTRSubmittedRadio)
+  def selectRadioPreviousAccountingPeriodBTNSubmitted(): Unit  = selectRadio(PreviousAccountingPeriodBTnSubmittedRadio)
 }

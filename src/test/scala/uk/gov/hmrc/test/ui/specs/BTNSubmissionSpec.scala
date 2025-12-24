@@ -46,7 +46,7 @@ class BTNSubmissionSpec extends BaseSpec {
       DashboardPage.clickSubmitBTNLink()
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnDomesticOrMnePage.selectRadioEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
@@ -90,7 +90,7 @@ class BTNSubmissionSpec extends BaseSpec {
       DashboardPage.clickSubmitBTNLink()
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnDomesticOrMnePage.selectRadioEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
@@ -136,9 +136,9 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
 
       And("The agent selects the current accounting period")
-      BtnMultipleAccountingPage.selectCurrentAccountingPeriod()
+      BtnMultipleAccountingPage.selectRadioCurrentAccountingPeriod()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnDomesticOrMnePage.selectRadioEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       When("The user is on the Below-Threshold Notification successful confirmation page")
@@ -180,9 +180,9 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
 
       And("The agent selects the previous accounting period")
-      BtnMultipleAccountingPage.selectPreviousAccountingPeriod()
+      BtnMultipleAccountingPage.selectRadioPreviousAccountingPeriod()
       BtnAccountingPage.continueToNextPage()
-      BtnDomesticOrMnePage.entityInAndOutUkYes()
+      BtnDomesticOrMnePage.selectRadioEntityMultinational()
       BtnCyaSubmitPage.onPageSubmitById()
 
       When("The user is on the Below-Threshold Notification successful confirmation page")

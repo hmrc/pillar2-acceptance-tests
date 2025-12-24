@@ -22,18 +22,9 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RFMCorpPositionPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/corporate-position"
 
-  private val newNominatedFilingMember: By = By.id("value_1")
-  private val ultimateParentEntity: By     = By.id("value_0")
+  private val newNominatedFilingMemberRadio: By = By.id("value_1")
+  private val ultimateParentEntityRadio: By     = By.id("value_0")
 
-  def clickNewNominatedFilingMember(): Unit = {
-    onPage()
-    click(newNominatedFilingMember)
-    continue()
-  }
-
-  def clickUltimateParentEntity(): Unit = {
-    onPage()
-    click(ultimateParentEntity)
-    continue()
-  }
+  def selectRadioNewNominatedFilingMember(): Unit = selectRadio(newNominatedFilingMemberRadio)
+  def selectRadioUltimateParentEntity(): Unit     = selectRadio(ultimateParentEntityRadio)
 }
