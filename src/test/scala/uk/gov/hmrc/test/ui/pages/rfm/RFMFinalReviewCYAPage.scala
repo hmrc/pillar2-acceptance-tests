@@ -20,7 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMFinalReviewCYAPage extends BasePage {
-  override val url: String        = s"${baseUrl}replace-filing-member/review-submit/check-answers"
+  override val url: String = s"${baseUrl}replace-filing-member/review-submit/check-answers"
+
+  override val buttonId: By = By.id("send")
 
   private val changePrimaryContactNameLink: By          = By.cssSelector("a[href*='/contact-details/change-input-name']")
   private val changePrimaryContactEmailLink: By         = By.cssSelector("a[href*='/contact-details/change-input-email']")

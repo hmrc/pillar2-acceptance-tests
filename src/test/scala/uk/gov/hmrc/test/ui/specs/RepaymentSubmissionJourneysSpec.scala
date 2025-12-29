@@ -75,7 +75,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentPhoneInputPage.updateText()
 
       And("The user submits the request for repayment")
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The user will be presented with the confirmation page")
       RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
@@ -110,7 +110,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentPhoneInputPage.enterText()
 
       And("The user submits the request for repayment")
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The user will be presented with the confirmation page")
       RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
@@ -157,7 +157,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentPhoneInputPage.enterText()
 
       And("The agent submits the request for repayment")
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The agent will be presented with the confirmation page")
       RepaymentConfirmationPage.waitRefreshThenCheckOnPage(initialWaitSeconds = 10)

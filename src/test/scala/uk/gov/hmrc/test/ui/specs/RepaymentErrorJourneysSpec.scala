@@ -97,7 +97,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       And("The user redirects to the check your answers page after one question and tries to submit")
       navigateTo(RepaymentCYAPage.url)
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The user will be presented with the repayment request has missing information page")
       RepaymentIncompleteErrorPage.onPage()
@@ -136,7 +136,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
 
       And("The agent redirects to the check your answers page after one question and tries to submit")
       navigateTo(RepaymentCYAPage.url)
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The agent will be presented with the repayment request has missing information page")
       RepaymentIncompleteErrorPage.onPage()

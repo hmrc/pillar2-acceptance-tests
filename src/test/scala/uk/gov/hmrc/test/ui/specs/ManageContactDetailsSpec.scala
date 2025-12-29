@@ -77,7 +77,7 @@ class ManageContactDetailsSpec extends BaseSpec {
       ManageContactDetailsAddressPage.updateAddressUK()
 
       When("The user saves the changes")
-      ManageContactDetailsSummaryPage.onPageSubmitById()
+      ManageContactDetailsSummaryPage.onPageClickButtonById()
 
       Then("The user is taken to the dashboard")
       DashboardPage.onPage(timeoutSeconds = 5)
@@ -110,7 +110,7 @@ class ManageContactDetailsSpec extends BaseSpec {
       ManageContactDetailsPrimaryNamePage.enterTextETMPError()
 
       When("The user saves the changes")
-      ManageContactDetailsSummaryPage.onPageSubmitById()
+      ManageContactDetailsSummaryPage.onPageClickButtonById()
 
       Then("The user is taken to the error page")
       ErrorAPISubscriptionPage.onPage()

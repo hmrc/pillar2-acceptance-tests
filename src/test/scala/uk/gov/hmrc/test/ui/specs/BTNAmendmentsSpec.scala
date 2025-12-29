@@ -97,7 +97,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       Then("The user encounters the problem with service page")
       BtnProblemWithServicePage.onPage(timeoutSeconds = 5)

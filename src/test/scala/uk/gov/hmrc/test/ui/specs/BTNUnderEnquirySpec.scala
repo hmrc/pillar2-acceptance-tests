@@ -60,7 +60,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnUnderEnquiryPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       And("The user is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
@@ -115,7 +115,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnUnderEnquiryPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       And("The agent is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)

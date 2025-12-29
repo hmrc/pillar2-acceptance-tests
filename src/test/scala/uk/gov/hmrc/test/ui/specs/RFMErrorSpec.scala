@@ -97,7 +97,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMContactAddressPage.enterAddressUK()
 
       When("The user reviews and submits")
-      RFMFinalReviewCYAPage.onPageSubmitById()
+      RFMFinalReviewCYAPage.onPageClickButtonById()
 
       Then("The user is presented with the API Error page and returns to CYA")
       RFMAmendAPIErrorPage.clickLinkReturnToCheckYourAnswers()
@@ -152,7 +152,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMContactSecondaryAddPage.clickBackLink(RFMContactSecondaryAddPage.changeUrl)
 
       When("The user reviews and submits")
-      RFMFinalReviewCYAPage.onPageSubmitById()
+      RFMFinalReviewCYAPage.onPageClickButtonById()
 
       Then("The user is presented with the incomplete task page and returns to CYA")
       RFMIncompleteErrorPage.clickLinkReturnToCheckYourAnswers()

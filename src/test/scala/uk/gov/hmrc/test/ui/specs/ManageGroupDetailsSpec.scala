@@ -51,7 +51,7 @@ class ManageGroupDetailsSpec extends BaseSpec {
       ManageAccountPeriodPage.updateDates()
 
       When("The user saves the changes")
-      ManageAccountsSummaryPage.onPageSubmitById()
+      ManageAccountsSummaryPage.onPageClickButtonById()
 
       Then("The user is taken to the dashboard")
       DashboardPage.onPage(timeoutSeconds = 5)

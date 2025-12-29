@@ -34,7 +34,7 @@ trait BasePage extends Matchers with PageObject {
   val textUpdateValue: String = ""
 
   val baseUrl: String       = TestConfiguration.url("pillar2-frontend")
-  val submitButtonId: By    = By.id("submit")
+  val buttonId: By          = By.id("submit")
   val yesRadioId: By        = By.id("value_0")
   val noRadioId: By         = By.id("value_1")
   val countryDropdown: By   = By.id("country")
@@ -64,10 +64,10 @@ trait BasePage extends Matchers with PageObject {
     click(countryOption)
   }
 
-  def onPageSubmitById(): Unit = {
+  def onPageClickButtonById(): Unit = {
     onPage()
-    assertLocatorPresent(submitButtonId)
-    click(submitButtonId)
+    assertLocatorPresent(buttonId)
+    click(buttonId)
   }
 
   def continue(locator: By = continueClassName): Unit = {

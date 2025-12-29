@@ -101,7 +101,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMContactSecondaryPhoneNumberPage.updateText()
 
       When("The user reviews and submits")
-      RFMFinalReviewCYAPage.onPageSubmitById()
+      RFMFinalReviewCYAPage.onPageClickButtonById()
 
       And("The user is presented with the confirmation page and clicks the back button")
       RFMConfirmationPage.browserBack()
@@ -139,7 +139,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMContactAddressPage.enterAddressUK()
 
       When("The user reviews and submits")
-      RFMFinalReviewCYAPage.onPageSubmitById()
+      RFMFinalReviewCYAPage.onPageClickButtonById()
 
       And("The user is presented with the confirmation page")
       RFMConfirmationPage.onPage()

@@ -47,7 +47,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
@@ -91,7 +91,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
@@ -139,7 +139,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnMultipleAccountingPage.selectRadioCurrentAccountingPeriod()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
@@ -183,7 +183,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnMultipleAccountingPage.selectRadioPreviousAccountingPeriod()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
