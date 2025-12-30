@@ -45,6 +45,24 @@ trait BasePage extends Matchers with PageObject {
   val buttonContinue        = "Continue"
   val buttonSaveAndContinue = "Save and continue"
 
+  val addressLine1Id: By = By.id("addressLine1")
+  val addressLine2Id: By = By.id("addressLine2")
+  val cityId: By         = By.id("addressLine3")
+  val regionId: By       = By.id("addressLine4")
+  val postcodeId: By     = By.id("postalCode")
+
+  val defaultAddressLine1: String = "Test Street"
+  val defaultAddressLine2: String = "Test Town"
+  val defaultCity: String         = "Test City"
+  val defaultRegion: String       = "Test Region"
+  val defaultPostcode: String     = "AA1 1AA"
+  val defaultCountry: String      = "United Kingdom"
+  val updatedAddressLine1: String = "Test Street"
+  val updatedAddressLine2: String = "Test Town"
+  val updatedCity: String         = "Test City"
+  val updatedRegion: String       = "Test Region"
+  val updatedPostcode: String     = "AA1 1AA"
+
   def byText(text: String): By = By.xpath(s"//button[normalize-space()='$text']")
 
   private def fluentWait(timeoutSeconds: Long = 3): Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
@@ -179,5 +197,89 @@ trait BasePage extends Matchers with PageObject {
       elements.nonEmpty,
       s"Expected element with locator [$locator] to be present, but none was found"
     )
+  }
+
+  case class DateField(prefix: String) {
+    private val day   = By.id(s"$prefix.day")
+    private val month = By.id(s"$prefix.month")
+    private val year  = By.id(s"$prefix.year")
+
+    def enter(dayVal: String, monthVal: String, yearVal: String): Unit = {
+      sendKeys(day, dayVal)
+      sendKeys(month, monthVal)
+      sendKeys(year, yearVal)
+    }
+  }
+
+  protected val startDate: DateField = DateField("startDate")
+  protected val endDate: DateField   = DateField("endDate")
+
+  protected val defaultStart: (String, String, String) = ("01", "01", "2024")
+  protected val defaultEnd: (String, String, String)   = ("01", "01", "2025")
+
+  def fillDates(
+      start: (String, String, String) = defaultStart,
+      end: (String, String, String) = defaultEnd
+  ): Unit = {
+    startDate.enter(start._1, start._2, start._3)
+    endDate.enter(end._1, end._2, end._3)
+  }
+
+  def enterDates(
+      start: (String, String, String) = defaultStart,
+      end: (String, String, String) = defaultEnd
+  ): Unit = {
+    onPage()
+    fillDates(start, end)
+    continue()
+  }
+
+  def updateDates(
+      start: (String, String, String) = defaultStart,
+      end: (String, String, String) = defaultEnd
+  ): Unit = {
+    onPage(changeUrl)
+    fillDates(start, end)
+    continue()
+  }
+
+  protected def addressEntry(
+      line1: String,
+      line2: String,
+      cityValue: String,
+      regionValue: String,
+      postcodeValue: String
+  ): Unit = {
+    sendKeys(addressLine1Id, line1)
+    sendKeys(addressLine2Id, line2)
+    sendKeys(cityId, cityValue)
+    sendKeys(regionId, regionValue)
+    sendKeys(postcodeId, postcodeValue)
+  }
+
+  def enterAddress(
+      line1: String = defaultAddressLine1,
+      line2: String = defaultAddressLine2,
+      city: String = defaultCity,
+      region: String = defaultRegion,
+      postcode: String = defaultPostcode,
+      country: String = defaultCountry
+  ): Unit = {
+    onPage()
+    addressEntry(line1, line2, city, region, postcode)
+    countryAutoSelect(country)
+    continue()
+  }
+
+  def updateAddress(
+      line1: String = updatedAddressLine1,
+      line2: String = updatedAddressLine2,
+      city: String = updatedCity,
+      region: String = updatedRegion,
+      postcode: String = updatedPostcode
+  ): Unit = {
+    onPage(changeUrl)
+    addressEntry(line1, line2, city, region, postcode)
+    continue()
   }
 }

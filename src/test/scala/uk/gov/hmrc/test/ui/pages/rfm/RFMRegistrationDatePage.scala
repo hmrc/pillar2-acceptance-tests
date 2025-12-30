@@ -16,21 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages.rfm
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMRegistrationDatePage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/security/registration-date"
 
-  private val registrationDayId   = By.id("rfmRegistrationDate.day")
-  private val registrationMonthId = By.id("rfmRegistrationDate.month")
-  private val registrationYearId  = By.id("rfmRegistrationDate.year")
+  private val registrationDate = DateField("rfmRegistrationDate")
 
-  def enterDates(day: String, month: String, year: String): Unit = {
+  def enterDateRegistration(day: String, month: String, year: String): Unit = {
     onPage()
-    sendKeys(registrationDayId, day)
-    sendKeys(registrationMonthId, month)
-    sendKeys(registrationYearId, year)
+    registrationDate.enter(day, month, year)
     clickButtonByText(buttonContinue)
   }
 }

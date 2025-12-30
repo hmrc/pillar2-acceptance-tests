@@ -47,7 +47,10 @@ class BTNAmendmentsSpec extends BaseSpec {
 
       And("The user updates the dates of the accounting period")
       ManageAccountsSummaryPage.clickLinkChangeAccountingPeriod()
-      BtnAccountingPage.updateDates()
+      BtnAccountingPage.updateDates(
+        start = ("01", "02", "2024"),
+        end = ("31", "01", "2025")
+      )
       ManageAccountsSummaryPage.continueToNextPage()
 
       When("The user is taken back to the dashboard")

@@ -16,38 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.furtherDetails
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object FDGroupAccountingPeriodPage extends BasePage {
-  override val url: String = s"${baseUrl}further-details/accounting-period"
-
-  private val startDayId   = By.id("startDate.day")
-  private val startMonthId = By.id("startDate.month")
-  private val startYearId  = By.id("startDate.year")
-  private val endDayId     = By.id("endDate.day")
-  private val endMonthId   = By.id("endDate.month")
-  private val endYearId    = By.id("endDate.year")
-
-  def enterDates(): Unit = {
-    onPage()
-    sendKeys(startDayId, "01")
-    sendKeys(startMonthId, "01")
-    sendKeys(startYearId, "2024")
-    sendKeys(endDayId, "01")
-    sendKeys(endMonthId, "01")
-    sendKeys(endYearId, "2025")
-    clickButtonByText(buttonSaveAndContinue)
-  }
-
-  def updateDates(): Unit = {
-    onPage(s"${baseUrl}further-details/change-accounting-period")
-    sendKeys(startDayId, "01")
-    sendKeys(startMonthId, "02")
-    sendKeys(startYearId, "2024")
-    sendKeys(endDayId, "31")
-    sendKeys(endMonthId, "01")
-    sendKeys(endYearId, "2025")
-    clickButtonByText(buttonSaveAndContinue)
-  }
+  override val url: String       = s"${baseUrl}further-details/accounting-period"
+  override val changeUrl: String = s"${baseUrl}further-details/change-accounting-period"
 }

@@ -65,7 +65,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       ContactDetailsPrimaryEmailPage.enterText()
       ContactDetailsPrimaryPhoneAsContactPage.selectNo()
       ContactDetailsSecondaryContactAddPage.selectNo()
-      ContactAddressInputPage.enterAddressUK()
+      ContactAddressInputPage.enterAddress()
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
@@ -93,7 +93,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectNo()
       UPENamePage.enterText()
-      UPEAddressPage.enterAddressNonUK()
+      UPEAddressPage.enterAddress(country = "Hungary")
       UPEContactNamePage.enterText()
       UPEEmailPage.enterText()
       UPEPhoneAsContactPage.selectYes()
@@ -120,7 +120,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
-      ContactAddressInputPage.enterAddressUK()
+      ContactAddressInputPage.enterAddress()
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")

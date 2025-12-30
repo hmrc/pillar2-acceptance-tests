@@ -74,7 +74,7 @@ class ManageContactDetailsSpec extends BaseSpec {
 
       And("The user amends contact address")
       ManageContactDetailsSummaryPage.clickLinkChangeAddress()
-      ManageContactDetailsAddressPage.updateAddressUK()
+      ManageContactDetailsAddressPage.updateAddress()
 
       When("The user saves the changes")
       ManageContactDetailsSummaryPage.onPageClickButtonById()

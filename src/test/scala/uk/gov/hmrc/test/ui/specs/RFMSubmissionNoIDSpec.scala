@@ -37,7 +37,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       And("The user selects a new NFM and enters details")
@@ -46,7 +46,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectNo()
       RFMNFMNamePage.enterText()
-      RFMNFMAddressPage.enterAddressNonUK()
+      RFMNFMAddressPage.enterAddress(country = "Brazil")
 
       And("The user amends NFM name via the Check your answers page")
       RFMNoIDCYAPage.clickLinkChangeName()
@@ -54,7 +54,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
 
       And("The user amends NFM address via the Check your answers page")
       RFMNoIDCYAPage.clickLinkChangeAddress()
-      RFMNFMAddressPage.updateAddressNonUK()
+      RFMNFMAddressPage.updateAddress()
 
       Then("The user continues to contact details")
       RFMNoIDCYAPage.continueToNextPage()
@@ -74,7 +74,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMContactSecondaryPhoneNumberPage.enterText()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddressUK()
+      RFMContactAddressPage.enterAddress()
 
       Then("The user amends Primary contact name via the Check your answers page")
       RFMFinalReviewCYAPage.clickLinkChangePrimaryContactName()
@@ -123,7 +123,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       And("The user selects a new UPE and enters details")
@@ -136,7 +136,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMContactPrimaryEmailPage.enterText()
       RFMContactPrimaryByPhonePage.selectNo()
       RFMContactSecondaryAddPage.selectNo()
-      RFMContactAddressPage.enterAddressUK()
+      RFMContactAddressPage.enterAddress()
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageClickButtonById()
