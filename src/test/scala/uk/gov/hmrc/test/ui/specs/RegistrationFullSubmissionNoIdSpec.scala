@@ -42,7 +42,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectNo()
       UPENamePage.enterText()
-      UPEAddressPage.enterAddress(country = "Chad")
+      UPEAddressPage.enterAddress(country = "Nigeria")
       UPEContactNamePage.enterText()
       UPEEmailPage.enterText()
       UPEPhoneAsContactPage.selectYes()
