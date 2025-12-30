@@ -52,10 +52,10 @@ class AgentSpec extends BaseSpec {
       )
 
       Then("The agent enters an incorrect client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR0123456500")
+      ASAPillar2InputPage.enterText("XEPLR0123456500")
 
       Then("The agent is presented with the no match error page and returns to PLRId page")
-      ASANoMatchErrorPage.clickLink(ASANoMatchErrorPage.plrIDLink)
+      ASANoMatchErrorPage.clickLinkPlrID()
       ASAPillar2InputPage.onPage()
     }
 
@@ -86,11 +86,11 @@ class AgentSpec extends BaseSpec {
       )
 
       Then("The agent enters an incorrect client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XMPLR0123456789")
+      ASAPillar2InputPage.enterText("XMPLR0123456789")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent is presented with the not authorised error page")
-      ASANotAuthorisedPage.clickLink(ASANotAuthorisedPage.requestAuthLink)
+      ASANotAuthorisedPage.clickLinkRequestAuth()
       ASAHomePage.onPage()
     }
 
@@ -129,7 +129,7 @@ class AgentSpec extends BaseSpec {
     )
 
     Then("The agent provides a client PLRId")
-    ASAPillar2InputPage.enterPLR2Id("XMPLR0000000122")
+    ASAPillar2InputPage.enterText("XMPLR0000000122")
     ASAConfirmationPage.continueToNextPage()
 
     Then("The agent checks the client PLRId")
@@ -137,7 +137,7 @@ class AgentSpec extends BaseSpec {
 
     And("The agent provides a different client PLRId")
     DashboardPage.clickChangeClientLink()
-    ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
+    ASAPillar2InputPage.enterText("XMPLR0012345674")
     ASAConfirmationPage.continueToNextPage()
 
     Then("The agent checks the new client PLRId is correct")

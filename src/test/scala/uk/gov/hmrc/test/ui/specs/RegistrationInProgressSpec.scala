@@ -36,27 +36,27 @@ class RegistrationInProgressSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds Medium Processing Corp as Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectNo()
-      UPENamePage.registrationInProgress()
+      UPENamePage.enterTextRegistrationInProgress()
       UPEAddressPage.enterAddressNonUK()
-      UPEContactNamePage.registrationInProgress()
-      UPEEmailPage.enterEmail()
+      UPEContactNamePage.enterTextRegistrationInProgress()
+      UPEEmailPage.enterText()
       UPEPhoneAsContactPage.selectYes()
-      UPEPhoneInputPage.enterPhoneNumber()
+      UPEPhoneInputPage.enterText()
 
       Then("The user continues to the task list")
       UPECheckYourAnswersPage.continueToNextPage()
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
 
       When("The user doesn't add a Nominated Filing Member")
       NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
 
       Then("The user continues to the task list")
-      TaskListPage.clickAddFurtherGroupDetailsLink()
+      TaskListPage.clickLinkAddFurtherGroupDetails()
 
       And("The user adds further details")
       FDGroupStatusPage.selectRadioOnlyUk()
@@ -64,7 +64,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds UPE as primary contact")
-      TaskListPage.clickAddContactDetailsLink()
+      TaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
@@ -72,12 +72,12 @@ class RegistrationInProgressSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickReviewAndSubmitLink()
+      TaskListPage.clickLinkReviewAndSubmit()
       ReviewAnswersPage.continueToNextPage()
 
       When("The user is now on the registration complete page and tries to go to the home page")
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
-      RegistrationConfirmationPage.clickHomePageLink()
+      RegistrationConfirmationPage.clickLinkHomePage()
 
       Then("The user is presented with the registration in progress page")
       RegistrationInProgressPage.onPage()

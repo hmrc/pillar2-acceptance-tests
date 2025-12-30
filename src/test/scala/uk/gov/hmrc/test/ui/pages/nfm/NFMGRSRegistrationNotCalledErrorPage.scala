@@ -18,14 +18,12 @@ package uk.gov.hmrc.test.ui.pages.nfm
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.nfm.NFMGRSRegistrationFailedErrorPage.clickLink
 
 object NFMGRSRegistrationNotCalledErrorPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/filing-member/uk-based/error/unable-to-confirm-details"
 
-  private val goBackToEntityType = "a[href*='/entity-type']"
+  private val goBackToEntityTypeLink : By = By.cssSelector( "a[href*='/entity-type']")
 
-  def clickGoBackToEntityTypeLink(): Unit = {
-    onPage()
-    click(By.cssSelector(goBackToEntityType))
-  }
+  def clickLinkGoBackToEntityType(): Unit = clickLink(goBackToEntityTypeLink)
 }

@@ -44,7 +44,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.selectRadioTypeOfAccountUK()
 
@@ -52,13 +52,13 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentBankAccountUKPage.enterBankDetails(couldNotConfirmBankDetails)
 
       When("The user is taken to the could not confirm bank details error page")
-      RepaymentCouldNotConfirmErrorPage.clickReturnToBankDetailsLink()
+      RepaymentCouldNotConfirmErrorPage.clickLinkReturnToBankDetails()
 
       Then("The user returns to the UK bank account screen and submits wrong bank details (bankDetailsError)")
       RepaymentBankAccountUKPage.enterBankDetails(bankDetailsError)
 
       When("The user is taken to the bank details error page")
-      RepaymentBankDetailsErrorPage.clickReturnToBankDetailsLink()
+      RepaymentBankDetailsErrorPage.clickLinkReturnToBankDetails()
 
       Then("The user returns to the UK bank account screen and submits wrong bank details (barsError)")
       RepaymentBankAccountUKPage.enterBankDetails(barsError)
@@ -93,11 +93,11 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
 
       And("The user redirects to the check your answers page after one question and tries to submit")
       navigateTo(RepaymentCYAPage.url)
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The user will be presented with the repayment request has missing information page")
       RepaymentIncompleteErrorPage.onPage()
@@ -126,17 +126,17 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
+      ASAPillar2InputPage.enterText("XMPLR0012345674")
       ASAConfirmationPage.continueToNextPage()
 
       And("The agent starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
 
       And("The agent redirects to the check your answers page after one question and tries to submit")
       navigateTo(RepaymentCYAPage.url)
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The agent will be presented with the repayment request has missing information page")
       RepaymentIncompleteErrorPage.onPage()
@@ -159,7 +159,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       And("The user starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
 
       And("The user changes the url to redirect to the contact email page without answering prior questions")
       navigateTo(RepaymentContactEmailPage.url)
@@ -191,13 +191,13 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
+      ASAPillar2InputPage.enterText("XMPLR0012345674")
       ASAConfirmationPage.continueToNextPage()
 
       And("The agent starts the request a repayment journey")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
 
       And("The agent changes the url to redirect to the contact email page without answering prior questions")
       navigateTo(RepaymentContactEmailPage.url)

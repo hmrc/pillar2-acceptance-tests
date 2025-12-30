@@ -47,7 +47,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
@@ -83,7 +83,7 @@ class BTNSubmissionSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999991")
+      ASAPillar2InputPage.enterText("XEPLR9999999991")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent submits a below threshold notification")
@@ -91,7 +91,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
@@ -128,7 +128,7 @@ class BTNSubmissionSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999994")
+      ASAPillar2InputPage.enterText("XEPLR9999999994")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")
@@ -139,7 +139,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnMultipleAccountingPage.selectRadioCurrentAccountingPeriod()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
@@ -172,7 +172,7 @@ class BTNSubmissionSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999994")
+      ASAPillar2InputPage.enterText("XEPLR9999999994")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")
@@ -183,7 +183,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnMultipleAccountingPage.selectRadioPreviousAccountingPeriod()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)

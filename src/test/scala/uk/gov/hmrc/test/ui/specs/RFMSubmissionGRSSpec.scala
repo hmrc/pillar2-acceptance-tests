@@ -60,7 +60,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMContactAddressPage.enterAddressUK()
 
       When("The user reviews and submits")
-      RFMFinalReviewCYAPage.onPageSubmitById()
+      RFMFinalReviewCYAPage.onPageClickButtonById()
 
       Then("The user is presented with the confirmation page")
       RFMConfirmationPage.onPage(timeoutSeconds = 10)
@@ -102,7 +102,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMContactAddressPage.enterAddressUK()
 
       When("The user reviews and submits")
-      RFMFinalReviewCYAPage.onPageSubmitById()
+      RFMFinalReviewCYAPage.onPageClickButtonById()
 
       Then("The user is presented with the confirmation page")
       RFMConfirmationPage.onPage()

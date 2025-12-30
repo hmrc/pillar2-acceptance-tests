@@ -37,7 +37,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Failed Party Type Mismatch")
       UPEInitialGuidancePage.continueToNextPage()
@@ -49,12 +49,12 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       UPEGRSRegistrationFailedErrorPage.onPage()
 
       And("The user goes back to entity type page and enters valid details")
-      UPEGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
+      UPEGRSRegistrationFailedErrorPage.clickLinkGoBackToEntityType()
       UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Failed Party Type Mismatch")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
@@ -64,7 +64,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       NFMGRSRegistrationFailedErrorPage.onPage()
 
       Then("The user goes back to entity type page")
-      NFMGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
+      NFMGRSRegistrationFailedErrorPage.clickLinkGoBackToEntityType()
     }
 
     Scenario("2 - User registration as Uk Limited Company failed with generic error",
@@ -78,7 +78,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Generic Error")
       UPEInitialGuidancePage.continueToNextPage()
@@ -90,12 +90,12 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       UPEGRSRegistrationFailedErrorPage.onPage()
 
       And("The user goes back to entity type page and enters valid details")
-      UPEGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
+      UPEGRSRegistrationFailedErrorPage.clickLinkGoBackToEntityType()
       UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Generic Error")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
@@ -105,7 +105,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       NFMGRSRegistrationFailedErrorPage.onPage()
 
       Then("The user goes back to entity type page")
-      NFMGRSRegistrationFailedErrorPage.clickGoBackToEntityTypeLink()
+      NFMGRSRegistrationFailedErrorPage.clickLinkGoBackToEntityType()
     }
 
     Scenario("3 - User registration as Uk Limited Company failed with Identifiers Mismatch error",
@@ -119,7 +119,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Identifiers Mismatch")
       UPEInitialGuidancePage.continueToNextPage()
@@ -131,12 +131,12 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       UPEGRSRegistrationNotCalledErrorPage.onPage()
 
       And("The user goes back to entity type page and enters valid details")
-      UPEGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
+      UPEGRSRegistrationNotCalledErrorPage.clickLinkGoBackToEntityType()
       UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Identifiers Mismatch")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
@@ -146,7 +146,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       NFMGRSRegistrationNotCalledErrorPage.onPage()
 
       Then("The user goes back to entity type page")
-      NFMGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
+      NFMGRSRegistrationNotCalledErrorPage.clickLinkGoBackToEntityType()
     }
 
     Scenario("4 - User registration as Uk Limited Company failed with BV failed error",
@@ -160,7 +160,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickAddUltimateFilingMember()
+      TaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV failed")
       UPEInitialGuidancePage.continueToNextPage()
@@ -172,12 +172,12 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       UPEGRSRegistrationNotCalledErrorPage.onPage()
 
       And("The user goes back to entity type page and enters valid details")
-      UPEGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
+      UPEGRSRegistrationNotCalledErrorPage.clickLinkGoBackToEntityType()
       UPEEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with BV failed")
-      TaskListPage.clickAddFilingMemberLink()
+      TaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
@@ -187,7 +187,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       NFMGRSRegistrationNotCalledErrorPage.onPage()
 
       Then("The user goes back to entity type page")
-      NFMGRSRegistrationNotCalledErrorPage.clickGoBackToEntityTypeLink()
+      NFMGRSRegistrationNotCalledErrorPage.clickLinkGoBackToEntityType()
     }
   }
 }

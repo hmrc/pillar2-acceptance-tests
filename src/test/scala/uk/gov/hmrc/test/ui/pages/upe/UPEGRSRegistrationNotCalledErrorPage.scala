@@ -22,10 +22,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object UPEGRSRegistrationNotCalledErrorPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/ultimate-parent/uk-based/error/unable-to-confirm-details"
 
-  private val goBackToEntityType = "a[href*='/entity-type']"
+  private val goBackToEntityTypeLink: By = By.cssSelector("a[href*='/entity-type']")
 
-  def clickGoBackToEntityTypeLink(): Unit = {
-    onPage()
-    click(By.cssSelector(goBackToEntityType))
-  }
+  def clickLinkGoBackToEntityType(): Unit = clickLink(goBackToEntityTypeLink)
 }

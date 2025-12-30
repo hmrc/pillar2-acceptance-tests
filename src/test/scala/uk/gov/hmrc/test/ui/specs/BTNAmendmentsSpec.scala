@@ -43,10 +43,10 @@ class BTNAmendmentsSpec extends BaseSpec {
       Then("The user navigates to the summary page")
       DashboardPage.clickSubmitBTNLink()
       BtnStartPage.continueToNextPage()
-      BtnAccountingPage.clickAccountDetailsSummaryLink()
+      BtnAccountingPage.clickLinkAccountDetailsSummary()
 
       And("The user updates the dates of the accounting period")
-      ManageAccountsSummaryPage.clickChangeAccountingPeriodLink()
+      ManageAccountsSummaryPage.clickLinkChangeAccountingPeriod()
       BtnAccountingPage.updateDates()
       ManageAccountsSummaryPage.continueToNextPage()
 
@@ -97,7 +97,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnStartPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       Then("The user encounters the problem with service page")
       BtnProblemWithServicePage.onPage(timeoutSeconds = 5)

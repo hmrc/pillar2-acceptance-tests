@@ -43,7 +43,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       And("The user requests a repayment using a UK bank account")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.selectRadioTypeOfAccountUK()
       RepaymentBankAccountUKPage.enterBankDetails(validBankDetails)
@@ -55,27 +55,27 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentPhoneInputPage.enterText()
 
       And("The user amends refund amount via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeRefundAmount)
-      RepaymentAmountPage.updateAmount()
+      RepaymentCYAPage.clickLinkChangeRefundAmount()
+      RepaymentAmountPage.updateText()
 
       And("The user amends refund reason via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeRefundReason)
+      RepaymentCYAPage.clickLinkChangeRefundReason()
       RepaymentReasonPage.updateText()
 
       And("The user amends contact name via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeContactName)
+      RepaymentCYAPage.clickLinkChangeContactName()
       RepaymentContactNamePage.updateText()
 
       And("The user amends contact email via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changeContactEmail)
+      RepaymentCYAPage.clickLinkChangeContactEmail()
       RepaymentContactEmailPage.updateText()
 
       And("The user amends contact phone number via the Check your answers page")
-      RepaymentCYAPage.clickChangeLink(RepaymentCYAPage.changePhoneNumber)
+      RepaymentCYAPage.clickLinkChangePhoneNumber()
       RepaymentPhoneInputPage.updateText()
 
       And("The user submits the request for repayment")
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The user will be presented with the confirmation page")
       RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
@@ -98,7 +98,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       And("The user requests a repayment using a Non-UK bank account")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.selectRadioTypeOfAccountNonUK()
       RepaymentBankAccountNonUKPage.enterBankDetails()
@@ -110,7 +110,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentPhoneInputPage.enterText()
 
       And("The user submits the request for repayment")
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The user will be presented with the confirmation page")
       RepaymentConfirmationPage.onPage(timeoutSeconds = 20)
@@ -139,13 +139,13 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
+      ASAPillar2InputPage.enterText("XMPLR0012345674")
       ASAConfirmationPage.continueToNextPage()
 
       And("The agent requests a repayment using a UK bank account")
       DashboardPage.clickRequestRepaymentLink()
       RepaymentGuidancePage.continueToNextPage()
-      RepaymentAmountPage.enterAmount()
+      RepaymentAmountPage.enterText()
       RepaymentReasonPage.enterText()
       RepaymentMethodPage.selectRadioTypeOfAccountUK()
       RepaymentBankAccountUKPage.enterBankDetails(validBankDetails)
@@ -157,7 +157,7 @@ class RepaymentSubmissionJourneysSpec extends BaseSpec {
       RepaymentPhoneInputPage.enterText()
 
       And("The agent submits the request for repayment")
-      RepaymentCYAPage.onPageSubmitById()
+      RepaymentCYAPage.onPageClickButtonById()
 
       Then("The agent will be presented with the confirmation page")
       RepaymentConfirmationPage.waitRefreshThenCheckOnPage(initialWaitSeconds = 10)

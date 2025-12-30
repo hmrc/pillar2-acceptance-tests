@@ -44,7 +44,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       EligibilityGlobalGrossRevenueEQPage.selectYes()
 
       Then("The user is taken to the confirmation page and directed to the register your group page")
-      EligibilityConfirmationPage.onPageSubmitById()
+      EligibilityConfirmationPage.onPageClickButtonById()
       TaskListPage.onPage()
     }
 

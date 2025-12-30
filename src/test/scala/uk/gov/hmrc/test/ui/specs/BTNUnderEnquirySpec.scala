@@ -60,13 +60,13 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnUnderEnquiryPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       And("The user is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       When("The user returns to the dashboard")
-      BtnConfirmationPage.clickReturnToHomepageLink()
+      BtnConfirmationPage.clickLinkReturnToHomepage()
       DashboardPage.onPage()
     }
 
@@ -93,7 +93,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XEPLR9999999995")
+      ASAPillar2InputPage.enterText("XEPLR9999999995")
       ASAConfirmationPage.continueToNextPage()
 
       Then("The agent starts a below threshold notification")
@@ -115,13 +115,13 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnUnderEnquiryPage.continueToNextPage()
       BtnAccountingPage.continueToNextPage()
       BtnDomesticOrMnePage.selectRadioEntityMultinational()
-      BtnCyaSubmitPage.onPageSubmitById()
+      BtnCyaSubmitPage.onPageClickButtonById()
 
       And("The agent is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPage(timeoutSeconds = 10)
 
       When("The agent returns to the dashboard")
-      BtnConfirmationPage.clickReturnToHomepageLink()
+      BtnConfirmationPage.clickLinkReturnToHomepage()
       DashboardPage.onPage()
     }
   }

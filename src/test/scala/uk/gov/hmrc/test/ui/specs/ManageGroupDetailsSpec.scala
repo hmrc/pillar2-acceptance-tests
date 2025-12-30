@@ -47,11 +47,11 @@ class ManageGroupDetailsSpec extends BaseSpec {
       DashboardPage.clickManageGroupDetailsLink()
 
       And("The user amends accounting period")
-      ManageAccountsSummaryPage.clickLink(ManageAccountsSummaryPage.changeAccountingPeriodLink)
+      ManageAccountsSummaryPage.clickLinkChangeAccountingPeriod()
       ManageAccountPeriodPage.updateDates()
 
       When("The user saves the changes")
-      ManageAccountsSummaryPage.onPageSubmitById()
+      ManageAccountsSummaryPage.onPageClickButtonById()
 
       Then("The user is taken to the dashboard")
       DashboardPage.onPage(timeoutSeconds = 5)
@@ -79,7 +79,7 @@ class ManageGroupDetailsSpec extends BaseSpec {
       DashboardPage.clickManageGroupDetailsLink()
 
       And("The user amends entity locations")
-      ManageAccountsSummaryPage.clickLink(ManageAccountsSummaryPage.changeGroupStatusLink)
+      ManageAccountsSummaryPage.clickLinkChangeGroupStatus()
       ManageGroupStatusPage.selectRadioOnlyUk()
 
       Then("The user is taken to the MTT to DTT kb page")

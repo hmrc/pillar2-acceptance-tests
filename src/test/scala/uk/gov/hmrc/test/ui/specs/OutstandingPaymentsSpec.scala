@@ -30,7 +30,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
     Scenario(
       "1 - Make successful payment as an Org user",
-      AcceptanceTests
+      AcceptanceTests, Wip
     ) {
 
       Given("Organisation User logs in to Pillar2 service")
@@ -85,7 +85,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
       )
 
       Then("The agent confirms client PLRId")
-      ASAPillar2InputPage.enterPLR2Id("XMPLR0012345674")
+      ASAPillar2InputPage.enterText("XMPLR0012345674")
       ASAConfirmationPage.continueToNextPage()
 
       And("The agent views outstanding payments")
