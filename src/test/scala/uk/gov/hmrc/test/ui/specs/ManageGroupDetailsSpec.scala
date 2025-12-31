@@ -48,7 +48,10 @@ class ManageGroupDetailsSpec extends BaseSpec {
 
       And("The user amends accounting period")
       ManageAccountsSummaryPage.clickLinkChangeAccountingPeriod()
-      ManageAccountPeriodPage.updateDates()
+      ManageAccountPeriodPage.enterDates(
+        start = ("01", "02", "2024"),
+        end = ("31", "01", "2025")
+      )
 
       When("The user saves the changes")
       ManageAccountsSummaryPage.onPageClickButtonById()

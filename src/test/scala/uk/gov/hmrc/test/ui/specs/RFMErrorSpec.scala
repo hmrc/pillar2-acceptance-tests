@@ -36,7 +36,7 @@ class RFMErrorSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XEPLR0123456400")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       Then("The user is taken to the restart error page and returns to the start")
@@ -55,7 +55,7 @@ class RFMErrorSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XEPLR0123456222")
-      RFMRegistrationDatePage.enterDates("27", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("27", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       Then("The user is taken to the no match error page and returns to the PLRId page")
@@ -75,7 +75,7 @@ class RFMErrorSpec extends BaseSpec {
 
       And("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XMPLR0012345111")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       And("The user adds a UK Limited Company as new NFM")
@@ -94,7 +94,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMContactSecondaryAddPage.selectNo()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddressUK()
+      RFMContactAddressPage.enterAddress()
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageClickButtonById()
@@ -116,7 +116,7 @@ class RFMErrorSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       And("The user selects a new NFM and enters details")
@@ -125,7 +125,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectNo()
       RFMNFMNamePage.enterText()
-      RFMNFMAddressPage.enterAddressNonUK()
+      RFMNFMAddressPage.enterAddress(country = "Chile")
 
       Then("The user continues to contact details")
       RFMNoIDCYAPage.continueToNextPage()
@@ -141,7 +141,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMContactSecondaryAddPage.selectNo()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddressUK()
+      RFMContactAddressPage.enterAddress()
 
       Then("The selects yes to adding a secondary contact via the check your answers page")
       RFMFinalReviewCYAPage.clickLinkChangeSecondaryContact()
@@ -171,7 +171,7 @@ class RFMErrorSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       And("The user selects a Limited Liability Partnership as new NFM with Type Mismatch")
@@ -198,7 +198,7 @@ class RFMErrorSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       And("The user selects a Limited Liability Partnership as new NFM with Type Mismatch")

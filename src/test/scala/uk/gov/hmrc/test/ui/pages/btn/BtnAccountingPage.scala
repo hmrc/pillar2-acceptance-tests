@@ -20,27 +20,10 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnAccountingPage extends BasePage {
-  override val url: String          = s"${baseUrl}below-threshold-notification/accounting-period"
-  
+  override val url: String       = s"${baseUrl}below-threshold-notification/accounting-period"
+  override val changeUrl: String = s"${baseUrl}manage-account/account-details/change-accounting-period"
+
   private val accountDetailsSummary = By.cssSelector("a[href*='/account-details/summary']")
 
-  private val startDayId   = By.id("startDate.day")
-  private val startMonthId = By.id("startDate.month")
-  private val startYearId  = By.id("startDate.year")
-  private val endDayId     = By.id("endDate.day")
-  private val endMonthId   = By.id("endDate.month")
-  private val endYearId    = By.id("endDate.year")
-
   def clickLinkAccountDetailsSummary(): Unit = clickLink(accountDetailsSummary)
-
-  def updateDates(): Unit = {
-    onPage(s"$baseUrl" + "manage-account/account-details/change-accounting-period")
-    sendKeys(startDayId, "01")
-    sendKeys(startMonthId, "02")
-    sendKeys(startYearId, "2024")
-    sendKeys(endDayId, "31")
-    sendKeys(endMonthId, "01")
-    sendKeys(endYearId, "2025")
-    clickButtonByText(buttonContinue)
-  }
 }

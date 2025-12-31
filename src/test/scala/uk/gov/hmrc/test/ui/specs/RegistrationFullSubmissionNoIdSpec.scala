@@ -42,7 +42,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectNo()
       UPENamePage.enterText()
-      UPEAddressPage.enterAddressNonUK()
+      UPEAddressPage.enterAddress(country = "Nigeria")
       UPEContactNamePage.enterText()
       UPEEmailPage.enterText()
       UPEPhoneAsContactPage.selectYes()
@@ -54,7 +54,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
       And("The user amends UPE Address town via the Check your answers page")
       UPECheckYourAnswersPage.clickLinkChangeAddress()
-      UPEAddressPage.updateAddressNonUK()
+      UPEAddressPage.updateAddress()
 
       And("The user amends UPE contact name via the Check your answers page")
       UPECheckYourAnswersPage.clickLinkChangeContactName()
@@ -77,7 +77,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeNotListed()
       NFMNamePage.enterText()
-      NFMAddressPage.enterAddressUK()
+      NFMAddressPage.enterAddress()
       NFMContactNamePage.enterText()
       NFMContactEmailPage.enterText()
       NFMPhoneAsContactPage.selectYes()
@@ -87,9 +87,9 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       NFMCheckYourAnswersPage.clickLinkChangeName()
       NFMNamePage.updateText()
 
-      And("The user amends NFM Address town via the Check your answers page")
+      And("The user amends NFM address via the Check your answers page")
       NFMCheckYourAnswersPage.clickLinkChangeAddress()
-      NFMAddressPage.updateAddressUK()
+      NFMAddressPage.updateAddress()
 
       And("The user amends NFM contact name via the Check your answers page")
       NFMCheckYourAnswersPage.clickLinkChangeContactName()
@@ -117,7 +117,10 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
       And("The user amends the accounting period via the Check your answers page")
       FDCheckYourAnswersPage.clickLinkChangeAccountingPeriod()
-      FDGroupAccountingPeriodPage.updateDates()
+      FDGroupAccountingPeriodPage.updateDates(
+        start = ("01", "02", "2024"),
+        end = ("31", "01", "2025")
+      )
 
       Then("The user continues from further details to the task list")
       FDCheckYourAnswersPage.continueToNextPage()
@@ -139,7 +142,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       ContactDetailsSecondaryPhoneInputPage.enterText()
 
       And("The user adds contact address")
-      ContactAddressInputPage.enterAddressUK()
+      ContactAddressInputPage.enterAddress()
 
       And("The user amends Primary contact name via the Check your answers page")
       ContactDetailsCheckAnswersPage.clickLinkChangePrimaryContactName()
@@ -167,7 +170,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
       And("The user amends contact Address town via the Check your answers page")
       ContactDetailsCheckAnswersPage.clickLinkChangeContactAddress()
-      ContactAddressInputPage.updateAddressUK()
+      ContactAddressInputPage.updateAddress()
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")

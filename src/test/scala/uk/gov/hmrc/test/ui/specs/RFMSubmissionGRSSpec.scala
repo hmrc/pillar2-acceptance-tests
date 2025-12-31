@@ -37,7 +37,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       And("The user selects a UK Limited Company as new NFM with BV Enabled")
@@ -57,7 +57,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMContactSecondaryAddPage.selectNo()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddressUK()
+      RFMContactAddressPage.enterAddress()
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageClickButtonById()
@@ -79,7 +79,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
 
       When("The user enters PLRId and dates")
       RFMEnterPillar2IdPage.enterText("XMPLR0123456789")
-      RFMRegistrationDatePage.enterDates("31", "1", "2024")
+      RFMRegistrationDatePage.enterDateRegistration("31", "1", "2024")
       RFMCYAPage.continueToNextPage()
 
       And("The user selects a UK Limited Company as new NFM with BV Disabled")
@@ -99,7 +99,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMContactSecondaryAddPage.selectNo()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddressUK()
+      RFMContactAddressPage.enterAddress()
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageClickButtonById()
