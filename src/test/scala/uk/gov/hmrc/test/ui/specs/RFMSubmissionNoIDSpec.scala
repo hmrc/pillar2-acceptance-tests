@@ -46,7 +46,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectNo()
       RFMNFMNamePage.enterText()
-      RFMNFMAddressPage.enterAddress(country = "Brazil")
+      RFMNFMAddressPage.enterAddressNonUk()
 
       And("The user amends NFM name via the Check your answers page")
       RFMNoIDCYAPage.clickLinkChangeName()
@@ -74,7 +74,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMContactSecondaryPhoneNumberPage.enterText()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddress()
+      RFMContactAddressPage.enterAddressUk()
 
       Then("The user amends Primary contact name via the Check your answers page")
       RFMFinalReviewCYAPage.clickLinkChangePrimaryContactName()
@@ -136,7 +136,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMContactPrimaryEmailPage.enterText()
       RFMContactPrimaryByPhonePage.selectNo()
       RFMContactSecondaryAddPage.selectNo()
-      RFMContactAddressPage.enterAddress()
+      RFMContactAddressPage.enterAddressUk()
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageClickButtonById()

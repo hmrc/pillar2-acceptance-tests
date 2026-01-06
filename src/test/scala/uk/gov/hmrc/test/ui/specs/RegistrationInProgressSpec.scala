@@ -42,7 +42,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectNo()
       UPENamePage.enterTextRegistrationInProgress()
-      UPEAddressPage.enterAddress(country = "Sri Lanka")
+      UPEAddressPage.enterAddressNonUk()
       UPEContactNamePage.enterTextRegistrationInProgress()
       UPEEmailPage.enterText()
       UPEPhoneAsContactPage.selectYes()
@@ -68,7 +68,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
-      ContactAddressInputPage.enterAddress()
+      ContactAddressInputPage.enterAddressUk()
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")

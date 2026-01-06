@@ -57,6 +57,7 @@ trait BasePage extends Matchers with PageObject {
   val defaultRegion: String       = "Test Region"
   val defaultPostcode: String     = "AA1 1AA"
   val defaultCountry: String      = "United Kingdom"
+  val defaultCountryNonUk: String = "Japan"
   val updatedAddressLine1: String = "Test Street"
   val updatedAddressLine2: String = "Test Town"
   val updatedCity: String         = "Test City"
@@ -243,6 +244,56 @@ trait BasePage extends Matchers with PageObject {
     continue()
   }
 
+  case class Address(
+      line1: String,
+      line2: String,
+      city: String,
+      region: String,
+      postcode: String,
+      country: String
+  )
+
+  protected val defaultAddress: Address =
+    Address(
+      defaultAddressLine1,
+      defaultAddressLine2,
+      defaultCity,
+      defaultRegion,
+      defaultPostcode,
+      defaultCountry
+    )
+
+  protected val updatedAddress: Address =
+    defaultAddress.copy(
+      line1 = updatedAddressLine1,
+      line2 = updatedAddressLine2,
+      city = updatedCity,
+      region = updatedRegion,
+      postcode = updatedPostcode
+    )
+
+  private def fillAddress(address: Address, includeCountry: Boolean, pageUrl: String = url): Unit = {
+    onPage(pageUrl)
+    addressEntry(
+      address.line1,
+      address.line2,
+      address.city,
+      address.region,
+      address.postcode
+    )
+    if includeCountry then countryAutoSelect(address.country)
+    continue()
+  }
+
+  def enterAddressUk(): Unit =
+    fillAddress(defaultAddress, includeCountry = true)
+
+  def enterAddressNonUk(): Unit =
+    fillAddress(defaultAddress.copy(country = defaultCountryNonUk), includeCountry = true)
+
+  def updateAddress(): Unit =
+    fillAddress(updatedAddress, includeCountry = false, pageUrl = changeUrl)
+
   protected def addressEntry(
       line1: String,
       line2: String,
@@ -255,31 +306,5 @@ trait BasePage extends Matchers with PageObject {
     sendKeys(cityId, cityValue)
     sendKeys(regionId, regionValue)
     sendKeys(postcodeId, postcodeValue)
-  }
-
-  def enterAddress(
-      line1: String = defaultAddressLine1,
-      line2: String = defaultAddressLine2,
-      city: String = defaultCity,
-      region: String = defaultRegion,
-      postcode: String = defaultPostcode,
-      country: String = defaultCountry
-  ): Unit = {
-    onPage()
-    addressEntry(line1, line2, city, region, postcode)
-    countryAutoSelect(country)
-    continue()
-  }
-
-  def updateAddress(
-      line1: String = updatedAddressLine1,
-      line2: String = updatedAddressLine2,
-      city: String = updatedCity,
-      region: String = updatedRegion,
-      postcode: String = updatedPostcode
-  ): Unit = {
-    onPage(changeUrl)
-    addressEntry(line1, line2, city, region, postcode)
-    continue()
   }
 }

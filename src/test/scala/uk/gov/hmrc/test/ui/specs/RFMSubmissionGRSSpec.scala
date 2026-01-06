@@ -57,7 +57,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMContactSecondaryAddPage.selectNo()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddress()
+      RFMContactAddressPage.enterAddressUk()
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageClickButtonById()
@@ -99,7 +99,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMContactSecondaryAddPage.selectNo()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddress()
+      RFMContactAddressPage.enterAddressUk()
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageClickButtonById()

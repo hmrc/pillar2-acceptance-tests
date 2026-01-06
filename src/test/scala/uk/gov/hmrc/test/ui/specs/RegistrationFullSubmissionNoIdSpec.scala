@@ -42,7 +42,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       UPEInitialGuidancePage.continueToNextPage()
       UPERegisteredInUkPage.selectNo()
       UPENamePage.enterText()
-      UPEAddressPage.enterAddress(country = "Nigeria")
+      UPEAddressPage.enterAddressNonUk()
       UPEContactNamePage.enterText()
       UPEEmailPage.enterText()
       UPEPhoneAsContactPage.selectYes()
@@ -77,7 +77,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeNotListed()
       NFMNamePage.enterText()
-      NFMAddressPage.enterAddress()
+      NFMAddressPage.enterAddressUk()
       NFMContactNamePage.enterText()
       NFMContactEmailPage.enterText()
       NFMPhoneAsContactPage.selectYes()
@@ -142,7 +142,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       ContactDetailsSecondaryPhoneInputPage.enterText()
 
       And("The user adds contact address")
-      ContactAddressInputPage.enterAddress()
+      ContactAddressInputPage.enterAddressUk()
 
       And("The user amends Primary contact name via the Check your answers page")
       ContactDetailsCheckAnswersPage.clickLinkChangePrimaryContactName()

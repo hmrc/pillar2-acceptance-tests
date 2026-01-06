@@ -94,7 +94,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMContactSecondaryAddPage.selectNo()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddress()
+      RFMContactAddressPage.enterAddressUk()
 
       When("The user reviews and submits")
       RFMFinalReviewCYAPage.onPageClickButtonById()
@@ -125,7 +125,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMNFMGuidancePage.continueToNextPage()
       RFMRegisteredInUKPage.selectNo()
       RFMNFMNamePage.enterText()
-      RFMNFMAddressPage.enterAddress(country = "Chile")
+      RFMNFMAddressPage.enterAddressNonUk()
 
       Then("The user continues to contact details")
       RFMNoIDCYAPage.continueToNextPage()
@@ -141,7 +141,7 @@ class RFMErrorSpec extends BaseSpec {
       RFMContactSecondaryAddPage.selectNo()
 
       And("The user adds contact address")
-      RFMContactAddressPage.enterAddress()
+      RFMContactAddressPage.enterAddressUk()
 
       Then("The selects yes to adding a secondary contact via the check your answers page")
       RFMFinalReviewCYAPage.clickLinkChangeSecondaryContact()
