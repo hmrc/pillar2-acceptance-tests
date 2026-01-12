@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.helper.TestOnlyHelpers
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.eligibility.*
 import uk.gov.hmrc.test.ui.pages.registration.TaskListPage
@@ -31,8 +30,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       AcceptanceTests
     ) {
 
-      Given("The cache is cleared and an org user signs in to eligibility without enrolment")
-      TestOnlyHelpers.clearSession()
+      Given("Org user signs in to eligibility without enrolment")
       login(
         userType = "Organisation",
         page = "eligibility"
@@ -53,8 +51,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       AcceptanceTests
     ) {
 
-      Given("The cache is cleared and an org user signs in to eligibility without enrolment")
-      TestOnlyHelpers.clearSession()
+      Given("Org user signs in to eligibility without enrolment")
       login(
         userType = "Organisation",
         page = "eligibility"
@@ -73,8 +70,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       AcceptanceTests
     ) {
 
-      Given("The cache is cleared and an org user signs in to eligibility without enrolment")
-      TestOnlyHelpers.clearSession()
+      Given("Org user signs in to eligibility without enrolment")
       login(
         userType = "Organisation",
         page = "eligibility"
@@ -99,8 +95,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
       AcceptanceTests
     ) {
 
-      Given("The cache is cleared and an org user signs in to eligibility without enrolment")
-      TestOnlyHelpers.clearSession()
+      Given("Org user signs in to eligibility without enrolment")
       login(
         userType = "Organisation",
         page = "eligibility"

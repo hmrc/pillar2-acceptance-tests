@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 object TestOnlyHelpers {
 
   private val clearSessionUrl =
-    s"${TestConfiguration.url("pillar2-frontend")}test-only/eligibility/clear-session"
+    s"${TestConfiguration.url("pillar2-frontend")}test-only/clear-all"
 
   def clearSession(): Unit =
     Driver.instance.navigate.to(clearSessionUrl)
