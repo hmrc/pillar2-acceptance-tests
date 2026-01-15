@@ -96,7 +96,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentAmountPage.enterText()
 
       And("The user redirects to the check your answers page after one question and tries to submit")
-      navigateTo(RepaymentCYAPage.url)
+      RepaymentAmountPage.navigateTo(RepaymentCYAPage.url)
       RepaymentCYAPage.onPageClickButtonById()
 
       Then("The user will be presented with the repayment request has missing information page")
@@ -135,7 +135,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentAmountPage.enterText()
 
       And("The agent redirects to the check your answers page after one question and tries to submit")
-      navigateTo(RepaymentCYAPage.url)
+      RepaymentAmountPage.navigateTo(RepaymentCYAPage.url)
       RepaymentCYAPage.onPageClickButtonById()
 
       Then("The agent will be presented with the repayment request has missing information page")
@@ -162,7 +162,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentAmountPage.enterText()
 
       And("The user changes the url to redirect to the contact email page without answering prior questions")
-      navigateTo(RepaymentContactEmailPage.url)
+      RepaymentAmountPage.navigateTo(RepaymentContactEmailPage.url)
 
       Then("The user will be presented with the your answers were not saved page")
       RepaymentJourneyRecoveryErrorPage.onPage()
@@ -200,7 +200,7 @@ class RepaymentErrorJourneysSpec extends BaseSpec {
       RepaymentAmountPage.enterText()
 
       And("The agent changes the url to redirect to the contact email page without answering prior questions")
-      navigateTo(RepaymentContactEmailPage.url)
+      RepaymentAmountPage.navigateTo(RepaymentContactEmailPage.url)
 
       Then("The agent will be presented with the your answers were not saved page")
       RepaymentJourneyRecoveryErrorPage.onPage()

@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait, Wait}
-import org.openqa.selenium.{By, WebDriver}
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.selenium.component.PageObject
 import uk.gov.hmrc.selenium.webdriver.Driver
@@ -66,9 +66,12 @@ trait BasePage extends Matchers with PageObject {
 
   def byText(text: String): By = By.xpath(s"//button[normalize-space()='$text']")
 
-  private def fluentWait(timeoutSeconds: Long = 3): Wait[WebDriver] = new FluentWait[WebDriver](Driver.instance)
-    .withTimeout(Duration.ofSeconds(timeoutSeconds))
-    .pollingEvery(Duration.ofMillis(200))
+  private def fluentWait(timeoutSeconds: Long = 8): Wait[WebDriver] =
+    new FluentWait[WebDriver](Driver.instance)
+      .withTimeout(Duration.ofSeconds(timeoutSeconds))
+      .pollingEvery(Duration.ofMillis(200))
+      .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
+      .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
 
   def onPage(url: String = this.url, timeoutSeconds: Long = 3): Unit =
     fluentWait(timeoutSeconds).until(ExpectedConditions.urlToBe(url))
@@ -188,8 +191,17 @@ trait BasePage extends Matchers with PageObject {
     onPage(timeoutSeconds = postRefreshWaitSeconds)
   }
 
-  def navigateTo(url: String): Unit = {
-    Driver.instance.navigate.to(url)
+  private def waitForDomReady(timeoutSeconds: Long = 5): Unit = {
+    fluentWait(timeoutSeconds).until { _ =>
+      Driver.instance
+        .asInstanceOf[JavascriptExecutor]
+        .executeScript("return document.readyState") == "complete"
+    }
+  }
+
+  def navigateTo(url: String, timeoutSeconds: Long = 5): Unit = {
+    Driver.instance.navigate().to(url)
+    waitForDomReady(timeoutSeconds)
   }
 
   protected def assertLocatorPresent(locator: By): Unit = {
