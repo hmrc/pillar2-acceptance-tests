@@ -45,6 +45,8 @@ trait BasePage extends Matchers with PageObject {
   val buttonContinue        = "Continue"
   val buttonSaveAndContinue = "Save and continue"
 
+  protected val pageIdentity: Option[By] = None
+
   val addressLine1Id: By = By.id("addressLine1")
   val addressLine2Id: By = By.id("addressLine2")
   val cityId: By         = By.id("addressLine3")
@@ -191,17 +193,11 @@ trait BasePage extends Matchers with PageObject {
     onPage(timeoutSeconds = postRefreshWaitSeconds)
   }
 
-  private def waitForDomReady(timeoutSeconds: Long = 5): Unit = {
-    fluentWait(timeoutSeconds).until { _ =>
-      Driver.instance
-        .asInstanceOf[JavascriptExecutor]
-        .executeScript("return document.readyState") == "complete"
-    }
-  }
-
   def navigateTo(url: String, timeoutSeconds: Long = 5): Unit = {
-    Driver.instance.navigate().to(url)
-    waitForDomReady(timeoutSeconds)
+    val driver = Driver.instance
+    val js = driver.asInstanceOf[JavascriptExecutor]
+
+    js.executeScript(s"window.location.href='$url'")
   }
 
   protected def assertLocatorPresent(locator: By): Unit = {
