@@ -30,7 +30,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
     Scenario(
       "1 - Make successful payment as an Org user",
-      AcceptanceTests, Wip
+      AcceptanceTests
     ) {
 
       Given("Organisation User logs in to Pillar2 service")

@@ -28,6 +28,8 @@ object RepaymentCYAPage extends BasePage {
   private val changeContactEmailLink: By = By.cssSelector("a[href*='/change-input-email']")
   private val changePhoneNumberLink: By  = By.cssSelector("a[href*='/change-input-phone']")
 
+  override protected val pageIdentity: Option[By] = Some(changeRefundAmountLink)
+
   def clickLinkChangeRefundAmount(): Unit = clickLink(changeRefundAmountLink)
   def clickLinkChangeRefundReason(): Unit = clickLink(changeRefundReasonLink)
   def clickLinkChangeContactName(): Unit  = clickLink(changeContactNameLink)
