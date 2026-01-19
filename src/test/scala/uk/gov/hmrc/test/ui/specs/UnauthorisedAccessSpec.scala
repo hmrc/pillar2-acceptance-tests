@@ -43,7 +43,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the accounts summary page")
-      TaskListPage.navigateTo(ManageAccountsSummaryPage.url)
+      TaskListPage.navigateToManageAccountsSummaryPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -63,7 +63,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the make a payment page")
-      TaskListPage.navigateTo(PaymentsPayPage.url)
+      TaskListPage.navigateToPaymentsPayPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -83,34 +83,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment guidance page")
-      TaskListPage.navigateTo(RepaymentGuidancePage.url)
+      TaskListPage.navigateToRepaymentGuidancePage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "4 - Unauthorised access of repayment guidance page",
-      AcceptanceTests
-    ) {
-      Given("Organisation User logs in without enrolment")
-      login(
-        userType = "Organisation",
-        page = "pillar2-frontend"
-      )
-
-      Then("The user is presented with the task list page")
-      TaskListPage.onPage()
-
-      And("The user attempts to navigate to the repayment guidance page")
-      TaskListPage.navigateTo(RepaymentGuidancePage.url)
-
-      When("The user is taken to the unauthorised page")
-      UnauthorisedPage.onPage()
-    }
-
-    Scenario(
-      "5 - Unauthorised access of repayment reason page",
+      "4 - Unauthorised access of repayment reason page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -123,7 +103,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment reason page")
-      TaskListPage.navigateTo(RepaymentReasonPage.url)
+      TaskListPage.navigateToRepaymentReasonPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -131,7 +111,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
 
 
     Scenario(
-      "6 - Unauthorised access of repayment method page",
+      "5 - Unauthorised access of repayment method page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -144,14 +124,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment method page")
-      TaskListPage.navigateTo(RepaymentMethodPage.url)
+      TaskListPage.navigateToRepaymentMethodPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "7 - Unauthorised access of UK bank account page",
+      "6 - Unauthorised access of UK bank account page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -164,14 +144,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the UK bank account page")
-      TaskListPage.navigateTo(RepaymentBankAccountUKPage.url)
+      TaskListPage.navigateToRepaymentBankAccountUKPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "8 - Unauthorised access of non-UK bank account page",
+      "7 - Unauthorised access of non-UK bank account page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -184,14 +164,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the non-UK bank account page")
-      TaskListPage.navigateTo(RepaymentBankAccountNonUKPage.url)
+      TaskListPage.navigateToRepaymentBankAccountNonUKPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "9 - Unauthorised access of repayment contact name page",
+      "8 - Unauthorised access of repayment contact name page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -204,14 +184,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment contact name page")
-      TaskListPage.navigateTo(RepaymentContactNamePage.url)
+      TaskListPage.navigateToRepaymentContactNamePage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "10 - Unauthorised access of repayment contact email page",
+      "9 - Unauthorised access of repayment contact email page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -224,14 +204,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment contact email page")
-      TaskListPage.navigateTo(RepaymentContactEmailPage.url)
+      TaskListPage.navigateToRepaymentContactEmailPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "11 - Unauthorised access of repayment phone as contact page",
+      "10 - Unauthorised access of repayment phone as contact page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -244,14 +224,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment phone as contact page")
-      TaskListPage.navigateTo(RepaymentPhoneAsContactPage.url)
+      TaskListPage.navigateToRepaymentPhoneAsContactPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "12 - Unauthorised access of repayment phone input page",
+      "11 - Unauthorised access of repayment phone input page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -264,14 +244,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment phone input page")
-      TaskListPage.navigateTo(RepaymentPhoneInputPage.url)
+      TaskListPage.navigateToRepaymentPhoneInputPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "13 - Unauthorised access of repayment check your answers page",
+      "12 - Unauthorised access of repayment check your answers page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -284,14 +264,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment check your answers page")
-      TaskListPage.navigateTo(RepaymentCYAPage.url)
+      TaskListPage.navigateToRepaymentCYAPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "14 - Unauthorised access of manage primary contact name page",
+      "13 - Unauthorised access of manage primary contact name page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -304,14 +284,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the manage primary contact name page")
-      TaskListPage.navigateTo(ManageContactDetailsPrimaryNamePage.url)
+      TaskListPage.navigateToManageContactDetailsPrimaryNamePage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "15 - Unauthorised access of manage secondary contact name page",
+      "14 - Unauthorised access of manage secondary contact name page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -324,14 +304,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the manage secondary contact name page")
-      TaskListPage.navigateTo(ManageContactDetailsSecondaryNamePage.url)
+      TaskListPage.navigateToManageContactDetailsSecondaryNamePage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "16 - Unauthorised access of manage contact address page",
+      "15 - Unauthorised access of manage contact address page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -344,14 +324,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the manage contact address page")
-      TaskListPage.navigateTo(ManageContactDetailsAddressPage.url)
+      TaskListPage.navigateToManageContactDetailsAddressPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "17 - Unauthorised access of manage group status page",
+      "16 - Unauthorised access of manage group status page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -364,14 +344,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the manage group status page")
-      TaskListPage.navigateTo(ManageGroupStatusPage.url)
+      TaskListPage.navigateToManageGroupStatusPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "18 - Unauthorised access of manage accounting period page",
+      "17 - Unauthorised access of manage accounting period page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -384,14 +364,14 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the manage accounting period page")
-      TaskListPage.navigateTo(ManageAccountPeriodPage.url)
+      TaskListPage.navigateToManageAccountPeriodPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
 
     Scenario(
-      "19 - Unauthorised access of transaction history page",
+      "18 - Unauthorised access of transaction history page",
       AcceptanceTests
     ) {
       Given("Organisation User logs in without enrolment")
@@ -404,7 +384,7 @@ class UnauthorisedAccessSpec extends BaseSpec {
       TaskListPage.onPage()
 
       And("The user attempts to navigate to the transaction history page")
-      TaskListPage.navigateTo(TransactionHistoryPage.url)
+      TaskListPage.navigateToTransactionHistoryPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()

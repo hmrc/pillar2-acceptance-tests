@@ -18,6 +18,10 @@ package uk.gov.hmrc.test.ui.pages.registration
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.manage.*
+import uk.gov.hmrc.test.ui.pages.payments.PaymentsPayPage
+import uk.gov.hmrc.test.ui.pages.repayments.*
+import uk.gov.hmrc.test.ui.pages.transactionHistory.TransactionHistoryPage
 
 object TaskListPage extends BasePage {
   override val url: String = s"${baseUrl}check-progress/register-your-group"
@@ -33,4 +37,23 @@ object TaskListPage extends BasePage {
   def clickLinkAddFurtherGroupDetails(): Unit  = clickLink(addFurtherGroupDetailsLink)
   def clickLinkAddContactDetails(): Unit       = clickLink(addContactDetailsLink)
   def clickLinkReviewAndSubmit(): Unit         = clickLink(reviewAndSubmitLink)
+
+  def navigateToManageAccountPeriodPage(): Unit               = navigateTo(ManageAccountPeriodPage.url)
+  def navigateToManageAccountsSummaryPage(): Unit             = navigateTo(ManageAccountsSummaryPage.url)
+  def navigateToManageContactDetailsAddressPage(): Unit       = navigateTo(ManageContactDetailsAddressPage.url)
+  def navigateToManageContactDetailsPrimaryNamePage(): Unit   = navigateTo(ManageContactDetailsPrimaryNamePage.url)
+  def navigateToManageContactDetailsSecondaryNamePage(): Unit = navigateTo(ManageContactDetailsSecondaryNamePage.url)
+  def navigateToManageGroupStatusPage(): Unit                 = navigateTo(ManageGroupStatusPage.url)
+  def navigateToPaymentsPayPage(): Unit                       = navigateTo(PaymentsPayPage.url)
+  def navigateToRepaymentBankAccountNonUKPage(): Unit         = navigateTo(RepaymentBankAccountNonUKPage.url)
+  def navigateToRepaymentBankAccountUKPage(): Unit            = navigateTo(RepaymentBankAccountUKPage.url)
+  def navigateToRepaymentContactEmailPage(): Unit             = navigateTo(RepaymentContactEmailPage.url)
+  def navigateToRepaymentContactNamePage(): Unit              = navigateTo(RepaymentContactNamePage.url)
+  def navigateToRepaymentCYAPage(): Unit                      = navigateTo(RepaymentCYAPage.url)
+  def navigateToRepaymentGuidancePage(): Unit                 = navigateTo(RepaymentGuidancePage.url)
+  def navigateToRepaymentMethodPage(): Unit                   = navigateTo(RepaymentMethodPage.url)
+  def navigateToRepaymentPhoneAsContactPage(): Unit           = navigateTo(RepaymentPhoneAsContactPage.url)
+  def navigateToRepaymentPhoneInputPage(): Unit               = navigateTo(RepaymentPhoneInputPage.url)
+  def navigateToRepaymentReasonPage(): Unit                   = navigateTo(RepaymentReasonPage.url)
+  def navigateToTransactionHistoryPage(): Unit                = navigateTo(TransactionHistoryPage.url)
 }
