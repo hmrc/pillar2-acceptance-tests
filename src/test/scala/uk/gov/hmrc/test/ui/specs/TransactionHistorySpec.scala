@@ -45,7 +45,6 @@ class TransactionHistorySpec extends BaseSpec {
       )
 
       Then("The user accesses transaction history and checks two different pages")
-//      locatorhitosypage2
       DashboardPage.clickPaymentHistoryLink()
       TransactionHistoryPage.clickLinkPageTwo()
       TransactionHistorySecondPage.onPage()
@@ -71,7 +70,6 @@ class TransactionHistorySpec extends BaseSpec {
 
       Then("The user accesses transaction history and is taken to the history empty page")
       DashboardPage.clickPaymentHistoryLink()
-//      paymenthistory url?
       TransactionHistoryEmptyPage.onPage()
     }
 
