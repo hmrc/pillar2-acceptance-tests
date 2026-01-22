@@ -17,11 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
-import uk.gov.hmrc.test.ui.pages.manage.*
-import uk.gov.hmrc.test.ui.pages.payments.PaymentsPayPage
 import uk.gov.hmrc.test.ui.pages.registration.TaskListPage
-import uk.gov.hmrc.test.ui.pages.repayments.*
-import uk.gov.hmrc.test.ui.pages.transactionHistory.TransactionHistoryPage
 import uk.gov.hmrc.test.ui.pages.unauthorised.UnauthorisedPage
 import uk.gov.hmrc.test.ui.specs.tags.*
 
@@ -108,7 +104,6 @@ class UnauthorisedAccessSpec extends BaseSpec {
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
     }
-
 
     Scenario(
       "5 - Unauthorised access of repayment method page",
