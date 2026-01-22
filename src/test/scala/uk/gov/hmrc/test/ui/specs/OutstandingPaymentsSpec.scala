@@ -52,9 +52,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
       And("The user can access relevant links from outstanding payments")
       OutstandingPaymentsPage.clickLinkWaysToPay()
-      OutstandingPaymentsPage.onPage()
       OutstandingPaymentsPage.clickLinkViewTransactionHistory()
-      TransactionHistoryPage.onPage()
       TransactionHistoryPage.clickBackLink()
       OutstandingPaymentsPage.onPage()
 
@@ -104,9 +102,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
       And("The agent can access relevant links from outstanding payments")
       OutstandingPaymentsPage.clickLinkWaysToPay()
-      OutstandingPaymentsPage.onPage()
       OutstandingPaymentsPage.clickLinkViewTransactionHistory()
-      TransactionHistoryPage.onPage()
       TransactionHistoryPage.clickBackLink()
       OutstandingPaymentsPage.onPage()
 
