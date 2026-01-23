@@ -55,8 +55,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
       OutstandingPaymentsPage.clickLinkViewTransactionHistory()
       TransactionHistoryPage.clickBackLink()
       OutstandingPaymentsPage.onPage()
-
-
+      
       When("The user makes a successful payment")
       OutstandingPaymentsPage.continueToNextPage()
       makeSuccessfulPayment()
@@ -98,7 +97,6 @@ class OutstandingPaymentsSpec extends BaseSpec {
       And("The agent views outstanding payments")
       DashboardPage.clickPaymentOutstandingLink()
       OutstandingPaymentsPage.onPage()
-
 
       And("The agent can access relevant links from outstanding payments")
       OutstandingPaymentsPage.clickLinkWaysToPay()
