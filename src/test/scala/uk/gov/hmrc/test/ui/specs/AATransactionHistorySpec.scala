@@ -22,13 +22,13 @@ import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.transactionHistory.*
 import uk.gov.hmrc.test.ui.specs.tags.*
 
-class TransactionHistorySpec extends BaseSpec {
-// TODO @accountActivity - Need to delete this spec when useAccountActivityApi = true in staging;
+class AATransactionHistorySpec extends BaseSpec {
+// TODO @accountActivity - Look into the stubs for these scenario when the useAccountActivityApi = true for Jenkin;
   Feature("Transaction History") {
 
     Scenario(
       "1 - Org user accesses Transaction History pages",
-      AcceptanceTests
+      Wip
     ) {
 
       Given("Org user logs in to Pillar2 service")
@@ -52,7 +52,7 @@ class TransactionHistorySpec extends BaseSpec {
 
     Scenario(
       "2 - Org user accesses empty transaction history page",
-      AcceptanceTests
+      Wip
     ) {
 
       Given("Org user logs in to Pillar2 service")
@@ -75,7 +75,7 @@ class TransactionHistorySpec extends BaseSpec {
 
     Scenario(
       "3 - Agent accesses Transaction History pages",
-      AcceptanceTests
+      Wip
     ) {
 
       Given("Agent User logs in to Pillar2 service with delegated enrollment")

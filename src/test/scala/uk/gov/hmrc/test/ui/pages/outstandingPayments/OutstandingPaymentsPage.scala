@@ -17,7 +17,16 @@
 package uk.gov.hmrc.test.ui.pages.outstandingPayments
 
 import uk.gov.hmrc.test.ui.pages.BasePage
+import org.openqa.selenium.By
 
 object OutstandingPaymentsPage extends BasePage {
+
   override val url: String = s"${baseUrl}payment/outstanding"
+
+  private val waysToPayLink: By = By.cssSelector("a.govuk-link[href*='pay-pillar-2-top-up-taxes']")
+  private val viewTransactionHistoryLink: By = By.cssSelector("a.govuk-link[href*='/report-pillar2-top-up-taxes/payment/history']")
+
+  def clickLinkWaysToPay(): Unit = clickLink(waysToPayLink)
+  def clickLinkViewTransactionHistory() : Unit = clickLink(viewTransactionHistoryLink)
+
 }
