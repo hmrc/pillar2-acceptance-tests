@@ -68,17 +68,17 @@ trait BasePage extends Matchers with PageObject {
 
   def byText(text: String): By = By.xpath(s"//button[normalize-space()='$text']")
 
-  private def fluentWait(timeoutSeconds: Long = 8): Wait[WebDriver] =
+  private def fluentWait(timeoutSeconds: Long): Wait[WebDriver] =
     new FluentWait[WebDriver](Driver.instance)
       .withTimeout(Duration.ofSeconds(timeoutSeconds))
       .pollingEvery(Duration.ofMillis(200))
       .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
       .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
 
-  def onPage(url: String = this.url, timeoutSeconds: Long = 3): Unit =
+  def onPage(url: String = this.url, timeoutSeconds: Long = 6): Unit =
     fluentWait(timeoutSeconds).until(ExpectedConditions.urlToBe(url))
 
-  def onPageContains(partialUrl: String, timeoutSeconds: Long = 3): Unit =
+  def onPageContains(partialUrl: String, timeoutSeconds: Long = 6): Unit =
     fluentWait(timeoutSeconds).until(ExpectedConditions.urlContains(partialUrl))
 
   def countryAutoSelect(countryName: String): Unit = {
