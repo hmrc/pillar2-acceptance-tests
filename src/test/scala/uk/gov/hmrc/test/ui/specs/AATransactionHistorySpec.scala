@@ -28,7 +28,7 @@ class AATransactionHistorySpec extends BaseSpec {
 
     Scenario(
       "1 - Org user accesses Transaction History pages",
-      Wip
+      AcceptanceTests
     ) {
 
       Given("Org user logs in to Pillar2 service")
@@ -52,7 +52,7 @@ class AATransactionHistorySpec extends BaseSpec {
 
     Scenario(
       "2 - Org user accesses empty transaction history page",
-      Wip
+      AcceptanceTests
     ) {
 
       Given("Org user logs in to Pillar2 service")
@@ -75,7 +75,7 @@ class AATransactionHistorySpec extends BaseSpec {
 
     Scenario(
       "3 - Agent accesses Transaction History pages",
-      Wip
+      AcceptanceTests
     ) {
 
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
