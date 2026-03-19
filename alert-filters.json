@@ -55,7 +55,7 @@
     },
     {
       "reason": "Invalid alert for Personally Identifiable Information",
-      "url": "	"http://localhost:10050/report-pillar2-top-up-taxes/repayment/contact-details/input-name",
+      "url": "http://localhost:10050/report-pillar2-top-up-taxes/repayment/contact-details/input-name",
       "ruleId": 10062
     },
     {
