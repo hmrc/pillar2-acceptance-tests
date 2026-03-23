@@ -70,7 +70,7 @@ class AATransactionHistorySpec extends BaseSpec {
 
       Then("The user accesses transaction history and is taken to the history empty page")
       DashboardPage.clickPaymentHistoryLink()
-      TransactionHistoryEmptyPage.onPage()
+      TransactionHistoryPage.onPage()
     }
 
     Scenario(
