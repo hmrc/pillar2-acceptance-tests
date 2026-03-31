@@ -24,9 +24,14 @@ object OutstandingPaymentsPage extends BasePage {
   override val url: String = s"${baseUrl}payment/outstanding"
 
   private val waysToPayLink: By = By.cssSelector("a.govuk-link[href*='pay-pillar-2-top-up-taxes']")
+  private val viewStoodoverChargesFirstLink : By = By.xpath("//*[@id=\"main-content\"]/p[3]/a")
+  private val viewStoodoverChargesSecondLink : By = By.xpath("//*[@id=\"main-content\"]/div[2]/div/p[2]/a")
   private val viewTransactionHistoryLink: By = By.cssSelector("a.govuk-link[href*='/report-pillar2-top-up-taxes/payment/history']")
 
   def clickLinkWaysToPay(): Unit = clickLink(waysToPayLink)
+  def clickLinkviewStoodoverChargesFirstLink(): Unit = clickLink(viewStoodoverChargesFirstLink)
+  def clickLinkviewStoodoverChargesSecondLink(): Unit = clickLink(viewStoodoverChargesSecondLink)
   def clickLinkViewTransactionHistory() : Unit = clickLink(viewTransactionHistoryLink)
+
 
 }

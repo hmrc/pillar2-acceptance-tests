@@ -21,6 +21,7 @@ import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolme
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.outstandingPayments.OnlinePaymentPages.makeSuccessfulPayment
 import uk.gov.hmrc.test.ui.pages.outstandingPayments.OutstandingPaymentsPage
+import uk.gov.hmrc.test.ui.pages.stoodoverCharges.StoodoverChargesPage
 import uk.gov.hmrc.test.ui.pages.transactionHistory.TransactionHistoryPage
 import uk.gov.hmrc.test.ui.specs.tags.*
 
@@ -52,10 +53,15 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
       And("The user can access relevant links from outstanding payments")
       OutstandingPaymentsPage.clickLinkWaysToPay()
+      OutstandingPaymentsPage.clickLinkviewStoodoverChargesFirstLink()
+      println("click back from stoodover")
+      StoodoverChargesPage.clickBackLink()
+      OutstandingPaymentsPage.clickLinkviewStoodoverChargesSecondLink()
+      StoodoverChargesPage.clickBackLink()
       OutstandingPaymentsPage.clickLinkViewTransactionHistory()
       TransactionHistoryPage.clickBackLink()
       OutstandingPaymentsPage.onPage()
-      
+
       When("The user makes a successful payment")
       OutstandingPaymentsPage.continueToNextPage()
       makeSuccessfulPayment()
@@ -100,6 +106,11 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
       And("The agent can access relevant links from outstanding payments")
       OutstandingPaymentsPage.clickLinkWaysToPay()
+      OutstandingPaymentsPage.clickLinkviewStoodoverChargesFirstLink()
+      println("click back from stoodover")
+      StoodoverChargesPage.clickBackLink()
+      OutstandingPaymentsPage.clickLinkviewStoodoverChargesSecondLink()
+      StoodoverChargesPage.clickBackLink()
       OutstandingPaymentsPage.clickLinkViewTransactionHistory()
       TransactionHistoryPage.clickBackLink()
       OutstandingPaymentsPage.onPage()
