@@ -1,6 +1,5 @@
 package uk.gov.hmrc.test.ui.specs
 
-
 import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, Wip}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.stoodoverCharges.StoodoverChargesPage

@@ -79,8 +79,8 @@ class RegistrationInProgressSpec extends BaseSpec {
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
       RegistrationConfirmationPage.clickLinkHomePage()
 
-//      Then("The user is presented with the registration in progress page")
-//      RegistrationInProgressPage.onPage()
+      Then("The user is presented with the registration in progress page")
+      RegistrationInProgressPage.onPage()
     }
   }
 }
