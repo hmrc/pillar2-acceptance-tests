@@ -1,6 +1,7 @@
 package uk.gov.hmrc.test.ui.specs
 
-import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
+
+import uk.gov.hmrc.test.ui.specs.tags.{AcceptanceTests, Wip}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.stoodoverCharges.StoodoverChargesPage
 import uk.gov.hmrc.test.ui.pages.asa.*
@@ -8,11 +9,12 @@ import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolme
 import uk.gov.hmrc.test.ui.pages.outstandingPayments.OutstandingPaymentsPage
 import uk.gov.hmrc.test.ui.pages.transactionHistory.*
 
-class StoodoverChargesSpec extends BaseSpec {
-
+class AAstoodoverChargesSpec extends BaseSpec {
+  // TODO @accountActivity = true - Look into these scenarios, StoodoverCharges page will appear only if AA flag true
   Feature("Stoodover Charges ") {
 
-    Scenario("1 - Org User navigates to Stoodover Charges", AcceptanceTests) {
+    Scenario("1 - Org User navigates to Stoodover Charges",Wip
+    ) {
 
       Given("Organisation User logs in with existing entity group")
 
@@ -43,7 +45,7 @@ class StoodoverChargesSpec extends BaseSpec {
 
     }
 
-    Scenario("2 - Agent User navigates to Stoodover Charges", AcceptanceTests) {
+    Scenario("2 - Agent User navigates to Stoodover Charges",Wip) {
 
       Given("Agent User logs in with existing entity group")
       login(
@@ -82,6 +84,5 @@ class StoodoverChargesSpec extends BaseSpec {
       TransactionHistoryPage.clickBackLink()
       StoodoverChargesPage.onPage()
     }
-
   }
 }

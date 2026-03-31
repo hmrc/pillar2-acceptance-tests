@@ -33,5 +33,4 @@ object OutstandingPaymentsPage extends BasePage {
   def clickLinkviewStoodoverChargesSecondLink(): Unit = clickLink(viewStoodoverChargesSecondLink)
   def clickLinkViewTransactionHistory() : Unit = clickLink(viewTransactionHistoryLink)
 
-
 }

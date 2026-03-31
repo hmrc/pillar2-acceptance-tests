@@ -1,19 +1,3 @@
-/*
- * Copyright 2025 HM Revenue & Customs
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.asa.*
@@ -21,16 +5,17 @@ import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolme
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.outstandingPayments.OnlinePaymentPages.makeSuccessfulPayment
 import uk.gov.hmrc.test.ui.pages.outstandingPayments.OutstandingPaymentsPage
+import uk.gov.hmrc.test.ui.pages.stoodoverCharges.StoodoverChargesPage
 import uk.gov.hmrc.test.ui.pages.transactionHistory.TransactionHistoryPage
 import uk.gov.hmrc.test.ui.specs.tags.*
 
-class OutstandingPaymentsSpec extends BaseSpec {
-
+class AAoutstandingPaymentsSpec extends BaseSpec {
+  // TODO @accountActivity = true - Look into these scenarios , StoodoverCharges page will comes only if AA flag true
   Feature("Dashboard Page") {
 
     Scenario(
       "1 - Make successful payment as an Org user",
-      AcceptanceTests
+      Wip
     ) {
 
       Given("Organisation User logs in to Pillar2 service")
@@ -52,6 +37,10 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
       And("The user can access relevant links from outstanding payments")
       OutstandingPaymentsPage.clickLinkWaysToPay()
+      OutstandingPaymentsPage.clickLinkviewStoodoverChargesFirstLink()
+      StoodoverChargesPage.clickBackLink()
+      OutstandingPaymentsPage.clickLinkviewStoodoverChargesSecondLink()
+      StoodoverChargesPage.clickBackLink()
       OutstandingPaymentsPage.clickLinkViewTransactionHistory()
       TransactionHistoryPage.clickBackLink()
       OutstandingPaymentsPage.onPage()
@@ -66,7 +55,7 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
     Scenario(
       "2 - Make successful payment as an Agent",
-      AcceptanceTests
+      Wip
     ) {
 
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
@@ -100,6 +89,10 @@ class OutstandingPaymentsSpec extends BaseSpec {
 
       And("The agent can access relevant links from outstanding payments")
       OutstandingPaymentsPage.clickLinkWaysToPay()
+      OutstandingPaymentsPage.clickLinkviewStoodoverChargesFirstLink()
+      StoodoverChargesPage.clickBackLink()
+      OutstandingPaymentsPage.clickLinkviewStoodoverChargesSecondLink()
+      StoodoverChargesPage.clickBackLink()
       OutstandingPaymentsPage.clickLinkViewTransactionHistory()
       TransactionHistoryPage.clickBackLink()
       OutstandingPaymentsPage.onPage()
