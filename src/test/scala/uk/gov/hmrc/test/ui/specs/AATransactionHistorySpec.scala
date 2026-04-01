@@ -50,7 +50,7 @@ class AATransactionHistorySpec extends BaseSpec {
       TransactionHistorySecondPage.onPage()
     }
 
-    //fix this scenario once aa flag is true on jenkin
+    // fix this scenario once aa flag is true on jenkin
     Scenario(
       "2 - Org user accesses empty transaction history page",
       AcceptanceTests
@@ -71,8 +71,8 @@ class AATransactionHistorySpec extends BaseSpec {
 
       Then("The user accesses transaction history and is taken to the history empty page")
       DashboardPage.clickPaymentHistoryLink()
-      //uncomment this when aa is true and comment out the next line
-      //TransactionHistoryPage.onPage()
+      // uncomment this when aa is true and comment out the next line
+      // TransactionHistoryPage.onPage()
       TransactionHistoryEmptyPage.onPage()
     }
 
