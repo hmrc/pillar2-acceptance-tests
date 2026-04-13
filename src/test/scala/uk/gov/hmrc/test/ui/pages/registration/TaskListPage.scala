@@ -39,6 +39,7 @@ object TaskListPage extends BasePage {
   def clickLinkReviewAndSubmit(): Unit         = clickLink(reviewAndSubmitLink)
 
   def navigateToManageAccountPeriodPage(): Unit               = navigateTo(ManageAccountPeriodPage.url)
+  def navigateToManageAmendAccountPeriodPage(): Unit          = navigateTo(ManageAmendAccountPeriodPage.url)
   def navigateToManageAccountsSummaryPage(): Unit             = navigateTo(ManageAccountsSummaryPage.url)
   def navigateToManageContactDetailsAddressPage(): Unit       = navigateTo(ManageContactDetailsAddressPage.url)
   def navigateToManageContactDetailsPrimaryNamePage(): Unit   = navigateTo(ManageContactDetailsPrimaryNamePage.url)

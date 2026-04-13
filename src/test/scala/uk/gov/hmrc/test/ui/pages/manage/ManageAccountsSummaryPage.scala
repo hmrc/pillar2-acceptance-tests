@@ -23,7 +23,10 @@ object ManageAccountsSummaryPage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/account-details/summary"
 
   private val changeGroupStatusLink: By      = By.cssSelector("a[href*='/change-group-status']")
+  //TODO Comment the below code when amendMultipleAccountingPeriods = true
   private val changeAccountingPeriodLink: By = By.cssSelector("a[href*='/change-accounting-period']")
+  //TODO Uncomment the below code when amendMultipleAccountingPeriods = true
+  //private val changeAccountingPeriodLink: By = By.cssSelector("a[href*='/select-period']")
 
   def clickLinkChangeGroupStatus(): Unit      = clickLink(changeGroupStatusLink)
   def clickLinkChangeAccountingPeriod(): Unit = clickLink(changeAccountingPeriodLink)

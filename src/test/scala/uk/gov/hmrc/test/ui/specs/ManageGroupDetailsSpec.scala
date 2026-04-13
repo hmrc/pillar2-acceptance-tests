@@ -53,9 +53,15 @@ class ManageGroupDetailsSpec extends BaseSpec {
         end = ("31", "01", "2025")
       )
 
-      When("The user saves the changes")
-      ManageAccountsSummaryPage.onPageClickButtonById()
+      Then("The user is taken to the confirmation page")
+      //TODO Uncomment the below code when amendMultipleAccountingPeriods = true
+      //ManageAmendAccountPeriodPage.continue()
+     // ManageAmendAccountPeriodConfirmationPage.onPage(timeoutSeconds = 5)
 
+      //ManageAmendAccountPeriodPage.onPageClickButtonById()
+
+      //TODO comment the following three lines amendMultipleAccountingPeriods = true
+      ManageAccountsSummaryPage.onPageClickButtonById()
       Then("The user is taken to the dashboard")
       DashboardPage.onPage(timeoutSeconds = 5)
     }
