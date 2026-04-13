@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.manage
+package uk.gov.hmrc.test.ui.pages.btn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ManageAccountPeriodPage extends BasePage {
-  //TODO Comment the below code when amendMultipleAccountingPeriods = true
-  override val url: String = s"${baseUrl}manage-account/account-details/change-accounting-period"
-  //TODO Uncomment the below code when amendMultipleAccountingPeriods = true
-  //override val url: String = s"${baseUrl}manage-account/account-details/new-accounting-period"
+object AmendMAPBtnAccountingPage extends BasePage {
+  override val url: String       = s"${baseUrl}below-threshold-notification/accounting-period"
+  
+  override val changeUrl: String = s"${baseUrl}manage-account/account-details/new-accounting-period"
+
+  private val accountDetailsSummary = By.cssSelector("a[href*='/account-details/summary']")
+
+  def clickLinkAccountDetailsSummary(): Unit = clickLink(accountDetailsSummary)
 }

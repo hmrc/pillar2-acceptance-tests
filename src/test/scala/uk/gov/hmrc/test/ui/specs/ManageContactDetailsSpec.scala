@@ -39,7 +39,7 @@ class ManageContactDetailsSpec extends BaseSpec {
           Enrolment(
             key = "HMRC-PILLAR2-ORG",
             name = "PLRID",
-            value = "XMPLR0012345676"
+            value = "XMPLR0012345674"
           )
         )
       )

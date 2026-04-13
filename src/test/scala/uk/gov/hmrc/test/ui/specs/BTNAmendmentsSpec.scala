@@ -51,10 +51,19 @@ class BTNAmendmentsSpec extends BaseSpec {
         start = ("01", "02", "2024"),
         end = ("31", "01", "2025")
       )
+
+      Then("The user is taken to the confirmation page")
+      //TODO Uncomment the below code when amendMultipleAccountingPeriods = true
+//      ManageAmendAccountPeriodPage.continue()
+//      ManageAmendAccountPeriodConfirmationPage.onPage()
+
+
+      //TODO comment the below three lines when amendMultipleAccountingPeriods = true
       ManageAccountsSummaryPage.continueToNextPage()
 
       When("The user is taken back to the dashboard")
       DashboardPage.onPage()
+
     }
 
     Scenario("2 - Org User changes below threshold notification entity location and gets KB page", AcceptanceTests) {
