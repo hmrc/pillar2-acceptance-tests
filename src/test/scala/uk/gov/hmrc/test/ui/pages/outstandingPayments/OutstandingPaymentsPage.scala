@@ -25,7 +25,7 @@ object OutstandingPaymentsPage extends BasePage {
 
   private val waysToPayLink: By = By.cssSelector("a.govuk-link[href*='pay-pillar-2-top-up-taxes']")
   private val viewStoodoverChargesFirstLink : By = By.xpath("//*[@id=\"main-content\"]/p[3]/a")
-  private val viewStoodoverChargesSecondLink : By = By.xpath("//*[@id=\"main-content\"]/div[2]/div/p[2]/a")
+  private val viewStoodoverChargesSecondLink : By = By.xpath("//*[@id=\"main-content\"]//p[2]/a")
   private val viewTransactionHistoryLink: By = By.cssSelector("a.govuk-link[href*='/report-pillar2-top-up-taxes/payment/history']")
 
   def clickLinkWaysToPay(): Unit = clickLink(waysToPayLink)
