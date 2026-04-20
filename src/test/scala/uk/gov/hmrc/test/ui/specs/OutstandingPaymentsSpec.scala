@@ -9,13 +9,12 @@ import uk.gov.hmrc.test.ui.pages.stoodoverCharges.StoodoverChargesPage
 import uk.gov.hmrc.test.ui.pages.transactionHistory.TransactionHistoryPage
 import uk.gov.hmrc.test.ui.specs.tags.*
 
-class AAoutstandingPaymentsSpec extends BaseSpec {
-  // TODO @accountActivity = true - Look into these scenarios , StoodoverCharges page will comes only if AA flag true
+class OutstandingPaymentsSpec extends BaseSpec {
   Feature("Dashboard Page") {
 
     Scenario(
       "1 - Make successful payment as an Org user",
-      Wip
+      AcceptanceTests
     ) {
 
       Given("Organisation User logs in to Pillar2 service")
@@ -55,7 +54,7 @@ class AAoutstandingPaymentsSpec extends BaseSpec {
 
     Scenario(
       "2 - Make successful payment as an Agent",
-      Wip
+      AcceptanceTests
     ) {
 
       Given("Agent User logs in to Pillar2 service with delegated enrollment")

@@ -22,8 +22,7 @@ import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.transactionHistory.*
 import uk.gov.hmrc.test.ui.specs.tags.*
 
-class AATransactionHistorySpec extends BaseSpec {
-// TODO @accountActivity - Look into the stubs for these scenario when the useAccountActivityApi = true for Jenkin;
+class TransactionHistorySpec extends BaseSpec {
   Feature("Transaction History") {
 
     Scenario(
@@ -49,8 +48,7 @@ class AATransactionHistorySpec extends BaseSpec {
       TransactionHistoryPage.clickLinkPageTwo()
       TransactionHistorySecondPage.onPage()
     }
-
-    // fix this scenario once aa flag is true on jenkin
+    
     Scenario(
       "2 - Org user accesses empty transaction history page",
       AcceptanceTests
@@ -71,9 +69,7 @@ class AATransactionHistorySpec extends BaseSpec {
 
       Then("The user accesses transaction history and is taken to the history empty page")
       DashboardPage.clickPaymentHistoryLink()
-      // uncomment this when aa is true and comment out the next line
        TransactionHistoryPage.onPage()
-      //TransactionHistoryEmptyPage.onPage()
     }
 
     Scenario(
