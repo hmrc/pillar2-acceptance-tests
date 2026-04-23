@@ -1,12 +1,5 @@
-val scalafixSettings = Seq(
-  semanticdbEnabled := true,                       // enable SemanticDB
-  semanticdbVersion := scalafixSemanticdb.revision // "4.4.0"
-)
-
 lazy val testSuite = (project in file("."))
-  .disablePlugins(
-    JUnitXmlReportPlugin
-  ) // Required to prevent https://github.com/scalatest/scalatest/issues/1427
+  .disablePlugins(JUnitXmlReportPlugin) // Required to prevent https://github.com/scalatest/scalatest/issues/1427
   .enablePlugins(ScalafixPlugin)
   .settings(
     name         := "pillar2-acceptance-tests",
@@ -14,11 +7,8 @@ lazy val testSuite = (project in file("."))
     scalaVersion := "3.3.6",
     scalacOptions ++= Seq("-feature"),
     libraryDependencies ++= Dependencies.test,
-    scalafixSettings
+    semanticdbEnabled := true
   )
 
-addCommandAlias(
-  "prePrChecks",
-  ";scalafmtCheckAll;scalafmtSbtCheck;scalafixAll --check"
-)
+addCommandAlias("prePrChecks", ";scalafmtCheckAll;scalafmtSbtCheck;scalafixAll --check")
 addCommandAlias("lint", ";scalafmtAll;scalafmtSbt;scalafixAll")
