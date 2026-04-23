@@ -16,21 +16,21 @@
 
 package uk.gov.hmrc.test.ui.pages.outstandingPayments
 
-import uk.gov.hmrc.test.ui.pages.BasePage
 import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.BasePage
 
 object OutstandingPaymentsPage extends BasePage {
 
   override val url: String = s"${baseUrl}payment/outstanding"
 
-  private val waysToPayLink: By = By.cssSelector("a.govuk-link[href*='pay-pillar-2-top-up-taxes']")
-  private val viewStoodoverChargesFirstLink : By = By.xpath("//*[@id=\"main-content\"]/p[3]/a")
-  private val viewStoodoverChargesSecondLink : By = By.xpath("//*[@id=\"main-content\"]//p[2]/a")
-  private val viewTransactionHistoryLink: By = By.cssSelector("a.govuk-link[href*='/report-pillar2-top-up-taxes/payment/history']")
+  private val waysToPayLink: By                  = By.cssSelector("a.govuk-link[href*='pay-pillar-2-top-up-taxes']")
+  private val viewStoodoverChargesFirstLink: By  = By.xpath("//*[@id=\"main-content\"]/p[3]/a")
+  private val viewStoodoverChargesSecondLink: By = By.xpath("//*[@id=\"main-content\"]//p[2]/a")
+  private val viewTransactionHistoryLink: By     = By.cssSelector("a.govuk-link[href*='/report-pillar2-top-up-taxes/payment/history']")
 
-  def clickLinkWaysToPay(): Unit = clickLink(waysToPayLink)
-  def clickLinkviewStoodoverChargesFirstLink(): Unit = clickLink(viewStoodoverChargesFirstLink)
+  def clickLinkWaysToPay(): Unit                      = clickLink(waysToPayLink)
+  def clickLinkviewStoodoverChargesFirstLink(): Unit  = clickLink(viewStoodoverChargesFirstLink)
   def clickLinkviewStoodoverChargesSecondLink(): Unit = clickLink(viewStoodoverChargesSecondLink)
-  def clickLinkViewTransactionHistory() : Unit = clickLink(viewTransactionHistoryLink)
+  def clickLinkViewTransactionHistory(): Unit         = clickLink(viewTransactionHistoryLink)
 
 }

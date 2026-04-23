@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ManageContactDetailsSecondaryPhoneInputPage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/contact-details/change-second-input-phone"
-  
+
   override val textInputField: By = By.id("phoneNumber")
   override val textValue: String  = "01234 567890"
 }

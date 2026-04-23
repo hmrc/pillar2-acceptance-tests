@@ -26,7 +26,8 @@ class RegistrationErrorGRSSpec extends BaseSpec {
 
   Feature("Registration GRS Error journeys") {
 
-    Scenario("1 - User registration as Uk Limited Company failed with party type mismatch error",
+    Scenario(
+      "1 - User registration as Uk Limited Company failed with party type mismatch error",
       AcceptanceTests
     ) {
 
@@ -67,7 +68,8 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       NFMGRSRegistrationFailedErrorPage.clickLinkGoBackToEntityType()
     }
 
-    Scenario("2 - User registration as Uk Limited Company failed with generic error",
+    Scenario(
+      "2 - User registration as Uk Limited Company failed with generic error",
       AcceptanceTests
     ) {
 
@@ -108,7 +110,8 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       NFMGRSRegistrationFailedErrorPage.clickLinkGoBackToEntityType()
     }
 
-    Scenario("3 - User registration as Uk Limited Company failed with Identifiers Mismatch error",
+    Scenario(
+      "3 - User registration as Uk Limited Company failed with Identifiers Mismatch error",
       AcceptanceTests
     ) {
 
@@ -149,7 +152,8 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       NFMGRSRegistrationNotCalledErrorPage.clickLinkGoBackToEntityType()
     }
 
-    Scenario("4 - User registration as Uk Limited Company failed with BV failed error",
+    Scenario(
+      "4 - User registration as Uk Limited Company failed with BV failed error",
       AcceptanceTests
     ) {
 

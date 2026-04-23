@@ -195,7 +195,7 @@ trait BasePage extends Matchers with PageObject {
 
   def navigateTo(url: String, timeoutSeconds: Long = 5): Unit = {
     val driver = Driver.instance
-    val js = driver.asInstanceOf[JavascriptExecutor]
+    val js     = driver.asInstanceOf[JavascriptExecutor]
 
     js.executeScript(s"window.location.href='$url'")
   }

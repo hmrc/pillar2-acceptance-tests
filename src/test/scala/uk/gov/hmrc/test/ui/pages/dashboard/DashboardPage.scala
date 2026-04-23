@@ -27,7 +27,7 @@ object DashboardPage extends BasePage {
   private val submissionHistory: By    = By.cssSelector("a[href*='/submission-history']")
   private val paymentHistory: By       = By.cssSelector("a[href*='/payment/history']")
   private val paymentOutstanding: By   = By.cssSelector("a[href*='/payment/outstanding']")
-  private val stoodoverCharges : By    = By.cssSelector("a[href*= '/payment/stoodover-charges']")
+  private val stoodoverCharges: By     = By.cssSelector("a[href*= '/payment/stoodover-charges']")
   private val requestRepayment: By     = By.cssSelector("a[href*='/repayment/before-you-start']")
   private val manageContactDetails: By = By.cssSelector("a[href*='/contact-details/summary']")
   private val manageGroupDetails: By   = By.cssSelector("a[href*='/account-details/summary']")

@@ -19,5 +19,5 @@ package uk.gov.hmrc.test.ui.pages.manage
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ManageAmendAccountPeriodPage extends BasePage {
- override val url: String = s"${baseUrl}manage-account/account-details/amend-period-cya"
+  override val url: String = s"${baseUrl}manage-account/account-details/amend-period-cya"
 }

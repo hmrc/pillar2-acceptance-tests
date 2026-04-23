@@ -29,10 +29,10 @@ object NFMCheckYourAnswersPage extends BasePage {
   private val changePhoneContactLink: By = By.cssSelector("a[href*='/change-phone']")
   private val changePhoneNumberLink: By  = By.cssSelector("a[href*='/change-input-phone']")
 
-  def clickLinkChangeName(): Unit             = clickLink(changeNameLink)
-  def clickLinkChangeAddress(): Unit          = clickLink(changeAddressLink)
-  def clickLinkChangeContactName(): Unit      = clickLink(changeContactNameLink)
-  def clickLinkChangeEmailAddress(): Unit     = clickLink(changeEmailAddressLink)
+  def clickLinkChangeName(): Unit         = clickLink(changeNameLink)
+  def clickLinkChangeAddress(): Unit      = clickLink(changeAddressLink)
+  def clickLinkChangeContactName(): Unit  = clickLink(changeContactNameLink)
+  def clickLinkChangeEmailAddress(): Unit = clickLink(changeEmailAddressLink)
   def clickLinkChangePhoneContact(): Unit = clickLink(changePhoneContactLink)
   def clickLinkChangePhoneNumber(): Unit  = clickLink(changePhoneNumberLink)
 }

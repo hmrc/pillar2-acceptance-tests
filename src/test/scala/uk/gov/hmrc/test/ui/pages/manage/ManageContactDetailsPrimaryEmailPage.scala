@@ -23,5 +23,5 @@ object ManageContactDetailsPrimaryEmailPage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/contact-details/change-input-email"
 
   override val textInputField: By = By.id("emailAddress")
-  override val textValue: String = "abc@def.com"
+  override val textValue: String  = "abc@def.com"
 }

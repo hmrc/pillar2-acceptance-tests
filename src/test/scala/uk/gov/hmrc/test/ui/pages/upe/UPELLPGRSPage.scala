@@ -20,8 +20,8 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPELLPGRSPage extends BasePage {
-  override val url: String                                = s"${baseUrl}test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=limitedLiabilityPartnership"
-  
+  override val url: String = s"${baseUrl}test-only/stub-grs-journey-data?continueUrl=normalmode/upe&entityType=limitedLiabilityPartnership"
+
   private val registrationSuccessBvDisabledButton: By           = By.id("registrationSuccessBvDisabled")
   private val registrationSuccessBvEnabledButton: By            = By.id("registrationSuccessBvEnabled")
   private val registrationFailedPartyTypeMismatchButton: By     = By.id("registrationFailedPartyTypeMismatch")

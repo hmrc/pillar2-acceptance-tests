@@ -20,13 +20,13 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnAccountingPage extends BasePage {
-  override val url: String       = s"${baseUrl}below-threshold-notification/accounting-period"
+  override val url: String = s"${baseUrl}below-threshold-notification/accounting-period"
 
-  //TODO comment the below code when amendMultipleAccountingPeriods = true
+  // TODO comment the below code when amendMultipleAccountingPeriods = true
   override val changeUrl: String = s"${baseUrl}manage-account/account-details/change-accounting-period"
 
-  //TODO Uncomment the below code when amendMultipleAccountingPeriods = true
- // override val changeUrl: String = s"${baseUrl}manage-account/account-details/new-accounting-period"
+  // TODO Uncomment the below code when amendMultipleAccountingPeriods = true
+  // override val changeUrl: String = s"${baseUrl}manage-account/account-details/new-accounting-period"
 
   private val accountDetailsSummary = By.cssSelector("a[href*='/account-details/summary']")
 

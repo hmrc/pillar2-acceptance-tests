@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.pages.manage
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ManageAccountPeriodPage extends BasePage {
-  //TODO Comment the below code when amendMultipleAccountingPeriods = true
+  // TODO Comment the below code when amendMultipleAccountingPeriods = true
   override val url: String = s"${baseUrl}manage-account/account-details/change-accounting-period"
-  //TODO Uncomment the below code when amendMultipleAccountingPeriods = true
-  //override val url: String = s"${baseUrl}manage-account/account-details/new-accounting-period"
+  // TODO Uncomment the below code when amendMultipleAccountingPeriods = true
+  // override val url: String = s"${baseUrl}manage-account/account-details/new-accounting-period"
 }
