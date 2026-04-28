@@ -28,7 +28,8 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
 
   Feature("Full registration using GRS") {
 
-    Scenario("1 - User registers a UK Limited Company UPE successfully",
+    Scenario(
+      "1 - User registers a UK Limited Company UPE successfully",
       AcceptanceTests
     ) {
 
@@ -76,7 +77,8 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
     }
 
-    Scenario("2 - User registers a UK Limited Company as ",
+    Scenario(
+      "2 - User registers a UK Limited Company as ",
       AcceptanceTests
     ) {
 

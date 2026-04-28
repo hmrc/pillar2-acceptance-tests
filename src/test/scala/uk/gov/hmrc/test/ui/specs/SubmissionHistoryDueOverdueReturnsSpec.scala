@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.asa.*
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.{DelegatedEnrolment, Enrolment, login}
 import uk.gov.hmrc.test.ui.pages.dashboard.DashboardPage
 import uk.gov.hmrc.test.ui.pages.dueAndOverdueReturns.*
-import uk.gov.hmrc.test.ui.pages.guidance.*
 import uk.gov.hmrc.test.ui.pages.submissionHistory.*
 import uk.gov.hmrc.test.ui.specs.tags.*
 

@@ -48,7 +48,7 @@ class TransactionHistorySpec extends BaseSpec {
       TransactionHistoryPage.clickLinkPageTwo()
       TransactionHistorySecondPage.onPage()
     }
-    
+
     Scenario(
       "2 - Org user accesses empty transaction history page",
       AcceptanceTests
@@ -69,7 +69,7 @@ class TransactionHistorySpec extends BaseSpec {
 
       Then("The user accesses transaction history and is taken to the history empty page")
       DashboardPage.clickPaymentHistoryLink()
-       TransactionHistoryPage.onPage()
+      TransactionHistoryPage.onPage()
     }
 
     Scenario(

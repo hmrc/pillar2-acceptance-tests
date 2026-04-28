@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ASAPillar2InputPage extends BasePage {
   override val url: String = s"${baseUrl}asa/input-pillar-2-id"
-  
+
 }

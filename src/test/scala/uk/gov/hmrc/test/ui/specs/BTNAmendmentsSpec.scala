@@ -53,12 +53,11 @@ class BTNAmendmentsSpec extends BaseSpec {
       )
 
       Then("The user is taken to the confirmation page")
-      //TODO Uncomment the below code when amendMultipleAccountingPeriods = true
+      // TODO Uncomment the below code when amendMultipleAccountingPeriods = true
 //      ManageAmendAccountPeriodPage.continue()
 //      ManageAmendAccountPeriodConfirmationPage.onPage()
 
-
-      //TODO comment the below three lines when amendMultipleAccountingPeriods = true
+      // TODO comment the below three lines when amendMultipleAccountingPeriods = true
       ManageAccountsSummaryPage.continueToNextPage()
 
       When("The user is taken back to the dashboard")

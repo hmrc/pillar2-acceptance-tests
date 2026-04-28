@@ -17,14 +17,15 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
-import uk.gov.hmrc.test.ui.pages.rfm._
-import uk.gov.hmrc.test.ui.specs.tags._
+import uk.gov.hmrc.test.ui.pages.rfm.*
+import uk.gov.hmrc.test.ui.specs.tags.*
 
 class RFMErrorSpec extends BaseSpec {
 
   Feature("RFM check your answers page") {
 
-    Scenario("1 - RFM restart error page journey",
+    Scenario(
+      "1 - RFM restart error page journey",
       AcceptanceTests
     ) {
 
@@ -43,7 +44,8 @@ class RFMErrorSpec extends BaseSpec {
       RFMJourneyRecoveryPage.onPage()
     }
 
-    Scenario("2 - RFM no match error page journey",
+    Scenario(
+      "2 - RFM no match error page journey",
       AcceptanceTests
     ) {
 
@@ -63,7 +65,8 @@ class RFMErrorSpec extends BaseSpec {
       RFMEnterPillar2IdPage.onPage()
     }
 
-    Scenario("3 - RFM amend API failure journey",
+    Scenario(
+      "3 - RFM amend API failure journey",
       AcceptanceTests
     ) {
 
@@ -104,7 +107,8 @@ class RFMErrorSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPage()
     }
 
-    Scenario("4 - RFM Incomplete data error journey",
+    Scenario(
+      "4 - RFM Incomplete data error journey",
       AcceptanceTests
     ) {
 
@@ -159,7 +163,8 @@ class RFMErrorSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPage()
     }
 
-    Scenario("5 - User registration as Limited liability partnership failed with party type mismatch error",
+    Scenario(
+      "5 - User registration as Limited liability partnership failed with party type mismatch error",
       AcceptanceTests
     ) {
 
@@ -186,7 +191,8 @@ class RFMErrorSpec extends BaseSpec {
       RFMGRSRegistrationMismatchErrorPage
     }
 
-    Scenario("6 - User registration as UK limited company failed with identifiers mismatch error page",
+    Scenario(
+      "6 - User registration as UK limited company failed with identifiers mismatch error page",
       AcceptanceTests
     ) {
 

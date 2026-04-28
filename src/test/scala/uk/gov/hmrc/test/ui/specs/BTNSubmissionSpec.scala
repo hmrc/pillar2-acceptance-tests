@@ -25,7 +25,8 @@ class BTNSubmissionSpec extends BaseSpec {
 
   Feature("Below threshold notification successful submission user journeys") {
 
-    Scenario("1 - Org User makes successful below threshold notification submission",
+    Scenario(
+      "1 - Org User makes successful below threshold notification submission",
       AcceptanceTests
     ) {
 
@@ -57,7 +58,8 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnCannotReturnPage.onPage()
     }
 
-    Scenario("2 - Agent User makes successful below threshold notification submission",
+    Scenario(
+      "2 - Agent User makes successful below threshold notification submission",
       AcceptanceTests
     ) {
 

@@ -64,53 +64,53 @@ the full journey pages included below:
 #### The structure of the project is as follows:
 ```
 ├── src
-│   └── test
-│       ├── resources
-│       │   ├── features      # The Cucumber feature files
-│       │   ├── application.conf  
-│       │   ├── cucumber.properties
+│  └── test
+│      ├── resources
+│      │  ├── features      # The Cucumber feature files
+│      │  ├── application.conf  
+│      │  ├── cucumber.properties
 │       │   └── testdata
-│       └── scala
-│           └── uk
-│               └── gov
-│                   └── hmrc
-│                       └── test
-│                             └── ui
-│                               │  └── conf
-│                               │       └── TestConfiguration
-│                               └── cucumber
-│                               │       └── runner             #The different runners to start the tests 
-│                               │       │      └── Runner
-│                               │       │      └── SoloRunner
-│                               │       │      └── ZapRunner
-│                               │       └── stepdefs     # The step definitions
-│                               │       │      └── BaseStepDef       # shutdown hooks
-│                               │       │      └── CommonFunctions   # common step definitions
-│                               │       │      └── StepDef           # combined step definitions
-│                               │       │      └── Hooks             # start up and tear down methods for tests
-│                               │       │      └── Page1             # step definition methods of Page1  
-│                               │       │      └── Page2             # step definition methods of Page1 
-│                               │       │      :
-│                               │       │      :
-│                               │       └── Check       # The shared test utils
-│                               │       └── Find        # The shared test utils
-│                               │       └── Forms       # The shared test utils
-│                               │       └── Input       # The shared test utils
-│                               │       └── Nav         # The shared test utils
-│                               │       └── PageObject  # The shared test utils
-│                               │       └── Wait        # The shared test utils
-│                               └── driver
-│                               │      └── BrowserDriver # setup webdriver object
-│                               └── pages
-│                                     └── BasePage     # common page methods
-│                                     └── Page1        # page methods
-│                                     └── Page2
-│                                     :
-│                                     :
+│      └── scala
+│          └── uk
+│              └── gov
+│                  └── hmrc
+│                      └── test
+│                            └── ui
+│                              │   └── conf
+│                              │      └── TestConfiguration
+│                              └── cucumber
+│                              │        └── runner             #The different runners to start the tests 
+│                              │        │       └── Runner
+│                              │        │       └── SoloRunner
+│                              │        │       └── ZapRunner
+│                              │        └── stepdefs     # The step definitions
+│                              │        │       └── BaseStepDef       # shutdown hooks
+│                              │        │       └── CommonFunctions   # common step definitions
+│                              │        │       └── StepDef           # combined step definitions
+│                              │        │       └── Hooks             # start up and tear down methods for tests
+│                              │        │       └── Page1             # step definition methods of Page1  
+│                              │        │       └── Page2             # step definition methods of Page1 
+│                              │        │       :
+│                              │        │       :
+│                              │        └── Check       # The shared test utils
+│                              │        └── Find        # The shared test utils
+│                              │        └── Forms       # The shared test utils
+│                              │        └── Input       # The shared test utils
+│                              │        └── Nav         # The shared test utils
+│                              │        └── PageObject  # The shared test utils
+│                              │        └── Wait        # The shared test utils
+│                              └── driver
+│                              │       └── BrowserDriver # setup webdriver object
+│                              └── pages
+│                                    └── BasePage     # common page methods
+│                                    └── Page1        # page methods
+│                                    └── Page2
+│                                    :
+│                                    :
 |
 └── target
-│     └── test-reports
-│        └── html-report      # The Cucumber report and test run screenshots
+│      └── test-reports
+│         └── html-report      # The Cucumber report and test run screenshots
 ├── .gitignore                   # To ensure that certain files not tracked by Git remain untracked
 ├── .build.sbt                   # script file to build the project
 ├── LICENCE                      # License details

@@ -20,8 +20,8 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object AmendMAPBtnAccountingPage extends BasePage {
-  override val url: String       = s"${baseUrl}below-threshold-notification/accounting-period"
-  
+  override val url: String = s"${baseUrl}below-threshold-notification/accounting-period"
+
   override val changeUrl: String = s"${baseUrl}manage-account/account-details/new-accounting-period"
 
   private val accountDetailsSummary = By.cssSelector("a[href*='/account-details/summary']")
