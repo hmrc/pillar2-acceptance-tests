@@ -66,71 +66,57 @@ the full journey pages included below:
 ├── src
 │  └── test
 │      ├── resources
-│      │  ├── features      # The Cucumber feature files
-│      │  ├── application.conf  
-│      │  ├── cucumber.properties
-│       │   └── testdata
+│      │ ├── application.conf 
+│      │   
 │      └── scala
 │          └── uk
 │              └── gov
 │                  └── hmrc
 │                      └── test
 │                            └── ui
-│                              │   └── conf
-│                              │      └── TestConfiguration
-│                              └── cucumber
-│                              │        └── runner             #The different runners to start the tests 
-│                              │        │       └── Runner
-│                              │        │       └── SoloRunner
-│                              │        │       └── ZapRunner
-│                              │        └── stepdefs     # The step definitions
-│                              │        │       └── BaseStepDef       # shutdown hooks
-│                              │        │       └── CommonFunctions   # common step definitions
-│                              │        │       └── StepDef           # combined step definitions
-│                              │        │       └── Hooks             # start up and tear down methods for tests
-│                              │        │       └── Page1             # step definition methods of Page1  
-│                              │        │       └── Page2             # step definition methods of Page1 
-│                              │        │       :
-│                              │        │       :
-│                              │        └── Check       # The shared test utils
-│                              │        └── Find        # The shared test utils
-│                              │        └── Forms       # The shared test utils
-│                              │        └── Input       # The shared test utils
-│                              │        └── Nav         # The shared test utils
-│                              │        └── PageObject  # The shared test utils
-│                              │        └── Wait        # The shared test utils
-│                              └── driver
-│                              │       └── BrowserDriver # setup webdriver object
-│                              └── pages
-│                                    └── BasePage     # common page methods
-│                                    └── Page1        # page methods
-│                                    └── Page2
-│                                    :
-│                                    :
+│                                 └── conf
+│                                 │      └── TestConfiguration
+│                                 │
+│                                 │── specs           
+│                                 │      └── BaseSpec              # BeforeAll and AfterAll functions
+│                                 │      └── BTN.                  # Below Threshold Notification Features
+│                                 │      └── Agent                 # Agent Journey
+│                                 │      └── Managecontact/grp     # Manage group/Contact Features
+│                                 │      └── Registration          # Registration journey
+│                                 │      └── RFM                   # Replace Filing Member journey 
+│                                 │      └── Stoodover/Outsanding  # Outstanding/stoodover journey 
+│                                 │      └── TransactionHistory    # Transaction History journey      
+│                                 │      └── Unauthorised          # Unauthorised Journey
+│                                 │         
+│                                 └── driver
+│                                 │      └── BrowserDriver         # setup webdriver object
+│                                 └── pages
+│                                        └── BasePage              # common page methods, Locator methods
+│                                        └── Page1                 # page methods
+│                                        └── Page2
+│                                             :                              
 |
 └── target
 │      └── test-reports
-│         └── html-report      # The Cucumber report and test run screenshots
+│         └── html-report        # The Cucumber report and test run screenshots
 ├── .gitignore                   # To ensure that certain files not tracked by Git remain untracked
 ├── .build.sbt                   # script file to build the project
 ├── LICENCE                      # License details
 ├── README.md                    # Read me file
-├── run_accessibility_tests.sh   # Script file to run acaccessibility tests  
-├── run_solo.sh                  
-├── run_tests.sh                 # Script file to run acceptance tests      
-├── run_zap_tests.sh             # Script file to run security tests on jenkins
-└── run_zap_tests_local.sh       # Script file to run security tests on local
+├── run_accessibility_tests.sh   # Script file to run acaccessibility tests                   
+├── run_tests.sh                 # Script file to run acceptance tests in Jenkins 
+├── run_wip.sh                   # Script file to run acceptance tests locally
+
 ```
 
 It is built using the following:
-- Cucumber(BDD),
 - Selenium-WebDriver,
 - SBT (build tool),
-- Scala
+- Scala 
 
 ### Getting started
 - Ensure that you have installed IntelliJ Idea
-- Once you have installed IntelliJ IDEA, install plugins: Cucumber for scala, Gherkin.
+- Once you have installed IntelliJ IDEA, install plugins: Scala
 - Make sure you have cloned the below respositories
   - https://github.com/hmrc/pillar2-frontend
   - https://github.com/hmrc/pillar2
@@ -148,13 +134,12 @@ It is built using the following:
     2. Import the project in IntelliJ
     3. Navigate to the directory where you have the cloned pillar2-frontend project. Run below command to use testonly route locally:
       `sbt "run -Dplay.http.router=testOnlyDoNotUseInAppConf.Routes 10050"
-    4. On a terminal instance run: `sm --start PILLAR2_ALL`  
+    4. On a terminal instance run: `sm2 --start PILLAR2_ALL`  
     5. Navigate to the directory where you have the cloned pillar2 acceptance testes project
-    6. Run: `./run_tests.sh`
+    6. Run: `./run_tests.sh` for jenkins or `./run_wip.sh` locally
     
     IntelliJ 
     ---------
-    - Create a new JUnit task and set the class to uk.gov.hmrc.test.ui.cucumber.runner
     - Change use "classpath of module" to pillar2-acceptance-tests     
 
 ### Source code formatting
@@ -168,8 +153,11 @@ Format at project level under src/test
 
 `sbt test:scalafmt`
 
-#### Run acceptance tests locally and on Jenkins
+#### Run acceptance tests on Jenkins
 `./run_tests.sh`
+
+#### Run acceptance tests locally
+`./run_wip.sh`
 
 #### Run security tests locally
 To run zap tests for any of the services, download from https://www.zaproxy.org/download/, extract and execute the 
