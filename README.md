@@ -157,7 +157,8 @@ Format at project level under src/test
 `./run_tests.sh`
 
 #### Run acceptance tests locally
-`./run_wip.sh`
+change -Dsecurity.assessment to 'false' and then run 
+`./run_tests.sh`
 
 #### Run security tests locally
 To run zap tests for any of the services, download from https://www.zaproxy.org/download/, extract and execute the 
