@@ -168,9 +168,6 @@ and run
 
 `./run_zap_tests_local.sh`
 
-#### Run security tests on jenkins
-`./run_zap_tests.sh`
-
 #### Run accessibility tests locally
 `./run_accessibility_tests.sh`
 
