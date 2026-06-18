@@ -117,7 +117,7 @@ It is built using the following:
 ### Getting started
 - Ensure that you have installed IntelliJ Idea
 - Once you have installed IntelliJ IDEA, install plugins: Scala
-- Make sure you have cloned the below respositories
+- Make sure you have cloned the below repositories
   - https://github.com/hmrc/pillar2-frontend
   - https://github.com/hmrc/pillar2
   - https://github.com/hmrc/pillar2-stubs
@@ -145,7 +145,7 @@ It is built using the following:
 ### Source code formatting
 We use Scalafmt to format our code base.
 
-In case of contribution and you are an IntelliJ user, you should install the scalafmt plugin, select Scalafmt 
+In case of contribution, and you are an IntelliJ user, you should install the scalafmt plugin, select Scalafmt 
 as Formatter and flag the checkbox "Reformat on file save" (_Settings -> Editor -> Code Style -> Scala). 
 You can format your code by using the alt+shift+L or option+command+L shortcut
 
@@ -161,11 +161,7 @@ change -Dsecurity.assessment to 'false' and then run
 `./run_tests.sh`
 
 #### Run security tests locally
-To run zap tests for any of the services, download from https://www.zaproxy.org/download/, extract and execute the 
-following in the root of the extracted folder:
-
-`./zap.sh -daemon -config api.disablekey=true -port 11000`
-and run
+ Clone https://github.com/hmrc/dast-config-manager into workspace and then run 
 
 `./run_zap_tests_local.sh`
 
