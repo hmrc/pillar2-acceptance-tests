@@ -10,5 +10,5 @@ lazy val testSuite = (project in file("."))
     semanticdbEnabled := true
   )
 
-addCommandAlias("prePrChecks", ";scalafmtCheckAll;scalafmtSbtCheck;scalafixAll --check")
-addCommandAlias("lint", ";scalafmtAll;scalafmtSbt;scalafixAll")
+addCommandAlias("prePrChecks", "; scalafmtCheckAll; scalafmtSbtCheck; scalafixAll --check")
+addCommandAlias("lint", "; scalafmtAll; scalafmtSbt; scalafixAll")
