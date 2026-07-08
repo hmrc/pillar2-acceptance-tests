@@ -29,23 +29,23 @@ import uk.gov.hmrc.test.ui.pages.rfm.RFMEnterPillar2IdPage
 
 object AuthLoginPage extends BrowserDriver with BasePage {
 
-  val url: String         = s"${TestConfiguration.url("auth-login-stub")}/gg-sign-in"
+  val url:         String = s"${TestConfiguration.url("auth-login-stub")}/gg-sign-in"
   val frontEndUrl: String = TestConfiguration.url("pillar2-frontend")
 
   object Fields {
-    val addDelegatedEnrolmentCTA: By  = By.id("js-add-delegated-enrolment")
-    val affinityGroup: By             = By.id("affinityGroupSelect")
-    val credentialRole: By            = By.id("credential-role-select")
-    val credId: By                    = By.id("authorityId")
-    val enrolmentKey: By              = By.id("enrolment[0].name")
-    val groupId: By                   = By.id("groupIdentifier")
-    val identifierName: By            = By.id("input-0-0-name")
-    val identifierValue: By           = By.id("input-0-0-value")
-    val redirectUrl: By               = By.id("redirectionUrl")
-    def delegatedKey(i: Int): By      = By.id(s"delegatedEnrolment[$i].key")
-    def delegatedName(i: Int): By     = By.id(s"input-delegated-$i-0-name")
-    def delegatedValue(i: Int): By    = By.id(s"input-delegated-$i-0-value")
-    def delegatedAuthRule(i: Int): By = By.id(s"delegatedEnrolment[$i].delegatedAuthRule")
+    val addDelegatedEnrolmentCTA:      By = By.id("js-add-delegated-enrolment")
+    val affinityGroup:                 By = By.id("affinityGroupSelect")
+    val credentialRole:                By = By.id("credential-role-select")
+    val credId:                        By = By.id("authorityId")
+    val enrolmentKey:                  By = By.id("enrolment[0].name")
+    val groupId:                       By = By.id("groupIdentifier")
+    val identifierName:                By = By.id("input-0-0-name")
+    val identifierValue:               By = By.id("input-0-0-value")
+    val redirectUrl:                   By = By.id("redirectionUrl")
+    def delegatedKey(i:      Int):     By = By.id(s"delegatedEnrolment[$i].key")
+    def delegatedName(i:     Int):     By = By.id(s"input-delegated-$i-0-name")
+    def delegatedValue(i:    Int):     By = By.id(s"input-delegated-$i-0-value")
+    def delegatedAuthRule(i: Int):     By = By.id(s"delegatedEnrolment[$i].delegatedAuthRule")
   }
 
   case class Enrolment(key: String, name: String, value: String)
@@ -61,21 +61,20 @@ object AuthLoginPage extends BrowserDriver with BasePage {
     "pillar2-frontend" -> frontEndUrl
   )
 
-  private def resolveRedirect(page: String): String = {
+  private def resolveRedirect(page: String): String =
     redirectUrls.getOrElse(
       page,
       throw new IllegalArgumentException(s"Unknown redirect page: $page")
     )
-  }
 
   def login(
-      userType: String,
-      page: String,
-      enrolment: Option[Enrolment] = None,
-      delegatedEnrolments: Seq[DelegatedEnrolment] = Seq.empty,
-      credId: String = "",
-      credRole: String = "User",
-      groupId: String = ""
+    userType:            String,
+    page:                String,
+    enrolment:           Option[Enrolment] = None,
+    delegatedEnrolments: Seq[DelegatedEnrolment] = Seq.empty,
+    credId:              String = "",
+    credRole:            String = "User",
+    groupId:             String = ""
   ): Unit = {
 
     navigateTo(url)
@@ -88,8 +87,8 @@ object AuthLoginPage extends BrowserDriver with BasePage {
 
     enrolment.foreach(addEnrolment)
 
-    delegatedEnrolments.zipWithIndex.foreach {
-      case (e, i) => addDelegatedEnrolment(e, i)
+    delegatedEnrolments.zipWithIndex.foreach { case (e, i) =>
+      addDelegatedEnrolment(e, i)
     }
 
     continue()

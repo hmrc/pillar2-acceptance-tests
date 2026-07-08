@@ -26,7 +26,7 @@ object NFMEntityTypePage extends BasePage {
   private val limitedLiabilityPartnershipRadio = By.id("value_1")
   private val companyTypeNotListedRadio        = By.id("value_2")
 
-  def selectRadioEntityTypeUkLimitedCompany(): Unit            = selectRadio(ukLimitedCompanyRadio)
+  def selectRadioEntityTypeUkLimitedCompany():            Unit = selectRadio(ukLimitedCompanyRadio)
   def selectRadioEntityTypeLimitedLiabilityPartnership(): Unit = selectRadio(limitedLiabilityPartnershipRadio)
-  def selectRadioEntityTypeNotListed(): Unit                   = selectRadio(companyTypeNotListedRadio)
+  def selectRadioEntityTypeNotListed():                   Unit = selectRadio(companyTypeNotListedRadio)
 }

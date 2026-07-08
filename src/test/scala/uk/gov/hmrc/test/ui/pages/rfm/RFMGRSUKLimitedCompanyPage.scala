@@ -22,17 +22,17 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RFMGRSUKLimitedCompanyPage extends BasePage {
   override val url: String = s"${baseUrl}test-only/stub-grs-journey-data?continueUrl=normalmode/rfm&entityType=ukLimitedCompany"
 
-  private val registrationSuccessBvDisabledButton: By           = By.id("registrationSuccessBvDisabled")
-  private val registrationSuccessBvEnabledButton: By            = By.id("registrationSuccessBvEnabled")
-  private val registrationFailedPartyTypeMismatchButton: By     = By.id("registrationFailedPartyTypeMismatch")
-  private val registrationFailedGenericButton: By               = By.id("registrationFailedGeneric")
+  private val registrationSuccessBvDisabledButton:           By = By.id("registrationSuccessBvDisabled")
+  private val registrationSuccessBvEnabledButton:            By = By.id("registrationSuccessBvEnabled")
+  private val registrationFailedPartyTypeMismatchButton:     By = By.id("registrationFailedPartyTypeMismatch")
+  private val registrationFailedGenericButton:               By = By.id("registrationFailedGeneric")
   private val registrationNotCalledIdentifierMismatchButton: By = By.id("registrationNotCalledIdentifierMismatch")
-  private val registrationNotCalledBvFailedButton: By           = By.id("registrationNotCalledBvFailed")
+  private val registrationNotCalledBvFailedButton:           By = By.id("registrationNotCalledBvFailed")
 
-  def clickButtonRegistrationSuccessBvDisabled(): Unit           = clickButton(registrationSuccessBvDisabledButton)
-  def clickButtonRegistrationSuccessBvEnabled(): Unit            = clickButton(registrationSuccessBvEnabledButton)
-  def clickButtonRegistrationFailedPartyTypeMismatch(): Unit     = clickButton(registrationFailedPartyTypeMismatchButton)
-  def clickButtonRegistrationFailedGeneric(): Unit               = clickButton(registrationFailedGenericButton)
+  def clickButtonRegistrationSuccessBvDisabled():           Unit = clickButton(registrationSuccessBvDisabledButton)
+  def clickButtonRegistrationSuccessBvEnabled():            Unit = clickButton(registrationSuccessBvEnabledButton)
+  def clickButtonRegistrationFailedPartyTypeMismatch():     Unit = clickButton(registrationFailedPartyTypeMismatchButton)
+  def clickButtonRegistrationFailedGeneric():               Unit = clickButton(registrationFailedGenericButton)
   def clickButtonRegistrationNotCalledIdentifierMismatch(): Unit = clickButton(registrationNotCalledIdentifierMismatchButton)
-  def clickButtonRegistrationNotCalledBvFailed(): Unit           = clickButton(registrationNotCalledBvFailedButton)
+  def clickButtonRegistrationNotCalledBvFailed():           Unit = clickButton(registrationNotCalledBvFailedButton)
 }

@@ -20,10 +20,10 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ContactDetailsPrimaryPhonePage extends BasePage {
-  override val url: String       = s"${baseUrl}contact-details/input-phone"
+  override val url:       String = s"${baseUrl}contact-details/input-phone"
   override val changeUrl: String = s"${baseUrl}contact-details/change-input-phone"
 
-  override val textInputField: By      = By.id("phoneNumber")
-  override val textValue: String       = "01234 567890"
+  override val textInputField:  By     = By.id("phoneNumber")
+  override val textValue:       String = "01234 567890"
   override val textUpdateValue: String = "09876 543210"
 }

@@ -22,23 +22,23 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RepaymentBankAccountUKPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/uk-details"
 
-  val bankNameInputField: By          = By.id("bankName")
+  val bankNameInputField:          By = By.id("bankName")
   val accountHolderNameInputField: By = By.id("accountHolderName")
-  val sortCodeInputField: By          = By.id("sortCode")
-  val accountNumberInputField: By     = By.id("accountNumber")
+  val sortCodeInputField:          By = By.id("sortCode")
+  val accountNumberInputField:     By = By.id("accountNumber")
 
   case class BankDetails(
-      bankName: String,
-      accountHolderName: String,
-      sortCode: String,
-      accountNumber: String
+    bankName:          String,
+    accountHolderName: String,
+    sortCode:          String,
+    accountNumber:     String
   )
 
-  val validBankDetails: BankDetails           = BankDetails("Natwest", "Epic Adventure Inc", "206705", "86473611")
+  val validBankDetails:           BankDetails = BankDetails("Natwest", "Epic Adventure Inc", "206705", "86473611")
   val couldNotConfirmBankDetails: BankDetails = BankDetails("Test", "Eco Focus", "206705", "56945688")
-  val bankDetailsError: BankDetails           = BankDetails("Test", "Innovation Arch", "206705", "56523611")
-  val barsError: BankDetails                  = BankDetails("Test", "Flux Water Gear", "207102", "86473611")
-  val partialNameError: BankDetails           = BankDetails("Test", "Epic", "206705", "86473611")
+  val bankDetailsError:           BankDetails = BankDetails("Test", "Innovation Arch", "206705", "56523611")
+  val barsError:                  BankDetails = BankDetails("Test", "Flux Water Gear", "207102", "86473611")
+  val partialNameError:           BankDetails = BankDetails("Test", "Epic", "206705", "86473611")
 
   def enterBankDetails(details: BankDetails): Unit = {
     onPage()

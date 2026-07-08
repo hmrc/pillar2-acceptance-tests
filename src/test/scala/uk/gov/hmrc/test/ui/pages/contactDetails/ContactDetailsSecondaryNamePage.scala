@@ -19,9 +19,9 @@ package uk.gov.hmrc.test.ui.pages.contactDetails
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ContactDetailsSecondaryNamePage extends BasePage {
-  override val url: String       = s"${baseUrl}contact-details/second-input-name"
+  override val url:       String = s"${baseUrl}contact-details/second-input-name"
   override val changeUrl: String = s"${baseUrl}contact-details/change-second-input-name"
 
-  override val textValue: String       = "Contact Name"
+  override val textValue:       String = "Contact Name"
   override val textUpdateValue: String = "Updated Contact Name"
 }

@@ -19,11 +19,11 @@ package uk.gov.hmrc.test.ui.pages.rfm
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMContactPrimaryNamePage extends BasePage {
-  override val url: String       = s"${baseUrl}replace-filing-member/contact-details/input-name"
+  override val url:       String = s"${baseUrl}replace-filing-member/contact-details/input-name"
   override val changeUrl: String = s"${baseUrl}replace-filing-member/contact-details/change-input-name"
 
-  override val textValue: String        = "RFM Contact Name"
-  override val textUpdateValue: String  = "New RFM Contact Name"
+  override val textValue:        String = "RFM Contact Name"
+  override val textUpdateValue:  String = "New RFM Contact Name"
   private val textValueAPIError: String = "500"
 
   def enterTextAPIError(): Unit = enterText(textValueAPIError)

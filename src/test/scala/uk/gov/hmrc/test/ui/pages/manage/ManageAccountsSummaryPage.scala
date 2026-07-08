@@ -22,9 +22,9 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object ManageAccountsSummaryPage extends BasePage {
   override val url: String = s"${baseUrl}manage-account/account-details/summary"
 
-  private val changeGroupStatusLink: By      = By.cssSelector("a[href*='/change-group-status']")
+  private val changeGroupStatusLink:      By = By.cssSelector("a[href*='/change-group-status']")
   private val changeAccountingPeriodLink: By = By.cssSelector("a[href*='/select-period']")
 
-  def clickLinkChangeGroupStatus(): Unit      = clickLink(changeGroupStatusLink)
+  def clickLinkChangeGroupStatus():      Unit = clickLink(changeGroupStatusLink)
   def clickLinkChangeAccountingPeriod(): Unit = clickLink(changeAccountingPeriodLink)
 }

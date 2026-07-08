@@ -23,10 +23,10 @@ object RepaymentBankAccountNonUKPage extends BasePage {
 
   override val url: String = s"${baseUrl}repayment/non-uk-details"
 
-  val bankNameInputField: By          = By.id("bankName")
+  val bankNameInputField:          By = By.id("bankName")
   val accountHolderNameInputField: By = By.id("nameOnBankAccount")
-  val bicOrSwiftInputField: By        = By.id("bic")
-  val ibanInputField: By              = By.id("iban")
+  val bicOrSwiftInputField:        By = By.id("bic")
+  val ibanInputField:              By = By.id("iban")
 
   val bankNameValue          = "HSBC"
   val accountHolderNameValue = "HMRC Shipley"

@@ -22,17 +22,17 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object NFMCheckYourAnswersPage extends BasePage {
   override val url: String = s"${baseUrl}business-matching/filing-member/no-id/check-answers"
 
-  private val changeNameLink: By         = By.cssSelector("a[href*='/change-input-name']")
-  private val changeAddressLink: By      = By.cssSelector("a[href*='/change-input-address']")
-  private val changeContactNameLink: By  = By.cssSelector("a[href*='/change-input-business-name']")
+  private val changeNameLink:         By = By.cssSelector("a[href*='/change-input-name']")
+  private val changeAddressLink:      By = By.cssSelector("a[href*='/change-input-address']")
+  private val changeContactNameLink:  By = By.cssSelector("a[href*='/change-input-business-name']")
   private val changeEmailAddressLink: By = By.cssSelector("a[href*='/change-input-email']")
   private val changePhoneContactLink: By = By.cssSelector("a[href*='/change-phone']")
-  private val changePhoneNumberLink: By  = By.cssSelector("a[href*='/change-input-phone']")
+  private val changePhoneNumberLink:  By = By.cssSelector("a[href*='/change-input-phone']")
 
-  def clickLinkChangeName(): Unit         = clickLink(changeNameLink)
-  def clickLinkChangeAddress(): Unit      = clickLink(changeAddressLink)
-  def clickLinkChangeContactName(): Unit  = clickLink(changeContactNameLink)
+  def clickLinkChangeName():         Unit = clickLink(changeNameLink)
+  def clickLinkChangeAddress():      Unit = clickLink(changeAddressLink)
+  def clickLinkChangeContactName():  Unit = clickLink(changeContactNameLink)
   def clickLinkChangeEmailAddress(): Unit = clickLink(changeEmailAddressLink)
   def clickLinkChangePhoneContact(): Unit = clickLink(changePhoneContactLink)
-  def clickLinkChangePhoneNumber(): Unit  = clickLink(changePhoneNumberLink)
+  def clickLinkChangePhoneNumber():  Unit = clickLink(changePhoneNumberLink)
 }

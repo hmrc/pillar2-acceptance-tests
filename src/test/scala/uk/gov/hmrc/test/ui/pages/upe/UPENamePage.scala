@@ -19,16 +19,16 @@ package uk.gov.hmrc.test.ui.pages.upe
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPENamePage extends BasePage {
-  override val url: String       = s"${baseUrl}business-matching/ultimate-parent/no-id/input-name"
+  override val url:       String = s"${baseUrl}business-matching/ultimate-parent/no-id/input-name"
   override val changeUrl: String = s"${baseUrl}business-matching/ultimate-parent/no-id/change-input-name"
 
-  override val textValue: String                  = "Entity Name"
-  override val textUpdateValue: String            = "New Entity Name"
+  override val textValue:                  String = "Entity Name"
+  override val textUpdateValue:            String = "New Entity Name"
   private val registrationInProgressValue: String = "Medium Processing Corp"
-  private val subscriptionFailureValue: String    = "XMPLR0009999999"
-  private val aPIErrorValue: String               = "regNoIDInvalidRequest"
+  private val subscriptionFailureValue:    String = "XMPLR0009999999"
+  private val aPIErrorValue:               String = "regNoIDInvalidRequest"
 
   def enterTextRegistrationInProgress(): Unit = enterText(registrationInProgressValue)
-  def enterTextSubscriptionFailure(): Unit    = enterText(subscriptionFailureValue)
-  def enterTextAPIError(): Unit               = enterText(aPIErrorValue)
+  def enterTextSubscriptionFailure():    Unit = enterText(subscriptionFailureValue)
+  def enterTextAPIError():               Unit = enterText(aPIErrorValue)
 }
