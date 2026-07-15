@@ -23,7 +23,7 @@ import uk.gov.hmrc.test.ui.pages.payments.PaymentsPayPage
 import uk.gov.hmrc.test.ui.pages.repayments.*
 import uk.gov.hmrc.test.ui.pages.transactionHistory.TransactionHistoryPage
 
-object TaskListPage extends BasePage {
+object RegistrationTaskListPage extends BasePage {
   override val url: String = s"${baseUrl}check-progress/register-your-group"
 
   private val addUltimateFilingMemberLink: By = By.cssSelector("a[href*='/match-hmrc-records']")

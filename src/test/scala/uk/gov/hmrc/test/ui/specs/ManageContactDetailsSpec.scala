@@ -78,6 +78,7 @@ class ManageContactDetailsSpec extends BaseSpec {
 
       When("The user saves the changes")
       ManageContactDetailsSummaryPage.onPageClickButtonById()
+      ManageSubmissionInProgressPage.onPage()
 
       Then("The user is taken to the dashboard")
       DashboardPage.onPage(timeoutSeconds = 5)

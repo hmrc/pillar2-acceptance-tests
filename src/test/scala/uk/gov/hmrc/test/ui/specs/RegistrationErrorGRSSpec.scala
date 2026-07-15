@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.nfm.*
-import uk.gov.hmrc.test.ui.pages.registration.TaskListPage
+import uk.gov.hmrc.test.ui.pages.registration.RegistrationTaskListPage
 import uk.gov.hmrc.test.ui.pages.upe.*
 import uk.gov.hmrc.test.ui.specs.tags.*
 
@@ -38,7 +38,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickLinkAddUltimateFilingMember()
+      RegistrationTaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Failed Party Type Mismatch")
       UPEInitialGuidancePage.continueToNextPage()
@@ -55,7 +55,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Failed Party Type Mismatch")
-      TaskListPage.clickLinkAddFilingMember()
+      RegistrationTaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
@@ -80,7 +80,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickLinkAddUltimateFilingMember()
+      RegistrationTaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Generic Error")
       UPEInitialGuidancePage.continueToNextPage()
@@ -97,7 +97,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Generic Error")
-      TaskListPage.clickLinkAddFilingMember()
+      RegistrationTaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
@@ -122,7 +122,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickLinkAddUltimateFilingMember()
+      RegistrationTaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with Identifiers Mismatch")
       UPEInitialGuidancePage.continueToNextPage()
@@ -139,7 +139,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with Identifiers Mismatch")
-      TaskListPage.clickLinkAddFilingMember()
+      RegistrationTaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()
@@ -164,7 +164,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickLinkAddUltimateFilingMember()
+      RegistrationTaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds a Uk Limited Company as an Ultimate Parent Entity with BV failed")
       UPEInitialGuidancePage.continueToNextPage()
@@ -181,7 +181,7 @@ class RegistrationErrorGRSSpec extends BaseSpec {
       UPECompanyUkGRSPage.clickButtonRegistrationSuccessBvEnabled()
 
       Then("The user adds a Uk Limited Company as a Nominated Filing Member with BV failed")
-      TaskListPage.clickLinkAddFilingMember()
+      RegistrationTaskListPage.clickLinkAddFilingMember()
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
       NFMRegisteredInUkPage.selectYes()
       NFMEntityTypePage.selectRadioEntityTypeUkLimitedCompany()

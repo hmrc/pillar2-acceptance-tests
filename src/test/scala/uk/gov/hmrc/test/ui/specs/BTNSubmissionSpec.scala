@@ -27,7 +27,7 @@ class BTNSubmissionSpec extends BaseSpec {
 
     Scenario(
       "1 - Org User makes successful below threshold notification submission",
-      AcceptanceTests
+      AcceptanceTests, Wip
     ) {
 
       Given("Org User logs in to Pillar2 service")
@@ -60,7 +60,7 @@ class BTNSubmissionSpec extends BaseSpec {
 
     Scenario(
       "2 - Agent User makes successful below threshold notification submission",
-      AcceptanceTests
+      AcceptanceTests, Wip
     ) {
 
       Given("Agent User logs in to Pillar2 service with delegated enrollment")
@@ -105,7 +105,7 @@ class BTNSubmissionSpec extends BaseSpec {
 
     Scenario(
       "3 - Agent User makes successful BTN submission for current accounting period of multiple accounting periods",
-      AcceptanceTests
+      AcceptanceTests, Wip
     ) {
 
       Given("Agent User logs in with existing entity group")
@@ -149,7 +149,7 @@ class BTNSubmissionSpec extends BaseSpec {
 
     Scenario(
       "4 - Agent User makes successful BTN submission for previous accounting period of multiple accounting periods",
-      AcceptanceTests
+      AcceptanceTests, Wip
     ) {
 
       Given("Agent User logs in with existing entity group")
