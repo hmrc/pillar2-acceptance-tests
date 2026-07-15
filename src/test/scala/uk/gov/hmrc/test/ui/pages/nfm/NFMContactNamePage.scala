@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages.nfm
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object NFMContactNamePage extends BasePage {
-  override val url: String       = s"${baseUrl}business-matching/filing-member/no-id/input-business-name"
+  override val url:       String = s"${baseUrl}business-matching/filing-member/no-id/input-business-name"
   override val changeUrl: String = s"${baseUrl}business-matching/filing-member/no-id/change-input-business-name"
 
   override val textValue       = "Contact Name"

@@ -19,11 +19,11 @@ package uk.gov.hmrc.test.ui.pages.upe
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object UPEContactNamePage extends BasePage {
-  override val url: String       = s"${baseUrl}business-matching/ultimate-parent/no-id/input-business-name"
+  override val url:       String = s"${baseUrl}business-matching/ultimate-parent/no-id/input-business-name"
   override val changeUrl: String = s"${baseUrl}business-matching/ultimate-parent/no-id/change-input-business-name"
 
-  override val textValue: String                  = "Contact Entity Name"
-  override val textUpdateValue: String            = "Updated Contact Entity Name"
+  override val textValue:                  String = "Contact Entity Name"
+  override val textUpdateValue:            String = "Updated Contact Entity Name"
   private val registrationInProgressValue: String = "Medium Processing"
 
   def enterTextRegistrationInProgress(): Unit = enterText(registrationInProgressValue)

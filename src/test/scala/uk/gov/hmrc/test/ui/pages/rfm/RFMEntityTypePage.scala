@@ -22,11 +22,11 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RFMEntityTypePage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/uk-based/org-type"
 
-  private val ukLimitedCompanyRadio: By            = By.id("value_0")
+  private val ukLimitedCompanyRadio:            By = By.id("value_0")
   private val limitedLiabilityPartnershipRadio: By = By.id("value_1")
-  private val companyTypeNotListedRadio: By        = By.id("value_2")
+  private val companyTypeNotListedRadio:        By = By.id("value_2")
 
-  def selectRadioEntityTypeUkLimitedCompany(): Unit            = selectRadio(ukLimitedCompanyRadio)
+  def selectRadioEntityTypeUkLimitedCompany():            Unit = selectRadio(ukLimitedCompanyRadio)
   def selectRadioEntityTypeLimitedLiabilityPartnership(): Unit = selectRadio(limitedLiabilityPartnershipRadio)
-  def selectRadioEntityTypeNotListed(): Unit                   = selectRadio(companyTypeNotListedRadio)
+  def selectRadioEntityTypeNotListed():                   Unit = selectRadio(companyTypeNotListedRadio)
 }

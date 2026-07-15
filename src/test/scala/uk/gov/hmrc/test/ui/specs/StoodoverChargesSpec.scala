@@ -27,9 +27,7 @@ import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
 class StoodoverChargesSpec extends BaseSpec {
   Feature("Stoodover Charges ") {
 
-    Scenario(
-      "1 - Org User navigates to Stoodover Charges",
-      AcceptanceTests) {
+    Scenario("1 - Org User navigates to Stoodover Charges", AcceptanceTests) {
 
       Given("Organisation User logs in with existing entity group")
 
@@ -60,9 +58,7 @@ class StoodoverChargesSpec extends BaseSpec {
 
     }
 
-    Scenario(
-      "2 - Agent User navigates to Stoodover Charges",
-      AcceptanceTests) {
+    Scenario("2 - Agent User navigates to Stoodover Charges", AcceptanceTests) {
 
       Given("Agent User logs in with existing entity group")
       login(

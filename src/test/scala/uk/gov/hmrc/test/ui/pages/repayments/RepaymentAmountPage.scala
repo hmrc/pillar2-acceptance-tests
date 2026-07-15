@@ -19,9 +19,9 @@ package uk.gov.hmrc.test.ui.pages.repayments
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentAmountPage extends BasePage {
-  override val url: String       = s"${baseUrl}repayment/amount"
+  override val url:       String = s"${baseUrl}repayment/amount"
   override val changeUrl: String = s"${baseUrl}repayment/change-amount"
 
-  override val textValue: String       = "100"
+  override val textValue:       String = "100"
   override val textUpdateValue: String = "1000"
 }

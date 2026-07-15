@@ -23,8 +23,8 @@ object RFMCorpPositionPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/corporate-position"
 
   private val newNominatedFilingMemberRadio: By = By.id("value_1")
-  private val ultimateParentEntityRadio: By     = By.id("value_0")
+  private val ultimateParentEntityRadio:     By = By.id("value_0")
 
   def selectRadioNewNominatedFilingMember(): Unit = selectRadio(newNominatedFilingMemberRadio)
-  def selectRadioUltimateParentEntity(): Unit     = selectRadio(ultimateParentEntityRadio)
+  def selectRadioUltimateParentEntity():     Unit = selectRadio(ultimateParentEntityRadio)
 }

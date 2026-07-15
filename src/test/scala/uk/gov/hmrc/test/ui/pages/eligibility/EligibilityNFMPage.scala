@@ -23,5 +23,5 @@ object EligibilityNFMPage extends BasePage {
   override val url: String = s"${baseUrl}eligibility/nfm"
 
   override val yesRadioId: By = By.id("registeringNfmGroup_0")
-  override val noRadioId: By  = By.id("registeringNfmGroup_1")
+  override val noRadioId:  By = By.id("registeringNfmGroup_1")
 }

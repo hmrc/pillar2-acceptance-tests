@@ -19,12 +19,12 @@ package uk.gov.hmrc.test.ui.pages.repayments
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RepaymentReasonPage extends BasePage {
-  override val url: String       = s"${baseUrl}repayment/reason"
+  override val url:       String = s"${baseUrl}repayment/reason"
   override val changeUrl: String = s"${baseUrl}repayment/change-reason"
 
-  override val textValue: String       = "Reason for repayment"
+  override val textValue:       String = "Reason for repayment"
   override val textUpdateValue: String = "Updated reason for repayment"
 
-  def navigateToRepaymentContactEmailPage(): Unit     = navigateTo(RepaymentContactEmailPage.url)
+  def navigateToRepaymentContactEmailPage():     Unit = navigateTo(RepaymentContactEmailPage.url)
   def navigateToRepaymentCheckYourAnswersPage(): Unit = navigateTo(RepaymentCYAPage.url)
 }

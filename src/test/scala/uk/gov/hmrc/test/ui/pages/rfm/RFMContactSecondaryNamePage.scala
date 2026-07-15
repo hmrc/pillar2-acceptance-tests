@@ -19,10 +19,10 @@ package uk.gov.hmrc.test.ui.pages.rfm
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMContactSecondaryNamePage extends BasePage {
-  override val url: String       = s"${baseUrl}replace-filing-member/contact-details/second-input-name"
+  override val url:       String = s"${baseUrl}replace-filing-member/contact-details/second-input-name"
   override val changeUrl: String = s"${baseUrl}replace-filing-member/contact-details/change-second-input-name"
 
-  override val textValue: String       = "NFM Contact Name"
+  override val textValue:       String = "NFM Contact Name"
   override val textUpdateValue: String = "New Entity Name"
 
 }

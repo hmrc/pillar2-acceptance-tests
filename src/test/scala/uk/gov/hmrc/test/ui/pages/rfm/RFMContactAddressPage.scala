@@ -23,5 +23,5 @@ object RFMContactAddressPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/contact-details/address/input"
 
   override val countryDropdown: By = By.id("countryCode")
-  override val countryOption: By   = By.id("countryCode__option--0")
+  override val countryOption:   By = By.id("countryCode__option--0")
 }

@@ -22,9 +22,9 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RepaymentMethodPage extends BasePage {
   override val url: String = s"${baseUrl}repayment/method"
 
-  val typeOfAccountUKRadio: By    = By.id("value_0")
+  val typeOfAccountUKRadio:    By = By.id("value_0")
   val typeOfAccountNonUKRadio: By = By.id("value_1")
 
-  def selectRadioTypeOfAccountUK(): Unit    = selectRadio(typeOfAccountUKRadio)
+  def selectRadioTypeOfAccountUK():    Unit = selectRadio(typeOfAccountUKRadio)
   def selectRadioTypeOfAccountNonUK(): Unit = selectRadio(typeOfAccountNonUKRadio)
 }
