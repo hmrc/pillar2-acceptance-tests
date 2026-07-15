@@ -22,9 +22,9 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object RFMNoIDCYAPage extends BasePage {
   override val url: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/check-answers"
 
-  private val changeNameLink: By    = By.cssSelector("a[href*='/change-input-name']")
+  private val changeNameLink:    By = By.cssSelector("a[href*='/change-input-name']")
   private val changeAddressLink: By = By.cssSelector("a[href*='/change-input-address']")
 
-  def clickLinkChangeName(): Unit    = clickLink(changeNameLink)
+  def clickLinkChangeName():    Unit = clickLink(changeNameLink)
   def clickLinkChangeAddress(): Unit = clickLink(changeAddressLink)
 }

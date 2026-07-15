@@ -37,7 +37,6 @@ trait BaseSpec
     TestOnlyHelpers.clearSession()
   }
 
-  override def afterAll(): Unit = {
+  override def afterAll(): Unit =
     quitBrowser()
-  }
 }

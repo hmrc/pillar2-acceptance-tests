@@ -20,13 +20,13 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object FDGroupStatusPage extends BasePage {
-  override val url: String       = s"${baseUrl}further-details/group-status"
+  override val url:       String = s"${baseUrl}further-details/group-status"
   override val changeUrl: String = s"${baseUrl}further-details/change-group-status"
 
-  private val onlyUkRadio: By     = By.id("value_0")
+  private val onlyUkRadio:     By = By.id("value_0")
   private val ukAndNonUkRadio: By = By.id("value_1")
 
-  def selectRadioOnlyUk(): Unit             = selectRadio(onlyUkRadio)
-  def selectRadioUkAndNonUk(): Unit         = selectRadio(ukAndNonUkRadio)
+  def selectRadioOnlyUk():             Unit = selectRadio(onlyUkRadio)
+  def selectRadioUkAndNonUk():         Unit = selectRadio(ukAndNonUkRadio)
   def selectRadioUpdateToUkAndNonUk(): Unit = selectRadio(ukAndNonUkRadio, changeUrl)
 }

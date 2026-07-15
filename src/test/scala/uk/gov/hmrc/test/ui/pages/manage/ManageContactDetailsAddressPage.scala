@@ -19,6 +19,6 @@ package uk.gov.hmrc.test.ui.pages.manage
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ManageContactDetailsAddressPage extends BasePage {
-  override val url: String       = s"${baseUrl}manage-account/contact-details/address/change-input"
+  override val url:       String = s"${baseUrl}manage-account/contact-details/address/change-input"
   override val changeUrl: String = s"${baseUrl}manage-account/contact-details/address/change-input"
 }

@@ -29,19 +29,19 @@ import scala.jdk.CollectionConverters.*
 trait BasePage extends Matchers with PageObject {
 
   val url: String
-  val changeUrl: String       = url
-  val textValue: String       = ""
+  val changeUrl:       String = url
+  val textValue:       String = ""
   val textUpdateValue: String = ""
 
-  val baseUrl: String       = TestConfiguration.url("pillar2-frontend")
-  val buttonId: By          = By.id("submit")
-  val yesRadioId: By        = By.id("value_0")
-  val noRadioId: By         = By.id("value_1")
-  val countryDropdown: By   = By.id("country")
-  val countryOption: By     = By.id("country__option--0")
-  val backLinkText: By      = By.linkText("Back")
-  val textInputField: By    = By.id("value")
-  val continueClassName: By = By.className("govuk-button")
+  val baseUrl:           String = TestConfiguration.url("pillar2-frontend")
+  val buttonId:          By     = By.id("submit")
+  val yesRadioId:        By     = By.id("value_0")
+  val noRadioId:         By     = By.id("value_1")
+  val countryDropdown:   By     = By.id("country")
+  val countryOption:     By     = By.id("country__option--0")
+  val backLinkText:      By     = By.linkText("Back")
+  val textInputField:    By     = By.id("value")
+  val continueClassName: By     = By.className("govuk-button")
   val buttonContinue        = "Continue"
   val buttonSaveAndContinue = "Save and continue"
 
@@ -49,22 +49,22 @@ trait BasePage extends Matchers with PageObject {
 
   val addressLine1Id: By = By.id("addressLine1")
   val addressLine2Id: By = By.id("addressLine2")
-  val cityId: By         = By.id("addressLine3")
-  val regionId: By       = By.id("addressLine4")
-  val postcodeId: By     = By.id("postalCode")
+  val cityId:         By = By.id("addressLine3")
+  val regionId:       By = By.id("addressLine4")
+  val postcodeId:     By = By.id("postalCode")
 
   val defaultAddressLine1: String = "Test Street"
   val defaultAddressLine2: String = "Test Town"
-  val defaultCity: String         = "Test City"
-  val defaultRegion: String       = "Test Region"
-  val defaultPostcode: String     = "AA1 1AA"
-  val defaultCountry: String      = "United Kingdom"
+  val defaultCity:         String = "Test City"
+  val defaultRegion:       String = "Test Region"
+  val defaultPostcode:     String = "AA1 1AA"
+  val defaultCountry:      String = "United Kingdom"
   val defaultCountryNonUk: String = "Japan"
   val updatedAddressLine1: String = "Test Street"
   val updatedAddressLine2: String = "Test Town"
-  val updatedCity: String         = "Test City"
-  val updatedRegion: String       = "Test Region"
-  val updatedPostcode: String     = "AA1 1AA"
+  val updatedCity:         String = "Test City"
+  val updatedRegion:       String = "Test Region"
+  val updatedPostcode:     String = "AA1 1AA"
 
   def byText(text: String): By = By.xpath(s"//button[normalize-space()='$text']")
 
@@ -144,9 +144,9 @@ trait BasePage extends Matchers with PageObject {
   }
 
   def clickButton(
-      button: By,
-      buttonText: String = buttonSaveAndContinue,
-      url: String = this.url
+    button:     By,
+    buttonText: String = buttonSaveAndContinue,
+    url:        String = this.url
   ): Unit = {
     onPage(url)
     assertLocatorPresent(button)
@@ -185,8 +185,8 @@ trait BasePage extends Matchers with PageObject {
     Driver.instance.navigate().refresh()
 
   def waitRefreshThenCheckOnPage(
-      initialWaitSeconds: Long = 2,
-      postRefreshWaitSeconds: Long = 3
+    initialWaitSeconds:     Long = 2,
+    postRefreshWaitSeconds: Long = 3
   ): Unit = {
     fluentWait(initialWaitSeconds)
     refreshPage()
@@ -221,22 +221,22 @@ trait BasePage extends Matchers with PageObject {
   }
 
   protected val startDate: DateField = DateField("startDate")
-  protected val endDate: DateField   = DateField("endDate")
+  protected val endDate:   DateField = DateField("endDate")
 
   protected val defaultStart: (String, String, String) = ("01", "01", "2024")
-  protected val defaultEnd: (String, String, String)   = ("01", "01", "2025")
+  protected val defaultEnd:   (String, String, String) = ("01", "01", "2025")
 
   def fillDates(
-      start: (String, String, String) = defaultStart,
-      end: (String, String, String) = defaultEnd
+    start: (String, String, String) = defaultStart,
+    end:   (String, String, String) = defaultEnd
   ): Unit = {
     startDate.enter(start._1, start._2, start._3)
     endDate.enter(end._1, end._2, end._3)
   }
 
   def enterDates(
-      start: (String, String, String) = defaultStart,
-      end: (String, String, String) = defaultEnd
+    start: (String, String, String) = defaultStart,
+    end:   (String, String, String) = defaultEnd
   ): Unit = {
     onPage()
     fillDates(start, end)
@@ -244,8 +244,8 @@ trait BasePage extends Matchers with PageObject {
   }
 
   def updateDates(
-      start: (String, String, String) = defaultStart,
-      end: (String, String, String) = defaultEnd
+    start: (String, String, String) = defaultStart,
+    end:   (String, String, String) = defaultEnd
   ): Unit = {
     onPage(changeUrl)
     fillDates(start, end)
@@ -253,12 +253,12 @@ trait BasePage extends Matchers with PageObject {
   }
 
   case class Address(
-      line1: String,
-      line2: String,
-      city: String,
-      region: String,
-      postcode: String,
-      country: String
+    line1:    String,
+    line2:    String,
+    city:     String,
+    region:   String,
+    postcode: String,
+    country:  String
   )
 
   protected val defaultAddress: Address =
@@ -303,11 +303,11 @@ trait BasePage extends Matchers with PageObject {
     fillAddress(updatedAddress, includeCountry = false, pageUrl = changeUrl)
 
   protected def addressEntry(
-      line1: String,
-      line2: String,
-      cityValue: String,
-      regionValue: String,
-      postcodeValue: String
+    line1:         String,
+    line2:         String,
+    cityValue:     String,
+    regionValue:   String,
+    postcodeValue: String
   ): Unit = {
     sendKeys(addressLine1Id, line1)
     sendKeys(addressLine2Id, line2)

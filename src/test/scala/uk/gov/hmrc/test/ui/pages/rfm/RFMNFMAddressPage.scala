@@ -20,9 +20,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object RFMNFMAddressPage extends BasePage {
-  override val url: String       = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/input-address"
+  override val url:       String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/input-address"
   override val changeUrl: String = s"${baseUrl}replace-filing-member/business-matching/filing-member/no-id/change-input-address"
 
   override val countryDropdown: By = By.id("countryCode")
-  override val countryOption: By   = By.id("countryCode__option--0")
+  override val countryOption:   By = By.id("countryCode__option--0")
 }

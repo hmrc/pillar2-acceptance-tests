@@ -22,5 +22,5 @@ object BtnDomesticOrMnePage extends BasePage {
   override val url: String = s"${baseUrl}below-threshold-notification/domestic-or-multinational"
 
   def selectRadioEntityMultinational(): Unit = selectRadio(yesRadioId)
-  def selectRadioEntityDomestic(): Unit      = selectRadio(noRadioId)
+  def selectRadioEntityDomestic():      Unit = selectRadio(noRadioId)
 }

@@ -19,6 +19,6 @@ package uk.gov.hmrc.test.ui.pages.furtherDetails
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object FDGroupAccountingPeriodPage extends BasePage {
-  override val url: String       = s"${baseUrl}further-details/accounting-period"
+  override val url:       String = s"${baseUrl}further-details/accounting-period"
   override val changeUrl: String = s"${baseUrl}further-details/change-accounting-period"
 }

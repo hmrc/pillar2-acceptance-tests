@@ -24,15 +24,15 @@ object RepaymentCYAPage extends BasePage {
 
   private val changeRefundAmountLink: By = By.cssSelector("a[href*='/change-amount']")
   private val changeRefundReasonLink: By = By.cssSelector("a[href*='/change-reason']")
-  private val changeContactNameLink: By  = By.cssSelector("a[href*='/change-input-name']")
+  private val changeContactNameLink:  By = By.cssSelector("a[href*='/change-input-name']")
   private val changeContactEmailLink: By = By.cssSelector("a[href*='/change-input-email']")
-  private val changePhoneNumberLink: By  = By.cssSelector("a[href*='/change-input-phone']")
+  private val changePhoneNumberLink:  By = By.cssSelector("a[href*='/change-input-phone']")
 
   override protected val pageIdentity: Option[By] = Some(changeRefundAmountLink)
 
   def clickLinkChangeRefundAmount(): Unit = clickLink(changeRefundAmountLink)
   def clickLinkChangeRefundReason(): Unit = clickLink(changeRefundReasonLink)
-  def clickLinkChangeContactName(): Unit  = clickLink(changeContactNameLink)
+  def clickLinkChangeContactName():  Unit = clickLink(changeContactNameLink)
   def clickLinkChangeContactEmail(): Unit = clickLink(changeContactEmailLink)
-  def clickLinkChangePhoneNumber(): Unit  = clickLink(changePhoneNumberLink)
+  def clickLinkChangePhoneNumber():  Unit = clickLink(changePhoneNumberLink)
 }
