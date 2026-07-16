@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.eligibility.*
-import uk.gov.hmrc.test.ui.pages.registration.TaskListPage
+import uk.gov.hmrc.test.ui.pages.registration.RegistrationTaskListPage
 import uk.gov.hmrc.test.ui.specs.tags.*
 
 class EligibilityQuestionsSpec extends BaseSpec {
@@ -43,7 +43,7 @@ class EligibilityQuestionsSpec extends BaseSpec {
 
       Then("The user is taken to the confirmation page and directed to the register your group page")
       EligibilityConfirmationPage.onPageClickButtonById()
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
     }
 
     Scenario(

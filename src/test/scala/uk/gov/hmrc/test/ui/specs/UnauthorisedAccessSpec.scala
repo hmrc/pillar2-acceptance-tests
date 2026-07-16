@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.specs
 
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
-import uk.gov.hmrc.test.ui.pages.registration.TaskListPage
+import uk.gov.hmrc.test.ui.pages.registration.RegistrationTaskListPage
 import uk.gov.hmrc.test.ui.pages.unauthorised.UnauthorisedPage
 import uk.gov.hmrc.test.ui.specs.tags.*
 
@@ -36,10 +36,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the accounts summary page")
-      TaskListPage.navigateToManageAccountsSummaryPage()
+      RegistrationTaskListPage.navigateToManageAccountsSummaryPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -56,10 +56,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the make a payment page")
-      TaskListPage.navigateToPaymentsPayPage()
+      RegistrationTaskListPage.navigateToPaymentsPayPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -76,10 +76,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment guidance page")
-      TaskListPage.navigateToRepaymentGuidancePage()
+      RegistrationTaskListPage.navigateToRepaymentGuidancePage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -96,10 +96,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment reason page")
-      TaskListPage.navigateToRepaymentReasonPage()
+      RegistrationTaskListPage.navigateToRepaymentReasonPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -116,10 +116,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment method page")
-      TaskListPage.navigateToRepaymentMethodPage()
+      RegistrationTaskListPage.navigateToRepaymentMethodPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -136,10 +136,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the UK bank account page")
-      TaskListPage.navigateToRepaymentBankAccountUKPage()
+      RegistrationTaskListPage.navigateToRepaymentBankAccountUKPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -156,10 +156,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the non-UK bank account page")
-      TaskListPage.navigateToRepaymentBankAccountNonUKPage()
+      RegistrationTaskListPage.navigateToRepaymentBankAccountNonUKPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -176,10 +176,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment contact name page")
-      TaskListPage.navigateToRepaymentContactNamePage()
+      RegistrationTaskListPage.navigateToRepaymentContactNamePage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -196,10 +196,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment contact email page")
-      TaskListPage.navigateToRepaymentContactEmailPage()
+      RegistrationTaskListPage.navigateToRepaymentContactEmailPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -216,10 +216,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment phone as contact page")
-      TaskListPage.navigateToRepaymentPhoneAsContactPage()
+      RegistrationTaskListPage.navigateToRepaymentPhoneAsContactPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -236,10 +236,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment phone input page")
-      TaskListPage.navigateToRepaymentPhoneInputPage()
+      RegistrationTaskListPage.navigateToRepaymentPhoneInputPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -256,10 +256,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the repayment check your answers page")
-      TaskListPage.navigateToRepaymentCYAPage()
+      RegistrationTaskListPage.navigateToRepaymentCYAPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -276,10 +276,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the manage primary contact name page")
-      TaskListPage.navigateToManageContactDetailsPrimaryNamePage()
+      RegistrationTaskListPage.navigateToManageContactDetailsPrimaryNamePage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -296,10 +296,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the manage secondary contact name page")
-      TaskListPage.navigateToManageContactDetailsSecondaryNamePage()
+      RegistrationTaskListPage.navigateToManageContactDetailsSecondaryNamePage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -316,10 +316,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the manage contact address page")
-      TaskListPage.navigateToManageContactDetailsAddressPage()
+      RegistrationTaskListPage.navigateToManageContactDetailsAddressPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -336,10 +336,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the manage group status page")
-      TaskListPage.navigateToManageGroupStatusPage()
+      RegistrationTaskListPage.navigateToManageGroupStatusPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -356,10 +356,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the manage accounting period page")
-      TaskListPage.navigateToManageAccountPeriodPage()
+      RegistrationTaskListPage.navigateToManageAccountPeriodPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()
@@ -376,10 +376,10 @@ class UnauthorisedAccessSpec extends BaseSpec {
       )
 
       Then("The user is presented with the task list page")
-      TaskListPage.onPage()
+      RegistrationTaskListPage.onPage()
 
       And("The user attempts to navigate to the transaction history page")
-      TaskListPage.navigateToTransactionHistoryPage()
+      RegistrationTaskListPage.navigateToTransactionHistoryPage()
 
       When("The user is taken to the unauthorised page")
       UnauthorisedPage.onPage()

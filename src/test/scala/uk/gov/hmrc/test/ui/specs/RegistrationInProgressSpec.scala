@@ -36,7 +36,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickLinkAddUltimateFilingMember()
+      RegistrationTaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds Medium Processing Corp as Ultimate Parent Entity")
       UPEInitialGuidancePage.continueToNextPage()
@@ -50,13 +50,13 @@ class RegistrationInProgressSpec extends BaseSpec {
 
       Then("The user continues to the task list")
       UPECheckYourAnswersPage.continueToNextPage()
-      TaskListPage.clickLinkAddFilingMember()
+      RegistrationTaskListPage.clickLinkAddFilingMember()
 
       When("The user doesn't add a Nominated Filing Member")
       NFMRegistrationPage.selectRadioNominatedFilingMemberNo()
 
       Then("The user continues to the task list")
-      TaskListPage.clickLinkAddFurtherGroupDetails()
+      RegistrationTaskListPage.clickLinkAddFurtherGroupDetails()
 
       And("The user adds further details")
       FDGroupStatusPage.selectRadioOnlyUk()
@@ -64,7 +64,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds UPE as primary contact")
-      TaskListPage.clickLinkAddContactDetails()
+      RegistrationTaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectYes()
       ContactDetailsSecondaryContactAddPage.selectNo()
@@ -72,8 +72,9 @@ class RegistrationInProgressSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickLinkReviewAndSubmit()
-      ReviewAnswersPage.continueToNextPage()
+      RegistrationTaskListPage.clickLinkReviewAndSubmit()
+      RegistrationReviewAnswersPage.continueToNextPage()
+      RegistrationSubmissionInProgressPage.onPage()
 
       When("The user is now on the registration complete page and tries to go to the home page")
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)

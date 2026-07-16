@@ -36,7 +36,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       )
 
       And("The user is presented with the task list page")
-      TaskListPage.clickLinkAddUltimateFilingMember()
+      RegistrationTaskListPage.clickLinkAddUltimateFilingMember()
 
       And("The user adds an Ultimate Parent Entity with a non-UK Address")
       UPEInitialGuidancePage.continueToNextPage()
@@ -70,7 +70,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
 
       Then("The user continues to the task list")
       UPECheckYourAnswersPage.continueToNextPage()
-      TaskListPage.clickLinkAddFilingMember()
+      RegistrationTaskListPage.clickLinkAddFilingMember()
 
       When("The user adds a Nominated Filing Member with a UK Address")
       NFMRegistrationPage.selectRadioNominatedFilingMemberYes()
@@ -107,7 +107,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       NFMCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds further details")
-      TaskListPage.clickLinkAddFurtherGroupDetails()
+      RegistrationTaskListPage.clickLinkAddFurtherGroupDetails()
       FDGroupStatusPage.selectRadioOnlyUk()
       FDGroupAccountingPeriodPage.enterDates()
 
@@ -126,7 +126,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       FDCheckYourAnswersPage.continueToNextPage()
 
       And("The user adds primary contact details")
-      TaskListPage.clickLinkAddContactDetails()
+      RegistrationTaskListPage.clickLinkAddContactDetails()
       ContactDetailsGuidancePage.continueToNextPage()
       ContactDetailsPrimaryContactPage.selectNo()
       ContactDetailsPrimaryNamePage.enterText()
@@ -174,8 +174,9 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       ContactDetailsCheckAnswersPage.continueToNextPage()
 
       Then("The user reviews and submits")
-      TaskListPage.clickLinkReviewAndSubmit()
-      ReviewAnswersPage.continueToNextPage()
+      RegistrationTaskListPage.clickLinkReviewAndSubmit()
+      RegistrationReviewAnswersPage.continueToNextPage()
+      RegistrationSubmissionInProgressPage.onPage()
 
       When("The user is presented with the Registration Complete page")
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
