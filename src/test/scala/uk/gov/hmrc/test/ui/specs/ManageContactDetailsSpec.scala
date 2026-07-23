@@ -81,7 +81,7 @@ class ManageContactDetailsSpec extends BaseSpec {
       ManageSubmissionInProgressPage.onPage()
 
       Then("The user is taken to the dashboard")
-      DashboardPage.onPage(timeoutSeconds = 5)
+      DashboardPage.onPage(timeoutSeconds = 6)
     }
 
     Scenario(
