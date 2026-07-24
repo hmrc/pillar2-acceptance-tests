@@ -21,6 +21,7 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, GivenWhenThen}
 import uk.gov.hmrc.selenium.webdriver.{Browser, Driver, ScreenshotOnFailure}
 import uk.gov.hmrc.test.ui.helper.TestOnlyHelpers
+import scala.sys.process._
 
 trait BaseSpec
     extends AnyFeatureSpec
@@ -31,12 +32,37 @@ trait BaseSpec
     with Browser
     with ScreenshotOnFailure {
 
+//  override def beforeAll(): Unit = {
+//    startBrowser()
+//    Driver.instance.manage().deleteAllCookies()
+//    TestOnlyHelpers.clearSession()
+//  }
+//
+//  override def afterAll(): Unit =
+//    quitBrowser()
+private val serviceName = "PILLAR_2_STUBS"
+
   override def beforeAll(): Unit = {
+    super.beforeAll()
+    s"sm2 -start $serviceName".!
+
     startBrowser()
     Driver.instance.manage().deleteAllCookies()
     TestOnlyHelpers.clearSession()
   }
 
-  override def afterAll(): Unit =
-    quitBrowser()
+  override def afterAll(): Unit = {
+    try {
+      quitBrowser()
+    } finally {
+      s"sm2 -stop $serviceName".!
+      super.afterAll()
+    }
+  }
+
+
+
+
+
+
 }
