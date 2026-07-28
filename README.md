@@ -165,6 +165,8 @@ change -Dsecurity.assessment to 'false' and then run
 
 `./run_zap_tests_local.sh`
 
+Note - If the security tests fail then run them individually by using tag ZapTests in run_local_zap_tests.sh
+
 #### Run accessibility tests locally
 `./run_accessibility_tests.sh`
 

@@ -32,37 +32,12 @@ trait BaseSpec
     with Browser
     with ScreenshotOnFailure {
 
-//  override def beforeAll(): Unit = {
-//    startBrowser()
-//    Driver.instance.manage().deleteAllCookies()
-//    TestOnlyHelpers.clearSession()
-//  }
-//
-//  override def afterAll(): Unit =
-//    quitBrowser()
-private val serviceName = "PILLAR_2_STUBS"
-
   override def beforeAll(): Unit = {
-    super.beforeAll()
-    s"sm2 -start $serviceName".!
-
     startBrowser()
     Driver.instance.manage().deleteAllCookies()
     TestOnlyHelpers.clearSession()
   }
 
-  override def afterAll(): Unit = {
-    try {
-      quitBrowser()
-    } finally {
-      s"sm2 -stop $serviceName".!
-      super.afterAll()
-    }
+  override def afterAll(): Unit =
+    quitBrowser()
   }
-
-
-
-
-
-
-}

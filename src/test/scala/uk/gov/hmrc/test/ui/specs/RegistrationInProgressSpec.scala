@@ -23,11 +23,13 @@ import uk.gov.hmrc.test.ui.pages.nfm.*
 import uk.gov.hmrc.test.ui.pages.registration.*
 import uk.gov.hmrc.test.ui.pages.upe.*
 import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
+import scala.sys.process.stringToProcess
 
 class RegistrationInProgressSpec extends BaseSpec {
-
+  private val serviceName = "PILLAR_2_STUBS"
   Feature("Registration in progress") {
 
+    s"sm2 -restart $serviceName".!
     Scenario("Full registration journey leads to in progress page when navigating back to home page", AcceptanceTests) {
       Given("Organisation User logs in without enrollment")
       login(
