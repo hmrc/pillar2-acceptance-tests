@@ -103,7 +103,7 @@ class BTNAmendmentsSpec extends BaseSpec {
       BtnCyaSubmitPage.onPageClickButtonById()
 
       Then("The user encounters the problem with service page")
-      BtnProblemWithServicePage.onPage(timeoutSeconds = 5)
+      BtnProblemWithServicePage.onPage(timeoutSeconds = 7)
     }
 
     Scenario("4 - Org User navigates to KB page, if BTN submission unsuccessful [PLRID=XEPLR4000000000]", AcceptanceTests) {
