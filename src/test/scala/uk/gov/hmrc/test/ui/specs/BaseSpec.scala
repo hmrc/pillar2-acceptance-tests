@@ -21,7 +21,6 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, GivenWhenThen}
 import uk.gov.hmrc.selenium.webdriver.{Browser, Driver, ScreenshotOnFailure}
 import uk.gov.hmrc.test.ui.helper.TestOnlyHelpers
-import scala.sys.process._
 
 trait BaseSpec
     extends AnyFeatureSpec
