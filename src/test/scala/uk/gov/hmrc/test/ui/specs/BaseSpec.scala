@@ -39,4 +39,4 @@ trait BaseSpec
 
   override def afterAll(): Unit =
     quitBrowser()
-}
+  }
