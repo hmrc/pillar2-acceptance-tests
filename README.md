@@ -163,7 +163,7 @@ change -Dsecurity.assessment to 'false' and then run
 #### Run security tests locally
  Clone https://github.com/hmrc/dast-config-manager into workspace and then run 
 
-`./run_zap_tests_local.sh`
+`./run_local_zap_tests.sh`
 
 #### Run accessibility tests locally
 `./run_accessibility_tests.sh`
