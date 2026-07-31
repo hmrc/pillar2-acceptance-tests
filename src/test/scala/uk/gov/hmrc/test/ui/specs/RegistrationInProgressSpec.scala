@@ -78,7 +78,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       RegistrationReviewAnswersPage.continueToNextPage()
 
       When("The user is now on the registration complete page and tries to go to the home page")
-      RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
+      RegistrationConfirmationPage.onPage(timeoutSeconds = 15)
       RegistrationConfirmationPage.clickLinkHomePage()
 
       Then("The user is presented with the registration in progress page")

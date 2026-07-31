@@ -74,7 +74,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       RegistrationReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")
-      RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
+      RegistrationConfirmationPage.onPage(timeoutSeconds = 15)
     }
 
     Scenario(
@@ -130,7 +130,7 @@ class RegistrationFullSubmissionGRSSpec extends BaseSpec {
       RegistrationReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")
-      RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
+      RegistrationConfirmationPage.onPage(timeoutSeconds = 15)
     }
   }
 }

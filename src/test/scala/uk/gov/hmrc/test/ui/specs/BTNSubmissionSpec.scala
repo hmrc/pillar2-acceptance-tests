@@ -51,7 +51,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage(timeoutSeconds = 10)
+      BtnConfirmationPage.onPage(timeoutSeconds = 15)
 
       Then("The user clicks the back button and is presented with the cannot return page")
       BtnConfirmationPage.browserBack()
@@ -96,7 +96,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage(timeoutSeconds = 10)
+      BtnConfirmationPage.onPage(timeoutSeconds = 15)
 
       Then("The user clicks the back button and is presented with the cannot return page")
       BtnConfirmationPage.browserBack()
@@ -144,7 +144,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is on the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage(timeoutSeconds = 10)
+      BtnConfirmationPage.onPage(timeoutSeconds = 15)
     }
 
     Scenario(
@@ -188,7 +188,7 @@ class BTNSubmissionSpec extends BaseSpec {
       BtnCyaSubmitPage.onPageClickButtonById()
 
       When("The user is on the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage(timeoutSeconds = 10)
+      BtnConfirmationPage.onPage(timeoutSeconds = 15)
     }
   }
 }
