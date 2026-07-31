@@ -5,7 +5,7 @@ set -euo pipefail
 
 BROWSER="${1:-chrome}"
 ENVIRONMENT="${2:-local}"
-DAST_DIR="${DAST_DIR:-${WORKSPACE:-$HOME/workspace}/dast-config-manager}"
+DAST_DIR="${DAST_DIR:-$(dirname "$PWD")/dast-config-manager}"
 
 for tool in git docker sbt sm2 ifconfig make; do
   command -v "$tool" >/dev/null || {
@@ -21,9 +21,9 @@ done
 
 
 export ZAP_FAIL_ON_SEVERITY="${ZAP_FAIL_ON_SEVERITY:-Low}"
-export ZAP_FORWARD_ENABLE=true
-export ZAP_FORWARD_PORTS
+export ZAP_FORWARD_ENABLE="true"
 ZAP_FORWARD_PORTS="$(sm2 -s --format-plain | awk '$NF ~ /PASS|BOOT/ && $3 ~ /^[0-9]+$/ { print $3 }' | paste -sd " " -) 10050"
+export ZAP_FORWARD_PORTS
 
 [[ -n "$ZAP_FORWARD_PORTS" ]] || {
   echo "No running service ports found. Start services first."
@@ -33,10 +33,10 @@ ZAP_FORWARD_PORTS="$(sm2 -s --format-plain | awk '$NF ~ /PASS|BOOT/ && $3 ~ /^[0
 [[ -f alert-filters.json ]] && export ZAP_LOCAL_ALERT_FILTERS="$PWD/alert-filters.json"
 
 trap 'cd "$DAST_DIR" && make local-zap-stop || true' EXIT
-
 (
   cd "$DAST_DIR"
   git pull --ff-only
+  echo "Starting local ZAP runner"
   make local-zap-running
   echo "Forwarding ports to ZAP: $ZAP_FORWARD_PORTS"
 )
