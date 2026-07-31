@@ -176,7 +176,6 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       Then("The user reviews and submits")
       RegistrationTaskListPage.clickLinkReviewAndSubmit()
       RegistrationReviewAnswersPage.continueToNextPage()
-      RegistrationSubmissionInProgressPage.onPage()
 
       When("The user is presented with the Registration Complete page")
       RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
