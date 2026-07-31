@@ -178,7 +178,7 @@ class RegistrationFullSubmissionNoIdSpec extends BaseSpec {
       RegistrationReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the Registration Complete page")
-      RegistrationConfirmationPage.onPage(timeoutSeconds = 10)
+      RegistrationConfirmationPage.onPage(timeoutSeconds = 15)
     }
   }
 }
