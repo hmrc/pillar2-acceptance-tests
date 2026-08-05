@@ -63,7 +63,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnCyaSubmitPage.onPageClickButtonById()
 
       And("The user is on the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage(timeoutSeconds = 15)
+      BtnConfirmationPage.onPageAfterAsyncAction()
 
       When("The user returns to the dashboard")
       BtnConfirmationPage.clickLinkReturnToHomepage()
@@ -118,7 +118,7 @@ class BTNUnderEnquirySpec extends BaseSpec {
       BtnCyaSubmitPage.onPageClickButtonById()
 
       And("The agent is on the Below-Threshold Notification successful confirmation page")
-      BtnConfirmationPage.onPage(timeoutSeconds = 15)
+      BtnConfirmationPage.onPageAfterAsyncAction()
 
       When("The agent returns to the dashboard")
       BtnConfirmationPage.clickLinkReturnToHomepage()

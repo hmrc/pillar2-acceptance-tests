@@ -54,8 +54,8 @@ class ManageGroupDetailsSpec extends BaseSpec {
       )
 
       Then("The user is taken to the confirmation page")
-      ManageAmendAccountPeriodPage.continue()
-      ManageAmendAccountPeriodConfirmationPage.onPage(timeoutSeconds = 20)
+      ManageAmendAccountPeriodPage.continueToNextPage()
+      ManageAmendAccountPeriodConfirmationPage.onPageAfterAsyncAction()
     }
 
     Scenario(

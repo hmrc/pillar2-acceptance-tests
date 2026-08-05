@@ -104,6 +104,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageClickButtonById()
 
       And("The user is presented with the confirmation page and clicks the back button")
+      RFMConfirmationPage.onPageAfterAsyncAction()
       RFMConfirmationPage.browserBack()
 
       Then("The user is presented with the no return page")
@@ -142,7 +143,7 @@ class RFMSubmissionNoIDSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageClickButtonById()
 
       And("The user is presented with the confirmation page")
-      RFMConfirmationPage.onPage()
+      RFMConfirmationPage.onPageAfterAsyncAction()
     }
   }
 }

@@ -68,18 +68,24 @@ trait BasePage extends Matchers with PageObject {
 
   def byText(text: String): By = By.xpath(s"//button[normalize-space()='$text']")
 
-  private def fluentWait(timeoutSeconds: Long): Wait[WebDriver] =
+  private def fluentWait(timeout: Duration): Wait[WebDriver] =
     new FluentWait[WebDriver](Driver.instance)
-      .withTimeout(Duration.ofSeconds(timeoutSeconds))
+      .withTimeout(timeout)
       .pollingEvery(Duration.ofMillis(200))
       .ignoring(classOf[org.openqa.selenium.StaleElementReferenceException])
       .ignoring(classOf[org.openqa.selenium.NoSuchElementException])
 
   def onPage(url: String = this.url, timeoutSeconds: Long = 6): Unit =
-    fluentWait(timeoutSeconds).until(ExpectedConditions.urlToBe(url))
+    waitForUrl(url, Duration.ofSeconds(timeoutSeconds))
 
   def onPageContains(partialUrl: String, timeoutSeconds: Long = 6): Unit =
-    fluentWait(timeoutSeconds).until(ExpectedConditions.urlContains(partialUrl))
+    fluentWait(Duration.ofSeconds(timeoutSeconds)).until(ExpectedConditions.urlContains(partialUrl))
+
+  def onPageAfterAsyncAction(url: String = this.url): Unit =
+    waitForUrl(url, TestConfiguration.asyncNavigationTimeout)
+
+  private def waitForUrl(url: String, timeout: Duration): Unit =
+    fluentWait(timeout).until(ExpectedConditions.urlToBe(url))
 
   def countryAutoSelect(countryName: String): Unit = {
     assertLocatorPresent(countryDropdown)
@@ -183,15 +189,6 @@ trait BasePage extends Matchers with PageObject {
 
   def refreshPage(): Unit =
     Driver.instance.navigate().refresh()
-
-  def waitRefreshThenCheckOnPage(
-    initialWaitSeconds:     Long = 2,
-    postRefreshWaitSeconds: Long = 3
-  ): Unit = {
-    fluentWait(initialWaitSeconds)
-    refreshPage()
-    onPage(timeoutSeconds = postRefreshWaitSeconds)
-  }
 
   def navigateTo(url: String, timeoutSeconds: Long = 5): Unit = {
     val driver = Driver.instance

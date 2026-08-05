@@ -80,7 +80,7 @@ class ManageContactDetailsSpec extends BaseSpec {
       ManageContactDetailsSummaryPage.onPageClickButtonById()
 
       Then("The user is taken to the dashboard")
-      DashboardPage.onPage(timeoutSeconds = 15)
+      DashboardPage.onPageAfterAsyncAction()
     }
 
     Scenario(
