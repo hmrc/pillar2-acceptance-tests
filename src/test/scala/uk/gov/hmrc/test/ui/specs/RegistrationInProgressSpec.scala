@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.specs
 
+import uk.gov.hmrc.test.ui.helper.TestOnlyHelpers
 import uk.gov.hmrc.test.ui.pages.auth.AuthLoginPage.login
 import uk.gov.hmrc.test.ui.pages.contactDetails.*
 import uk.gov.hmrc.test.ui.pages.furtherDetails.*
@@ -23,13 +24,16 @@ import uk.gov.hmrc.test.ui.pages.nfm.*
 import uk.gov.hmrc.test.ui.pages.registration.*
 import uk.gov.hmrc.test.ui.pages.upe.*
 import uk.gov.hmrc.test.ui.specs.tags.AcceptanceTests
-import scala.sys.process.stringToProcess
 
 class RegistrationInProgressSpec extends BaseSpec {
-  private val serviceName = "PILLAR_2_STUBS"
+
+  override def beforeAll(): Unit = {
+    super.beforeAll()
+    TestOnlyHelpers.resetPillar2StubState()
+  }
+
   Feature("Registration in progress") {
 
-    s"sm2 -restart $serviceName".!
     Scenario("Full registration journey leads to in progress page when navigating back to home page", AcceptanceTests) {
       Given("Organisation User logs in without enrollment")
       login(
@@ -78,7 +82,7 @@ class RegistrationInProgressSpec extends BaseSpec {
       RegistrationReviewAnswersPage.continueToNextPage()
 
       When("The user is now on the registration complete page and tries to go to the home page")
-      RegistrationConfirmationPage.onPage(timeoutSeconds = 15)
+      RegistrationConfirmationPage.onPageAfterAsyncAction()
       RegistrationConfirmationPage.clickLinkHomePage()
 
       Then("The user is presented with the registration in progress page")

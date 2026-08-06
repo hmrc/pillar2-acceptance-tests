@@ -19,11 +19,31 @@ package uk.gov.hmrc.test.ui.helper
 import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
+import java.net.URI
+import java.net.http.{HttpClient, HttpRequest, HttpResponse}
+
 object TestOnlyHelpers {
 
   private val clearSessionUrl =
     s"${TestConfiguration.url("pillar2-frontend")}test-only/clear-all"
 
+  private val resetPillar2StubStateUrl =
+    s"${TestConfiguration.url("pillar2-stubs")}pillar2/subscription/reset"
+
   def clearSession(): Unit =
     Driver.instance.navigate.to(clearSessionUrl)
+
+  def resetPillar2StubState(): Unit =
+    if TestConfiguration.env == "local" then {
+      val request = HttpRequest
+        .newBuilder(URI.create(resetPillar2StubStateUrl))
+        .POST(HttpRequest.BodyPublishers.noBody())
+        .build()
+      val response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.discarding())
+
+      require(
+        response.statusCode() == 200,
+        s"Expected Pillar 2 stubs reset to return 200, but received ${response.statusCode()}"
+      )
+    }
 }

@@ -53,8 +53,8 @@ class BTNAmendmentsSpec extends BaseSpec {
       )
 
       Then("The user is taken to the confirmation page")
-      ManageAmendAccountPeriodPage.continue()
-      ManageAmendAccountPeriodConfirmationPage.onPage()
+      ManageAmendAccountPeriodPage.continueToNextPage()
+      ManageAmendAccountPeriodConfirmationPage.onPageAfterAsyncAction()
     }
 
     Scenario("2 - Org User changes below threshold notification entity location and gets KB page", AcceptanceTests) {

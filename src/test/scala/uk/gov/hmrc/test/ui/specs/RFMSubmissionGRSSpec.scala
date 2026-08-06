@@ -63,7 +63,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageClickButtonById()
 
       Then("The user is presented with the confirmation page")
-      RFMConfirmationPage.onPage(timeoutSeconds = 15)
+      RFMConfirmationPage.onPageAfterAsyncAction()
     }
 
     Scenario(
@@ -105,7 +105,7 @@ class RFMSubmissionGRSSpec extends BaseSpec {
       RFMFinalReviewCYAPage.onPageClickButtonById()
 
       Then("The user is presented with the confirmation page")
-      RFMConfirmationPage.onPage()
+      RFMConfirmationPage.onPageAfterAsyncAction()
     }
   }
 }

@@ -18,11 +18,15 @@ package uk.gov.hmrc.test.ui.conf
 
 import com.typesafe.config.{Config, ConfigFactory}
 
+import java.time.Duration
+
 object TestConfiguration {
   val config:        Config = ConfigFactory.load()
   val env:           String = config.getString("environment")
   val defaultConfig: Config = config.getConfig("local")
   val envConfig:     Config = config.getConfig(env).withFallback(defaultConfig)
+
+  val asyncNavigationTimeout: Duration = config.getDuration("waits.async-navigation")
 
   def url(service: String): String = {
     val host = env match {

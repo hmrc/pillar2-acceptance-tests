@@ -184,7 +184,7 @@ class RegistrationErrorJourneysSpec extends BaseSpec {
       RegistrationReviewAnswersPage.continueToNextPage()
 
       When("The user is presented with the API error page")
-      RegistrationAPIErrorPage.onPage()
+      RegistrationAPIErrorPage.onPageAfterAsyncAction()
     }
   }
 }
