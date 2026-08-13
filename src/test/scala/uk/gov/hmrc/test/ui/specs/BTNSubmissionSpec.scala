@@ -190,5 +190,80 @@ class BTNSubmissionSpec extends BaseSpec {
       When("The user is on the Below-Threshold Notification successful confirmation page")
       BtnConfirmationPage.onPageAfterAsyncAction()
     }
+
+    Scenario(
+      "5 - Org User is on submission pathway but changes mind and clicks link to navigate back to dashboard",
+      AcceptanceTests
+    ) {
+
+      Given("Org User logs in to Pillar2 service")
+      login(
+        userType = "Organisation",
+        page = "dashboard",
+        enrolment = Some(
+          Enrolment(
+            "HMRC-PILLAR2-ORG",
+            "PLRID",
+            "XMPLR0012345674"
+          )
+        )
+      )
+
+      Then("The user submits a below threshold notification")
+      DashboardPage.clickSubmitBTNLink()
+      BtnStartPage.continueToNextPage()
+
+
+      When("The user is at the accounting-page and decides not to continue with the submission and clicks the link to return to dashboard")
+      BtnAccountingPage.clickLinkReturnToHomepage()
+
+      Then("The user is returned to the dashboard")
+      DashboardPage.onPage()
+    }
+
   }
+
+  Scenario(
+    "6 - Agent User is on submission pathway but changes mind and clicks link to navigate back to dashboard",
+    AcceptanceTests
+  ) {
+
+    Given("Agent User logs in with existing entity group")
+    login(
+      userType = "Agent",
+      page = "asa",
+      enrolment = Some(
+        Enrolment(
+          key = "HMRC-AS-AGENT",
+          name = "AgentReference",
+          value = "1234"
+        )
+      ),
+      delegatedEnrolments = Seq(
+        DelegatedEnrolment(
+          key = "HMRC-PILLAR2-ORG",
+          name = "PLRID",
+          value = "XEPLR9999999994",
+          authRule = "pillar2-auth"
+        )
+      )
+    )
+
+    Then("The agent confirms client PLRId")
+    ASAPillar2InputPage.enterText("XEPLR9999999994")
+    ASAConfirmationPage.continueToNextPage()
+
+    Then("The user submits a below threshold notification")
+    DashboardPage.clickSubmitBTNLink()
+    BtnStartPage.continueToNextPage()
+    
+    And("The agent selects the previous accounting period but decides not to continue with the submission and clicks the link to return to dashboard")
+    BtnMultipleAccountingPage.selectRadioPreviousAccountingPeriod()
+    BtnAccountingPage.clickLinkReturnToHomepage()
+
+    Then("The user is returned to the dashboard")
+    DashboardPage.onPage()
+  }
+
 }
+
