@@ -16,8 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.btn
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object BtnUnderEnquiryPage extends BasePage {
   override val url: String = s"${baseUrl}below-threshold-notification/under-enquiry-warning"
+
+  val returnToDashboardLink: By = By.cssSelector("a[href='/report-pillar2-top-up-taxes/pillar2-top-up-tax-home']")
+
+  def clickLinkReturnToHomepage(): Unit = clickLink(returnToDashboardLink)
 }
