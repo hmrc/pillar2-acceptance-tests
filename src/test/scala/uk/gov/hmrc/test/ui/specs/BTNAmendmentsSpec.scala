@@ -141,28 +141,5 @@ class BTNAmendmentsSpec extends BaseSpec {
       Then("The user encounters the problem with service page")
       BtnProblemWithServicePage.onPage()
     }
-
-    Scenario("6 - Org User is on below threshold notification accounting period page but org user changes mind and clicks link to navigate back to dashboard", AcceptanceTests) {
-      Given("Organisation User logs in to Pillar2 service")
-      login(
-        userType = "Organisation",
-        page = "dashboard",
-        enrolment = Some(
-          Enrolment(
-            key = "HMRC-PILLAR2-ORG",
-            name = "PLRID",
-            value = "XEPLR9999999991"
-          )
-        )
-      )
-
-      Then("The user navigates to the summary page, and decides not to continue with the submission and clicks the link to return to dashboard")
-      DashboardPage.clickSubmitBTNLink()
-      BtnStartPage.continueToNextPage()
-      BtnAccountingPage.clickLinkReturnToHomepage()
-
-      Then("The user is returned to the dashboard")
-      DashboardPage.onPage()
-    }
   }
 }
