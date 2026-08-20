@@ -26,4 +26,8 @@ object BtnAccountingPage extends BasePage {
   private val accountDetailsSummary = By.cssSelector("a[href*='/account-details/summary']")
 
   def clickLinkAccountDetailsSummary(): Unit = clickLink(accountDetailsSummary)
+
+  val returnToDashboardLink: By = By.cssSelector("div.govuk-button-group a[href='/report-pillar2-top-up-taxes/pillar2-top-up-tax-home']")
+
+  def clickLinkReturnToHomepage(): Unit = clickLink(returnToDashboardLink)
 }
